@@ -1,0 +1,13 @@
+{
+  "name": "checkbox",
+  "dependencies": [
+    "@radix-ui/react-checkbox"
+  ],
+  "files": [
+    {
+      "name": "checkbox.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { Check } from \"lucide-react\"\nimport {\n  Checkbox as RaCheckbox,\n  type CheckboxProps as RaCheckboxProps,\n} from \"react-aria-components\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport interface CheckboxProps extends RaCheckboxProps {\n  className?: string\n}\n\nconst Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(\n  ({ className, ...props }, ref) => (\n    <RaCheckbox\n      ref={ref}\n      className={cn(\n        \"peer h-4 w-4 shrink-0 rounded-sm border border-primary shadow data-[focus-visible]:outline-none data-[focus-visible]:ring-1 data-[focus-visible]:ring-ring data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 data-[selected]:bg-primary data-[selected]:text-primary-foreground\",\n        className\n      )}\n      {...props}\n    >\n      {({ isSelected }) => (isSelected ? <Check className=\"h-4 w-4\" /> : null)}\n    </RaCheckbox>\n  )\n)\nCheckbox.displayName = \"Checkbox\"\n\nexport { Checkbox }\n"
+    }
+  ],
+  "type": "components:ui"
+}

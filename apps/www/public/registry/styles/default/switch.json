@@ -1,0 +1,13 @@
+{
+  "name": "switch",
+  "dependencies": [
+    "@radix-ui/react-switch"
+  ],
+  "files": [
+    {
+      "name": "switch.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport {\n  Switch as RaSwitch,\n  SwitchProps as RaSwitchProps,\n} from \"react-aria-components\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport interface SwitchProps extends RaSwitchProps {\n  className?: string\n}\n\nconst Switch = React.forwardRef<React.ElementRef<typeof RaSwitch>, SwitchProps>(\n  ({ className, ...props }, ref) => (\n    <RaSwitch\n      className={cn(\n        \"peer inline-flex h-[24px] w-[44px] shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2 data-[focus-visible]:ring-offset-background data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 data-[selected]:bg-primary bg-input\",\n        className\n      )}\n      {...props}\n      ref={ref}\n    >\n      {({ isSelected }) => (\n        <div\n          className={cn(\n            \"pointer-events-none block h-5 w-5 rounded-full bg-background shadow-lg ring-0 transition-transform translate-x-0\",\n            { \"translate-x-5\": isSelected }\n          )}\n        />\n      )}\n    </RaSwitch>\n  )\n)\nSwitch.displayName = \"Switch\"\n\nexport { Switch }\n"
+    }
+  ],
+  "type": "components:ui"
+}

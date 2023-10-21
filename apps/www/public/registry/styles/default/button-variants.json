@@ -1,0 +1,10 @@
+{
+  "name": "button-variants",
+  "files": [
+    {
+      "name": "button-variants.ts",
+      "content": "import { cva } from \"class-variance-authority\"\r\n\r\nexport const buttonVariants = cva(\r\n  \"inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2 data-[disabled]:pointer-events-none data-[disabled]:opacity-50\",\r\n  {\r\n    variants: {\r\n      variant: {\r\n        default:\r\n          \"bg-primary text-primary-foreground data-[hovered]:bg-primary/90\",\r\n        destructive:\r\n          \"bg-destructive text-destructive-foreground data-[hovered]:bg-destructive/90\",\r\n        outline:\r\n          \"border border-input bg-background data-[hovered]:bg-accent data-[hovered]:text-accent-foreground\",\r\n        secondary:\r\n          \"bg-secondary text-secondary-foreground data-[hovered]:bg-secondary/80\",\r\n        ghost: \"data-[hovered]:bg-accent data-[hovered]:text-accent-foreground\",\r\n        link: \"text-primary underline-offset-4 data-[hovered]:underline\",\r\n      },\r\n      size: {\r\n        default: \"h-10 px-4 py-2\",\r\n        sm: \"h-9 rounded-md px-3\",\r\n        lg: \"h-11 rounded-md px-8\",\r\n        icon: \"h-10 w-10\",\r\n      },\r\n    },\r\n    defaultVariants: {\r\n      variant: \"default\",\r\n      size: \"default\",\r\n    },\r\n  }\r\n)\r\n"
+    }
+  ],
+  "type": "components:ui"
+}

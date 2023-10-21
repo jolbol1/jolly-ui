@@ -1,0 +1,13 @@
+{
+  "name": "button",
+  "registryDependencies": [
+    "ui/button.tsx"
+  ],
+  "files": [
+    {
+      "name": "button.tsx",
+      "content": "import * as React from \"react\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\nimport {\n  Button as RaButton,\n  ButtonProps as RaButtonProps,\n} from \"react-aria-components\"\n\nimport { cn } from \"@/lib/utils\"\n\nimport { buttonVariants } from \"./button-variants\"\n\nexport interface ButtonProps\n  extends RaButtonProps,\n    VariantProps<typeof buttonVariants> {\n  className?: string\n}\n\nconst Button = React.forwardRef<HTMLButtonElement, ButtonProps>(\n  ({ className, variant, size, ...props }, ref) => {\n    return (\n      <RaButton\n        className={cn(buttonVariants({ variant, size, className }))}\n        ref={ref}\n        {...props}\n      />\n    )\n  }\n)\nButton.displayName = \"Button\"\n\nexport { Button, buttonVariants }\n"
+    }
+  ],
+  "type": "components:ui"
+}

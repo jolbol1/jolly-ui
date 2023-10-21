@@ -1,0 +1,13 @@
+{
+  "name": "label",
+  "dependencies": [
+    "@radix-ui/react-label"
+  ],
+  "files": [
+    {
+      "name": "label.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\nimport { Label as RaLabel } from \"react-aria-components\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst labelVariants = cva(\n  \"text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70\"\n)\n\nconst Label = React.forwardRef<\n  React.ElementRef<typeof RaLabel>,\n  React.ComponentPropsWithoutRef<typeof RaLabel> &\n    VariantProps<typeof labelVariants>\n>(({ className, ...props }, ref) => (\n  <RaLabel ref={ref} className={cn(labelVariants(), className)} {...props} />\n))\nLabel.displayName = \"Label\"\n\nexport { Label }\n"
+    }
+  ],
+  "type": "components:ui"
+}
