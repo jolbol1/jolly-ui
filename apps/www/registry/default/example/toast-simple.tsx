@@ -9,7 +9,7 @@ export default function ToastSimple() {
   return (
     <Button
       variant="outline"
-      onClick={() => {
+      onPress={() => {
         toast({
           description: "Your message has been sent.",
         })

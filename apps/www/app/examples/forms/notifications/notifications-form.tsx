@@ -119,8 +119,8 @@ export function NotificationsForm() {
                   </div>
                   <FormControl>
                     <Switch
-                      checked={field.value}
-                      onCheckedChange={field.onChange}
+                      isSelected={field.value}
+                      onChange={field.onChange}
                     />
                   </FormControl>
                 </FormItem>
@@ -141,8 +141,8 @@ export function NotificationsForm() {
                   </div>
                   <FormControl>
                     <Switch
-                      checked={field.value}
-                      onCheckedChange={field.onChange}
+                      isSelected={field.value}
+                      onChange={field.onChange}
                     />
                   </FormControl>
                 </FormItem>
@@ -161,8 +161,8 @@ export function NotificationsForm() {
                   </div>
                   <FormControl>
                     <Switch
-                      checked={field.value}
-                      onCheckedChange={field.onChange}
+                      isSelected={field.value}
+                      onChange={field.onChange}
                     />
                   </FormControl>
                 </FormItem>
@@ -181,9 +181,9 @@ export function NotificationsForm() {
                   </div>
                   <FormControl>
                     <Switch
-                      checked={field.value}
-                      onCheckedChange={field.onChange}
-                      disabled
+                      isSelected={field.value}
+                      onChange={field.onChange}
+                      isDisabled
                       aria-readonly
                     />
                   </FormControl>
@@ -198,10 +198,7 @@ export function NotificationsForm() {
           render={({ field }) => (
             <FormItem className="flex flex-row items-start space-x-3 space-y-0">
               <FormControl>
-                <Checkbox
-                  checked={field.value}
-                  onCheckedChange={field.onChange}
-                />
+                <Checkbox isSelected={field.value} onChange={field.onChange} />
               </FormControl>
               <div className="space-y-1 leading-none">
                 <FormLabel>

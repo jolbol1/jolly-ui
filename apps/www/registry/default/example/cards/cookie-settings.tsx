@@ -28,7 +28,7 @@ export function CardsCookieSettings() {
               its features.
             </span>
           </Label>
-          <Switch id="necessary" defaultChecked aria-label="Necessary" />
+          <Switch id="necessary" defaultSelected aria-label="Necessary" />
         </div>
         <div className="flex items-center justify-between space-x-4">
           <Label htmlFor="functional" className="flex flex-col space-y-1">

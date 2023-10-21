@@ -58,7 +58,6 @@ export function ModelSelector({ models, types, ...props }: ModelSelectorProps) {
         <PopoverTrigger asChild>
           <Button
             variant="outline"
-            role="combobox"
             aria-expanded={open}
             aria-label="Select a model"
             className="w-full justify-between"

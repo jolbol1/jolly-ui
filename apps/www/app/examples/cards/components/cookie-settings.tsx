@@ -28,7 +28,7 @@ export function DemoCookieSettings() {
               its features.
             </span>
           </Label>
-          <Switch id="necessary" defaultChecked />
+          <Switch id="necessary" defaultSelected />
         </div>
         <div className="flex items-center justify-between space-x-2">
           <Label htmlFor="functional" className="flex flex-col space-y-1">

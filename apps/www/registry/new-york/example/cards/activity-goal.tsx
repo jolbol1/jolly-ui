@@ -82,8 +82,8 @@ export function CardsActivityGoal() {
             variant="outline"
             size="icon"
             className="h-8 w-8 shrink-0 rounded-full"
-            onClick={() => onClick(-10)}
-            disabled={goal <= 200}
+            onPress={() => onClick(-10)}
+            isDisabled={goal <= 200}
           >
             <MinusIcon className="h-4 w-4" />
             <span className="sr-only">Decrease</span>
@@ -98,8 +98,8 @@ export function CardsActivityGoal() {
             variant="outline"
             size="icon"
             className="h-8 w-8 shrink-0 rounded-full"
-            onClick={() => onClick(10)}
-            disabled={goal >= 400}
+            onPress={() => onClick(10)}
+            isDisabled={goal >= 400}
           >
             <PlusIcon className="h-4 w-4" />
             <span className="sr-only">Increase</span>

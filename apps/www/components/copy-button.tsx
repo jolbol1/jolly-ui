@@ -7,7 +7,7 @@ import { NpmCommands } from "types/unist"
 
 import { Event, trackEvent } from "@/lib/events"
 import { cn } from "@/lib/utils"
-import { Button } from "@/registry/new-york/ui/button"
+import { Button, ButtonProps } from "@/registry/new-york/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -15,7 +15,7 @@ import {
   DropdownMenuTrigger,
 } from "@/registry/new-york/ui/dropdown-menu"
 
-interface CopyButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
+interface CopyButtonProps extends ButtonProps {
   value: string
   src?: string
   event?: Event["name"]
@@ -51,7 +51,7 @@ export function CopyButton({
         "relative z-10 h-6 w-6 text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50",
         className
       )}
-      onClick={() => {
+      onPress={() => {
         copyToClipboardWithMeta(
           value,
           event

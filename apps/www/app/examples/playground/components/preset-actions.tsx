@@ -73,7 +73,7 @@ export function PresetActions() {
               Playground Warnings
             </h4>
             <div className="flex items-start justify-between space-x-4 pt-3">
-              <Switch name="show" id="show" defaultChecked={true} />
+              <Switch name="show" id="show" defaultSelected={true} />
               <Label className="grid gap-1 font-normal" htmlFor="show">
                 <span className="font-semibold">
                   Show a warning when content is flagged
@@ -86,7 +86,7 @@ export function PresetActions() {
             </div>
           </div>
           <DialogFooter>
-            <Button variant="secondary" onClick={() => setIsOpen(false)}>
+            <Button variant="secondary" onPress={() => setIsOpen(false)}>
               Close
             </Button>
           </DialogFooter>
@@ -105,7 +105,7 @@ export function PresetActions() {
             <AlertDialogCancel>Cancel</AlertDialogCancel>
             <Button
               variant="destructive"
-              onClick={() => {
+              onPress={() => {
                 setShowDeleteDialog(false)
                 toast({
                   description: "This preset has been deleted.",

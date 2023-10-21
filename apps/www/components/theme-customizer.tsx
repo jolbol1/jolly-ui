@@ -39,11 +39,7 @@ import { Theme, themes } from "@/registry/themes"
 import "@/styles/mdx.css"
 import { Drawer } from "vaul"
 
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/registry/new-york/ui/tooltip"
+import { Tooltip, TooltipTrigger } from "@/registry/new-york/ui/tooltip"
 
 export function ThemeCustomizer() {
   const [config, setConfig] = useConfig()
@@ -80,50 +76,45 @@ export function ThemeCustomizer() {
                 }
 
                 return (
-                  <Tooltip key={theme.name}>
-                    <TooltipTrigger asChild>
-                      <button
-                        onClick={() =>
-                          setConfig({
-                            ...config,
-                            theme: theme.name,
-                          })
-                        }
-                        className={cn(
-                          "flex h-9 w-9 items-center justify-center rounded-full border-2 text-xs",
-                          isActive
-                            ? "border-[--theme-primary]"
-                            : "border-transparent"
-                        )}
-                        style={
-                          {
-                            "--theme-primary": `hsl(${
-                              theme?.activeColor[
-                                mode === "dark" ? "dark" : "light"
-                              ]
-                            })`,
-                          } as React.CSSProperties
-                        }
-                      >
-                        <span
-                          className={cn(
-                            "flex h-6 w-6 items-center justify-center rounded-full bg-[--theme-primary]"
-                          )}
-                        >
-                          {isActive && (
-                            <CheckIcon className="h-4 w-4 text-white" />
-                          )}
-                        </span>
-                        <span className="sr-only">{theme.label}</span>
-                      </button>
-                    </TooltipTrigger>
-                    <TooltipContent
-                      align="center"
-                      className="rounded-[0.5rem] bg-zinc-900 text-zinc-50"
+                  <TooltipTrigger key={theme.name}>
+                    <button
+                      onClick={() =>
+                        setConfig({
+                          ...config,
+                          theme: theme.name,
+                        })
+                      }
+                      className={cn(
+                        "flex h-9 w-9 items-center justify-center rounded-full border-2 text-xs",
+                        isActive
+                          ? "border-[--theme-primary]"
+                          : "border-transparent"
+                      )}
+                      style={
+                        {
+                          "--theme-primary": `hsl(${
+                            theme?.activeColor[
+                              mode === "dark" ? "dark" : "light"
+                            ]
+                          })`,
+                        } as React.CSSProperties
+                      }
                     >
+                      <span
+                        className={cn(
+                          "flex h-6 w-6 items-center justify-center rounded-full bg-[--theme-primary]"
+                        )}
+                      >
+                        {isActive && (
+                          <CheckIcon className="h-4 w-4 text-white" />
+                        )}
+                      </span>
+                      <span className="sr-only">{theme.label}</span>
+                    </button>
+                    <Tooltip className="rounded-[0.5rem] bg-zinc-900 text-zinc-50">
                       {theme.label}
-                    </TooltipContent>
-                  </Tooltip>
+                    </Tooltip>
+                  </TooltipTrigger>
                 )
               })}
             </>
@@ -184,7 +175,7 @@ function Customizer() {
           variant="ghost"
           size="icon"
           className="ml-auto rounded-[0.5rem]"
-          onClick={() => {
+          onPress={() => {
             setConfig({
               ...config,
               theme: "zinc",
@@ -235,7 +226,7 @@ function Customizer() {
             <Button
               variant={"outline"}
               size="sm"
-              onClick={() => setConfig({ ...config, style: "default" })}
+              onPress={() => setConfig({ ...config, style: "default" })}
               className={cn(
                 config.style === "default" && "border-2 border-primary"
               )}
@@ -245,7 +236,7 @@ function Customizer() {
             <Button
               variant={"outline"}
               size="sm"
-              onClick={() => setConfig({ ...config, style: "new-york" })}
+              onPress={() => setConfig({ ...config, style: "new-york" })}
               className={cn(
                 config.style === "new-york" && "border-2 border-primary"
               )}
@@ -265,7 +256,7 @@ function Customizer() {
                   variant={"outline"}
                   size="sm"
                   key={theme.name}
-                  onClick={() => {
+                  onPress={() => {
                     setConfig({
                       ...config,
                       theme: theme.name,
@@ -307,7 +298,7 @@ function Customizer() {
                   variant={"outline"}
                   size="sm"
                   key={value}
-                  onClick={() => {
+                  onPress={() => {
                     setConfig({
                       ...config,
                       radius: parseFloat(value),
@@ -332,7 +323,7 @@ function Customizer() {
                 <Button
                   variant={"outline"}
                   size="sm"
-                  onClick={() => setMode("light")}
+                  onPress={() => setMode("light")}
                   className={cn(mode === "light" && "border-2 border-primary")}
                 >
                   <SunIcon className="mr-1 -translate-x-1" />
@@ -341,7 +332,7 @@ function Customizer() {
                 <Button
                   variant={"outline"}
                   size="sm"
-                  onClick={() => setMode("dark")}
+                  onPress={() => setMode("dark")}
                   className={cn(mode === "dark" && "border-2 border-primary")}
                 >
                   <MoonIcon className="mr-1 -translate-x-1" />
@@ -376,7 +367,7 @@ function CopyCodeButton() {
     <>
       {activeTheme && (
         <Button
-          onClick={() => {
+          onPress={() => {
             copyToClipboardWithMeta(getThemeCode(activeTheme, config.radius), {
               name: "copy_theme_code",
               properties: {
@@ -412,7 +403,7 @@ function CopyCodeButton() {
             {activeTheme && (
               <Button
                 size="sm"
-                onClick={() => {
+                onPress={() => {
                   copyToClipboardWithMeta(
                     getThemeCode(activeTheme, config.radius),
                     {

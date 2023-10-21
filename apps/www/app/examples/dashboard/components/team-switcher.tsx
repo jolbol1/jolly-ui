@@ -91,7 +91,6 @@ export default function TeamSwitcher({ className }: TeamSwitcherProps) {
         <PopoverTrigger asChild>
           <Button
             variant="outline"
-            role="combobox"
             aria-expanded={open}
             aria-label="Select a team"
             className={cn("w-[200px] justify-between", className)}
@@ -202,7 +201,7 @@ export default function TeamSwitcher({ className }: TeamSwitcherProps) {
           </div>
         </div>
         <DialogFooter>
-          <Button variant="outline" onClick={() => setShowNewTeamDialog(false)}>
+          <Button variant="outline" onPress={() => setShowNewTeamDialog(false)}>
             Cancel
           </Button>
           <Button type="submit">Continue</Button>

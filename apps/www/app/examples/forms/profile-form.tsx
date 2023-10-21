@@ -179,7 +179,7 @@ export function ProfileForm() {
             variant="outline"
             size="sm"
             className="mt-2"
-            onClick={() => append({ value: "" })}
+            onPress={() => append({ value: "" })}
           >
             Add URL
           </Button>

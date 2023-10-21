@@ -54,7 +54,7 @@ export function CommandMenu({ ...props }: DialogProps) {
         className={cn(
           "relative w-full justify-start text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64"
         )}
-        onClick={() => setOpen(true)}
+        onPress={() => setOpen(true)}
         {...props}
       >
         <span className="hidden lg:inline-flex">Search documentation...</span>

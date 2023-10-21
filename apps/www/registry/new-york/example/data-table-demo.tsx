@@ -85,15 +85,15 @@ export const columns: ColumnDef<Payment>[] = [
     id: "select",
     header: ({ table }) => (
       <Checkbox
-        checked={table.getIsAllPageRowsSelected()}
-        onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+        isSelected={table.getIsAllPageRowsSelected()}
+        onChange={(value) => table.toggleAllPageRowsSelected(!!value)}
         aria-label="Select all"
       />
     ),
     cell: ({ row }) => (
       <Checkbox
-        checked={row.getIsSelected()}
-        onCheckedChange={(value) => row.toggleSelected(!!value)}
+        isSelected={row.getIsSelected()}
+        onChange={(value) => row.toggleSelected(!!value)}
         aria-label="Select row"
       />
     ),
@@ -113,7 +113,7 @@ export const columns: ColumnDef<Payment>[] = [
       return (
         <Button
           variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+          onPress={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
           Email
           <CaretSortIcon className="ml-2 h-4 w-4" />
@@ -293,16 +293,16 @@ export default function DataTableDemo() {
           <Button
             variant="outline"
             size="sm"
-            onClick={() => table.previousPage()}
-            disabled={!table.getCanPreviousPage()}
+            onPress={() => table.previousPage()}
+            isDisabled={!table.getCanPreviousPage()}
           >
             Previous
           </Button>
           <Button
             variant="outline"
             size="sm"
-            onClick={() => table.nextPage()}
-            disabled={!table.getCanNextPage()}
+            onPress={() => table.nextPage()}
+            isDisabled={!table.getCanNextPage()}
           >
             Next
           </Button>

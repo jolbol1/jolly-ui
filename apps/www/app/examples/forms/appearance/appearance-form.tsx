@@ -6,7 +6,8 @@ import { useForm } from "react-hook-form"
 import * as z from "zod"
 
 import { cn } from "@/lib/utils"
-import { Button, buttonVariants } from "@/registry/new-york/ui/button"
+import { Button } from "@/registry/new-york/ui/button"
+import { buttonVariants } from "@/registry/new-york/ui/button-variants"
 import {
   Form,
   FormControl,

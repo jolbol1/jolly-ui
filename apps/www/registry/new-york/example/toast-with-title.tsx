@@ -9,7 +9,7 @@ export default function ToastWithTitle() {
   return (
     <Button
       variant="outline"
-      onClick={() => {
+      onPress={() => {
         toast({
           title: "Uh oh! Something went wrong.",
           description: "There was a problem with your request.",

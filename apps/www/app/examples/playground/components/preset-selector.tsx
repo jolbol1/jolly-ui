@@ -36,7 +36,6 @@ export function PresetSelector({ presets, ...props }: PresetSelectorProps) {
       <PopoverTrigger asChild>
         <Button
           variant="outline"
-          role="combobox"
           aria-label="Load a preset..."
           aria-expanded={open}
           className="flex-1 justify-between md:max-w-[200px] lg:max-w-[300px]"
