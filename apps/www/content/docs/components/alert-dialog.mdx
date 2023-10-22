@@ -4,27 +4,18 @@ description: A modal dialog that interrupts the user with important content and 
 featured: true
 component: true
 radix:
-  link: https://www.radix-ui.com/docs/primitives/components/alert-dialog
-  api: https://www.radix-ui.com/docs/primitives/components/alert-dialog#api-reference
+  link: https://react-spectrum.adobe.com/react-aria/Modal.html
 ---
 
 <ComponentPreview name="alert-dialog-demo" />
 
 ## Installation
 
-<Tabs defaultValue="cli">
+<Tabs defaultValue="manual">
 
 <TabsList>
-  <TabsTrigger value="cli">CLI</TabsTrigger>
   <TabsTrigger value="manual">Manual</TabsTrigger>
 </TabsList>
-<TabsContent value="cli">
-
-```bash
-npx shadcn-ui@latest add alert-dialog
-```
-
-</TabsContent>
 
 <TabsContent value="manual">
 
@@ -33,7 +24,7 @@ npx shadcn-ui@latest add alert-dialog
 <Step>Install the following dependencies:</Step>
 
 ```bash
-npm install @radix-ui/react-alert-dialog
+npm install react-aria-components
 ```
 
 <Step>Copy and paste the following code into your project.</Step>
@@ -52,7 +43,6 @@ npm install @radix-ui/react-alert-dialog
 
 ```tsx
 import {
-  AlertDialog,
   AlertDialogAction,
   AlertDialogCancel,
   AlertDialogContent,
@@ -65,20 +55,26 @@ import {
 ```
 
 ```tsx
-<AlertDialog>
-  <AlertDialogTrigger>Open</AlertDialogTrigger>
+<AlertDialogTrigger>
+  <Button variant="outline">Show Dialog</Button>
   <AlertDialogContent>
-    <AlertDialogHeader>
-      <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
-      <AlertDialogDescription>
-        This action cannot be undone. This will permanently delete your account
-        and remove your data from our servers.
-      </AlertDialogDescription>
-    </AlertDialogHeader>
-    <AlertDialogFooter>
-      <AlertDialogCancel>Cancel</AlertDialogCancel>
-      <AlertDialogAction>Continue</AlertDialogAction>
-    </AlertDialogFooter>
+    {({ close }) => (
+      <>
+        <AlertDialogHeader>
+          <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+          <AlertDialogDescription>
+            This action cannot be undone. This will permanently delete your
+            account and remove your data from our servers.
+          </AlertDialogDescription>
+        </AlertDialogHeader>
+        <AlertDialogFooter>
+          <AlertDialogCancel autoFocus onPress={close}>
+            Cancel
+          </AlertDialogCancel>
+          <AlertDialogAction onPress={close}>Continue</AlertDialogAction>
+        </AlertDialogFooter>
+      </>
+    )}
   </AlertDialogContent>
-</AlertDialog>
+</AlertDialogTrigger>
 ```

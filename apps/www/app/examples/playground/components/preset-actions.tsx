@@ -5,13 +5,13 @@ import { Dialog } from "@radix-ui/react-dialog"
 import { DotsHorizontalIcon } from "@radix-ui/react-icons"
 
 import {
-  AlertDialog,
   AlertDialogCancel,
   AlertDialogContent,
   AlertDialogDescription,
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
+  AlertDialogTrigger,
 } from "@/registry/new-york/ui/alert-dialog"
 import { Button } from "@/registry/new-york/ui/button"
 import {
@@ -92,7 +92,10 @@ export function PresetActions() {
           </DialogFooter>
         </DialogContent>
       </Dialog>
-      <AlertDialog open={showDeleteDialog} onOpenChange={setShowDeleteDialog}>
+      <AlertDialogTrigger
+        isOpen={showDeleteDialog}
+        onOpenChange={setShowDeleteDialog}
+      >
         <AlertDialogContent>
           <AlertDialogHeader>
             <AlertDialogTitle>Are you sure absolutely sure?</AlertDialogTitle>
@@ -116,7 +119,7 @@ export function PresetActions() {
             </Button>
           </AlertDialogFooter>
         </AlertDialogContent>
-      </AlertDialog>
+      </AlertDialogTrigger>
     </>
   )
 }

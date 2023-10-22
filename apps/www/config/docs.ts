@@ -175,8 +175,6 @@ export const docsConfig: DocsConfig = {
           title: "Alert Dialog",
           href: "/docs/components/alert-dialog",
           items: [],
-          label: "todo",
-          disabled: true,
         },
         {
           title: "Aspect Ratio",
@@ -347,6 +345,7 @@ export const docsConfig: DocsConfig = {
           title: "Select",
           href: "/docs/components/select",
           items: [],
+
           label: "todo",
           disabled: true,
         },
