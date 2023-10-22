@@ -328,8 +328,6 @@ export const docsConfig: DocsConfig = {
           title: "Progress",
           href: "/docs/components/progress",
           items: [],
-          label: "todo",
-          disabled: true,
         },
         {
           title: "Radio Group",

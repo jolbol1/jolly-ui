@@ -12,5 +12,7 @@ export default function ProgressDemo() {
     return () => clearTimeout(timer)
   }, [])
 
-  return <Progress value={progress} className="w-[60%]" />
+  return (
+    <Progress aria-label="progress bar" value={progress} className="w-[60%]" />
+  )
 }
