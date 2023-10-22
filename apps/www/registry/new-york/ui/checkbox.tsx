@@ -18,12 +18,14 @@ const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
     <RaCheckbox
       ref={ref}
       className={cn(
-        "peer h-4 w-4 shrink-0 rounded-sm border border-primary shadow data-[focus-visible]:outline-none data-[focus-visible]:ring-1 data-[focus-visible]:ring-ring data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 data-[selected]:bg-primary data-[selected]:text-primary-foreground",
+        "peer h-4 w-4 shrink-0 rounded-sm border border-primary shadow data-[disabled]:cursor-not-allowed data-[selected]:bg-primary data-[selected]:text-primary-foreground data-[disabled]:opacity-50 data-[focus-visible]:outline-none data-[focus-visible]:ring-1 data-[focus-visible]:ring-ring",
         className
       )}
       {...props}
     >
-      {({ isSelected }) => (isSelected ? <Check className="h-4 w-4" /> : null)}
+      {({ isSelected }) =>
+        isSelected ? <Check className="h-4 w-[0.875rem]" /> : null
+      }
     </RaCheckbox>
   )
 )
