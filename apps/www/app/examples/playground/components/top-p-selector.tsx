@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { SliderProps } from "@radix-ui/react-slider"
+import { SliderProps } from "react-aria-components"
 
 import {
   HoverCard,
@@ -31,10 +31,10 @@ export function TopPSelector({ defaultValue }: TopPSelectorProps) {
             </div>
             <Slider
               id="top-p"
-              max={1}
+              maxValue={1}
               defaultValue={value}
               step={0.1}
-              onValueChange={setValue}
+              onChange={setValue}
               className="[&_[role=slider]]:h-4 [&_[role=slider]]:w-4"
               aria-label="Top P"
             />

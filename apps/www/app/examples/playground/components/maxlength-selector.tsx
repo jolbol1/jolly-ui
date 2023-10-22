@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { SliderProps } from "@radix-ui/react-slider"
+import { SliderProps } from "react-aria-components"
 
 import {
   HoverCard,
@@ -31,10 +31,10 @@ export function MaxLengthSelector({ defaultValue }: MaxLengthSelectorProps) {
             </div>
             <Slider
               id="maxlength"
-              max={4000}
+              maxValue={4000}
               defaultValue={value}
               step={10}
-              onValueChange={setValue}
+              onChange={setValue}
               className="[&_[role=slider]]:h-4 [&_[role=slider]]:w-4"
               aria-label="Maximum Length"
             />

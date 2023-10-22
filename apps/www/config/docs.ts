@@ -377,8 +377,6 @@ export const docsConfig: DocsConfig = {
           title: "Slider",
           href: "/docs/components/slider",
           items: [],
-          label: "todo",
-          disabled: true,
         },
         {
           title: "Switch",
