@@ -12,11 +12,7 @@ import {
   CommandInput,
   CommandItem,
 } from "@/registry/new-york/ui/command"
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/registry/new-york/ui/popover"
+import { Popover, PopoverTrigger } from "@/registry/new-york/ui/popover"
 
 const frameworks = [
   {
@@ -46,20 +42,18 @@ export default function ComboboxDemo() {
   const [value, setValue] = React.useState("")
 
   return (
-    <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger asChild>
-        <Button
-          variant="outline"
-          aria-expanded={open}
-          className="w-[200px] justify-between"
-        >
-          {value
-            ? frameworks.find((framework) => framework.value === value)?.label
-            : "Select framework..."}
-          <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-        </Button>
-      </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0">
+    <PopoverTrigger isOpen={open} onOpenChange={setOpen}>
+      <Button
+        variant="outline"
+        aria-expanded={open}
+        className="w-[200px] justify-between"
+      >
+        {value
+          ? frameworks.find((framework) => framework.value === value)?.label
+          : "Select framework..."}
+        <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+      </Button>
+      <Popover className="w-[200px] p-0">
         <Command>
           <CommandInput placeholder="Search framework..." className="h-9" />
           <CommandEmpty>No framework found.</CommandEmpty>
@@ -83,7 +77,7 @@ export default function ComboboxDemo() {
             ))}
           </CommandGroup>
         </Command>
-      </PopoverContent>
-    </Popover>
+      </Popover>
+    </PopoverTrigger>
   )
 }

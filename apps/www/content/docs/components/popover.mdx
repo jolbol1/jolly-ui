@@ -3,27 +3,18 @@ title: Popover
 description: Displays rich content in a portal, triggered by a button.
 component: true
 radix:
-  link: https://www.radix-ui.com/docs/primitives/components/popover
-  api: https://www.radix-ui.com/docs/primitives/components/popover#api-reference
+  link: https://react-spectrum.adobe.com/react-aria/Popover.html
 ---
 
 <ComponentPreview name="popover-demo" />
 
-## Installation
+## Installations test
 
-<Tabs defaultValue="cli">
+<Tabs defaultValue="manual">
 
 <TabsList>
-  <TabsTrigger value="cli">CLI</TabsTrigger>
   <TabsTrigger value="manual">Manual</TabsTrigger>
 </TabsList>
-<TabsContent value="cli">
-
-```bash
-npx shadcn-ui@latest add popover
-```
-
-</TabsContent>
 
 <TabsContent value="manual">
 
@@ -32,7 +23,7 @@ npx shadcn-ui@latest add popover
 <Step>Install the following dependencies:</Step>
 
 ```bash
-npm install @radix-ui/react-popover
+npm install react-aria-components
 ```
 
 <Step>Copy and paste the following code into your project.</Step>
@@ -50,16 +41,12 @@ npm install @radix-ui/react-popover
 ## Usage
 
 ```tsx
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover"
+import { Popover, PopoverTrigger } from "@/components/ui/popover"
 ```
 
 ```tsx
-<Popover>
-  <PopoverTrigger>Open</PopoverTrigger>
-  <PopoverContent>Place content for the popover here.</PopoverContent>
-</Popover>
+<PopoverTrigger>
+  <Button>Open</Button>
+  <Popover>Place content for the popover here.</Popover>
+</PopoverTrigger>
 ```

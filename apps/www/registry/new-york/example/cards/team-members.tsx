@@ -23,11 +23,7 @@ import {
   CommandItem,
   CommandList,
 } from "@/registry/new-york/ui/command"
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/registry/new-york/ui/popover"
+import { Popover, PopoverTrigger } from "@/registry/new-york/ui/popover"
 
 export function CardsTeamMembers() {
   return (
@@ -50,14 +46,12 @@ export function CardsTeamMembers() {
               <p className="text-sm text-muted-foreground">m@example.com</p>
             </div>
           </div>
-          <Popover>
-            <PopoverTrigger asChild>
-              <Button variant="outline" size="sm" className="ml-auto">
-                Owner{" "}
-                <ChevronDownIcon className="ml-2 h-4 w-4 text-muted-foreground" />
-              </Button>
-            </PopoverTrigger>
-            <PopoverContent className="p-0" align="end">
+          <PopoverTrigger>
+            <Button variant="outline" size="sm" className="ml-auto">
+              Owner{" "}
+              <ChevronDownIcon className="ml-2 h-4 w-4 text-muted-foreground" />
+            </Button>
+            <Popover className="p-0" placement="bottom end">
               <Command>
                 <CommandInput placeholder="Select new role..." />
                 <CommandList>
@@ -90,8 +84,8 @@ export function CardsTeamMembers() {
                   </CommandGroup>
                 </CommandList>
               </Command>
-            </PopoverContent>
-          </Popover>
+            </Popover>
+          </PopoverTrigger>
         </div>
         <div className="flex items-center justify-between space-x-4">
           <div className="flex items-center space-x-4">
@@ -104,14 +98,12 @@ export function CardsTeamMembers() {
               <p className="text-sm text-muted-foreground">p@example.com</p>
             </div>
           </div>
-          <Popover>
-            <PopoverTrigger asChild>
-              <Button variant="outline" size="sm" className="ml-auto">
-                Member{" "}
-                <ChevronDownIcon className="ml-2 h-4 w-4 text-muted-foreground" />
-              </Button>
-            </PopoverTrigger>
-            <PopoverContent className="p-0" align="end">
+          <PopoverTrigger>
+            <Button variant="outline" size="sm" className="ml-auto">
+              Member{" "}
+              <ChevronDownIcon className="ml-2 h-4 w-4 text-muted-foreground" />
+            </Button>
+            <Popover className="p-0">
               <Command>
                 <CommandInput placeholder="Select new role..." />
                 <CommandList>
@@ -144,8 +136,8 @@ export function CardsTeamMembers() {
                   </CommandGroup>
                 </CommandList>
               </Command>
-            </PopoverContent>
-          </Popover>
+            </Popover>
+          </PopoverTrigger>
         </div>
         <div className="flex items-center justify-between space-x-4">
           <div className="flex items-center space-x-4">
@@ -160,14 +152,12 @@ export function CardsTeamMembers() {
               <p className="text-sm text-muted-foreground">i@example.com</p>
             </div>
           </div>
-          <Popover>
-            <PopoverTrigger asChild>
-              <Button variant="outline" size="sm" className="ml-auto">
-                Member{" "}
-                <ChevronDownIcon className="ml-2 h-4 w-4 text-muted-foreground" />
-              </Button>
-            </PopoverTrigger>
-            <PopoverContent className="p-0" align="end">
+          <PopoverTrigger>
+            <Button variant="outline" size="sm" className="ml-auto">
+              Member{" "}
+              <ChevronDownIcon className="ml-2 h-4 w-4 text-muted-foreground" />
+            </Button>
+            <Popover className="p-0">
               <Command>
                 <CommandInput placeholder="Select new role..." />
                 <CommandList>
@@ -200,8 +190,8 @@ export function CardsTeamMembers() {
                   </CommandGroup>
                 </CommandList>
               </Command>
-            </PopoverContent>
-          </Popover>
+            </Popover>
+          </PopoverTrigger>
         </div>
       </CardContent>
     </Card>

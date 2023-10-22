@@ -28,11 +28,7 @@ import {
   DialogTrigger,
 } from "@/registry/new-york/ui/dialog"
 import { Label } from "@/registry/new-york/ui/label"
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/registry/new-york/ui/popover"
+import { Popover, PopoverTrigger } from "@/registry/new-york/ui/popover"
 import { Skeleton } from "@/registry/new-york/ui/skeleton"
 import { Theme, themes } from "@/registry/themes"
 
@@ -128,20 +124,18 @@ export function ThemeCustomizer() {
             </div>
           )}
         </div>
-        <Popover>
-          <PopoverTrigger asChild>
-            <Button variant="outline">
-              <Paintbrush className="mr-2 h-4 w-4" />
-              Customize
-            </Button>
-          </PopoverTrigger>
-          <PopoverContent
-            align="end"
+        <PopoverTrigger>
+          <Button variant="outline">
+            <Paintbrush className="mr-2 h-4 w-4" />
+            Customize
+          </Button>
+          <Popover
             className="z-40 w-[340px] rounded-[0.5rem] bg-white p-6 dark:bg-zinc-950"
+            placement="bottom end"
           >
             <Customizer />
-          </PopoverContent>
-        </Popover>
+          </Popover>
+        </PopoverTrigger>
       </div>
       <CopyCodeButton />
     </div>
@@ -191,16 +185,13 @@ function Customizer() {
         <div className="space-y-1.5">
           <div className="flex w-full items-center">
             <Label className="text-xs">Style</Label>
-            <Popover>
-              <PopoverTrigger>
-                <InfoCircledIcon className="ml-1 h-3 w-3" />
-                <span className="sr-only">About styles</span>
-              </PopoverTrigger>
-              <PopoverContent
+            <PopoverTrigger>
+              <InfoCircledIcon className="ml-1 h-3 w-3" />
+              <span className="sr-only">About styles</span>
+              <Popover
                 className="space-y-3 rounded-[0.5rem] text-sm"
-                side="right"
-                align="start"
-                alignOffset={-20}
+                placement="right top"
+                offset={-20}
               >
                 <p className="font-medium">
                   What is the difference between the New York and Default style?
@@ -219,8 +210,8 @@ function Customizer() {
                   with smaller buttons and cards with shadows. It uses icons
                   from Radix Icons.
                 </p>
-              </PopoverContent>
-            </Popover>
+              </Popover>
+            </PopoverTrigger>
           </div>
           <div className="grid grid-cols-3 gap-2">
             <Button

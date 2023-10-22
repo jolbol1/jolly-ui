@@ -11,11 +11,7 @@ import {
   CommandItem,
   CommandList,
 } from "@/registry/new-york/ui/command"
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/registry/new-york/ui/popover"
+import { Popover, PopoverTrigger } from "@/registry/new-york/ui/popover"
 
 type Status = {
   value: string
@@ -54,13 +50,11 @@ export default function ComboboxPopover() {
   return (
     <div className="flex items-center space-x-4">
       <p className="text-sm text-muted-foreground">Status</p>
-      <Popover open={open} onOpenChange={setOpen}>
-        <PopoverTrigger asChild>
-          <Button variant="outline" className="w-[150px] justify-start">
-            {selectedStatus ? <>{selectedStatus.label}</> : <>+ Set status</>}
-          </Button>
-        </PopoverTrigger>
-        <PopoverContent className="p-0" side="right" align="start">
+      <PopoverTrigger isOpen={open} onOpenChange={setOpen}>
+        <Button variant="outline" className="w-[150px] justify-start">
+          {selectedStatus ? <>{selectedStatus.label}</> : <>+ Set status</>}
+        </Button>
+        <Popover className="p-0" placement="right top">
           <Command>
             <CommandInput placeholder="Change status..." />
             <CommandList>
@@ -83,8 +77,8 @@ export default function ComboboxPopover() {
               </CommandGroup>
             </CommandList>
           </Command>
-        </PopoverContent>
-      </Popover>
+        </Popover>
+      </PopoverTrigger>
     </div>
   )
 }

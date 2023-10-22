@@ -3,19 +3,13 @@ import { CopyIcon } from "@radix-ui/react-icons"
 import { Button } from "@/registry/new-york/ui/button"
 import { Input } from "@/registry/new-york/ui/input"
 import { Label } from "@/registry/new-york/ui/label"
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/registry/new-york/ui/popover"
+import { Popover, PopoverTrigger } from "@/registry/new-york/ui/popover"
 
 export function PresetShare() {
   return (
-    <Popover>
-      <PopoverTrigger asChild>
-        <Button variant="secondary">Share</Button>
-      </PopoverTrigger>
-      <PopoverContent align="end" className="w-[520px]">
+    <PopoverTrigger>
+      <Button variant="secondary">Share</Button>
+      <Popover className="w-[520px]" placement="bottom end">
         <div className="flex flex-col space-y-2 text-center sm:text-left">
           <h3 className="text-lg font-semibold">Share preset</h3>
           <p className="text-sm text-muted-foreground">
@@ -40,7 +34,7 @@ export function PresetShare() {
             <CopyIcon className="h-4 w-4" />
           </Button>
         </div>
-      </PopoverContent>
-    </Popover>
+      </Popover>
+    </PopoverTrigger>
   )
 }

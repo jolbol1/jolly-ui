@@ -7,11 +7,7 @@ import { Calendar as CalendarIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/default/ui/button"
 import { Calendar } from "@/registry/default/ui/calendar"
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/registry/default/ui/popover"
+import { Popover, PopoverTrigger } from "@/registry/default/ui/popover"
 import {
   Select,
   SelectContent,
@@ -24,20 +20,18 @@ export default function DatePickerWithPresets() {
   const [date, setDate] = React.useState<Date>()
 
   return (
-    <Popover>
-      <PopoverTrigger asChild>
-        <Button
-          variant={"outline"}
-          className={cn(
-            "w-[280px] justify-start text-left font-normal",
-            !date && "text-muted-foreground"
-          )}
-        >
-          <CalendarIcon className="mr-2 h-4 w-4" />
-          {date ? format(date, "PPP") : <span>Pick a date</span>}
-        </Button>
-      </PopoverTrigger>
-      <PopoverContent className="flex w-auto flex-col space-y-2 p-2">
+    <PopoverTrigger>
+      <Button
+        variant={"outline"}
+        className={cn(
+          "w-[280px] justify-start text-left font-normal",
+          !date && "text-muted-foreground"
+        )}
+      >
+        <CalendarIcon className="mr-2 h-4 w-4" />
+        {date ? format(date, "PPP") : <span>Pick a date</span>}
+      </Button>
+      <Popover className="flex w-auto flex-col space-y-2 p-2">
         <Select
           onValueChange={(value) =>
             setDate(addDays(new Date(), parseInt(value)))
@@ -56,7 +50,7 @@ export default function DatePickerWithPresets() {
         <div className="rounded-md border">
           <Calendar mode="single" selected={date} onSelect={setDate} />
         </div>
-      </PopoverContent>
-    </Popover>
+      </Popover>
+    </PopoverTrigger>
   )
 }

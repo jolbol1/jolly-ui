@@ -20,11 +20,7 @@ import {
   CommandItem,
   CommandList,
 } from "@/registry/default/ui/command"
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/registry/default/ui/popover"
+import { Popover, PopoverTrigger } from "@/registry/default/ui/popover"
 
 type Status = {
   value: string
@@ -69,24 +65,18 @@ export default function ComboboxPopover() {
   return (
     <div className="flex items-center space-x-4">
       <p className="text-sm text-muted-foreground">Status</p>
-      <Popover open={open} onOpenChange={setOpen}>
-        <PopoverTrigger asChild>
-          <Button
-            variant="outline"
-            size="sm"
-            className="w-[150px] justify-start"
-          >
-            {selectedStatus ? (
-              <>
-                <selectedStatus.icon className="mr-2 h-4 w-4 shrink-0" />
-                {selectedStatus.label}
-              </>
-            ) : (
-              <>+ Set status</>
-            )}
-          </Button>
-        </PopoverTrigger>
-        <PopoverContent className="p-0" side="right" align="start">
+      <PopoverTrigger isOpen={open} onOpenChange={setOpen}>
+        <Button variant="outline" size="sm" className="w-[150px] justify-start">
+          {selectedStatus ? (
+            <>
+              <selectedStatus.icon className="mr-2 h-4 w-4 shrink-0" />
+              {selectedStatus.label}
+            </>
+          ) : (
+            <>+ Set status</>
+          )}
+        </Button>
+        <Popover className="p-0" placement="right top">
           <Command>
             <CommandInput placeholder="Change status..." />
             <CommandList>
@@ -117,8 +107,8 @@ export default function ComboboxPopover() {
               </CommandGroup>
             </CommandList>
           </Command>
-        </PopoverContent>
-      </Popover>
+        </Popover>
+      </PopoverTrigger>
     </div>
   )
 }

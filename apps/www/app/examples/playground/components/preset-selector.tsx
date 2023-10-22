@@ -14,11 +14,7 @@ import {
   CommandInput,
   CommandItem,
 } from "@/registry/new-york/ui/command"
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/registry/new-york/ui/popover"
+import { Popover, PopoverTrigger } from "@/registry/new-york/ui/popover"
 
 import { Preset } from "../data/presets"
 
@@ -32,19 +28,17 @@ export function PresetSelector({ presets, ...props }: PresetSelectorProps) {
   const router = useRouter()
 
   return (
-    <Popover open={open} onOpenChange={setOpen} {...props}>
-      <PopoverTrigger asChild>
-        <Button
-          variant="outline"
-          aria-label="Load a preset..."
-          aria-expanded={open}
-          className="flex-1 justify-between md:max-w-[200px] lg:max-w-[300px]"
-        >
-          {selectedPreset ? selectedPreset.name : "Load a preset..."}
-          <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-        </Button>
-      </PopoverTrigger>
-      <PopoverContent className="w-[300px] p-0">
+    <PopoverTrigger isOpen={open} onOpenChange={setOpen} {...props}>
+      <Button
+        variant="outline"
+        aria-label="Load a preset..."
+        aria-expanded={open}
+        className="flex-1 justify-between md:max-w-[200px] lg:max-w-[300px]"
+      >
+        {selectedPreset ? selectedPreset.name : "Load a preset..."}
+        <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+      </Button>
+      <Popover className="w-[300px] p-0">
         <Command>
           <CommandInput placeholder="Search presets..." />
           <CommandEmpty>No presets found.</CommandEmpty>
@@ -75,7 +69,7 @@ export function PresetSelector({ presets, ...props }: PresetSelectorProps) {
             </CommandItem>
           </CommandGroup>
         </Command>
-      </PopoverContent>
-    </Popover>
+      </Popover>
+    </PopoverTrigger>
   )
 }

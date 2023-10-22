@@ -23,11 +23,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/registry/default/ui/form"
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/registry/default/ui/popover"
+import { Popover, PopoverTrigger } from "@/registry/default/ui/popover"
 import { toast } from "@/registry/default/ui/use-toast"
 
 const languages = [
@@ -73,26 +69,24 @@ export default function ComboboxForm() {
           render={({ field }) => (
             <FormItem className="flex flex-col">
               <FormLabel>Language</FormLabel>
-              <Popover>
-                <PopoverTrigger asChild>
-                  <FormControl>
-                    <Button
-                      variant="outline"
-                      className={cn(
-                        "w-[200px] justify-between",
-                        !field.value && "text-muted-foreground"
-                      )}
-                    >
-                      {field.value
-                        ? languages.find(
-                            (language) => language.value === field.value
-                          )?.label
-                        : "Select language"}
-                      <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-                    </Button>
-                  </FormControl>
-                </PopoverTrigger>
-                <PopoverContent className="w-[200px] p-0">
+              <PopoverTrigger>
+                <FormControl>
+                  <Button
+                    variant="outline"
+                    className={cn(
+                      "w-[200px] justify-between",
+                      !field.value && "text-muted-foreground"
+                    )}
+                  >
+                    {field.value
+                      ? languages.find(
+                          (language) => language.value === field.value
+                        )?.label
+                      : "Select language"}
+                    <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                  </Button>
+                </FormControl>
+                <Popover className="w-[200px] p-0">
                   <Command>
                     <CommandInput placeholder="Search language..." />
                     <CommandEmpty>No language found.</CommandEmpty>
@@ -118,8 +112,8 @@ export default function ComboboxForm() {
                       ))}
                     </CommandGroup>
                   </Command>
-                </PopoverContent>
-              </Popover>
+                </Popover>
+              </PopoverTrigger>
               <FormDescription>
                 This is the language that will be used in the dashboard.
               </FormDescription>

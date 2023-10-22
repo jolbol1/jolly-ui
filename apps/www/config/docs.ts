@@ -323,8 +323,6 @@ export const docsConfig: DocsConfig = {
           title: "Popover",
           href: "/docs/components/popover",
           items: [],
-          label: "todo",
-          disabled: true,
         },
         {
           title: "Progress",

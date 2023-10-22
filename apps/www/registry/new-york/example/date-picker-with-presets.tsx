@@ -7,11 +7,7 @@ import { addDays, format } from "date-fns"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york/ui/button"
 import { Calendar } from "@/registry/new-york/ui/calendar"
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/registry/new-york/ui/popover"
+import { Popover, PopoverTrigger } from "@/registry/new-york/ui/popover"
 import {
   Select,
   SelectContent,
@@ -24,22 +20,20 @@ export default function DatePickerWithPresets() {
   const [date, setDate] = React.useState<Date>()
 
   return (
-    <Popover>
-      <PopoverTrigger asChild>
-        <Button
-          variant={"outline"}
-          className={cn(
-            "w-[240px] justify-start text-left font-normal",
-            !date && "text-muted-foreground"
-          )}
-        >
-          <CalendarIcon className="mr-2 h-4 w-4" />
-          {date ? format(date, "PPP") : <span>Pick a date</span>}
-        </Button>
-      </PopoverTrigger>
-      <PopoverContent
-        align="start"
+    <PopoverTrigger>
+      <Button
+        variant={"outline"}
+        className={cn(
+          "w-[240px] justify-start text-left font-normal",
+          !date && "text-muted-foreground"
+        )}
+      >
+        <CalendarIcon className="mr-2 h-4 w-4" />
+        {date ? format(date, "PPP") : <span>Pick a date</span>}
+      </Button>
+      <Popover
         className="flex w-auto flex-col space-y-2 p-2"
+        placement="bottom start"
       >
         <Select
           onValueChange={(value) =>
@@ -59,7 +53,7 @@ export default function DatePickerWithPresets() {
         <div className="rounded-md border">
           <Calendar mode="single" selected={date} onSelect={setDate} />
         </div>
-      </PopoverContent>
-    </Popover>
+      </Popover>
+    </PopoverTrigger>
   )
 }

@@ -34,11 +34,7 @@ import {
 } from "@/registry/new-york/ui/dialog"
 import { Input } from "@/registry/new-york/ui/input"
 import { Label } from "@/registry/new-york/ui/label"
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/registry/new-york/ui/popover"
+import { Popover, PopoverTrigger } from "@/registry/new-york/ui/popover"
 import {
   Select,
   SelectContent,
@@ -78,7 +74,7 @@ type PopoverTriggerProps = React.ComponentPropsWithoutRef<typeof PopoverTrigger>
 
 interface TeamSwitcherProps extends PopoverTriggerProps {}
 
-export default function TeamSwitcher({ className }: TeamSwitcherProps) {
+export default function TeamSwitcher() {
   const [open, setOpen] = React.useState(false)
   const [showNewTeamDialog, setShowNewTeamDialog] = React.useState(false)
   const [selectedTeam, setSelectedTeam] = React.useState<Team>(
@@ -87,26 +83,24 @@ export default function TeamSwitcher({ className }: TeamSwitcherProps) {
 
   return (
     <Dialog open={showNewTeamDialog} onOpenChange={setShowNewTeamDialog}>
-      <Popover open={open} onOpenChange={setOpen}>
-        <PopoverTrigger asChild>
-          <Button
-            variant="outline"
-            aria-expanded={open}
-            aria-label="Select a team"
-            className={cn("w-[200px] justify-between", className)}
-          >
-            <Avatar className="mr-2 h-5 w-5">
-              <AvatarImage
-                src={`https://avatar.vercel.sh/${selectedTeam.value}.png`}
-                alt={selectedTeam.label}
-              />
-              <AvatarFallback>SC</AvatarFallback>
-            </Avatar>
-            {selectedTeam.label}
-            <CaretSortIcon className="ml-auto h-4 w-4 shrink-0 opacity-50" />
-          </Button>
-        </PopoverTrigger>
-        <PopoverContent className="w-[200px] p-0">
+      <PopoverTrigger isOpen={open} onOpenChange={setOpen}>
+        <Button
+          variant="outline"
+          aria-expanded={open}
+          aria-label="Select a team"
+          className={cn("w-[200px] justify-between")}
+        >
+          <Avatar className="mr-2 h-5 w-5">
+            <AvatarImage
+              src={`https://avatar.vercel.sh/${selectedTeam.value}.png`}
+              alt={selectedTeam.label}
+            />
+            <AvatarFallback>SC</AvatarFallback>
+          </Avatar>
+          {selectedTeam.label}
+          <CaretSortIcon className="ml-auto h-4 w-4 shrink-0 opacity-50" />
+        </Button>
+        <Popover className="w-[200px] p-0">
           <Command>
             <CommandList>
               <CommandInput placeholder="Search team..." />
@@ -161,8 +155,8 @@ export default function TeamSwitcher({ className }: TeamSwitcherProps) {
               </CommandGroup>
             </CommandList>
           </Command>
-        </PopoverContent>
-      </Popover>
+        </Popover>
+      </PopoverTrigger>
       <DialogContent>
         <DialogHeader>
           <DialogTitle>Create team</DialogTitle>
