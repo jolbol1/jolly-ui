@@ -1,53 +1,42 @@
 "use client"
 
 import * as React from "react"
-import { DropdownMenuCheckboxItemProps } from "@radix-ui/react-dropdown-menu"
+import { type Selection } from "react-aria-components"
 
 import { Button } from "@/registry/default/ui/button"
 import {
-  DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/registry/default/ui/dropdown-menu"
 
-type Checked = DropdownMenuCheckboxItemProps["checked"]
-
 export default function DropdownMenuCheckboxes() {
-  const [showStatusBar, setShowStatusBar] = React.useState<Checked>(true)
-  const [showActivityBar, setShowActivityBar] = React.useState<Checked>(false)
-  const [showPanel, setShowPanel] = React.useState<Checked>(false)
+  const [selected, setSelected] = React.useState<Selection>(
+    new Set(["activity"])
+  )
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline">Open</Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56">
-        <DropdownMenuLabel>Appearance</DropdownMenuLabel>
-        <DropdownMenuSeparator />
-        <DropdownMenuCheckboxItem
-          checked={showStatusBar}
-          onCheckedChange={setShowStatusBar}
-        >
-          Status Bar
-        </DropdownMenuCheckboxItem>
-        <DropdownMenuCheckboxItem
-          checked={showActivityBar}
-          onCheckedChange={setShowActivityBar}
-          disabled
-        >
-          Activity Bar
-        </DropdownMenuCheckboxItem>
-        <DropdownMenuCheckboxItem
-          checked={showPanel}
-          onCheckedChange={setShowPanel}
-        >
-          Panel
-        </DropdownMenuCheckboxItem>
+    <DropdownMenuTrigger>
+      <Button variant="outline">Open</Button>
+      <DropdownMenuContent
+        selectionMode="multiple"
+        selectedKeys={selected}
+        onSelectionChange={setSelected}
+        className="w-56"
+      >
+        <DropdownMenuGroup>
+          <DropdownMenuLabel separator>Appearance</DropdownMenuLabel>
+          <DropdownMenuCheckboxItem id="status">
+            Status Bar
+          </DropdownMenuCheckboxItem>
+          <DropdownMenuCheckboxItem id="activity">
+            Activity Bar
+          </DropdownMenuCheckboxItem>
+          <DropdownMenuCheckboxItem id="panel">Panel</DropdownMenuCheckboxItem>
+        </DropdownMenuGroup>
       </DropdownMenuContent>
-    </DropdownMenu>
+    </DropdownMenuTrigger>
   )
 }

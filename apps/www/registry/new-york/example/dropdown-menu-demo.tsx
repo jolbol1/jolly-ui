@@ -1,29 +1,21 @@
 import { Button } from "@/registry/new-york/ui/button"
 import {
-  DropdownMenu,
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuPortal,
   DropdownMenuSeparator,
   DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/registry/new-york/ui/dropdown-menu"
 
 export default function DropdownMenuDemo() {
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline">Open</Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56">
-        <DropdownMenuLabel>My Account</DropdownMenuLabel>
-        <DropdownMenuSeparator />
+    <DropdownMenuTrigger>
+      <Button variant="outline">Open</Button>
+      <DropdownMenuContent disabledKeys={["api"]} className="w-56">
         <DropdownMenuGroup>
+          <DropdownMenuLabel separator>My Account</DropdownMenuLabel>
           <DropdownMenuItem>
             Profile
             <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
@@ -44,17 +36,6 @@ export default function DropdownMenuDemo() {
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem>Team</DropdownMenuItem>
-          <DropdownMenuSub>
-            <DropdownMenuSubTrigger>Invite users</DropdownMenuSubTrigger>
-            <DropdownMenuPortal>
-              <DropdownMenuSubContent>
-                <DropdownMenuItem>Email</DropdownMenuItem>
-                <DropdownMenuItem>Message</DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem>More...</DropdownMenuItem>
-              </DropdownMenuSubContent>
-            </DropdownMenuPortal>
-          </DropdownMenuSub>
           <DropdownMenuItem>
             New Team
             <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
@@ -63,13 +44,13 @@ export default function DropdownMenuDemo() {
         <DropdownMenuSeparator />
         <DropdownMenuItem>GitHub</DropdownMenuItem>
         <DropdownMenuItem>Support</DropdownMenuItem>
-        <DropdownMenuItem disabled>API</DropdownMenuItem>
+        <DropdownMenuItem id="api">API</DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
           Log out
           <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
         </DropdownMenuItem>
       </DropdownMenuContent>
-    </DropdownMenu>
+    </DropdownMenuTrigger>
   )
 }

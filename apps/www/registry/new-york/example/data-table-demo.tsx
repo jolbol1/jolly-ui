@@ -22,7 +22,6 @@ import {
 import { Button } from "@/registry/new-york/ui/button"
 import { Checkbox } from "@/registry/new-york/ui/checkbox"
 import {
-  DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuItem,
@@ -144,25 +143,24 @@ export const columns: ColumnDef<Payment>[] = [
       const payment = row.original
 
       return (
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="h-8 w-8 p-0">
-              <span className="sr-only">Open menu</span>
-              <DotsHorizontalIcon className="h-4 w-4" />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
+        <DropdownMenuTrigger>
+          <Button variant="ghost" className="h-8 w-8 p-0">
+            <span className="sr-only">Open menu</span>
+            <DotsHorizontalIcon className="h-4 w-4" />
+          </Button>
+          <DropdownMenuContent
+            onAction={(key) =>
+              key == "copy" ? navigator.clipboard.writeText(payment.id) : null
+            }
+            placement="bottom end"
+          >
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
-            <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(payment.id)}
-            >
-              Copy payment ID
-            </DropdownMenuItem>
+            <DropdownMenuItem id="copy">Copy payment ID</DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem>View customer</DropdownMenuItem>
             <DropdownMenuItem>View payment details</DropdownMenuItem>
           </DropdownMenuContent>
-        </DropdownMenu>
+        </DropdownMenuTrigger>
       )
     },
   },
@@ -207,7 +205,7 @@ export default function DataTableDemo() {
           }
           className="max-w-sm"
         />
-        <DropdownMenu>
+        {/* <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" className="ml-auto">
               Columns <ChevronDownIcon className="ml-2 h-4 w-4" />
@@ -232,7 +230,7 @@ export default function DataTableDemo() {
                 )
               })}
           </DropdownMenuContent>
-        </DropdownMenu>
+        </DropdownMenu> */}
       </div>
       <div className="rounded-md border">
         <Table>

@@ -68,6 +68,7 @@
     "react-day-picker": "^8.7.1",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.44.2",
+    "react-stately": "^3.27.1",
     "react-wrap-balancer": "^0.4.1",
     "recharts": "^2.6.2",
     "sharp": "^0.31.3",

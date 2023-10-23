@@ -18,6 +18,8 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table"
+import { Collection, Selection } from "react-aria-components"
+import { useListData } from "react-stately"
 
 import { Button } from "@/registry/default/ui/button"
 import {
@@ -29,7 +31,6 @@ import {
 } from "@/registry/default/ui/card"
 import { Checkbox } from "@/registry/default/ui/checkbox"
 import {
-  DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuItem,
@@ -151,25 +152,24 @@ export const columns: ColumnDef<Payment>[] = [
       const payment = row.original
 
       return (
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="h-8 w-8 p-0">
-              <span className="sr-only">Open menu</span>
-              <DotsHorizontalIcon className="h-4 w-4" />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
+        <DropdownMenuTrigger>
+          <Button variant="ghost" className="h-8 w-8 p-0">
+            <span className="sr-only">Open menu</span>
+            <DotsHorizontalIcon className="h-4 w-4" />
+          </Button>
+          <DropdownMenuContent
+            onAction={(key) =>
+              key == "copy" ? navigator.clipboard.writeText(payment.id) : null
+            }
+            placement="bottom end"
+          >
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
-            <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(payment.id)}
-            >
-              Copy payment ID
-            </DropdownMenuItem>
+            <DropdownMenuItem id="copy">Copy payment ID</DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem>View customer</DropdownMenuItem>
             <DropdownMenuItem>View payment details</DropdownMenuItem>
           </DropdownMenuContent>
-        </DropdownMenu>
+        </DropdownMenuTrigger>
       )
     },
   },
@@ -203,6 +203,15 @@ export function CardsDataTable() {
     },
   })
 
+  const [selectedCols, setSelectedCols] = React.useState<Selection>(
+    new Set(
+      table
+        .getAllColumns()
+        .filter((column) => column.getCanHide())
+        .map((c) => c.id)
+    )
+  )
+
   return (
     <Card>
       <CardHeader>
@@ -219,32 +228,31 @@ export function CardsDataTable() {
             }
             className="max-w-sm"
           />
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="outline" className="ml-auto">
-                Columns <ChevronDownIcon className="ml-2 h-4 w-4" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              {table
-                .getAllColumns()
-                .filter((column) => column.getCanHide())
-                .map((column) => {
-                  return (
-                    <DropdownMenuCheckboxItem
-                      key={column.id}
-                      className="capitalize"
-                      checked={column.getIsVisible()}
-                      onCheckedChange={(value) =>
-                        column.toggleVisibility(!!value)
-                      }
-                    >
-                      {column.id}
-                    </DropdownMenuCheckboxItem>
-                  )
-                })}
+          <DropdownMenuTrigger>
+            <Button variant="outline" className="ml-auto">
+              Columns <ChevronDownIcon className="ml-2 h-4 w-4" />
+            </Button>
+            <DropdownMenuContent
+              selectedKeys={selectedCols}
+              selectionMode="multiple"
+              placement="bottom end"
+            >
+              <Collection
+                items={table
+                  .getAllColumns()
+                  .filter((column) => column.getCanHide())}
+              >
+                {(item) => (
+                  <DropdownMenuCheckboxItem
+                    key={item.id}
+                    className="capitalize"
+                  >
+                    {item.id}
+                  </DropdownMenuCheckboxItem>
+                )}
+              </Collection>
             </DropdownMenuContent>
-          </DropdownMenu>
+          </DropdownMenuTrigger>
         </div>
         <div className="rounded-md border">
           <Table>
@@ -255,7 +263,7 @@ export function CardsDataTable() {
                     return (
                       <TableHead
                         key={header.id}
-                        className="[&:has([role=checkbox])]:pl-3"
+                        className="[&:has([type=checkbox])]:pl-3"
                       >
                         {header.isPlaceholder
                           ? null
@@ -279,7 +287,7 @@ export function CardsDataTable() {
                     {row.getVisibleCells().map((cell) => (
                       <TableCell
                         key={cell.id}
-                        className="[&:has([role=checkbox])]:pl-3"
+                        className="[&:has([type=checkbox])]:pl-3"
                       >
                         {flexRender(
                           cell.column.columnDef.cell,

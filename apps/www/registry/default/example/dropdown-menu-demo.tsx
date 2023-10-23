@@ -17,30 +17,22 @@ import {
 
 import { Button } from "@/registry/default/ui/button"
 import {
-  DropdownMenu,
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuPortal,
   DropdownMenuSeparator,
   DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/registry/default/ui/dropdown-menu"
 
 export default function DropdownMenuDemo() {
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline">Open</Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56">
-        <DropdownMenuLabel>My Account</DropdownMenuLabel>
-        <DropdownMenuSeparator />
+    <DropdownMenuTrigger>
+      <Button variant="outline">Open</Button>
+      <DropdownMenuContent placement="top" className="w-56">
         <DropdownMenuGroup>
+          <DropdownMenuLabel separator>My Account</DropdownMenuLabel>
           <DropdownMenuItem>
             <User className="mr-2 h-4 w-4" />
             <span>Profile</span>
@@ -68,29 +60,6 @@ export default function DropdownMenuDemo() {
             <Users className="mr-2 h-4 w-4" />
             <span>Team</span>
           </DropdownMenuItem>
-          <DropdownMenuSub>
-            <DropdownMenuSubTrigger>
-              <UserPlus className="mr-2 h-4 w-4" />
-              <span>Invite users</span>
-            </DropdownMenuSubTrigger>
-            <DropdownMenuPortal>
-              <DropdownMenuSubContent>
-                <DropdownMenuItem>
-                  <Mail className="mr-2 h-4 w-4" />
-                  <span>Email</span>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <MessageSquare className="mr-2 h-4 w-4" />
-                  <span>Message</span>
-                </DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem>
-                  <PlusCircle className="mr-2 h-4 w-4" />
-                  <span>More...</span>
-                </DropdownMenuItem>
-              </DropdownMenuSubContent>
-            </DropdownMenuPortal>
-          </DropdownMenuSub>
           <DropdownMenuItem>
             <Plus className="mr-2 h-4 w-4" />
             <span>New Team</span>
@@ -106,7 +75,7 @@ export default function DropdownMenuDemo() {
           <LifeBuoy className="mr-2 h-4 w-4" />
           <span>Support</span>
         </DropdownMenuItem>
-        <DropdownMenuItem disabled>
+        <DropdownMenuItem>
           <Cloud className="mr-2 h-4 w-4" />
           <span>API</span>
         </DropdownMenuItem>
@@ -117,6 +86,6 @@ export default function DropdownMenuDemo() {
           <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
         </DropdownMenuItem>
       </DropdownMenuContent>
-    </DropdownMenu>
+    </DropdownMenuTrigger>
   )
 }

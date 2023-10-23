@@ -18,7 +18,7 @@ const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
     <RaCheckbox
       ref={ref}
       className={cn(
-        "peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background data-[disabled]:cursor-not-allowed data-[selected]:bg-primary data-[selected]:text-primary-foreground data-[disabled]:opacity-50 data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2",
+        "peer block h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background data-[disabled]:cursor-not-allowed data-[selected]:bg-primary data-[selected]:text-primary-foreground data-[disabled]:opacity-50 data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2",
         className
       )}
       {...props}

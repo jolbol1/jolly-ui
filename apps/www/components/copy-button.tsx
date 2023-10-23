@@ -9,7 +9,6 @@ import { Event, trackEvent } from "@/lib/events"
 import { cn } from "@/lib/utils"
 import { Button, ButtonProps } from "@/registry/new-york/ui/button"
 import {
-  DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
@@ -103,33 +102,37 @@ export function CopyWithClassNames({
   }, [])
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button
-          size="icon"
-          variant="ghost"
-          className={cn(
-            "relative z-10 h-6 w-6 text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50",
-            className
-          )}
-        >
-          {hasCopied ? (
-            <CheckIcon className="h-3 w-3" />
-          ) : (
-            <CopyIcon className="h-3 w-3" />
-          )}
-          <span className="sr-only">Copy</span>
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => copyToClipboard(value)}>
-          Component
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => copyToClipboard(classNames)}>
-          Classname
-        </DropdownMenuItem>
+    <DropdownMenuTrigger>
+      <Button
+        size="icon"
+        variant="ghost"
+        className={cn(
+          "relative z-10 h-6 w-6 text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50",
+          className
+        )}
+      >
+        {hasCopied ? (
+          <CheckIcon className="h-3 w-3" />
+        ) : (
+          <CopyIcon className="h-3 w-3" />
+        )}
+        <span className="sr-only">Copy</span>
+      </Button>
+      <DropdownMenuContent
+        onAction={(key) => {
+          if (key == "component") {
+            copyToClipboard(value)
+          }
+          if (key == "classname") {
+            copyToClipboard(classNames)
+          }
+        }}
+        placement="bottom end"
+      >
+        <DropdownMenuItem id="component">Component</DropdownMenuItem>
+        <DropdownMenuItem id="classname">Classname</DropdownMenuItem>
       </DropdownMenuContent>
-    </DropdownMenu>
+    </DropdownMenuTrigger>
   )
 }
 
@@ -165,46 +168,31 @@ export function CopyNpmCommandButton({
   )
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button
-          size="icon"
-          variant="ghost"
-          className={cn(
-            "relative z-10 h-6 w-6 text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50",
-            className
-          )}
-        >
-          {hasCopied ? (
-            <CheckIcon className="h-3 w-3" />
-          ) : (
-            <CopyIcon className="h-3 w-3" />
-          )}
-          <span className="sr-only">Copy</span>
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem
-          onClick={() => copyCommand(commands.__npmCommand__, "npm")}
-        >
-          npm
-        </DropdownMenuItem>
-        <DropdownMenuItem
-          onClick={() => copyCommand(commands.__yarnCommand__, "yarn")}
-        >
-          yarn
-        </DropdownMenuItem>
-        <DropdownMenuItem
-          onClick={() => copyCommand(commands.__pnpmCommand__, "pnpm")}
-        >
-          pnpm
-        </DropdownMenuItem>
-        <DropdownMenuItem
-          onClick={() => copyCommand(commands.__bunCommand__, "bun")}
-        >
-          bun
-        </DropdownMenuItem>
+    <DropdownMenuTrigger>
+      <Button
+        size="icon"
+        variant="ghost"
+        className={cn(
+          "relative z-10 h-6 w-6 text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50",
+          className
+        )}
+      >
+        {hasCopied ? (
+          <CheckIcon className="h-3 w-3" />
+        ) : (
+          <CopyIcon className="h-3 w-3" />
+        )}
+        <span className="sr-only">Copy</span>
+      </Button>
+      <DropdownMenuContent
+        onAction={(key) => copyCommand(commands.__npmCommand__, key as any)}
+        placement="bottom end"
+      >
+        <DropdownMenuItem id="npm">npm</DropdownMenuItem>
+        <DropdownMenuItem id="yarn">yarn</DropdownMenuItem>
+        <DropdownMenuItem id="pnpm">pnpm</DropdownMenuItem>
+        <DropdownMenuItem id="bun">bun</DropdownMenuItem>
       </DropdownMenuContent>
-    </DropdownMenu>
+    </DropdownMenuTrigger>
   )
 }

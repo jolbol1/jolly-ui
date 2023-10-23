@@ -274,8 +274,6 @@ export const docsConfig: DocsConfig = {
           title: "Dropdown Menu",
           href: "/docs/components/dropdown-menu",
           items: [],
-          label: "todo",
-          disabled: true,
         },
         {
           title: "Form",

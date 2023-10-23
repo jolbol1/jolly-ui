@@ -22,7 +22,6 @@ import {
   DialogTitle,
 } from "@/registry/new-york/ui/dialog"
 import {
-  DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
@@ -38,26 +37,31 @@ export function PresetActions() {
 
   return (
     <>
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button variant="secondary">
-            <span className="sr-only">Actions</span>
-            <DotsHorizontalIcon className="h-4 w-4" />
-          </Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent align="end">
-          <DropdownMenuItem onSelect={() => setIsOpen(true)}>
+      <DropdownMenuTrigger>
+        <Button variant="secondary">
+          <span className="sr-only">Actions</span>
+          <DotsHorizontalIcon className="h-4 w-4" />
+        </Button>
+        <DropdownMenuContent
+          onAction={(key) => {
+            if (key == "open") {
+              setIsOpen(true)
+            }
+            if (key == "delete") {
+              setShowDeleteDialog(true)
+            }
+          }}
+          placement="bottom end"
+        >
+          <DropdownMenuItem id="open">
             Content filter preferences
           </DropdownMenuItem>
           <DropdownMenuSeparator />
-          <DropdownMenuItem
-            onSelect={() => setShowDeleteDialog(true)}
-            className="text-red-600"
-          >
+          <DropdownMenuItem className="text-red-600" id="delete">
             Delete preset
           </DropdownMenuItem>
         </DropdownMenuContent>
-      </DropdownMenu>
+      </DropdownMenuTrigger>
       <Dialog open={open} onOpenChange={setIsOpen}>
         <DialogContent>
           <DialogHeader>
@@ -105,7 +109,9 @@ export function PresetActions() {
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogCancel onPress={() => setShowDeleteDialog(false)}>
+              Cancel
+            </AlertDialogCancel>
             <Button
               variant="destructive"
               onPress={() => {

@@ -1,9 +1,13 @@
+"use client"
+
+import React from "react"
 import {
   ChevronDownIcon,
   CircleIcon,
   PlusIcon,
   StarIcon,
 } from "@radix-ui/react-icons"
+import type { Selection } from "react-aria-components"
 
 import { Button } from "@/registry/new-york/ui/button"
 import {
@@ -14,9 +18,9 @@ import {
   CardTitle,
 } from "@/registry/new-york/ui/card"
 import {
-  DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
@@ -25,6 +29,8 @@ import {
 import { Separator } from "@/registry/new-york/ui/separator"
 
 export function DemoGithub() {
+  let [selected, setSelected] = React.useState<Selection>(new Set(["future"]))
+
   return (
     <Card>
       <CardHeader className="grid grid-cols-[1fr_110px] items-start gap-4 space-y-0">
@@ -41,31 +47,36 @@ export function DemoGithub() {
             Star
           </Button>
           <Separator orientation="vertical" className="h-[20px]" />
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="secondary" className="px-2 shadow-none">
-                <ChevronDownIcon className="h-4 w-4 text-secondary-foreground" />
-              </Button>
-            </DropdownMenuTrigger>
+          <DropdownMenuTrigger>
+            <Button variant="secondary" className="px-2 shadow-none">
+              <ChevronDownIcon className="h-4 w-4 text-secondary-foreground" />
+            </Button>
             <DropdownMenuContent
-              align="end"
-              alignOffset={-5}
+              selectedKeys={selected}
+              onSelectionChange={setSelected}
+              selectionMode="multiple"
+              placement="bottom end"
+              offset={5}
               className="w-[200px]"
-              forceMount
             >
-              <DropdownMenuLabel>Suggested Lists</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuCheckboxItem checked>
-                Future Ideas
-              </DropdownMenuCheckboxItem>
-              <DropdownMenuCheckboxItem>My Stack</DropdownMenuCheckboxItem>
-              <DropdownMenuCheckboxItem>Inspiration</DropdownMenuCheckboxItem>
+              <DropdownMenuGroup>
+                <DropdownMenuLabel separator>Suggested Lists</DropdownMenuLabel>
+                <DropdownMenuCheckboxItem id="future">
+                  Future Ideas
+                </DropdownMenuCheckboxItem>
+                <DropdownMenuCheckboxItem id="stack">
+                  My Stack
+                </DropdownMenuCheckboxItem>
+                <DropdownMenuCheckboxItem id="inspo">
+                  Inspiration
+                </DropdownMenuCheckboxItem>
+              </DropdownMenuGroup>
               <DropdownMenuSeparator />
               <DropdownMenuItem>
                 <PlusIcon className="mr-2 h-4 w-4" /> Create List
               </DropdownMenuItem>
             </DropdownMenuContent>
-          </DropdownMenu>
+          </DropdownMenuTrigger>
         </div>
       </CardHeader>
       <CardContent>
