@@ -232,8 +232,6 @@ export const docsConfig: DocsConfig = {
           title: "Combobox",
           href: "/docs/components/combobox",
           items: [],
-          label: "todo",
-          disabled: true,
         },
         {
           title: "Command",

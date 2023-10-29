@@ -82,6 +82,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/ui/checkbox")),
       files: ["registry/default/ui/checkbox.tsx"],
     },
+    "combobox": {
+      name: "combobox",
+      type: "components:ui",
+      registryDependencies: undefined,
+      component: React.lazy(() => import("@/registry/default/ui/combobox")),
+      files: ["registry/default/ui/combobox.tsx"],
+    },
     "collapsible": {
       name: "collapsible",
       type: "components:ui",
@@ -1090,6 +1097,13 @@ export const Index: Record<string, any> = {
       registryDependencies: undefined,
       component: React.lazy(() => import("@/registry/new-york/ui/checkbox")),
       files: ["registry/new-york/ui/checkbox.tsx"],
+    },
+    "combobox": {
+      name: "combobox",
+      type: "components:ui",
+      registryDependencies: undefined,
+      component: React.lazy(() => import("@/registry/new-york/ui/combobox")),
+      files: ["registry/new-york/ui/combobox.tsx"],
     },
     "collapsible": {
       name: "collapsible",

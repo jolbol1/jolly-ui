@@ -1,18 +1,16 @@
 "use client"
 
 import * as React from "react"
-import { CaretSortIcon, CheckIcon } from "@radix-ui/react-icons"
+import { Collection } from "react-aria-components"
 
-import { cn } from "@/lib/utils"
-import { Button } from "@/registry/new-york/ui/button"
 import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-} from "@/registry/new-york/ui/command"
-import { Popover, PopoverTrigger } from "@/registry/new-york/ui/popover"
+  Combobox,
+  ComboboxContent,
+  ComboboxGroup,
+  ComboboxInput,
+  ComboboxItem,
+  ComboboxLabel,
+} from "@/registry/new-york/ui/combobox"
 
 const frameworks = [
   {
@@ -38,46 +36,28 @@ const frameworks = [
 ]
 
 export default function ComboboxDemo() {
-  const [open, setOpen] = React.useState(false)
-  const [value, setValue] = React.useState("")
-
   return (
-    <PopoverTrigger isOpen={open} onOpenChange={setOpen}>
-      <Button
-        variant="outline"
-        aria-expanded={open}
-        className="w-[200px] justify-between"
-      >
-        {value
-          ? frameworks.find((framework) => framework.value === value)?.label
-          : "Select framework..."}
-        <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-      </Button>
-      <Popover className="w-[200px] p-0">
-        <Command>
-          <CommandInput placeholder="Search framework..." className="h-9" />
-          <CommandEmpty>No framework found.</CommandEmpty>
-          <CommandGroup>
-            {frameworks.map((framework) => (
-              <CommandItem
-                key={framework.value}
-                onSelect={(currentValue) => {
-                  setValue(currentValue === value ? "" : currentValue)
-                  setOpen(false)
-                }}
+    <Combobox aria-label="Cities">
+      <ComboboxInput
+        className="max-w-[200px]"
+        placeholder="Select a framework..."
+      />
+      <ComboboxContent crossOffset={-12} offset={12} className="w-[200px]">
+        <ComboboxGroup>
+          <ComboboxLabel separator>Cities</ComboboxLabel>
+          <Collection items={frameworks}>
+            {(item) => (
+              <ComboboxItem
+                textValue={item.label}
+                id={item.value}
+                key={item.value}
               >
-                {framework.label}
-                <CheckIcon
-                  className={cn(
-                    "ml-auto h-4 w-4",
-                    value === framework.value ? "opacity-100" : "opacity-0"
-                  )}
-                />
-              </CommandItem>
-            ))}
-          </CommandGroup>
-        </Command>
-      </Popover>
-    </PopoverTrigger>
+                {item.label}
+              </ComboboxItem>
+            )}
+          </Collection>
+        </ComboboxGroup>
+      </ComboboxContent>
+    </Combobox>
   )
 }

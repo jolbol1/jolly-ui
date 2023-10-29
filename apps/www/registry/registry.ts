@@ -66,6 +66,11 @@ const ui: Registry = [
     files: ["ui/checkbox.tsx"],
   },
   {
+    name: "combobox",
+    type: "components:ui",
+    files: ["ui/combobox.tsx"],
+  },
+  {
     name: "collapsible",
     type: "components:ui",
     dependencies: ["@radix-ui/react-collapsible"],

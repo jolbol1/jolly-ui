@@ -105,6 +105,13 @@
     "type": "components:ui"
   },
   {
+    "name": "combobox",
+    "files": [
+      "ui/combobox.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
     "name": "collapsible",
     "dependencies": [
       "@radix-ui/react-collapsible"
