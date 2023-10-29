@@ -421,7 +421,7 @@ export const docsConfig: DocsConfig = {
           title: "Tooltip",
           href: "/docs/components/tooltip",
           items: [],
-          label: "v1",
+          label: "v2",
         },
       ],
     },
