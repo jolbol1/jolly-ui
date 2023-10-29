@@ -381,7 +381,7 @@ export const docsConfig: DocsConfig = {
           title: "Switch",
           href: "/docs/components/switch",
           items: [],
-          label: "v1",
+          label: "v2",
         },
         {
           title: "Table",
