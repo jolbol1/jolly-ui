@@ -7,7 +7,7 @@ import {
   type CheckboxProps as RaCheckboxProps,
 } from "react-aria-components"
 
-import { cn } from "@/lib/utils"
+import { cnv } from "@/lib/utils"
 
 export interface CheckboxProps extends RaCheckboxProps {}
 
@@ -16,7 +16,8 @@ const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
     <RaCheckbox
       ref={ref}
       className={(values) =>
-        cn(
+        cnv(
+          values,
           "peer block h-4 w-4 shrink-0 rounded-sm border border-primary shadow data-[disabled]:cursor-not-allowed data-[selected]:bg-primary data-[selected]:text-primary-foreground data-[disabled]:opacity-50 data-[focus-visible]:outline-none data-[focus-visible]:ring-1 data-[focus-visible]:ring-ring",
           typeof className === "function" ? className(values) : className
         )
