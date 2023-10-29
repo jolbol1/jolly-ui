@@ -19,22 +19,28 @@ export default function IndexPage() {
   return (
     <div className="container relative">
       <PageHeader className="pb-8">
-        <Link
-          href="/docs/changelog"
-          className="inline-flex items-center rounded-lg bg-muted px-3 py-1 text-sm font-medium"
-        >
-          🎉 <Separator className="mx-2 h-4" orientation="vertical" />{" "}
-          <span className="sm:hidden">Style, a new CLI and more.</span>
-          <span className="hidden sm:inline">
-            Introducing Style, a new CLI and more.
-          </span>
-          <ArrowRightIcon className="ml-1 h-4 w-4" />
-        </Link>
         <PageHeaderHeading>Build your component library.</PageHeaderHeading>
         <PageHeaderDescription>
           Beautifully designed components that you can copy and paste into your
           apps. Accessible. Customizable. Open Source.
         </PageHeaderDescription>
+        <p className="text-sm text-[#E1251B]">
+          This is an unofficial port of{" "}
+          <a
+            className="font-medium underline underline-offset-4"
+            href={"https://ui.shadcn.com/"}
+          >
+            shadcn/ui
+          </a>{" "}
+          to react-aria-components, and is not affiliated with{" "}
+          <a
+            className="font-medium underline underline-offset-4"
+            href="https://twitter.com/shadcn"
+          >
+            @shadcn
+          </a>
+          , just inspired by him.
+        </p>
         <div className="flex w-full items-center space-x-4 pb-8 pt-4 md:pb-10">
           <Link href="/docs" className={cn(buttonVariants())}>
             Get Started

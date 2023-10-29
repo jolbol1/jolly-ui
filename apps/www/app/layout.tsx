@@ -24,15 +24,17 @@ export const metadata: Metadata = {
     "React",
     "Tailwind CSS",
     "Server Components",
-    "Radix UI",
+    "react-aria-components",
+    "shadcn-ui",
   ],
   authors: [
+    { name: "jolbol1", url: "https://jamesshopland.com" },
     {
       name: "shadcn",
       url: "https://shadcn.com",
     },
   ],
-  creator: "shadcn",
+  creator: "jolbol1",
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "white" },
     { media: "(prefers-color-scheme: dark)", color: "black" },
@@ -76,7 +78,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
       <html lang="en" suppressHydrationWarning>
-        <head />
+        <head>
+          <meta
+            name="google-site-verification"
+            content="Y7LqA4IIyNd1jMq8m40_o_3nSId9NALI4PlHxQ-9sOk"
+          />
+        </head>
         <body
           className={cn(
             "min-h-screen bg-background font-sans antialiased",
