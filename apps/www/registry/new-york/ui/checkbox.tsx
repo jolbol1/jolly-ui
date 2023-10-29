@@ -1,32 +1,40 @@
 "use client"
 
 import * as React from "react"
-import { Check } from "lucide-react"
+import { CheckIcon } from "@radix-ui/react-icons"
 import {
+  CheckboxRenderProps,
   Checkbox as RaCheckbox,
   type CheckboxProps as RaCheckboxProps,
 } from "react-aria-components"
 
 import { cnv } from "@/lib/utils"
+import { labelVariants } from "@/registry/default/ui/label"
 
 export interface CheckboxProps extends RaCheckboxProps {}
 
 const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
-  ({ className, ...props }, ref) => (
+  ({ className, children, ...props }, ref) => (
     <RaCheckbox
       ref={ref}
       className={(values) =>
-        cnv(
+        cnv<CheckboxRenderProps>(
           values,
-          "peer block h-4 w-4 shrink-0 rounded-sm border border-primary shadow data-[disabled]:cursor-not-allowed data-[selected]:bg-primary data-[selected]:text-primary-foreground data-[disabled]:opacity-50 data-[focus-visible]:outline-none data-[focus-visible]:ring-1 data-[focus-visible]:ring-ring",
+          "group flex items-center gap-2 data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 data-[focus-visible]:outline-none data-[focus-visible]:ring-1 data-[focus-visible]:ring-ring",
+          labelVariants,
           typeof className === "function" ? className(values) : className
         )
       }
       {...props}
     >
-      {({ isSelected }) =>
-        isSelected ? <Check className="h-4 w-[0.875rem]" /> : null
-      }
+      {(values) => (
+        <>
+          <div className="flex h-4 w-4 shrink-0 rounded-sm border border-primary shadow group-data-[selected]:bg-primary group-data-[selected]:text-primary-foreground">
+            {values.isSelected ? <CheckIcon className="h-4 w-4" /> : null}
+          </div>
+          {typeof children === "function" ? children(values) : children}
+        </>
+      )}
     </RaCheckbox>
   )
 )

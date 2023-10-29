@@ -303,7 +303,7 @@ export const docsConfig: DocsConfig = {
           title: "Label",
           href: "/docs/components/label",
           items: [],
-          label: "v1",
+          label: "v2",
         },
         {
           title: "Menubar",

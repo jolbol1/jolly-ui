@@ -7,7 +7,7 @@ import { Label as RaLabel } from "react-aria-components"
 import { cn } from "@/lib/utils"
 
 const labelVariants = cva(
-  "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+  "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 data-[disabled]:cursor-not-allowed data-[disabled]:opacity-70"
 )
 
 const Label = React.forwardRef<
@@ -19,4 +19,4 @@ const Label = React.forwardRef<
 ))
 Label.displayName = "Label"
 
-export { Label }
+export { Label, labelVariants }
