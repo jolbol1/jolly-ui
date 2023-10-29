@@ -59,8 +59,12 @@ export function DocsSidebarNavItems({
             rel={item.external ? "noreferrer" : ""}
           >
             {item.title}
-            {item.label && (
+            {item.label && item.label == "v2" ? (
               <span className="ml-2 rounded-md bg-[#adfa1d] px-1.5 py-0.5 text-xs leading-none text-[#000000] no-underline group-hover:no-underline">
+                {item.label}
+              </span>
+            ) : (
+              <span className="ml-2 rounded-md bg-[#adfa1d]/40 px-1.5 py-0.5 text-xs leading-none text-[#000000] no-underline group-hover:no-underline">
                 {item.label}
               </span>
             )}

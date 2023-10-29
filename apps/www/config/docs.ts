@@ -39,61 +39,61 @@ export const docsConfig: DocsConfig = {
     },
   ],
   sidebarNav: [
-    // {
-    //   title: "Getting Started",
-    //   items: [
-    //     {
-    //       title: "Introduction",
-    //       href: "/docs",
-    //       items: [],
-    //     },
-    //     {
-    //       title: "Installation",
-    //       href: "/docs/installation",
-    //       items: [],
-    //     },
-    //     {
-    //       title: "components.json",
-    //       href: "/docs/components-json",
-    //       items: [],
-    //     },
-    //     {
-    //       title: "Theming",
-    //       href: "/docs/theming",
-    //       items: [],
-    //     },
-    //     {
-    //       title: "Dark mode",
-    //       href: "/docs/dark-mode",
-    //       items: [],
-    //     },
-    //     {
-    //       title: "CLI",
-    //       href: "/docs/cli",
-    //       items: [],
-    //     },
-    //     {
-    //       title: "Typography",
-    //       href: "/docs/components/typography",
-    //       items: [],
-    //     },
-    //     {
-    //       title: "Figma",
-    //       href: "/docs/figma",
-    //       items: [],
-    //     },
-    //     {
-    //       title: "Changelog",
-    //       href: "/docs/changelog",
-    //       items: [],
-    //     },
-    //     {
-    //       title: "About",
-    //       href: "/docs/about",
-    //       items: [],
-    //     },
-    //   ],
-    // },
+    {
+      title: "Getting Started",
+      items: [
+        {
+          title: "Introduction",
+          href: "/docs",
+          items: [],
+        },
+        // {
+        //   title: "Installation",
+        //   href: "/docs/installation",
+        //   items: [],
+        // },
+        // {
+        //   title: "components.json",
+        //   href: "/docs/components-json",
+        //   items: [],
+        // },
+        // {
+        //   title: "Theming",
+        //   href: "/docs/theming",
+        //   items: [],
+        // },
+        // {
+        //   title: "Dark mode",
+        //   href: "/docs/dark-mode",
+        //   items: [],
+        // },
+        // {
+        //   title: "CLI",
+        //   href: "/docs/cli",
+        //   items: [],
+        // },
+        // {
+        //   title: "Typography",
+        //   href: "/docs/components/typography",
+        //   items: [],
+        // },
+        // {
+        //   title: "Figma",
+        //   href: "/docs/figma",
+        //   items: [],
+        // },
+        // {
+        //   title: "Changelog",
+        //   href: "/docs/changelog",
+        //   items: [],
+        // },
+        // {
+        //   title: "About",
+        //   href: "/docs/about",
+        //   items: [],
+        // },
+      ],
+    },
     // {
     //   title: "Installation",
     //   items: [
@@ -174,6 +174,7 @@ export const docsConfig: DocsConfig = {
         {
           title: "Alert Dialog",
           href: "/docs/components/alert-dialog",
+          label: "v1",
           items: [],
         },
         {
@@ -200,6 +201,7 @@ export const docsConfig: DocsConfig = {
         {
           title: "Button",
           href: "/docs/components/button",
+          label: "v2",
           items: [],
         },
         {
@@ -220,6 +222,7 @@ export const docsConfig: DocsConfig = {
           title: "Checkbox",
           href: "/docs/components/checkbox",
           items: [],
+          label: "v1",
         },
         {
           title: "Collapsible",
@@ -232,6 +235,7 @@ export const docsConfig: DocsConfig = {
           title: "Combobox",
           href: "/docs/components/combobox",
           items: [],
+          label: "v1",
         },
         {
           title: "Command",
@@ -272,6 +276,7 @@ export const docsConfig: DocsConfig = {
           title: "Dropdown Menu",
           href: "/docs/components/dropdown-menu",
           items: [],
+          label: "v1",
         },
         {
           title: "Form",
@@ -298,6 +303,7 @@ export const docsConfig: DocsConfig = {
           title: "Label",
           href: "/docs/components/label",
           items: [],
+          label: "v1",
         },
         {
           title: "Menubar",
@@ -317,16 +323,19 @@ export const docsConfig: DocsConfig = {
           title: "Popover",
           href: "/docs/components/popover",
           items: [],
+          label: "v1",
         },
         {
           title: "Progress",
           href: "/docs/components/progress",
           items: [],
+          label: "v1",
         },
         {
           title: "Radio Group",
           href: "/docs/components/radio-group",
           items: [],
+          label: "v1",
         },
         {
           title: "Scroll Area",
@@ -339,6 +348,7 @@ export const docsConfig: DocsConfig = {
           title: "Select",
           href: "/docs/components/select",
           items: [],
+          label: "v1",
         },
         {
           title: "Separator",
@@ -365,11 +375,13 @@ export const docsConfig: DocsConfig = {
           title: "Slider",
           href: "/docs/components/slider",
           items: [],
+          label: "v1",
         },
         {
           title: "Switch",
           href: "/docs/components/switch",
           items: [],
+          label: "v1",
         },
         {
           title: "Table",
@@ -403,11 +415,13 @@ export const docsConfig: DocsConfig = {
           title: "Toggle",
           href: "/docs/components/toggle",
           items: [],
+          label: "v1",
         },
         {
           title: "Tooltip",
           href: "/docs/components/tooltip",
           items: [],
+          label: "v1",
         },
       ],
     },

@@ -7,13 +7,13 @@ import { ToggleButton, type ToggleButtonProps } from "react-aria-components"
 import { cn } from "@/lib/utils"
 
 const toggleVariants = cva(
-  "inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-muted hover:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[selected]:bg-accent data-[selected]:text-accent-foreground",
+  "inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors data-[disabled]:pointer-events-none data-[hovered]:bg-muted data-[selected]:bg-accent data-[hovered]:text-muted-foreground data-[selected]:text-accent-foreground data-[disabled]:opacity-50 data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2",
   {
     variants: {
       variant: {
         default: "bg-transparent",
         outline:
-          "border border-input bg-transparent hover:bg-accent hover:text-accent-foreground",
+          "border border-input bg-transparent data-[hovered]:bg-accent data-[hovered]:text-accent-foreground",
       },
       size: {
         default: "h-10 px-3",
@@ -30,15 +30,22 @@ const toggleVariants = cva(
 
 export interface ToggleProps
   extends ToggleButtonProps,
-    VariantProps<typeof toggleVariants> {
-  className?: string
-}
+    VariantProps<typeof toggleVariants> {}
 
 const Toggle = React.forwardRef<HTMLButtonElement, ToggleProps>(
   ({ className, variant, size, ...props }, ref) => (
     <ToggleButton
       ref={ref}
-      className={cn(toggleVariants({ variant, size, className }))}
+      className={(values) =>
+        cn(
+          toggleVariants({
+            variant,
+            size,
+            className:
+              typeof className === "function" ? className(values) : className,
+          })
+        )
+      }
       {...props}
     />
   )

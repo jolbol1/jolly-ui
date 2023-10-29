@@ -1,8 +1,9 @@
 "use client"
 
 import * as React from "react"
-import { cva, type VariantProps } from "class-variance-authority"
+import { type VariantProps } from "class-variance-authority"
 import {
+  ButtonRenderProps,
   Button as RaButton,
   ButtonProps as RaButtonProps,
 } from "react-aria-components"
@@ -13,15 +14,22 @@ import { buttonVariants } from "./button-variants"
 
 export interface ButtonProps
   extends RaButtonProps,
-    VariantProps<typeof buttonVariants> {
-  className?: string
-}
+    VariantProps<typeof buttonVariants> {}
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, ...props }, ref) => {
     return (
       <RaButton
-        className={cn(buttonVariants({ variant, size, className }))}
+        className={(values: ButtonRenderProps) =>
+          cn(
+            buttonVariants({
+              variant,
+              size,
+              className:
+                typeof className === "function" ? className(values) : className,
+            })
+          )
+        }
         ref={ref}
         {...props}
       />

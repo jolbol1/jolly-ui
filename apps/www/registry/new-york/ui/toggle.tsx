@@ -7,7 +7,7 @@ import { ToggleButton, type ToggleButtonProps } from "react-aria-components"
 import { cn } from "@/lib/utils"
 
 const toggleVariants = cva(
-  "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors data-[hovered]:bg-muted data-[hovered]:text-muted-foreground data-[focus-visible]:outline-none data-[focus-visible]:ring-1 data-[focus-visible]:ring-ring data-[disabled]:pointer-events-none data-[disabled]:opacity-50 data-[selected]:bg-accent data-[selected]:text-accent-foreground",
+  "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors data-[disabled]:pointer-events-none data-[hovered]:bg-muted data-[selected]:bg-accent data-[hovered]:text-muted-foreground data-[selected]:text-accent-foreground data-[disabled]:opacity-50 data-[focus-visible]:outline-none data-[focus-visible]:ring-1 data-[focus-visible]:ring-ring",
   {
     variants: {
       variant: {
@@ -30,15 +30,22 @@ const toggleVariants = cva(
 
 export interface ToggleProps
   extends ToggleButtonProps,
-    VariantProps<typeof toggleVariants> {
-  className?: string
-}
+    VariantProps<typeof toggleVariants> {}
 
 const Toggle = React.forwardRef<HTMLButtonElement, ToggleProps>(
   ({ className, variant, size, ...props }, ref) => (
     <ToggleButton
       ref={ref}
-      className={cn(toggleVariants({ variant, size, className }))}
+      className={(values) =>
+        cn(
+          toggleVariants({
+            variant,
+            size,
+            className:
+              typeof className === "function" ? className(values) : className,
+          })
+        )
+      }
       {...props}
     />
   )
