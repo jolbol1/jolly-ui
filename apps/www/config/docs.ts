@@ -94,6 +94,16 @@ export const docsConfig: DocsConfig = {
         // },
       ],
     },
+    {
+      title: "Utilities",
+      items: [
+        {
+          title: "Styling",
+          href: "/docs/utilities/styling",
+          items: [],
+        },
+      ],
+    },
     // {
     //   title: "Installation",
     //   items: [

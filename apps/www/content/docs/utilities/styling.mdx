@@ -1,0 +1,43 @@
+---
+title: Styling
+description: Learn how to add custom styles to components
+component: false
+radix:
+  link: https://react-spectrum.adobe.com/react-aria/styling.html
+---
+
+react-aria-components has a couple of options when it comes to styling. The components are built using the data attributes method using tailwind. You can however use the other methods if you want.
+
+Methods:
+
+- [Class names](https://react-spectrum.adobe.com/react-aria/styling.html#class-names)
+- [Data attributes](https://react-spectrum.adobe.com/react-aria/styling.html#states)
+- [Render props](https://react-spectrum.adobe.com/react-aria/styling.html#render-props)
+
+## Installation
+
+To enable using render props in the class names as well as all other values, I built a helper on top of the `cn` one you may have seen before. This one is called `cnv` and it takes in the render props as its first value. You only need to use this if you plan on extending a component. If you are just using the components you need to add the code below.
+
+```tsx title="utils.tsx"
+import { clsx, type ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
+
+type ClassFunction<T> = (values: T) => string
+type ClassValues<T> = (ClassValue | ClassFunction<T>)[]
+
+// Helper function to allow functions to be input to be calculated with react-aria-components
+export function cnv<T>(values: T, ...inputs: ClassValues<T>) {
+  const processedInputs = inputs.map((input) => {
+    if (typeof input === "function") {
+      return input(values)
+    }
+    return input
+  })
+
+  return cn(processedInputs)
+}
+```
