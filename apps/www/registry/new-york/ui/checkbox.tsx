@@ -20,7 +20,7 @@ const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
       className={(values) =>
         cnv<CheckboxRenderProps>(
           values,
-          "group flex items-center gap-2 data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 data-[focus-visible]:outline-none data-[focus-visible]:ring-1 data-[focus-visible]:ring-ring",
+          "group flex items-center gap-2 data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 ",
           labelVariants,
           typeof className === "function" ? className(values) : className
         )
@@ -29,7 +29,7 @@ const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
     >
       {(values) => (
         <>
-          <div className="flex h-4 w-4 shrink-0 rounded-sm border border-primary shadow group-data-[selected]:bg-primary group-data-[selected]:text-primary-foreground">
+          <div className="flex h-4 w-4 shrink-0 rounded-sm border border-primary shadow group-data-[selected]:bg-primary group-data-[selected]:text-primary-foreground group-data-[focus-visible]:outline-none group-data-[focus-visible]:ring-1 group-data-[focus-visible]:ring-ring">
             {values.isSelected ? <CheckIcon className="h-4 w-4" /> : null}
           </div>
           {typeof children === "function" ? children(values) : children}
