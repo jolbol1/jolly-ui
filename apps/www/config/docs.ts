@@ -375,7 +375,7 @@ export const docsConfig: DocsConfig = {
           title: "Slider",
           href: "/docs/components/slider",
           items: [],
-          label: "v1",
+          label: "v2",
         },
         {
           title: "Switch",

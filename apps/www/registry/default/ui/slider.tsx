@@ -7,31 +7,35 @@ import {
   SliderTrack,
 } from "react-aria-components"
 
-import { cn } from "@/lib/utils"
+import { cn, cnv } from "@/lib/utils"
 
 const Slider = React.forwardRef<
   React.ElementRef<typeof RaSlider>,
   React.ComponentPropsWithoutRef<typeof RaSlider>
->(({ className, ...props }, ref) => (
+>(({ className, children, ...props }, ref) => (
   <RaSlider
     ref={ref}
-    className={cn(
-      "relative flex w-full touch-none select-none items-center",
-      className
-    )}
+    className={(values) =>
+      cnv(
+        values,
+        "relative flex w-full touch-none select-none items-center",
+        className
+      )
+    }
     {...props}
   >
-    <SliderTrack className="relative h-2 w-full grow rounded-full bg-secondary">
-      {({ state }) => (
-        <>
+    {(values) => (
+      <>
+        {typeof children === "function" ? children(values) : children}
+        <SliderTrack className="relative h-2 w-full grow rounded-full bg-secondary">
           <div
-            style={{ width: state.getThumbPercent(0) * 100 + "%" }}
+            style={{ width: values.state.getThumbPercent(0) * 100 + "%" }}
             className="absolute h-full rounded-full bg-primary"
           />
           <SliderThumb className="top-[50%] block h-5 w-5 rounded-full border-2 border-primary bg-background ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50" />
-        </>
-      )}
-    </SliderTrack>
+        </SliderTrack>
+      </>
+    )}
   </RaSlider>
 ))
 Slider.displayName = "Slider"

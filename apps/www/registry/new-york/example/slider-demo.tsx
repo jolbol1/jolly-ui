@@ -6,6 +6,7 @@ type SliderProps = React.ComponentProps<typeof Slider>
 export default function SliderDemo({ className, ...props }: SliderProps) {
   return (
     <Slider
+      aria-label="slider demo"
       defaultValue={[50]}
       maxValue={100}
       step={1}
