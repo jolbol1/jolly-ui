@@ -222,7 +222,7 @@ export const docsConfig: DocsConfig = {
           title: "Checkbox",
           href: "/docs/components/checkbox",
           items: [],
-          label: "v1",
+          label: "v2",
         },
         {
           title: "Collapsible",
