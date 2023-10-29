@@ -343,9 +343,6 @@ export const docsConfig: DocsConfig = {
           title: "Select",
           href: "/docs/components/select",
           items: [],
-
-          label: "todo",
-          disabled: true,
         },
         {
           title: "Separator",

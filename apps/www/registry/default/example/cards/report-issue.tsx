@@ -37,22 +37,22 @@ export function CardsReportIssue() {
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="grid gap-2">
             <Label htmlFor={`area-${id}`}>Area</Label>
-            <Select defaultValue="billing">
+            <Select defaultSelectedKey="billing">
               <SelectTrigger id={`area-${id}`} aria-label="Area">
                 <SelectValue placeholder="Select" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="team">Team</SelectItem>
-                <SelectItem value="billing">Billing</SelectItem>
-                <SelectItem value="account">Account</SelectItem>
-                <SelectItem value="deployments">Deployments</SelectItem>
-                <SelectItem value="support">Support</SelectItem>
+                <SelectItem id="team">Team</SelectItem>
+                <SelectItem id="billing">Billing</SelectItem>
+                <SelectItem id="account">Account</SelectItem>
+                <SelectItem id="deployments">Deployments</SelectItem>
+                <SelectItem id="support">Support</SelectItem>
               </SelectContent>
             </Select>
           </div>
           <div className="grid gap-2">
             <Label htmlFor={`security-level-${id}`}>Security Level</Label>
-            <Select defaultValue="2">
+            <Select defaultSelectedKey="2">
               <SelectTrigger
                 id={`security-level-${id}`}
                 className="line-clamp-1 w-full truncate"
@@ -61,10 +61,10 @@ export function CardsReportIssue() {
                 <SelectValue placeholder="Select level" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="1">Severity 1 (Highest)</SelectItem>
-                <SelectItem value="2">Severity 2</SelectItem>
-                <SelectItem value="3">Severity 3</SelectItem>
-                <SelectItem value="4">Severity 4 (Lowest)</SelectItem>
+                <SelectItem id="1">Severity 1 (Highest)</SelectItem>
+                <SelectItem id="2">Severity 2</SelectItem>
+                <SelectItem id="3">Severity 3</SelectItem>
+                <SelectItem id="4">Severity 4 (Lowest)</SelectItem>
               </SelectContent>
             </Select>
           </div>

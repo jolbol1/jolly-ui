@@ -19,11 +19,11 @@ export function StyleSwitcher({ className }: SelectTriggerProps) {
 
   return (
     <Select
-      value={config.style}
-      onValueChange={(value: Style["name"]) =>
+      defaultSelectedKey={config.style}
+      onSelectionChange={(key) =>
         setConfig({
           ...config,
-          style: value,
+          style: key as Style["name"],
         })
       }
     >
@@ -38,7 +38,7 @@ export function StyleSwitcher({ className }: SelectTriggerProps) {
       </SelectTrigger>
       <SelectContent>
         {styles.map((style) => (
-          <SelectItem key={style.name} value={style.name} className="text-xs">
+          <SelectItem key={style.name} id={style.name} className="text-xs">
             {style.label}
           </SelectItem>
         ))}

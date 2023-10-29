@@ -64,13 +64,13 @@ export function CardsShare() {
                   <p className="text-sm text-muted-foreground">m@example.com</p>
                 </div>
               </div>
-              <Select defaultValue="edit">
+              <Select defaultSelectedKey="edit">
                 <SelectTrigger className="ml-auto w-[110px]" aria-label="Edit">
                   <SelectValue placeholder="Select" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="edit">Can edit</SelectItem>
-                  <SelectItem value="view">Can view</SelectItem>
+                  <SelectItem id="edit">Can edit</SelectItem>
+                  <SelectItem id="view">Can view</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -87,13 +87,13 @@ export function CardsShare() {
                   <p className="text-sm text-muted-foreground">b@example.com</p>
                 </div>
               </div>
-              <Select defaultValue="view">
+              <Select defaultSelectedKey="view">
                 <SelectTrigger className="ml-auto w-[110px]" aria-label="Edit">
                   <SelectValue placeholder="Select" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="edit">Can edit</SelectItem>
-                  <SelectItem value="view">Can view</SelectItem>
+                  <SelectItem id="edit">Can edit</SelectItem>
+                  <SelectItem id="view">Can view</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -110,13 +110,13 @@ export function CardsShare() {
                   <p className="text-sm text-muted-foreground">p@example.com</p>
                 </div>
               </div>
-              <Select defaultValue="view">
+              <Select defaultSelectedKey="view">
                 <SelectTrigger className="ml-auto w-[110px]" aria-label="Edit">
                   <SelectValue placeholder="Select" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="edit">Can edit</SelectItem>
-                  <SelectItem value="view">Can view</SelectItem>
+                  <SelectItem id="edit">Can edit</SelectItem>
+                  <SelectItem id="view">Can view</SelectItem>
                 </SelectContent>
               </Select>
             </div>

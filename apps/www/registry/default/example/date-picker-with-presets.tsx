@@ -33,18 +33,18 @@ export default function DatePickerWithPresets() {
       </Button>
       <Popover className="flex w-auto flex-col space-y-2 p-2">
         <Select
-          onValueChange={(value) =>
-            setDate(addDays(new Date(), parseInt(value)))
+          onSelectionChange={(value) =>
+            setDate(addDays(new Date(), parseInt(value?.toString())))
           }
         >
           <SelectTrigger>
             <SelectValue placeholder="Select" />
           </SelectTrigger>
-          <SelectContent position="popper">
-            <SelectItem value="0">Today</SelectItem>
-            <SelectItem value="1">Tomorrow</SelectItem>
-            <SelectItem value="3">In 3 days</SelectItem>
-            <SelectItem value="7">In a week</SelectItem>
+          <SelectContent placement="bottom">
+            <SelectItem id="0">Today</SelectItem>
+            <SelectItem id="1">Tomorrow</SelectItem>
+            <SelectItem id="3">In 3 days</SelectItem>
+            <SelectItem id="7">In a week</SelectItem>
           </SelectContent>
         </Select>
         <div className="rounded-md border">

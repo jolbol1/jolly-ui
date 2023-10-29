@@ -177,13 +177,13 @@ export default function TeamSwitcher() {
                   <SelectValue placeholder="Select a plan" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="free">
+                  <SelectItem id="free">
                     <span className="font-medium">Free</span> -{" "}
                     <span className="text-muted-foreground">
                       Trial for two weeks
                     </span>
                   </SelectItem>
-                  <SelectItem value="pro">
+                  <SelectItem id="pro">
                     <span className="font-medium">Pro</span> -{" "}
                     <span className="text-muted-foreground">
                       $9/month per user

@@ -93,18 +93,18 @@ export function DemoPaymentMethod() {
                 <SelectValue placeholder="Month" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="1">January</SelectItem>
-                <SelectItem value="2">February</SelectItem>
-                <SelectItem value="3">March</SelectItem>
-                <SelectItem value="4">April</SelectItem>
-                <SelectItem value="5">May</SelectItem>
-                <SelectItem value="6">June</SelectItem>
-                <SelectItem value="7">July</SelectItem>
-                <SelectItem value="8">August</SelectItem>
-                <SelectItem value="9">September</SelectItem>
-                <SelectItem value="10">October</SelectItem>
-                <SelectItem value="11">November</SelectItem>
-                <SelectItem value="12">December</SelectItem>
+                <SelectItem id="1">January</SelectItem>
+                <SelectItem id="2">February</SelectItem>
+                <SelectItem id="3">March</SelectItem>
+                <SelectItem id="4">April</SelectItem>
+                <SelectItem id="5">May</SelectItem>
+                <SelectItem id="6">June</SelectItem>
+                <SelectItem id="7">July</SelectItem>
+                <SelectItem id="8">August</SelectItem>
+                <SelectItem id="9">September</SelectItem>
+                <SelectItem id="10">October</SelectItem>
+                <SelectItem id="11">November</SelectItem>
+                <SelectItem id="12">December</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -116,7 +116,7 @@ export function DemoPaymentMethod() {
               </SelectTrigger>
               <SelectContent>
                 {Array.from({ length: 10 }, (_, i) => (
-                  <SelectItem key={i} value={`${new Date().getFullYear() + i}`}>
+                  <SelectItem key={i} id={`${new Date().getFullYear() + i}`}>
                     {new Date().getFullYear() + i}
                   </SelectItem>
                 ))}

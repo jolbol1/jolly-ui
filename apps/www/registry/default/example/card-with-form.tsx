@@ -39,11 +39,11 @@ export default function CardWithForm() {
                 <SelectTrigger id="framework">
                   <SelectValue placeholder="Select" />
                 </SelectTrigger>
-                <SelectContent position="popper">
-                  <SelectItem value="next">Next.js</SelectItem>
-                  <SelectItem value="sveltekit">SvelteKit</SelectItem>
-                  <SelectItem value="astro">Astro</SelectItem>
-                  <SelectItem value="nuxt">Nuxt.js</SelectItem>
+                <SelectContent placement="bottom">
+                  <SelectItem id="next">Next.js</SelectItem>
+                  <SelectItem id="sveltekit">SvelteKit</SelectItem>
+                  <SelectItem id="astro">Astro</SelectItem>
+                  <SelectItem id="nuxt">Nuxt.js</SelectItem>
                 </SelectContent>
               </Select>
             </div>
