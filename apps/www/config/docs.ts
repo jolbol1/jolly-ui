@@ -323,7 +323,7 @@ export const docsConfig: DocsConfig = {
           title: "Popover",
           href: "/docs/components/popover",
           items: [],
-          label: "v1",
+          label: "v2",
         },
         {
           title: "Progress",
