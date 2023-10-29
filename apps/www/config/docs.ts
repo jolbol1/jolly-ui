@@ -329,7 +329,7 @@ export const docsConfig: DocsConfig = {
           title: "Progress",
           href: "/docs/components/progress",
           items: [],
-          label: "v1",
+          label: "v2",
         },
         {
           title: "Radio Group",
