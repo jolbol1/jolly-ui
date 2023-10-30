@@ -1,18 +1,11 @@
-import { Label } from "@/registry/default/ui/label"
-import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group"
+import { Radio, RadioGroup } from "@/registry/default/ui/radio-group"
 
 export default function RadioGroupDemo() {
   return (
     <RadioGroup defaultValue="comfortable">
-      <RadioGroupItem value="default" id="r1">
-        Default
-      </RadioGroupItem>
-      <RadioGroupItem value="comfortable" id="r2">
-        Comfortable
-      </RadioGroupItem>
-      <RadioGroupItem value="compact" id="r3">
-        Compact
-      </RadioGroupItem>
+      <Radio value="default">Default</Radio>
+      <Radio value="comfortable">Comfortable</Radio>
+      <Radio value="compact">Compact</Radio>
     </RadioGroup>
   )
 }

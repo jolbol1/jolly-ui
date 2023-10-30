@@ -345,7 +345,7 @@ export const docsConfig: DocsConfig = {
           title: "Radio Group",
           href: "/docs/components/radio-group",
           items: [],
-          label: "v1",
+          label: "v2",
         },
         {
           title: "Scroll Area",

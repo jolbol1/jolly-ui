@@ -12,7 +12,7 @@ import {
 } from "@/registry/new-york/ui/card"
 import { Input } from "@/registry/new-york/ui/input"
 import { Label } from "@/registry/new-york/ui/label"
-import { RadioGroup, RadioGroupItem } from "@/registry/new-york/ui/radio-group"
+import { Radio, RadioGroup } from "@/registry/new-york/ui/radio-group"
 import {
   Select,
   SelectContent,
@@ -33,7 +33,7 @@ export function CardsPaymentMethod() {
       <CardContent className="grid gap-6">
         <RadioGroup defaultValue="card" className="grid grid-cols-3 gap-4">
           <div>
-            <RadioGroupItem
+            <Radio
               value="card"
               id="card"
               showRadio={false}
@@ -54,10 +54,10 @@ export function CardsPaymentMethod() {
                 <path d="M2 10h20" />
               </svg>
               Card
-            </RadioGroupItem>
+            </Radio>
           </div>
           <div>
-            <RadioGroupItem
+            <Radio
               value="paypal"
               id="paypal"
               showRadio={false}
@@ -66,10 +66,10 @@ export function CardsPaymentMethod() {
             >
               <Icons.paypal className="mb-3 h-6 w-6" />
               Paypal
-            </RadioGroupItem>
+            </Radio>
           </div>
           <div>
-            <RadioGroupItem
+            <Radio
               value="apple"
               id="apple"
               className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary "
@@ -77,7 +77,7 @@ export function CardsPaymentMethod() {
             >
               <Icons.apple className="mb-3 h-6 w-6" />
               Apple
-            </RadioGroupItem>
+            </Radio>
           </div>
         </RadioGroup>
         <div className="grid gap-2">

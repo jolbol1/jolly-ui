@@ -13,7 +13,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/registry/new-york/ui/form"
-import { RadioGroup, RadioGroupItem } from "@/registry/new-york/ui/radio-group"
+import { Radio, RadioGroup } from "@/registry/new-york/ui/radio-group"
 import { toast } from "@/registry/new-york/ui/use-toast"
 
 const FormSchema = z.object({
@@ -55,7 +55,7 @@ export default function RadioGroupForm() {
                 >
                   <FormItem className="flex items-center space-y-0">
                     <FormControl>
-                      <RadioGroupItem value="all" />
+                      <Radio value="all" />
                     </FormControl>
                     <FormLabel className="font-normal">
                       All new messages
@@ -63,7 +63,7 @@ export default function RadioGroupForm() {
                   </FormItem>
                   <FormItem className="flex items-center space-y-0">
                     <FormControl>
-                      <RadioGroupItem value="mentions" />
+                      <Radio value="mentions" />
                     </FormControl>
                     <FormLabel className="font-normal">
                       Direct messages and mentions
@@ -71,7 +71,7 @@ export default function RadioGroupForm() {
                   </FormItem>
                   <FormItem className="flex items-center space-y-0">
                     <FormControl>
-                      <RadioGroupItem value="none" />
+                      <Radio value="none" />
                     </FormControl>
                     <FormLabel className="font-normal">Nothing</FormLabel>
                   </FormItem>

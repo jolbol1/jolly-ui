@@ -16,7 +16,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/registry/new-york/ui/form"
-import { RadioGroup, RadioGroupItem } from "@/registry/new-york/ui/radio-group"
+import { Radio, RadioGroup } from "@/registry/new-york/ui/radio-group"
 import { Switch } from "@/registry/new-york/ui/switch"
 import { toast } from "@/registry/new-york/ui/use-toast"
 
@@ -75,21 +75,19 @@ export function NotificationsForm() {
                 >
                   <FormItem className="flex items-center space-x-3 space-y-0">
                     <FormControl>
-                      <RadioGroupItem value="all">
-                        All new messages
-                      </RadioGroupItem>
+                      <Radio value="all">All new messages</Radio>
                     </FormControl>
                   </FormItem>
                   <FormItem className="flex items-center space-x-3 space-y-0">
                     <FormControl>
-                      <RadioGroupItem value="mentions">
+                      <Radio value="mentions">
                         Direct messages and mentions
-                      </RadioGroupItem>
+                      </Radio>
                     </FormControl>
                   </FormItem>
                   <FormItem className="flex items-center space-x-3 space-y-0">
                     <FormControl>
-                      <RadioGroupItem value="none">Nothing</RadioGroupItem>
+                      <Radio value="none">Nothing</Radio>
                     </FormControl>
                   </FormItem>
                 </RadioGroup>

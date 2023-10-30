@@ -12,7 +12,7 @@ import {
 } from "@/registry/default/ui/card"
 import { Input } from "@/registry/default/ui/input"
 import { Label } from "@/registry/default/ui/label"
-import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group"
+import { Radio, RadioGroup } from "@/registry/default/ui/radio-group"
 import {
   Select,
   SelectContent,
@@ -33,7 +33,7 @@ export function CardsPaymentMethod() {
       <CardContent className="grid gap-6">
         <RadioGroup defaultValue="card" className="grid grid-cols-3 gap-4">
           <div>
-            <RadioGroupItem
+            <Radio
               value="card"
               id="card"
               showRadio={false}
@@ -54,11 +54,11 @@ export function CardsPaymentMethod() {
                 <path d="M2 10h20" />
               </svg>
               Card
-            </RadioGroupItem>
+            </Radio>
           </div>
 
           <div>
-            <RadioGroupItem
+            <Radio
               value="paypal"
               id="paypal"
               showRadio={false}
@@ -67,11 +67,11 @@ export function CardsPaymentMethod() {
             >
               <Icons.paypal className="mb-3 h-6 w-6" />
               Paypal
-            </RadioGroupItem>
+            </Radio>
           </div>
 
           <div>
-            <RadioGroupItem
+            <Radio
               value="apple"
               id="apple"
               showRadio={false}
@@ -80,7 +80,7 @@ export function CardsPaymentMethod() {
             >
               <Icons.apple className="mb-3 h-6 w-6" />
               Apple
-            </RadioGroupItem>
+            </Radio>
           </div>
         </RadioGroup>
         <div className="grid gap-2">

@@ -10,7 +10,7 @@ import {
 } from "@/registry/new-york/ui/card"
 import { Input } from "@/registry/new-york/ui/input"
 import { Label } from "@/registry/new-york/ui/label"
-import { RadioGroup, RadioGroupItem } from "@/registry/new-york/ui/radio-group"
+import { Radio, RadioGroup } from "@/registry/new-york/ui/radio-group"
 import {
   Select,
   SelectContent,
@@ -31,7 +31,7 @@ export function DemoPaymentMethod() {
       <CardContent className="grid gap-6">
         <RadioGroup defaultValue="card" className="grid grid-cols-3 gap-4">
           <div>
-            <RadioGroupItem
+            <Radio
               value="card"
               id="card"
               showRadio={false}
@@ -51,10 +51,10 @@ export function DemoPaymentMethod() {
                 <path d="M2 10h20" />
               </svg>
               Card
-            </RadioGroupItem>
+            </Radio>
           </div>
           <div>
-            <RadioGroupItem
+            <Radio
               value="paypal"
               showRadio={false}
               id="paypal"
@@ -62,10 +62,10 @@ export function DemoPaymentMethod() {
             >
               <Icons.paypal className="mb-3 h-6 w-6" />
               Paypal
-            </RadioGroupItem>
+            </Radio>
           </div>
           <div>
-            <RadioGroupItem
+            <Radio
               value="apple"
               showRadio={false}
               id="apple"
@@ -73,7 +73,7 @@ export function DemoPaymentMethod() {
             >
               <Icons.apple className="mb-3 h-6 w-6" />
               Apple
-            </RadioGroupItem>
+            </Radio>
           </div>
         </RadioGroup>
         <div className="grid gap-2">

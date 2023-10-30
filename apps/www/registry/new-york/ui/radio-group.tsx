@@ -2,9 +2,13 @@
 
 import * as React from "react"
 import { CheckIcon } from "@radix-ui/react-icons"
-import { RadioGroup as RaRadioGroup, Radio } from "react-aria-components"
+import {
+  Radio as RaRadio,
+  RadioGroup as RaRadioGroup,
+} from "react-aria-components"
 
-import { cn } from "@/lib/utils"
+import { cn, cnv } from "@/lib/utils"
+import { labelVariants } from "@/registry/default/ui/label"
 
 const RadioGroup = React.forwardRef<
   React.ElementRef<typeof RaRadioGroup>,
@@ -20,32 +24,38 @@ const RadioGroup = React.forwardRef<
 })
 RadioGroup.displayName = "RadioGroup"
 
-const RadioGroupItem = React.forwardRef<
-  React.ElementRef<typeof Radio>,
-  React.ComponentPropsWithoutRef<typeof Radio> & { showRadio?: boolean }
+const Radio = React.forwardRef<
+  React.ElementRef<typeof RaRadio>,
+  React.ComponentPropsWithoutRef<typeof RaRadio> & { showRadio?: boolean }
 >(({ className, showRadio = true, children, ...props }, ref) => {
   return (
-    <Radio
+    <RaRadio
       ref={ref}
-      className={cn(
-        "flex items-center text-sm font-medium leading-none text-primary shadow focus:outline-none data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 data-[focus-visible]:ring-1 data-[focus-visible]:ring-ring",
-        className
-      )}
+      className={(values) =>
+        cnv(
+          values,
+          "group flex items-center gap-x-2 data-[focused]:outline-none ",
+          labelVariants,
+          className
+        )
+      }
       {...props}
     >
-      {({ isSelected }) => (
+      {(values) => (
         <>
           {showRadio && (
-            <span className="mr-3 flex aspect-square h-4 w-4 items-center justify-center rounded-full border border-primary">
-              {isSelected && <CheckIcon className="h-3.5 w-3.5 fill-primary" />}
+            <span className="flex aspect-square h-4 w-4 items-center justify-center rounded-full  border border-primary shadow data-[disabled]:opacity-50 group-data-[focus-visible]:ring-1 group-data-[focus-visible]:ring-ring">
+              {values.isSelected && (
+                <CheckIcon className="h-3.5 w-3.5 fill-primary" />
+              )}
             </span>
           )}
-          {children}
+          {typeof children === "function" ? children(values) : children}
         </>
       )}
-    </Radio>
+    </RaRadio>
   )
 })
-RadioGroupItem.displayName = "Radio"
+Radio.displayName = "Radio"
 
-export { RadioGroup, RadioGroupItem }
+export { RadioGroup, Radio }

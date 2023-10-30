@@ -17,7 +17,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/registry/new-york/ui/form"
-import { RadioGroup, RadioGroupItem } from "@/registry/new-york/ui/radio-group"
+import { Radio, RadioGroup } from "@/registry/new-york/ui/radio-group"
 import { toast } from "@/registry/new-york/ui/use-toast"
 
 const appearanceFormSchema = z.object({
@@ -104,7 +104,7 @@ export function AppearanceForm() {
                 <FormItem>
                   <FormLabel>
                     <FormControl>
-                      <RadioGroupItem
+                      <Radio
                         showRadio={false}
                         value="light"
                         className="group flex flex-col"
@@ -128,14 +128,14 @@ export function AppearanceForm() {
                         <span className="block w-full p-2 text-center font-normal">
                           Light
                         </span>
-                      </RadioGroupItem>
+                      </Radio>
                     </FormControl>
                   </FormLabel>
                 </FormItem>
                 <FormItem>
                   <FormLabel>
                     <FormControl>
-                      <RadioGroupItem
+                      <Radio
                         value="dark"
                         showRadio={false}
                         className="group flex flex-col"
@@ -159,7 +159,7 @@ export function AppearanceForm() {
                         <span className="block w-full p-2 text-center font-normal">
                           Dark
                         </span>
-                      </RadioGroupItem>
+                      </Radio>
                     </FormControl>
                   </FormLabel>
                 </FormItem>

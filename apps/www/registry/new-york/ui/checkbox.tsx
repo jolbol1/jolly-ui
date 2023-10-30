@@ -20,7 +20,7 @@ const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
       className={(values) =>
         cnv<CheckboxRenderProps>(
           values,
-          "group flex items-center gap-2 data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 ",
+          "group flex items-center gap-x-2 data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 ",
           labelVariants,
           typeof className === "function" ? className(values) : className
         )

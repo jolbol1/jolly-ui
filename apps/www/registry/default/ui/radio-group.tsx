@@ -2,9 +2,14 @@
 
 import * as React from "react"
 import { Circle } from "lucide-react"
-import { RadioGroup as RaRadioGroup, Radio } from "react-aria-components"
+import {
+  Radio as RaRadio,
+  RadioGroup as RaRadioGroup,
+} from "react-aria-components"
 
-import { cn } from "@/lib/utils"
+import { cnv } from "@/lib/utils"
+
+import { labelVariants } from "./label"
 
 const RadioGroup = React.forwardRef<
   React.ElementRef<typeof RaRadioGroup>,
@@ -12,7 +17,7 @@ const RadioGroup = React.forwardRef<
 >(({ className, ...props }, ref) => {
   return (
     <RaRadioGroup
-      className={cn("grid gap-2", className)}
+      className={(values) => cnv(values, "grid gap-2", className)}
       {...props}
       ref={ref}
     />
@@ -20,34 +25,38 @@ const RadioGroup = React.forwardRef<
 })
 RadioGroup.displayName = "RadioGroup"
 
-const RadioGroupItem = React.forwardRef<
-  React.ElementRef<typeof Radio>,
-  React.ComponentPropsWithoutRef<typeof Radio> & { showRadio?: boolean }
+const Radio = React.forwardRef<
+  React.ElementRef<typeof RaRadio>,
+  React.ComponentPropsWithoutRef<typeof RaRadio> & { showRadio?: boolean }
 >(({ className, children, showRadio = true, ...props }, ref) => {
   return (
-    <Radio
+    <RaRadio
       ref={ref}
-      className={cn(
-        "flex items-center text-sm font-medium leading-none text-primary ring-offset-background  focus:outline-none data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2",
-        className
-      )}
+      className={(values) =>
+        cnv(
+          values,
+          "group flex items-center data-[focused]:outline-none gap-x-2",
+          labelVariants,
+          className
+        )
+      }
       {...props}
     >
-      {({ isSelected }) => (
+      {(values) => (
         <>
           {showRadio && (
-            <span className="mr-3 flex aspect-square h-4 w-4 items-center justify-center rounded-full border border-primary">
-              {isSelected && (
+            <span className="flex aspect-square h-4 w-4 items-center justify-center rounded-full border border-primary ring-offset-background group-data-[disabled]:opacity-50 group-data-[focus-visible]:ring-2 group-data-[focus-visible]:ring-ring group-data-[focus-visible]:ring-offset-2">
+              {values.isSelected && (
                 <Circle className="h-2.5 w-2.5 fill-current text-current" />
               )}
             </span>
           )}
-          {children}
+          {typeof children === "function" ? children(values) : children}
         </>
       )}
-    </Radio>
+    </RaRadio>
   )
 })
-RadioGroupItem.displayName = "Radio"
+Radio.displayName = "Radio"
 
-export { RadioGroup, RadioGroupItem }
+export { RadioGroup, Radio }
