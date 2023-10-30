@@ -44,7 +44,7 @@ export function MainNav() {
         >
           Components
         </Link>
-        <Link
+        {/* <Link
           href="/themes"
           className={cn(
             "transition-colors hover:text-foreground/80",
@@ -65,7 +65,7 @@ export function MainNav() {
           )}
         >
           Examples
-        </Link>
+        </Link> */}
         <Link
           href={siteConfig.links.github}
           className={cn(

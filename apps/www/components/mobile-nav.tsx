@@ -66,6 +66,16 @@ export function MobileNav() {
                             className="text-muted-foreground"
                           >
                             {item.title}
+                            {item.label &&
+                              (item.label == "v2" ? (
+                                <span className="ml-2 rounded-md bg-[#E1251B] px-1.5 py-0.5 text-xs leading-none text-white no-underline group-hover:no-underline dark:text-[#000000]">
+                                  {item.label}
+                                </span>
+                              ) : (
+                                <span className="ml-2 rounded-md bg-[#E1251B]/40 px-1.5 py-0.5 text-xs leading-none text-white no-underline group-hover:no-underline dark:text-[#000000]">
+                                  {item.label}
+                                </span>
+                              ))}
                           </MobileLink>
                         ) : (
                           item.title

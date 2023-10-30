@@ -56,7 +56,22 @@ export default function IndexPage() {
           </Link>
         </div>
       </PageHeader>
-      <ExamplesNav className="[&>a:first-child]:text-primary" />
+      <div className="flex w-full flex-col items-center justify-center gap-6">
+        <p className="text-lg font-bold sm:text-3xl">
+          🚧 Examples Under Construction
+        </p>
+        <p>
+          View individual{" "}
+          <Link
+            className="font-medium underline underline-offset-4"
+            href="/docs/components"
+          >
+            components
+          </Link>{" "}
+          for examples
+        </p>
+      </div>
+      {/* <ExamplesNav className="[&>a:first-child]:text-primary" />
       <section className="space-y-8 overflow-hidden rounded-lg border-2 border-primary dark:border-muted md:hidden">
         <Image
           src="/examples/dashboard-light.png"
@@ -77,7 +92,7 @@ export default function IndexPage() {
         <div className="overflow-hidden rounded-lg border bg-background shadow">
           <DashboardPage />
         </div>
-      </section>
+      </section> */}
     </div>
   )
 }
