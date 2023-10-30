@@ -11,12 +11,12 @@ const nextConfig = {
     return [
       {
         source: "/components",
-        destination: "/docs/components/accordion",
+        destination: "/docs/components/button",
         permanent: true,
       },
       {
         source: "/docs/components",
-        destination: "/docs/components/accordion",
+        destination: "/docs/components/button",
         permanent: true,
       },
       {
