@@ -24,6 +24,7 @@ import {
 import {
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuPopover,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/registry/new-york/ui/dropdown-menu"
@@ -42,25 +43,26 @@ export function PresetActions() {
           <span className="sr-only">Actions</span>
           <DotsHorizontalIcon className="h-4 w-4" />
         </Button>
-        <DropdownMenuContent
-          onAction={(key) => {
-            if (key == "open") {
-              setIsOpen(true)
-            }
-            if (key == "delete") {
-              setShowDeleteDialog(true)
-            }
-          }}
-          placement="bottom end"
-        >
-          <DropdownMenuItem id="open">
-            Content filter preferences
-          </DropdownMenuItem>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem className="text-red-600" id="delete">
-            Delete preset
-          </DropdownMenuItem>
-        </DropdownMenuContent>
+        <DropdownMenuPopover placement="bottom end">
+          <DropdownMenuContent
+            onAction={(key) => {
+              if (key == "open") {
+                setIsOpen(true)
+              }
+              if (key == "delete") {
+                setShowDeleteDialog(true)
+              }
+            }}
+          >
+            <DropdownMenuItem id="open">
+              Content filter preferences
+            </DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem className="text-red-600" id="delete">
+              Delete preset
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenuPopover>
       </DropdownMenuTrigger>
       <Dialog open={open} onOpenChange={setIsOpen}>
         <DialogContent>

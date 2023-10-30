@@ -20,9 +20,10 @@ import {
 import {
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
-  DropdownMenuGroup,
+  DropdownMenuHeader,
   DropdownMenuItem,
-  DropdownMenuLabel,
+  DropdownMenuPopover,
+  DropdownMenuSection,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/registry/new-york/ui/dropdown-menu"
@@ -51,31 +52,33 @@ export function DemoGithub() {
             <Button variant="secondary" className="px-2 shadow-none">
               <ChevronDownIcon className="h-4 w-4 text-secondary-foreground" />
             </Button>
-            <DropdownMenuContent
-              selectedKeys={selected}
-              onSelectionChange={setSelected}
-              selectionMode="multiple"
-              placement="bottom end"
-              offset={5}
-              className="w-[200px]"
-            >
-              <DropdownMenuGroup>
-                <DropdownMenuLabel separator>Suggested Lists</DropdownMenuLabel>
-                <DropdownMenuCheckboxItem id="future">
-                  Future Ideas
-                </DropdownMenuCheckboxItem>
-                <DropdownMenuCheckboxItem id="stack">
-                  My Stack
-                </DropdownMenuCheckboxItem>
-                <DropdownMenuCheckboxItem id="inspo">
-                  Inspiration
-                </DropdownMenuCheckboxItem>
-              </DropdownMenuGroup>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>
-                <PlusIcon className="mr-2 h-4 w-4" /> Create List
-              </DropdownMenuItem>
-            </DropdownMenuContent>
+            <DropdownMenuPopover placement="bottom end">
+              <DropdownMenuContent
+                selectedKeys={selected}
+                onSelectionChange={setSelected}
+                selectionMode="multiple"
+                className="w-[200px]"
+              >
+                <DropdownMenuSection>
+                  <DropdownMenuHeader separator>
+                    Suggested Lists
+                  </DropdownMenuHeader>
+                  <DropdownMenuCheckboxItem id="future">
+                    Future Ideas
+                  </DropdownMenuCheckboxItem>
+                  <DropdownMenuCheckboxItem id="stack">
+                    My Stack
+                  </DropdownMenuCheckboxItem>
+                  <DropdownMenuCheckboxItem id="inspo">
+                    Inspiration
+                  </DropdownMenuCheckboxItem>
+                </DropdownMenuSection>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>
+                  <PlusIcon className="mr-2 h-4 w-4" /> Create List
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenuPopover>
           </DropdownMenuTrigger>
         </div>
       </CardHeader>

@@ -6,9 +6,10 @@ import {
 import { Button } from "@/registry/new-york/ui/button"
 import {
   DropdownMenuContent,
-  DropdownMenuGroup,
+  DropdownMenuHeader,
   DropdownMenuItem,
-  DropdownMenuLabel,
+  DropdownMenuPopover,
+  DropdownMenuSection,
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuTrigger,
@@ -23,36 +24,38 @@ export function UserNav() {
           <AvatarFallback>SC</AvatarFallback>
         </Avatar>
       </Button>
-      <DropdownMenuContent className="w-56" placement="bottom end">
-        <DropdownMenuGroup>
-          <DropdownMenuLabel separator className="font-normal">
-            <div className="flex flex-col space-y-1">
-              <p className="text-sm font-medium leading-none">shadcn</p>
-              <p className="text-xs leading-none text-muted-foreground">
-                m@example.com
-              </p>
-            </div>
-          </DropdownMenuLabel>
+      <DropdownMenuPopover placement="bottom end">
+        <DropdownMenuContent className="w-56">
+          <DropdownMenuSection>
+            <DropdownMenuHeader separator className="font-normal">
+              <div className="flex flex-col space-y-1">
+                <p className="text-sm font-medium leading-none">shadcn</p>
+                <p className="text-xs leading-none text-muted-foreground">
+                  m@example.com
+                </p>
+              </div>
+            </DropdownMenuHeader>
+            <DropdownMenuItem>
+              Profile
+              <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              Billing
+              <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              Settings
+              <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
+            </DropdownMenuItem>
+            <DropdownMenuItem>New Team</DropdownMenuItem>
+          </DropdownMenuSection>
+          <DropdownMenuSeparator />
           <DropdownMenuItem>
-            Profile
-            <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+            Log out
+            <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
           </DropdownMenuItem>
-          <DropdownMenuItem>
-            Billing
-            <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            Settings
-            <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
-          </DropdownMenuItem>
-          <DropdownMenuItem>New Team</DropdownMenuItem>
-        </DropdownMenuGroup>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem>
-          Log out
-          <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
-        </DropdownMenuItem>
-      </DropdownMenuContent>
+        </DropdownMenuContent>
+      </DropdownMenuPopover>
     </DropdownMenuTrigger>
   )
 }

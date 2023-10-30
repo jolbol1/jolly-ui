@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Check, ChevronRight, Circle } from "lucide-react"
+import { Check, Circle } from "lucide-react"
 import {
   Header,
   Item,
@@ -14,28 +14,35 @@ import {
   Separator,
 } from "react-aria-components"
 
-import { cn } from "@/lib/utils"
+import { cn, cnv } from "@/lib/utils"
 
 const DropdownMenuTrigger = MenuTrigger
 
-const DropdownMenuGroup = Section
+const DropdownMenuSection = Section
+
+const DropdownMenuPopover = React.forwardRef<
+  React.ElementRef<typeof Popover>,
+  React.ComponentPropsWithoutRef<typeof Popover>
+>(({ className, offset = 4, ...props }, ref) => (
+  <Popover
+    ref={ref}
+    offset={offset}
+    className={(values) =>
+      cnv(
+        values,
+        "z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md data-[entering]:animate-in data-[exiting]:animate-out data-[entering]:fade-in-0 data-[exiting]:fade-out-0 data-[exiting]:zoom-out-95 data-[placement=bottom]:slide-in-from-top-2 data-[placement=left]:slide-in-from-right-2 data-[placement=right]:slide-in-from-left-2 data-[placement=top]:slide-in-from-bottom-2"
+      )
+    }
+    {...props}
+  />
+))
+DropdownMenuPopover.displayName = "DropdownMenuPopover"
 
 const DropdownMenuContent = React.forwardRef<
   React.ElementRef<typeof Menu>,
-  React.ComponentPropsWithoutRef<typeof Menu> & {
-    offset?: number
-    placement?: PopoverProps["placement"]
-  }
->(({ className, placement, offset = 4, ...props }, ref) => (
-  <Popover
-    offset={offset}
-    className={cn(
-      "z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md data-[entering]:animate-in data-[exiting]:animate-out data-[entering]:fade-in-0 data-[exiting]:fade-out-0 data-[entering]:zoom-in-95 data-[exiting]:zoom-out-95 data-[placement=bottom]:slide-in-from-top-2 data-[placement=left]:slide-in-from-right-2 data-[placement=right]:slide-in-from-left-2 data-[placement=top]:slide-in-from-bottom-2"
-    )}
-    placement={placement}
-  >
-    <Menu ref={ref} className={cn("outline-none", className)} {...props} />
-  </Popover>
+  React.ComponentPropsWithoutRef<typeof Menu>
+>(({ className, ...props }, ref) => (
+  <Menu ref={ref} className={cn("outline-none", className)} {...props} />
 ))
 DropdownMenuContent.displayName = "DropdownMenuContent"
 
@@ -47,17 +54,20 @@ const DropdownMenuItem = React.forwardRef<
 >(({ className, inset, ...props }, ref) => (
   <Item
     ref={ref}
-    className={cn(
-      "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[focused]:bg-accent data-[focused]:text-accent-foreground data-[disabled]:opacity-50",
-      inset && "pl-8",
-      className
-    )}
+    className={(values) =>
+      cnv(
+        values,
+        "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[focused]:bg-accent data-[focused]:text-accent-foreground data-[disabled]:opacity-50",
+        inset && "pl-8",
+        className
+      )
+    }
     {...props}
   />
 ))
 DropdownMenuItem.displayName = "DropdownMenuItem"
 
-const DropdownMenuLabel = React.forwardRef<
+const DropdownMenuHeader = React.forwardRef<
   React.ElementRef<typeof Header>,
   React.ComponentPropsWithoutRef<typeof Header> & {
     inset?: boolean
@@ -75,7 +85,7 @@ const DropdownMenuLabel = React.forwardRef<
     {...props}
   />
 ))
-DropdownMenuLabel.displayName = "DropdownMenuLabel"
+DropdownMenuHeader.displayName = "DropdownMenuHeader"
 
 const DropdownMenuSeparator = React.forwardRef<
   React.ElementRef<typeof Separator>,
@@ -87,7 +97,7 @@ const DropdownMenuSeparator = React.forwardRef<
     {...props}
   />
 ))
-DropdownMenuSeparator.displayName = "Separator"
+DropdownMenuSeparator.displayName = "DropdownMenuSeparator"
 
 const DropdownMenuShortcut = ({
   className,
@@ -108,19 +118,22 @@ const DropdownMenuCheckboxItem = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <Item
     ref={ref}
-    className={cn(
-      "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[focused]:bg-accent data-[focused]:text-accent-foreground data-[disabled]:opacity-50",
-      className
-    )}
+    className={(values) =>
+      cnv(
+        values,
+        "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[focused]:bg-accent data-[focused]:text-accent-foreground data-[disabled]:opacity-50",
+        className
+      )
+    }
     {...props}
   >
-    {({ isSelected }) => (
+    {(values) => (
       <>
         <span className="absolute left-2 flex h-4 w-4 items-center justify-center">
-          {isSelected && <Check className="h-4 w-4" />}
+          {values.isSelected && <Check className="h-4 w-4" />}
         </span>
 
-        {children}
+        {typeof children === "function" ? children(values) : children}
       </>
     )}
   </Item>
@@ -133,18 +146,21 @@ const DropdownMenuRadioItem = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <Item
     ref={ref}
-    className={cn(
-      "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[focused]:bg-accent data-[focused]:text-accent-foreground data-[disabled]:opacity-50",
-      className
-    )}
+    className={(values) =>
+      cnv(
+        values,
+        "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[focused]:bg-accent data-[focused]:text-accent-foreground data-[disabled]:opacity-50",
+        className
+      )
+    }
     {...props}
   >
-    {({ isSelected }) => (
+    {(values) => (
       <>
         <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
-          {isSelected && <Circle className="h-2 w-2 fill-current" />}
+          {values.isSelected && <Circle className="h-2 w-2 fill-current" />}
         </span>
-        {children}
+        {typeof children === "function" ? children(values) : children}
       </>
     )}
   </Item>
@@ -154,11 +170,12 @@ DropdownMenuRadioItem.displayName = "DropdownMenuRadioItem"
 export {
   DropdownMenuTrigger,
   DropdownMenuContent,
+  DropdownMenuPopover,
   DropdownMenuItem,
-  DropdownMenuLabel,
+  DropdownMenuHeader,
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuCheckboxItem,
   DropdownMenuRadioItem,
-  DropdownMenuGroup,
+  DropdownMenuSection,
 }

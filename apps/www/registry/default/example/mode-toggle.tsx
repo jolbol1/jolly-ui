@@ -8,6 +8,7 @@ import { Button } from "@/registry/default/ui/button"
 import {
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuPopover,
   DropdownMenuTrigger,
 } from "@/registry/default/ui/dropdown-menu"
 
@@ -21,14 +22,13 @@ export default function ModeToggle() {
         <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
         <span className="sr-only">Toggle theme</span>
       </Button>
-      <DropdownMenuContent
-        onAction={(key) => setTheme(key as string)}
-        placement="bottom end"
-      >
-        <DropdownMenuItem id="light">Light</DropdownMenuItem>
-        <DropdownMenuItem id="dark">Dark</DropdownMenuItem>
-        <DropdownMenuItem id="system">System</DropdownMenuItem>
-      </DropdownMenuContent>
+      <DropdownMenuPopover placement="bottom end">
+        <DropdownMenuContent onAction={(key) => setTheme(key as string)}>
+          <DropdownMenuItem id="light">Light</DropdownMenuItem>
+          <DropdownMenuItem id="dark">Dark</DropdownMenuItem>
+          <DropdownMenuItem id="system">System</DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenuPopover>
     </DropdownMenuTrigger>
   )
 }

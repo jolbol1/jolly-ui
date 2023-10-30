@@ -11,6 +11,7 @@ import { Button, ButtonProps } from "@/registry/new-york/ui/button"
 import {
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuPopover,
   DropdownMenuTrigger,
 } from "@/registry/new-york/ui/dropdown-menu"
 
@@ -118,20 +119,21 @@ export function CopyWithClassNames({
         )}
         <span className="sr-only">Copy</span>
       </Button>
-      <DropdownMenuContent
-        onAction={(key) => {
-          if (key == "component") {
-            copyToClipboard(value)
-          }
-          if (key == "classname") {
-            copyToClipboard(classNames)
-          }
-        }}
-        placement="bottom end"
-      >
-        <DropdownMenuItem id="component">Component</DropdownMenuItem>
-        <DropdownMenuItem id="classname">Classname</DropdownMenuItem>
-      </DropdownMenuContent>
+      <DropdownMenuPopover placement="bottom end">
+        <DropdownMenuContent
+          onAction={(key) => {
+            if (key == "component") {
+              copyToClipboard(value)
+            }
+            if (key == "classname") {
+              copyToClipboard(classNames)
+            }
+          }}
+        >
+          <DropdownMenuItem id="component">Component</DropdownMenuItem>
+          <DropdownMenuItem id="classname">Classname</DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenuPopover>
     </DropdownMenuTrigger>
   )
 }
@@ -184,15 +186,16 @@ export function CopyNpmCommandButton({
         )}
         <span className="sr-only">Copy</span>
       </Button>
-      <DropdownMenuContent
-        onAction={(key) => copyCommand(commands.__npmCommand__, key as any)}
-        placement="bottom end"
-      >
-        <DropdownMenuItem id="npm">npm</DropdownMenuItem>
-        <DropdownMenuItem id="yarn">yarn</DropdownMenuItem>
-        <DropdownMenuItem id="pnpm">pnpm</DropdownMenuItem>
-        <DropdownMenuItem id="bun">bun</DropdownMenuItem>
-      </DropdownMenuContent>
+      <DropdownMenuPopover placement="bottom end">
+        <DropdownMenuContent
+          onAction={(key) => copyCommand(commands.__npmCommand__, key as any)}
+        >
+          <DropdownMenuItem id="npm">npm</DropdownMenuItem>
+          <DropdownMenuItem id="yarn">yarn</DropdownMenuItem>
+          <DropdownMenuItem id="pnpm">pnpm</DropdownMenuItem>
+          <DropdownMenuItem id="bun">bun</DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenuPopover>
     </DropdownMenuTrigger>
   )
 }

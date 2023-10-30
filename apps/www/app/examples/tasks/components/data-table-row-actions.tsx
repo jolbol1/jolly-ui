@@ -7,6 +7,7 @@ import { Button } from "@/registry/new-york/ui/button"
 import {
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuPopover,
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuTrigger,
@@ -33,16 +34,18 @@ export function DataTableRowActions<TData>({
         <DotsHorizontalIcon className="h-4 w-4" />
         <span className="sr-only">Open menu</span>
       </Button>
-      <DropdownMenuContent placement="bottom end" className="w-[160px]">
-        <DropdownMenuItem>Edit</DropdownMenuItem>
-        <DropdownMenuItem>Make a copy</DropdownMenuItem>
-        <DropdownMenuItem>Favorite</DropdownMenuItem>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem>
-          Delete
-          <DropdownMenuShortcut>⌘⌫</DropdownMenuShortcut>
-        </DropdownMenuItem>
-      </DropdownMenuContent>
+      <DropdownMenuPopover placement="bottom end">
+        <DropdownMenuContent className="w-[160px]">
+          <DropdownMenuItem>Edit</DropdownMenuItem>
+          <DropdownMenuItem>Make a copy</DropdownMenuItem>
+          <DropdownMenuItem>Favorite</DropdownMenuItem>
+          <DropdownMenuSeparator />
+          <DropdownMenuItem>
+            Delete
+            <DropdownMenuShortcut>⌘⌫</DropdownMenuShortcut>
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenuPopover>
     </DropdownMenuTrigger>
   )
 }

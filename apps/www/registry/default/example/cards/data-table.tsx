@@ -33,8 +33,9 @@ import { Checkbox } from "@/registry/default/ui/checkbox"
 import {
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
+  DropdownMenuHeader,
   DropdownMenuItem,
-  DropdownMenuLabel,
+  DropdownMenuPopover,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/registry/default/ui/dropdown-menu"
@@ -157,18 +158,19 @@ export const columns: ColumnDef<Payment>[] = [
             <span className="sr-only">Open menu</span>
             <DotsHorizontalIcon className="h-4 w-4" />
           </Button>
-          <DropdownMenuContent
-            onAction={(key) =>
-              key == "copy" ? navigator.clipboard.writeText(payment.id) : null
-            }
-            placement="bottom end"
-          >
-            <DropdownMenuLabel>Actions</DropdownMenuLabel>
-            <DropdownMenuItem id="copy">Copy payment ID</DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>View customer</DropdownMenuItem>
-            <DropdownMenuItem>View payment details</DropdownMenuItem>
-          </DropdownMenuContent>
+          <DropdownMenuPopover placement="bottom end">
+            <DropdownMenuContent
+              onAction={(key) =>
+                key == "copy" ? navigator.clipboard.writeText(payment.id) : null
+              }
+            >
+              <DropdownMenuHeader>Actions</DropdownMenuHeader>
+              <DropdownMenuItem id="copy">Copy payment ID</DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>View customer</DropdownMenuItem>
+              <DropdownMenuItem>View payment details</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenuPopover>
         </DropdownMenuTrigger>
       )
     },
@@ -232,26 +234,27 @@ export function CardsDataTable() {
             <Button variant="outline" className="ml-auto">
               Columns <ChevronDownIcon className="ml-2 h-4 w-4" />
             </Button>
-            <DropdownMenuContent
-              selectedKeys={selectedCols}
-              selectionMode="multiple"
-              placement="bottom end"
-            >
-              <Collection
-                items={table
-                  .getAllColumns()
-                  .filter((column) => column.getCanHide())}
+            <DropdownMenuPopover placement="bottom end">
+              <DropdownMenuContent
+                selectedKeys={selectedCols}
+                selectionMode="multiple"
               >
-                {(item) => (
-                  <DropdownMenuCheckboxItem
-                    key={item.id}
-                    className="capitalize"
-                  >
-                    {item.id}
-                  </DropdownMenuCheckboxItem>
-                )}
-              </Collection>
-            </DropdownMenuContent>
+                <Collection
+                  items={table
+                    .getAllColumns()
+                    .filter((column) => column.getCanHide())}
+                >
+                  {(item) => (
+                    <DropdownMenuCheckboxItem
+                      key={item.id}
+                      className="capitalize"
+                    >
+                      {item.id}
+                    </DropdownMenuCheckboxItem>
+                  )}
+                </Collection>
+              </DropdownMenuContent>
+            </DropdownMenuPopover>
           </DropdownMenuTrigger>
         </div>
         <div className="rounded-md border">

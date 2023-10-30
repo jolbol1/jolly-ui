@@ -9,8 +9,9 @@ import { Button } from "@/registry/new-york/ui/button"
 import {
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuLabel,
+  DropdownMenuHeader,
+  DropdownMenuPopover,
+  DropdownMenuSection,
   DropdownMenuTrigger,
 } from "@/registry/new-york/ui/dropdown-menu"
 
@@ -56,34 +57,35 @@ export function DataTableViewOptions<TData>({
         <MixerHorizontalIcon className="mr-2 h-4 w-4" />
         View
       </Button>
-      <DropdownMenuContent
-        selectionMode="multiple"
-        placement="bottom end"
-        className="w-[150px]"
-        selectedKeys={selectedKeys}
-        onSelectionChange={handleChange}
-      >
-        <DropdownMenuGroup>
-          <DropdownMenuLabel>Toggle columns</DropdownMenuLabel>
-        </DropdownMenuGroup>
-        <Collection
-          items={table
-            .getAllColumns()
-            .filter(
-              (column) =>
-                typeof column.accessorFn !== "undefined" && column.getCanHide()
-            )}
+      <DropdownMenuPopover placement="bottom end">
+        <DropdownMenuContent
+          selectionMode="multiple"
+          className="w-[150px]"
+          selectedKeys={selectedKeys}
+          onSelectionChange={handleChange}
         >
-          {(item) => (
-            <DropdownMenuCheckboxItem
-              id={item.id}
-              key={item.id}
-              className="capitalize"
-            >
-              {item.id}
-            </DropdownMenuCheckboxItem>
-          )}
-          {/* {table
+          <DropdownMenuSection>
+            <DropdownMenuHeader>Toggle columns</DropdownMenuHeader>
+          </DropdownMenuSection>
+          <Collection
+            items={table
+              .getAllColumns()
+              .filter(
+                (column) =>
+                  typeof column.accessorFn !== "undefined" &&
+                  column.getCanHide()
+              )}
+          >
+            {(item) => (
+              <DropdownMenuCheckboxItem
+                id={item.id}
+                key={item.id}
+                className="capitalize"
+              >
+                {item.id}
+              </DropdownMenuCheckboxItem>
+            )}
+            {/* {table
           .getAllColumns()
           .filter(
             (column) =>
@@ -101,8 +103,9 @@ export function DataTableViewOptions<TData>({
               </DropdownMenuCheckboxItem>
             )
           })} */}
-        </Collection>
-      </DropdownMenuContent>
+          </Collection>
+        </DropdownMenuContent>
+      </DropdownMenuPopover>
     </DropdownMenuTrigger>
   )
 }

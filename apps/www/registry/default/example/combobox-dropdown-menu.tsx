@@ -14,9 +14,10 @@ import {
 } from "@/registry/default/ui/command"
 import {
   DropdownMenuContent,
-  DropdownMenuGroup,
+  DropdownMenuHeader,
   DropdownMenuItem,
-  DropdownMenuLabel,
+  DropdownMenuPopover,
+  DropdownMenuSection,
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuTrigger,
@@ -48,26 +49,28 @@ export default function ComboboxDropdownMenu() {
         <Button variant="ghost" size="sm">
           <MoreHorizontal />
         </Button>
-        <DropdownMenuContent placement="bottom end" className="w-[200px]">
-          <DropdownMenuLabel>Actions</DropdownMenuLabel>
-          <DropdownMenuGroup>
-            <DropdownMenuItem>
-              <User className="mr-2 h-4 w-4" />
-              Assign to...
-            </DropdownMenuItem>
-            <DropdownMenuItem>
-              <Calendar className="mr-2 h-4 w-4" />
-              Set due date...
-            </DropdownMenuItem>
+        <DropdownMenuPopover placement="bottom end">
+          <DropdownMenuContent className="w-[200px]">
+            <DropdownMenuHeader>Actions</DropdownMenuHeader>
+            <DropdownMenuSection>
+              <DropdownMenuItem>
+                <User className="mr-2 h-4 w-4" />
+                Assign to...
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Calendar className="mr-2 h-4 w-4" />
+                Set due date...
+              </DropdownMenuItem>
 
-            <DropdownMenuSeparator />
-            <DropdownMenuItem className="text-red-600">
-              <Trash className="mr-2 h-4 w-4" />
-              Delete
-              <DropdownMenuShortcut>⌘⌫</DropdownMenuShortcut>
-            </DropdownMenuItem>
-          </DropdownMenuGroup>
-        </DropdownMenuContent>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem className="text-red-600">
+                <Trash className="mr-2 h-4 w-4" />
+                Delete
+                <DropdownMenuShortcut>⌘⌫</DropdownMenuShortcut>
+              </DropdownMenuItem>
+            </DropdownMenuSection>
+          </DropdownMenuContent>
+        </DropdownMenuPopover>
       </DropdownMenuTrigger>
     </div>
   )

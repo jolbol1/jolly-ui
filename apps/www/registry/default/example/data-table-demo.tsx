@@ -19,8 +19,9 @@ import { Button } from "@/registry/default/ui/button"
 import { Checkbox } from "@/registry/default/ui/checkbox"
 import {
   DropdownMenuContent,
+  DropdownMenuHeader,
   DropdownMenuItem,
-  DropdownMenuLabel,
+  DropdownMenuPopover,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/registry/default/ui/dropdown-menu"
@@ -143,18 +144,19 @@ export const columns: ColumnDef<Payment>[] = [
             <span className="sr-only">Open menu</span>
             <MoreHorizontal className="h-4 w-4" />
           </Button>
-          <DropdownMenuContent
-            onAction={(key) =>
-              key == "copy" ? navigator.clipboard.writeText(payment.id) : null
-            }
-            placement="bottom end"
-          >
-            <DropdownMenuLabel>Actions</DropdownMenuLabel>
-            <DropdownMenuItem id="copy">Copy payment ID</DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>View customer</DropdownMenuItem>
-            <DropdownMenuItem>View payment details</DropdownMenuItem>
-          </DropdownMenuContent>
+          <DropdownMenuPopover placement="bottom end">
+            <DropdownMenuContent
+              onAction={(key) =>
+                key == "copy" ? navigator.clipboard.writeText(payment.id) : null
+              }
+            >
+              <DropdownMenuHeader>Actions</DropdownMenuHeader>
+              <DropdownMenuItem id="copy">Copy payment ID</DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>View customer</DropdownMenuItem>
+              <DropdownMenuItem>View payment details</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenuPopover>
         </DropdownMenuTrigger>
       )
     },

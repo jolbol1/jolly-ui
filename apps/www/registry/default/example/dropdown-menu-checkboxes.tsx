@@ -7,36 +7,40 @@ import { Button } from "@/registry/default/ui/button"
 import {
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuLabel,
+  DropdownMenuHeader,
+  DropdownMenuPopover,
+  DropdownMenuSection,
   DropdownMenuTrigger,
 } from "@/registry/default/ui/dropdown-menu"
 
 export default function DropdownMenuCheckboxes() {
-  const [selected, setSelected] = React.useState<Selection>(
-    new Set(["activity"])
-  )
+  const [selected, setSelected] = React.useState<Selection>(new Set(["status"]))
 
   return (
     <DropdownMenuTrigger>
       <Button variant="outline">Open</Button>
-      <DropdownMenuContent
-        selectionMode="multiple"
-        selectedKeys={selected}
-        onSelectionChange={setSelected}
-        className="w-56"
-      >
-        <DropdownMenuGroup>
-          <DropdownMenuLabel separator>Appearance</DropdownMenuLabel>
-          <DropdownMenuCheckboxItem id="status">
-            Status Bar
-          </DropdownMenuCheckboxItem>
-          <DropdownMenuCheckboxItem id="activity">
-            Activity Bar
-          </DropdownMenuCheckboxItem>
-          <DropdownMenuCheckboxItem id="panel">Panel</DropdownMenuCheckboxItem>
-        </DropdownMenuGroup>
-      </DropdownMenuContent>
+      <DropdownMenuPopover placement="bottom">
+        <DropdownMenuContent
+          selectionMode="multiple"
+          selectedKeys={selected}
+          onSelectionChange={setSelected}
+          className="w-56"
+          disabledKeys={["activity"]}
+        >
+          <DropdownMenuSection>
+            <DropdownMenuHeader separator>Appearance</DropdownMenuHeader>
+            <DropdownMenuCheckboxItem id="status">
+              Status Bar
+            </DropdownMenuCheckboxItem>
+            <DropdownMenuCheckboxItem id="activity">
+              Activity Bar
+            </DropdownMenuCheckboxItem>
+            <DropdownMenuCheckboxItem id="panel">
+              Panel
+            </DropdownMenuCheckboxItem>
+          </DropdownMenuSection>
+        </DropdownMenuContent>
+      </DropdownMenuPopover>
     </DropdownMenuTrigger>
   )
 }

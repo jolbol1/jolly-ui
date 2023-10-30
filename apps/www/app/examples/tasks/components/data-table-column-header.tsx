@@ -11,6 +11,7 @@ import { Button } from "@/registry/new-york/ui/button"
 import {
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuPopover,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/registry/new-york/ui/dropdown-menu"
@@ -47,34 +48,35 @@ export function DataTableColumnHeader<TData, TValue>({
             <CaretSortIcon className="ml-2 h-4 w-4" />
           )}
         </Button>
-        <DropdownMenuContent
-          onAction={(key) => {
-            if (key == "asc") {
-              column.toggleSorting(false)
-            }
-            if (key == "desc") {
-              column.toggleSorting(true)
-            }
-            if (key == "hide") {
-              column.toggleVisibility(false)
-            }
-          }}
-          placement="bottom start"
-        >
-          <DropdownMenuItem id="asc">
-            <ArrowUpIcon className="mr-2 h-3.5 w-3.5 text-muted-foreground/70" />
-            Asc
-          </DropdownMenuItem>
-          <DropdownMenuItem id="desc">
-            <ArrowDownIcon className="mr-2 h-3.5 w-3.5 text-muted-foreground/70" />
-            Desc
-          </DropdownMenuItem>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem id="hide">
-            <EyeNoneIcon className="mr-2 h-3.5 w-3.5 text-muted-foreground/70" />
-            Hide
-          </DropdownMenuItem>
-        </DropdownMenuContent>
+        <DropdownMenuPopover placement="bottom start">
+          <DropdownMenuContent
+            onAction={(key) => {
+              if (key == "asc") {
+                column.toggleSorting(false)
+              }
+              if (key == "desc") {
+                column.toggleSorting(true)
+              }
+              if (key == "hide") {
+                column.toggleVisibility(false)
+              }
+            }}
+          >
+            <DropdownMenuItem id="asc">
+              <ArrowUpIcon className="mr-2 h-3.5 w-3.5 text-muted-foreground/70" />
+              Asc
+            </DropdownMenuItem>
+            <DropdownMenuItem id="desc">
+              <ArrowDownIcon className="mr-2 h-3.5 w-3.5 text-muted-foreground/70" />
+              Desc
+            </DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem id="hide">
+              <EyeNoneIcon className="mr-2 h-3.5 w-3.5 text-muted-foreground/70" />
+              Hide
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenuPopover>
       </DropdownMenuTrigger>
     </div>
   )

@@ -6,9 +6,10 @@ import { Selection } from "react-aria-components"
 import { Button } from "@/registry/new-york/ui/button"
 import {
   DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuLabel,
+  DropdownMenuHeader,
+  DropdownMenuPopover,
   DropdownMenuRadioItem,
+  DropdownMenuSection,
   DropdownMenuTrigger,
 } from "@/registry/new-york/ui/dropdown-menu"
 
@@ -22,19 +23,21 @@ export default function DropdownMenuRadioGroupDemo() {
   return (
     <DropdownMenuTrigger>
       <Button variant="outline">Open</Button>
-      <DropdownMenuContent
-        selectionMode="single"
-        selectedKeys={selected}
-        onSelectionChange={setSelected}
-        className="w-56"
-      >
-        <DropdownMenuGroup>
-          <DropdownMenuLabel separator>Panel Position</DropdownMenuLabel>
-          <DropdownMenuRadioItem id="top">Top</DropdownMenuRadioItem>
-          <DropdownMenuRadioItem id="bottom">Bottom</DropdownMenuRadioItem>
-          <DropdownMenuRadioItem id="right">Right</DropdownMenuRadioItem>
-        </DropdownMenuGroup>
-      </DropdownMenuContent>
+      <DropdownMenuPopover placement="bottom">
+        <DropdownMenuContent
+          selectionMode="single"
+          selectedKeys={selected}
+          onSelectionChange={setSelected}
+          className="w-56"
+        >
+          <DropdownMenuSection>
+            <DropdownMenuHeader separator>Panel Position</DropdownMenuHeader>
+            <DropdownMenuRadioItem id="top">Top</DropdownMenuRadioItem>
+            <DropdownMenuRadioItem id="bottom">Bottom</DropdownMenuRadioItem>
+            <DropdownMenuRadioItem id="right">Right</DropdownMenuRadioItem>
+          </DropdownMenuSection>
+        </DropdownMenuContent>
+      </DropdownMenuPopover>
     </DropdownMenuTrigger>
   )
 }
