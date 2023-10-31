@@ -15,6 +15,7 @@ import {
   Select,
   SelectContent,
   SelectItem,
+  SelectPopover,
   SelectTrigger,
   SelectValue,
 } from "@/registry/new-york/ui/select"
@@ -37,13 +38,15 @@ export function DemoReportAnIssue() {
               <SelectTrigger id="area">
                 <SelectValue placeholder="Select" />
               </SelectTrigger>
-              <SelectContent>
-                <SelectItem id="team">Team</SelectItem>
-                <SelectItem id="billing">Billing</SelectItem>
-                <SelectItem id="account">Account</SelectItem>
-                <SelectItem id="deployments">Deployments</SelectItem>
-                <SelectItem id="support">Support</SelectItem>
-              </SelectContent>
+              <SelectPopover>
+                <SelectContent>
+                  <SelectItem id="team">Team</SelectItem>
+                  <SelectItem id="billing">Billing</SelectItem>
+                  <SelectItem id="account">Account</SelectItem>
+                  <SelectItem id="deployments">Deployments</SelectItem>
+                  <SelectItem id="support">Support</SelectItem>
+                </SelectContent>
+              </SelectPopover>
             </Select>
           </div>
           <div className="grid gap-2">

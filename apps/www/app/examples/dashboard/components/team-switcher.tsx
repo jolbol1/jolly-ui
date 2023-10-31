@@ -39,6 +39,7 @@ import {
   Select,
   SelectContent,
   SelectItem,
+  SelectPopover,
   SelectTrigger,
   SelectValue,
 } from "@/registry/new-york/ui/select"
@@ -176,20 +177,22 @@ export default function TeamSwitcher() {
                 <SelectTrigger>
                   <SelectValue placeholder="Select a plan" />
                 </SelectTrigger>
-                <SelectContent>
-                  <SelectItem id="free">
-                    <span className="font-medium">Free</span> -{" "}
-                    <span className="text-muted-foreground">
-                      Trial for two weeks
-                    </span>
-                  </SelectItem>
-                  <SelectItem id="pro">
-                    <span className="font-medium">Pro</span> -{" "}
-                    <span className="text-muted-foreground">
-                      $9/month per user
-                    </span>
-                  </SelectItem>
-                </SelectContent>
+                <SelectPopover>
+                  <SelectContent>
+                    <SelectItem id="free">
+                      <span className="font-medium">Free</span> -{" "}
+                      <span className="text-muted-foreground">
+                        Trial for two weeks
+                      </span>
+                    </SelectItem>
+                    <SelectItem id="pro">
+                      <span className="font-medium">Pro</span> -{" "}
+                      <span className="text-muted-foreground">
+                        $9/month per user
+                      </span>
+                    </SelectItem>
+                  </SelectContent>
+                </SelectPopover>
               </Select>
             </div>
           </div>

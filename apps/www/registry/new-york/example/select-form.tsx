@@ -19,6 +19,7 @@ import {
   Select,
   SelectContent,
   SelectItem,
+  SelectPopover,
   SelectTrigger,
   SelectValue,
 } from "@/registry/new-york/ui/select"
@@ -58,6 +59,7 @@ export default function SelectForm() {
             <FormItem>
               <FormLabel>Email</FormLabel>
               <Select
+                aria-label="email selection"
                 onSelectionChange={field.onChange}
                 defaultSelectedKey={field.value}
               >
@@ -66,11 +68,19 @@ export default function SelectForm() {
                     <SelectValue placeholder="Select a verified email to display" />
                   </SelectTrigger>
                 </FormControl>
-                <SelectContent>
-                  <SelectItem id="m@example.com">m@example.com</SelectItem>
-                  <SelectItem id="m@google.com">m@google.com</SelectItem>
-                  <SelectItem id="m@support.com">m@support.com</SelectItem>
-                </SelectContent>
+                <SelectPopover>
+                  <SelectContent aria-label="emails">
+                    <SelectItem textValue="m@example.com" id="m@example.com">
+                      m@example.com
+                    </SelectItem>
+                    <SelectItem textValue="m@google.com" id="m@google.com">
+                      m@google.com
+                    </SelectItem>
+                    <SelectItem textValue="m@support.com" id="m@support.com">
+                      m@support.com
+                    </SelectItem>
+                  </SelectContent>
+                </SelectPopover>
               </Select>
               <FormDescription>
                 You can manage email addresses in your{" "}

@@ -11,6 +11,7 @@ import {
   Select,
   SelectContent,
   SelectItem,
+  SelectPopover,
   SelectTrigger,
   SelectValue,
 } from "@/registry/new-york/ui/select"
@@ -42,13 +43,15 @@ export function DataTablePagination<TData>({
                 placeholder={table.getState().pagination.pageSize.toString()}
               />
             </SelectTrigger>
-            <SelectContent placement="top">
-              {[10, 20, 30, 40, 50].map((pageSize) => (
-                <SelectItem key={pageSize} id={`${pageSize}`}>
-                  {pageSize}
-                </SelectItem>
-              ))}
-            </SelectContent>
+            <SelectPopover placement="top">
+              <SelectContent>
+                {[10, 20, 30, 40, 50].map((pageSize) => (
+                  <SelectItem key={pageSize} id={`${pageSize}`}>
+                    {pageSize}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </SelectPopover>
           </Select>
         </div>
         <div className="flex w-[100px] items-center justify-center text-sm font-medium">

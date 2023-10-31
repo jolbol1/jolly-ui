@@ -346,7 +346,7 @@ export const docsConfig: DocsConfig = {
           title: "Select",
           href: "/docs/components/select",
           items: [],
-          label: "v1",
+          label: "v2",
         },
         {
           title: "Separator",

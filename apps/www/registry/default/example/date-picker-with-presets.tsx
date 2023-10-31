@@ -12,6 +12,7 @@ import {
   Select,
   SelectContent,
   SelectItem,
+  SelectPopover,
   SelectTrigger,
   SelectValue,
 } from "@/registry/default/ui/select"
@@ -40,12 +41,14 @@ export default function DatePickerWithPresets() {
           <SelectTrigger>
             <SelectValue placeholder="Select" />
           </SelectTrigger>
-          <SelectContent placement="bottom">
-            <SelectItem id="0">Today</SelectItem>
-            <SelectItem id="1">Tomorrow</SelectItem>
-            <SelectItem id="3">In 3 days</SelectItem>
-            <SelectItem id="7">In a week</SelectItem>
-          </SelectContent>
+          <SelectPopover placement="bottom">
+            <SelectContent>
+              <SelectItem id="0">Today</SelectItem>
+              <SelectItem id="1">Tomorrow</SelectItem>
+              <SelectItem id="3">In 3 days</SelectItem>
+              <SelectItem id="7">In a week</SelectItem>
+            </SelectContent>
+          </SelectPopover>
         </Select>
         <div className="rounded-md border">
           <Calendar mode="single" selected={date} onSelect={setDate} />

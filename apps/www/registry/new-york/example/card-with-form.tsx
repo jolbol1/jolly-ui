@@ -15,6 +15,7 @@ import {
   Select,
   SelectContent,
   SelectItem,
+  SelectPopover,
   SelectTrigger,
   SelectValue,
 } from "@/registry/new-york/ui/select"
@@ -39,12 +40,14 @@ export default function CardWithForm() {
                 <SelectTrigger id="framework">
                   <SelectValue placeholder="Select" />
                 </SelectTrigger>
-                <SelectContent placement="bottom">
-                  <SelectItem id="next">Next.js</SelectItem>
-                  <SelectItem id="sveltekit">SvelteKit</SelectItem>
-                  <SelectItem id="astro">Astro</SelectItem>
-                  <SelectItem id="nuxt">Nuxt.js</SelectItem>
-                </SelectContent>
+                <SelectPopover placement="bottom">
+                  <SelectContent>
+                    <SelectItem id="next">Next.js</SelectItem>
+                    <SelectItem id="sveltekit">SvelteKit</SelectItem>
+                    <SelectItem id="astro">Astro</SelectItem>
+                    <SelectItem id="nuxt">Nuxt.js</SelectItem>
+                  </SelectContent>
+                </SelectPopover>
               </Select>
             </div>
           </div>

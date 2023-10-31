@@ -15,6 +15,7 @@ import {
   Select,
   SelectContent,
   SelectItem,
+  SelectPopover,
   SelectTrigger,
   SelectValue,
 } from "@/registry/new-york/ui/select"
@@ -91,20 +92,22 @@ export function DemoPaymentMethod() {
               <SelectTrigger id="month">
                 <SelectValue placeholder="Month" />
               </SelectTrigger>
-              <SelectContent>
-                <SelectItem id="1">January</SelectItem>
-                <SelectItem id="2">February</SelectItem>
-                <SelectItem id="3">March</SelectItem>
-                <SelectItem id="4">April</SelectItem>
-                <SelectItem id="5">May</SelectItem>
-                <SelectItem id="6">June</SelectItem>
-                <SelectItem id="7">July</SelectItem>
-                <SelectItem id="8">August</SelectItem>
-                <SelectItem id="9">September</SelectItem>
-                <SelectItem id="10">October</SelectItem>
-                <SelectItem id="11">November</SelectItem>
-                <SelectItem id="12">December</SelectItem>
-              </SelectContent>
+              <SelectPopover>
+                <SelectContent>
+                  <SelectItem id="1">January</SelectItem>
+                  <SelectItem id="2">February</SelectItem>
+                  <SelectItem id="3">March</SelectItem>
+                  <SelectItem id="4">April</SelectItem>
+                  <SelectItem id="5">May</SelectItem>
+                  <SelectItem id="6">June</SelectItem>
+                  <SelectItem id="7">July</SelectItem>
+                  <SelectItem id="8">August</SelectItem>
+                  <SelectItem id="9">September</SelectItem>
+                  <SelectItem id="10">October</SelectItem>
+                  <SelectItem id="11">November</SelectItem>
+                  <SelectItem id="12">December</SelectItem>
+                </SelectContent>
+              </SelectPopover>
             </Select>
           </div>
           <div className="grid gap-2">
@@ -113,13 +116,15 @@ export function DemoPaymentMethod() {
               <SelectTrigger id="year">
                 <SelectValue placeholder="Year" />
               </SelectTrigger>
-              <SelectContent>
-                {Array.from({ length: 10 }, (_, i) => (
-                  <SelectItem key={i} id={`${new Date().getFullYear() + i}`}>
-                    {new Date().getFullYear() + i}
-                  </SelectItem>
-                ))}
-              </SelectContent>
+              <SelectPopover>
+                <SelectContent>
+                  {Array.from({ length: 10 }, (_, i) => (
+                    <SelectItem key={i} id={`${new Date().getFullYear() + i}`}>
+                      {new Date().getFullYear() + i}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </SelectPopover>
             </Select>
           </div>
           <div className="grid gap-2">

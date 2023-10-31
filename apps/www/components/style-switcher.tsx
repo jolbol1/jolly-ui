@@ -9,6 +9,7 @@ import {
   Select,
   SelectContent,
   SelectItem,
+  SelectPopover,
   SelectTrigger,
   SelectValue,
 } from "@/registry/new-york/ui/select"
@@ -36,13 +37,15 @@ export function StyleSwitcher({ className }: SelectTriggerProps) {
         <span className="text-muted-foreground">Style: </span>
         <SelectValue placeholder="Select style" />
       </SelectTrigger>
-      <SelectContent>
-        {styles.map((style) => (
-          <SelectItem key={style.name} id={style.name} className="text-xs">
-            {style.label}
-          </SelectItem>
-        ))}
-      </SelectContent>
+      <SelectPopover>
+        <SelectContent>
+          {styles.map((style) => (
+            <SelectItem key={style.name} id={style.name} className="text-xs">
+              {style.label}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </SelectPopover>
     </Select>
   )
 }
