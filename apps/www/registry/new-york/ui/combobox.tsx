@@ -4,7 +4,9 @@ import * as React from "react"
 import { CaretSortIcon, CheckIcon } from "@radix-ui/react-icons"
 import {
   Button,
+  Collection,
   ComboBox,
+  Group,
   Header,
   Input,
   Item,
@@ -14,52 +16,67 @@ import {
   Separator,
 } from "react-aria-components"
 
-import { cn } from "@/lib/utils"
+import { cn, cnv } from "@/lib/utils"
 
 const Combobox = ComboBox
 
-const ComboboxGroup = Section
+const ComboboxSection = Section
+
+const ComboboxCollection = Collection
 
 const ComboboxInput = React.forwardRef<
   React.ElementRef<typeof Input>,
   React.ComponentPropsWithoutRef<typeof Input>
->(({ className, children, ...props }, ref) => (
-  <div
+>(({ className, ...props }, ref) => (
+  <Group
     className={cn(
-      "flex h-9 w-full items-center justify-between rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background placeholder:text-muted-foreground focus-within:outline-none focus-within:ring-1 focus-within:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
-      className
+      "flex h-9 w-full items-center justify-between overflow-hidden rounded-md border border-input bg-transparent  text-sm shadow-sm ring-offset-background placeholder:text-muted-foreground focus-within:outline-none focus-within:ring-1 focus-within:ring-ring data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50"
     )}
   >
     <Input
-      className="flex w-full bg-background text-sm placeholder:text-muted-foreground focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50"
+      className={(values) =>
+        cnv(
+          values,
+          "flex w-full bg-background px-3 py-2 text-sm placeholder:text-muted-foreground data-[focused]:outline-none data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
+          className
+        )
+      }
       ref={ref}
       {...props}
     />
-    <Button>
-      <CaretSortIcon className="h-4 w-4 opacity-50" />
+    <Button className="pr-3">
+      <CaretSortIcon aria-hidden="true" className="h-4 w-4 opacity-50" />
     </Button>
-  </div>
+  </Group>
 ))
 ComboboxInput.displayName = "ComboboxInput"
 
-const ComboboxContent = React.forwardRef<
+const ComboboxPopover = React.forwardRef<
   React.ElementRef<typeof Popover>,
   React.ComponentPropsWithoutRef<typeof Popover>
->(({ className, offset = 0, children, ...props }, ref) => (
+>(({ className, ...props }, ref) => (
   <Popover
-    offset={offset}
     ref={ref}
-    className={cn(
-      "relative z-50  min-w-[8rem] overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md data-[entering]:animate-in data-[exiting]:animate-out data-[entering]:fade-in-0 data-[exiting]:fade-out-0 data-[entering]:zoom-in-95 data-[exiting]:zoom-out-95 data-[placement=bottom]:slide-in-from-top-2 data-[placement=left]:slide-in-from-right-2 data-[placement=right]:slide-in-from-left-2 data-[placement=top]:slide-in-from-bottom-2",
-      "data-[placement=bottom]:translate-y-1 data-[placement=left]:-translate-x-1 data-[placement=right]:translate-x-1 data-[placement=top]:-translate-y-1",
-      className
-    )}
+    className={(values) =>
+      cnv(
+        values,
+        "relative z-50 w-[--trigger-width] min-w-[8rem] overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md data-[entering]:animate-in data-[exiting]:animate-out data-[entering]:fade-in-0 data-[exiting]:fade-out-0 data-[exiting]:zoom-out-95 data-[placement=bottom]:slide-in-from-top-2 data-[placement=left]:slide-in-from-right-2 data-[placement=right]:slide-in-from-left-2 data-[placement=top]:slide-in-from-bottom-2",
+        "data-[placement=bottom]:translate-y-1 data-[placement=left]:-translate-x-1 data-[placement=right]:translate-x-1 data-[placement=top]:-translate-y-1",
+        className
+      )
+    }
     {...props}
-  >
-    <ListBox className={cn("p-1")}>{children}</ListBox>
-  </Popover>
+  />
 ))
-ComboboxContent.displayName = "ComboboxContent"
+ComboboxPopover.displayName = "ComboboxPopover"
+
+const ComboboxListBox = React.forwardRef<
+  React.ElementRef<typeof ListBox>,
+  React.ComponentPropsWithoutRef<typeof ListBox>
+>(({ className, ...props }, ref) => (
+  <ListBox ref={ref} className={cn("p-1")} {...props} />
+))
+ComboboxListBox.displayName = "ComboboxListBox"
 
 const ComboboxLabel = React.forwardRef<
   React.ElementRef<typeof Header>,
@@ -83,20 +100,23 @@ const ComboboxItem = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <Item
     ref={ref}
-    className={cn(
-      "relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-2 pr-8 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
-      className
-    )}
+    className={(values) =>
+      cnv(
+        values,
+        "relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-2 pr-8 text-sm outline-none data-[focused]:bg-accent data-[focused]:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+        className
+      )
+    }
     {...props}
   >
-    {({ isSelected }) => (
+    {(values) => (
       <>
-        {isSelected && (
+        {values.isSelected && (
           <span className="absolute right-2 flex h-4 w-4 items-center justify-center">
             <CheckIcon className="h-4 w-4" />
           </span>
         )}
-        {children}
+        {typeof children === "function" ? children(values) : children}
       </>
     )}
   </Item>
@@ -116,10 +136,12 @@ const ComboboxSeparator = React.forwardRef<
 ComboboxSeparator.displayName = "ComboboxSeparator"
 
 export {
-  ComboboxGroup,
-  ComboBox as Combobox,
+  ComboboxSection,
+  Combobox,
   ComboboxInput,
-  ComboboxContent,
+  ComboboxListBox,
+  ComboboxPopover,
+  ComboboxCollection,
   ComboboxLabel,
   ComboboxItem,
   ComboboxSeparator,

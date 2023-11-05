@@ -233,7 +233,7 @@ export const docsConfig: DocsConfig = {
           title: "Combobox",
           href: "/docs/components/combobox",
           items: [],
-          label: "v1",
+          label: "v2",
         },
         {
           title: "Command",

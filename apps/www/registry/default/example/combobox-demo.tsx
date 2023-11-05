@@ -1,15 +1,16 @@
 "use client"
 
-import * as React from "react"
 import { Collection } from "react-aria-components"
 
 import {
   Combobox,
-  ComboboxContent,
-  ComboboxGroup,
+  ComboboxCollection,
   ComboboxInput,
   ComboboxItem,
   ComboboxLabel,
+  ComboboxListBox,
+  ComboboxPopover,
+  ComboboxSection,
 } from "@/registry/default/ui/combobox"
 
 const frameworks = [
@@ -39,25 +40,27 @@ export default function ComboboxDemo() {
   return (
     <Combobox aria-label="Cities">
       <ComboboxInput
-        className="max-w-[200px]"
+        className="w-[200px]"
         placeholder="Select a framework..."
       />
-      <ComboboxContent crossOffset={-12} offset={12} className="w-[200px]">
-        <ComboboxGroup>
-          <ComboboxLabel separator>Cities</ComboboxLabel>
-          <Collection items={frameworks}>
-            {(item) => (
-              <ComboboxItem
-                textValue={item.label}
-                id={item.value}
-                key={item.value}
-              >
-                {item.label}
-              </ComboboxItem>
-            )}
-          </Collection>
-        </ComboboxGroup>
-      </ComboboxContent>
+      <ComboboxPopover>
+        <ComboboxListBox>
+          <ComboboxSection>
+            <ComboboxLabel separator>Cities</ComboboxLabel>
+            <ComboboxCollection items={frameworks}>
+              {(item) => (
+                <ComboboxItem
+                  textValue={item.label}
+                  id={item.value}
+                  key={item.value}
+                >
+                  {item.label}
+                </ComboboxItem>
+              )}
+            </ComboboxCollection>
+          </ComboboxSection>
+        </ComboboxListBox>
+      </ComboboxPopover>
     </Combobox>
   )
 }
