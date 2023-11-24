@@ -5,8 +5,8 @@ import { CaretSortIcon, CheckIcon } from "@radix-ui/react-icons"
 import {
   Button,
   Header,
-  Item,
   ListBox,
+  ListBoxItem,
   Popover,
   Select as RaSelect,
   SelectValue as RaSelectValue,
@@ -100,10 +100,10 @@ const SelectHeader = React.forwardRef<
 SelectHeader.displayName = "SelectHeader"
 
 const SelectItem = React.forwardRef<
-  React.ElementRef<typeof Item>,
-  React.ComponentPropsWithoutRef<typeof Item>
+  React.ElementRef<typeof ListBoxItem>,
+  React.ComponentPropsWithoutRef<typeof ListBoxItem>
 >(({ className, children, ...props }, ref) => (
-  <Item
+  <ListBoxItem
     ref={ref}
     className={(values) =>
       cnv(
@@ -124,7 +124,7 @@ const SelectItem = React.forwardRef<
         {typeof children === "function" ? children(values) : children}
       </>
     )}
-  </Item>
+  </ListBoxItem>
 ))
 SelectItem.displayName = "SelectItem"
 

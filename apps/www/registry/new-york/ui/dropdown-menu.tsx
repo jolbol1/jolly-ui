@@ -4,9 +4,9 @@ import * as React from "react"
 import { CheckIcon, DotFilledIcon } from "@radix-ui/react-icons"
 import {
   Header,
-  Item,
   Keyboard,
   Menu,
+  MenuItem,
   MenuTrigger,
   Popover,
   Section,
@@ -47,12 +47,12 @@ const DropdownMenuContent = React.forwardRef<
 DropdownMenuContent.displayName = "DropdownMenuContent"
 
 const DropdownMenuItem = React.forwardRef<
-  React.ElementRef<typeof Item>,
-  React.ComponentPropsWithoutRef<typeof Item> & {
+  React.ElementRef<typeof MenuItem>,
+  React.ComponentPropsWithoutRef<typeof MenuItem> & {
     inset?: boolean
   }
 >(({ className, inset, ...props }, ref) => (
-  <Item
+  <MenuItem
     ref={ref}
     className={(values) =>
       cnv(
@@ -68,10 +68,10 @@ const DropdownMenuItem = React.forwardRef<
 DropdownMenuItem.displayName = "DropdownMenuItem"
 
 const DropdownMenuCheckboxItem = React.forwardRef<
-  React.ElementRef<typeof Item>,
-  React.ComponentPropsWithoutRef<typeof Item>
+  React.ElementRef<typeof MenuItem>,
+  React.ComponentPropsWithoutRef<typeof MenuItem>
 >(({ className, children, ...props }, ref) => (
-  <Item
+  <MenuItem
     ref={ref}
     className={(values) =>
       cnv(
@@ -91,15 +91,15 @@ const DropdownMenuCheckboxItem = React.forwardRef<
         {typeof children === "function" ? children(values) : children}
       </>
     )}
-  </Item>
+  </MenuItem>
 ))
 DropdownMenuCheckboxItem.displayName = "DropdownMenuCheckboxItem"
 
 const DropdownMenuRadioItem = React.forwardRef<
-  React.ElementRef<typeof Item>,
-  React.ComponentPropsWithoutRef<typeof Item>
+  React.ElementRef<typeof MenuItem>,
+  React.ComponentPropsWithoutRef<typeof MenuItem>
 >(({ className, children, ...props }, ref) => (
-  <Item
+  <MenuItem
     ref={ref}
     className={cn(
       "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
@@ -117,7 +117,7 @@ const DropdownMenuRadioItem = React.forwardRef<
         {typeof children === "function" ? children(values) : children}
       </>
     )}
-  </Item>
+  </MenuItem>
 ))
 DropdownMenuRadioItem.displayName = "DropdownMenuRadioItem"
 
