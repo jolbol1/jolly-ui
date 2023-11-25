@@ -92,46 +92,16 @@ export const docsConfig: DocsConfig = {
         },
       ],
     },
-    // {
-    //   title: "Installation",
-    //   items: [
-    //     {
-    //       title: "Next.js",
-    //       href: "/docs/installation/next",
-    //       items: [],
-    //     },
-    //     {
-    //       title: "Vite",
-    //       href: "/docs/installation/vite",
-    //       items: [],
-    //     },
-    //     {
-    //       title: "Remix",
-    //       href: "/docs/installation/remix",
-    //       items: [],
-    //     },
-    //     {
-    //       title: "Gatsby",
-    //       href: "/docs/installation/gatsby",
-    //       items: [],
-    //     },
-    //     {
-    //       title: "Astro",
-    //       href: "/docs/installation/astro",
-    //       items: [],
-    //     },
-    //     {
-    //       title: "Laravel",
-    //       href: "/docs/installation/laravel",
-    //       items: [],
-    //     },
-    //     {
-    //       title: "Manual",
-    //       href: "/docs/installation/manual",
-    //       items: [],
-    //     },
-    //   ],
-    // },
+    {
+      title: "Installation",
+      items: [
+        {
+          title: "Manual",
+          href: "/docs/installation/manual",
+          items: [],
+        },
+      ],
+    },
     // {
     //   title: "Dark Mode",
     //   items: [
@@ -172,8 +142,8 @@ export const docsConfig: DocsConfig = {
         {
           title: "Alert Dialog",
           href: "/docs/components/alert-dialog",
-          label: "v1",
           items: [],
+          disabled: true,
         },
         {
           title: "Aspect Ratio",
@@ -199,7 +169,6 @@ export const docsConfig: DocsConfig = {
         {
           title: "Button",
           href: "/docs/components/button",
-          label: "v2",
           items: [],
         },
         {
@@ -220,7 +189,6 @@ export const docsConfig: DocsConfig = {
           title: "Checkbox",
           href: "/docs/components/checkbox",
           items: [],
-          label: "v2",
         },
         {
           title: "Collapsible",
@@ -233,7 +201,6 @@ export const docsConfig: DocsConfig = {
           title: "Combobox",
           href: "/docs/components/combobox",
           items: [],
-          label: "v2",
         },
         {
           title: "Command",
@@ -274,7 +241,6 @@ export const docsConfig: DocsConfig = {
           title: "Dropdown Menu",
           href: "/docs/components/dropdown-menu",
           items: [],
-          label: "v2",
         },
         {
           title: "Form",
@@ -301,7 +267,6 @@ export const docsConfig: DocsConfig = {
           title: "Label",
           href: "/docs/components/label",
           items: [],
-          label: "v2",
         },
         {
           title: "Menubar",
@@ -321,19 +286,16 @@ export const docsConfig: DocsConfig = {
           title: "Popover",
           href: "/docs/components/popover",
           items: [],
-          label: "v2",
         },
         {
           title: "Progress",
           href: "/docs/components/progress",
           items: [],
-          label: "v2",
         },
         {
           title: "Radio Group",
           href: "/docs/components/radio-group",
           items: [],
-          label: "v2",
         },
         {
           title: "Scroll Area",
@@ -346,7 +308,6 @@ export const docsConfig: DocsConfig = {
           title: "Select",
           href: "/docs/components/select",
           items: [],
-          label: "v2",
         },
         {
           title: "Separator",
@@ -373,13 +334,11 @@ export const docsConfig: DocsConfig = {
           title: "Slider",
           href: "/docs/components/slider",
           items: [],
-          label: "v2",
         },
         {
           title: "Switch",
           href: "/docs/components/switch",
           items: [],
-          label: "v2",
         },
         {
           title: "Table",
@@ -413,13 +372,11 @@ export const docsConfig: DocsConfig = {
           title: "Toggle",
           href: "/docs/components/toggle",
           items: [],
-          label: "v2",
         },
         {
           title: "Tooltip",
           href: "/docs/components/tooltip",
           items: [],
-          label: "v2",
         },
       ],
     },

@@ -2,19 +2,16 @@
 
 import * as React from "react"
 import {
-  Slider as RaSlider,
+  Slider,
+  SliderProps,
   SliderThumb,
   SliderTrack,
 } from "react-aria-components"
 
-import { cn, cnv } from "@/lib/utils"
+import { cnv } from "@/lib/utils"
 
-const Slider = React.forwardRef<
-  React.ElementRef<typeof RaSlider>,
-  React.ComponentPropsWithoutRef<typeof RaSlider>
->(({ className, children, ...props }, ref) => (
-  <RaSlider
-    ref={ref}
+const _Slider = ({ className, children, ...props }: SliderProps) => (
+  <Slider
     className={(values) =>
       cnv(
         values,
@@ -36,7 +33,7 @@ const Slider = React.forwardRef<
         </SliderTrack>
       </>
     )}
-  </RaSlider>
-))
-Slider.displayName = "Slider"
-export { Slider }
+  </Slider>
+)
+
+export { _Slider as Slider }

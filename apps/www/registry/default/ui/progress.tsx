@@ -1,16 +1,12 @@
 "use client"
 
 import * as React from "react"
-import { ProgressBar } from "react-aria-components"
+import { ProgressBar, ProgressBarProps } from "react-aria-components"
 
 import { cnv } from "@/lib/utils"
 
-const Progress = React.forwardRef<
-  React.ElementRef<typeof ProgressBar>,
-  React.ComponentPropsWithoutRef<typeof ProgressBar>
->(({ className, children, ...props }, ref) => (
+const Progress = ({ className, children, ...props }: ProgressBarProps) => (
   <ProgressBar
-    ref={ref}
     className={(values) =>
       cnv(
         values,
@@ -32,7 +28,6 @@ const Progress = React.forwardRef<
       </>
     )}
   </ProgressBar>
-))
-Progress.displayName = "ProgressBar"
+)
 
 export { Progress }

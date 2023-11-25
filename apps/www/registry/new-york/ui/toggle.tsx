@@ -32,25 +32,20 @@ export interface ToggleProps
   extends ToggleButtonProps,
     VariantProps<typeof toggleVariants> {}
 
-const Toggle = React.forwardRef<HTMLButtonElement, ToggleProps>(
-  ({ className, variant, size, ...props }, ref) => (
-    <ToggleButton
-      ref={ref}
-      className={(values) =>
-        cn(
-          toggleVariants({
-            variant,
-            size,
-            className:
-              typeof className === "function" ? className(values) : className,
-          })
-        )
-      }
-      {...props}
-    />
-  )
+const Toggle = ({ className, variant, size, ...props }: ToggleProps) => (
+  <ToggleButton
+    className={(values) =>
+      cn(
+        toggleVariants({
+          variant,
+          size,
+          className:
+            typeof className === "function" ? className(values) : className,
+        })
+      )
+    }
+    {...props}
+  />
 )
-
-Toggle.displayName = "ToggleButton"
 
 export { Toggle, toggleVariants }

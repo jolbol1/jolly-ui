@@ -1,36 +1,32 @@
 "use client"
 
-import * as React from "react"
 import { CheckIcon } from "@radix-ui/react-icons"
 import {
-  Radio as RaRadio,
-  RadioGroup as RaRadioGroup,
+  Radio,
+  RadioGroup,
+  RadioGroupProps,
+  RadioProps,
 } from "react-aria-components"
 
 import { cn, cnv } from "@/lib/utils"
-import { labelVariants } from "@/registry/default/ui/label"
+import { labelVariants } from "@/registry/new-york/ui/label"
 
-const RadioGroup = React.forwardRef<
-  React.ElementRef<typeof RaRadioGroup>,
-  React.ComponentPropsWithoutRef<typeof RaRadioGroup>
->(({ className, ...props }, ref) => {
-  return (
-    <RaRadioGroup
-      className={cn("grid gap-2", className)}
-      {...props}
-      ref={ref}
-    />
-  )
-})
-RadioGroup.displayName = "RadioGroup"
+const _RadioGroup = ({ className, ...props }: RadioGroupProps) => {
+  return <RadioGroup className={cn("grid gap-2", className)} {...props} />
+}
 
-const Radio = React.forwardRef<
-  React.ElementRef<typeof RaRadio>,
-  React.ComponentPropsWithoutRef<typeof RaRadio> & { showRadio?: boolean }
->(({ className, showRadio = true, children, ...props }, ref) => {
+export interface _RadioProps extends RadioProps {
+  showRadio?: boolean
+}
+
+const _Radio = ({
+  className,
+  showRadio = true,
+  children,
+  ...props
+}: _RadioProps) => {
   return (
-    <RaRadio
-      ref={ref}
+    <Radio
       className={(values) =>
         cnv(
           values,
@@ -53,9 +49,8 @@ const Radio = React.forwardRef<
           {typeof children === "function" ? children(values) : children}
         </>
       )}
-    </RaRadio>
+    </Radio>
   )
-})
-Radio.displayName = "Radio"
+}
 
-export { RadioGroup, Radio }
+export { _RadioGroup as RadioGroup, _Radio as Radio }

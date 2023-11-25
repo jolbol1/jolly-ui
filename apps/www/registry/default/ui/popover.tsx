@@ -1,18 +1,14 @@
 "use client"
 
 import * as React from "react"
-import { DialogTrigger, Popover as RaPopover } from "react-aria-components"
+import { DialogTrigger, Popover, PopoverProps } from "react-aria-components"
 
 import { cnv } from "@/lib/utils"
 
 const PopoverTrigger = DialogTrigger
 
-const Popover = React.forwardRef<
-  React.ElementRef<typeof RaPopover>,
-  React.ComponentPropsWithoutRef<typeof RaPopover>
->(({ className, offset = 4, ...props }, ref) => (
-  <RaPopover
-    ref={ref}
+const _Popover = ({ className, offset = 4, ...props }: PopoverProps) => (
+  <Popover
     offset={offset}
     className={(values) =>
       cnv(
@@ -23,7 +19,6 @@ const Popover = React.forwardRef<
     }
     {...props}
   />
-))
-Popover.displayName = "Popover"
+)
 
-export { Popover, PopoverTrigger }
+export { _Popover as Popover, PopoverTrigger }

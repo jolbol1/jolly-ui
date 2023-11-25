@@ -1,37 +1,38 @@
 "use client"
 
-import * as React from "react"
 import { Circle } from "lucide-react"
 import {
-  Radio as RaRadio,
-  RadioGroup as RaRadioGroup,
+  Radio,
+  RadioGroup,
+  RadioGroupProps,
+  RadioProps,
 } from "react-aria-components"
 
 import { cnv } from "@/lib/utils"
 
 import { labelVariants } from "./label"
 
-const RadioGroup = React.forwardRef<
-  React.ElementRef<typeof RaRadioGroup>,
-  React.ComponentPropsWithoutRef<typeof RaRadioGroup>
->(({ className, ...props }, ref) => {
+const _RadioGroup = ({ className, ...props }: RadioGroupProps) => {
   return (
-    <RaRadioGroup
+    <RadioGroup
       className={(values) => cnv(values, "grid gap-2", className)}
       {...props}
-      ref={ref}
     />
   )
-})
-RadioGroup.displayName = "RadioGroup"
+}
 
-const Radio = React.forwardRef<
-  React.ElementRef<typeof RaRadio>,
-  React.ComponentPropsWithoutRef<typeof RaRadio> & { showRadio?: boolean }
->(({ className, children, showRadio = true, ...props }, ref) => {
+export interface _RadioProps extends RadioProps {
+  showRadio?: boolean
+}
+
+const _Radio = ({
+  className,
+  children,
+  showRadio = true,
+  ...props
+}: _RadioProps) => {
   return (
-    <RaRadio
-      ref={ref}
+    <Radio
       className={(values) =>
         cnv(
           values,
@@ -54,9 +55,8 @@ const Radio = React.forwardRef<
           {typeof children === "function" ? children(values) : children}
         </>
       )}
-    </RaRadio>
+    </Radio>
   )
-})
-Radio.displayName = "Radio"
+}
 
-export { RadioGroup, Radio }
+export { _RadioGroup as RadioGroup, _Radio as Radio }
