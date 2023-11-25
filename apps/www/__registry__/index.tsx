@@ -19,13 +19,6 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/ui/alert")),
       files: ["registry/default/ui/alert.tsx"],
     },
-    "alert-dialog": {
-      name: "alert-dialog",
-      type: "components:ui",
-      registryDependencies: ["button"],
-      component: React.lazy(() => import("@/registry/default/ui/alert-dialog")),
-      files: ["registry/default/ui/alert-dialog.tsx"],
-    },
     "aspect-ratio": {
       name: "aspect-ratio",
       type: "components:ui",
@@ -299,13 +292,6 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/example/alert-destructive")),
       files: ["registry/default/example/alert-destructive.tsx"],
     },
-    "alert-dialog-demo": {
-      name: "alert-dialog-demo",
-      type: "components:example",
-      registryDependencies: ["alert-dialog","button"],
-      component: React.lazy(() => import("@/registry/default/example/alert-dialog-demo")),
-      files: ["registry/default/example/alert-dialog-demo.tsx"],
-    },
     "aspect-ratio-demo": {
       name: "aspect-ratio-demo",
       type: "components:example",
@@ -557,6 +543,13 @@ export const Index: Record<string, any> = {
       registryDependencies: ["dialog"],
       component: React.lazy(() => import("@/registry/default/example/dialog-demo")),
       files: ["registry/default/example/dialog-demo.tsx"],
+    },
+    "dialog-alert-demo": {
+      name: "dialog-alert-demo",
+      type: "components:example",
+      registryDependencies: ["dialog"],
+      component: React.lazy(() => import("@/registry/default/example/dialog-alert-demo")),
+      files: ["registry/default/example/dialog-alert-demo.tsx"],
     },
     "dialog-close-button": {
       name: "dialog-close-button",
@@ -1035,13 +1028,6 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/new-york/ui/alert")),
       files: ["registry/new-york/ui/alert.tsx"],
     },
-    "alert-dialog": {
-      name: "alert-dialog",
-      type: "components:ui",
-      registryDependencies: ["button"],
-      component: React.lazy(() => import("@/registry/new-york/ui/alert-dialog")),
-      files: ["registry/new-york/ui/alert-dialog.tsx"],
-    },
     "aspect-ratio": {
       name: "aspect-ratio",
       type: "components:ui",
@@ -1315,13 +1301,6 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/new-york/example/alert-destructive")),
       files: ["registry/new-york/example/alert-destructive.tsx"],
     },
-    "alert-dialog-demo": {
-      name: "alert-dialog-demo",
-      type: "components:example",
-      registryDependencies: ["alert-dialog","button"],
-      component: React.lazy(() => import("@/registry/new-york/example/alert-dialog-demo")),
-      files: ["registry/new-york/example/alert-dialog-demo.tsx"],
-    },
     "aspect-ratio-demo": {
       name: "aspect-ratio-demo",
       type: "components:example",
@@ -1573,6 +1552,13 @@ export const Index: Record<string, any> = {
       registryDependencies: ["dialog"],
       component: React.lazy(() => import("@/registry/new-york/example/dialog-demo")),
       files: ["registry/new-york/example/dialog-demo.tsx"],
+    },
+    "dialog-alert-demo": {
+      name: "dialog-alert-demo",
+      type: "components:example",
+      registryDependencies: ["dialog"],
+      component: React.lazy(() => import("@/registry/new-york/example/dialog-alert-demo")),
+      files: ["registry/new-york/example/dialog-alert-demo.tsx"],
     },
     "dialog-close-button": {
       name: "dialog-close-button",

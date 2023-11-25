@@ -141,9 +141,8 @@ export const docsConfig: DocsConfig = {
         },
         {
           title: "Alert Dialog",
-          href: "/docs/components/alert-dialog",
+          href: "/docs/components/dialog#alert-dialog",
           items: [],
-          disabled: true,
         },
         {
           title: "Aspect Ratio",
@@ -234,8 +233,6 @@ export const docsConfig: DocsConfig = {
           title: "Dialog",
           href: "/docs/components/dialog",
           items: [],
-          label: "todo",
-          disabled: true,
         },
         {
           title: "Dropdown Menu",
@@ -260,8 +257,6 @@ export const docsConfig: DocsConfig = {
           title: "Input",
           href: "/docs/components/input",
           items: [],
-          label: "todo",
-          disabled: true,
         },
         {
           title: "Label",

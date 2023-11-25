@@ -13,13 +13,6 @@ const ui: Registry = [
     files: ["ui/alert.tsx"],
   },
   {
-    name: "alert-dialog",
-    type: "components:ui",
-    dependencies: ["@radix-ui/react-alert-dialog"],
-    registryDependencies: ["button"],
-    files: ["ui/alert-dialog.tsx"],
-  },
-  {
     name: "aspect-ratio",
     type: "components:ui",
     dependencies: ["@radix-ui/react-aspect-ratio"],
@@ -247,12 +240,7 @@ const example: Registry = [
     registryDependencies: ["alert"],
     files: ["example/alert-destructive.tsx"],
   },
-  {
-    name: "alert-dialog-demo",
-    type: "components:example",
-    registryDependencies: ["alert-dialog", "button"],
-    files: ["example/alert-dialog-demo.tsx"],
-  },
+
   {
     name: "aspect-ratio-demo",
     type: "components:example",

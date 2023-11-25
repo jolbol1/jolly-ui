@@ -17,19 +17,6 @@
     "type": "components:ui"
   },
   {
-    "name": "alert-dialog",
-    "dependencies": [
-      "@radix-ui/react-alert-dialog"
-    ],
-    "registryDependencies": [
-      "button"
-    ],
-    "files": [
-      "ui/alert-dialog.tsx"
-    ],
-    "type": "components:ui"
-  },
-  {
     "name": "aspect-ratio",
     "dependencies": [
       "@radix-ui/react-aspect-ratio"

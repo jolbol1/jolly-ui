@@ -23,11 +23,10 @@ import {
   CommandList,
 } from "@/registry/default/ui/command"
 import {
-  Dialog,
   DialogContent,
-  DialogDescription,
   DialogFooter,
   DialogHeader,
+  DialogOverlay,
   DialogTitle,
 } from "@/registry/default/ui/dialog"
 import { Input } from "@/registry/default/ui/input"
@@ -163,14 +162,14 @@ export function CardsChat() {
           </form>
         </CardFooter>
       </Card>
-      <Dialog open={open} onOpenChange={setOpen}>
+      <DialogOverlay isOpen={open} onOpenChange={setOpen}>
         <DialogContent className="gap-0 p-0 outline-none">
           <DialogHeader className="px-4 pb-4 pt-5">
             <DialogTitle>New message</DialogTitle>
-            <DialogDescription>
+            <p className="text-sm text-muted-foreground">
               Invite a user to this thread. This will create a new group
               message.
-            </DialogDescription>
+            </p>
           </DialogHeader>
           <Command className="overflow-hidden rounded-t-none border-t">
             <CommandInput placeholder="Search user..." />
@@ -245,7 +244,7 @@ export function CardsChat() {
             </Button>
           </DialogFooter>
         </DialogContent>
-      </Dialog>
+      </DialogOverlay>
     </>
   )
 }
