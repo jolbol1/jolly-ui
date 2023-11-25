@@ -2,25 +2,17 @@
 
 import * as React from "react"
 import {
-  Tooltip as RaTooltip,
-  TooltipTrigger as RaTooltipTrigger,
-  type TooltipProps as RaTooltipProps,
+  Tooltip,
+  TooltipTrigger,
+  type TooltipProps,
 } from "react-aria-components"
 
 import { cnv } from "@/lib/utils"
 
-const TooltipTrigger = RaTooltipTrigger
+const _TooltipTrigger = TooltipTrigger
 
-export interface TooltipProps extends RaTooltipProps {
-  className?: string
-}
-
-const Tooltip = React.forwardRef<
-  React.ElementRef<typeof RaTooltip>,
-  TooltipProps
->(({ className, offset = 4, ...props }, ref) => (
-  <RaTooltip
-    ref={ref}
+const _Tooltip = ({ className, offset = 4, ...props }: TooltipProps) => (
+  <Tooltip
     offset={offset}
     className={(values) =>
       cnv(
@@ -31,7 +23,6 @@ const Tooltip = React.forwardRef<
     }
     {...props}
   />
-))
-Tooltip.displayName = "Tooltip"
+)
 
-export { Tooltip, TooltipTrigger }
+export { _Tooltip as Tooltip, _TooltipTrigger as TooltipTrigger }

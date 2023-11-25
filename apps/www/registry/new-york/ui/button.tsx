@@ -2,40 +2,32 @@
 
 import * as React from "react"
 import { type VariantProps } from "class-variance-authority"
-import {
-  ButtonRenderProps,
-  Button as RaButton,
-  ButtonProps as RaButtonProps,
-} from "react-aria-components"
+import { Button, ButtonProps, ButtonRenderProps } from "react-aria-components"
 
 import { cn } from "@/lib/utils"
 
 import { buttonVariants } from "./button-variants"
 
-export interface ButtonProps
-  extends RaButtonProps,
+export interface _ButtonProps
+  extends ButtonProps,
     VariantProps<typeof buttonVariants> {}
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, ...props }, ref) => {
-    return (
-      <RaButton
-        className={(values: ButtonRenderProps) =>
-          cn(
-            buttonVariants({
-              variant,
-              size,
-              className:
-                typeof className === "function" ? className(values) : className,
-            })
-          )
-        }
-        ref={ref}
-        {...props}
-      />
-    )
-  }
-)
-Button.displayName = "Button"
+const _Button = ({ className, variant, size, ...props }: _ButtonProps) => {
+  return (
+    <Button
+      className={(values: ButtonRenderProps) =>
+        cn(
+          buttonVariants({
+            variant,
+            size,
+            className:
+              typeof className === "function" ? className(values) : className,
+          })
+        )
+      }
+      {...props}
+    />
+  )
+}
 
-export { Button }
+export { _Button as Button }

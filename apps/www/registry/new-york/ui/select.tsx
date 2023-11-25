@@ -4,42 +4,42 @@ import * as React from "react"
 import { CaretSortIcon, CheckIcon } from "@radix-ui/react-icons"
 import {
   Button,
+  ButtonProps,
   Header,
   ListBox,
   ListBoxItem,
+  ListBoxItemProps,
+  ListBoxProps,
   Popover,
-  Select as RaSelect,
-  SelectValue as RaSelectValue,
+  PopoverProps,
   Section,
+  Select,
+  SelectValue,
+  SelectValueProps,
   Separator,
+  SeparatorProps,
 } from "react-aria-components"
 
 import { cn, cnv } from "@/lib/utils"
 
-const Select = RaSelect
+const _Select = Select
 
 const SelectSection = Section
 
-const SelectValue = React.forwardRef<
-  React.ElementRef<typeof RaSelectValue>,
-  React.ComponentPropsWithoutRef<typeof RaSelectValue>
->(({ className, ...props }, ref) => (
-  <RaSelectValue
-    ref={ref}
+const _SelectValue = <T extends object>({
+  className,
+  ...props
+}: SelectValueProps<T>) => (
+  <SelectValue
     className={(values) =>
       cnv(values, "data-[placeholder]:text-muted-foreground", className)
     }
     {...props}
   />
-))
-SelectValue.displayName = "SelectValue"
+)
 
-const SelectTrigger = React.forwardRef<
-  React.ElementRef<typeof Button>,
-  React.ComponentPropsWithoutRef<typeof Button>
->(({ className, children, ...props }, ref) => (
+const SelectTrigger = ({ className, children, ...props }: ButtonProps) => (
   <Button
-    ref={ref}
     className={(values) =>
       cnv(
         values,
@@ -56,15 +56,10 @@ const SelectTrigger = React.forwardRef<
       </>
     )}
   </Button>
-))
-SelectTrigger.displayName = "SelectTrigger"
+)
 
-const SelectPopover = React.forwardRef<
-  React.ElementRef<typeof Popover>,
-  React.ComponentPropsWithoutRef<typeof Popover>
->(({ className, offset = 0, ...props }, ref) => (
+const SelectPopover = ({ className, offset = 0, ...props }: PopoverProps) => (
   <Popover
-    ref={ref}
     offset={offset}
     className={(values) =>
       cnv(
@@ -76,35 +71,25 @@ const SelectPopover = React.forwardRef<
     }
     {...props}
   />
-))
-SelectPopover.displayName = "SelectPopover"
+)
 
-const SelectContent = React.forwardRef<
-  React.ElementRef<typeof ListBox>,
-  React.ComponentPropsWithoutRef<typeof ListBox>
->(({ className, ...props }, ref) => (
-  <ListBox ref={ref} className={cn("p-1")} {...props} />
-))
-SelectContent.displayName = "SelectContent"
+const SelectContent = <T extends object>({
+  className,
+  ...props
+}: ListBoxProps<T>) => <ListBox className={cn("p-1")} {...props} />
 
-const SelectHeader = React.forwardRef<
-  React.ElementRef<typeof Header>,
-  React.ComponentPropsWithoutRef<typeof Header>
->(({ className, ...props }, ref) => (
+const SelectHeader = ({
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof Header>) => (
   <Header
-    ref={ref}
     className={cn("px-2 py-1.5 text-sm font-semibold", className)}
     {...props}
   />
-))
-SelectHeader.displayName = "SelectHeader"
+)
 
-const SelectItem = React.forwardRef<
-  React.ElementRef<typeof ListBoxItem>,
-  React.ComponentPropsWithoutRef<typeof ListBoxItem>
->(({ className, children, ...props }, ref) => (
+const SelectItem = ({ className, children, ...props }: ListBoxItemProps) => (
   <ListBoxItem
-    ref={ref}
     className={(values) =>
       cnv(
         values,
@@ -125,25 +110,16 @@ const SelectItem = React.forwardRef<
       </>
     )}
   </ListBoxItem>
-))
-SelectItem.displayName = "SelectItem"
+)
 
-const SelectSeparator = React.forwardRef<
-  React.ElementRef<typeof Separator>,
-  React.ComponentPropsWithoutRef<typeof Separator>
->(({ className, ...props }, ref) => (
-  <Separator
-    ref={ref}
-    className={cn("-mx-1 my-1 h-px bg-muted", className)}
-    {...props}
-  />
-))
-SelectSeparator.displayName = "Separator"
+const SelectSeparator = ({ className, ...props }: SeparatorProps) => (
+  <Separator className={cn("-mx-1 my-1 h-px bg-muted", className)} {...props} />
+)
 
 export {
-  Select,
+  _Select as Select,
   SelectSection,
-  SelectValue,
+  _SelectValue as SelectValue,
   SelectTrigger,
   SelectContent,
   SelectHeader,

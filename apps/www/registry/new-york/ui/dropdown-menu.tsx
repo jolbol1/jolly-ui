@@ -7,10 +7,14 @@ import {
   Keyboard,
   Menu,
   MenuItem,
+  MenuItemProps,
+  MenuProps,
   MenuTrigger,
   Popover,
+  PopoverProps,
   Section,
   Separator,
+  SeparatorProps,
 } from "react-aria-components"
 
 import { cn, cnv } from "@/lib/utils"
@@ -19,12 +23,12 @@ const DropdownMenuTrigger = MenuTrigger
 
 const DropdownMenuSection = Section
 
-const DropdownMenuPopover = React.forwardRef<
-  React.ElementRef<typeof Popover>,
-  React.ComponentPropsWithoutRef<typeof Popover>
->(({ className, offset = 4, ...props }, ref) => (
+const DropdownMenuPopover = ({
+  className,
+  offset = 4,
+  ...props
+}: PopoverProps) => (
   <Popover
-    ref={ref}
     offset={offset}
     className={(values) =>
       cnv(
@@ -35,25 +39,25 @@ const DropdownMenuPopover = React.forwardRef<
     }
     {...props}
   />
-))
-DropdownMenuPopover.displayName = "DropdownMenuPopover"
+)
 
-const DropdownMenuContent = React.forwardRef<
-  React.ElementRef<typeof Menu>,
-  React.ComponentPropsWithoutRef<typeof Menu>
->(({ className, ...props }, ref) => (
-  <Menu ref={ref} className={cn("outline-none", className)} {...props} />
-))
-DropdownMenuContent.displayName = "DropdownMenuContent"
+const DropdownMenuContent = <T extends object>({
+  className,
+  ...props
+}: MenuProps<T>) => (
+  <Menu className={cn("outline-none", className)} {...props} />
+)
 
-const DropdownMenuItem = React.forwardRef<
-  React.ElementRef<typeof MenuItem>,
-  React.ComponentPropsWithoutRef<typeof MenuItem> & {
-    inset?: boolean
-  }
->(({ className, inset, ...props }, ref) => (
+export interface DropdownMenuItemProps extends MenuItemProps {
+  inset?: boolean
+}
+
+const DropdownMenuItem = ({
+  className,
+  inset,
+  ...props
+}: DropdownMenuItemProps) => (
   <MenuItem
-    ref={ref}
     className={(values) =>
       cnv(
         values,
@@ -64,15 +68,14 @@ const DropdownMenuItem = React.forwardRef<
     }
     {...props}
   />
-))
-DropdownMenuItem.displayName = "DropdownMenuItem"
+)
 
-const DropdownMenuCheckboxItem = React.forwardRef<
-  React.ElementRef<typeof MenuItem>,
-  React.ComponentPropsWithoutRef<typeof MenuItem>
->(({ className, children, ...props }, ref) => (
+const DropdownMenuCheckboxItem = ({
+  className,
+  children,
+  ...props
+}: MenuItemProps) => (
   <MenuItem
-    ref={ref}
     className={(values) =>
       cnv(
         values,
@@ -92,15 +95,14 @@ const DropdownMenuCheckboxItem = React.forwardRef<
       </>
     )}
   </MenuItem>
-))
-DropdownMenuCheckboxItem.displayName = "DropdownMenuCheckboxItem"
+)
 
-const DropdownMenuRadioItem = React.forwardRef<
-  React.ElementRef<typeof MenuItem>,
-  React.ComponentPropsWithoutRef<typeof MenuItem>
->(({ className, children, ...props }, ref) => (
+const DropdownMenuRadioItem = ({
+  className,
+  children,
+  ...props
+}: MenuItemProps) => (
   <MenuItem
-    ref={ref}
     className={cn(
       "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
       className
@@ -118,18 +120,21 @@ const DropdownMenuRadioItem = React.forwardRef<
       </>
     )}
   </MenuItem>
-))
-DropdownMenuRadioItem.displayName = "DropdownMenuRadioItem"
+)
 
-const DropdownMenuHeader = React.forwardRef<
-  React.ElementRef<typeof Header>,
-  React.ComponentPropsWithoutRef<typeof Header> & {
-    inset?: boolean
-    separator?: boolean
-  }
->(({ className, inset, separator = false, ...props }, ref) => (
+export interface DropdownMenuHeaderProps
+  extends React.ComponentPropsWithoutRef<typeof Header> {
+  inset?: boolean
+  separator?: boolean
+}
+
+const DropdownMenuHeader = ({
+  className,
+  inset,
+  separator = false,
+  ...props
+}: DropdownMenuHeaderProps) => (
   <Header
-    ref={ref}
     className={cn(
       "px-2 py-1.5 text-sm font-semibold",
       inset && "pl-8",
@@ -138,20 +143,11 @@ const DropdownMenuHeader = React.forwardRef<
     )}
     {...props}
   />
-))
-DropdownMenuHeader.displayName = "DropdownMenuHeader"
+)
 
-const DropdownMenuSeparator = React.forwardRef<
-  React.ElementRef<typeof Separator>,
-  React.ComponentPropsWithoutRef<typeof Separator>
->(({ className, ...props }, ref) => (
-  <Separator
-    ref={ref}
-    className={cn("-mx-1 my-1 h-px bg-muted", className)}
-    {...props}
-  />
-))
-DropdownMenuSeparator.displayName = "Separator"
+const DropdownMenuSeparator = ({ className, ...props }: SeparatorProps) => (
+  <Separator className={cn("-mx-1 my-1 h-px bg-muted", className)} {...props} />
+)
 
 const DropdownMenuShortcut = ({
   className,

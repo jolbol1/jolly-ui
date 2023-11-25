@@ -4,42 +4,42 @@ import * as React from "react"
 import { Check, ChevronDown } from "lucide-react"
 import {
   Button,
+  ButtonProps,
   Header,
-  Item,
   ListBox,
+  ListBoxItem,
+  ListBoxItemProps,
+  ListBoxProps,
   Popover,
-  Select as RaSelect,
-  SelectValue as RaSelectValue,
+  PopoverProps,
   Section,
+  Select,
+  SelectValue,
+  SelectValueProps,
   Separator,
+  SeparatorProps,
 } from "react-aria-components"
 
 import { cn, cnv } from "@/lib/utils"
 
-const Select = RaSelect
+const _Select = Select
 
 const SelectSection = Section
 
-const SelectValue = React.forwardRef<
-  React.ElementRef<typeof RaSelectValue>,
-  React.ComponentPropsWithoutRef<typeof RaSelectValue>
->(({ className, ...props }, ref) => (
-  <RaSelectValue
-    ref={ref}
+const _SelectValue = <T extends object>({
+  className,
+  ...props
+}: SelectValueProps<T>) => (
+  <SelectValue
     className={(values) =>
       cnv(values, "data-[placeholder]:text-muted-foreground", className)
     }
     {...props}
   />
-))
-SelectValue.displayName = "SelectValue"
+)
 
-const SelectTrigger = React.forwardRef<
-  React.ElementRef<typeof Button>,
-  React.ComponentPropsWithoutRef<typeof Button>
->(({ className, children, ...props }, ref) => (
+const SelectTrigger = ({ className, children, ...props }: ButtonProps) => (
   <Button
-    ref={ref}
     className={(values) =>
       cnv(
         values,
@@ -56,27 +56,20 @@ const SelectTrigger = React.forwardRef<
       </>
     )}
   </Button>
-))
-SelectTrigger.displayName = "SelectTrigger"
+)
 
-const SelectHeader = React.forwardRef<
-  React.ElementRef<typeof Header>,
-  React.ComponentPropsWithoutRef<typeof Header>
->(({ className, ...props }, ref) => (
+const SelectHeader = ({
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof Header>) => (
   <Header
-    ref={ref}
     className={cn(" py-1.5 pl-8 pr-2 text-sm font-semibold", className)}
     {...props}
   />
-))
-SelectHeader.displayName = "SelectHeader"
+)
 
-const SelectItem = React.forwardRef<
-  React.ElementRef<typeof Item>,
-  React.ComponentPropsWithoutRef<typeof Item>
->(({ className, children, ...props }, ref) => (
-  <Item
-    ref={ref}
+const SelectItem = ({ className, children, ...props }: ListBoxItemProps) => (
+  <ListBoxItem
     className={(values) =>
       cnv(
         values,
@@ -96,28 +89,15 @@ const SelectItem = React.forwardRef<
         {typeof children === "function" ? children(values) : children}
       </>
     )}
-  </Item>
-))
-SelectItem.displayName = "SelectItem"
+  </ListBoxItem>
+)
 
-const SelectSeparator = React.forwardRef<
-  React.ElementRef<typeof Separator>,
-  React.ComponentPropsWithoutRef<typeof Separator>
->(({ className, ...props }, ref) => (
-  <Separator
-    ref={ref}
-    className={cn("-mx-1 my-1 h-px bg-muted", className)}
-    {...props}
-  />
-))
-SelectSeparator.displayName = "SelectSeparator"
+const SelectSeparator = ({ className, ...props }: SeparatorProps) => (
+  <Separator className={cn("-mx-1 my-1 h-px bg-muted", className)} {...props} />
+)
 
-const SelectPopover = React.forwardRef<
-  React.ElementRef<typeof Popover>,
-  React.ComponentPropsWithoutRef<typeof Popover>
->(({ className, offset = 0, ...props }, ref) => (
+const SelectPopover = ({ className, offset = 0, ...props }: PopoverProps) => (
   <Popover
-    ref={ref}
     offset={offset}
     className={(values) =>
       cnv(
@@ -129,21 +109,19 @@ const SelectPopover = React.forwardRef<
     }
     {...props}
   />
-))
-SelectPopover.displayName = "SelectPopover"
+)
 
-const SelectContent = React.forwardRef<
-  React.ElementRef<typeof ListBox>,
-  React.ComponentPropsWithoutRef<typeof ListBox>
->(({ className, ...props }, ref) => (
-  <ListBox ref={ref} className={(values) => cnv(values, "p-1")} {...props} />
-))
-SelectContent.displayName = "SelectContent"
+const SelectContent = <T extends object>({
+  className,
+  ...props
+}: ListBoxProps<T>) => (
+  <ListBox className={(values) => cnv(values, "p-1")} {...props} />
+)
 
 export {
-  Select,
+  _Select as Select,
   SelectSection,
-  SelectValue,
+  _SelectValue as SelectValue,
   SelectContent,
   SelectTrigger,
   SelectHeader,

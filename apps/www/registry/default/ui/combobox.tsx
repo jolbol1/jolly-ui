@@ -9,11 +9,16 @@ import {
   Group,
   Header,
   Input,
-  Item,
+  InputProps,
   ListBox,
+  ListBoxItem,
+  ListBoxItemProps,
+  ListBoxProps,
   Popover,
+  PopoverProps,
   Section,
   Separator,
+  SeparatorProps,
 } from "react-aria-components"
 
 import { cn, cnv } from "@/lib/utils"
@@ -24,10 +29,7 @@ const ComboboxSection = Section
 
 const ComboboxCollection = Collection
 
-const ComboboxInput = React.forwardRef<
-  React.ElementRef<typeof Input>,
-  React.ComponentPropsWithoutRef<typeof Input>
->(({ className, ...props }, ref) => (
+const ComboboxInput = ({ className, ...props }: InputProps) => (
   <Group
     className={cn(
       "group flex h-10 items-center  justify-between overflow-hidden rounded-md border border-input bg-background text-sm ring-offset-background data-[focus-within]:outline-none data-[focus-within]:ring-2 data-[focus-within]:ring-ring data-[focus-within]:ring-offset-2 group-data-[disabled]:cursor-not-allowed group-data-[disabled]:opacity-50"
@@ -41,22 +43,25 @@ const ComboboxInput = React.forwardRef<
           className
         )
       }
-      ref={ref}
       {...props}
     />
     <Button className="pr-3">
       <ChevronsUpDown aria-hidden="true" className="h-4 w-4 opacity-50" />
     </Button>
   </Group>
-))
-ComboboxInput.displayName = "ComboboxInput"
+)
 
-const ComboboxLabel = React.forwardRef<
-  React.ElementRef<typeof Header>,
-  React.ComponentPropsWithoutRef<typeof Header> & { separator?: boolean }
->(({ className, separator = false, ...props }, ref) => (
+export interface ComboboxLabelProps
+  extends React.ComponentPropsWithoutRef<typeof Header> {
+  separator?: boolean
+}
+
+const ComboboxLabel = ({
+  className,
+  separator = false,
+  ...props
+}: ComboboxLabelProps) => (
   <Header
-    ref={ref}
     className={cn(
       " py-1.5 pl-8 pr-2 text-sm font-semibold",
       { "-mx-1 mb-1 border-b border-b-border px-3 pb-[0.625rem]": separator },
@@ -64,15 +69,10 @@ const ComboboxLabel = React.forwardRef<
     )}
     {...props}
   />
-))
-ComboboxLabel.displayName = "ComboboxLabel"
+)
 
-const ComboboxItem = React.forwardRef<
-  React.ElementRef<typeof Item>,
-  React.ComponentPropsWithoutRef<typeof Item>
->(({ className, children, ...props }, ref) => (
-  <Item
-    ref={ref}
+const ComboboxItem = ({ className, children, ...props }: ListBoxItemProps) => (
+  <ListBoxItem
     className={(values) =>
       cnv(
         values,
@@ -93,28 +93,15 @@ const ComboboxItem = React.forwardRef<
         {typeof children === "function" ? children(values) : children}
       </>
     )}
-  </Item>
-))
-ComboboxItem.displayName = "ComboboxItem"
+  </ListBoxItem>
+)
 
-const ComboboxSeparator = React.forwardRef<
-  React.ElementRef<typeof Separator>,
-  React.ComponentPropsWithoutRef<typeof Separator>
->(({ className, ...props }, ref) => (
-  <Separator
-    ref={ref}
-    className={cn("-mx-1 my-1 h-px bg-muted", className)}
-    {...props}
-  />
-))
-ComboboxSeparator.displayName = "ComboboxSeparator"
+const ComboboxSeparator = ({ className, ...props }: SeparatorProps) => (
+  <Separator className={cn("-mx-1 my-1 h-px bg-muted", className)} {...props} />
+)
 
-const ComboboxPopover = React.forwardRef<
-  React.ElementRef<typeof Popover>,
-  React.ComponentPropsWithoutRef<typeof Popover>
->(({ className, ...props }, ref) => (
+const ComboboxPopover = ({ className, ...props }: PopoverProps) => (
   <Popover
-    ref={ref}
     className={(values) =>
       cnv(
         values,
@@ -125,16 +112,14 @@ const ComboboxPopover = React.forwardRef<
     }
     {...props}
   />
-))
-ComboboxPopover.displayName = "ComboboxPopover"
+)
 
-const ComboboxListBox = React.forwardRef<
-  React.ElementRef<typeof ListBox>,
-  React.ComponentPropsWithoutRef<typeof ListBox>
->(({ className, ...props }, ref) => (
-  <ListBox ref={ref} className={(values) => cnv(values, "p-1")} {...props} />
-))
-ComboboxListBox.displayName = "ComboboxListBox"
+const ComboboxListBox = <T extends object>({
+  className,
+  ...props
+}: ListBoxProps<T>) => (
+  <ListBox className={(values) => cnv(values, "p-1")} {...props} />
+)
 
 export {
   ComboboxSection,
