@@ -174,8 +174,6 @@ export const docsConfig: DocsConfig = {
           title: "Calendar",
           href: "/docs/components/calendar",
           items: [],
-          label: "todo",
-          disabled: true,
         },
         {
           title: "Card",
@@ -226,8 +224,6 @@ export const docsConfig: DocsConfig = {
           title: "Date Picker",
           href: "/docs/components/date-picker",
           items: [],
-          label: "todo",
-          disabled: true,
         },
         {
           title: "Dialog",

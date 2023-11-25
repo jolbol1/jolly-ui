@@ -2,29 +2,19 @@
 title: Calendar
 description: A date field component that allows users to enter and edit date.
 component: true
+radix:
+  link: https://react-spectrum.adobe.com/react-aria/Calendar.html
 ---
 
 <ComponentPreview name="calendar-demo" />
 
-## About
-
-The `Calendar` component is built on top of [React DayPicker](https://react-day-picker.js.org).
-
 ## Installation
 
-<Tabs defaultValue="cli">
+<Tabs defaultValue="manual">
 
 <TabsList>
-  <TabsTrigger value="cli">CLI</TabsTrigger>
   <TabsTrigger value="manual">Manual</TabsTrigger>
 </TabsList>
-<TabsContent value="cli">
-
-```bash
-npx shadcn-ui@latest add calendar
-```
-
-</TabsContent>
 
 <TabsContent value="manual">
 
@@ -33,7 +23,7 @@ npx shadcn-ui@latest add calendar
 <Step>Install the following dependencies:</Step>
 
 ```bash
-npm install react-day-picker date-fns
+npm install @internationalized/date date-fns
 ```
 
 <Step>Add the `Button` component to your project.</Step>
@@ -55,30 +45,38 @@ The `Calendar` component uses the `Button` component. Make sure you have it inst
 ## Usage
 
 ```tsx
-import { Calendar } from "@/components/ui/calendar"
+import {
+  Calendar,
+  CalendarCell,
+  CalendarGrid,
+  CalendarGridBody,
+  CalendarGridHeader,
+  CalendarHeaderCell,
+  CalendarHeading,
+} from "@/registry/default/ui/calendar"
 ```
 
 ```tsx
-const [date, setDate] = React.useState<Date | undefined>(new Date())
 
 return (
-  <Calendar
-    mode="single"
-    selected={date}
-    onSelect={setDate}
-    className="rounded-md border"
-  />
+  <Calendar>
+    <CalendarHeading />
+    <CalendarGrid>
+      <CalendarGridHeader>
+        {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
+      </CalendarGridHeader>
+      <CalendarGridBody>
+        {(date) => (
+          <>
+            <CalendarCell date={date} />
+          </>
+        )}
+      </CalendarGridBody>
+    </CalendarGrid>
+  </Calendar>
 )
 ```
-
-See the [React DayPicker](https://react-day-picker.js.org) documentation for more information.
 
 ## Date Picker
 
 You can use the `<Calendar>` component to build a date picker. See the [Date Picker](/docs/components/date-picker) page for more information.
-
-## Examples
-
-### Form
-
-<ComponentPreview name="calendar-form" />

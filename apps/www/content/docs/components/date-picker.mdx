@@ -2,59 +2,96 @@
 title: Date Picker
 description: A date picker component with range and presets.
 component: true
+radix:
+  link: https://react-spectrum.adobe.com/react-aria/Calendar.html
 ---
 
 <ComponentPreview name="date-picker-demo" />
 
 ## Installation
 
-The Date Picker is built using a composition of the `<Popover />` and the `<Calendar />` components.
+<Tabs defaultValue="manual">
 
-See installation instructions for the [Popover](/docs/components/popover#installation) and the [Calendar](/docs/components/calendar#installation) components.
+<TabsList>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @internationalized/date date-fns
+```
+
+<Step>Add the `Button` component to your project.</Step>
+
+The `DatePicker` component uses the `Calendar` and `Popover` component. Make sure you have them installed in your project.
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="date-picker" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
 
 ## Usage
 
 ```tsx
 "use client"
 
-import * as React from "react"
-import { format } from "date-fns"
-import { Calendar as CalendarIcon } from "lucide-react"
+import React from "react"
+import { type DateValue } from "react-aria-components"
 
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import { Calendar } from "@/components/ui/calendar"
-import { Popover, PopoverTrigger } from "@/components/ui/popover"
+import {
+  Calendar,
+  CalendarCell,
+  CalendarGrid,
+  CalendarGridBody,
+  CalendarGridHeader,
+  CalendarHeaderCell,
+  CalendarHeading,
+} from "@/registry/default/ui/calendar"
+import {
+  DatePicker,
+  DatePickerButton,
+  DatePickerContent,
+} from "@/registry/default/ui/date-picker"
 
-export function DatePickerDemo() {
-  const [date, setDate] = React.useState<Date>()
+export default function DatepickerDemo({ ...props }) {
+  const [date, setDate] = React.useState<DateValue>()
 
   return (
-    <PopoverTrigger>
-      <Button
-        variant={"outline"}
-        className={cn(
-          "w-[280px] justify-start text-left font-normal",
-          !date && "text-muted-foreground"
-        )}
-      >
-        <CalendarIcon className="mr-2 h-4 w-4" />
-        {date ? format(date, "PPP") : <span>Pick a date</span>}
-      </Button>
-      <Popover className="w-auto p-0">
-        <Calendar
-          mode="single"
-          selected={date}
-          onSelect={setDate}
-          initialFocus
-        />
-      </Popover>
-    </PopoverTrigger>
+    <DatePicker shouldCloseOnSelect={false} onChange={setDate} {...props}>
+      <DatePickerButton date={date} />
+      <DatePickerContent>
+        <Calendar>
+          <CalendarHeading />
+          <CalendarGrid>
+            <CalendarGridHeader>
+              {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
+            </CalendarGridHeader>
+            <CalendarGridBody>
+              {(date) => (
+                <>
+                  <CalendarCell date={date} />
+                </>
+              )}
+            </CalendarGridBody>
+          </CalendarGrid>
+        </Calendar>
+      </DatePickerContent>
+    </DatePicker>
   )
 }
 ```
-
-See the [React DayPicker](https://react-day-picker.js.org) documentation for more information.
 
 ## Examples
 
@@ -62,14 +99,6 @@ See the [React DayPicker](https://react-day-picker.js.org) documentation for mor
 
 <ComponentPreview name="date-picker-demo" />
 
-### Date Range Picker
-
-<ComponentPreview name="date-picker-with-range" />
-
 ### With Presets
 
 <ComponentPreview name="date-picker-with-presets" />
-
-### Form
-
-<ComponentPreview name="date-picker-form" />

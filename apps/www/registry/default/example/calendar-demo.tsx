@@ -2,17 +2,32 @@
 
 import * as React from "react"
 
-import { Calendar } from "@/registry/default/ui/calendar"
+import {
+  Calendar,
+  CalendarCell,
+  CalendarGrid,
+  CalendarGridBody,
+  CalendarGridHeader,
+  CalendarHeaderCell,
+  CalendarHeading,
+} from "@/registry/default/ui/calendar"
 
 export default function CalendarDemo() {
-  const [date, setDate] = React.useState<Date | undefined>(new Date())
-
   return (
-    <Calendar
-      mode="single"
-      selected={date}
-      onSelect={setDate}
-      className="rounded-md border"
-    />
+    <Calendar className="rounded-md border p-3">
+      <CalendarHeading />
+      <CalendarGrid>
+        <CalendarGridHeader>
+          {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
+        </CalendarGridHeader>
+        <CalendarGridBody>
+          {(date) => (
+            <>
+              <CalendarCell date={date} />
+            </>
+          )}
+        </CalendarGridBody>
+      </CalendarGrid>
+    </Calendar>
   )
 }

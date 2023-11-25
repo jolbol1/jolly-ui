@@ -1,5 +1,4 @@
 import { CardsActivityGoal } from "@/registry/new-york/example/cards/activity-goal"
-import { CardsCalendar } from "@/registry/new-york/example/cards/calendar"
 import { CardsChat } from "@/registry/new-york/example/cards/chat"
 import { CardsCookieSettings } from "@/registry/new-york/example/cards/cookie-settings"
 import { CardsCreateAccount } from "@/registry/new-york/example/cards/create-account"
@@ -17,7 +16,6 @@ export default function CardsDemo() {
       <div className="space-y-4 lg:col-span-4 xl:col-span-6 xl:space-y-4">
         <CardsStats />
         <div className="grid gap-1 sm:grid-cols-[260px_1fr] md:hidden">
-          <CardsCalendar />
           <div className="pt-3 sm:pl-2 sm:pt-0 xl:pl-4">
             <CardsActivityGoal />
           </div>
@@ -42,7 +40,6 @@ export default function CardsDemo() {
       </div>
       <div className="space-y-4 lg:col-span-6 xl:col-span-5 xl:space-y-4">
         <div className="hidden gap-1 sm:grid-cols-[260px_1fr] md:grid">
-          <CardsCalendar />
           <div className="pt-3 sm:pl-2 sm:pt-0 xl:pl-3">
             <CardsActivityGoal />
           </div>

@@ -1,13 +1,23 @@
 "use client"
 
 import * as React from "react"
-import { addDays, format } from "date-fns"
-import { Calendar as CalendarIcon } from "lucide-react"
+import { getLocalTimeZone, today } from "@internationalized/date"
+import { DateValue } from "react-aria-components"
 
-import { cn } from "@/lib/utils"
-import { Button } from "@/registry/default/ui/button"
-import { Calendar } from "@/registry/default/ui/calendar"
-import { Popover, PopoverTrigger } from "@/registry/default/ui/popover"
+import {
+  Calendar,
+  CalendarCell,
+  CalendarGrid,
+  CalendarGridBody,
+  CalendarGridHeader,
+  CalendarHeaderCell,
+  CalendarHeading,
+} from "@/registry/default/ui/calendar"
+import {
+  DatePicker,
+  DatePickerButton,
+  DatePickerContent,
+} from "@/registry/default/ui/date-picker"
 import {
   Select,
   SelectContent,
@@ -18,24 +28,22 @@ import {
 } from "@/registry/default/ui/select"
 
 export default function DatePickerWithPresets() {
-  const [date, setDate] = React.useState<Date>()
+  const [date, setDate] = React.useState<DateValue>()
 
   return (
-    <PopoverTrigger>
-      <Button
-        variant={"outline"}
-        className={cn(
-          "w-[280px] justify-start text-left font-normal",
-          !date && "text-muted-foreground"
-        )}
+    <DatePicker value={date} shouldCloseOnSelect={false}>
+      <DatePickerButton date={date} />
+      <DatePickerContent
+        className="sm:flex-col sm:space-x-0 sm:space-y-1"
+        popoverClassName="p-2"
       >
-        <CalendarIcon className="mr-2 h-4 w-4" />
-        {date ? format(date, "PPP") : <span>Pick a date</span>}
-      </Button>
-      <Popover className="flex w-auto flex-col space-y-2 p-2">
         <Select
           onSelectionChange={(value) =>
-            setDate(addDays(new Date(), parseInt(value?.toString())))
+            setDate(
+              today(getLocalTimeZone()).add({
+                days: parseInt(value.toString()),
+              })
+            )
           }
         >
           <SelectTrigger>
@@ -50,10 +58,24 @@ export default function DatePickerWithPresets() {
             </SelectContent>
           </SelectPopover>
         </Select>
-        <div className="rounded-md border">
-          <Calendar mode="single" selected={date} onSelect={setDate} />
+        <div className="rounded-md border p-3">
+          <Calendar value={date}>
+            <CalendarHeading />
+            <CalendarGrid>
+              <CalendarGridHeader>
+                {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
+              </CalendarGridHeader>
+              <CalendarGridBody>
+                {(date) => (
+                  <>
+                    <CalendarCell date={date} />
+                  </>
+                )}
+              </CalendarGridBody>
+            </CalendarGrid>
+          </Calendar>
         </div>
-      </Popover>
-    </PopoverTrigger>
+      </DatePickerContent>
+    </DatePicker>
   )
 }

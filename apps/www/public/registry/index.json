@@ -132,6 +132,22 @@
     "type": "components:ui"
   },
   {
+    "name": "date-picker",
+    "dependencies": [
+      "@internationalized/date",
+      "date-fns"
+    ],
+    "registryDependencies": [
+      "calendar",
+      "button",
+      "popover"
+    ],
+    "files": [
+      "ui/date-picker.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
     "name": "dialog",
     "dependencies": [
       "@radix-ui/react-dialog"

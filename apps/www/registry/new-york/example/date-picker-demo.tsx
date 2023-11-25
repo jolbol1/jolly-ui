@@ -1,37 +1,44 @@
-"use client"
+import React from "react"
+import { type DateValue } from "react-aria-components"
 
-import * as React from "react"
-import { CalendarIcon } from "@radix-ui/react-icons"
-import { format } from "date-fns"
+import {
+  Calendar,
+  CalendarCell,
+  CalendarGrid,
+  CalendarGridBody,
+  CalendarGridHeader,
+  CalendarHeaderCell,
+  CalendarHeading,
+} from "@/registry/new-york/ui/calendar"
+import {
+  DatePicker,
+  DatePickerButton,
+  DatePickerContent,
+} from "@/registry/new-york/ui/date-picker"
 
-import { cn } from "@/lib/utils"
-import { Button } from "@/registry/new-york/ui/button"
-import { Calendar } from "@/registry/new-york/ui/calendar"
-import { Popover, PopoverTrigger } from "@/registry/new-york/ui/popover"
-
-export default function DatePickerDemo() {
-  const [date, setDate] = React.useState<Date>()
+export default function DatepickerDemo({ ...props }) {
+  const [date, setDate] = React.useState<DateValue>()
 
   return (
-    <PopoverTrigger>
-      <Button
-        variant={"outline"}
-        className={cn(
-          "w-[240px] justify-start text-left font-normal",
-          !date && "text-muted-foreground"
-        )}
-      >
-        <CalendarIcon className="mr-2 h-4 w-4" />
-        {date ? format(date, "PPP") : <span>Pick a date</span>}
-      </Button>
-      <Popover className="w-auto p-0" placement="bottom start">
-        <Calendar
-          mode="single"
-          selected={date}
-          onSelect={setDate}
-          initialFocus
-        />
-      </Popover>
-    </PopoverTrigger>
+    <DatePicker shouldCloseOnSelect={false} onChange={setDate} {...props}>
+      <DatePickerButton date={date} />
+      <DatePickerContent className="flex flex-col">
+        <Calendar>
+          <CalendarHeading />
+          <CalendarGrid>
+            <CalendarGridHeader>
+              {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
+            </CalendarGridHeader>
+            <CalendarGridBody>
+              {(date) => (
+                <>
+                  <CalendarCell date={date} />
+                </>
+              )}
+            </CalendarGridBody>
+          </CalendarGrid>
+        </Calendar>
+      </DatePickerContent>
+    </DatePicker>
   )
 }
