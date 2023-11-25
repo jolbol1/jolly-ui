@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils"
 
 import { buttonVariants } from "./button-variants"
 
-export interface _ButtonProps
+interface _ButtonProps
   extends ButtonProps,
     VariantProps<typeof buttonVariants> {}
 
@@ -31,3 +31,4 @@ const _Button = ({ className, variant, size, ...props }: _ButtonProps) => {
 }
 
 export { _Button as Button }
+export type { _ButtonProps as ButtonProps }
