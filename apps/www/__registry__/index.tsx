@@ -1034,6 +1034,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/example/tooltip-demo")),
       files: ["registry/default/example/tooltip-demo.tsx"],
     },
+    "tooltip-position": {
+      name: "tooltip-position",
+      type: "components:example",
+      registryDependencies: ["tooltip"],
+      component: React.lazy(() => import("@/registry/default/example/tooltip-position")),
+      files: ["registry/default/example/tooltip-position.tsx"],
+    },
     "typography-blockquote": {
       name: "typography-blockquote",
       type: "components:example",
@@ -2175,6 +2182,13 @@ export const Index: Record<string, any> = {
       registryDependencies: ["tooltip"],
       component: React.lazy(() => import("@/registry/new-york/example/tooltip-demo")),
       files: ["registry/new-york/example/tooltip-demo.tsx"],
+    },
+    "tooltip-position": {
+      name: "tooltip-position",
+      type: "components:example",
+      registryDependencies: ["tooltip"],
+      component: React.lazy(() => import("@/registry/new-york/example/tooltip-position")),
+      files: ["registry/new-york/example/tooltip-position.tsx"],
     },
     "typography-blockquote": {
       name: "typography-blockquote",

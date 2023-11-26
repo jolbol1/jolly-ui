@@ -887,6 +887,12 @@ const example: Registry = [
     files: ["example/tooltip-demo.tsx"],
   },
   {
+    name: "tooltip-position",
+    type: "components:example",
+    registryDependencies: ["tooltip"],
+    files: ["example/tooltip-position.tsx"],
+  },
+  {
     name: "typography-blockquote",
     type: "components:example",
     files: ["example/typography-blockquote.tsx"],

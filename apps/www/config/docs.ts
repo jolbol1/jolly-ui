@@ -143,6 +143,16 @@ export const docsConfig: DocsConfig = {
       ],
     },
     {
+      title: "Overlays",
+      items: [
+        {
+          title: "Tooltip",
+          href: "/docs/components/tooltip",
+          items: [],
+        },
+      ],
+    },
+    {
       title: "Pickers",
       items: [
         {
