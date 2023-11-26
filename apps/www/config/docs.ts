@@ -140,6 +140,11 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/combobox",
           items: [],
         },
+        {
+          title: "Select",
+          href: "/docs/components/select",
+          items: [],
+        },
       ],
     },
     // {

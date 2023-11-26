@@ -9,18 +9,18 @@ import {
 
 export default function SelectDemo() {
   return (
-    <Select aria-label="item selection">
+    <Select aria-label="projects">
       <SelectTrigger className="w-[180px]">
         <SelectValue placeholder="Select an item" />
       </SelectTrigger>
       <SelectPopover>
         <SelectContent aria-label="items">
-          <SelectItem textValue="Aardvark">Aardvark</SelectItem>
-          <SelectItem textValue="Cat">Cat</SelectItem>
-          <SelectItem textValue="Dog">Dog</SelectItem>
-          <SelectItem textValue="Kangaroo">Kangaroo</SelectItem>
-          <SelectItem textValue="Panda">Panda</SelectItem>
-          <SelectItem textValue="Snake">Snake</SelectItem>
+          <SelectItem href="https://example.com/" target="_blank">
+            Create new…
+          </SelectItem>
+          <SelectItem textValue="Proposal">Proposal</SelectItem>
+          <SelectItem textValue="Budget">Budget</SelectItem>
+          <SelectItem textValue="Onboarding">Onboarding</SelectItem>
         </SelectContent>
       </SelectPopover>
     </Select>

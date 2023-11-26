@@ -660,10 +660,34 @@ const example: Registry = [
     files: ["example/select-demo.tsx"],
   },
   {
+    name: "select-disabled",
+    type: "components:example",
+    registryDependencies: ["select"],
+    files: ["example/select-disabled.tsx"],
+  },
+  {
+    name: "select-dynamic",
+    type: "components:example",
+    registryDependencies: ["select"],
+    files: ["example/select-dynamic.tsx"],
+  },
+  {
+    name: "select-links",
+    type: "components:example",
+    registryDependencies: ["select"],
+    files: ["example/select-links.tsx"],
+  },
+  {
     name: "select-form",
     type: "components:example",
     registryDependencies: ["select"],
     files: ["example/select-form.tsx"],
+  },
+  {
+    name: "select-sections",
+    type: "components:example",
+    registryDependencies: ["select"],
+    files: ["example/select-sections.tsx"],
   },
   {
     name: "separator-demo",

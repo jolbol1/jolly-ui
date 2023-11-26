@@ -5,6 +5,7 @@ import { Check, ChevronDown } from "lucide-react"
 import {
   Button,
   ButtonProps,
+  Collection,
   Header,
   ListBox,
   ListBoxItem,
@@ -25,6 +26,8 @@ import { cn, cnv } from "@/lib/utils"
 const _Select = Select
 
 const SelectSection = Section
+
+const SelectCollection = Collection
 
 const _SelectValue = <T extends object>({
   className,
@@ -102,7 +105,7 @@ const SelectPopover = ({ className, offset = 0, ...props }: PopoverProps) => (
     className={(values) =>
       cnv(
         values,
-        "w-[--trigger-width] relative z-50  min-w-[8rem] overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md data-[entering]:animate-in data-[exiting]:animate-out data-[entering]:fade-in-0 data-[exiting]:fade-out-0 data-[exiting]:zoom-out-95 data-[placement=bottom]:slide-in-from-top-2 data-[placement=left]:slide-in-from-right-2 data-[placement=right]:slide-in-from-left-2 data-[placement=top]:slide-in-from-bottom-2",
+        "w-[--trigger-width] relative z-50  min-w-[8rem] overflow-y-auto rounded-md border bg-popover text-popover-foreground shadow-md data-[entering]:animate-in data-[exiting]:animate-out data-[entering]:fade-in-0 data-[exiting]:fade-out-0 data-[exiting]:zoom-out-95 data-[placement=bottom]:slide-in-from-top-2 data-[placement=left]:slide-in-from-right-2 data-[placement=right]:slide-in-from-left-2 data-[placement=top]:slide-in-from-bottom-2",
         "data-[placement=bottom]:translate-y-1 data-[placement=left]:-translate-x-1 data-[placement=right]:translate-x-1 data-[placement=top]:-translate-y-1",
         className
       )
@@ -128,4 +131,5 @@ export {
   SelectItem,
   SelectSeparator,
   SelectPopover,
+  SelectCollection,
 }
