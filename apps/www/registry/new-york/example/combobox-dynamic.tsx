@@ -52,11 +52,13 @@ export default function ComboboxDynamicDemo() {
       <ComboboxPopover>
         <ComboboxListBox<ComboboxOptions[0]>>
           {(section) => (
-            <ComboboxSection>
+            <ComboboxSection key={section.name}>
               <ComboboxLabel separator>{section.name}</ComboboxLabel>
               <ComboboxCollection items={section.children}>
                 {(item) => (
-                  <ComboboxItem textValue={item.name}>{item.name}</ComboboxItem>
+                  <ComboboxItem key={item.name} textValue={item.name}>
+                    {item.name}
+                  </ComboboxItem>
                 )}
               </ComboboxCollection>
             </ComboboxSection>
