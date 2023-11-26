@@ -226,6 +226,13 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Date Range Picker",
+          href: "/docs/components/date-picker",
+          items: [],
+          label: "todo",
+          disabled: true,
+        },
+        {
           title: "Dialog",
           href: "/docs/components/dialog",
           items: [],
@@ -304,8 +311,6 @@ export const docsConfig: DocsConfig = {
           title: "Separator",
           href: "/docs/components/separator",
           items: [],
-          label: "todo",
-          disabled: true,
         },
         {
           title: "Sheet",
@@ -349,8 +354,6 @@ export const docsConfig: DocsConfig = {
           title: "Textarea",
           href: "/docs/components/textarea",
           items: [],
-          label: "todo",
-          disabled: true,
         },
         {
           title: "Toast",

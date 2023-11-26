@@ -20,7 +20,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/registry/default/ui/select"
-import { Textarea } from "@/registry/default/ui/textarea"
+import { TextArea } from "@/registry/default/ui/textarea"
 
 export function CardsReportIssue() {
   const id = React.useId()
@@ -75,7 +75,7 @@ export function CardsReportIssue() {
         </div>
         <div className="grid gap-2">
           <Label htmlFor={`description-${id}`}>Description</Label>
-          <Textarea
+          <TextArea
             id={`description-${id}`}
             placeholder="Please include all information relevant to your issue."
           />

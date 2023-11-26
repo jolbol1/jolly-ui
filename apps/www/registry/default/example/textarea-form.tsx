@@ -14,7 +14,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/registry/default/ui/form"
-import { Textarea } from "@/registry/default/ui/textarea"
+import { TextArea } from "@/registry/default/ui/textarea"
 import { toast } from "@/registry/default/ui/use-toast"
 
 const FormSchema = z.object({
@@ -54,7 +54,7 @@ export default function TextareaForm() {
             <FormItem>
               <FormLabel>Bio</FormLabel>
               <FormControl>
-                <Textarea
+                <TextArea
                   placeholder="Tell us a little bit about yourself"
                   className="resize-none"
                   {...field}
