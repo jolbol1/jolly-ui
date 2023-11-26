@@ -747,6 +747,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/example/progress-demo")),
       files: ["registry/default/example/progress-demo.tsx"],
     },
+    "progress-value": {
+      name: "progress-value",
+      type: "components:example",
+      registryDependencies: ["progress"],
+      component: React.lazy(() => import("@/registry/default/example/progress-value")),
+      files: ["registry/default/example/progress-value.tsx"],
+    },
     "radio-group-demo": {
       name: "radio-group-demo",
       type: "components:example",
@@ -1860,6 +1867,13 @@ export const Index: Record<string, any> = {
       registryDependencies: ["progress"],
       component: React.lazy(() => import("@/registry/new-york/example/progress-demo")),
       files: ["registry/new-york/example/progress-demo.tsx"],
+    },
+    "progress-value": {
+      name: "progress-value",
+      type: "components:example",
+      registryDependencies: ["progress"],
+      component: React.lazy(() => import("@/registry/new-york/example/progress-value")),
+      files: ["registry/new-york/example/progress-value.tsx"],
     },
     "radio-group-demo": {
       name: "radio-group-demo",

@@ -3,28 +3,40 @@
 import * as React from "react"
 import { ProgressBar, ProgressBarProps } from "react-aria-components"
 
-import { cnv } from "@/lib/utils"
+import { cn, cnv } from "@/lib/utils"
 
-const Progress = ({ className, children, ...props }: ProgressBarProps) => (
-  <ProgressBar
-    className={(values) =>
-      cnv(
-        values,
-        "relative h-2 w-full overflow-hidden rounded-full bg-primary/20",
-        className
-      )
-    }
-    {...props}
-  >
+export interface ProgressProps extends ProgressBarProps {
+  barClassName?: string
+  fillClassName?: string
+}
+
+const Progress = ({
+  className,
+  barClassName,
+  fillClassName,
+  children,
+  ...props
+}: ProgressProps) => (
+  <ProgressBar className={(values) => cnv(values, className)} {...props}>
     {(values) => (
       <>
         {typeof children === "function" ? children(values) : children}
         <div
-          className="h-full w-full flex-1 bg-primary transition-all"
-          style={{
-            transform: `translateX(-${100 - (values.percentage || 0)}%)`,
-          }}
-        />
+          className={cn(
+            "relative h-2 w-full overflow-hidden rounded-full bg-primary/20",
+            barClassName
+          )}
+        >
+          <div
+            className={cn(
+              "h-full w-full flex-1 bg-primary transition-all",
+              fillClassName
+            )}
+            style={{
+              transform: `translateX(-${100 - (values.percentage || 0)}%)`,
+            }}
+          />
+        </div>
       </>
     )}
   </ProgressBar>

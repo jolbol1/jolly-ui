@@ -157,6 +157,26 @@ export const docsConfig: DocsConfig = {
         },
       ],
     },
+    {
+      title: "Status",
+      items: [
+        {
+          title: "Progress Bar",
+          href: "/docs/components/progress",
+          items: [],
+        },
+      ],
+    },
+    {
+      title: "Primitive",
+      items: [
+        {
+          title: "Label",
+          href: "/docs/components/label",
+          items: [],
+        },
+      ],
+    },
     // {
     //   title: "Dark Mode",
     //   items: [
