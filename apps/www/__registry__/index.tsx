@@ -152,6 +152,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/ui/label")),
       files: ["registry/default/ui/label.tsx"],
     },
+    "link": {
+      name: "link",
+      type: "components:ui",
+      registryDependencies: undefined,
+      component: React.lazy(() => import("@/registry/default/ui/link")),
+      files: ["registry/default/ui/link.tsx"],
+    },
     "menubar": {
       name: "menubar",
       type: "components:ui",
@@ -627,6 +634,20 @@ export const Index: Record<string, any> = {
       registryDependencies: ["label"],
       component: React.lazy(() => import("@/registry/default/example/label-demo")),
       files: ["registry/default/example/label-demo.tsx"],
+    },
+    "link-demo": {
+      name: "link-demo",
+      type: "components:example",
+      registryDependencies: ["link"],
+      component: React.lazy(() => import("@/registry/default/example/link-demo")),
+      files: ["registry/default/example/link-demo.tsx"],
+    },
+    "link-variants": {
+      name: "link-variants",
+      type: "components:example",
+      registryDependencies: ["link"],
+      component: React.lazy(() => import("@/registry/default/example/link-variants")),
+      files: ["registry/default/example/link-variants.tsx"],
     },
     "menubar-demo": {
       name: "menubar-demo",
@@ -1147,6 +1168,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/new-york/ui/label")),
       files: ["registry/new-york/ui/label.tsx"],
     },
+    "link": {
+      name: "link",
+      type: "components:ui",
+      registryDependencies: undefined,
+      component: React.lazy(() => import("@/registry/new-york/ui/link")),
+      files: ["registry/new-york/ui/link.tsx"],
+    },
     "menubar": {
       name: "menubar",
       type: "components:ui",
@@ -1622,6 +1650,20 @@ export const Index: Record<string, any> = {
       registryDependencies: ["label"],
       component: React.lazy(() => import("@/registry/new-york/example/label-demo")),
       files: ["registry/new-york/example/label-demo.tsx"],
+    },
+    "link-demo": {
+      name: "link-demo",
+      type: "components:example",
+      registryDependencies: ["link"],
+      component: React.lazy(() => import("@/registry/new-york/example/link-demo")),
+      files: ["registry/new-york/example/link-demo.tsx"],
+    },
+    "link-variants": {
+      name: "link-variants",
+      type: "components:example",
+      registryDependencies: ["link"],
+      component: React.lazy(() => import("@/registry/new-york/example/link-variants")),
+      files: ["registry/new-york/example/link-variants.tsx"],
     },
     "menubar-demo": {
       name: "menubar-demo",

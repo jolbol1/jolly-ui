@@ -1,0 +1,10 @@
+{
+  "name": "link",
+  "files": [
+    {
+      "name": "link.tsx",
+      "content": "\"use client\"\r\n\r\nimport * as React from \"react\"\r\nimport { type VariantProps } from \"class-variance-authority\"\r\nimport { Link, LinkProps, LinkRenderProps } from \"react-aria-components\"\r\n\r\nimport { cn } from \"@/lib/utils\"\r\n\r\nimport { buttonVariants } from \"./button-variants\"\r\n\r\ninterface _LinkProps extends LinkProps, VariantProps<typeof buttonVariants> {}\r\n\r\nconst _Link = ({ className, variant, size, ...props }: _LinkProps) => {\r\n  return (\r\n    <Link\r\n      className={(values: LinkRenderProps) =>\r\n        cn(\r\n          buttonVariants({\r\n            variant,\r\n            size,\r\n            className:\r\n              typeof className === \"function\" ? className(values) : className,\r\n          })\r\n        )\r\n      }\r\n      {...props}\r\n    />\r\n  )\r\n}\r\n\r\nexport { _Link as Link }\r\nexport type { _LinkProps as LinkProps }\r\n"
+    }
+  ],
+  "type": "components:ui"
+}

@@ -1,0 +1,78 @@
+---
+title: Link
+description: A link allows a user to navigate to another page or resource within a web page or application.
+featured: true
+component: true
+radix:
+  link: https://react-spectrum.adobe.com/react-aria/Link.html
+---
+
+<ComponentPreview name="link-demo" />
+
+## Installation
+
+<Tabs defaultValue="manual">
+
+<TabsList>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project: button.tsx</Step>
+
+<ComponentSource name="button" />
+
+<Step>
+  Copy and paste the following code into your project: button-variants.tsx
+</Step>
+
+<ComponentSource name="button-variants" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Client Side Routing
+
+The `<Link>` component works with frameworks and client side routers like Next.js and React Router.
+As with other React Aria components that support links, this works via the RouterProvider component at the root of your app.
+See the [client side routing guide](https://react-spectrum.adobe.com/react-aria/routing.html) to learn how to set this up.
+
+## Usage
+
+```tsx
+import { Link } from "@/components/ui/link"
+```
+
+```tsx
+<Link href="https://example.com" variant="outline">
+  Link
+</Link>
+```
+
+Links accept content as children. If the link has an href prop, it will be rendered as an `<a>` element. When a `<Link>` does not have an href prop, it is rendered as a `<span role="link">` instead of an `<a>`. Events will need to be handled in JavaScript with the onPress prop.
+
+## Link
+
+The link component utilizes `buttonVariants`. You can use the variants and sizes found in the [Button](../../../docs/components/button) documentation.
+
+```tsx
+import { buttonVariants } from "@/components/ui/buttonVariants"
+```
+
+```tsx
+<Link className={buttonVariants({ variant: "outline" })}>Click here</Link>
+```
+
+## Examples
+
+### Variants
+
+<ComponentPreview name="link-variants" />

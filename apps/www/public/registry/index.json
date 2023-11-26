@@ -213,6 +213,13 @@
     "type": "components:ui"
   },
   {
+    "name": "link",
+    "files": [
+      "ui/link.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
     "name": "menubar",
     "dependencies": [
       "@radix-ui/react-menubar"
