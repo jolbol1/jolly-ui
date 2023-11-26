@@ -460,6 +460,20 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/example/checkbox-disabled")),
       files: ["registry/default/example/checkbox-disabled.tsx"],
     },
+    "checkbox-readonly": {
+      name: "checkbox-readonly",
+      type: "components:example",
+      registryDependencies: ["checkbox"],
+      component: React.lazy(() => import("@/registry/default/example/checkbox-readonly")),
+      files: ["registry/default/example/checkbox-readonly.tsx"],
+    },
+    "checkbox-indeterminate": {
+      name: "checkbox-indeterminate",
+      type: "components:example",
+      registryDependencies: ["checkbox"],
+      component: React.lazy(() => import("@/registry/default/example/checkbox-indeterminate")),
+      files: ["registry/default/example/checkbox-indeterminate.tsx"],
+    },
     "checkbox-with-text": {
       name: "checkbox-with-text",
       type: "components:example",
@@ -1559,6 +1573,20 @@ export const Index: Record<string, any> = {
       registryDependencies: ["checkbox"],
       component: React.lazy(() => import("@/registry/new-york/example/checkbox-disabled")),
       files: ["registry/new-york/example/checkbox-disabled.tsx"],
+    },
+    "checkbox-readonly": {
+      name: "checkbox-readonly",
+      type: "components:example",
+      registryDependencies: ["checkbox"],
+      component: React.lazy(() => import("@/registry/new-york/example/checkbox-readonly")),
+      files: ["registry/new-york/example/checkbox-readonly.tsx"],
+    },
+    "checkbox-indeterminate": {
+      name: "checkbox-indeterminate",
+      type: "components:example",
+      registryDependencies: ["checkbox"],
+      component: React.lazy(() => import("@/registry/new-york/example/checkbox-indeterminate")),
+      files: ["registry/new-york/example/checkbox-indeterminate.tsx"],
     },
     "checkbox-with-text": {
       name: "checkbox-with-text",

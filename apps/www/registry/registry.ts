@@ -394,6 +394,18 @@ const example: Registry = [
     files: ["example/checkbox-disabled.tsx"],
   },
   {
+    name: "checkbox-readonly",
+    type: "components:example",
+    registryDependencies: ["checkbox"],
+    files: ["example/checkbox-readonly.tsx"],
+  },
+  {
+    name: "checkbox-indeterminate",
+    type: "components:example",
+    registryDependencies: ["checkbox"],
+    files: ["example/checkbox-indeterminate.tsx"],
+  },
+  {
     name: "checkbox-with-text",
     type: "components:example",
     registryDependencies: ["checkbox"],
