@@ -85,6 +85,11 @@ const ui: Registry = [
     files: ["ui/dropdown-menu.tsx"],
   },
   {
+    name: "file-trigger",
+    type: "components:ui",
+    files: ["ui/file-trigger.tsx"],
+  },
+  {
     name: "form",
     type: "components:ui",
     dependencies: [
@@ -307,6 +312,12 @@ const example: Registry = [
     files: ["example/button-outline.tsx"],
   },
   {
+    name: "button-press",
+    type: "components:example",
+    registryDependencies: ["button"],
+    files: ["example/button-press.tsx"],
+  },
+  {
     name: "button-ghost",
     type: "components:example",
     registryDependencies: ["button"],
@@ -469,6 +480,18 @@ const example: Registry = [
     type: "components:example",
     registryDependencies: ["dropdown-menu", "radio-group"],
     files: ["example/dropdown-menu-radio-group.tsx"],
+  },
+  {
+    name: "file-trigger-demo",
+    type: "components:example",
+    registryDependencies: ["file-trigger"],
+    files: ["example/file-trigger-demo.tsx"],
+  },
+  {
+    name: "file-trigger-button-demo",
+    type: "components:example",
+    registryDependencies: ["file-trigger"],
+    files: ["example/file-trigger-button-demo.tsx"],
   },
   {
     name: "hover-card-demo",

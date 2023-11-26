@@ -110,6 +110,11 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/button",
           items: [],
         },
+        {
+          title: "File Trigger",
+          href: "/docs/components/file-trigger",
+          items: [],
+        },
       ],
     },
     {

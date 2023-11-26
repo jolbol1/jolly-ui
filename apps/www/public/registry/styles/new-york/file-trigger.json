@@ -1,0 +1,10 @@
+{
+  "name": "file-trigger",
+  "files": [
+    {
+      "name": "file-trigger.tsx",
+      "content": "\"use client\"\r\n\r\nimport * as React from \"react\"\r\nimport { type VariantProps } from \"class-variance-authority\"\r\nimport { Button, ButtonProps, ButtonRenderProps } from \"react-aria-components\"\r\n\r\nimport { cn } from \"@/lib/utils\"\r\n\r\nimport { buttonVariants } from \"./button-variants\"\r\n\r\ninterface _ButtonProps\r\n  extends ButtonProps,\r\n    VariantProps<typeof buttonVariants> {}\r\n\r\nconst _FileTrigger = ({ className, variant, size, ...props }: _ButtonProps) => {\r\n  return (\r\n    <Button\r\n      className={(values: ButtonRenderProps) =>\r\n        cn(\r\n          buttonVariants({\r\n            variant,\r\n            size,\r\n            className:\r\n              typeof className === \"function\" ? className(values) : className,\r\n          })\r\n        )\r\n      }\r\n      {...props}\r\n    />\r\n  )\r\n}\r\n\r\nexport { _FileTrigger as FileTrigger }\r\nexport type { _ButtonProps as ButtonProps }\r\n"
+    }
+  ],
+  "type": "components:ui"
+}

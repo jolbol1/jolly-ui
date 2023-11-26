@@ -124,6 +124,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/ui/dropdown-menu")),
       files: ["registry/default/ui/dropdown-menu.tsx"],
     },
+    "file-trigger": {
+      name: "file-trigger",
+      type: "components:ui",
+      registryDependencies: undefined,
+      component: React.lazy(() => import("@/registry/default/ui/file-trigger")),
+      files: ["registry/default/ui/file-trigger.tsx"],
+    },
     "form": {
       name: "form",
       type: "components:ui",
@@ -376,6 +383,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/example/button-outline")),
       files: ["registry/default/example/button-outline.tsx"],
     },
+    "button-press": {
+      name: "button-press",
+      type: "components:example",
+      registryDependencies: ["button"],
+      component: React.lazy(() => import("@/registry/default/example/button-press")),
+      files: ["registry/default/example/button-press.tsx"],
+    },
     "button-ghost": {
       name: "button-ghost",
       type: "components:example",
@@ -571,6 +585,20 @@ export const Index: Record<string, any> = {
       registryDependencies: ["dropdown-menu","radio-group"],
       component: React.lazy(() => import("@/registry/default/example/dropdown-menu-radio-group")),
       files: ["registry/default/example/dropdown-menu-radio-group.tsx"],
+    },
+    "file-trigger-demo": {
+      name: "file-trigger-demo",
+      type: "components:example",
+      registryDependencies: ["file-trigger"],
+      component: React.lazy(() => import("@/registry/default/example/file-trigger-demo")),
+      files: ["registry/default/example/file-trigger-demo.tsx"],
+    },
+    "file-trigger-button-demo": {
+      name: "file-trigger-button-demo",
+      type: "components:example",
+      registryDependencies: ["file-trigger"],
+      component: React.lazy(() => import("@/registry/default/example/file-trigger-button-demo")),
+      files: ["registry/default/example/file-trigger-button-demo.tsx"],
     },
     "hover-card-demo": {
       name: "hover-card-demo",
@@ -1140,6 +1168,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/new-york/ui/dropdown-menu")),
       files: ["registry/new-york/ui/dropdown-menu.tsx"],
     },
+    "file-trigger": {
+      name: "file-trigger",
+      type: "components:ui",
+      registryDependencies: undefined,
+      component: React.lazy(() => import("@/registry/new-york/ui/file-trigger")),
+      files: ["registry/new-york/ui/file-trigger.tsx"],
+    },
     "form": {
       name: "form",
       type: "components:ui",
@@ -1392,6 +1427,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/new-york/example/button-outline")),
       files: ["registry/new-york/example/button-outline.tsx"],
     },
+    "button-press": {
+      name: "button-press",
+      type: "components:example",
+      registryDependencies: ["button"],
+      component: React.lazy(() => import("@/registry/new-york/example/button-press")),
+      files: ["registry/new-york/example/button-press.tsx"],
+    },
     "button-ghost": {
       name: "button-ghost",
       type: "components:example",
@@ -1587,6 +1629,20 @@ export const Index: Record<string, any> = {
       registryDependencies: ["dropdown-menu","radio-group"],
       component: React.lazy(() => import("@/registry/new-york/example/dropdown-menu-radio-group")),
       files: ["registry/new-york/example/dropdown-menu-radio-group.tsx"],
+    },
+    "file-trigger-demo": {
+      name: "file-trigger-demo",
+      type: "components:example",
+      registryDependencies: ["file-trigger"],
+      component: React.lazy(() => import("@/registry/new-york/example/file-trigger-demo")),
+      files: ["registry/new-york/example/file-trigger-demo.tsx"],
+    },
+    "file-trigger-button-demo": {
+      name: "file-trigger-button-demo",
+      type: "components:example",
+      registryDependencies: ["file-trigger"],
+      component: React.lazy(() => import("@/registry/new-york/example/file-trigger-button-demo")),
+      files: ["registry/new-york/example/file-trigger-button-demo.tsx"],
     },
     "hover-card-demo": {
       name: "hover-card-demo",

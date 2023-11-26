@@ -168,6 +168,13 @@
     "type": "components:ui"
   },
   {
+    "name": "file-trigger",
+    "files": [
+      "ui/file-trigger.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
     "name": "form",
     "dependencies": [
       "@radix-ui/react-label",
