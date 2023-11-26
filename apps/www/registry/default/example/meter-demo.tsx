@@ -4,7 +4,7 @@ import * as React from "react"
 
 import { Meter } from "@/registry/default/ui/meter"
 
-export default function ProgressDemo() {
+export default function MeterDemo() {
   const [progress, setProgress] = React.useState(13)
 
   React.useEffect(() => {

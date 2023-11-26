@@ -5,7 +5,7 @@ import { Label } from "react-aria-components"
 
 import { Meter } from "@/registry/new-york/ui/meter"
 
-export default function ProgressDemo() {
+export default function MeterValueDemo() {
   const [progress, setProgress] = React.useState(13)
 
   React.useEffect(() => {
