@@ -131,6 +131,11 @@ const ui: Registry = [
     files: ["ui/menubar.tsx"],
   },
   {
+    name: "meter",
+    type: "components:ui",
+    files: ["ui/meter.tsx"],
+  },
+  {
     name: "navigation-menu",
     type: "components:ui",
     dependencies: ["@radix-ui/react-navigation-menu"],
@@ -594,6 +599,18 @@ const example: Registry = [
     type: "components:example",
     registryDependencies: ["link"],
     files: ["example/link-variants.tsx"],
+  },
+  {
+    name: "meter-demo",
+    type: "components:example",
+    registryDependencies: ["meter"],
+    files: ["example/meter-demo.tsx"],
+  },
+  {
+    name: "meter-value",
+    type: "components:example",
+    registryDependencies: ["meter"],
+    files: ["example/meter-value.tsx"],
   },
   {
     name: "menubar-demo",

@@ -173,6 +173,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/ui/menubar")),
       files: ["registry/default/ui/menubar.tsx"],
     },
+    "meter": {
+      name: "meter",
+      type: "components:ui",
+      registryDependencies: undefined,
+      component: React.lazy(() => import("@/registry/default/ui/meter")),
+      files: ["registry/default/ui/meter.tsx"],
+    },
     "navigation-menu": {
       name: "navigation-menu",
       type: "components:ui",
@@ -718,6 +725,20 @@ export const Index: Record<string, any> = {
       registryDependencies: ["link"],
       component: React.lazy(() => import("@/registry/default/example/link-variants")),
       files: ["registry/default/example/link-variants.tsx"],
+    },
+    "meter-demo": {
+      name: "meter-demo",
+      type: "components:example",
+      registryDependencies: ["meter"],
+      component: React.lazy(() => import("@/registry/default/example/meter-demo")),
+      files: ["registry/default/example/meter-demo.tsx"],
+    },
+    "meter-value": {
+      name: "meter-value",
+      type: "components:example",
+      registryDependencies: ["meter"],
+      component: React.lazy(() => import("@/registry/default/example/meter-value")),
+      files: ["registry/default/example/meter-value.tsx"],
     },
     "menubar-demo": {
       name: "menubar-demo",
@@ -1294,6 +1315,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/new-york/ui/menubar")),
       files: ["registry/new-york/ui/menubar.tsx"],
     },
+    "meter": {
+      name: "meter",
+      type: "components:ui",
+      registryDependencies: undefined,
+      component: React.lazy(() => import("@/registry/new-york/ui/meter")),
+      files: ["registry/new-york/ui/meter.tsx"],
+    },
     "navigation-menu": {
       name: "navigation-menu",
       type: "components:ui",
@@ -1839,6 +1867,20 @@ export const Index: Record<string, any> = {
       registryDependencies: ["link"],
       component: React.lazy(() => import("@/registry/new-york/example/link-variants")),
       files: ["registry/new-york/example/link-variants.tsx"],
+    },
+    "meter-demo": {
+      name: "meter-demo",
+      type: "components:example",
+      registryDependencies: ["meter"],
+      component: React.lazy(() => import("@/registry/new-york/example/meter-demo")),
+      files: ["registry/new-york/example/meter-demo.tsx"],
+    },
+    "meter-value": {
+      name: "meter-value",
+      type: "components:example",
+      registryDependencies: ["meter"],
+      component: React.lazy(() => import("@/registry/new-york/example/meter-value")),
+      files: ["registry/new-york/example/meter-value.tsx"],
     },
     "menubar-demo": {
       name: "menubar-demo",

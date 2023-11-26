@@ -161,6 +161,11 @@ export const docsConfig: DocsConfig = {
       title: "Status",
       items: [
         {
+          title: "Meter",
+          href: "/docs/components/meter",
+          items: [],
+        },
+        {
           title: "Progress Bar",
           href: "/docs/components/progress",
           items: [],

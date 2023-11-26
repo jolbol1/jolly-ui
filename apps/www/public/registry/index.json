@@ -237,6 +237,13 @@
     "type": "components:ui"
   },
   {
+    "name": "meter",
+    "files": [
+      "ui/meter.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
     "name": "navigation-menu",
     "dependencies": [
       "@radix-ui/react-navigation-menu"
