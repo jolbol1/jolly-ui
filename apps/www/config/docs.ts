@@ -146,6 +146,11 @@ export const docsConfig: DocsConfig = {
       title: "Overlays",
       items: [
         {
+          title: "Popover",
+          href: "/docs/components/popover",
+          items: [],
+        },
+        {
           title: "Tooltip",
           href: "/docs/components/tooltip",
           items: [],

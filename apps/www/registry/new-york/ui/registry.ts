@@ -631,6 +631,12 @@ const example: Registry = [
     files: ["example/popover-demo.tsx"],
   },
   {
+    name: "popover-position",
+    type: "components:example",
+    registryDependencies: ["popover"],
+    files: ["example/popover-position.tsx"],
+  },
+  {
     name: "progress-demo",
     type: "components:example",
     registryDependencies: ["progress"],

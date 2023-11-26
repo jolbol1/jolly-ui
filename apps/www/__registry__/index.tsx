@@ -761,6 +761,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/example/popover-demo")),
       files: ["registry/default/example/popover-demo.tsx"],
     },
+    "popover-position": {
+      name: "popover-position",
+      type: "components:example",
+      registryDependencies: ["popover"],
+      component: React.lazy(() => import("@/registry/default/example/popover-position")),
+      files: ["registry/default/example/popover-position.tsx"],
+    },
     "progress-demo": {
       name: "progress-demo",
       type: "components:example",
@@ -1909,6 +1916,13 @@ export const Index: Record<string, any> = {
       registryDependencies: ["popover"],
       component: React.lazy(() => import("@/registry/new-york/example/popover-demo")),
       files: ["registry/new-york/example/popover-demo.tsx"],
+    },
+    "popover-position": {
+      name: "popover-position",
+      type: "components:example",
+      registryDependencies: ["popover"],
+      component: React.lazy(() => import("@/registry/new-york/example/popover-position")),
+      files: ["registry/new-york/example/popover-position.tsx"],
     },
     "progress-demo": {
       name: "progress-demo",
