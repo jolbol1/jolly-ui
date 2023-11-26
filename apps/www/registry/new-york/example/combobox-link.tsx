@@ -9,32 +9,32 @@ import {
   ComboboxListBox,
   ComboboxPopover,
   ComboboxSection,
-} from "@/registry/default/ui/combobox"
+} from "@/registry/new-york/ui/combobox"
 
-const frameworks = [
+const components = [
   {
-    value: "next.js",
-    label: "Next.js",
+    value: "button",
+    label: "Button",
+    href: "../../../docs/components/button",
   },
   {
-    value: "sveltekit",
-    label: "SvelteKit",
+    value: "filetrigger",
+    label: "File Trigger",
+    href: "../../../docs/components/file-trigger",
   },
   {
-    value: "nuxt.js",
-    label: "Nuxt.js",
+    value: "toggle",
+    label: "Toggle Button",
+    href: "../../../docs/components/toggle",
   },
   {
-    value: "remix",
-    label: "Remix",
-  },
-  {
-    value: "astro",
-    label: "Astro",
+    value: "link",
+    label: "Link",
+    href: "../../../docs/components/link",
   },
 ]
 
-export default function ComboboxDemo() {
+export default function ComboboxLinkDemo() {
   return (
     <Combobox aria-label="Cities">
       <ComboboxInput
@@ -44,10 +44,12 @@ export default function ComboboxDemo() {
       <ComboboxPopover>
         <ComboboxListBox>
           <ComboboxSection>
-            <ComboboxLabel separator>Cities</ComboboxLabel>
-            <ComboboxCollection items={frameworks}>
+            <ComboboxLabel separator>Components</ComboboxLabel>
+            <ComboboxCollection items={components}>
               {(item) => (
                 <ComboboxItem
+                  href={item.href}
+                  target="_blank"
                   textValue={item.label}
                   id={item.value}
                   key={item.value}

@@ -132,6 +132,16 @@ export const docsConfig: DocsConfig = {
         },
       ],
     },
+    {
+      title: "Pickers",
+      items: [
+        {
+          title: "ComboBox",
+          href: "/docs/components/combobox",
+          items: [],
+        },
+      ],
+    },
     // {
     //   title: "Dark Mode",
     //   items: [

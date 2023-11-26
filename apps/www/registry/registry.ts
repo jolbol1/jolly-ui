@@ -412,6 +412,30 @@ const example: Registry = [
     files: ["example/combobox-demo.tsx"],
   },
   {
+    name: "combobox-basic",
+    type: "components:example",
+    registryDependencies: ["command"],
+    files: ["example/combobox-basic.tsx"],
+  },
+  {
+    name: "combobox-dynamic",
+    type: "components:example",
+    registryDependencies: ["command"],
+    files: ["example/combobox-dynamic.tsx"],
+  },
+  {
+    name: "combobox-link",
+    type: "components:example",
+    registryDependencies: ["command"],
+    files: ["example/combobox-link.tsx"],
+  },
+  {
+    name: "combobox-section",
+    type: "components:example",
+    registryDependencies: ["command"],
+    files: ["example/combobox-section.tsx"],
+  },
+  {
     name: "combobox-dropdown-menu",
     type: "components:example",
     registryDependencies: ["command", "dropdown-menu", "button"],
