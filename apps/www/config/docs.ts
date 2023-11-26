@@ -115,6 +115,11 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/file-trigger",
           items: [],
         },
+        {
+          title: "Toggle Button",
+          href: "/docs/components/toggle",
+          items: [],
+        },
       ],
     },
     {
