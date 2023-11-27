@@ -796,6 +796,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/example/radio-group-demo")),
       files: ["registry/default/example/radio-group-demo.tsx"],
     },
+    "radio-group-orientation": {
+      name: "radio-group-orientation",
+      type: "components:example",
+      registryDependencies: ["radio-group"],
+      component: React.lazy(() => import("@/registry/default/example/radio-group-orientation")),
+      files: ["registry/default/example/radio-group-orientation.tsx"],
+    },
     "radio-group-form": {
       name: "radio-group-form",
       type: "components:example",
@@ -1958,6 +1965,13 @@ export const Index: Record<string, any> = {
       registryDependencies: ["radio-group"],
       component: React.lazy(() => import("@/registry/new-york/example/radio-group-demo")),
       files: ["registry/new-york/example/radio-group-demo.tsx"],
+    },
+    "radio-group-orientation": {
+      name: "radio-group-orientation",
+      type: "components:example",
+      registryDependencies: ["radio-group"],
+      component: React.lazy(() => import("@/registry/new-york/example/radio-group-orientation")),
+      files: ["registry/new-york/example/radio-group-orientation.tsx"],
     },
     "radio-group-form": {
       name: "radio-group-form",

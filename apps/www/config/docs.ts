@@ -135,6 +135,11 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/checkbox-group",
           items: [],
         },
+        {
+          title: "Radio Group",
+          href: "/docs/components/radio-group",
+          items: [],
+        },
       ],
     },
     {

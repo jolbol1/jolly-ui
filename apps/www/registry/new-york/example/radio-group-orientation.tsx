@@ -3,7 +3,7 @@ import { Radio, RadioGroup } from "@/registry/new-york/ui/radio-group"
 
 export default function RadioGroupDemo() {
   return (
-    <RadioGroup defaultValue="dog">
+    <RadioGroup defaultValue="dog" orientation="horizontal">
       <Label>Favorite pet</Label>
       <Radio value="dog">Dog</Radio>
       <Radio value="cat">Cat</Radio>

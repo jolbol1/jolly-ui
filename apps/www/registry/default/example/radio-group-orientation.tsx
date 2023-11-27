@@ -3,10 +3,9 @@ import { Radio, RadioGroup } from "@/registry/default/ui/radio-group"
 
 export default function RadioGroupDemo() {
   return (
-    <RadioGroup defaultValue="dog">
-      <Label>Favorite pet</Label>
-      <Radio value="dog">Dog</Radio>
-      <Radio value="cat">Cat</Radio>
+    <RadioGroup defaultValue="dog" orientation="horizontal">
+      <Label>Favorite avatar</Label>
+      <Radio value="wizard">Wizard</Radio>
       <Radio value="dragon">Dragon</Radio>
     </RadioGroup>
   )

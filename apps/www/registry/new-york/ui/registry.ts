@@ -661,6 +661,12 @@ const example: Registry = [
     files: ["example/radio-group-demo.tsx"],
   },
   {
+    name: "radio-group-orientation",
+    type: "components:example",
+    registryDependencies: ["radio-group"],
+    files: ["example/radio-group-orientation.tsx"],
+  },
+  {
     name: "radio-group-form",
     type: "components:example",
     registryDependencies: ["radio-group", "form"],

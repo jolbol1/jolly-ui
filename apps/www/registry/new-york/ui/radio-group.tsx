@@ -11,8 +11,26 @@ import {
 import { cn, cnv } from "@/lib/utils"
 import { labelVariants } from "@/registry/new-york/ui/label"
 
-const _RadioGroup = ({ className, ...props }: RadioGroupProps) => {
-  return <RadioGroup className={cn("grid gap-2", className)} {...props} />
+const _RadioGroup = ({
+  className,
+  orientation = "vertical",
+  ...props
+}: RadioGroupProps) => {
+  return (
+    <RadioGroup
+      className={(values) =>
+        cnv(
+          values,
+          {
+            "grid gap-2": orientation === "vertical",
+            "flex items-center gap-2": orientation === "horizontal",
+          },
+          className
+        )
+      }
+      {...props}
+    />
+  )
 }
 
 export interface _RadioProps extends RadioProps {

@@ -1,6 +1,6 @@
 ---
 title: Radio Group
-description: A set of checkable buttons—known as radio buttons—where no more than one of the buttons can be checked at a time.
+description: A radio group allows a user to select a single item from a list of mutually exclusive options.
 component: true
 radix:
   link: https://react-spectrum.adobe.com/react-aria/RadioGroup.html
@@ -42,14 +42,12 @@ npx shadcn-ui@latest add radio-group
 
 ## Usage
 
-```tsx
-import { Radio, RadioGroup } from "@/components/ui/radio-group"
-```
+### Basic
 
-```tsx
-<RadioGroup defaultValue="comfortable">
-  <Radio value="default">Default</Radio>
-  <Radio value="comfortable">Comfortable</Radio>
-  <Radio value="compact">Compact</Radio>
-</RadioGroup>
-```
+<ComponentPreview name="radio-group-demo" />
+
+### Orientation
+
+Radio Groups are vertically oriented by default. The orientation prop can be used to change the orientation to horizontal.
+
+<ComponentPreview name="radio-group-orientation" />
