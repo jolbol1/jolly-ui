@@ -4,6 +4,7 @@ import * as React from "react"
 import { CheckIcon, MinusIcon } from "@radix-ui/react-icons"
 import {
   Checkbox,
+  CheckboxGroup,
   CheckboxRenderProps,
   type CheckboxProps,
 } from "react-aria-components"
@@ -11,9 +12,9 @@ import {
 import { cnv } from "@/lib/utils"
 import { labelVariants } from "@/registry/new-york/ui/label"
 
-export interface _CheckboxProps extends CheckboxProps {}
+const _CheckboxGroup = CheckboxGroup
 
-const _Checkbox = ({ className, children, ...props }: _CheckboxProps) => (
+const _Checkbox = ({ className, children, ...props }: CheckboxProps) => (
   <Checkbox
     className={(values) =>
       cnv<CheckboxRenderProps>(
@@ -40,4 +41,4 @@ const _Checkbox = ({ className, children, ...props }: _CheckboxProps) => (
   </Checkbox>
 )
 
-export { _Checkbox as Checkbox }
+export { _Checkbox as Checkbox, _CheckboxGroup as CheckboxGroup }

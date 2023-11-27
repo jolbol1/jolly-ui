@@ -130,6 +130,11 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/checkbox",
           items: [],
         },
+        {
+          title: "Checkbox Group",
+          href: "/docs/components/checkbox-group",
+          items: [],
+        },
       ],
     },
     {

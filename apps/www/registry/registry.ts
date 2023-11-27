@@ -399,6 +399,12 @@ const example: Registry = [
     files: ["example/checkbox-disabled.tsx"],
   },
   {
+    name: "checkbox-group-demo",
+    type: "components:example",
+    registryDependencies: ["checkbox"],
+    files: ["example/checkbox-group-demo.tsx"],
+  },
+  {
     name: "checkbox-readonly",
     type: "components:example",
     registryDependencies: ["checkbox"],

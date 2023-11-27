@@ -2,15 +2,19 @@
 
 import * as React from "react"
 import { Check, Minus } from "lucide-react"
-import { Checkbox, type CheckboxProps } from "react-aria-components"
+import {
+  Checkbox,
+  CheckboxGroup,
+  type CheckboxProps,
+} from "react-aria-components"
 
 import { cnv } from "@/lib/utils"
 
 import { labelVariants } from "./label"
 
-export interface _CheckboxProps extends CheckboxProps {}
+const _CheckboxGroup = CheckboxGroup
 
-const _Checkbox = ({ className, children, ...props }: _CheckboxProps) => (
+const _Checkbox = ({ className, children, ...props }: CheckboxProps) => (
   <Checkbox
     className={(values) =>
       cnv(
@@ -37,4 +41,4 @@ const _Checkbox = ({ className, children, ...props }: _CheckboxProps) => (
   </Checkbox>
 )
 
-export { _Checkbox as Checkbox }
+export { _Checkbox as Checkbox, _CheckboxGroup as CheckboxGroup }

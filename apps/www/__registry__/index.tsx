@@ -467,6 +467,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/example/checkbox-disabled")),
       files: ["registry/default/example/checkbox-disabled.tsx"],
     },
+    "checkbox-group-demo": {
+      name: "checkbox-group-demo",
+      type: "components:example",
+      registryDependencies: ["checkbox"],
+      component: React.lazy(() => import("@/registry/default/example/checkbox-group-demo")),
+      files: ["registry/default/example/checkbox-group-demo.tsx"],
+    },
     "checkbox-readonly": {
       name: "checkbox-readonly",
       type: "components:example",
@@ -1622,6 +1629,13 @@ export const Index: Record<string, any> = {
       registryDependencies: ["checkbox"],
       component: React.lazy(() => import("@/registry/new-york/example/checkbox-disabled")),
       files: ["registry/new-york/example/checkbox-disabled.tsx"],
+    },
+    "checkbox-group-demo": {
+      name: "checkbox-group-demo",
+      type: "components:example",
+      registryDependencies: ["checkbox"],
+      component: React.lazy(() => import("@/registry/new-york/example/checkbox-group-demo")),
+      files: ["registry/new-york/example/checkbox-group-demo.tsx"],
     },
     "checkbox-readonly": {
       name: "checkbox-readonly",
