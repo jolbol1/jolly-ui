@@ -821,6 +821,12 @@ const example: Registry = [
     files: ["example/table-demo.tsx"],
   },
   {
+    name: "textfield-demo",
+    type: "components:example",
+    registryDependencies: ["input", "label"],
+    files: ["example/textfield-demo.tsx"],
+  },
+  {
     name: "tabs-demo",
     type: "components:example",
     registryDependencies: ["tabs"],
@@ -831,6 +837,18 @@ const example: Registry = [
     type: "components:example",
     registryDependencies: ["textarea"],
     files: ["example/textarea-demo.tsx"],
+  },
+  {
+    name: "textfield-textarea",
+    type: "components:example",
+    registryDependencies: ["input", "label"],
+    files: ["example/textfield-textarea.tsx"],
+  },
+  {
+    name: "textfield-desc",
+    type: "components:example",
+    registryDependencies: ["input", "label"],
+    files: ["example/textfield-desc.tsx"],
   },
   {
     name: "textarea-disabled",

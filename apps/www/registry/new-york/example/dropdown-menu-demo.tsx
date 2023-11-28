@@ -1,9 +1,9 @@
-import { DropdownMenuPopover } from "@/registry/default/ui/dropdown-menu"
 import { Button } from "@/registry/new-york/ui/button"
 import {
   DropdownMenuContent,
   DropdownMenuHeader,
   DropdownMenuItem,
+  DropdownMenuPopover,
   DropdownMenuSection,
   DropdownMenuSeparator,
   DropdownMenuShortcut,

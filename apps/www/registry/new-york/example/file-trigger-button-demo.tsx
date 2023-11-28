@@ -1,7 +1,7 @@
 import React from "react"
 
-import { Button } from "@/registry/default/ui/button"
-import { FileTrigger } from "@/registry/default/ui/file-trigger"
+import { Button } from "@/registry/new-york/ui/button"
+import { FileTrigger } from "@/registry/new-york/ui/file-trigger"
 
 export default function FileTriggerButtonDemo() {
   return (

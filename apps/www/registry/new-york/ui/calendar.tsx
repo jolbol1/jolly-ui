@@ -20,7 +20,7 @@ import {
 } from "react-aria-components"
 
 import { cn, cnv } from "@/lib/utils"
-import { buttonVariants } from "@/registry/default/ui/button-variants"
+import { buttonVariants } from "@/registry/new-york/ui/button-variants"
 
 const _Calendar = Calendar
 

@@ -160,6 +160,11 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/switch",
           items: [],
         },
+        {
+          title: "TextField",
+          href: "/docs/components/textfield",
+          items: [],
+        },
       ],
     },
     {
@@ -233,6 +238,16 @@ export const docsConfig: DocsConfig = {
         {
           title: "Label",
           href: "/docs/components/label",
+          items: [],
+        },
+        {
+          title: "Input",
+          href: "/docs/components/input",
+          items: [],
+        },
+        {
+          title: "TextArea",
+          href: "/docs/components/textarea",
           items: [],
         },
       ],

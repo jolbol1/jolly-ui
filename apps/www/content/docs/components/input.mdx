@@ -2,25 +2,25 @@
 title: Input
 description: Displays a form input field or a component that looks like an input field.
 component: true
+radix:
+  link: https://react-spectrum.adobe.com/react-aria/TextField.html#input
 ---
+
+<Callout type="danger">
+  <b>Input</b> is a primitive meant to be used within other components. The
+  examples below utilizes them inside{" "}
+  <Link href="../../../docs/components/textfield">TextField</Link>
+</Callout>
 
 <ComponentPreview name="input-demo" className="[&_input]:max-w-xs" />
 
 ## Installation
 
-<Tabs defaultValue="cli">
+<Tabs defaultValue="manual">
 
 <TabsList>
-  <TabsTrigger value="cli">CLI</TabsTrigger>
   <TabsTrigger value="manual">Manual</TabsTrigger>
 </TabsList>
-<TabsContent value="cli">
-
-```bash
-npx shadcn-ui@latest add input
-```
-
-</TabsContent>
 
 <TabsContent value="manual">
 
@@ -40,21 +40,14 @@ npx shadcn-ui@latest add input
 
 ## Usage
 
-```tsx
-import { Input } from "@/components/ui/input"
-```
-
-```tsx
-<Input />
-```
-
-## Examples
-
-### Default
+### Basic
 
 <ComponentPreview name="input-demo" className="[&_input]:max-w-xs" />
 
 ### File
+
+A file input can be created with an `<Input type=“file”>` element, but this supports limited styling options and may not integrate well with the overall design of a website or application.
+To overcome this, [FileTrigger](../../../docs/components/file-trigger) extends the functionality of the standard file input element by working with a pressable child such as a Button to create accessible file inputs that can be style as needed.
 
 <ComponentPreview name="input-file" className="[&_input]:max-w-xs" />
 
@@ -64,8 +57,8 @@ import { Input } from "@/components/ui/input"
 
 ### With Label
 
-<ComponentPreview name="input-with-label" className="[&_input]:max-w-xs" />
+<ComponentPreview name="textfield-demo" />
 
-### With Button
+### With Description
 
-<ComponentPreview name="input-with-button" className="[&_input]:max-w-xs" />
+<ComponentPreview name="textfield-desc" />

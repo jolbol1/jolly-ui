@@ -1,26 +1,26 @@
 ---
-title: Textarea
+title: TextArea
 description: Displays a form textarea or a component that looks like a textarea.
 component: true
+radix:
+  link: https://react-spectrum.adobe.com/react-aria/TextField.html#textarea
 ---
+
+<Callout type="danger">
+  <b>TextArea</b> is a primitive meant to be used within other components. The
+  examples below utilizes them inside{" "}
+  <Link href="../../../docs/components/textfield">TextField</Link>
+</Callout>
 
 <ComponentPreview name="textarea-demo" />
 
 ## Installation
 
-<Tabs defaultValue="cli">
+<Tabs defaultValue="manual">
 
 <TabsList>
-  <TabsTrigger value="cli">CLI</TabsTrigger>
   <TabsTrigger value="manual">Manual</TabsTrigger>
 </TabsList>
-<TabsContent value="cli">
-
-```bash
-npx shadcn-ui@latest add textarea
-```
-
-</TabsContent>
 
 <TabsContent value="manual">
 
@@ -40,17 +40,7 @@ npx shadcn-ui@latest add textarea
 
 ## Usage
 
-```tsx
-import { Textarea } from "@/components/ui/textarea"
-```
-
-```tsx
-<Textarea />
-```
-
-## Examples
-
-### Default
+### Basic
 
 <ComponentPreview name="textarea-demo" />
 
