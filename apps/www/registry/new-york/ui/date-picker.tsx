@@ -1,6 +1,6 @@
 import { getLocalTimeZone } from "@internationalized/date"
+import { CalendarIcon } from "@radix-ui/react-icons"
 import { format } from "date-fns"
-import { CalendarIcon } from "lucide-react"
 import {
   DatePicker,
   DateValue,
