@@ -123,6 +123,16 @@ export const docsConfig: DocsConfig = {
       ],
     },
     {
+      title: "Drag and Drop",
+      items: [
+        {
+          title: "Dropzone",
+          href: "/docs/components/dropzone",
+          items: [],
+        },
+      ],
+    },
+    {
       title: "Forms",
       items: [
         {

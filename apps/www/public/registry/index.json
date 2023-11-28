@@ -168,6 +168,13 @@
     "type": "components:ui"
   },
   {
+    "name": "dropzone",
+    "files": [
+      "ui/dropzone.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
     "name": "file-trigger",
     "files": [
       "ui/file-trigger.tsx"

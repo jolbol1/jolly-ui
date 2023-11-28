@@ -102,6 +102,11 @@ const ui: Registry = [
     files: ["ui/dropdown-menu.tsx"],
   },
   {
+    name: "dropzone",
+    type: "components:ui",
+    files: ["ui/dropzone.tsx"],
+  },
+  {
     name: "file-trigger",
     type: "components:ui",
     files: ["ui/file-trigger.tsx"],
@@ -549,6 +554,18 @@ const example: Registry = [
     type: "components:example",
     registryDependencies: ["dropdown-menu", "radio-group"],
     files: ["example/dropdown-menu-radio-group.tsx"],
+  },
+  {
+    name: "dropzone-demo",
+    type: "components:example",
+    registryDependencies: ["dropzone"],
+    files: ["example/dropzone-demo.tsx"],
+  },
+  {
+    name: "dropzone-file",
+    type: "components:example",
+    registryDependencies: ["dropzone"],
+    files: ["example/dropzone-file.tsx"],
   },
   {
     name: "file-trigger-demo",

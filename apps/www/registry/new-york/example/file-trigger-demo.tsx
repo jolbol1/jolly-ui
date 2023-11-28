@@ -1,5 +1,22 @@
-import { FileTrigger } from "@/registry/new-york/ui/file-trigger"
+import React from "react"
 
-export default function ButtonDemo() {
-  return <FileTrigger>Button</FileTrigger>
+import {
+  FileTrigger,
+  FileTriggerInput,
+} from "@/registry/new-york/ui/file-trigger"
+
+export default function FileTriggerInputDemo() {
+  let [file, setFile] = React.useState<string[]>()
+  return (
+    <FileTrigger
+      onSelect={(e) => {
+        // @ts-ignore
+        let files = Array.from(e)
+        let filenames = files.map((file) => file.name)
+        setFile(filenames)
+      }}
+    >
+      <FileTriggerInput fileName={file} />
+    </FileTrigger>
+  )
 }

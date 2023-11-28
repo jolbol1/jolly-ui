@@ -124,6 +124,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/ui/dropdown-menu")),
       files: ["registry/default/ui/dropdown-menu.tsx"],
     },
+    "dropzone": {
+      name: "dropzone",
+      type: "components:ui",
+      registryDependencies: undefined,
+      component: React.lazy(() => import("@/registry/default/ui/dropzone")),
+      files: ["registry/default/ui/dropzone.tsx"],
+    },
     "file-trigger": {
       name: "file-trigger",
       type: "components:ui",
@@ -641,6 +648,20 @@ export const Index: Record<string, any> = {
       registryDependencies: ["dropdown-menu","radio-group"],
       component: React.lazy(() => import("@/registry/default/example/dropdown-menu-radio-group")),
       files: ["registry/default/example/dropdown-menu-radio-group.tsx"],
+    },
+    "dropzone-demo": {
+      name: "dropzone-demo",
+      type: "components:example",
+      registryDependencies: ["dropzone"],
+      component: React.lazy(() => import("@/registry/default/example/dropzone-demo")),
+      files: ["registry/default/example/dropzone-demo.tsx"],
+    },
+    "dropzone-file": {
+      name: "dropzone-file",
+      type: "components:example",
+      registryDependencies: ["dropzone"],
+      component: React.lazy(() => import("@/registry/default/example/dropzone-file")),
+      files: ["registry/default/example/dropzone-file.tsx"],
     },
     "file-trigger-demo": {
       name: "file-trigger-demo",
@@ -1315,6 +1336,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/new-york/ui/dropdown-menu")),
       files: ["registry/new-york/ui/dropdown-menu.tsx"],
     },
+    "dropzone": {
+      name: "dropzone",
+      type: "components:ui",
+      registryDependencies: undefined,
+      component: React.lazy(() => import("@/registry/new-york/ui/dropzone")),
+      files: ["registry/new-york/ui/dropzone.tsx"],
+    },
     "file-trigger": {
       name: "file-trigger",
       type: "components:ui",
@@ -1832,6 +1860,20 @@ export const Index: Record<string, any> = {
       registryDependencies: ["dropdown-menu","radio-group"],
       component: React.lazy(() => import("@/registry/new-york/example/dropdown-menu-radio-group")),
       files: ["registry/new-york/example/dropdown-menu-radio-group.tsx"],
+    },
+    "dropzone-demo": {
+      name: "dropzone-demo",
+      type: "components:example",
+      registryDependencies: ["dropzone"],
+      component: React.lazy(() => import("@/registry/new-york/example/dropzone-demo")),
+      files: ["registry/new-york/example/dropzone-demo.tsx"],
+    },
+    "dropzone-file": {
+      name: "dropzone-file",
+      type: "components:example",
+      registryDependencies: ["dropzone"],
+      component: React.lazy(() => import("@/registry/new-york/example/dropzone-file")),
+      files: ["registry/new-york/example/dropzone-file.tsx"],
     },
     "file-trigger-demo": {
       name: "file-trigger-demo",
