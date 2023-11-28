@@ -11,7 +11,7 @@ export default function DropdownMenuDemo() {
     <MenuTrigger>
       <Button aria-label="Menu">☰</Button>
       <MenuPopover>
-        <Menu onAction={alert}>
+        <Menu onAction={typeof window !== "undefined" ? alert : console.log}>
           <MenuItem id="open">Open</MenuItem>
           <MenuItem id="rename">Rename…</MenuItem>
           <MenuItem id="duplicate">Duplicate</MenuItem>
