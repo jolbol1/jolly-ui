@@ -9,11 +9,11 @@ import { Event, trackEvent } from "@/lib/events"
 import { cn } from "@/lib/utils"
 import { Button, ButtonProps } from "@/registry/new-york/ui/button"
 import {
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuPopover,
-  DropdownMenuTrigger,
-} from "@/registry/new-york/ui/dropdown-menu"
+  Menu,
+  MenuItem,
+  MenuPopover,
+  MenuTrigger,
+} from "@/registry/new-york/ui/menu"
 
 interface CopyButtonProps extends ButtonProps {
   value: string
@@ -103,7 +103,7 @@ export function CopyWithClassNames({
   }, [])
 
   return (
-    <DropdownMenuTrigger>
+    <MenuTrigger>
       <Button
         size="icon"
         variant="ghost"
@@ -119,8 +119,8 @@ export function CopyWithClassNames({
         )}
         <span className="sr-only">Copy</span>
       </Button>
-      <DropdownMenuPopover placement="bottom end">
-        <DropdownMenuContent
+      <MenuPopover placement="bottom end">
+        <Menu
           onAction={(key) => {
             if (key == "component") {
               copyToClipboard(value)
@@ -130,11 +130,11 @@ export function CopyWithClassNames({
             }
           }}
         >
-          <DropdownMenuItem id="component">Component</DropdownMenuItem>
-          <DropdownMenuItem id="classname">Classname</DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenuPopover>
-    </DropdownMenuTrigger>
+          <MenuItem id="component">Component</MenuItem>
+          <MenuItem id="classname">Classname</MenuItem>
+        </Menu>
+      </MenuPopover>
+    </MenuTrigger>
   )
 }
 
@@ -170,7 +170,7 @@ export function CopyNpmCommandButton({
   )
 
   return (
-    <DropdownMenuTrigger>
+    <MenuTrigger>
       <Button
         size="icon"
         variant="ghost"
@@ -186,16 +186,16 @@ export function CopyNpmCommandButton({
         )}
         <span className="sr-only">Copy</span>
       </Button>
-      <DropdownMenuPopover placement="bottom end">
-        <DropdownMenuContent
+      <MenuPopover placement="bottom end">
+        <Menu
           onAction={(key) => copyCommand(commands.__npmCommand__, key as any)}
         >
-          <DropdownMenuItem id="npm">npm</DropdownMenuItem>
-          <DropdownMenuItem id="yarn">yarn</DropdownMenuItem>
-          <DropdownMenuItem id="pnpm">pnpm</DropdownMenuItem>
-          <DropdownMenuItem id="bun">bun</DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenuPopover>
-    </DropdownMenuTrigger>
+          <MenuItem id="npm">npm</MenuItem>
+          <MenuItem id="yarn">yarn</MenuItem>
+          <MenuItem id="pnpm">pnpm</MenuItem>
+          <MenuItem id="bun">bun</MenuItem>
+        </Menu>
+      </MenuPopover>
+    </MenuTrigger>
   )
 }

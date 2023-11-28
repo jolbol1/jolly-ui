@@ -1,59 +1,59 @@
 import { Button } from "@/registry/new-york/ui/button"
 import {
-  DropdownMenuContent,
-  DropdownMenuHeader,
-  DropdownMenuItem,
-  DropdownMenuPopover,
-  DropdownMenuSection,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuTrigger,
-} from "@/registry/new-york/ui/dropdown-menu"
+  Menu,
+  MenuHeader,
+  MenuItem,
+  MenuKeyboard,
+  MenuPopover,
+  MenuSection,
+  MenuSeparator,
+  MenuTrigger,
+} from "@/registry/new-york/ui/menu"
 
 export default function DropdownMenuDemo() {
   return (
-    <DropdownMenuTrigger>
+    <MenuTrigger>
       <Button variant="outline">Open</Button>
-      <DropdownMenuPopover placement="top">
-        <DropdownMenuContent disabledKeys={["api"]} className="w-56">
-          <DropdownMenuSection>
-            <DropdownMenuHeader separator>My Account</DropdownMenuHeader>
-            <DropdownMenuItem>
+      <MenuPopover placement="top">
+        <Menu disabledKeys={["api"]} className="w-56">
+          <MenuSection>
+            <MenuHeader separator>My Account</MenuHeader>
+            <MenuItem>
               Profile
-              <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
-            </DropdownMenuItem>
-            <DropdownMenuItem>
+              <MenuKeyboard>⇧⌘P</MenuKeyboard>
+            </MenuItem>
+            <MenuItem>
               Billing
-              <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
-            </DropdownMenuItem>
-            <DropdownMenuItem>
+              <MenuKeyboard>⌘B</MenuKeyboard>
+            </MenuItem>
+            <MenuItem>
               Settings
-              <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
-            </DropdownMenuItem>
-            <DropdownMenuItem>
+              <MenuKeyboard>⌘S</MenuKeyboard>
+            </MenuItem>
+            <MenuItem>
               Keyboard shortcuts
-              <DropdownMenuShortcut>⌘K</DropdownMenuShortcut>
-            </DropdownMenuItem>
-          </DropdownMenuSection>
-          <DropdownMenuSeparator />
-          <DropdownMenuSection>
-            <DropdownMenuItem>Team</DropdownMenuItem>
-            <DropdownMenuItem>
+              <MenuKeyboard>⌘K</MenuKeyboard>
+            </MenuItem>
+          </MenuSection>
+          <MenuSeparator />
+          <MenuSection>
+            <MenuItem>Team</MenuItem>
+            <MenuItem>
               New Team
-              <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
-            </DropdownMenuItem>
-          </DropdownMenuSection>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem>GitHub</DropdownMenuItem>
-          <DropdownMenuItem>Support</DropdownMenuItem>
-          <DropdownMenuItem id="api">API</DropdownMenuItem>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem>
+              <MenuKeyboard>⌘+T</MenuKeyboard>
+            </MenuItem>
+          </MenuSection>
+          <MenuSeparator />
+          <MenuItem>GitHub</MenuItem>
+          <MenuItem>Support</MenuItem>
+          <MenuItem id="api">API</MenuItem>
+          <MenuSeparator />
+          <MenuItem>
             Log out
-            <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
-          </DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenuPopover>
-    </DropdownMenuTrigger>
+            <MenuKeyboard>⇧⌘Q</MenuKeyboard>
+          </MenuItem>
+        </Menu>
+      </MenuPopover>
+    </MenuTrigger>
   )
 }

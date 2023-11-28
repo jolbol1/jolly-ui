@@ -13,15 +13,15 @@ import {
   CommandList,
 } from "@/registry/default/ui/command"
 import {
-  DropdownMenuContent,
-  DropdownMenuHeader,
-  DropdownMenuItem,
-  DropdownMenuPopover,
-  DropdownMenuSection,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuTrigger,
-} from "@/registry/default/ui/dropdown-menu"
+  Menu,
+  MenuHeader,
+  MenuItem,
+  MenuKeyboard,
+  MenuPopover,
+  MenuSection,
+  MenuSeparator,
+  MenuTrigger,
+} from "@/registry/default/ui/menu"
 
 const labels = [
   "feature",
@@ -45,33 +45,33 @@ export default function ComboboxDropdownMenu() {
         </span>
         <span className="text-muted-foreground">Create a new project</span>
       </p>
-      <DropdownMenuTrigger isOpen={open} onOpenChange={setOpen}>
+      <MenuTrigger isOpen={open} onOpenChange={setOpen}>
         <Button variant="ghost" size="sm">
           <MoreHorizontal />
         </Button>
-        <DropdownMenuPopover placement="bottom end">
-          <DropdownMenuContent className="w-[200px]">
-            <DropdownMenuHeader>Actions</DropdownMenuHeader>
-            <DropdownMenuSection>
-              <DropdownMenuItem>
+        <MenuPopover placement="bottom end">
+          <Menu className="w-[200px]">
+            <MenuHeader>Actions</MenuHeader>
+            <MenuSection>
+              <MenuItem>
                 <User className="mr-2 h-4 w-4" />
                 Assign to...
-              </DropdownMenuItem>
-              <DropdownMenuItem>
+              </MenuItem>
+              <MenuItem>
                 <Calendar className="mr-2 h-4 w-4" />
                 Set due date...
-              </DropdownMenuItem>
+              </MenuItem>
 
-              <DropdownMenuSeparator />
-              <DropdownMenuItem className="text-red-600">
+              <MenuSeparator />
+              <MenuItem className="text-red-600">
                 <Trash className="mr-2 h-4 w-4" />
                 Delete
-                <DropdownMenuShortcut>⌘⌫</DropdownMenuShortcut>
-              </DropdownMenuItem>
-            </DropdownMenuSection>
-          </DropdownMenuContent>
-        </DropdownMenuPopover>
-      </DropdownMenuTrigger>
+                <MenuKeyboard>⌘⌫</MenuKeyboard>
+              </MenuItem>
+            </MenuSection>
+          </Menu>
+        </MenuPopover>
+      </MenuTrigger>
     </div>
   )
 }

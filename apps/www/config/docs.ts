@@ -123,6 +123,16 @@ export const docsConfig: DocsConfig = {
       ],
     },
     {
+      title: "Collections",
+      items: [
+        {
+          title: "Menu",
+          href: "/docs/components/menu",
+          items: [],
+        },
+      ],
+    },
+    {
       title: "Drag and Drop",
       items: [
         {

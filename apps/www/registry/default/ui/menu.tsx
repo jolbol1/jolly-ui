@@ -19,15 +19,11 @@ import {
 
 import { cn, cnv } from "@/lib/utils"
 
-const DropdownMenuTrigger = MenuTrigger
+const _MenuTrigger = MenuTrigger
 
-const DropdownMenuSection = Section
+const MenuSection = Section
 
-const DropdownMenuPopover = ({
-  className,
-  offset = 4,
-  ...props
-}: PopoverProps) => (
+const MenuPopover = ({ className, offset = 4, ...props }: PopoverProps) => (
   <Popover
     offset={offset}
     className={(values) =>
@@ -40,22 +36,15 @@ const DropdownMenuPopover = ({
   />
 )
 
-const DropdownMenuContent = <T extends object>({
-  className,
-  ...props
-}: MenuProps<T>) => (
+const _Menu = <T extends object>({ className, ...props }: MenuProps<T>) => (
   <Menu className={cn("outline-none", className)} {...props} />
 )
 
-export interface DropdownMenuItemProps extends MenuItemProps {
+interface _MenuItemProps extends MenuItemProps {
   inset?: boolean
 }
 
-const DropdownMenuItem = ({
-  className,
-  inset,
-  ...props
-}: DropdownMenuItemProps) => (
+const _MenuItem = ({ className, inset, ...props }: _MenuItemProps) => (
   <MenuItem
     className={(values) =>
       cnv(
@@ -69,18 +58,18 @@ const DropdownMenuItem = ({
   />
 )
 
-export interface DropdownMenuHeaderProps
+export interface MenuHeaderProps
   extends React.ComponentPropsWithoutRef<typeof Header> {
   inset?: boolean
   separator?: boolean
 }
 
-const DropdownMenuHeader = ({
+const MenuHeader = ({
   className,
   inset,
   separator = false,
   ...props
-}: DropdownMenuHeaderProps) => (
+}: MenuHeaderProps) => (
   <Header
     className={cn(
       "px-2 py-1.5 text-sm font-semibold",
@@ -92,11 +81,11 @@ const DropdownMenuHeader = ({
   />
 )
 
-const DropdownMenuSeparator = ({ className, ...props }: SeparatorProps) => (
+const MenuSeparator = ({ className, ...props }: SeparatorProps) => (
   <Separator className={cn("-mx-1 my-1 h-px bg-muted", className)} {...props} />
 )
 
-const DropdownMenuShortcut = ({
+const MenuKeyboard = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLSpanElement>) => {
@@ -108,11 +97,7 @@ const DropdownMenuShortcut = ({
   )
 }
 
-const DropdownMenuCheckboxItem = ({
-  className,
-  children,
-  ...props
-}: MenuItemProps) => (
+const MenuCheckboxItem = ({ className, children, ...props }: MenuItemProps) => (
   <MenuItem
     className={(values) =>
       cnv(
@@ -135,11 +120,7 @@ const DropdownMenuCheckboxItem = ({
   </MenuItem>
 )
 
-const DropdownMenuRadioItem = ({
-  className,
-  children,
-  ...props
-}: MenuItemProps) => (
+const MenuRadioItem = ({ className, children, ...props }: MenuItemProps) => (
   <MenuItem
     className={(values) =>
       cnv(
@@ -162,14 +143,15 @@ const DropdownMenuRadioItem = ({
 )
 
 export {
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-  DropdownMenuPopover,
-  DropdownMenuItem,
-  DropdownMenuHeader,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuCheckboxItem,
-  DropdownMenuRadioItem,
-  DropdownMenuSection,
+  _MenuTrigger as MenuTrigger,
+  _Menu as Menu,
+  MenuPopover,
+  _MenuItem as MenuItem,
+  MenuHeader,
+  MenuSeparator,
+  MenuKeyboard,
+  MenuCheckboxItem,
+  MenuRadioItem,
+  MenuSection,
 }
+export type { _MenuItemProps as MenuItemProps }

@@ -13,78 +13,78 @@ import {
 
 import { Button } from "@/registry/default/ui/button"
 import {
-  DropdownMenuContent,
-  DropdownMenuHeader,
-  DropdownMenuItem,
-  DropdownMenuPopover,
-  DropdownMenuSection,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuTrigger,
-} from "@/registry/default/ui/dropdown-menu"
+  Menu,
+  MenuHeader,
+  MenuItem,
+  MenuKeyboard,
+  MenuPopover,
+  MenuSection,
+  MenuSeparator,
+  MenuTrigger,
+} from "@/registry/default/ui/menu"
 
 export default function DropdownMenuDemo() {
   return (
-    <DropdownMenuTrigger>
+    <MenuTrigger>
       <Button variant="outline">Open</Button>
-      <DropdownMenuPopover placement="top">
-        <DropdownMenuContent className="w-56">
-          <DropdownMenuSection>
-            <DropdownMenuHeader separator>My Accounts</DropdownMenuHeader>
-            <DropdownMenuItem>
+      <MenuPopover placement="top">
+        <Menu className="w-56">
+          <MenuSection>
+            <MenuHeader separator>My Accounts</MenuHeader>
+            <MenuItem>
               <User className="mr-2 h-4 w-4" />
               <span>Profile</span>
-              <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
-            </DropdownMenuItem>
-            <DropdownMenuItem>
+              <MenuKeyboard>⇧⌘P</MenuKeyboard>
+            </MenuItem>
+            <MenuItem>
               <CreditCard className="mr-2 h-4 w-4" />
               <span>Billing</span>
-              <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
-            </DropdownMenuItem>
-            <DropdownMenuItem>
+              <MenuKeyboard>⌘B</MenuKeyboard>
+            </MenuItem>
+            <MenuItem>
               <Settings className="mr-2 h-4 w-4" />
               <span>Settings</span>
-              <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
-            </DropdownMenuItem>
-            <DropdownMenuItem>
+              <MenuKeyboard>⌘S</MenuKeyboard>
+            </MenuItem>
+            <MenuItem>
               <Keyboard className="mr-2 h-4 w-4" />
               <span>Keyboard shortcuts</span>
-              <DropdownMenuShortcut>⌘K</DropdownMenuShortcut>
-            </DropdownMenuItem>
-          </DropdownMenuSection>
-          <DropdownMenuSeparator />
-          <DropdownMenuSection>
-            <DropdownMenuItem>
+              <MenuKeyboard>⌘K</MenuKeyboard>
+            </MenuItem>
+          </MenuSection>
+          <MenuSeparator />
+          <MenuSection>
+            <MenuItem>
               <Users className="mr-2 h-4 w-4" />
               <span>Team</span>
-            </DropdownMenuItem>
-            <DropdownMenuItem>
+            </MenuItem>
+            <MenuItem>
               <Plus className="mr-2 h-4 w-4" />
               <span>New Team</span>
-              <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
-            </DropdownMenuItem>
-          </DropdownMenuSection>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem>
+              <MenuKeyboard>⌘+T</MenuKeyboard>
+            </MenuItem>
+          </MenuSection>
+          <MenuSeparator />
+          <MenuItem>
             <Github className="mr-2 h-4 w-4" />
             <span>GitHub</span>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
+          </MenuItem>
+          <MenuItem>
             <LifeBuoy className="mr-2 h-4 w-4" />
             <span>Support</span>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
+          </MenuItem>
+          <MenuItem>
             <Cloud className="mr-2 h-4 w-4" />
             <span>API</span>
-          </DropdownMenuItem>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem>
+          </MenuItem>
+          <MenuSeparator />
+          <MenuItem>
             <LogOut className="mr-2 h-4 w-4" />
             <span>Log out</span>
-            <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
-          </DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenuPopover>
-    </DropdownMenuTrigger>
+            <MenuKeyboard>⇧⌘Q</MenuKeyboard>
+          </MenuItem>
+        </Menu>
+      </MenuPopover>
+    </MenuTrigger>
   )
 }

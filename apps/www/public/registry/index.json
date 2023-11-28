@@ -165,12 +165,9 @@
     "type": "components:ui"
   },
   {
-    "name": "dropdown-menu",
-    "dependencies": [
-      "@radix-ui/react-dropdown-menu"
-    ],
+    "name": "menu",
     "files": [
-      "ui/dropdown-menu.tsx"
+      "ui/menu.tsx"
     ],
     "type": "components:ui"
   },

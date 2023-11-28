@@ -101,10 +101,9 @@ const ui: Registry = [
     files: ["ui/dialog.tsx"],
   },
   {
-    name: "dropdown-menu",
+    name: "menu",
     type: "components:ui",
-    dependencies: ["@radix-ui/react-dropdown-menu"],
-    files: ["ui/dropdown-menu.tsx"],
+    files: ["ui/menu.tsx"],
   },
   {
     name: "dropzone",
@@ -483,7 +482,7 @@ const example: Registry = [
   {
     name: "combobox-dropdown-menu",
     type: "components:example",
-    registryDependencies: ["command", "dropdown-menu", "button"],
+    registryDependencies: ["command", "menu", "button"],
     files: ["example/combobox-dropdown-menu.tsx"],
   },
   {
@@ -557,19 +556,43 @@ const example: Registry = [
   {
     name: "dropdown-menu-demo",
     type: "components:example",
-    registryDependencies: ["dropdown-menu"],
+    registryDependencies: ["menu"],
     files: ["example/dropdown-menu-demo.tsx"],
+  },
+  {
+    name: "dropdown-menu-dynamic",
+    type: "components:example",
+    registryDependencies: ["menu"],
+    files: ["example/dropdown-menu-dynamic.tsx"],
+  },
+  {
+    name: "dropdown-menu-link",
+    type: "components:example",
+    registryDependencies: ["menu"],
+    files: ["example/dropdown-menu-link.tsx"],
+  },
+  {
+    name: "dropdown-menu-section",
+    type: "components:example",
+    registryDependencies: ["menu"],
+    files: ["example/dropdown-menu-section.tsx"],
+  },
+  {
+    name: "dropdown-menu-basic",
+    type: "components:example",
+    registryDependencies: ["menu"],
+    files: ["example/dropdown-menu-basic.tsx"],
   },
   {
     name: "dropdown-menu-checkboxes",
     type: "components:example",
-    registryDependencies: ["dropdown-menu", "checkbox"],
+    registryDependencies: ["menu", "checkbox"],
     files: ["example/dropdown-menu-checkboxes.tsx"],
   },
   {
     name: "dropdown-menu-radio-group",
     type: "components:example",
-    registryDependencies: ["dropdown-menu", "radio-group"],
+    registryDependencies: ["menu", "radio-group"],
     files: ["example/dropdown-menu-radio-group.tsx"],
   },
   {
