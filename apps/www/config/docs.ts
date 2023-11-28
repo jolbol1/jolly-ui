@@ -133,6 +133,23 @@ export const docsConfig: DocsConfig = {
       ],
     },
     {
+      title: "Date and Time",
+      items: [
+        {
+          title: "Calendar",
+          href: "/docs/components/calendar",
+          items: [],
+          label: "needs work",
+        },
+        {
+          title: "Date Picker",
+          href: "/docs/components/date-picker",
+          items: [],
+          label: "needs work",
+        },
+      ],
+    },
+    {
       title: "Drag and Drop",
       items: [
         {
