@@ -1,6 +1,6 @@
 ---
 title: Slider
-description: An input where the user selects a value from within a given range.
+description: A slider allows a user to select one or more values within a range.
 component: true
 radix:
   link: https://react-spectrum.adobe.com/react-aria/Slider.html
@@ -34,10 +34,19 @@ radix:
 
 ## Usage
 
-```tsx
-import { Slider } from "@/components/ui/slider"
-```
+### Basic
 
-```tsx
-<Slider defaultValue={[33]} maxValue={100} step={1} />
-```
+<ComponentPreview name="slider-demo" />
+
+### Value Label
+
+Values are formatted as a percentage by default, but this can be modified by using the formatOptions prop to specify a different format.
+formatOptions is compatible with the option parameter ofs [Intl.NumberFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat) and is applied based on the current locale.
+
+<ComponentPreview name="slider-value" />
+
+### Vertical
+
+Sliders are horizontally oriented by default. The orientation prop can be set to "vertical" to create a vertical slider.
+
+<ComponentPreview name="slider-vertical" />

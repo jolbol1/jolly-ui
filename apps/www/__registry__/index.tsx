@@ -901,6 +901,20 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/example/slider-demo")),
       files: ["registry/default/example/slider-demo.tsx"],
     },
+    "slider-value": {
+      name: "slider-value",
+      type: "components:example",
+      registryDependencies: ["slider"],
+      component: React.lazy(() => import("@/registry/default/example/slider-value")),
+      files: ["registry/default/example/slider-value.tsx"],
+    },
+    "slider-vertical": {
+      name: "slider-vertical",
+      type: "components:example",
+      registryDependencies: ["slider"],
+      component: React.lazy(() => import("@/registry/default/example/slider-vertical")),
+      files: ["registry/default/example/slider-vertical.tsx"],
+    },
     "switch-demo": {
       name: "switch-demo",
       type: "components:example",
@@ -914,6 +928,13 @@ export const Index: Record<string, any> = {
       registryDependencies: ["switch"],
       component: React.lazy(() => import("@/registry/default/example/switch-disabled")),
       files: ["registry/default/example/switch-disabled.tsx"],
+    },
+    "switch-readonly": {
+      name: "switch-readonly",
+      type: "components:example",
+      registryDependencies: ["switch"],
+      component: React.lazy(() => import("@/registry/default/example/switch-readonly")),
+      files: ["registry/default/example/switch-readonly.tsx"],
     },
     "table-demo": {
       name: "table-demo",
@@ -2071,6 +2092,20 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/new-york/example/slider-demo")),
       files: ["registry/new-york/example/slider-demo.tsx"],
     },
+    "slider-value": {
+      name: "slider-value",
+      type: "components:example",
+      registryDependencies: ["slider"],
+      component: React.lazy(() => import("@/registry/new-york/example/slider-value")),
+      files: ["registry/new-york/example/slider-value.tsx"],
+    },
+    "slider-vertical": {
+      name: "slider-vertical",
+      type: "components:example",
+      registryDependencies: ["slider"],
+      component: React.lazy(() => import("@/registry/new-york/example/slider-vertical")),
+      files: ["registry/new-york/example/slider-vertical.tsx"],
+    },
     "switch-demo": {
       name: "switch-demo",
       type: "components:example",
@@ -2084,6 +2119,13 @@ export const Index: Record<string, any> = {
       registryDependencies: ["switch"],
       component: React.lazy(() => import("@/registry/new-york/example/switch-disabled")),
       files: ["registry/new-york/example/switch-disabled.tsx"],
+    },
+    "switch-readonly": {
+      name: "switch-readonly",
+      type: "components:example",
+      registryDependencies: ["switch"],
+      component: React.lazy(() => import("@/registry/new-york/example/switch-readonly")),
+      files: ["registry/new-york/example/switch-readonly.tsx"],
     },
     "table-demo": {
       name: "table-demo",

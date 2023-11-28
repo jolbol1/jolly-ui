@@ -123,7 +123,7 @@ export const docsConfig: DocsConfig = {
       ],
     },
     {
-      title: "Form",
+      title: "Forms",
       items: [
         {
           title: "Checkbox",
@@ -138,6 +138,16 @@ export const docsConfig: DocsConfig = {
         {
           title: "Radio Group",
           href: "/docs/components/radio-group",
+          items: [],
+        },
+        {
+          title: "Slider",
+          href: "/docs/components/slider",
+          items: [],
+        },
+        {
+          title: "Switch",
+          href: "/docs/components/switch",
           items: [],
         },
       ],
@@ -155,6 +165,11 @@ export const docsConfig: DocsConfig = {
     {
       title: "Overlays",
       items: [
+        {
+          title: "Dialog",
+          href: "/docs/components/dialog",
+          items: [],
+        },
         {
           title: "Popover",
           href: "/docs/components/popover",

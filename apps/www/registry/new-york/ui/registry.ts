@@ -751,6 +751,18 @@ const example: Registry = [
     files: ["example/slider-demo.tsx"],
   },
   {
+    name: "slider-value",
+    type: "components:example",
+    registryDependencies: ["slider"],
+    files: ["example/slider-value.tsx"],
+  },
+  {
+    name: "slider-vertical",
+    type: "components:example",
+    registryDependencies: ["slider"],
+    files: ["example/slider-vertical.tsx"],
+  },
+  {
     name: "switch-demo",
     type: "components:example",
     registryDependencies: ["switch"],
@@ -761,6 +773,12 @@ const example: Registry = [
     type: "components:example",
     registryDependencies: ["switch"],
     files: ["example/switch-disabled.tsx"],
+  },
+  {
+    name: "switch-readonly",
+    type: "components:example",
+    registryDependencies: ["switch"],
+    files: ["example/switch-readonly.tsx"],
   },
   {
     name: "table-demo",
