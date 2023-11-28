@@ -608,12 +608,6 @@ const example: Registry = [
     files: ["example/dropzone-file.tsx"],
   },
   {
-    name: "file-trigger-demo",
-    type: "components:example",
-    registryDependencies: ["file-trigger"],
-    files: ["example/file-trigger-demo.tsx"],
-  },
-  {
     name: "file-trigger-button-demo",
     type: "components:example",
     registryDependencies: ["file-trigger"],
