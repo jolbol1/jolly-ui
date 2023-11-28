@@ -14,7 +14,6 @@ import { useTheme } from "next-themes"
 
 import { docsConfig } from "@/config/docs"
 import { cn } from "@/lib/utils"
-import { Button } from "@/registry/new-york/ui/button"
 import {
   CommandDialog,
   CommandEmpty,
@@ -23,7 +22,8 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator,
-} from "@/registry/new-york/ui/command"
+} from "@/components/radix/command"
+import { Button } from "@/registry/new-york/ui/button"
 
 export function CommandMenu({ ...props }: DialogProps) {
   const router = useRouter()
@@ -63,7 +63,7 @@ export function CommandMenu({ ...props }: DialogProps) {
           <span className="text-xs">⌘</span>K
         </kbd>
       </Button>
-      <CommandDialog isOpen={open} onOpenChange={setOpen}>
+      <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput placeholder="Type a command or search..." />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>

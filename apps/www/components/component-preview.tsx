@@ -7,14 +7,14 @@ import { cn } from "@/lib/utils"
 import { useConfig } from "@/hooks/use-config"
 import { CopyButton, CopyWithClassNames } from "@/components/copy-button"
 import { Icons } from "@/components/icons"
-import { StyleSwitcher } from "@/components/style-switcher"
-import { ThemeWrapper } from "@/components/theme-wrapper"
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@/registry/new-york/ui/tabs"
+} from "@/components/radix/tabs"
+import { StyleSwitcher } from "@/components/style-switcher"
+import { ThemeWrapper } from "@/components/theme-wrapper"
 import { styles } from "@/registry/styles"
 
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {

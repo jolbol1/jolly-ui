@@ -17,6 +17,7 @@ import { cn } from "@/lib/utils"
 import { useConfig } from "@/hooks/use-config"
 import { copyToClipboardWithMeta } from "@/components/copy-button"
 import { DrawerContent, DrawerTrigger } from "@/components/drawer"
+import { Skeleton } from "@/components/radix/skeleton"
 import { ThemeWrapper } from "@/components/theme-wrapper"
 import { Button } from "@/registry/new-york/ui/button"
 import {
@@ -28,7 +29,6 @@ import {
 } from "@/registry/new-york/ui/dialog"
 import { Label } from "@/registry/new-york/ui/label"
 import { Popover, PopoverTrigger } from "@/registry/new-york/ui/popover"
-import { Skeleton } from "@/registry/new-york/ui/skeleton"
 import { Theme, themes } from "@/registry/themes"
 
 import "@/styles/mdx.css"
