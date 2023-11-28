@@ -1,6 +1,6 @@
 ---
 title: Button
-description: Displays a button or a component that looks like a button.
+description: A button allows a user to perform an action, with mouse, touch, and keyboard interactions.
 featured: true
 component: true
 radix:
@@ -9,7 +9,7 @@ radix:
 
 <ComponentPreview name="button-demo" />
 
-## Installations
+## Installation
 
 <Tabs defaultValue="manual">
 
@@ -51,15 +51,26 @@ import { Button } from "@/components/ui/button"
 
 ## Link
 
-You can use the `buttonVariants` helper to create a link that looks like a button.
+The Button component always represents a button semantically.
+To create a link that visually looks like a button, use the [Link](../../../docs/components/link) component instead. You can reuse the same styles you apply to the Button component on the Link. It includes support for React Router, NextJs and Remix.
+
+You can also use the `buttonVariants` helper to create a link that looks like a button, if the Link component does not support your needed component.
 
 ```tsx
 import { buttonVariants } from "@/components/ui/buttonVariants"
 ```
 
 ```tsx
-<Link className={button - variants({ variant: "outline" })}>Click here</Link>
+<Link className={buttonVariants({ variant: "outline" })}>Click here</Link>
 ```
+
+## Events
+
+Button supports user interactions via mouse, keyboard, and touch. You can handle all of these via the `onPress` prop. This is similar to the standard onClick event, but normalized to support all interaction methods equally. In addition, the `onPressStart`, `onPressEnd`, and `onPressChange` events are fired as the user interacts with the button.
+
+Each of these handlers receives a `PressEvent`, which exposes information about the target and the type of event that triggered the interaction. See [usePress](https://react-spectrum.adobe.com/react-aria/usePress.html) for more details.
+
+<ComponentPreview name="button-press" />
 
 ## Examples
 

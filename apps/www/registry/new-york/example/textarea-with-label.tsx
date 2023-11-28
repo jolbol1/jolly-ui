@@ -1,11 +1,13 @@
+import { TextField } from "react-aria-components"
+
 import { Label } from "@/registry/new-york/ui/label"
 import { TextArea } from "@/registry/new-york/ui/textarea"
 
 export default function TextareaWithLabel() {
   return (
-    <div className="grid w-full gap-1.5">
-      <Label htmlFor="message">Your message</Label>
-      <TextArea placeholder="Type your message here." id="message" />
-    </div>
+    <TextField className="grid w-full gap-1.5">
+      <Label>Your message</Label>
+      <TextArea placeholder="Type your message here." />
+    </TextField>
   )
 }

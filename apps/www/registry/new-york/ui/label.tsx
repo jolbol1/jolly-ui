@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { cva } from "class-variance-authority"
-import { LabelProps, Label as RaLabel } from "react-aria-components"
+import { Label, LabelProps } from "react-aria-components"
 
 import { cn } from "@/lib/utils"
 
@@ -11,7 +11,7 @@ const labelVariants = cva(
 )
 
 const _Label = ({ className, ...props }: LabelProps) => (
-  <RaLabel className={cn(labelVariants(), className)} {...props} />
+  <Label className={cn(labelVariants(), className)} {...props} />
 )
 
 export { _Label as Label, labelVariants }

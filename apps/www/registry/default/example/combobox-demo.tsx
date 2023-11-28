@@ -1,7 +1,5 @@
 "use client"
 
-import { Collection } from "react-aria-components"
-
 import {
   Combobox,
   ComboboxCollection,

@@ -36,6 +36,11 @@ const ui: Registry = [
     files: ["ui/button.tsx"],
   },
   {
+    name: "breadcrumbs",
+    type: "components:ui",
+    files: ["ui/breadcrumbs.tsx"],
+  },
+  {
     name: "calendar",
     type: "components:ui",
     dependencies: ["react-day-picker", "date-fns"],
@@ -79,10 +84,19 @@ const ui: Registry = [
     files: ["ui/dialog.tsx"],
   },
   {
-    name: "dropdown-menu",
+    name: "menu",
     type: "components:ui",
-    dependencies: ["@radix-ui/react-dropdown-menu"],
-    files: ["ui/dropdown-menu.tsx"],
+    files: ["ui/menu.tsx"],
+  },
+  {
+    name: "dropzone",
+    type: "components:ui",
+    files: ["ui/dropzone.tsx"],
+  },
+  {
+    name: "file-trigger",
+    type: "components:ui",
+    files: ["ui/file-trigger.tsx"],
   },
   {
     name: "form",
@@ -115,10 +129,20 @@ const ui: Registry = [
     files: ["ui/label.tsx"],
   },
   {
+    name: "link",
+    type: "components:ui",
+    files: ["ui/link.tsx"],
+  },
+  {
     name: "menubar",
     type: "components:ui",
     dependencies: ["@radix-ui/react-menubar"],
     files: ["ui/menubar.tsx"],
+  },
+  {
+    name: "meter",
+    type: "components:ui",
+    files: ["ui/meter.tsx"],
   },
   {
     name: "navigation-menu",
@@ -302,6 +326,12 @@ const example: Registry = [
     files: ["example/button-outline.tsx"],
   },
   {
+    name: "button-press",
+    type: "components:example",
+    registryDependencies: ["button"],
+    files: ["example/button-press.tsx"],
+  },
+  {
     name: "button-ghost",
     type: "components:example",
     registryDependencies: ["button"],
@@ -332,6 +362,18 @@ const example: Registry = [
     files: ["example/button-icon.tsx"],
   },
   {
+    name: "breadcrumbs-demo",
+    type: "components:example",
+    registryDependencies: ["button"],
+    files: ["example/breadcrumbs-demo.tsx"],
+  },
+  {
+    name: "breadcrumbs-items",
+    type: "components:example",
+    registryDependencies: ["button"],
+    files: ["example/breadcrumbs-items.tsx"],
+  },
+  {
     name: "calendar-demo",
     type: "components:example",
     registryDependencies: ["calendar"],
@@ -356,10 +398,28 @@ const example: Registry = [
     files: ["example/checkbox-demo.tsx"],
   },
   {
+    name: "checkbox-group-demo",
+    type: "components:example",
+    registryDependencies: ["checkbox"],
+    files: ["example/checkbox-group-demo.tsx"],
+  },
+  {
     name: "checkbox-disabled",
     type: "components:example",
     registryDependencies: ["checkbox"],
     files: ["example/checkbox-disabled.tsx"],
+  },
+  {
+    name: "checkbox-readonly",
+    type: "components:example",
+    registryDependencies: ["checkbox"],
+    files: ["example/checkbox-readonly.tsx"],
+  },
+  {
+    name: "checkbox-indeterminate",
+    type: "components:example",
+    registryDependencies: ["checkbox"],
+    files: ["example/checkbox-indeterminate.tsx"],
   },
   {
     name: "checkbox-with-text",
@@ -380,9 +440,33 @@ const example: Registry = [
     files: ["example/combobox-demo.tsx"],
   },
   {
+    name: "combobox-basic",
+    type: "components:example",
+    registryDependencies: ["command"],
+    files: ["example/combobox-basic.tsx"],
+  },
+  {
+    name: "combobox-dynamic",
+    type: "components:example",
+    registryDependencies: ["command"],
+    files: ["example/combobox-dynamic.tsx"],
+  },
+  {
+    name: "combobox-link",
+    type: "components:example",
+    registryDependencies: ["command"],
+    files: ["example/combobox-link.tsx"],
+  },
+  {
+    name: "combobox-section",
+    type: "components:example",
+    registryDependencies: ["command"],
+    files: ["example/combobox-section.tsx"],
+  },
+  {
     name: "combobox-dropdown-menu",
     type: "components:example",
-    registryDependencies: ["command", "dropdown-menu", "button"],
+    registryDependencies: ["command", "menu", "button"],
     files: ["example/combobox-dropdown-menu.tsx"],
   },
   {
@@ -450,20 +534,68 @@ const example: Registry = [
   {
     name: "dropdown-menu-demo",
     type: "components:example",
-    registryDependencies: ["dropdown-menu"],
+    registryDependencies: ["menu"],
     files: ["example/dropdown-menu-demo.tsx"],
+  },
+  {
+    name: "dropdown-menu-link",
+    type: "components:example",
+    registryDependencies: ["menu"],
+    files: ["example/dropdown-menu-link.tsx"],
+  },
+  {
+    name: "dropdown-menu-dynamic",
+    type: "components:example",
+    registryDependencies: ["menu"],
+    files: ["example/dropdown-menu-dynamic.tsx"],
+  },
+  {
+    name: "dropdown-menu-section",
+    type: "components:example",
+    registryDependencies: ["menu"],
+    files: ["example/dropdown-menu-section.tsx"],
+  },
+  {
+    name: "dropdown-menu-basic",
+    type: "components:example",
+    registryDependencies: ["menu"],
+    files: ["example/dropdown-menu-basic.tsx"],
   },
   {
     name: "dropdown-menu-checkboxes",
     type: "components:example",
-    registryDependencies: ["dropdown-menu", "checkbox"],
+    registryDependencies: ["menu", "checkbox"],
     files: ["example/dropdown-menu-checkboxes.tsx"],
   },
   {
     name: "dropdown-menu-radio-group",
     type: "components:example",
-    registryDependencies: ["dropdown-menu", "radio-group"],
+    registryDependencies: ["menu", "radio-group"],
     files: ["example/dropdown-menu-radio-group.tsx"],
+  },
+  {
+    name: "dropzone-demo",
+    type: "components:example",
+    registryDependencies: ["dropzone"],
+    files: ["example/dropzone-demo.tsx"],
+  },
+  {
+    name: "dropzone-file",
+    type: "components:example",
+    registryDependencies: ["dropzone"],
+    files: ["example/dropzone-file.tsx"],
+  },
+  {
+    name: "file-trigger-demo",
+    type: "components:example",
+    registryDependencies: ["file-trigger"],
+    files: ["example/file-trigger-demo.tsx"],
+  },
+  {
+    name: "file-trigger-button-demo",
+    type: "components:example",
+    registryDependencies: ["file-trigger"],
+    files: ["example/file-trigger-button-demo.tsx"],
   },
   {
     name: "hover-card-demo",
@@ -520,6 +652,30 @@ const example: Registry = [
     files: ["example/label-demo.tsx"],
   },
   {
+    name: "link-demo",
+    type: "components:example",
+    registryDependencies: ["link"],
+    files: ["example/link-demo.tsx"],
+  },
+  {
+    name: "link-variants",
+    type: "components:example",
+    registryDependencies: ["link"],
+    files: ["example/link-variants.tsx"],
+  },
+  {
+    name: "meter-demo",
+    type: "components:example",
+    registryDependencies: ["meter"],
+    files: ["example/meter-demo.tsx"],
+  },
+  {
+    name: "meter-value",
+    type: "components:example",
+    registryDependencies: ["meter"],
+    files: ["example/meter-value.tsx"],
+  },
+  {
     name: "menubar-demo",
     type: "components:example",
     registryDependencies: ["menubar"],
@@ -538,16 +694,34 @@ const example: Registry = [
     files: ["example/popover-demo.tsx"],
   },
   {
+    name: "popover-position",
+    type: "components:example",
+    registryDependencies: ["popover"],
+    files: ["example/popover-position.tsx"],
+  },
+  {
     name: "progress-demo",
     type: "components:example",
     registryDependencies: ["progress"],
     files: ["example/progress-demo.tsx"],
   },
   {
+    name: "progress-value",
+    type: "components:example",
+    registryDependencies: ["progress"],
+    files: ["example/progress-value.tsx"],
+  },
+  {
     name: "radio-group-demo",
     type: "components:example",
     registryDependencies: ["radio-group"],
     files: ["example/radio-group-demo.tsx"],
+  },
+  {
+    name: "radio-group-orientation",
+    type: "components:example",
+    registryDependencies: ["radio-group"],
+    files: ["example/radio-group-orientation.tsx"],
   },
   {
     name: "radio-group-form",
@@ -574,16 +748,40 @@ const example: Registry = [
     files: ["example/select-demo.tsx"],
   },
   {
+    name: "select-links",
+    type: "components:example",
+    registryDependencies: ["select"],
+    files: ["example/select-links.tsx"],
+  },
+  {
     name: "select-form",
     type: "components:example",
     registryDependencies: ["select"],
     files: ["example/select-form.tsx"],
   },
   {
+    name: "select-sections",
+    type: "components:example",
+    registryDependencies: ["select"],
+    files: ["example/select-sections.tsx"],
+  },
+  {
     name: "separator-demo",
     type: "components:example",
     registryDependencies: ["separator"],
     files: ["example/separator-demo.tsx"],
+  },
+  {
+    name: "select-disabled",
+    type: "components:example",
+    registryDependencies: ["select"],
+    files: ["example/select-disabled.tsx"],
+  },
+  {
+    name: "select-dynamic",
+    type: "components:example",
+    registryDependencies: ["select"],
+    files: ["example/select-dynamic.tsx"],
   },
   {
     name: "sheet-demo",
@@ -610,6 +808,18 @@ const example: Registry = [
     files: ["example/slider-demo.tsx"],
   },
   {
+    name: "slider-value",
+    type: "components:example",
+    registryDependencies: ["slider"],
+    files: ["example/slider-value.tsx"],
+  },
+  {
+    name: "slider-vertical",
+    type: "components:example",
+    registryDependencies: ["slider"],
+    files: ["example/slider-vertical.tsx"],
+  },
+  {
     name: "switch-demo",
     type: "components:example",
     registryDependencies: ["switch"],
@@ -622,10 +832,22 @@ const example: Registry = [
     files: ["example/switch-disabled.tsx"],
   },
   {
+    name: "switch-readonly",
+    type: "components:example",
+    registryDependencies: ["switch"],
+    files: ["example/switch-readonly.tsx"],
+  },
+  {
     name: "table-demo",
     type: "components:example",
     registryDependencies: ["table"],
     files: ["example/table-demo.tsx"],
+  },
+  {
+    name: "textfield-demo",
+    type: "components:example",
+    registryDependencies: ["input", "label"],
+    files: ["example/textfield-demo.tsx"],
   },
   {
     name: "tabs-demo",
@@ -638,6 +860,18 @@ const example: Registry = [
     type: "components:example",
     registryDependencies: ["textarea"],
     files: ["example/textarea-demo.tsx"],
+  },
+  {
+    name: "textfield-textarea",
+    type: "components:example",
+    registryDependencies: ["input", "label"],
+    files: ["example/textfield-textarea.tsx"],
+  },
+  {
+    name: "textfield-desc",
+    type: "components:example",
+    registryDependencies: ["input", "label"],
+    files: ["example/textfield-desc.tsx"],
   },
   {
     name: "textarea-disabled",
@@ -740,6 +974,12 @@ const example: Registry = [
     type: "components:example",
     registryDependencies: ["tooltip"],
     files: ["example/tooltip-demo.tsx"],
+  },
+  {
+    name: "tooltip-position",
+    type: "components:example",
+    registryDependencies: ["tooltip"],
+    files: ["example/tooltip-position.tsx"],
   },
   {
     name: "typography-blockquote",

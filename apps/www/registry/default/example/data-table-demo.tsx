@@ -17,15 +17,15 @@ import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react"
 
 import { Button } from "@/registry/default/ui/button"
 import { Checkbox } from "@/registry/default/ui/checkbox"
-import {
-  DropdownMenuContent,
-  DropdownMenuHeader,
-  DropdownMenuItem,
-  DropdownMenuPopover,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/registry/default/ui/dropdown-menu"
 import { Input } from "@/registry/default/ui/input"
+import {
+  Menu,
+  MenuHeader,
+  MenuItem,
+  MenuPopover,
+  MenuSeparator,
+  MenuTrigger,
+} from "@/registry/default/ui/menu"
 import {
   Table,
   TableBody,
@@ -139,25 +139,25 @@ export const columns: ColumnDef<Payment>[] = [
       const payment = row.original
 
       return (
-        <DropdownMenuTrigger>
+        <MenuTrigger>
           <Button variant="ghost" className="h-8 w-8 p-0">
             <span className="sr-only">Open menu</span>
             <MoreHorizontal className="h-4 w-4" />
           </Button>
-          <DropdownMenuPopover placement="bottom end">
-            <DropdownMenuContent
+          <MenuPopover placement="bottom end">
+            <Menu
               onAction={(key) =>
                 key == "copy" ? navigator.clipboard.writeText(payment.id) : null
               }
             >
-              <DropdownMenuHeader>Actions</DropdownMenuHeader>
-              <DropdownMenuItem id="copy">Copy payment ID</DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>View customer</DropdownMenuItem>
-              <DropdownMenuItem>View payment details</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenuPopover>
-        </DropdownMenuTrigger>
+              <MenuHeader>Actions</MenuHeader>
+              <MenuItem id="copy">Copy payment ID</MenuItem>
+              <MenuSeparator />
+              <MenuItem>View customer</MenuItem>
+              <MenuItem>View payment details</MenuItem>
+            </Menu>
+          </MenuPopover>
+        </MenuTrigger>
       )
     },
   },

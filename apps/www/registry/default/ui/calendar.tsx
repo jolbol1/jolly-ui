@@ -91,16 +91,20 @@ const _CalendarGridBody = ({ className, ...props }: CalendarGridBodyProps) => (
   />
 )
 
+;("outline-none ring-2 ring-ring ring-offset-2")
+
 const _CalendarCell = ({ className, date, ...props }: CalendarCellProps) => (
   <CalendarCell
     className={(values) =>
       cnv(
         values,
-        buttonVariants({ variant: "ghost" }),
-        "h-9 w-9 p-0 font-normal data-[selected]:opacity-100",
+        "h-9 w-9 p-0 font-normal data-[selected]:opacity-100 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm ring-offset-background transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50 data-[hovered]:bg-accent data-[hovered]:text-accent-foreground",
         date.compare(today(getLocalTimeZone())) === 0 &&
           "bg-accent text-accent-foreground",
         values.isDisabled && "text-muted-foreground opacity-50",
+        values.isFocusVisible &&
+          values.isFocused &&
+          "outline-none ring-2 ring-ring ring-offset-2",
         values.isSelected &&
           "bg-primary text-primary-foreground data-[hovered]:bg-primary data-[hovered]:text-primary-foreground data-[focused]:bg-primary data-[focused]:text-primary-foreground",
         values.isOutsideMonth &&

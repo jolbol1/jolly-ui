@@ -1,6 +1,6 @@
 ---
 title: Progress
-description: Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.
+description: Progress bars show either determinate or indeterminate progress of an operation over time.
 component: true
 radix:
   link: https://react-spectrum.adobe.com/react-aria/ProgressBar.html
@@ -34,10 +34,15 @@ radix:
 
 ## Usage
 
-```tsx
-import { Progress } from "@/components/ui/progress"
-```
+### Basic
 
-```tsx
-<Progress value={33} />
-```
+<ComponentPreview name="progress-demo" />
+
+### Value Label
+
+Values are formatted as a percentage by default, but this can be modified by using the formatOptions prop to specify a different format.
+`formatOptions` is compatible with the option parameter of [Intl.NumberFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat) and is applied based on the current locale.
+
+For more options see [react aria components](https://react-spectrum.adobe.com/react-aria/ProgressBar.html#labeling) docs.
+
+<ComponentPreview name="progress-value" />

@@ -1,6 +1,6 @@
 ---
 title: Combobox
-description: Autocomplete input and command palette with a list of suggestions.
+description: A combo box combines a text input with a listbox, allowing users to filter a list of options to items matching a query.
 component: true
 ---
 
@@ -29,3 +29,37 @@ component: true
 </TabsContent>
 
 </Tabs>
+
+## Usage
+
+### Basic
+
+<ComponentPreview name="combobox-basic" />
+
+### Links
+
+By default, interacting with an item in a ComboBox selects it and updates the input value.
+Alternatively, items may be links to another page or website. This can be achieved by passing the href prop to the `<ComboboxItem>` component.
+Interacting with link items navigates to the provided URL and does not update the selection or input value.
+
+The `<ComboboxItem>` component works with frameworks and client side routers like Next.js, Remix and React Router.
+As with other React Aria components that support links, this works via the RouterProvider component at the root of your app.
+See the [client side routing guide](https://react-spectrum.adobe.com/react-aria/routing.html) to learn how to set this up.
+
+<ComponentPreview name="combobox-link" />
+
+### Sections
+
+A `<ComboboxLabel>` element may also be included to label the section. This can be offset and/or include a separator based on the value of the props.
+See examples of this below where the fruit label contains a separator and the Vegetable one an offset.
+
+#### Static Items
+
+<ComponentPreview name="combobox-section" />
+
+#### Dynamic Items
+
+Sections used with dynamic items are populated from a hierarchical data structure. Please note that `ComboboxSection` takes an array of data using the `items` prop only.
+If the section also has a header, the `ComboboxCollection` component can be used to render the child items.
+
+<ComponentPreview name="combobox-dynamic" />

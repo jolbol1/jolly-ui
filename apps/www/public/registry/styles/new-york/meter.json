@@ -1,0 +1,10 @@
+{
+  "name": "meter",
+  "files": [
+    {
+      "name": "meter.tsx",
+      "content": "\"use client\"\r\n\r\nimport * as React from \"react\"\r\nimport { Meter, MeterProps } from \"react-aria-components\"\r\n\r\nimport { cn, cnv } from \"@/lib/utils\"\r\n\r\nexport interface _MeterProps extends MeterProps {\r\n  barClassName?: string\r\n  fillClassName?: string\r\n}\r\n\r\nconst _Meter = ({\r\n  className,\r\n  barClassName,\r\n  fillClassName,\r\n  children,\r\n  ...props\r\n}: _MeterProps) => (\r\n  <Meter className={(values) => cnv(values, className)} {...props}>\r\n    {(values) => (\r\n      <>\r\n        {typeof children === \"function\" ? children(values) : children}\r\n        <div\r\n          className={cn(\r\n            \"relative h-2 w-full overflow-hidden rounded-full bg-primary/20\",\r\n            barClassName\r\n          )}\r\n        >\r\n          <div\r\n            className={cn(\r\n              \"h-full w-full flex-1 bg-primary transition-all\",\r\n              fillClassName\r\n            )}\r\n            style={{\r\n              transform: `translateX(-${100 - (values.percentage || 0)}%)`,\r\n            }}\r\n          />\r\n        </div>\r\n      </>\r\n    )}\r\n  </Meter>\r\n)\r\n\r\nexport { _Meter as Meter }\r\nexport type { _MeterProps as MeterProps }\r\n"
+    }
+  ],
+  "type": "components:ui"
+}

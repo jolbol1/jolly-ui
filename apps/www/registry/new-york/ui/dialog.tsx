@@ -107,6 +107,7 @@ const DialogFooter = ({
 
 const DialogTitle = ({ className, ...props }: HeadingProps) => (
   <Heading
+    slot="title"
     className={cn(
       "text-lg font-semibold leading-none tracking-tight",
       className

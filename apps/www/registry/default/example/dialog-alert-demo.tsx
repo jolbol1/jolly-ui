@@ -27,7 +27,9 @@ export default function DialogDemo() {
                 <Button variant="outline" autoFocus onPress={close}>
                   Cancel
                 </Button>
-                <Button onPress={close}>Continue</Button>
+                <Button variant="destructive" onPress={close}>
+                  Continue
+                </Button>
               </DialogFooter>
             </>
           )}

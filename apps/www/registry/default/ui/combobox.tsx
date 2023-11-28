@@ -54,17 +54,22 @@ const ComboboxInput = ({ className, ...props }: InputProps) => (
 export interface ComboboxLabelProps
   extends React.ComponentPropsWithoutRef<typeof Header> {
   separator?: boolean
+  offset?: boolean
 }
 
 const ComboboxLabel = ({
   className,
   separator = false,
+  offset = false,
   ...props
 }: ComboboxLabelProps) => (
   <Header
     className={cn(
       " py-1.5 pl-8 pr-2 text-sm font-semibold",
-      { "-mx-1 mb-1 border-b border-b-border px-3 pb-[0.625rem]": separator },
+      {
+        "-mx-1 mb-1 border-b border-b-border px-3 pb-[0.625rem]": separator,
+        "px-3": offset,
+      },
       className
     )}
     {...props}
@@ -105,7 +110,7 @@ const ComboboxPopover = ({ className, ...props }: PopoverProps) => (
     className={(values) =>
       cnv(
         values,
-        "relative z-50 w-[--trigger-width]  overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md data-[entering]:animate-in data-[exiting]:animate-out data-[entering]:fade-in-0 data-[exiting]:fade-out-0 data-[exiting]:zoom-out-95 data-[placement=bottom]:slide-in-from-top-2 data-[placement=left]:slide-in-from-right-2 data-[placement=right]:slide-in-from-left-2 data-[placement=top]:slide-in-from-bottom-2",
+        "relative z-50 w-[--trigger-width]  overflow-y-auto rounded-md border bg-popover text-popover-foreground shadow-md data-[entering]:animate-in data-[exiting]:animate-out data-[entering]:fade-in-0 data-[exiting]:fade-out-0 data-[exiting]:zoom-out-95 data-[placement=bottom]:slide-in-from-top-2 data-[placement=left]:slide-in-from-right-2 data-[placement=right]:slide-in-from-left-2 data-[placement=top]:slide-in-from-bottom-2",
         "data-[placement=bottom]:translate-y-1 data-[placement=left]:-translate-x-1 data-[placement=right]:translate-x-1 data-[placement=top]:-translate-y-1",
         className
       )

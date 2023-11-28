@@ -6,7 +6,7 @@
   "files": [
     {
       "name": "label.tsx",
-      "content": "\"use client\"\r\n\r\nimport * as React from \"react\"\r\nimport { cva } from \"class-variance-authority\"\r\nimport { LabelProps, Label as RaLabel } from \"react-aria-components\"\r\n\r\nimport { cn } from \"@/lib/utils\"\r\n\r\nconst labelVariants = cva(\r\n  \"text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70\"\r\n)\r\n\r\nconst _Label = ({ className, ...props }: LabelProps) => (\r\n  <RaLabel className={cn(labelVariants(), className)} {...props} />\r\n)\r\n\r\nexport { _Label as Label, labelVariants }\r\n"
+      "content": "\"use client\"\r\n\r\nimport * as React from \"react\"\r\nimport { cva } from \"class-variance-authority\"\r\nimport { Label, LabelProps } from \"react-aria-components\"\r\n\r\nimport { cn } from \"@/lib/utils\"\r\n\r\nconst labelVariants = cva(\r\n  \"text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70\"\r\n)\r\n\r\nconst _Label = ({ className, ...props }: LabelProps) => (\r\n  <Label className={cn(labelVariants(), className)} {...props} />\r\n)\r\n\r\nexport { _Label as Label, labelVariants }\r\n"
     }
   ],
   "type": "components:ui"

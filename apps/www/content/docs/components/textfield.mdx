@@ -1,0 +1,35 @@
+---
+title: TextField
+description: A text field allows a user to enter a plain text value with a keyboard.
+component: true
+radix:
+  link: https://react-spectrum.adobe.com/react-aria/TextField.html
+---
+
+Text fields can be built with `<Input>` or `<TextArea>` and `<Label>` elements, but you must manually ensure that they are semantically connected via ids for accessibility.
+`TextField` helps automate this, and handle other accessibility features while allowing for custom styling.
+
+## Installation
+
+You can use the `TextField` import from react-aria-components as it does not need default styling.
+Install the [Input](../../../docs/components/input), [Label](../../../docs/components/label) or [TextArea](../../../docs/components/textarea) component to use within from their respective pages.
+
+<ComponentPreview name="textfield-demo" />
+
+## Usage
+
+Basic usages below. View [Input](../../../docs/components/input) and [TextArea](../../../docs/components/textarea) for more examples.
+
+### Input
+
+<ComponentPreview name="textfield-demo" />
+
+### Text Area
+
+<ComponentPreview name="textfield-textarea" />
+
+### Description
+
+TextField also supports optional description and error message elements, which can be used to provide more context about the field, and any validation messages.
+
+<ComponentPreview name="textfield-desc" />

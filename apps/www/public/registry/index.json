@@ -61,6 +61,13 @@
     "type": "components:ui"
   },
   {
+    "name": "breadcrumbs",
+    "files": [
+      "ui/breadcrumbs.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
     "name": "calendar",
     "dependencies": [
       "react-day-picker",
@@ -158,12 +165,23 @@
     "type": "components:ui"
   },
   {
-    "name": "dropdown-menu",
-    "dependencies": [
-      "@radix-ui/react-dropdown-menu"
-    ],
+    "name": "menu",
     "files": [
-      "ui/dropdown-menu.tsx"
+      "ui/menu.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
+    "name": "dropzone",
+    "files": [
+      "ui/dropzone.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
+    "name": "file-trigger",
+    "files": [
+      "ui/file-trigger.tsx"
     ],
     "type": "components:ui"
   },
@@ -213,12 +231,26 @@
     "type": "components:ui"
   },
   {
+    "name": "link",
+    "files": [
+      "ui/link.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
     "name": "menubar",
     "dependencies": [
       "@radix-ui/react-menubar"
     ],
     "files": [
       "ui/menubar.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
+    "name": "meter",
+    "files": [
+      "ui/meter.tsx"
     ],
     "type": "components:ui"
   },

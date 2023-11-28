@@ -21,16 +21,16 @@ import {
 
 import { Button } from "@/registry/new-york/ui/button"
 import { Checkbox } from "@/registry/new-york/ui/checkbox"
-import {
-  DropdownMenuCheckboxItem,
-  DropdownMenuContent,
-  DropdownMenuHeader,
-  DropdownMenuItem,
-  DropdownMenuPopover,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/registry/new-york/ui/dropdown-menu"
 import { Input } from "@/registry/new-york/ui/input"
+import {
+  Menu,
+  MenuCheckboxItem,
+  MenuHeader,
+  MenuItem,
+  MenuPopover,
+  MenuSeparator,
+  MenuTrigger,
+} from "@/registry/new-york/ui/menu"
 import {
   Table,
   TableBody,
@@ -144,25 +144,25 @@ export const columns: ColumnDef<Payment>[] = [
       const payment = row.original
 
       return (
-        <DropdownMenuTrigger>
+        <MenuTrigger>
           <Button variant="ghost" className="h-8 w-8 p-0">
             <span className="sr-only">Open menu</span>
             <DotsHorizontalIcon className="h-4 w-4" />
           </Button>
-          <DropdownMenuPopover placement="bottom end">
-            <DropdownMenuContent
+          <MenuPopover placement="bottom end">
+            <Menu
               onAction={(key) =>
                 key == "copy" ? navigator.clipboard.writeText(payment.id) : null
               }
             >
-              <DropdownMenuHeader>Actions</DropdownMenuHeader>
-              <DropdownMenuItem id="copy">Copy payment ID</DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>View customer</DropdownMenuItem>
-              <DropdownMenuItem>View payment details</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenuPopover>
-        </DropdownMenuTrigger>
+              <MenuHeader>Actions</MenuHeader>
+              <MenuItem id="copy">Copy payment ID</MenuItem>
+              <MenuSeparator />
+              <MenuItem>View customer</MenuItem>
+              <MenuItem>View payment details</MenuItem>
+            </Menu>
+          </MenuPopover>
+        </MenuTrigger>
       )
     },
   },

@@ -5,6 +5,7 @@ import { CaretSortIcon, CheckIcon } from "@radix-ui/react-icons"
 import {
   Button,
   ButtonProps,
+  Collection,
   Header,
   ListBox,
   ListBoxItem,
@@ -25,6 +26,8 @@ import { cn, cnv } from "@/lib/utils"
 const _Select = Select
 
 const SelectSection = Section
+
+const SelectCollection = Collection
 
 const _SelectValue = <T extends object>({
   className,
@@ -126,4 +129,5 @@ export {
   SelectItem,
   SelectPopover,
   SelectSeparator,
+  SelectCollection,
 }

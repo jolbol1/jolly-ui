@@ -20,7 +20,7 @@ import {
 } from "react-aria-components"
 
 import { cn, cnv } from "@/lib/utils"
-import { buttonVariants } from "@/registry/default/ui/button-variants"
+import { buttonVariants } from "@/registry/new-york/ui/button-variants"
 
 const _Calendar = Calendar
 
@@ -96,11 +96,14 @@ const _CalendarCell = ({ className, date, ...props }: CalendarCellProps) => (
     className={(values) =>
       cnv(
         values,
-        buttonVariants({ variant: "ghost" }),
+        "data-[hovered]:bg-accent data-[hovered]:text-accent-foreground inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
         "h-8 w-8 p-0 font-normal data-[selected]:opacity-100",
         date.compare(today(getLocalTimeZone())) === 0 &&
           "bg-accent text-accent-foreground",
         values.isDisabled && "text-muted-foreground opacity-50",
+        values.isFocusVisible &&
+          values.isFocused &&
+          "outline-none ring-2 ring-ring ring-offset-2",
         values.isSelected &&
           "bg-primary text-primary-foreground data-[hovered]:bg-primary data-[hovered]:text-primary-foreground data-[focused]:bg-primary data-[focused]:text-primary-foreground",
         values.isOutsideMonth &&

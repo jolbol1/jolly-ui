@@ -5,42 +5,36 @@ import { Selection } from "react-aria-components"
 
 import { Button } from "@/registry/new-york/ui/button"
 import {
-  DropdownMenuCheckboxItem,
-  DropdownMenuContent,
-  DropdownMenuHeader,
-  DropdownMenuPopover,
-  DropdownMenuSection,
-  DropdownMenuTrigger,
-} from "@/registry/new-york/ui/dropdown-menu"
+  Menu,
+  MenuCheckboxItem,
+  MenuHeader,
+  MenuPopover,
+  MenuSection,
+  MenuTrigger,
+} from "@/registry/new-york/ui/menu"
 
 export default function DropdownMenuCheckboxes() {
   const [selected, setSelected] = React.useState<Selection>(new Set(["status"]))
 
   return (
-    <DropdownMenuTrigger>
+    <MenuTrigger>
       <Button variant="outline">Open</Button>
-      <DropdownMenuPopover placement="bottom">
-        <DropdownMenuContent
+      <MenuPopover placement="bottom">
+        <Menu
           selectionMode="multiple"
           selectedKeys={selected}
           onSelectionChange={setSelected}
           disabledKeys={["activity"]}
           className="w-56"
         >
-          <DropdownMenuSection>
-            <DropdownMenuHeader separator>Appearance</DropdownMenuHeader>
-            <DropdownMenuCheckboxItem id="status">
-              Status Bar
-            </DropdownMenuCheckboxItem>
-            <DropdownMenuCheckboxItem id="activity">
-              Activity Bar
-            </DropdownMenuCheckboxItem>
-            <DropdownMenuCheckboxItem id="panel">
-              Panel
-            </DropdownMenuCheckboxItem>
-          </DropdownMenuSection>
-        </DropdownMenuContent>
-      </DropdownMenuPopover>
-    </DropdownMenuTrigger>
+          <MenuSection>
+            <MenuHeader separator>Appearance</MenuHeader>
+            <MenuCheckboxItem id="status">Status Bar</MenuCheckboxItem>
+            <MenuCheckboxItem id="activity">Activity Bar</MenuCheckboxItem>
+            <MenuCheckboxItem id="panel">Panel</MenuCheckboxItem>
+          </MenuSection>
+        </Menu>
+      </MenuPopover>
+    </MenuTrigger>
   )
 }
