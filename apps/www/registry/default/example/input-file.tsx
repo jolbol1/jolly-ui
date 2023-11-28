@@ -5,9 +5,12 @@ import { Label } from "@/registry/default/ui/label"
 
 export default function InputFile() {
   return (
-    <TextField className="grid w-full max-w-sm items-center gap-1.5">
+    <TextField
+      type="file"
+      className="grid w-full max-w-sm items-center gap-1.5"
+    >
       <Label htmlFor="picture">Picture</Label>
-      <Input id="picture" type="file" />
+      <Input id="picture" />
     </TextField>
   )
 }

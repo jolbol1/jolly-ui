@@ -1,7 +1,7 @@
 import React from "react"
+import { FileTrigger } from "react-aria-components"
 
 import { Button } from "@/registry/new-york/ui/button"
-import { FileTrigger } from "@/registry/new-york/ui/file-trigger"
 
 export default function FileTriggerButtonDemo() {
   return (

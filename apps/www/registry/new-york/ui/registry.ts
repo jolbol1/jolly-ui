@@ -94,11 +94,6 @@ const ui: Registry = [
     files: ["ui/dropzone.tsx"],
   },
   {
-    name: "file-trigger",
-    type: "components:ui",
-    files: ["ui/file-trigger.tsx"],
-  },
-  {
     name: "form",
     type: "components:ui",
     dependencies: [
@@ -588,7 +583,6 @@ const example: Registry = [
   {
     name: "file-trigger-button-demo",
     type: "components:example",
-    registryDependencies: ["file-trigger"],
     files: ["example/file-trigger-button-demo.tsx"],
   },
   {

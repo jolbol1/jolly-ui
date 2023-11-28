@@ -1,9 +1,8 @@
 import React from "react"
-import { FileDropItem, Text } from "react-aria-components"
+import { FileDropItem, FileTrigger, Text } from "react-aria-components"
 
 import { Button } from "@/registry/new-york/ui/button"
 import { DropZone } from "@/registry/new-york/ui/dropzone"
-import { FileTrigger } from "@/registry/new-york/ui/file-trigger"
 
 export default function DropZoneDemo() {
   let [files, setFiles] = React.useState<string>()
