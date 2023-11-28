@@ -13,9 +13,9 @@ import { absoluteUrl, cn } from "@/lib/utils"
 import { Icons } from "@/components/icons"
 import { Mdx } from "@/components/mdx-components"
 import { DocsPager } from "@/components/pager"
+import { badgeVariants } from "@/components/radix/badge"
+import { ScrollArea } from "@/components/radix/scroll-area"
 import { DashboardTableOfContents } from "@/components/toc"
-import { badgeVariants } from "@/registry/new-york/ui/badge"
-import { ScrollArea } from "@/registry/new-york/ui/scroll-area"
 
 interface DocPageProps {
   params: {

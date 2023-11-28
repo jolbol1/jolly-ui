@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation"
 import { ArrowRightIcon } from "@radix-ui/react-icons"
 
 import { cn } from "@/lib/utils"
-import { ScrollArea, ScrollBar } from "@/registry/new-york/ui/scroll-area"
+import { ScrollArea, ScrollBar } from "@/components/radix/scroll-area"
 
 const examples = [
   {
