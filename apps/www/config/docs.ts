@@ -166,6 +166,11 @@ export const docsConfig: DocsConfig = {
       title: "Navigation",
       items: [
         {
+          title: "Breadcrumbs",
+          href: "/docs/components/breadcrumbs",
+          items: [],
+        },
+        {
           title: "Link",
           href: "/docs/components/link",
           items: [],

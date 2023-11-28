@@ -41,6 +41,11 @@ const ui: Registry = [
     files: ["ui/button-variants.ts"],
   },
   {
+    name: "breadcrumbs",
+    type: "components:ui",
+    files: ["ui/breadcrumbs.tsx"],
+  },
+  {
     name: "calendar",
     type: "components:ui",
     dependencies: ["react-day-picker", "date-fns"],
@@ -372,6 +377,18 @@ const example: Registry = [
     type: "components:example",
     registryDependencies: ["button"],
     files: ["example/button-icon.tsx"],
+  },
+  {
+    name: "breadcrumbs-demo",
+    type: "components:example",
+    registryDependencies: ["button"],
+    files: ["example/breadcrumbs-demo.tsx"],
+  },
+  {
+    name: "breadcrumbs-items",
+    type: "components:example",
+    registryDependencies: ["button"],
+    files: ["example/breadcrumbs-items.tsx"],
   },
   {
     name: "calendar-demo",

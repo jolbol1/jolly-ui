@@ -61,6 +61,13 @@
     "type": "components:ui"
   },
   {
+    "name": "breadcrumbs",
+    "files": [
+      "ui/breadcrumbs.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
     "name": "calendar",
     "dependencies": [
       "react-day-picker",

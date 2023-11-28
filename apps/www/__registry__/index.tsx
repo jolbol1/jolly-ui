@@ -54,6 +54,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/ui/button-variants")),
       files: ["registry/default/ui/button-variants.ts"],
     },
+    "breadcrumbs": {
+      name: "breadcrumbs",
+      type: "components:ui",
+      registryDependencies: undefined,
+      component: React.lazy(() => import("@/registry/default/ui/breadcrumbs")),
+      files: ["registry/default/ui/breadcrumbs.tsx"],
+    },
     "calendar": {
       name: "calendar",
       type: "components:ui",
@@ -438,6 +445,20 @@ export const Index: Record<string, any> = {
       registryDependencies: ["button"],
       component: React.lazy(() => import("@/registry/default/example/button-icon")),
       files: ["registry/default/example/button-icon.tsx"],
+    },
+    "breadcrumbs-demo": {
+      name: "breadcrumbs-demo",
+      type: "components:example",
+      registryDependencies: ["button"],
+      component: React.lazy(() => import("@/registry/default/example/breadcrumbs-demo")),
+      files: ["registry/default/example/breadcrumbs-demo.tsx"],
+    },
+    "breadcrumbs-items": {
+      name: "breadcrumbs-items",
+      type: "components:example",
+      registryDependencies: ["button"],
+      component: React.lazy(() => import("@/registry/default/example/breadcrumbs-items")),
+      files: ["registry/default/example/breadcrumbs-items.tsx"],
     },
     "calendar-demo": {
       name: "calendar-demo",
@@ -1266,6 +1287,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/new-york/ui/button-variants")),
       files: ["registry/new-york/ui/button-variants.ts"],
     },
+    "breadcrumbs": {
+      name: "breadcrumbs",
+      type: "components:ui",
+      registryDependencies: undefined,
+      component: React.lazy(() => import("@/registry/new-york/ui/breadcrumbs")),
+      files: ["registry/new-york/ui/breadcrumbs.tsx"],
+    },
     "calendar": {
       name: "calendar",
       type: "components:ui",
@@ -1650,6 +1678,20 @@ export const Index: Record<string, any> = {
       registryDependencies: ["button"],
       component: React.lazy(() => import("@/registry/new-york/example/button-icon")),
       files: ["registry/new-york/example/button-icon.tsx"],
+    },
+    "breadcrumbs-demo": {
+      name: "breadcrumbs-demo",
+      type: "components:example",
+      registryDependencies: ["button"],
+      component: React.lazy(() => import("@/registry/new-york/example/breadcrumbs-demo")),
+      files: ["registry/new-york/example/breadcrumbs-demo.tsx"],
+    },
+    "breadcrumbs-items": {
+      name: "breadcrumbs-items",
+      type: "components:example",
+      registryDependencies: ["button"],
+      component: React.lazy(() => import("@/registry/new-york/example/breadcrumbs-items")),
+      files: ["registry/new-york/example/breadcrumbs-items.tsx"],
     },
     "calendar-demo": {
       name: "calendar-demo",
