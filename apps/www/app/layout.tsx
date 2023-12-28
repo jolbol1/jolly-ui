@@ -2,7 +2,13 @@ import "@/styles/globals.css"
 import { Metadata } from "next"
 
 import { siteConfig } from "@/config/site"
-import { fontSans } from "@/lib/fonts"
+import {
+  fontInter,
+  fontJakarta,
+  fontOutfit,
+  fontRaleway,
+  fontSans,
+} from "@/lib/fonts"
 import { cn } from "@/lib/utils"
 import { Analytics } from "@/components/analytics"
 import { ThemeProvider } from "@/components/providers"
@@ -14,7 +20,6 @@ import { RouterProvider } from "@/components/router-provider"
 import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
-import { ThemeSwitcher } from "@/components/theme-switcher"
 
 export const metadata: Metadata = {
   title: {
@@ -80,7 +85,22 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
-      <html lang="en" suppressHydrationWarning>
+      <html
+        lang="en"
+        suppressHydrationWarning
+        className={cn(
+          fontSans.variable,
+          fontInter.variable,
+          fontJakarta.variable,
+          fontRaleway.variable,
+          fontOutfit.variable
+        )}
+        style={
+          {
+            "--font-sans": `var(--font-outfit)`,
+          } as React.CSSProperties
+        }
+      >
         <head>
           <meta
             name="google-site-verification"
@@ -88,10 +108,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           />
         </head>
         <body
-          className={cn(
-            "min-h-screen bg-background font-sans antialiased",
-            fontSans.variable
-          )}
+          className={cn("min-h-screen bg-background font-sans antialiased")}
         >
           <RouterProvider>
             <ThemeProvider
@@ -107,7 +124,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
               </div>
               <TailwindIndicator />
             </ThemeProvider>
-            <ThemeSwitcher />
             <Analytics />
             <NewYorkToaster />
             <DefaultToaster />

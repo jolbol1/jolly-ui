@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "shadcn-aria",
+  name: "JollyUI",
   url: "https://shadcn-aria.vercel.app",
   ogImage: "https://shadcn-aria.vercel.app/og.jpg",
   description:

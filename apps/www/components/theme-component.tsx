@@ -3,8 +3,8 @@
 import * as React from "react"
 import { Index } from "@/__registry__"
 
+import { useThemeStore } from "@/lib/use-theme-store"
 import { cn } from "@/lib/utils"
-import { useConfig } from "@/hooks/use-config"
 import { Icons } from "@/components/icons"
 
 interface ThemeComponentProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -15,10 +15,10 @@ interface ThemeComponentProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export function ThemeComponent({ name, ...props }: ThemeComponentProps) {
-  const [config] = useConfig()
+  const currentStyle = useThemeStore((state) => state.style)
 
   const Preview = React.useMemo(() => {
-    const Component = Index[config.style][name]?.component
+    const Component = Index[currentStyle][name]?.component
 
     if (!Component) {
       return (
@@ -33,7 +33,7 @@ export function ThemeComponent({ name, ...props }: ThemeComponentProps) {
     }
 
     return <Component />
-  }, [name, config.style])
+  }, [name, currentStyle])
 
   return (
     <div className={cn("relative")} {...props}>

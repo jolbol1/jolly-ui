@@ -4,6 +4,13 @@ import * as React from "react"
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons"
 import { useTheme } from "next-themes"
 
+import {
+  syncBorderRaius,
+  syncFontFamily,
+  syncGrayColor,
+  syncThemeColor,
+} from "@/lib/use-theme-generator"
+import { useThemeStore } from "@/lib/use-theme-store"
 import { Button } from "@/registry/new-york/ui/button"
 import {
   Menu,
@@ -13,7 +20,29 @@ import {
 } from "@/registry/new-york/ui/menu"
 
 export function ModeToggle() {
-  const { setTheme } = useTheme()
+  const { setTheme, resolvedTheme } = useTheme()
+  const currentGrayColor = useThemeStore((state) => state.grayColor)
+  const currentAccentColor = useThemeStore((state) => state.accentColor)
+
+  const currentFontFamily = useThemeStore((state) => state.fontFamily)
+  const currentBorderRadius = useThemeStore((state) => state.borderRadius)
+
+  React.useEffect(() => {
+    syncGrayColor(currentGrayColor, resolvedTheme)
+  }, [currentGrayColor, resolvedTheme])
+
+  React.useEffect(() => {
+    syncThemeColor(currentAccentColor, resolvedTheme)
+  }, [currentAccentColor, resolvedTheme])
+
+  React.useEffect(() => {
+    syncFontFamily(currentFontFamily)
+  }, [currentFontFamily])
+
+  React.useEffect(() => {
+    console.log("changed")
+    syncBorderRaius(currentBorderRadius)
+  }, [currentBorderRadius])
 
   return (
     <MenuTrigger>

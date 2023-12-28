@@ -1,9 +1,13 @@
+import Image from "next/image"
 import Link from "next/link"
 
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
+import { Announcement } from "@/components/announcement"
+import { ExamplesNav } from "@/components/examples-nav"
 import { Icons } from "@/components/icons"
 import {
+  PageActions,
   PageHeader,
   PageHeaderDescription,
   PageHeaderHeading,
@@ -13,30 +17,21 @@ import { buttonVariants } from "@/registry/new-york/ui/button-variants"
 export default function IndexPage() {
   return (
     <div className="container relative">
-      <PageHeader className="pb-8">
-        <PageHeaderHeading>Build your component library.</PageHeaderHeading>
+      <PageHeader>
+        <Announcement />
+        <PageHeaderHeading className="text-primary">JollyUI</PageHeaderHeading>
         <PageHeaderDescription>
-          Beautifully designed components that you can copy and paste into your
-          apps. Accessible. Customizable. Open Source.
+          Beautifully designed{" "}
+          <Link
+            href="https://react-spectrum.adobe.com/react-aria/index.html"
+            className="font-medium text-red-600 hover:text-red-300 hover:underline"
+          >
+            react aria components
+          </Link>{" "}
+          that you can copy and paste into your apps. Accessible. Customizable.
+          Open Source.
         </PageHeaderDescription>
-        <p className="text-sm text-[#E1251B]">
-          This is an unofficial port of{" "}
-          <a
-            className="font-medium underline underline-offset-4"
-            href={"https://ui.shadcn.com/"}
-          >
-            shadcn/ui
-          </a>{" "}
-          to react-aria-components, and is not affiliated with{" "}
-          <a
-            className="font-medium underline underline-offset-4"
-            href="https://twitter.com/shadcn"
-          >
-            @shadcn
-          </a>
-          , just inspired by him.
-        </p>
-        <div className="flex w-full items-center space-x-4 pb-8 pt-4 md:pb-10">
+        <PageActions>
           <Link href="/docs" className={cn(buttonVariants())}>
             Get Started
           </Link>
@@ -49,43 +44,28 @@ export default function IndexPage() {
             <Icons.gitHub className="mr-2 h-4 w-4" />
             GitHub
           </Link>
-        </div>
+        </PageActions>
       </PageHeader>
-      <div className="flex w-full flex-col items-center justify-center gap-6">
-        <p className="text-lg font-bold sm:text-3xl">
-          🚧 Examples Under Construction
-        </p>
-        <p>
-          View individual{" "}
-          <Link
-            className="font-medium underline underline-offset-4"
-            href="/docs/components"
-          >
-            components
-          </Link>{" "}
-          for examples
-        </p>
-      </div>
       {/* <ExamplesNav className="[&>a:first-child]:text-primary" />
-      <section className="space-y-8 overflow-hidden rounded-lg border-2 border-primary dark:border-muted md:hidden">
+      <section className="overflow-hidden rounded-lg border bg-background shadow-md md:hidden md:shadow-xl">
         <Image
-          src="/examples/dashboard-light.png"
+          src="/examples/mail-dark.png"
           width={1280}
-          height={866}
-          alt="Dashboard"
-          className="block dark:hidden"
+          height={727}
+          alt="Mail"
+          className="hidden dark:block"
         />
         <Image
-          src="/examples/dashboard-dark.png"
+          src="/examples/mail-light.png"
           width={1280}
-          height={866}
-          alt="Dashboard"
-          className="hidden dark:block"
+          height={727}
+          alt="Mail"
+          className="block dark:hidden"
         />
       </section>
       <section className="hidden md:block">
-        <div className="overflow-hidden rounded-lg border bg-background shadow">
-          <DashboardPage />
+        <div className="overflow-hidden rounded-lg border bg-background shadow-lg">
+          <MailPage />
         </div>
       </section> */}
     </div>

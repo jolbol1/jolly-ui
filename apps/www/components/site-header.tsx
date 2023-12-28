@@ -1,4 +1,12 @@
 import Link from "next/link"
+import {
+  Button,
+  Dialog,
+  DialogTrigger,
+  Heading,
+  Modal,
+  ModalOverlay,
+} from "react-aria-components"
 
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
@@ -8,6 +16,8 @@ import { MainNav } from "@/components/main-nav"
 import { MobileNav } from "@/components/mobile-nav"
 import { ModeToggle } from "@/components/mode-toggle"
 import { buttonVariants } from "@/registry/new-york/ui/button-variants"
+
+import { ThemeSheet } from "./sheet"
 
 export function SiteHeader() {
   return (
@@ -20,6 +30,7 @@ export function SiteHeader() {
             <CommandMenu />
           </div>
           <nav className="flex items-center">
+            <ThemeSheet />
             <Link
               href={siteConfig.links.github}
               target="_blank"

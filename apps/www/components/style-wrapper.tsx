@@ -2,7 +2,7 @@
 
 import * as React from "react"
 
-import { useConfig } from "@/hooks/use-config"
+import { useThemeStore } from "@/lib/use-theme-store"
 import { Style } from "@/registry/styles"
 
 interface StyleWrapperProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -10,9 +10,9 @@ interface StyleWrapperProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export function StyleWrapper({ styleName, children }: StyleWrapperProps) {
-  const [config] = useConfig()
+  const currentStyle = useThemeStore((state) => state.style)
 
-  if (!styleName || config.style === styleName) {
+  if (!styleName || currentStyle === styleName) {
     return <>{children}</>
   }
 

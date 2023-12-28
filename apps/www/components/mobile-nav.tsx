@@ -33,8 +33,8 @@ export function MobileNav() {
           className="flex items-center"
           onOpenChange={setOpen}
         >
-          <Icons.logo className="mr-2 h-4 w-4 text-[#E1251B]" />
-          <span className="font-bold text-[#E1251B]">{siteConfig.name}</span>
+          <Icons.logo className="mr-2 h-4 w-4 text-primary" />
+          <span className="font-bold text-primary">{siteConfig.name}</span>
         </MobileLink>
         <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
           <div className="flex flex-col space-y-3">
@@ -68,11 +68,11 @@ export function MobileNav() {
                             {item.title}
                             {item.label &&
                               (item.label == "v2" ? (
-                                <span className="ml-2 rounded-md bg-[#E1251B] px-1.5 py-0.5 text-xs leading-none text-white no-underline group-hover:no-underline dark:text-[#000000]">
+                                <span className="ml-2 rounded-md bg-primary px-1.5 py-0.5 text-xs leading-none text-primary-foreground no-underline group-hover:no-underline ">
                                   {item.label}
                                 </span>
                               ) : (
-                                <span className="ml-2 rounded-md bg-[#E1251B]/40 px-1.5 py-0.5 text-xs leading-none text-white no-underline group-hover:no-underline dark:text-[#000000]">
+                                <span className="ml-2 rounded-md bg-primary px-1.5 py-0.5 text-xs leading-none text-primary-foreground no-underline group-hover:no-underline ">
                                   {item.label}
                                 </span>
                               ))}

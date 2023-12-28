@@ -7,8 +7,8 @@ import { useMDXComponent } from "next-contentlayer/hooks"
 import { NpmCommands } from "types/unist"
 
 import { Event } from "@/lib/events"
+import { useThemeStore } from "@/lib/use-theme-store"
 import { cn } from "@/lib/utils"
-import { useConfig } from "@/hooks/use-config"
 import { Callout } from "@/components/callout"
 import { CodeBlockWrapper } from "@/components/code-block-wrapper"
 import { ComponentExample } from "@/components/component-example"
@@ -315,9 +315,9 @@ interface MdxProps {
 }
 
 export function Mdx({ code }: MdxProps) {
-  const [config] = useConfig()
+  const currentStyle = useThemeStore((state) => state.style)
   const Component = useMDXComponent(code, {
-    style: config.style,
+    style: currentStyle,
   })
 
   return (

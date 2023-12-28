@@ -3,8 +3,8 @@
 import * as React from "react"
 import { Index } from "@/__registry__"
 
+import { useThemeStore } from "@/lib/use-theme-store"
 import { cn } from "@/lib/utils"
-import { useConfig } from "@/hooks/use-config"
 import { CopyButton, CopyWithClassNames } from "@/components/copy-button"
 import { Icons } from "@/components/icons"
 import {
@@ -14,7 +14,6 @@ import {
   TabsTrigger,
 } from "@/components/radix/tabs"
 import { StyleSwitcher } from "@/components/style-switcher"
-import { ThemeWrapper } from "@/components/theme-wrapper"
 import { styles } from "@/registry/styles"
 
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -33,14 +32,14 @@ export function ComponentPreview({
   align = "center",
   ...props
 }: ComponentPreviewProps) {
-  const [config] = useConfig()
-  const index = styles.findIndex((style) => style.name === config.style)
+  const currentStyle = useThemeStore((state) => state.style)
+  const index = styles.findIndex((style) => style.name === currentStyle)
 
   const Codes = React.Children.toArray(children) as React.ReactElement[]
   const Code = Codes[index]
 
   const Preview = React.useMemo(() => {
-    const Component = Index[config.style][name]?.component
+    const Component = Index[currentStyle][name]?.component
 
     if (!Component) {
       return (
@@ -55,7 +54,7 @@ export function ComponentPreview({
     }
 
     return <Component />
-  }, [name, config.style])
+  }, [name, currentStyle])
 
   const codeString = React.useMemo(() => {
     if (
@@ -102,29 +101,27 @@ export function ComponentPreview({
               codeString && <CopyButton value={codeString} />
             )}
           </div>
-          <ThemeWrapper defaultTheme="zinc">
-            <div
-              className={cn(
-                "preview flex min-h-[350px] w-full justify-center p-10",
-                {
-                  "items-center": align === "center",
-                  "items-start": align === "start",
-                  "items-end": align === "end",
-                }
-              )}
+          <div
+            className={cn(
+              "preview flex min-h-[350px] w-full justify-center p-10",
+              {
+                "items-center": align === "center",
+                "items-start": align === "start",
+                "items-end": align === "end",
+              }
+            )}
+          >
+            <React.Suspense
+              fallback={
+                <div className="flex items-center text-sm text-muted-foreground">
+                  <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+                  Loading...
+                </div>
+              }
             >
-              <React.Suspense
-                fallback={
-                  <div className="flex items-center text-sm text-muted-foreground">
-                    <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
-                    Loading...
-                  </div>
-                }
-              >
-                {Preview}
-              </React.Suspense>
-            </div>
-          </ThemeWrapper>
+              {Preview}
+            </React.Suspense>
+          </div>
         </TabsContent>
         <TabsContent value="code">
           <div className="flex flex-col space-y-4">
