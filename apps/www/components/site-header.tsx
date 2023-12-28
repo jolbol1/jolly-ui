@@ -1,12 +1,4 @@
 import Link from "next/link"
-import {
-  Button,
-  Dialog,
-  DialogTrigger,
-  Heading,
-  Modal,
-  ModalOverlay,
-} from "react-aria-components"
 
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"

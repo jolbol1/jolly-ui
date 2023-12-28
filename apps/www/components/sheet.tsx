@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useEffect, useState } from "react"
+import { usePathname } from "next/navigation"
 import {
   CheckIcon,
   InfoCircledIcon,
@@ -48,7 +49,9 @@ import { copyToClipboardWithMeta } from "./copy-button"
 
 export const ThemeSheet = () => {
   const { reset } = useThemeGenerator()
-  return (
+  const pathname = usePathname()
+
+  return pathname !== "/" ? (
     <_DialogTrigger>
       <Button>
         <Settings2 className="mr-2" />
@@ -100,7 +103,7 @@ export const ThemeSheet = () => {
         </_Modal>
       </_ModalOverlay>
     </_DialogTrigger>
-  )
+  ) : null
 }
 
 function Customizer() {
