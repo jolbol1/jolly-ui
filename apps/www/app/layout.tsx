@@ -93,7 +93,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         )}
         style={
           {
-            "--font-sans": `var(--font-outfit)`,
+            "--font-sans": `var(--font-geist-sans)`,
           } as React.CSSProperties
         }
       >

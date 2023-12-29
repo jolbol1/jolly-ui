@@ -23,15 +23,15 @@ type Actions = {
 }
 
 const initialState: State = {
-  accentColor: "blue",
+  accentColor: "zinc",
   style: "default",
   borderRadius: "0.5",
   fontFamily: {
-    label: "Outfit",
-    value: "--font-outfit",
-    link: "https://fonts.google.com/specimen/Outfit",
+    label: "Geist",
+    value: "--font-geist-sans",
+    link: "https://vercel.com/font",
   },
-  grayColor: "slate",
+  grayColor: "zinc",
 }
 
 export const useThemeStore = create<State & Actions>()(

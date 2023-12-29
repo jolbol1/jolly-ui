@@ -3,12 +3,31 @@ title: Introduction
 description: Re-usable components built using React Aria Components and Tailwind CSS.
 ---
 
+This is NOT a component library. It's a collection of re-usable components that you can copy and paste into your apps.
+
+JollyUI aims to take the components offered by [shadcn-ui](https://ui.shadcn.com/), and translate them to use [react-aria-components](https://react-spectrum.adobe.com/react-aria/react-aria-components.html) where possible.
+
+Its intended as an add-on essentially, more than its own standalone. All components found in this library should work with your existing shadcn/ui components.
+
 ## shadcn-ui
 
-Note this library is an **unofficial** spin-off of [shadcn-ui](https://ui.shadcn.com/) intended to replace Radix with [react-aria-components](https://react-spectrum.adobe.com/react-aria/react-aria-components.html).
+[shadcn-ui](https://ui.shadcn.com/) offers beautifully designed components that you can copy and paste into your apps. Many of the components use radix for functionality. These are the main focus for JollyUI to convert.
 
-It is a work in progress so expect rewrites.
+## React Aria Components
+
+[react-aria-components](https://react-spectrum.adobe.com/react-aria/react-aria-components.html) is a library of unstyled React components that helps you build accessible, high quality UI components for your application or design system.
+
+### Compared to Radix
+
+[@devongovett](https://twitter.com/devongovett/status/1738973926682673347) The biggest difference between React Aria and most other libraries in regards to accessibility is support for mobile screen readers. The ARIA Practices Guide doesn't cover those, so any library that purely bases their implementation on it will miss some important functionality.
 
 ## Set-up
 
 Setup requires you doing the shadcn-ui set-up to generate your tailwind config. You can find these instructions [here](https://ui.shadcn.com/docs/installation)
+
+## Credit
+
+- [shadcn](https://ui.shadcn.com) - For the styles
+- [react aria components](https://react-spectrum.adobe.com/react-aria/react-aria-components.html) - For the primitives.
+- [Radix Colors](https://www.radix-ui.com/colors) - For the theme customiser defaults
+- [ParkUI](https://park-ui.com/) - For the theme customiser idea

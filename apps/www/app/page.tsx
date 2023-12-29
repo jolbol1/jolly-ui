@@ -22,7 +22,14 @@ export default function IndexPage() {
         <Announcement />
         <PageHeaderHeading className="text-primary">JollyUI</PageHeaderHeading>
         <PageHeaderDescription>
-          Beautifully designed{" "}
+          <Link
+            className="font-medium text-black hover:text-gray-800 hover:underline dark:text-white hover:dark:text-gray-300"
+            target="_blank"
+            href="https://ui.shadcn.com/"
+          >
+            shadcn/ui
+          </Link>{" "}
+          designed{" "}
           <Link
             href="https://react-spectrum.adobe.com/react-aria/index.html"
             className="font-medium text-red-600 hover:text-red-300 hover:underline"
@@ -30,7 +37,7 @@ export default function IndexPage() {
             react aria components
           </Link>{" "}
           that you can copy and paste into your apps. Accessible. Customizable.
-          Open Source. Compatible with shadcn/ui.
+          Open Source.
         </PageHeaderDescription>
         <PageActions>
           <Link href="/docs" className={cn(buttonVariants())}>

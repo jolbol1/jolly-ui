@@ -144,58 +144,6 @@ function Customizer() {
     <>
       <div className="flex flex-1 flex-col space-y-4 overflow-y-auto py-3 md:space-y-6">
         <div className="space-y-1.5">
-          <div className="flex w-full items-center">
-            <Label className="text-xs">Style</Label>
-            <PopoverTrigger>
-              <_Button aria-label="style info" className="ml-1">
-                <InfoCircledIcon className="h-3 w-3" />
-              </_Button>
-              <span className="sr-only">About styles</span>
-              <Popover className="space-y-3 rounded-[0.5rem] text-sm">
-                <p className="font-medium">
-                  What is the difference between the New York and Default style?
-                </p>
-                <p>
-                  A style comes with its own set of components, animations,
-                  icons and more.
-                </p>
-                <p>
-                  The <span className="font-medium">Default</span> style has
-                  larger inputs, uses lucide-react for icons and
-                  tailwindcss-animate for animations.
-                </p>
-                <p>
-                  The <span className="font-medium">New York</span> style ships
-                  with smaller buttons and cards with shadows. It uses icons
-                  from Radix Icons.
-                </p>
-              </Popover>
-            </PopoverTrigger>
-          </div>
-          <div className="grid grid-cols-3 gap-2">
-            <Button
-              variant={"outline"}
-              size="sm"
-              onPress={() => updateStyle("default")}
-              className={cn(
-                currentStyle === "default" && "border-2 border-primary"
-              )}
-            >
-              Default
-            </Button>
-            <Button
-              variant={"outline"}
-              size="sm"
-              onPress={() => updateStyle("new-york")}
-              className={cn(
-                currentStyle === "new-york" && "border-2 border-primary"
-              )}
-            >
-              New York
-            </Button>
-          </div>
-        </div>
-        <div className="space-y-1.5">
           <Label className="text-xs">Font</Label>
 
           <Select
