@@ -10,11 +10,10 @@ import Balancer from "react-wrap-balancer"
 import { siteConfig } from "@/config/site"
 import { getTableOfContents } from "@/lib/toc"
 import { absoluteUrl, cn } from "@/lib/utils"
+import { badgeVariants } from "@/components/badge"
 import { Icons } from "@/components/icons"
 import { Mdx } from "@/components/mdx-components"
 import { DocsPager } from "@/components/pager"
-import { badgeVariants } from "@/components/radix/badge"
-import { ScrollArea } from "@/components/radix/scroll-area"
 import { DashboardTableOfContents } from "@/components/toc"
 
 interface DocPageProps {
@@ -140,11 +139,9 @@ export default async function DocPage({ params }: DocPageProps) {
       {doc.toc && (
         <div className="hidden text-sm xl:block">
           <div className="sticky top-16 -mt-10 pt-4">
-            <ScrollArea className="pb-10">
-              <div className="sticky top-16 -mt-10 h-[calc(100vh-3.5rem)] py-12">
-                <DashboardTableOfContents toc={toc} />
-              </div>
-            </ScrollArea>
+            <div className="sticky top-16 -mt-10 h-[calc(100vh-3.5rem)] py-12">
+              <DashboardTableOfContents toc={toc} />
+            </div>
           </div>
         </div>
       )}

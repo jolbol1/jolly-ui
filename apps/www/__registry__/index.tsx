@@ -152,6 +152,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/ui/switch")),
       files: ["registry/default/ui/switch.tsx"],
     },
+    "tabs": {
+      name: "tabs",
+      type: "components:ui",
+      registryDependencies: undefined,
+      component: React.lazy(() => import("@/registry/default/ui/tabs")),
+      files: ["registry/default/ui/tabs.tsx"],
+    },
     "textarea": {
       name: "textarea",
       type: "components:ui",
@@ -361,6 +368,13 @@ export const Index: Record<string, any> = {
       registryDependencies: ["dialog"],
       component: React.lazy(() => import("@/registry/default/example/dialog-demo")),
       files: ["registry/default/example/dialog-demo.tsx"],
+    },
+    "dialog-alert-demo": {
+      name: "dialog-alert-demo",
+      type: "components:example",
+      registryDependencies: ["dialog"],
+      component: React.lazy(() => import("@/registry/default/example/dialog-alert-demo")),
+      files: ["registry/default/example/dialog-alert-demo.tsx"],
     },
     "dialog-close-button": {
       name: "dialog-close-button",
@@ -642,6 +656,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/example/switch-readonly")),
       files: ["registry/default/example/switch-readonly.tsx"],
     },
+    "tabs-demo": {
+      name: "tabs-demo",
+      type: "components:example",
+      registryDependencies: ["tabs"],
+      component: React.lazy(() => import("@/registry/default/example/tabs-demo")),
+      files: ["registry/default/example/tabs-demo.tsx"],
+    },
     "textfield-demo": {
       name: "textfield-demo",
       type: "components:example",
@@ -909,6 +930,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/new-york/ui/switch")),
       files: ["registry/new-york/ui/switch.tsx"],
     },
+    "tabs": {
+      name: "tabs",
+      type: "components:ui",
+      registryDependencies: undefined,
+      component: React.lazy(() => import("@/registry/new-york/ui/tabs")),
+      files: ["registry/new-york/ui/tabs.tsx"],
+    },
     "textarea": {
       name: "textarea",
       type: "components:ui",
@@ -1118,6 +1146,13 @@ export const Index: Record<string, any> = {
       registryDependencies: ["dialog"],
       component: React.lazy(() => import("@/registry/new-york/example/dialog-demo")),
       files: ["registry/new-york/example/dialog-demo.tsx"],
+    },
+    "dialog-alert-demo": {
+      name: "dialog-alert-demo",
+      type: "components:example",
+      registryDependencies: ["dialog"],
+      component: React.lazy(() => import("@/registry/new-york/example/dialog-alert-demo")),
+      files: ["registry/new-york/example/dialog-alert-demo.tsx"],
     },
     "dialog-close-button": {
       name: "dialog-close-button",
@@ -1398,6 +1433,13 @@ export const Index: Record<string, any> = {
       registryDependencies: ["switch"],
       component: React.lazy(() => import("@/registry/new-york/example/switch-readonly")),
       files: ["registry/new-york/example/switch-readonly.tsx"],
+    },
+    "tabs-demo": {
+      name: "tabs-demo",
+      type: "components:example",
+      registryDependencies: ["tabs"],
+      component: React.lazy(() => import("@/registry/new-york/example/tabs-demo")),
+      files: ["registry/new-york/example/tabs-demo.tsx"],
     },
     "textfield-demo": {
       name: "textfield-demo",

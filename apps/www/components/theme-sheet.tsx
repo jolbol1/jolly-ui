@@ -25,7 +25,7 @@ import { useThemeGenerator } from "@/lib/use-theme-generator"
 import { cn } from "@/lib/utils"
 import { Popover } from "@/registry/default/ui/popover"
 import { SelectTrigger } from "@/registry/default/ui/select"
-import { Button } from "@/registry/new-york/ui/button"
+import { Button, type ButtonProps } from "@/registry/new-york/ui/button"
 import {
   DialogContent,
   DialogHeader,
@@ -47,13 +47,22 @@ import { Gray, Theme } from "@/registry/themes"
 
 import { copyToClipboardWithMeta } from "./copy-button"
 
-export const ThemeSheet = () => {
-  const { reset } = useThemeGenerator()
+export const NavThemeSheet = () => {
   const pathname = usePathname()
 
-  return pathname !== "/" ? (
+  return pathname === "/" ? null : <ThemeSheet />
+}
+
+export const ThemeSheet = ({
+  theme = "default",
+}: {
+  theme?: ButtonProps["variant"]
+}) => {
+  const { reset } = useThemeGenerator()
+
+  return (
     <_DialogTrigger>
-      <Button>
+      <Button variant={theme}>
         <Settings2 className="mr-2" />
         Customise
       </Button>
@@ -103,7 +112,7 @@ export const ThemeSheet = () => {
         </_Modal>
       </_ModalOverlay>
     </_DialogTrigger>
-  ) : null
+  )
 }
 
 function Customizer() {

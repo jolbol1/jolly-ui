@@ -12,6 +12,7 @@ import {
   PageHeaderDescription,
   PageHeaderHeading,
 } from "@/components/page-header"
+import { ThemeSheet } from "@/components/theme-sheet"
 import { buttonVariants } from "@/registry/new-york/ui/button-variants"
 
 export default function IndexPage() {
@@ -35,15 +36,7 @@ export default function IndexPage() {
           <Link href="/docs" className={cn(buttonVariants())}>
             Get Started
           </Link>
-          <Link
-            target="_blank"
-            rel="noreferrer"
-            href={siteConfig.links.github}
-            className={cn(buttonVariants({ variant: "outline" }))}
-          >
-            <Icons.gitHub className="mr-2 h-4 w-4" />
-            GitHub
-          </Link>
+          <ThemeSheet theme="outline" />
         </PageActions>
       </PageHeader>
       {/* <ExamplesNav className="[&>a:first-child]:text-primary" />

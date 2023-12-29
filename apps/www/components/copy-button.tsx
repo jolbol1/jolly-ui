@@ -1,7 +1,6 @@
 "use client"
 
 import * as React from "react"
-import { DropdownMenuTriggerProps } from "@radix-ui/react-dropdown-menu"
 import { CheckIcon, CopyIcon } from "@radix-ui/react-icons"
 import { NpmCommands } from "types/unist"
 
@@ -77,7 +76,7 @@ export function CopyButton({
   )
 }
 
-interface CopyWithClassNamesProps extends DropdownMenuTriggerProps {
+interface CopyWithClassNamesProps {
   value: string
   classNames: string
   className?: string
@@ -138,8 +137,9 @@ export function CopyWithClassNames({
   )
 }
 
-interface CopyNpmCommandButtonProps extends DropdownMenuTriggerProps {
+interface CopyNpmCommandButtonProps {
   commands: Required<NpmCommands>
+  className?: string
 }
 
 export function CopyNpmCommandButton({

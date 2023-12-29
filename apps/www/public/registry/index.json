@@ -175,6 +175,13 @@
     "type": "components:ui"
   },
   {
+    "name": "tabs",
+    "files": [
+      "ui/tabs.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
     "name": "textarea",
     "files": [
       "ui/textarea.tsx"

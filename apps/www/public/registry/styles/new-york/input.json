@@ -3,7 +3,7 @@
   "files": [
     {
       "name": "input.tsx",
-      "content": "import * as React from \"react\"\nimport { Input } from \"react-aria-components\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport interface InputProps\n  extends React.InputHTMLAttributes<HTMLInputElement> {}\n\nconst _Input = ({ className, type, ...props }: InputProps) => {\n  return (\n    <Input\n      className={cn(\n        \"flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport { _Input as Input }\n"
+      "content": "import * as React from \"react\"\r\nimport { Input } from \"react-aria-components\"\r\n\r\nimport { cn } from \"@/lib/utils\"\r\n\r\nexport interface InputProps\r\n  extends React.InputHTMLAttributes<HTMLInputElement> {}\r\n\r\nconst _Input = ({ className, ...props }: InputProps) => {\r\n  return (\r\n    <Input\r\n      className={cn(\r\n        \"flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50\",\r\n        className\r\n      )}\r\n      {...props}\r\n    />\r\n  )\r\n}\r\n\r\nexport { _Input as Input }\r\n"
     }
   ],
   "type": "components:ui"

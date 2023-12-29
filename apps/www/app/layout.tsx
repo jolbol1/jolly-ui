@@ -12,10 +12,6 @@ import {
 import { cn } from "@/lib/utils"
 import { Analytics } from "@/components/analytics"
 import { ThemeProvider } from "@/components/providers"
-import {
-  Toaster as DefaultToaster,
-  Toaster as NewYorkToaster,
-} from "@/components/radix/toaster"
 import { RouterProvider } from "@/components/router-provider"
 import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
@@ -125,8 +121,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
               <TailwindIndicator />
             </ThemeProvider>
             <Analytics />
-            <NewYorkToaster />
-            <DefaultToaster />
           </RouterProvider>
         </body>
       </html>

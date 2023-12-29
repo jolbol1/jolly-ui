@@ -115,6 +115,11 @@ const ui: Registry = [
     files: ["ui/switch.tsx"],
   },
   {
+    name: "tabs",
+    type: "components:ui",
+    files: ["ui/tabs.tsx"],
+  },
+  {
     name: "textarea",
     type: "components:ui",
     files: ["ui/textarea.tsx"],
@@ -543,6 +548,12 @@ const example: Registry = [
     type: "components:example",
     registryDependencies: ["switch"],
     files: ["example/switch-readonly.tsx"],
+  },
+  {
+    name: "tabs-demo",
+    type: "components:example",
+    registryDependencies: ["tabs"],
+    files: ["example/tabs-demo.tsx"],
   },
   {
     name: "textfield-demo",

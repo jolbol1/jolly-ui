@@ -16,31 +16,11 @@ import { ComponentPreview } from "@/components/component-preview"
 import { ComponentSource } from "@/components/component-source"
 import { CopyButton, CopyNpmCommandButton } from "@/components/copy-button"
 import { FrameworkDocs } from "@/components/framework-docs"
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/radix/accordion"
-import { Alert, AlertDescription, AlertTitle } from "@/components/radix/alert"
-import { AspectRatio } from "@/components/radix/aspect-ratio"
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "@/components/radix/tabs"
 import { StyleWrapper } from "@/components/style-wrapper"
+import { Tab, TabList, TabPanel, Tabs } from "@/registry/default/ui/tabs"
 import { Style } from "@/registry/styles"
 
 const components = {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-  Alert,
-  AlertTitle,
-  AlertDescription,
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1
       className={cn(
@@ -229,7 +209,6 @@ const components = {
   ComponentPreview,
   ComponentExample,
   ComponentSource,
-  AspectRatio,
   CodeBlockWrapper: ({ ...props }) => (
     <CodeBlockWrapper className="rounded-md border" {...props} />
   ),
@@ -248,14 +227,19 @@ const components = {
       {...props}
     />
   ),
-  Tabs: ({ className, ...props }: React.ComponentProps<typeof Tabs>) => (
-    <Tabs className={cn("relative mt-6 w-full", className)} {...props} />
-  ),
-  TabsList: ({
+  Tabs: ({
     className,
+    defaultValue,
     ...props
-  }: React.ComponentProps<typeof TabsList>) => (
-    <TabsList
+  }: React.ComponentProps<typeof Tabs> & { defaultValue: string }) => (
+    <Tabs
+      defaultSelectedKey={defaultValue}
+      className={cn("relative mt-6 w-full", className)}
+      {...props}
+    />
+  ),
+  TabsList: ({ className, ...props }: React.ComponentProps<typeof TabList>) => (
+    <TabList
       className={cn(
         "w-full justify-start rounded-none border-b bg-transparent p-0",
         className
@@ -265,9 +249,11 @@ const components = {
   ),
   TabsTrigger: ({
     className,
+    value,
     ...props
-  }: React.ComponentProps<typeof TabsTrigger>) => (
-    <TabsTrigger
+  }: React.ComponentProps<typeof Tab> & { value: string }) => (
+    <Tab
+      id={value}
       className={cn(
         "relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[state=active]:border-b-primary data-[state=active]:text-foreground data-[state=active]:shadow-none",
         className
@@ -277,9 +263,11 @@ const components = {
   ),
   TabsContent: ({
     className,
+    value,
     ...props
-  }: React.ComponentProps<typeof TabsContent>) => (
-    <TabsContent
+  }: React.ComponentProps<typeof TabPanel> & { value: string }) => (
+    <TabPanel
+      id={value}
       className={cn(
         "relative [&_h3.font-heading]:text-base [&_h3.font-heading]:font-semibold",
         className

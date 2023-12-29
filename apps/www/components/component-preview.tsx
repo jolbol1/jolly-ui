@@ -7,13 +7,8 @@ import { useThemeStore } from "@/lib/use-theme-store"
 import { cn } from "@/lib/utils"
 import { CopyButton, CopyWithClassNames } from "@/components/copy-button"
 import { Icons } from "@/components/icons"
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "@/components/radix/tabs"
 import { StyleSwitcher } from "@/components/style-switcher"
+import { Tab, TabList, TabPanel, Tabs } from "@/registry/default/ui/tabs"
 import { styles } from "@/registry/styles"
 
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -72,24 +67,24 @@ export function ComponentPreview({
       className={cn("group relative my-4 flex flex-col space-y-2", className)}
       {...props}
     >
-      <Tabs defaultValue="preview" className="relative mr-auto w-full">
+      <Tabs defaultSelectedKey="preview" className="relative mr-auto w-full">
         <div className="flex items-center justify-between pb-3">
-          <TabsList className="w-full justify-start rounded-none border-b bg-transparent p-0">
-            <TabsTrigger
-              value="preview"
-              className="relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[state=active]:border-b-primary data-[state=active]:text-foreground data-[state=active]:shadow-none"
+          <TabList className="w-full justify-start rounded-none border-b bg-transparent p-0">
+            <Tab
+              id="preview"
+              className="relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[selected]:border-b-primary data-[selected]:text-foreground data-[selected]:shadow-none"
             >
               Preview
-            </TabsTrigger>
-            <TabsTrigger
-              value="code"
-              className="relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[state=active]:border-b-primary data-[state=active]:text-foreground data-[state=active]:shadow-none"
+            </Tab>
+            <Tab
+              id="code"
+              className="relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[selected]:border-b-primary data-[selected]:text-foreground data-[selected]:shadow-none"
             >
               Code
-            </TabsTrigger>
-          </TabsList>
+            </Tab>
+          </TabList>
         </div>
-        <TabsContent value="preview" className="relative rounded-md border">
+        <TabPanel id="preview" className="relative rounded-md border">
           <div className="flex items-center justify-between p-4">
             <StyleSwitcher />
             {extractedClassNames ? (
@@ -122,14 +117,14 @@ export function ComponentPreview({
               {Preview}
             </React.Suspense>
           </div>
-        </TabsContent>
-        <TabsContent value="code">
+        </TabPanel>
+        <TabPanel id="code">
           <div className="flex flex-col space-y-4">
             <div className="w-full rounded-md [&_pre]:my-0 [&_pre]:max-h-[350px] [&_pre]:overflow-auto">
               {Code}
             </div>
           </div>
-        </TabsContent>
+        </TabPanel>
       </Tabs>
     </div>
   )

@@ -3,7 +3,7 @@
   "files": [
     {
       "name": "separator.tsx",
-      "content": "\"use client\"\n\nimport { Separator, SeparatorProps } from \"react-aria-components\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst _Separator = ({\n  className,\n  orientation = \"horizontal\",\n  ...props\n}: SeparatorProps) => (\n  <Separator\n    orientation={orientation}\n    className={cn(\n      \"shrink-0 bg-border\",\n      orientation === \"horizontal\" ? \"h-[1px] w-full\" : \"h-full w-[1px]\",\n      className\n    )}\n    {...props}\n  />\n)\n\nexport { _Separator as Separator }\n"
+      "content": "\"use client\"\r\n\r\nimport { Separator, SeparatorProps } from \"react-aria-components\"\r\n\r\nimport { cn } from \"@/lib/utils\"\r\n\r\nconst _Separator = ({\r\n  className,\r\n  orientation = \"horizontal\",\r\n  ...props\r\n}: SeparatorProps) => (\r\n  <Separator\r\n    orientation={orientation}\r\n    className={cn(\r\n      \"shrink-0 bg-border\",\r\n      orientation === \"horizontal\" ? \"h-[1px] w-full\" : \"h-full w-[1px]\",\r\n      className\r\n    )}\r\n    {...props}\r\n  />\r\n)\r\n\r\nexport { _Separator as Separator }\r\n"
     }
   ],
   "type": "components:ui"

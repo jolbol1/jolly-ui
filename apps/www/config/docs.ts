@@ -167,6 +167,11 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/link",
           items: [],
         },
+        {
+          title: "Tabs",
+          href: "/docs/components/tabs",
+          items: [],
+        },
       ],
     },
     {

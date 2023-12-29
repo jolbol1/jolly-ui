@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { type SelectTriggerProps } from "@radix-ui/react-select"
 
 import { useThemeStore } from "@/lib/use-theme-store"
 import { cn } from "@/lib/utils"
@@ -15,7 +14,7 @@ import {
 } from "@/registry/new-york/ui/select"
 import { Style, styles } from "@/registry/styles"
 
-export function StyleSwitcher({ className }: SelectTriggerProps) {
+export function StyleSwitcher({ className }: { className?: string }) {
   const currentStyle = useThemeStore((state) => state.style)
   const updateStyle = useThemeStore((state) => state.setStyle)
   const [mounted, setMounted] = useState(false)

@@ -1,39 +1,24 @@
 ---
 title: Tabs
-description: A set of layered sections of content—known as tab panels—that are displayed one at a time.
+description: Tabs organize content into multiple sections and allow users to navigate between them.
 component: true
 radix:
-  link: https://www.radix-ui.com/docs/primitives/components/tabs
-  api: https://www.radix-ui.com/docs/primitives/components/tabs#api-reference
+  link: https://react-spectrum.adobe.com/react-aria/Tabs.html
 ---
 
 <ComponentPreview name="tabs-demo" />
 
 ## Installation
 
-<Tabs defaultValue="cli">
+<Tabs defaultValue="manual">
 
 <TabsList>
-  <TabsTrigger value="cli">CLI</TabsTrigger>
   <TabsTrigger value="manual">Manual</TabsTrigger>
 </TabsList>
-<TabsContent value="cli">
-
-```bash
-npx shadcn-ui@latest add tabs
-```
-
-</TabsContent>
 
 <TabsContent value="manual">
 
 <Steps>
-
-<Step>Install the following dependencies:</Step>
-
-```bash
-npm install @radix-ui/react-tabs
-```
 
 <Step>Copy and paste the following code into your project.</Step>
 
@@ -49,17 +34,6 @@ npm install @radix-ui/react-tabs
 
 ## Usage
 
-```tsx
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-```
+### Basic
 
-```tsx
-<Tabs defaultValue="account" className="w-[400px]">
-  <TabsList>
-    <TabsTrigger value="account">Account</TabsTrigger>
-    <TabsTrigger value="password">Password</TabsTrigger>
-  </TabsList>
-  <TabsContent value="account">Make changes to your account here.</TabsContent>
-  <TabsContent value="password">Change your password here.</TabsContent>
-</Tabs>
-```
+<ComponentPreview name="tabs-demo" />
