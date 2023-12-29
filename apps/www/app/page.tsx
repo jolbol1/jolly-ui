@@ -30,7 +30,7 @@ export default function IndexPage() {
             react aria components
           </Link>{" "}
           that you can copy and paste into your apps. Accessible. Customizable.
-          Open Source.
+          Open Source. Compatible with shadcn/ui.
         </PageHeaderDescription>
         <PageActions>
           <Link href="/docs" className={cn(buttonVariants())}>
