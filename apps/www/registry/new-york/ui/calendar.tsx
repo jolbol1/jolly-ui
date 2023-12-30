@@ -16,6 +16,7 @@ import {
   CalendarGridProps,
   CalendarHeaderCell,
   CalendarHeaderCellProps,
+  DateValue,
   Heading,
 } from "react-aria-components"
 
@@ -98,7 +99,7 @@ const _CalendarCell = ({ className, date, ...props }: CalendarCellProps) => (
         values,
         "data-[hovered]:bg-accent data-[hovered]:text-accent-foreground inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
         "h-8 w-8 p-0 font-normal data-[selected]:opacity-100",
-        date.compare(today(getLocalTimeZone())) === 0 &&
+        date.compare(today(getLocalTimeZone()) as unknown as DateValue) === 0 &&
           "bg-accent text-accent-foreground",
         values.isDisabled && "text-muted-foreground opacity-50",
         values.isFocusVisible &&
