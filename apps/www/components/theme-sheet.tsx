@@ -67,7 +67,7 @@ export const ThemeSheet = ({
         Customise
       </Button>
       <_ModalOverlay isDismissable className="fixed inset-0 z-[51]">
-        <_Modal className="fixed inset-y-0 right-0  w-[400px]  border-l border-border bg-popover">
+        <_Modal className="fixed inset-y-0 right-0  w-3/4 max-w-[400px]  border-l border-border bg-popover">
           <_Dialog className="flex h-full flex-col overflow-hidden p-3  focus:outline-none">
             {({ close }) => (
               <>
