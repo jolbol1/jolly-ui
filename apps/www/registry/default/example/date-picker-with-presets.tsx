@@ -42,7 +42,7 @@ export default function DatePickerWithPresets() {
             setDate(
               today(getLocalTimeZone()).add({
                 days: parseInt(value.toString()),
-              })
+              }) as unknown as DateValue
             )
           }
         >
