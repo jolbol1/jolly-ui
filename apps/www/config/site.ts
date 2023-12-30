@@ -3,7 +3,7 @@ export const siteConfig = {
   url: "https://shadcn-aria.vercel.app",
   ogImage: "https://shadcn-aria.vercel.app/og.jpg",
   description:
-    "Beautifully designed components built with React Aria Components and Tailwind CSS.",
+    "shadcn/ui designed react aria components that you can copy and paste into your apps. Accessible. Customizable. Open Source.",
   links: {
     twitter: "https://twitter.com/jollyshopland",
     github: "https://github.com/jolbol1/shadcn-aria",
