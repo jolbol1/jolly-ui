@@ -1,0 +1,13 @@
+{
+  "name": "checkbox",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "files": [
+    {
+      "name": "checkbox.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { CheckIcon, MinusIcon } from \"@radix-ui/react-icons\"\nimport {\n  Checkbox,\n  CheckboxGroup,\n  CheckboxRenderProps,\n  type CheckboxProps,\n} from \"react-aria-components\"\n\nimport { cnv } from \"@/lib/utils\"\nimport { labelVariants } from \"@/registry/new-york/ui/label\"\n\nconst _CheckboxGroup = CheckboxGroup\n\nconst _Checkbox = ({ className, children, ...props }: CheckboxProps) => (\n  <Checkbox\n    className={(values) =>\n      cnv<CheckboxRenderProps>(\n        values,\n        \"group flex items-center gap-x-2 data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 \",\n        labelVariants,\n        typeof className === \"function\" ? className(values) : className\n      )\n    }\n    {...props}\n  >\n    {(values) => (\n      <>\n        <div className=\"flex h-4 w-4 shrink-0 rounded-sm border border-primary shadow group-data-[indeterminate]:bg-primary group-data-[selected]:bg-primary group-data-[indeterminate]:text-primary-foreground group-data-[selected]:text-primary-foreground group-data-[focus-visible]:outline-none group-data-[focus-visible]:ring-1 group-data-[focus-visible]:ring-ring\">\n          {values.isIndeterminate ? (\n            <MinusIcon className=\"h-[0.875rem] w-[0.875rem]\" />\n          ) : values.isSelected ? (\n            <CheckIcon className=\"h-4 w-4\" />\n          ) : null}\n        </div>\n        {typeof children === \"function\" ? children(values) : children}\n      </>\n    )}\n  </Checkbox>\n)\n\nexport { _Checkbox as Checkbox, _CheckboxGroup as CheckboxGroup }\n"
+    }
+  ],
+  "type": "components:ui"
+}

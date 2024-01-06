@@ -1,0 +1,13 @@
+{
+  "name": "date-picker",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "files": [
+    {
+      "name": "date-picker.tsx",
+      "content": "import { getLocalTimeZone } from \"@internationalized/date\"\nimport { CalendarIcon } from \"@radix-ui/react-icons\"\nimport { format } from \"date-fns\"\nimport {\n  DatePicker,\n  DateValue,\n  Dialog,\n  DialogProps,\n  Group,\n  GroupProps,\n  PopoverProps,\n} from \"react-aria-components\"\n\nimport { cn, cnv } from \"@/lib/utils\"\nimport { Button } from \"@/registry/new-york/ui/button\"\nimport { Popover } from \"@/registry/new-york/ui/popover\"\n\nconst _DatePicker = DatePicker\n\nexport interface _DatePickerButtonProps extends GroupProps {\n  date?: DateValue\n}\n\nconst _DatePickerButton = ({ date, ...props }: _DatePickerButtonProps) => (\n  <Group {...props}>\n    <Button\n      variant=\"outline\"\n      className={cn(\n        \"w-[240px] justify-start text-left font-normal\",\n        !date && \"text-muted-foreground\"\n      )}\n    >\n      <CalendarIcon className=\"mr-2 h-4 w-4\" />\n\n      {date ? (\n        format(date?.toDate(getLocalTimeZone()), \"PPP\")\n      ) : (\n        <span>Pick a date</span>\n      )}\n    </Button>\n  </Group>\n)\n\nconst _DatePickerContent = ({\n  className,\n  popoverClassName,\n  ...props\n}: DialogProps & { popoverClassName?: PopoverProps[\"className\"] }) => (\n  <Popover className={(values) => cnv(values, \"w-auto p-3\", popoverClassName)}>\n    <Dialog\n      className={cn(\n        \"flex w-full flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0\",\n        className\n      )}\n      {...props}\n    />\n  </Popover>\n)\n\nexport {\n  _DatePicker as DatePicker,\n  _DatePickerButton as DatePickerButton,\n  _DatePickerContent as DatePickerContent,\n}\n"
+    }
+  ],
+  "type": "components:ui"
+}

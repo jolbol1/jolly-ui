@@ -1,0 +1,13 @@
+{
+  "name": "breadcrumbs",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "files": [
+    {
+      "name": "breadcrumbs.tsx",
+      "content": "\"use client\"\n\nimport { ChevronRightIcon } from \"@radix-ui/react-icons\"\nimport {\n  Breadcrumb,\n  BreadcrumbProps,\n  Breadcrumbs,\n  BreadcrumbsProps,\n  Link,\n  LinkProps,\n} from \"react-aria-components\"\n\nimport { cn, cnv } from \"@/lib/utils\"\n\nimport { buttonVariants } from \"./button\"\n\nconst _Breadcrumbs = <T extends object>({\n  className,\n  ...props\n}: BreadcrumbsProps<T>) => (\n  <Breadcrumbs className={cn(\"flex flex-wrap \", className)} {...props} />\n)\n\ninterface BreadcrumbItemProps extends Omit<BreadcrumbProps, \"children\"> {\n  linkClassName?: LinkProps[\"className\"]\n  href?: LinkProps[\"href\"]\n  linkProps?: Omit<LinkProps, \"className\" | \"href\" | \"children\">\n  children?: LinkProps[\"children\"]\n}\n\nconst BreadcrumbItem = ({\n  className,\n  linkClassName,\n  href,\n  linkProps,\n  children,\n  ...props\n}: BreadcrumbItemProps) => {\n  return (\n    <Breadcrumb className={cn(\"flex items-center\", className)} {...props}>\n      <Link\n        className={(values) =>\n          cnv(\n            values,\n            buttonVariants({\n              variant: \"link\",\n              className: \"data-[disabled]:opacity-100\",\n            }),\n            \"opacity-50 peer px-1 py-1\",\n            \"data-[disabled]:opacity-100\",\n            \"text-foreground\",\n            linkClassName\n          )\n        }\n        href={href}\n        {...linkProps}\n      >\n        {children}\n      </Link>\n      <ChevronRightIcon\n        aria-hidden=\"true\"\n        className=\"h-4 w-4 peer-data-[current]:hidden\"\n      />\n    </Breadcrumb>\n  )\n}\n\nexport { _Breadcrumbs as Breadcrumbs, BreadcrumbItem }\n"
+    }
+  ],
+  "type": "components:ui"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "checkbox",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "files": [
+    {
+      "name": "checkbox.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { Check, Minus } from \"lucide-react\"\nimport {\n  Checkbox,\n  CheckboxGroup,\n  type CheckboxProps,\n} from \"react-aria-components\"\n\nimport { cnv } from \"@/lib/utils\"\n\nimport { labelVariants } from \"./label\"\n\nconst _CheckboxGroup = CheckboxGroup\n\nconst _Checkbox = ({ className, children, ...props }: CheckboxProps) => (\n  <Checkbox\n    className={(values) =>\n      cnv(\n        values,\n        \"group flex items-center gap-x-2  data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 \",\n        labelVariants,\n        className\n      )\n    }\n    {...props}\n  >\n    {(values) => (\n      <>\n        <div className=\"h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background group-data-[indeterminate]:bg-primary group-data-[selected]:bg-primary  group-data-[indeterminate]:text-primary-foreground group-data-[selected]:text-primary-foreground group-data-[focus-visible]:outline-none group-data-[focus-visible]:ring-2 group-data-[focus-visible]:ring-ring group-data-[focus-visible]:ring-offset-2\">\n          {values.isIndeterminate ? (\n            <Minus className=\"h-[0.875rem] w-[0.875rem]\" />\n          ) : values.isSelected ? (\n            <Check className=\"h-4 w-[0.875rem]\" />\n          ) : null}\n        </div>\n        {typeof children === \"function\" ? children(values) : children}\n      </>\n    )}\n  </Checkbox>\n)\n\nexport { _Checkbox as Checkbox, _CheckboxGroup as CheckboxGroup }\n"
+    }
+  ],
+  "type": "components:ui"
+}

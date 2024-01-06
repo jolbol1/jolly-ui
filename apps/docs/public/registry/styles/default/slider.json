@@ -1,0 +1,13 @@
+{
+  "name": "slider",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "files": [
+    {
+      "name": "slider.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport {\n  Slider,\n  SliderOutput,\n  SliderProps,\n  SliderStateContext,\n  SliderThumb,\n  SliderThumbProps,\n  SliderTrack,\n  SliderTrackProps,\n} from \"react-aria-components\"\n\nimport { cn, cnv } from \"@/lib/utils\"\n\nconst _SliderOutput = SliderOutput\n\nconst _Slider = ({\n  className,\n  orientation = \"horizontal\",\n  ...props\n}: SliderProps) => (\n  <Slider\n    className={(values) =>\n      cnv(\n        values,\n        \"relative flex touch-none select-none items-center\",\n        {\n          \"h-full\": orientation === \"vertical\",\n          \"w-full\": orientation === \"horizontal\",\n        },\n        className\n      )\n    }\n    orientation={orientation}\n    {...props}\n  />\n)\n\nconst _SliderTrack = ({ className, ...props }: SliderTrackProps) => (\n  <SliderTrack\n    className={(values) =>\n      cnv(\n        values,\n        {\n          \"h-2 w-full\": values.orientation === \"horizontal\",\n          \"h-full w-2\": values.orientation === \"vertical\",\n        },\n        \"relative grow rounded-full bg-secondary\",\n        className\n      )\n    }\n    {...props}\n  />\n)\n\nconst _SliderFillTrack = React.forwardRef<\n  HTMLDivElement,\n  React.HTMLAttributes<HTMLDivElement>\n>(({ className, ...props }, ref) => {\n  let state = React.useContext(SliderStateContext)!\n  const orientation = state.orientation === \"vertical\" ? \"height\" : \"width\"\n  return (\n    <div\n      ref={ref}\n      style={{ [orientation]: state.getThumbPercent(0) * 100 + \"%\" }}\n      className={cn(\n        \"absolute rounded-full bg-primary\",\n        {\n          \"h-full\": state.orientation === \"horizontal\",\n          \"w-full bottom-0\": state.orientation === \"vertical\",\n        },\n        className\n      )}\n      {...props}\n    />\n  )\n})\n_SliderFillTrack.displayName = \"SliderFillTrack\"\n\nconst _SliderThumb = ({ className }: SliderThumbProps) => (\n  <SliderThumb\n    className={(values) =>\n      cnv(\n        values,\n        \"left-[50%] top-[50%] block h-5 w-5 rounded-full border-2 border-primary bg-background ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50\",\n        className\n      )\n    }\n  />\n)\n\nexport {\n  _Slider as Slider,\n  _SliderTrack as SliderTrack,\n  _SliderFillTrack as SliderFillTrack,\n  _SliderThumb as SliderThumb,\n  _SliderOutput as SliderOutput,\n}\n"
+    }
+  ],
+  "type": "components:ui"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "switch",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "files": [
+    {
+      "name": "switch.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { Switch, SwitchProps } from \"react-aria-components\"\n\nimport { cn, cnv } from \"@/lib/utils\"\n\nconst _Switch = ({ className, children, ...props }: SwitchProps) => (\n  <Switch\n    className={(values) =>\n      cnv(\n        values,\n        \"group inline-flex items-center gap-2 text-sm font-medium leading-none data-[disabled]:cursor-not-allowed data-[disabled]:opacity-70\",\n        className\n      )\n    }\n    {...props}\n  >\n    {(values) => (\n      <>\n        <div className=\"h-[20px] w-[36px] shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-input shadow-sm transition-colors group-data-[selected]:bg-primary group-data-[disabled]:opacity-50 group-data-[focus-visible]:outline-none group-data-[focus-visible]:ring-2 group-data-[focus-visible]:ring-ring group-data-[focus-visible]:ring-offset-2 group-data-[focus-visible]:ring-offset-background\">\n          <div\n            className={cn(\n              \"pointer-events-none block h-4 w-4 translate-x-0 rounded-full bg-background shadow-lg ring-0 transition-transform group-data-[selected]:translate-x-4\"\n            )}\n          />\n        </div>\n        {typeof children === \"function\" ? children(values) : children}\n      </>\n    )}\n  </Switch>\n)\n\nexport { _Switch as Switch }\n"
+    }
+  ],
+  "type": "components:ui"
+}

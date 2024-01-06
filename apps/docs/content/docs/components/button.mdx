@@ -1,0 +1,111 @@
+---
+title: Button
+description: A button allows a user to perform an action, with mouse, touch, and keyboard interactions.
+featured: true
+component: true
+links:
+  doc: https://react-spectrum.adobe.com/react-aria/Button.html
+---
+
+<ComponentPreview name="button-demo" />
+
+## Installation
+
+<Tabs defaultValue="manual">
+
+<TabsList>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project: button.tsx</Step>
+
+<ComponentSource name="button" />
+
+<Step>
+  Copy and paste the following code into your project: button-variants.tsx
+</Step>
+
+<ComponentSource name="button-variants" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx
+import { Button } from "@/components/ui/button"
+```
+
+```tsx
+<Button variant="outline">Button</Button>
+```
+
+## Link
+
+The Button component always represents a button semantically.
+To create a link that visually looks like a button, use the [Link](../../../docs/components/link) component instead. You can reuse the same styles you apply to the Button component on the Link. It includes support for React Router, NextJs and Remix.
+
+You can also use the `buttonVariants` helper to create a link that looks like a button, if the Link component does not support your needed component.
+
+```tsx
+import { buttonVariants } from "@/components/ui/buttonVariants"
+```
+
+```tsx
+<Link className={buttonVariants({ variant: "outline" })}>Click here</Link>
+```
+
+## Events
+
+Button supports user interactions via mouse, keyboard, and touch. You can handle all of these via the `onPress` prop. This is similar to the standard onClick event, but normalized to support all interaction methods equally. In addition, the `onPressStart`, `onPressEnd`, and `onPressChange` events are fired as the user interacts with the button.
+
+Each of these handlers receives a `PressEvent`, which exposes information about the target and the type of event that triggered the interaction. See [usePress](https://react-spectrum.adobe.com/react-aria/usePress.html) for more details.
+
+<ComponentPreview name="button-press" />
+
+## Examples
+
+### Primary
+
+<ComponentPreview name="button-demo" />
+
+### Secondary
+
+<ComponentPreview name="button-secondary" />
+
+### Destructive
+
+<ComponentPreview name="button-destructive" />
+
+### Outline
+
+<ComponentPreview name="button-outline" />
+
+### Ghost
+
+<ComponentPreview name="button-ghost" />
+
+### Link
+
+<ComponentPreview name="button-link" />
+
+### Icon
+
+<ComponentPreview name="button-icon" />
+
+### With Icon
+
+<ComponentPreview name="button-with-icon" />
+
+### Loading
+
+<ComponentPreview name="button-loading" />

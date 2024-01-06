@@ -1,0 +1,64 @@
+---
+title: Dialog
+description: A dialog is an overlay shown above other content in an application.
+featured: true
+component: true
+links:
+  doc: https://react-spectrum.adobe.com/react-aria/Dialog.html
+---
+
+<ComponentPreview name="dialog-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn-ui@latest add dialog
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @radix-ui/react-dialog
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="dialog" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+### Basic
+
+<ComponentPreview name="dialog-demo" />
+
+### Alert dialog
+
+Set `isDismissable` to false on the DialogOverlay component and set the role on DialogContent to `alertdialog`
+
+<ComponentPreview name="dialog-alert-demo" />
+
+### Custom close button
+
+<ComponentPreview name="dialog-close-button" />

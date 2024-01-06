@@ -1,0 +1,109 @@
+---
+title: Date Picker
+description: A date picker component with range and presets.
+component: true
+links:
+  doc: https://react-spectrum.adobe.com/react-aria/Calendar.html
+---
+
+<Callout type="danger">
+  <b>Needs work:</b> The below is a basic example. I am still working on
+  ensuring this is feature complete.
+</Callout>
+
+<ComponentPreview name="date-picker-demo" />
+
+## Installation
+
+<Tabs defaultValue="manual">
+
+<TabsList>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @internationalized/date date-fns
+```
+
+<Step>Add the `Button` component to your project.</Step>
+
+The `DatePicker` component uses the `Calendar` and `Popover` component. Make sure you have them installed in your project.
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="date-picker" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx
+"use client"
+
+import React from "react"
+import { type DateValue } from "react-aria-components"
+
+import {
+  Calendar,
+  CalendarCell,
+  CalendarGrid,
+  CalendarGridBody,
+  CalendarGridHeader,
+  CalendarHeaderCell,
+  CalendarHeading,
+} from "@/registry/default/ui/calendar"
+import {
+  DatePicker,
+  DatePickerButton,
+  DatePickerContent,
+} from "@/registry/default/ui/date-picker"
+
+export default function DatepickerDemo({ ...props }) {
+  const [date, setDate] = React.useState<DateValue>()
+
+  return (
+    <DatePicker shouldCloseOnSelect={false} onChange={setDate} {...props}>
+      <DatePickerButton date={date} />
+      <DatePickerContent>
+        <Calendar>
+          <CalendarHeading />
+          <CalendarGrid>
+            <CalendarGridHeader>
+              {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
+            </CalendarGridHeader>
+            <CalendarGridBody>
+              {(date) => (
+                <>
+                  <CalendarCell date={date} />
+                </>
+              )}
+            </CalendarGridBody>
+          </CalendarGrid>
+        </Calendar>
+      </DatePickerContent>
+    </DatePicker>
+  )
+}
+```
+
+## Examples
+
+### Date Picker
+
+<ComponentPreview name="date-picker-demo" />
+
+### With Presets
+
+<ComponentPreview name="date-picker-with-presets" />

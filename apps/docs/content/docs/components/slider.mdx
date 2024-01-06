@@ -1,0 +1,52 @@
+---
+title: Slider
+description: A slider allows a user to select one or more values within a range.
+component: true
+links:
+  doc: https://react-spectrum.adobe.com/react-aria/Slider.html
+---
+
+<ComponentPreview name="slider-demo" />
+
+## Installation
+
+<Tabs defaultValue="manual">
+
+<TabsList>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="slider" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+### Basic
+
+<ComponentPreview name="slider-demo" />
+
+### Value Label
+
+Values are formatted as a percentage by default, but this can be modified by using the formatOptions prop to specify a different format.
+formatOptions is compatible with the option parameter ofs [Intl.NumberFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat) and is applied based on the current locale.
+
+<ComponentPreview name="slider-value" />
+
+### Vertical
+
+Sliders are horizontally oriented by default. The orientation prop can be set to "vertical" to create a vertical slider.
+
+<ComponentPreview name="slider-vertical" />

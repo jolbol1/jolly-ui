@@ -1,0 +1,13 @@
+{
+  "name": "radio-group",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "files": [
+    {
+      "name": "radio-group.tsx",
+      "content": "\"use client\"\n\nimport { CheckIcon } from \"@radix-ui/react-icons\"\nimport {\n  Radio,\n  RadioGroup,\n  RadioGroupProps,\n  RadioProps,\n} from \"react-aria-components\"\n\nimport { cnv } from \"@/lib/utils\"\nimport { labelVariants } from \"@/registry/new-york/ui/label\"\n\nconst _RadioGroup = ({\n  className,\n  orientation = \"vertical\",\n  ...props\n}: RadioGroupProps) => {\n  return (\n    <RadioGroup\n      className={(values) =>\n        cnv(\n          values,\n          {\n            \"grid gap-2\": orientation === \"vertical\",\n            \"flex items-center gap-2\": orientation === \"horizontal\",\n          },\n          className\n        )\n      }\n      {...props}\n    />\n  )\n}\n\nexport interface _RadioProps extends RadioProps {\n  showRadio?: boolean\n}\n\nconst _Radio = ({\n  className,\n  showRadio = true,\n  children,\n  ...props\n}: _RadioProps) => {\n  return (\n    <Radio\n      className={(values) =>\n        cnv(\n          values,\n          \"group flex items-center gap-x-2 data-[focused]:outline-none \",\n          labelVariants,\n          className\n        )\n      }\n      {...props}\n    >\n      {(values) => (\n        <>\n          {showRadio && (\n            <span className=\"flex aspect-square h-4 w-4 items-center justify-center rounded-full border  border-primary text-primary shadow data-[disabled]:opacity-50 group-data-[focus-visible]:ring-1 group-data-[focus-visible]:ring-ring\">\n              {values.isSelected && (\n                <CheckIcon className=\"h-3.5 w-3.5 fill-primary\" />\n              )}\n            </span>\n          )}\n          {typeof children === \"function\" ? children(values) : children}\n        </>\n      )}\n    </Radio>\n  )\n}\n\nexport { _RadioGroup as RadioGroup, _Radio as Radio }\n"
+    }
+  ],
+  "type": "components:ui"
+}

@@ -1,0 +1,232 @@
+[
+  {
+    "name": "breadcrumbs",
+    "dependencies": [
+      "react-aria-components"
+    ],
+    "files": [
+      "ui/breadcrumbs.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
+    "name": "button",
+    "dependencies": [
+      "react-aria-components"
+    ],
+    "files": [
+      "ui/button.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
+    "name": "calendar",
+    "dependencies": [
+      "react-aria-components"
+    ],
+    "files": [
+      "ui/calendar.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
+    "name": "checkbox",
+    "dependencies": [
+      "react-aria-components"
+    ],
+    "files": [
+      "ui/checkbox.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
+    "name": "combobox",
+    "dependencies": [
+      "react-aria-components"
+    ],
+    "files": [
+      "ui/combobox.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
+    "name": "date-picker",
+    "dependencies": [
+      "react-aria-components"
+    ],
+    "files": [
+      "ui/date-picker.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
+    "name": "dialog",
+    "dependencies": [
+      "react-aria-components"
+    ],
+    "files": [
+      "ui/dialog.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
+    "name": "dropzone",
+    "dependencies": [
+      "react-aria-components"
+    ],
+    "files": [
+      "ui/dropzone.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
+    "name": "input",
+    "dependencies": [
+      "react-aria-components"
+    ],
+    "files": [
+      "ui/input.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
+    "name": "label",
+    "dependencies": [
+      "react-aria-components"
+    ],
+    "files": [
+      "ui/label.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
+    "name": "link",
+    "dependencies": [
+      "react-aria-components"
+    ],
+    "files": [
+      "ui/link.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
+    "name": "menu",
+    "dependencies": [
+      "react-aria-components"
+    ],
+    "files": [
+      "ui/menu.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
+    "name": "meter",
+    "dependencies": [
+      "react-aria-components"
+    ],
+    "files": [
+      "ui/meter.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
+    "name": "popover",
+    "dependencies": [
+      "react-aria-components"
+    ],
+    "files": [
+      "ui/popover.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
+    "name": "progress",
+    "dependencies": [
+      "react-aria-components"
+    ],
+    "files": [
+      "ui/progress.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
+    "name": "radio-group",
+    "dependencies": [
+      "react-aria-components"
+    ],
+    "files": [
+      "ui/radio-group.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
+    "name": "select",
+    "dependencies": [
+      "react-aria-components"
+    ],
+    "files": [
+      "ui/select.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
+    "name": "separator",
+    "dependencies": [
+      "react-aria-components"
+    ],
+    "files": [
+      "ui/separator.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
+    "name": "slider",
+    "dependencies": [
+      "react-aria-components"
+    ],
+    "files": [
+      "ui/slider.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
+    "name": "switch",
+    "dependencies": [
+      "react-aria-components"
+    ],
+    "files": [
+      "ui/switch.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
+    "name": "textarea",
+    "dependencies": [
+      "react-aria-components"
+    ],
+    "files": [
+      "ui/textarea.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
+    "name": "toggle",
+    "dependencies": [
+      "react-aria-components"
+    ],
+    "files": [
+      "ui/toggle.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
+    "name": "tooltip",
+    "dependencies": [
+      "react-aria-components"
+    ],
+    "files": [
+      "ui/tooltip.tsx"
+    ],
+    "type": "components:ui"
+  }
+]

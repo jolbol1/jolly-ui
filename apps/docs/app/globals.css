@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 72.22% 50.59%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5% 64.9%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* font-feature-settings: "rlig" 1, "calt" 1; */
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+@layer utilities {
+  .step {
+    counter-increment: step;
+  }
+
+  .step:before {
+    @apply absolute w-9 h-9 bg-muted rounded-full font-mono font-medium text-center text-base inline-flex items-center justify-center -indent-px border-4 border-background;
+    @apply ml-[-50px] mt-[-4px];
+    content: counter(step);
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    @apply px-4;
+  }
+}
+
+.tomato {
+  background-color: #e54d2e;
+}
+.red {
+  background-color: #e5484d;
+}
+.ruby {
+  background-color: #e54666;
+}
+.crimson {
+  background-color: #e93d82;
+}
+.pink {
+  background-color: #d6409f;
+}
+.plum {
+  background-color: #ab4aba;
+}
+.purple {
+  background-color: #8e4ec6;
+}
+.violet {
+  background-color: #6e56cf;
+}
+.iris {
+  background-color: #5b5bd6;
+}
+.indigo {
+  background-color: #3e63dd;
+}
+.blue {
+  background-color: #0090ff;
+}
+.cyan {
+  background-color: #00a2c7;
+}
+.teal {
+  background-color: #12a594;
+}
+.jade {
+  background-color: #29a383;
+}
+.green {
+  background-color: #30a46c;
+}
+.grass {
+  background-color: #46a758;
+}
+.bronze {
+  background-color: #a18072;
+}
+.gold {
+  background-color: #978365;
+}
+.brown {
+  background-color: #ad7f58;
+}
+.orange {
+  background-color: #f76b15;
+}
+.amber {
+  background-color: #ffc53d;
+}
+.yellow {
+  background-color: #ffe629;
+}
+.lime {
+  background-color: #bdee63;
+}
+.mint {
+  background-color: #86ead4;
+}
+.sky {
+  background-color: #7ce2fe;
+}
+
+.zinc {
+  background-color: #fafafa;
+}
+
+.olive {
+  background-color: #898e87;
+}
+.gray {
+  background-color: #8d8d8d;
+}
+.mauve {
+  background-color: #8e8c99;
+}
+.sage {
+  background-color: #868e8b;
+}
+.sand {
+  background-color: #8d8d86;
+}
+.slate {
+  background-color: #8b8d98;
+}

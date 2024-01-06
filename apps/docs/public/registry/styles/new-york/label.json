@@ -1,0 +1,13 @@
+{
+  "name": "label",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "files": [
+    {
+      "name": "label.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { cva } from \"class-variance-authority\"\nimport { Label, LabelProps } from \"react-aria-components\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst labelVariants = cva(\n  \"text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70\"\n)\n\nconst _Label = ({ className, ...props }: LabelProps) => (\n  <Label className={cn(labelVariants(), className)} {...props} />\n)\n\nexport { _Label as Label, labelVariants }\n"
+    }
+  ],
+  "type": "components:ui"
+}

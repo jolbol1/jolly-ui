@@ -1,0 +1,50 @@
+---
+title: Meter
+description: A meter represents a quantity within a known range, or a fractional value.
+component: true
+links:
+  doc: https://react-spectrum.adobe.com/react-aria/Meter.html
+---
+
+Meters are similar to progress bars, but represent a quantity as opposed to progress over time. See [Progress](../../../docs/components/progress) for more details about progress bars.
+
+<ComponentPreview name="meter-demo" />
+
+## Installation
+
+<Tabs defaultValue="manual">
+
+<TabsList>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="meter" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+### Basic
+
+<ComponentPreview name="meter-demo" />
+
+### Value Label
+
+Values are formatted as a percentage by default, but this can be modified by using the formatOptions prop to specify a different format.
+`formatOptions` is compatible with the option parameter of [Intl.NumberFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat) and is applied based on the current locale.
+
+For more options see [react aria components](https://react-spectrum.adobe.com/react-aria/ProgressBar.html#labeling) docs.
+
+<ComponentPreview name="meter-value" />

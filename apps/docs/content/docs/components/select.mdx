@@ -1,0 +1,70 @@
+---
+title: Select
+description: A select displays a collapsible list of options and allows a user to select one of them.
+component: true
+featured: true
+links:
+  doc: https://react-spectrum.adobe.com/react-aria/Select.html
+---
+
+<ComponentPreview name="select-demo" />
+
+## Installation
+
+<Tabs defaultValue="manual">
+
+<TabsList>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="select" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+### Basic
+
+<ComponentPreview name="select-demo" />
+
+### Links
+
+The `<SelectItem>` component works with frameworks and client side routers like Next.js, Remix and React Router.
+As with other React Aria components that support links, this works via the RouterProvider component at the root of your app.
+See the [client side routing guide](https://react-spectrum.adobe.com/react-aria/routing.html) to learn how to set this up.
+
+<ComponentPreview name="select-links" />
+
+### Sections
+
+#### Static Items
+
+<ComponentPreview name="select-sections" />
+
+#### Dynamic Items
+
+Sections used with dynamic items are populated from a hierarchical data structure. Similarly to the props on Select, `<SelectSection>` takes an array of data using the items prop.
+If the section also has a header, the `SelectCollection` component can be used to render the child items.
+
+<ComponentPreview name="select-dynamic" />
+
+### Disabled
+
+Select supports marking items as disabled using the disabledKeys prop.
+Each key in this list corresponds with the id prop passed to the `SelectItem` component, or automatically derived from the values passed to the items prop.
+See [Collections](https://react-spectrum.adobe.com/react-stately/Collections.html) for more details.
+Disabled items are not focusable, selectable, or keyboard navigable.
+
+<ComponentPreview name="select-disabled" />
