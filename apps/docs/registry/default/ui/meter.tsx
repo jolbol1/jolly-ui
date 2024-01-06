@@ -3,7 +3,7 @@
 import * as React from "react"
 import { Meter, MeterProps } from "react-aria-components"
 
-import { cn, cnv } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 interface _MeterProps extends MeterProps {
   barClassName?: string
@@ -17,7 +17,15 @@ const _Meter = ({
   children,
   ...props
 }: _MeterProps) => (
-  <Meter className={(values) => cnv(values, "w-full", className)} {...props}>
+  <Meter
+    className={(values) =>
+      cn(
+        "w-full",
+        typeof className === "function" ? className(values) : className
+      )
+    }
+    {...props}
+  >
     {(values) => (
       <>
         {typeof children === "function" ? children(values) : children}

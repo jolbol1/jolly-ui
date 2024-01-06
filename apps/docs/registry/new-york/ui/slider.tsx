@@ -12,7 +12,7 @@ import {
   SliderTrackProps,
 } from "react-aria-components"
 
-import { cn, cnv } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 const _SliderOutput = SliderOutput
 
@@ -23,14 +23,13 @@ const _Slider = ({
 }: SliderProps) => (
   <Slider
     className={(values) =>
-      cnv(
-        values,
+      cn(
         "relative flex touch-none select-none items-center",
         {
           "h-full": orientation === "vertical",
           "w-full": orientation === "horizontal",
         },
-        className
+        typeof className === "function" ? className(values) : className
       )
     }
     orientation={orientation}
@@ -41,14 +40,13 @@ const _Slider = ({
 const _SliderTrack = ({ className, ...props }: SliderTrackProps) => (
   <SliderTrack
     className={(values) =>
-      cnv(
-        values,
+      cn(
         {
           "h-1.5 w-full": values.orientation === "horizontal",
           "h-full w-1.5": values.orientation === "vertical",
         },
         "relative grow rounded-full bg-primary/20",
-        className
+        typeof className === "function" ? className(values) : className
       )
     }
     {...props}
@@ -82,10 +80,9 @@ _SliderFillTrack.displayName = "SliderFillTrack"
 const _SliderThumb = ({ className }: SliderThumbProps) => (
   <SliderThumb
     className={(values) =>
-      cnv(
-        values,
+      cn(
         "left-[50%] top-[50%] block h-4 w-4 rounded-full border border-primary/50 bg-background shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
-        className
+        typeof className === "function" ? className(values) : className
       )
     }
   />

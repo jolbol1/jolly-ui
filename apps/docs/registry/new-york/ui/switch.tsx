@@ -3,15 +3,14 @@
 import * as React from "react"
 import { Switch, SwitchProps } from "react-aria-components"
 
-import { cn, cnv } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 const _Switch = ({ className, children, ...props }: SwitchProps) => (
   <Switch
     className={(values) =>
-      cnv(
-        values,
+      cn(
         "group inline-flex items-center gap-2 text-sm font-medium leading-none data-[disabled]:cursor-not-allowed data-[disabled]:opacity-70",
-        className
+        typeof className === "function" ? className(values) : className
       )
     }
     {...props}

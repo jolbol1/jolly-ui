@@ -9,7 +9,7 @@ import {
   type CheckboxProps,
 } from "react-aria-components"
 
-import { cnv } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 import { labelVariants } from "@/registry/new-york/ui/label"
 
 const _CheckboxGroup = CheckboxGroup
@@ -17,8 +17,7 @@ const _CheckboxGroup = CheckboxGroup
 const _Checkbox = ({ className, children, ...props }: CheckboxProps) => (
   <Checkbox
     className={(values) =>
-      cnv<CheckboxRenderProps>(
-        values,
+      cn(
         "group flex items-center gap-x-2 data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 ",
         labelVariants,
         typeof className === "function" ? className(values) : className

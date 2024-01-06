@@ -17,7 +17,7 @@ import {
   SeparatorProps,
 } from "react-aria-components"
 
-import { cn, cnv } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 const _MenuTrigger = MenuTrigger
 
@@ -27,11 +27,10 @@ const MenuPopover = ({ className, offset = 4, ...props }: PopoverProps) => (
   <Popover
     offset={offset}
     className={(values) =>
-      cnv(
-        values,
+      cn(
         "z-50 min-w-[8rem] overflow-y-auto rounded-md border bg-popover p-1 text-popover-foreground shadow-md",
         "data-[entering]:animate-in data-[exiting]:animate-out data-[entering]:fade-in-0 data-[exiting]:fade-out-0 data-[exiting]:zoom-out-95 data-[placement=bottom]:slide-in-from-top-2 data-[placement=left]:slide-in-from-right-2 data-[placement=right]:slide-in-from-left-2 data-[placement=top]:slide-in-from-bottom-2",
-        className
+        typeof className === "function" ? className(values) : className
       )
     }
     {...props}
@@ -49,11 +48,10 @@ export interface _MenuItemProps extends MenuItemProps {
 const _MenuItem = ({ className, inset, ...props }: _MenuItemProps) => (
   <MenuItem
     className={(values) =>
-      cnv(
-        values,
+      cn(
         "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
         inset && "pl-8",
-        className
+        typeof className === "function" ? className(values) : className
       )
     }
     {...props}
@@ -63,10 +61,9 @@ const _MenuItem = ({ className, inset, ...props }: _MenuItemProps) => (
 const MenuCheckboxItem = ({ className, children, ...props }: MenuItemProps) => (
   <MenuItem
     className={(values) =>
-      cnv(
-        values,
+      cn(
         "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
-        className
+        typeof className === "function" ? className(values) : className
       )
     }
     {...props}

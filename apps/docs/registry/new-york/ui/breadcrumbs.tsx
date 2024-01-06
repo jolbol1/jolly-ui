@@ -10,7 +10,7 @@ import {
   LinkProps,
 } from "react-aria-components"
 
-import { cn, cnv } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 import { buttonVariants } from "./button"
 
@@ -40,16 +40,17 @@ const BreadcrumbItem = ({
     <Breadcrumb className={cn("flex items-center", className)} {...props}>
       <Link
         className={(values) =>
-          cnv(
-            values,
+          cn(
             buttonVariants({
               variant: "link",
               className: "data-[disabled]:opacity-100",
             }),
-            "opacity-50 peer px-1 py-1",
+            "peer p-1 opacity-50",
             "data-[disabled]:opacity-100",
             "text-foreground",
-            linkClassName
+            typeof linkClassName === "function"
+              ? linkClassName(values)
+              : linkClassName
           )
         }
         href={href}

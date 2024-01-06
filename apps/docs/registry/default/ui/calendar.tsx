@@ -19,7 +19,7 @@ import {
   Heading,
 } from "react-aria-components"
 
-import { cn, cnv } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/registry/default/ui/button"
 
 const _Calendar = Calendar
@@ -96,9 +96,8 @@ const _CalendarGridBody = ({ className, ...props }: CalendarGridBodyProps) => (
 const _CalendarCell = ({ className, date, ...props }: CalendarCellProps) => (
   <CalendarCell
     className={(values) =>
-      cnv(
-        values,
-        "h-9 w-9 p-0 font-normal data-[selected]:opacity-100 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm ring-offset-background transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50 data-[hovered]:bg-accent data-[hovered]:text-accent-foreground",
+      cn(
+        "inline-flex h-9 w-9 items-center justify-center whitespace-nowrap rounded-md p-0 text-sm font-normal ring-offset-background transition-colors data-[disabled]:pointer-events-none data-[hovered]:bg-accent data-[hovered]:text-accent-foreground data-[disabled]:opacity-50 data-[selected]:opacity-100",
         date.compare(today(getLocalTimeZone())) === 0 &&
           "bg-accent text-accent-foreground",
         values.isDisabled && "text-muted-foreground opacity-50",
@@ -106,11 +105,10 @@ const _CalendarCell = ({ className, date, ...props }: CalendarCellProps) => (
           values.isFocused &&
           "outline-none ring-2 ring-ring ring-offset-2",
         values.isSelected &&
-          "bg-primary text-primary-foreground data-[hovered]:bg-primary data-[hovered]:text-primary-foreground data-[focused]:bg-primary data-[focused]:text-primary-foreground",
+          "bg-primary text-primary-foreground data-[focused]:bg-primary data-[hovered]:bg-primary data-[focused]:text-primary-foreground data-[hovered]:text-primary-foreground",
         values.isOutsideMonth &&
           "text-muted-foreground opacity-50 data-[selected]:bg-accent/50 data-[selected]:text-muted-foreground data-[selected]:opacity-30",
-
-        className
+        typeof className === "function" ? className(values) : className
       )
     }
     date={date}

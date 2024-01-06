@@ -8,7 +8,7 @@ import {
   RadioProps,
 } from "react-aria-components"
 
-import { cnv } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 import { labelVariants } from "./label"
 
@@ -20,13 +20,12 @@ const _RadioGroup = ({
   return (
     <RadioGroup
       className={(values) =>
-        cnv(
-          values,
+        cn(
           {
             "grid gap-2": orientation === "vertical",
             "flex items-center gap-2": orientation === "horizontal",
           },
-          className
+          typeof className === "function" ? className(values) : className
         )
       }
       {...props}
@@ -47,11 +46,10 @@ const _Radio = ({
   return (
     <Radio
       className={(values) =>
-        cnv(
-          values,
-          "group flex items-center data-[focused]:outline-none gap-x-2",
+        cn(
+          "group flex items-center gap-x-2 data-[focused]:outline-none",
           labelVariants,
-          className
+          typeof className === "function" ? className(values) : className
         )
       }
       {...props}

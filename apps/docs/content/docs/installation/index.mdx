@@ -13,36 +13,4 @@ Next, install react-aria-components
 npm install react-aria-components
 ```
 
-Next, add the `cnv` helper to `lib/utils.ts`, at the same place you have the `cn` helper. This helper allows you to use react-aria-components [render props](https://react-spectrum.adobe.com/react-aria/styling.html#render-props) for styling.
-
-```ts
-type ClassFunction<T> = (values: T) => string
-type ClassValues<T> = (ClassValue | ClassFunction<T>)[]
-
-export function cnv<T>(values: T, ...inputs: ClassValues<T>) {
-  const processedInputs = inputs.map((input) => {
-    if (typeof input === "function") {
-      return input(values)
-    }
-    return input
-  })
-
-  return cn(processedInputs)
-}
-```
-
-For example, if you are styling the checkbox you can do
-
-````tsx
-    <Checkbox
-      className={({ isSelected }) => (isSelected ? "bg-red-600" : "bg-black")}
-      id="terms"
-    >
-      Accept terms and conditions
-    </Checkbox>
-    ```
-Note, at the moment while these work, the default styles use data attributes which take priority, unless as above we make the class important !. If you are not seeing your style apply, try this.
-I am looking in to better ways to handle this.
-
 Thats all!
-````

@@ -21,7 +21,7 @@ import {
   SeparatorProps,
 } from "react-aria-components"
 
-import { cn, cnv } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 const Combobox = ComboBox
 
@@ -37,10 +37,9 @@ const ComboboxInput = ({ className, ...props }: InputProps) => (
   >
     <Input
       className={(values) =>
-        cnv(
-          values,
-          "flex w-full bg-background px-3 py-2 text-sm placeholder:text-muted-foreground data-[focused]:outline-none data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
-          className
+        cn(
+          "flex w-full bg-background px-3 py-2 text-sm placeholder:text-muted-foreground data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 data-[focused]:outline-none",
+          typeof className === "function" ? className(values) : className
         )
       }
       {...props}
@@ -54,11 +53,10 @@ const ComboboxInput = ({ className, ...props }: InputProps) => (
 const ComboboxPopover = ({ className, ...props }: PopoverProps) => (
   <Popover
     className={(values) =>
-      cnv(
-        values,
+      cn(
         "relative z-50 w-[--trigger-width] min-w-[8rem] overflow-y-auto rounded-md border bg-popover text-popover-foreground shadow-md data-[entering]:animate-in data-[exiting]:animate-out data-[entering]:fade-in-0 data-[exiting]:fade-out-0 data-[exiting]:zoom-out-95 data-[placement=bottom]:slide-in-from-top-2 data-[placement=left]:slide-in-from-right-2 data-[placement=right]:slide-in-from-left-2 data-[placement=top]:slide-in-from-bottom-2",
         "data-[placement=bottom]:translate-y-1 data-[placement=left]:-translate-x-1 data-[placement=right]:translate-x-1 data-[placement=top]:-translate-y-1",
-        className
+        typeof className === "function" ? className(values) : className
       )
     }
     {...props}
@@ -93,10 +91,9 @@ const ComboboxLabel = ({
 const ComboboxItem = ({ className, children, ...props }: ListBoxItemProps) => (
   <ListBoxItem
     className={(values) =>
-      cnv(
-        values,
-        "relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-2 pr-8 text-sm outline-none data-[focused]:bg-accent data-[focused]:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
-        className
+      cn(
+        "relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-2 pr-8 text-sm outline-none data-[disabled]:pointer-events-none data-[focused]:bg-accent data-[focused]:text-accent-foreground data-[disabled]:opacity-50",
+        typeof className === "function" ? className(values) : className
       )
     }
     {...props}

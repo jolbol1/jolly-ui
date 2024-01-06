@@ -15,7 +15,7 @@ import {
   ModalOverlayProps,
 } from "react-aria-components"
 
-import { cn, cnv } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 const sheetVariants = cva(
   "fixed z-50 gap-4 bg-background p-6 shadow-lg transition ease-in-out data-[entering]:duration-500 data-[exiting]:duration-300 data-[entering]:animate-in data-[exiting]:animate-out",
@@ -43,10 +43,9 @@ const _DialogOverlay = ({
   <ModalOverlay
     isDismissable={isDismissable}
     className={(values) =>
-      cnv(
-        values,
-        "fixed inset-0 z-50 bg-background/80 backdrop-blur-sm data-[entering]:animate-in data-[exiting]:animate-out data-[exiting]:fade-out-0 data-[entering]:fade-in-0",
-        className
+      cn(
+        "fixed inset-0 z-50 bg-background/80 backdrop-blur-sm data-[entering]:animate-in data-[exiting]:animate-out data-[entering]:fade-in-0 data-[exiting]:fade-out-0",
+        typeof className === "function" ? className(values) : className
       )
     }
     {...props}

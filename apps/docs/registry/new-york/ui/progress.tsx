@@ -3,7 +3,7 @@
 import * as React from "react"
 import { ProgressBar, ProgressBarProps } from "react-aria-components"
 
-import { cn, cnv } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 export interface ProgressProps extends ProgressBarProps {
   barClassName?: string
@@ -17,7 +17,12 @@ const Progress = ({
   children,
   ...props
 }: ProgressProps) => (
-  <ProgressBar className={(values) => cnv(values, className)} {...props}>
+  <ProgressBar
+    className={(values) =>
+      cn(typeof className === "function" ? className(values) : className)
+    }
+    {...props}
+  >
     {(values) => (
       <>
         {typeof children === "function" ? children(values) : children}

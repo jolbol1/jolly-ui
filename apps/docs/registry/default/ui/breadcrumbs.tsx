@@ -37,16 +37,20 @@ const BreadcrumbItem = ({
 }: BreadcrumbItemProps) => (
   <Breadcrumb className={cn("flex items-center", className)} {...props}>
     <Link
-      className={cn(
-        buttonVariants({
-          variant: "link",
-          className: "data-[disabled]:opacity-100 ",
-        }),
-        "peer p-1 opacity-50",
-        "data-[disabled]:opacity-100",
-        "text-foreground",
-        linkClassName
-      )}
+      className={(values) =>
+        cn(
+          buttonVariants({
+            variant: "link",
+            className: "data-[disabled]:opacity-100 ",
+          }),
+          "peer p-1 opacity-50",
+          "data-[disabled]:opacity-100",
+          "text-foreground",
+          typeof linkClassName === "function"
+            ? linkClassName(values)
+            : linkClassName
+        )
+      }
       href={href}
       {...linkProps}
     >

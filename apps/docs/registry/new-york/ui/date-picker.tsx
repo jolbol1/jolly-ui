@@ -11,7 +11,7 @@ import {
   PopoverProps,
 } from "react-aria-components"
 
-import { cn, cnv } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york/ui/button"
 import { Popover } from "@/registry/new-york/ui/popover"
 
@@ -46,7 +46,16 @@ const _DatePickerContent = ({
   popoverClassName,
   ...props
 }: DialogProps & { popoverClassName?: PopoverProps["className"] }) => (
-  <Popover className={(values) => cnv(values, "w-auto p-3", popoverClassName)}>
+  <Popover
+    className={(values) =>
+      cn(
+        "w-auto p-3",
+        typeof popoverClassName === "function"
+          ? popoverClassName(values)
+          : popoverClassName
+      )
+    }
+  >
     <Dialog
       className={cn(
         "flex w-full flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0",
