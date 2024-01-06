@@ -13,4 +13,22 @@ Next, install react-aria-components
 npm install react-aria-components
 ```
 
+Next, add the `cnv` helper to `lib/utils.ts`, at the same place you have the `cn` helper. This helper allows you to use react-aria-components [render props](https://react-spectrum.adobe.com/react-aria/styling.html#render-props) for styling.
+
+```ts
+type ClassFunction<T> = (values: T) => string
+type ClassValues<T> = (ClassValue | ClassFunction<T>)[]
+
+export function cnv<T>(values: T, ...inputs: ClassValues<T>) {
+  const processedInputs = inputs.map((input) => {
+    if (typeof input === "function") {
+      return input(values)
+    }
+    return input
+  })
+
+  return cn(processedInputs)
+}
+```
+
 Thats all!
