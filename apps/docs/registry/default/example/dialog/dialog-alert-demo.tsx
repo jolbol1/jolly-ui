@@ -24,7 +24,12 @@ export function DialogAlertDemo() {
                 account and remove your data from our servers.
               </p>
               <DialogFooter>
-                <Button variant="outline" autoFocus onPress={close}>
+                <Button
+                  variant="outline"
+                  autoFocus
+                  onPress={close}
+                  className="mt-2 sm:mt-0"
+                >
                   Cancel
                 </Button>
                 <Button variant="destructive" onPress={close}>
