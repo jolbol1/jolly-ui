@@ -44,7 +44,7 @@ const _DialogOverlay = ({
     isDismissable={isDismissable}
     className={(values) =>
       cn(
-        "fixed inset-0 z-50 bg-background/80 backdrop-blur-sm data-[exiting]:duration-300 data-[entering]:animate-in data-[exiting]:animate-out data-[entering]:fade-in-0 data-[exiting]:fade-out-0",
+        "fixed inset-0 z-50 bg-black/80 data-[exiting]:duration-300 data-[entering]:animate-in data-[exiting]:animate-out data-[entering]:fade-in-0 data-[exiting]:fade-out-0",
         typeof className === "function" ? className(values) : className
       )
     }
