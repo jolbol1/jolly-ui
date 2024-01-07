@@ -73,8 +73,8 @@ export function ThemeCustomizer({
         <p className={cn(shrink && "hidden sm:inline-block")}>Customize</p>
       </Button>
       <DialogOverlay className="bg-transparent backdrop-blur-none">
-        <DialogContent side="right" className="w-3/4 p-0">
-          <div className="flex flex-col overflow-hidden p-4">
+        <DialogContent side="right" className="w-3/4 p-4 pb-0">
+          <div className="flex h-full max-h-full flex-col overflow-hidden">
             <div className="flex items-start border-b border-border pb-4">
               <div className="space-y-1 pr-2">
                 <div className="font-semibold leading-none tracking-tight">
@@ -86,6 +86,7 @@ export function ThemeCustomizer({
               </div>
             </div>
             <div className="flex-1 overflow-y-auto">
+              {" "}
               <>
                 <div className="flex flex-1 flex-col space-y-4 overflow-y-auto px-1 py-3 md:space-y-6">
                   <div className="space-y-1.5">
