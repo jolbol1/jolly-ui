@@ -18,7 +18,7 @@ import {
 import { cn } from "@/lib/utils"
 
 const sheetVariants = cva(
-  "fixed z-50 gap-4 bg-background p-6 shadow-lg transition ease-in-out data-[entering]:duration-500 data-[exiting]:duration-300 data-[entering]:animate-in data-[exiting]:animate-out",
+  "fixed z-50 gap-4 bg-background shadow-lg transition ease-in-out data-[entering]:duration-500 data-[exiting]:duration-300 data-[entering]:animate-in data-[exiting]:animate-out",
   {
     variants: {
       side: {
@@ -44,7 +44,7 @@ const _DialogOverlay = ({
     isDismissable={isDismissable}
     className={(values) =>
       cn(
-        "fixed inset-0 z-50 bg-background/80 backdrop-blur-sm data-[entering]:animate-in data-[exiting]:animate-out data-[entering]:fade-in-0 data-[exiting]:fade-out-0",
+        "fixed inset-0 z-50 bg-background/80 backdrop-blur-sm data-[exiting]:duration-300 data-[entering]:animate-in data-[exiting]:animate-out data-[entering]:fade-in-0 data-[exiting]:fade-out-0",
         typeof className === "function" ? className(values) : className
       )
     }
@@ -77,7 +77,14 @@ const DialogContent = ({
     )}
     {...props}
   >
-    <Dialog role={role} className="grid h-full gap-4 outline-none">
+    <Dialog
+      role={role}
+      className={cn(
+        !side && "grid h-full gap-4",
+        side && "h-full p-6",
+        "outline-none"
+      )}
+    >
       {(values) => (
         <>
           {typeof children === "function" ? children(values) : children}

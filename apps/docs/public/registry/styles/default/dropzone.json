@@ -6,7 +6,7 @@
   "files": [
     {
       "name": "dropzone.tsx",
-      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { DropZone, DropZoneProps } from \"react-aria-components\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst _DropZone = ({ className, ...props }: DropZoneProps) => (\n  <DropZone\n    className={(values) =>\n      cn(\n        \"flex h-[150px] w-[300px] flex-col items-center justify-center gap-2 rounded-md border border-dashed text-sm data-[drop-target]:border-solid data-[drop-target]:border-primary data-[drop-target]:bg-accent\",\n        typeof className === \"function\" ? className(values) : className\n      )\n    }\n    {...props}\n  />\n)\n\nexport { _DropZone as DropZone }\n"
+      "content": "\"use client\"\r\n\r\nimport * as React from \"react\"\r\nimport { DropZone, DropZoneProps } from \"react-aria-components\"\r\n\r\nimport { cn } from \"@/lib/utils\"\r\n\r\nconst _DropZone = ({ className, ...props }: DropZoneProps) => (\r\n  <DropZone\r\n    className={(values) =>\r\n      cn(\r\n        \"flex h-[150px] w-[300px] flex-col items-center justify-center gap-2 rounded-md border border-dashed text-sm data-[drop-target]:border-solid data-[drop-target]:border-primary data-[drop-target]:bg-accent\",\r\n        typeof className === \"function\" ? className(values) : className\r\n      )\r\n    }\r\n    {...props}\r\n  />\r\n)\r\n\r\nexport { _DropZone as DropZone }\r\n"
     }
   ],
   "type": "components:ui"
