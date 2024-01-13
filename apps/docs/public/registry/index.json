@@ -4,6 +4,9 @@
     "dependencies": [
       "react-aria-components"
     ],
+    "registryDependencies": [
+      "button"
+    ],
     "files": [
       "ui/breadcrumbs.tsx"
     ],
@@ -24,6 +27,9 @@
     "dependencies": [
       "react-aria-components"
     ],
+    "registryDependencies": [
+      "button"
+    ],
     "files": [
       "ui/calendar.tsx"
     ],
@@ -33,6 +39,9 @@
     "name": "checkbox",
     "dependencies": [
       "react-aria-components"
+    ],
+    "registryDependencies": [
+      "label"
     ],
     "files": [
       "ui/checkbox.tsx"
@@ -53,6 +62,10 @@
     "name": "date-picker",
     "dependencies": [
       "react-aria-components"
+    ],
+    "registryDependencies": [
+      "button",
+      "popover"
     ],
     "files": [
       "ui/date-picker.tsx"
@@ -104,6 +117,9 @@
     "dependencies": [
       "react-aria-components"
     ],
+    "registryDependencies": [
+      "button"
+    ],
     "files": [
       "ui/link.tsx"
     ],
@@ -153,6 +169,9 @@
     "name": "radio-group",
     "dependencies": [
       "react-aria-components"
+    ],
+    "registryDependencies": [
+      "label"
     ],
     "files": [
       "ui/radio-group.tsx"

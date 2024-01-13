@@ -5,6 +5,7 @@ const ui: Registry = [
     name: "breadcrumbs",
     type: "components:ui",
     dependencies: ["react-aria-components"],
+    registryDependencies: ["button"],
     files: ["ui/breadcrumbs.tsx"],
   },
   {
@@ -17,12 +18,14 @@ const ui: Registry = [
     name: "calendar",
     type: "components:ui",
     dependencies: ["react-aria-components"],
+    registryDependencies: ["button"],
     files: ["ui/calendar.tsx"],
   },
   {
     name: "checkbox",
     type: "components:ui",
     dependencies: ["react-aria-components"],
+    registryDependencies: ["label"],
     files: ["ui/checkbox.tsx"],
   },
   {
@@ -35,6 +38,7 @@ const ui: Registry = [
     name: "date-picker",
     type: "components:ui",
     dependencies: ["react-aria-components"],
+    registryDependencies: ["button", "popover"],
     files: ["ui/date-picker.tsx"],
   },
   {
@@ -65,6 +69,7 @@ const ui: Registry = [
     name: "link",
     type: "components:ui",
     dependencies: ["react-aria-components"],
+    registryDependencies: ["button"],
     files: ["ui/link.tsx"],
   },
   {
@@ -95,6 +100,7 @@ const ui: Registry = [
     name: "radio-group",
     type: "components:ui",
     dependencies: ["react-aria-components"],
+    registryDependencies: ["label"],
     files: ["ui/radio-group.tsx"],
   },
   {

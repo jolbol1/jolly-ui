@@ -1,11 +1,9 @@
 "use client"
 
-import * as React from "react"
 import { CheckIcon, MinusIcon } from "@radix-ui/react-icons"
 import {
   Checkbox,
   CheckboxGroup,
-  CheckboxRenderProps,
   type CheckboxProps,
 } from "react-aria-components"
 

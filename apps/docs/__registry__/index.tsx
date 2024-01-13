@@ -8,7 +8,7 @@ export const Index: Record<string, any> = {
     "breadcrumbs": {
       name: "breadcrumbs",
       type: "components:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["button"],
       component: React.lazy(() => import("@/registry/default/ui/breadcrumbs")),
       files: ["registry/default/ui/breadcrumbs.tsx"],
     },
@@ -22,14 +22,14 @@ export const Index: Record<string, any> = {
     "calendar": {
       name: "calendar",
       type: "components:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["button"],
       component: React.lazy(() => import("@/registry/default/ui/calendar")),
       files: ["registry/default/ui/calendar.tsx"],
     },
     "checkbox": {
       name: "checkbox",
       type: "components:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["label"],
       component: React.lazy(() => import("@/registry/default/ui/checkbox")),
       files: ["registry/default/ui/checkbox.tsx"],
     },
@@ -43,7 +43,7 @@ export const Index: Record<string, any> = {
     "date-picker": {
       name: "date-picker",
       type: "components:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["button","popover"],
       component: React.lazy(() => import("@/registry/default/ui/date-picker")),
       files: ["registry/default/ui/date-picker.tsx"],
     },
@@ -78,7 +78,7 @@ export const Index: Record<string, any> = {
     "link": {
       name: "link",
       type: "components:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["button"],
       component: React.lazy(() => import("@/registry/default/ui/link")),
       files: ["registry/default/ui/link.tsx"],
     },
@@ -113,7 +113,7 @@ export const Index: Record<string, any> = {
     "radio-group": {
       name: "radio-group",
       type: "components:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["label"],
       component: React.lazy(() => import("@/registry/default/ui/radio-group")),
       files: ["registry/default/ui/radio-group.tsx"],
     },
@@ -744,7 +744,7 @@ export const Index: Record<string, any> = {
     "breadcrumbs": {
       name: "breadcrumbs",
       type: "components:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["button"],
       component: React.lazy(() => import("@/registry/new-york/ui/breadcrumbs")),
       files: ["registry/new-york/ui/breadcrumbs.tsx"],
     },
@@ -758,14 +758,14 @@ export const Index: Record<string, any> = {
     "calendar": {
       name: "calendar",
       type: "components:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["button"],
       component: React.lazy(() => import("@/registry/new-york/ui/calendar")),
       files: ["registry/new-york/ui/calendar.tsx"],
     },
     "checkbox": {
       name: "checkbox",
       type: "components:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["label"],
       component: React.lazy(() => import("@/registry/new-york/ui/checkbox")),
       files: ["registry/new-york/ui/checkbox.tsx"],
     },
@@ -779,7 +779,7 @@ export const Index: Record<string, any> = {
     "date-picker": {
       name: "date-picker",
       type: "components:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["button","popover"],
       component: React.lazy(() => import("@/registry/new-york/ui/date-picker")),
       files: ["registry/new-york/ui/date-picker.tsx"],
     },
@@ -814,7 +814,7 @@ export const Index: Record<string, any> = {
     "link": {
       name: "link",
       type: "components:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["button"],
       component: React.lazy(() => import("@/registry/new-york/ui/link")),
       files: ["registry/new-york/ui/link.tsx"],
     },
@@ -849,7 +849,7 @@ export const Index: Record<string, any> = {
     "radio-group": {
       name: "radio-group",
       type: "components:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["label"],
       component: React.lazy(() => import("@/registry/new-york/ui/radio-group")),
       files: ["registry/new-york/ui/radio-group.tsx"],
     },

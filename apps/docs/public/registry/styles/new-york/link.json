@@ -3,6 +3,9 @@
   "dependencies": [
     "react-aria-components"
   ],
+  "registryDependencies": [
+    "button"
+  ],
   "files": [
     {
       "name": "link.tsx",
