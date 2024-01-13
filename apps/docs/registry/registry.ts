@@ -368,13 +368,13 @@ const example: Registry = [
     name: "link-demo",
     type: "components:example/link",
     registryDependencies: ["link"],
-    files: ["example/input/link-demo.tsx"],
+    files: ["example/link/link-demo.tsx"],
   },
   {
     name: "link-variants",
     type: "components:example/link",
     registryDependencies: ["link"],
-    files: ["example/input/link-variants.tsx"],
+    files: ["example/link/link-variants.tsx"],
   },
   {
     name: "dropdown-menu-basic",
