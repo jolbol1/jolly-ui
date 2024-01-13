@@ -430,14 +430,14 @@ export const Index: Record<string, any> = {
       type: "components:example/link",
       registryDependencies: ["link"],
       component: React.lazy(() => import("@/registry/default/example/link/link-demo")),
-      files: ["registry/default/example/input/link-demo.tsx"],
+      files: ["registry/default/example/link/link-demo.tsx"],
     },
     "link-variants": {
       name: "link-variants",
       type: "components:example/link",
       registryDependencies: ["link"],
       component: React.lazy(() => import("@/registry/default/example/link/link-variants")),
-      files: ["registry/default/example/input/link-variants.tsx"],
+      files: ["registry/default/example/link/link-variants.tsx"],
     },
     "dropdown-menu-basic": {
       name: "dropdown-menu-basic",
@@ -1166,14 +1166,14 @@ export const Index: Record<string, any> = {
       type: "components:example/link",
       registryDependencies: ["link"],
       component: React.lazy(() => import("@/registry/new-york/example/link/link-demo")),
-      files: ["registry/new-york/example/input/link-demo.tsx"],
+      files: ["registry/new-york/example/link/link-demo.tsx"],
     },
     "link-variants": {
       name: "link-variants",
       type: "components:example/link",
       registryDependencies: ["link"],
       component: React.lazy(() => import("@/registry/new-york/example/link/link-variants")),
-      files: ["registry/new-york/example/input/link-variants.tsx"],
+      files: ["registry/new-york/example/link/link-variants.tsx"],
     },
     "dropdown-menu-basic": {
       name: "dropdown-menu-basic",
