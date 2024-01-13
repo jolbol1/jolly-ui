@@ -11,6 +11,7 @@ import { siteConfig } from "@/config/site"
 import { getTableOfContents } from "@/lib/toc"
 import { absoluteUrl, cn } from "@/lib/utils"
 import { badgeVariants } from "@/components/badge"
+import { Icons } from "@/components/icons"
 import { Mdx } from "@/components/mdx-components"
 import { DocsPager } from "@/components/pager"
 import { DashboardTableOfContents } from "@/components/toc"
@@ -118,6 +119,7 @@ export default async function DocPage({ params }: DocPageProps) {
                 rel="noreferrer"
                 className={cn(badgeVariants({ variant: "secondary" }), "gap-1")}
               >
+                <Icons.aria className="h-3 w-3" />
                 Docs
                 <ExternalLinkIcon className="h-3 w-3" />
               </Link>
