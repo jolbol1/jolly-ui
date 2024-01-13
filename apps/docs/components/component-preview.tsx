@@ -117,7 +117,7 @@ export function ComponentPreview({
           </div>
         </TabPanel>
         <TabPanel id="code">
-          <div className="w-full rounded-md [&_pre]:my-0 [&_pre]:max-h-[350px] [&_pre]:overflow-auto">
+          <div className="w-full rounded-md [&_pre]:my-0 [&_pre]:h-[412px] [&_pre]:max-h-[412px] [&_pre]:overflow-auto">
             {Code}
           </div>
         </TabPanel>
