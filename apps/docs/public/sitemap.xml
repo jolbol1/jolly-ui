@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url><loc>https://jollyui.dev</loc><lastmod>2024-01-13T18:15:00.988Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://jollyui.dev/docs/about</loc><lastmod>2024-01-13T18:15:00.989Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://jollyui.dev/docs/changelog</loc><lastmod>2024-01-13T18:15:00.989Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://jollyui.dev/docs</loc><lastmod>2024-01-13T18:15:00.989Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://jollyui.dev/docs/components/breadcrumbs</loc><lastmod>2024-01-13T18:15:00.989Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://jollyui.dev/docs/components/button</loc><lastmod>2024-01-13T18:15:00.989Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://jollyui.dev/docs/components/calendar</loc><lastmod>2024-01-13T18:15:00.989Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://jollyui.dev/docs/components/checkbox-group</loc><lastmod>2024-01-13T18:15:00.989Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://jollyui.dev/docs/components/checkbox</loc><lastmod>2024-01-13T18:15:00.989Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://jollyui.dev/docs/components/combobox</loc><lastmod>2024-01-13T18:15:00.989Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://jollyui.dev/docs/components/date-picker</loc><lastmod>2024-01-13T18:15:00.989Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://jollyui.dev/docs/components/dialog</loc><lastmod>2024-01-13T18:15:00.989Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://jollyui.dev/docs/components/dropzone</loc><lastmod>2024-01-13T18:15:00.989Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://jollyui.dev/docs/components/file-trigger</loc><lastmod>2024-01-13T18:15:00.989Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://jollyui.dev/docs/components/input</loc><lastmod>2024-01-13T18:15:00.989Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://jollyui.dev/docs/components/label</loc><lastmod>2024-01-13T18:15:00.989Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://jollyui.dev/docs/components/link</loc><lastmod>2024-01-13T18:15:00.989Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://jollyui.dev/docs/components/menu</loc><lastmod>2024-01-13T18:15:00.989Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://jollyui.dev/docs/components/meter</loc><lastmod>2024-01-13T18:15:00.989Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://jollyui.dev/docs/components/popover</loc><lastmod>2024-01-13T18:15:00.989Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://jollyui.dev/docs/components/progress</loc><lastmod>2024-01-13T18:15:00.989Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://jollyui.dev/docs/components/radio-group</loc><lastmod>2024-01-13T18:15:00.989Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://jollyui.dev/docs/components/select</loc><lastmod>2024-01-13T18:15:00.989Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://jollyui.dev/docs/components/separator</loc><lastmod>2024-01-13T18:15:00.989Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://jollyui.dev/docs/components/slider</loc><lastmod>2024-01-13T18:15:00.989Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://jollyui.dev/docs/components/switch</loc><lastmod>2024-01-13T18:15:00.989Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://jollyui.dev/docs/components/tabs</loc><lastmod>2024-01-13T18:15:00.989Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://jollyui.dev/docs/components/textarea</loc><lastmod>2024-01-13T18:15:00.989Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://jollyui.dev/docs/components/textfield</loc><lastmod>2024-01-13T18:15:00.989Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://jollyui.dev/docs/components/toggle</loc><lastmod>2024-01-13T18:15:00.989Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://jollyui.dev/docs/components/tooltip</loc><lastmod>2024-01-13T18:15:00.989Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://jollyui.dev/docs/installation</loc><lastmod>2024-01-13T18:15:00.989Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+</urlset>
