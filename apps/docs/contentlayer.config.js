@@ -114,12 +114,7 @@ export default makeSource({
       [
         rehypePrettyCode,
         {
-          getHighlighter: async () => {
-            const theme = await loadTheme(
-              path.join(process.cwd(), "/lib/themes/dark.json")
-            )
-            return await getHighlighter({ theme })
-          },
+          theme: "github-dark",
           onVisitLine(node) {
             // Prevent lines from collapsing in `display: grid` mode, and allow empty
             // lines to be copy/pasted
