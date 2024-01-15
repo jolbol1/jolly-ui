@@ -2,7 +2,6 @@ import { siteConfig } from "@/config/site"
 
 import "./globals.css"
 import "../styles/mdx.css"
-
 import type { Metadata } from "next"
 
 import {
@@ -13,6 +12,7 @@ import {
   fontSans,
 } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
+import { Analytics } from "@/components/analytics"
 import { AriaProvider } from "@/components/aria-provider"
 import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
@@ -111,6 +111,7 @@ export default function RootLayout({
               <SiteFooter />
             </div>
           </AriaProvider>
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
