@@ -17,7 +17,7 @@ export const docsConfig: DocsConfig = {
     },
     {
       title: "GitHub",
-      href: "https://github.com/jolbol1/shadcn-aria",
+      href: "https://github.com/jolbol1/jolly-ui",
       external: true,
     },
     {
