@@ -31,6 +31,8 @@ import {
 } from "@/registry/new-york/ui/select"
 import { Gray, Theme } from "@/registry/themes"
 
+import { copyToClipboardWithMeta } from "./copy-button"
+
 // TODO: Change listboxes to use radio groups
 // TODO: Fix selected key issue (^ solved by above)
 
@@ -331,8 +333,9 @@ function CustomizerCode() {
         <Button
           size="sm"
           onPress={() => {
-            navigator.clipboard.writeText(
-              getThemeCode(activeTheme, activeBase, currentBorderRadius)
+            copyToClipboardWithMeta(
+              getThemeCode(activeTheme, activeBase, currentBorderRadius),
+              { name: "copy_theme_code" }
             )
             setHasCopied(true)
           }}
