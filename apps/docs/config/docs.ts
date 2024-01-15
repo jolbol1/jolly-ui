@@ -28,7 +28,7 @@ export const docsConfig: DocsConfig = {
   ],
   sidebarNav: [
     {
-      title: "Installation",
+      title: "About",
       items: [
         {
           title: "Introduction",
@@ -43,7 +43,7 @@ export const docsConfig: DocsConfig = {
       ],
     },
     {
-      title: "Getting Started",
+      title: "Installation",
       items: [
         {
           title: "Installation",
