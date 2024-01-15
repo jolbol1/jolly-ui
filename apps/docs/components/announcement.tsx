@@ -10,8 +10,8 @@ export function Announcement() {
       className="inline-flex items-center rounded-lg bg-muted px-3 py-1 text-sm font-medium"
     >
       🎉 <Separator className="mx-2 h-4" orientation="vertical" />{" "}
-      <span className="sm:hidden">New name, new themes</span>
-      <span className="hidden sm:inline">New name, theme customizer.</span>
+      <span className="sm:hidden">New name, new themes, CLI</span>
+      <span className="hidden sm:inline">New name, theme customizer, CLI</span>
       <ArrowRightIcon className="ml-1 h-4 w-4" />
     </Link>
   )
