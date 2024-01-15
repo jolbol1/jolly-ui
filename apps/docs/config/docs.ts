@@ -1,8 +1,4 @@
-import { MainNavItem, SidebarNavItem } from "@/types/nav";
-
-
-
-
+import { MainNavItem, SidebarNavItem } from "@/types/nav"
 
 interface DocsConfig {
   mainNav: MainNavItem[]
@@ -32,7 +28,7 @@ export const docsConfig: DocsConfig = {
   ],
   sidebarNav: [
     {
-      title: "Getting Started",
+      title: "Installation",
       items: [
         {
           title: "Introduction",
@@ -40,13 +36,23 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Changelog",
+          href: "/docs/changelog",
+          items: [],
+        },
+      ],
+    },
+    {
+      title: "Getting Started",
+      items: [
+        {
           title: "Installation",
           href: "/docs/installation",
           items: [],
         },
         {
-          title: "Changelog",
-          href: "/docs/changelog",
+          title: "CLI",
+          href: "/docs/installation/cli",
           items: [],
         },
       ],

@@ -10,11 +10,22 @@ links:
 
 ## Installation
 
-<Tabs defaultValue="manual">
+<Tabs defaultValue="cli">
 
 <TabsList>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Copy & Paste</TabsTrigger>
 </TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx @sly-cli/sly add jolly-ui slider
+```
+
+**Note: Only the default style can be installed via CLI at the moment**
+
+</TabsContent>
 
 <TabsContent value="manual">
 
@@ -50,3 +61,4 @@ formatOptions is compatible with the option parameter ofs [Intl.NumberFormat](ht
 Sliders are horizontally oriented by default. The orientation prop can be set to "vertical" to create a vertical slider.
 
 <ComponentPreview name="slider-vertical" />
+```

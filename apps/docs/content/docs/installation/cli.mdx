@@ -1,0 +1,30 @@
+---
+title: CLI
+description: Use the command line to add Jolly-UI components to your application.
+---
+
+<Callout type="default">
+  At this time the command line can only install default styled components, not
+  new-york. For new york, please copy and paste. The addition of variants is
+  being tracked in this
+  [issue](https://github.com/jacobparis-insiders/sly/issues/35)
+</Callout>
+
+## Add components from CLI
+
+Once you have completed the install steps for the tailwind config and css, you can choose to add components
+via CLI instead.
+
+Run the following:
+
+```bash
+npx @sly-cli/sly add jolly-ui
+```
+
+This will list the components available to you to install, and will copy the code over for you.
+
+For a specific component you can also Run
+
+```bash
+npx @sly-cli/sly add jolly-ui [component_name]
+```

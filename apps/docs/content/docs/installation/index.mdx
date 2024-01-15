@@ -3,15 +3,262 @@ title: Installation
 description: How to install dependencies and structure your app.
 ---
 
-## shadcn/ui
+There are two ways to install this application. You can skip the first steps if you have shadcn/ui set-up.
 
-Setup can be done by using the shadcn/ui cli. You can find instructions for your framework [here](https://ui.shadcn.com/docs/installation).
+1. Use shadcn/ui cli to install required files (easiest way)
+2. Manually set up config files
 
-Next, install react-aria-components
+After using these methods, if you intend to use components with links please see the [Router Provider](#router-provider) instructions at the bottom.
+
+## Method 1: Using shadcn/ui cli
+
+<Steps>
+
+<Step>Run the init command</Step>
+
+```bash
+npx shadcn-ui@latest init
+```
+
+<Step>Install React Aria Components</Step>
 
 ```bash
 npm install react-aria-components
 ```
+
+<Step>Add an icon library</Step>
+
+If you're using the default style, install lucide-react:
+
+```bash
+npm install lucide-react
+```
+
+If you're using the new-york style, install @radix-ui/react-icons:
+
+```bash
+npm install @radix-ui/react-icons
+```
+
+</Steps>
+
+## Method 2: Manually set up config files
+
+<Steps>
+
+<Step>Install dependencies</Step>
+
+```bash
+npm install tailwindcss-animate class-variance-authority clsx tailwind-merge react-aria-components
+```
+
+<Step>Add an icon library</Step>
+
+If you're using the default style, install lucide-react:
+
+```bash
+npm install lucide-react
+```
+
+If you're using the new-york style, install @radix-ui/react-icons:
+
+```bash
+npm install @radix-ui/react-icons
+
+```
+
+<Step>Configure tailwind</Step>
+
+Here is an example tailwind config. The important parts here are the extended colors and tailwindcss-animate (tailwind.config.js/ts),
+
+```js title="tailwind.config.js"
+const { fontFamily } = require("tailwindcss/defaultTheme")
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  darkMode: ["class"],
+  content: ["app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}"],
+  theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
+    extend: {
+      colors: {
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+      },
+      borderRadius: {
+        lg: `var(--radius)`,
+        md: `calc(var(--radius) - 2px)`,
+        sm: "calc(var(--radius) - 4px)",
+      },
+      fontFamily: {
+        sans: ["var(--font-sans)", ...fontFamily.sans],
+      },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+      },
+    },
+  },
+  plugins: [require("tailwindcss-animate")],
+}
+```
+
+<Step>Configure css styles</Step>
+
+Add the following to your styles/globals.css file. These are the colors used in your theme. You can use the theme customizer on this site to generate different ones
+or bring your own styles.
+
+Its recommended to use HSL colors for theming but you can also use other color formats if you prefer.
+
+See the Tailwind CSS documentation for more information on using rgb, rgba or hsl colors.
+
+```css title="globals.css"
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
+  }
+}
+```
+
+<Step>Add the cn helper</Step>
+
+We use a `cn` helper to make it easier to conditionally add Tailwind CSS classes. Here's how I define it in `lib/utils.ts`:
+
+```ts title="lib/utils.ts"
+import { clsx, type ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
+```
+
+</Steps>
 
 ## Router Provider
 
