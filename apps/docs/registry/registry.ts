@@ -368,7 +368,7 @@ const example: Registry = [
     name: "label-demo",
     type: "components:example/label",
     registryDependencies: ["label"],
-    files: ["example/input/label-demo.tsx"],
+    files: ["example/label/label-demo.tsx"],
   },
   {
     name: "link-demo",

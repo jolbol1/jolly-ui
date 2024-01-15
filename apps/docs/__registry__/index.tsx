@@ -423,7 +423,7 @@ export const Index: Record<string, any> = {
       type: "components:example/label",
       registryDependencies: ["label"],
       component: React.lazy(() => import("@/registry/default/example/label/label-demo")),
-      files: ["registry/default/example/input/label-demo.tsx"],
+      files: ["registry/default/example/label/label-demo.tsx"],
     },
     "link-demo": {
       name: "link-demo",
@@ -1159,7 +1159,7 @@ export const Index: Record<string, any> = {
       type: "components:example/label",
       registryDependencies: ["label"],
       component: React.lazy(() => import("@/registry/new-york/example/label/label-demo")),
-      files: ["registry/new-york/example/input/label-demo.tsx"],
+      files: ["registry/new-york/example/label/label-demo.tsx"],
     },
     "link-demo": {
       name: "link-demo",
