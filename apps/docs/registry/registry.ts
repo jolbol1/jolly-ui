@@ -299,6 +299,12 @@ const example: Registry = [
     files: ["example/datepicker/date-picker-demo.tsx"],
   },
   {
+    name: "date-picker-range-demo",
+    type: "components:example/datepicker",
+    registryDependencies: ["datepicker"],
+    files: ["example/datepicker/date-picker-range-demo.tsx"],
+  },
+  {
     name: "date-picker-with-presets",
     type: "components:example/datepicker",
     registryDependencies: ["datepicker"],
