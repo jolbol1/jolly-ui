@@ -341,6 +341,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/example/datepicker/date-picker-demo")),
       files: ["registry/default/example/datepicker/date-picker-demo.tsx"],
     },
+    "date-picker-range-demo": {
+      name: "date-picker-range-demo",
+      type: "components:example/datepicker",
+      registryDependencies: ["datepicker"],
+      component: React.lazy(() => import("@/registry/default/example/datepicker/date-picker-range-demo")),
+      files: ["registry/default/example/datepicker/date-picker-range-demo.tsx"],
+    },
     "date-picker-with-presets": {
       name: "date-picker-with-presets",
       type: "components:example/datepicker",
@@ -1076,6 +1083,13 @@ export const Index: Record<string, any> = {
       registryDependencies: ["datepicker"],
       component: React.lazy(() => import("@/registry/new-york/example/datepicker/date-picker-demo")),
       files: ["registry/new-york/example/datepicker/date-picker-demo.tsx"],
+    },
+    "date-picker-range-demo": {
+      name: "date-picker-range-demo",
+      type: "components:example/datepicker",
+      registryDependencies: ["datepicker"],
+      component: React.lazy(() => import("@/registry/new-york/example/datepicker/date-picker-range-demo")),
+      files: ["registry/new-york/example/datepicker/date-picker-range-demo.tsx"],
     },
     "date-picker-with-presets": {
       name: "date-picker-with-presets",

@@ -17,12 +17,16 @@ import {
   CalendarHeaderCell,
   CalendarHeaderCellProps,
   Heading,
+  RangeCalendar,
+  RangeCalendarStateContext,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/registry/new-york/ui/button"
 
 const _Calendar = Calendar
+
+const _RangeCalendar = RangeCalendar
 
 const _CalendarHeading = ({
   ...props
@@ -54,8 +58,13 @@ const _CalendarHeading = ({
   </header>
 )
 
-const _CalendarGrid = ({ className, ...props }: CalendarGridProps) => (
+const _CalendarGrid = ({
+  className,
+  weekdayStyle = "short",
+  ...props
+}: CalendarGridProps) => (
   <CalendarGrid
+    weekdayStyle={weekdayStyle}
     className={cn("mt-4 w-full border-collapse space-y-1", className)}
     {...props}
   />
@@ -85,35 +94,45 @@ const _CalendarGridBody = ({ className, ...props }: CalendarGridBodyProps) => (
   <CalendarGridBody
     className={cn(
       "[&>tr>td]:p-0 [&>tr]:mt-2 [&>tr]:flex [&>tr]:w-full",
+      "[&>tr>td:first-child>div]:rounded-l-md [&>tr>td:last-child>div]:rounded-r-md",
       className
     )}
     {...props}
   />
 )
 
-const _CalendarCell = ({ className, date, ...props }: CalendarCellProps) => (
-  <CalendarCell
-    className={(values) =>
-      cn(
-        "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm transition-colors data-[disabled]:pointer-events-none data-[hovered]:bg-accent data-[hovered]:text-accent-foreground data-[disabled]:opacity-50",
-        "h-8 w-8 p-0 font-normal data-[selected]:opacity-100",
-        date.compare(today(getLocalTimeZone())) === 0 &&
-          "bg-accent text-accent-foreground",
-        values.isDisabled && "text-muted-foreground opacity-50",
-        values.isFocusVisible &&
-          values.isFocused &&
-          "outline-none ring-2 ring-ring ring-offset-2",
-        values.isSelected &&
-          "bg-primary text-primary-foreground data-[focused]:bg-primary data-[hovered]:bg-primary data-[focused]:text-primary-foreground data-[hovered]:text-primary-foreground",
-        values.isOutsideMonth &&
-          "text-muted-foreground opacity-50 data-[selected]:bg-accent/50 data-[selected]:text-muted-foreground data-[selected]:opacity-30",
-        typeof className === "function" ? className(values) : className
-      )
-    }
-    date={date}
-    {...props}
-  />
-)
+const _CalendarCell = ({ className, date, ...props }: CalendarCellProps) => {
+  const isRange = Boolean(React.useContext(RangeCalendarStateContext))
+
+  return (
+    <CalendarCell
+      className={(values) =>
+        cn(
+          "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm transition-colors data-[disabled]:pointer-events-none data-[hovered]:bg-accent data-[hovered]:text-accent-foreground data-[disabled]:opacity-50",
+          "h-8 w-8 p-0 font-normal data-[selected]:opacity-100",
+          date.compare(today(getLocalTimeZone())) === 0 &&
+            "bg-accent text-accent-foreground",
+          values.isDisabled && "text-muted-foreground opacity-50",
+          values.isFocusVisible &&
+            values.isFocused &&
+            "outline-none ring-2 ring-ring ring-offset-2",
+          values.isSelected &&
+            isRange &&
+            "rounded-none bg-accent text-accent-foreground",
+          ((values.isSelected && !isRange) ||
+            values.isSelectionStart ||
+            values.isSelectionEnd) &&
+            "rounded-md bg-primary text-primary-foreground data-[focused]:bg-primary data-[hovered]:bg-primary data-[focused]:text-primary-foreground data-[hovered]:text-primary-foreground",
+          values.isOutsideMonth &&
+            "text-muted-foreground opacity-50 data-[selected]:bg-accent/50 data-[selected]:text-muted-foreground data-[selected]:opacity-30",
+          typeof className === "function" ? className(values) : className
+        )
+      }
+      date={date}
+      {...props}
+    />
+  )
+}
 
 export {
   _Calendar as Calendar,
@@ -123,4 +142,5 @@ export {
   _CalendarGridHeader as CalendarGridHeader,
   _CalendarHeaderCell as CalendarHeaderCell,
   _CalendarHeading as CalendarHeading,
+  _RangeCalendar as RangeCalendar,
 }

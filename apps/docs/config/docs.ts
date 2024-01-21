@@ -95,13 +95,11 @@ export const docsConfig: DocsConfig = {
           title: "Calendar",
           href: "/docs/components/calendar",
           items: [],
-          label: "needs work",
         },
         {
           title: "Date Picker",
           href: "/docs/components/date-picker",
           items: [],
-          label: "needs work",
         },
       ],
     },

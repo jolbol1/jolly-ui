@@ -3,12 +3,15 @@ import { format } from "date-fns"
 import { CalendarIcon } from "lucide-react"
 import {
   DatePicker,
+  DateRangePicker,
+  DateRangePickerProps,
   DateValue,
   Dialog,
   DialogProps,
   Group,
   GroupProps,
   PopoverProps,
+  RangeCalendarProps,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"
@@ -16,6 +19,8 @@ import { Button } from "@/registry/default/ui/button"
 import { Popover } from "@/registry/default/ui/popover"
 
 const _DatePicker = DatePicker
+
+const _DateRangePicker = DateRangePicker
 
 export interface _DatePickerButtonProps extends GroupProps {
   date?: DateValue
@@ -41,6 +46,36 @@ const _DatePickerButton = ({ date, ...props }: _DatePickerButtonProps) => (
   </Group>
 )
 
+export interface _DateRangePickerButtonProps extends GroupProps {
+  date?: DateRangePickerProps<DateValue>["value"]
+}
+
+const _DateRangePickerButton = ({
+  date,
+  ...props
+}: _DateRangePickerButtonProps) => (
+  <Group {...props}>
+    <Button
+      variant="outline"
+      className={cn(
+        "w-[280px] justify-start text-left font-normal",
+        !date && "text-muted-foreground"
+      )}
+    >
+      <CalendarIcon className="mr-2 h-4 w-4" />
+
+      {date?.end ? (
+        <>
+          {format(date.start.toDate(getLocalTimeZone()), "LLL dd, y")} -{" "}
+          {format(date.end.toDate(getLocalTimeZone()), "LLL dd, y")}
+        </>
+      ) : (
+        <span>Pick a date</span>
+      )}
+    </Button>
+  </Group>
+)
+
 const _DatePickerContent = ({
   className,
   popoverClassName,
@@ -58,7 +93,7 @@ const _DatePickerContent = ({
   >
     <Dialog
       className={cn(
-        "flex w-full flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0",
+        "flex w-full flex-col space-y-4 outline-none sm:flex-row sm:space-x-4 sm:space-y-0",
         className
       )}
       {...props}
@@ -70,4 +105,6 @@ export {
   _DatePicker as DatePicker,
   _DatePickerButton as DatePickerButton,
   _DatePickerContent as DatePickerContent,
+  _DateRangePicker as DateRangePicker,
+  _DateRangePickerButton as DateRangePickerButton,
 }
