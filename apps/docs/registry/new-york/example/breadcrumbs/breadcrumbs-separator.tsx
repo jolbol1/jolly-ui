@@ -1,3 +1,5 @@
+import { SlashIcon } from "@radix-ui/react-icons"
+
 import {
   BreadcrumbItem,
   BreadcrumbLink,
@@ -6,16 +8,20 @@ import {
   Breadcrumbs,
 } from "@/registry/new-york/ui/breadcrumbs"
 
-export function BreadcrumbsDemo() {
+export function BreadcrumbsSeparator() {
   return (
     <Breadcrumbs>
       <BreadcrumbItem>
         <BreadcrumbLink href="/home">Home</BreadcrumbLink>
-        <BreadcrumbSeparator />
+        <BreadcrumbSeparator>
+          <SlashIcon />
+        </BreadcrumbSeparator>
       </BreadcrumbItem>
       <BreadcrumbItem>
         <BreadcrumbLink href="/docs">Docs</BreadcrumbLink>
-        <BreadcrumbSeparator />
+        <BreadcrumbSeparator>
+          <SlashIcon />
+        </BreadcrumbSeparator>
       </BreadcrumbItem>
       <BreadcrumbItem>
         <BreadcrumbPage>Breadcrumbs</BreadcrumbPage>
@@ -24,4 +30,4 @@ export function BreadcrumbsDemo() {
   )
 }
 
-export default BreadcrumbsDemo
+export default BreadcrumbsSeparator

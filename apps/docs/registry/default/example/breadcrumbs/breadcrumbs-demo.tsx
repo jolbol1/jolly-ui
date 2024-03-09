@@ -1,11 +1,25 @@
-import { BreadcrumbItem, Breadcrumbs } from "@/registry/default/ui/breadcrumbs"
+import {
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+  Breadcrumbs,
+} from "@/registry/default/ui/breadcrumbs"
 
 export function BreadcrumbsDemo() {
   return (
     <Breadcrumbs>
-      <BreadcrumbItem href="/">Home</BreadcrumbItem>
-      <BreadcrumbItem href="/docs">Docs</BreadcrumbItem>
-      <BreadcrumbItem>Breadcrumbs</BreadcrumbItem>
+      <BreadcrumbItem>
+        <BreadcrumbLink href="/home">Home</BreadcrumbLink>
+        <BreadcrumbSeparator />
+      </BreadcrumbItem>
+      <BreadcrumbItem>
+        <BreadcrumbLink href="/docs">Docs</BreadcrumbLink>
+        <BreadcrumbSeparator />
+      </BreadcrumbItem>
+      <BreadcrumbItem>
+        <BreadcrumbPage>Breadcrumbs</BreadcrumbPage>
+      </BreadcrumbItem>
     </Breadcrumbs>
   )
 }

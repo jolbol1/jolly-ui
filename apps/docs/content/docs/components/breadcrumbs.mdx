@@ -48,11 +48,72 @@ The `<BreadcrumbItem>` component works with frameworks and client side routers l
 As with other React Aria components that support links, this works via the `RouterProvider` component at the root of your app.
 See the [client side routing guide](https://react-spectrum.adobe.com/react-aria/routing.html) to learn how to set this up.
 
+## Landmark
+
+<Callout type="warning">
+  We do not wrap breadcrumbs in a navigation landmark by default. This is in
+  line with [react-aria's
+  behavior](https://react-spectrum.adobe.com/react-aria/Breadcrumbs.html#landmarks).
+  It is up to the user to decide when breadcrumbs should be a navigation
+  landmark.
+</Callout>
+
+When breadcrumbs are used as a main navigation element for a page, they can be placed in a navigation landmark.
+Landmarks help assistive technology users quickly find major sections of a page.
+
+```tsx
+<nav aria-label="Breadcrumbs">
+  <Breadcrumbs>
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/home">Home</BreadcrumbLink>
+      <BreadcrumbSeparator />
+    </BreadcrumbItem>
+    ...
+  </Breadcrumbs>
+</nav>
+```
+
+It is best to keep the number of landmarks on a page to a minimum, so only
+place breadcrumbs in a navigation landmark when it represents the primary or
+secondary navigation for the page. For example, breadcrumbs within table rows
+or popovers most likely should not be landmarks.
+
 ## Usage
 
 ### Basic
 
 <ComponentPreview name="breadcrumbs-demo" />
+
+### Disabled
+
+You can disable all breadcrumb items by using the `isDisabled` prop on the `<Breadcrumbs>` component.
+
+Individual breadcrumbs can also be disabled by passing the isDisabled prop to the `<BreadcrumbLink>`.
+
+<ComponentPreview name="breadcrumbs-disabled" />
+
+### Custom Separator
+
+To use a custom separator simply place the component as a child of `<BreadcrumbSeparator>`.
+
+Make sure the separators are within `<BreadcrumbItem>`.
+
+<ComponentPreview name="breadcrumbs-separator" />
+
+### Dropdown
+
+If the navigation is too large, you could compose a `<BreadcrumbItem>` with a dropdown. You can do this
+by utilizing the [Menu Component](./menu).
+
+<ComponentPreview name="breadcrumbs-dropdown" />
+
+### Collapsed
+
+Use `<BreadcrumbEllipsis />` component to show collapsed state if the breadcrumb is too long.
+
+You could also combine this with a dropdown menu to show the collapsed links.
+
+<ComponentPreview name="breadcrumbs-ellipsis" />
 
 ### Dynamic Items
 
@@ -62,5 +123,7 @@ Dynamic collections, as shown below, can be used when the options come from an e
 As seen below, an iterable list of options is passed to the Breadcrumbs using the items prop.
 A function provided as children of the `<Breadcrumbs>` is called to render each item.
 When a breadcrumb is pressed, the onAction event is triggered and the breadcrumbs array is updated
+
+More information can be found on the [react-aria documentation](https://react-spectrum.adobe.com/react-aria/Breadcrumbs.html#content).
 
 <ComponentPreview name="breadcrumbs-items" />

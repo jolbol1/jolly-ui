@@ -1,21 +1,27 @@
+import { Slash } from "lucide-react"
+
 import {
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbPage,
   BreadcrumbSeparator,
   Breadcrumbs,
-} from "@/registry/new-york/ui/breadcrumbs"
+} from "@/registry/default/ui/breadcrumbs"
 
-export function BreadcrumbsDemo() {
+export function BreadcrumbsSeparator() {
   return (
     <Breadcrumbs>
       <BreadcrumbItem>
         <BreadcrumbLink href="/home">Home</BreadcrumbLink>
-        <BreadcrumbSeparator />
+        <BreadcrumbSeparator>
+          <Slash />
+        </BreadcrumbSeparator>
       </BreadcrumbItem>
       <BreadcrumbItem>
         <BreadcrumbLink href="/docs">Docs</BreadcrumbLink>
-        <BreadcrumbSeparator />
+        <BreadcrumbSeparator>
+          <Slash />
+        </BreadcrumbSeparator>
       </BreadcrumbItem>
       <BreadcrumbItem>
         <BreadcrumbPage>Breadcrumbs</BreadcrumbPage>
@@ -24,4 +30,4 @@ export function BreadcrumbsDemo() {
   )
 }
 
-export default BreadcrumbsDemo
+export default BreadcrumbsSeparator

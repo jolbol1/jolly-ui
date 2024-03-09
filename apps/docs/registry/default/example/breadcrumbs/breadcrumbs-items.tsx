@@ -1,7 +1,12 @@
 import React from "react"
 import { Key } from "react-aria-components"
 
-import { BreadcrumbItem, Breadcrumbs } from "@/registry/default/ui/breadcrumbs"
+import {
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbSeparator,
+  Breadcrumbs,
+} from "@/registry/default/ui/breadcrumbs"
 
 export function BreadcrumbsItems() {
   let [breadcrumbs, setBreadcrumbs] = React.useState([
@@ -17,7 +22,12 @@ export function BreadcrumbsItems() {
 
   return (
     <Breadcrumbs items={breadcrumbs} onAction={navigate}>
-      {(item) => <BreadcrumbItem>{item.label}</BreadcrumbItem>}
+      {(item) => (
+        <BreadcrumbItem className="last:font-normal last:text-foreground last:[&>span]:last:hidden">
+          <BreadcrumbLink>{item.label}</BreadcrumbLink>
+          <BreadcrumbSeparator />
+        </BreadcrumbItem>
+      )}
     </Breadcrumbs>
   )
 }

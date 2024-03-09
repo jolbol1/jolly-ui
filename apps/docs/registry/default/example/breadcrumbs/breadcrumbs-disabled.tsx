@@ -4,11 +4,11 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
   Breadcrumbs,
-} from "@/registry/new-york/ui/breadcrumbs"
+} from "@/registry/default/ui/breadcrumbs"
 
-export function BreadcrumbsDemo() {
+export function BreadcrumbsDisabled() {
   return (
-    <Breadcrumbs>
+    <Breadcrumbs isDisabled>
       <BreadcrumbItem>
         <BreadcrumbLink href="/home">Home</BreadcrumbLink>
         <BreadcrumbSeparator />
@@ -24,4 +24,4 @@ export function BreadcrumbsDemo() {
   )
 }
 
-export default BreadcrumbsDemo
+export default BreadcrumbsDisabled
