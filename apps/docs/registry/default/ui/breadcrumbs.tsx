@@ -35,7 +35,7 @@ const BreadcrumbItem = ({ className, ...props }: BreadcrumbProps) => (
 const BreadcrumbLink = ({ className, ...props }: LinkProps) => (
   <Link
     className={cn(
-      "transition-colors hover:text-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      "transition-colors hover:text-foreground data-[disabled]:pointer-events-none data-[current]:pointer-events-auto data-[current]:opacity-100 data-[disabled]:opacity-50",
       className
     )}
     {...props}
