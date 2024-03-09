@@ -1,4 +1,5 @@
 import {
+  BreadcrumbEllipsis,
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbPage,
@@ -6,11 +7,15 @@ import {
   Breadcrumbs,
 } from "@/registry/new-york/ui/breadcrumbs"
 
-export function BreadcrumbsDemo() {
+export function BreadcrumbsEllipsis() {
   return (
     <Breadcrumbs>
       <BreadcrumbItem>
         <BreadcrumbLink href="/home">Home</BreadcrumbLink>
+        <BreadcrumbSeparator />
+      </BreadcrumbItem>
+      <BreadcrumbItem>
+        <BreadcrumbEllipsis />
         <BreadcrumbSeparator />
       </BreadcrumbItem>
       <BreadcrumbItem>
@@ -24,4 +29,4 @@ export function BreadcrumbsDemo() {
   )
 }
 
-export default BreadcrumbsDemo
+export default BreadcrumbsEllipsis

@@ -1,6 +1,6 @@
 "use client"
 
-import { ChevronRightIcon } from "@radix-ui/react-icons"
+import { ChevronRightIcon, DotsHorizontalIcon } from "@radix-ui/react-icons"
 import {
   Breadcrumb,
   BreadcrumbProps,
@@ -12,58 +12,77 @@ import {
 
 import { cn } from "@/lib/utils"
 
-import { buttonVariants } from "./button"
-
 const _Breadcrumbs = <T extends object>({
   className,
   ...props
 }: BreadcrumbsProps<T>) => (
-  <Breadcrumbs className={cn("flex flex-wrap ", className)} {...props} />
+  <Breadcrumbs
+    className={cn(
+      "flex flex-wrap items-center gap-1.5 break-words text-sm text-muted-foreground sm:gap-2.5",
+      className
+    )}
+    {...props}
+  />
 )
 
-interface BreadcrumbItemProps extends Omit<BreadcrumbProps, "children"> {
-  linkClassName?: LinkProps["className"]
-  href?: LinkProps["href"]
-  linkProps?: Omit<LinkProps, "className" | "href" | "children">
-  children?: LinkProps["children"]
-}
+const BreadcrumbItem = ({ className, ...props }: BreadcrumbProps) => (
+  <Breadcrumb
+    className={cn("inline-flex items-center gap-1.5 sm:gap-2.5", className)}
+    {...props}
+  />
+)
 
-const BreadcrumbItem = ({
-  className,
-  linkClassName,
-  href,
-  linkProps,
+const BreadcrumbLink = ({ className, ...props }: LinkProps) => (
+  <Link
+    className={cn(
+      "transition-colors hover:text-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      className
+    )}
+    {...props}
+  />
+)
+
+const BreadcrumbSeparator = ({
   children,
+  className,
   ...props
-}: BreadcrumbItemProps) => {
-  return (
-    <Breadcrumb className={cn("flex items-center", className)} {...props}>
-      <Link
-        className={(values) =>
-          cn(
-            buttonVariants({
-              variant: "link",
-              className: "data-[disabled]:opacity-100",
-            }),
-            "peer p-1 opacity-50",
-            "data-[disabled]:opacity-100",
-            "text-foreground",
-            typeof linkClassName === "function"
-              ? linkClassName(values)
-              : linkClassName
-          )
-        }
-        href={href}
-        {...linkProps}
-      >
-        {children}
-      </Link>
-      <ChevronRightIcon
-        aria-hidden="true"
-        className="h-4 w-4 peer-data-[current]:hidden"
-      />
-    </Breadcrumb>
-  )
-}
+}: React.ComponentProps<"span">) => (
+  <span
+    role="presentation"
+    aria-hidden="true"
+    className={cn("[&>svg]:size-3.5", className)}
+    {...props}
+  >
+    {children || <ChevronRightIcon />}
+  </span>
+)
 
-export { _Breadcrumbs as Breadcrumbs, BreadcrumbItem }
+const BreadcrumbEllipsis = ({
+  className,
+  ...props
+}: React.ComponentProps<"span">) => (
+  <span
+    role="presentation"
+    aria-hidden="true"
+    className={cn("flex h-9 w-9 items-center justify-center", className)}
+    {...props}
+  >
+    <DotsHorizontalIcon className="h-4 w-4" />
+    <span className="sr-only">More</span>
+  </span>
+)
+
+interface BreadcrumbPageProps extends Omit<LinkProps, "href"> {}
+
+const BreadcrumbPage = ({ className, ...props }: BreadcrumbPageProps) => (
+  <Link className={cn("font-normal text-foreground", className)} {...props} />
+)
+
+export {
+  _Breadcrumbs as Breadcrumbs,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+  BreadcrumbEllipsis,
+}

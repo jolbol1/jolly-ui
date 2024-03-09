@@ -155,6 +155,30 @@ const example: Registry = [
     files: ["example/breadcrumbs/breadcrumbs-demo.tsx"],
   },
   {
+    name: "breadcrumbs-dropdown",
+    type: "components:example/breadcrumbs",
+    registryDependencies: ["breadcrumbs"],
+    files: ["example/breadcrumbs/breadcrumbs-dropdown.tsx"],
+  },
+  {
+    name: "breadcrumbs-disabled",
+    type: "components:example/breadcrumbs",
+    registryDependencies: ["breadcrumbs"],
+    files: ["example/breadcrumbs/breadcrumbs-disabled.tsx"],
+  },
+  {
+    name: "breadcrumbs-ellipsis",
+    type: "components:example/breadcrumbs",
+    registryDependencies: ["breadcrumbs"],
+    files: ["example/breadcrumbs/breadcrumbs-ellipsis.tsx"],
+  },
+  {
+    name: "breadcrumbs-separator",
+    type: "components:example/breadcrumbs",
+    registryDependencies: ["breadcrumbs"],
+    files: ["example/breadcrumbs/breadcrumbs-separator.tsx"],
+  },
+  {
     name: "breadcrumbs-items",
     type: "components:example/breadcrumbs",
     registryDependencies: ["breadcrumbs"],
