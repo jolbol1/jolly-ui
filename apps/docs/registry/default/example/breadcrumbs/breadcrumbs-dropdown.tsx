@@ -15,7 +15,7 @@ import {
   MenuTrigger,
 } from "@/registry/default/ui/menu"
 
-export function BreadcrumbsDemo() {
+export function BreadcrumbsDropdown() {
   return (
     <Breadcrumbs>
       <BreadcrumbItem>
@@ -45,4 +45,4 @@ export function BreadcrumbsDemo() {
   )
 }
 
-export default BreadcrumbsDemo
+export default BreadcrumbsDropdown
