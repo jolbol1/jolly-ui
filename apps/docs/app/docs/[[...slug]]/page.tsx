@@ -15,7 +15,13 @@ import { Icons } from "@/components/icons"
 import { Mdx } from "@/components/mdx-components"
 import { DocsPager } from "@/components/pager"
 import { DashboardTableOfContents } from "@/components/toc"
-import { BreadcrumbItem, Breadcrumbs } from "@/registry/new-york/ui/breadcrumbs"
+import { BreadcrumbPage } from "@/registry/default/ui/breadcrumbs"
+import {
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbSeparator,
+  Breadcrumbs,
+} from "@/registry/new-york/ui/breadcrumbs"
 
 interface DocPageProps {
   params: {
@@ -91,14 +97,29 @@ export default async function DocPage({ params }: DocPageProps) {
     <main className="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
       <div className="mx-auto w-full min-w-0">
         <Breadcrumbs className="mb-4">
-          <BreadcrumbItem
-            linkClassName="pl-0
-          "
-            href="/docs"
-          >
-            Docs
+          <BreadcrumbItem>
+            <BreadcrumbLink className="capitalize" href="/docs">
+              Docs
+            </BreadcrumbLink>
+            <BreadcrumbSeparator />
           </BreadcrumbItem>
-          <BreadcrumbItem>{doc.title}</BreadcrumbItem>
+          {doc.slugAsParams
+            .split("/")
+            .slice(0, -1)
+            .map((link, index) => {
+              return (
+                <BreadcrumbItem key={link}>
+                  <BreadcrumbLink className="capitalize" href={`/docs/${link}`}>
+                    {link}
+                  </BreadcrumbLink>
+                  <BreadcrumbSeparator />
+                </BreadcrumbItem>
+              )
+            })}
+
+          <BreadcrumbItem>
+            <BreadcrumbPage>{doc.title}</BreadcrumbPage>
+          </BreadcrumbItem>
         </Breadcrumbs>
         <div className="space-y-2">
           <h1 className={cn("scroll-m-20 text-4xl font-bold tracking-tight")}>
