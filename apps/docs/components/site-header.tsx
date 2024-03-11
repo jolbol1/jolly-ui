@@ -5,6 +5,7 @@ import { Icons } from "./icons"
 import { MainNav } from "./main-nav"
 import { MobileNav } from "./mobile-nav"
 import { ModeToggle } from "./mode-toggle"
+import { Search } from "./search-component"
 import { ThemeCustomizer } from "./theme-customizer"
 
 export function SiteHeader() {
@@ -17,7 +18,8 @@ export function SiteHeader() {
           {/* <div className="w-full flex-1 md:w-auto md:flex-none">
             <CommandMenu />
           </div> */}
-          <nav className="flex items-center gap-2">
+          <nav className="flex flex-1 items-center justify-end gap-2">
+            <Search />
             <ThemeCustomizer hide={true} shrink={true} />
             <Link
               href={siteConfig.links.github}
@@ -25,6 +27,7 @@ export function SiteHeader() {
               variant="ghost"
               size="icon"
               rel="noreferrer"
+              className="hidden sm:inline-flex"
             >
               <Icons.gitHub className="h-4 w-4" />
               <span className="sr-only">GitHub</span>
@@ -35,6 +38,7 @@ export function SiteHeader() {
               variant="ghost"
               size="icon"
               rel="noreferrer"
+              className="hidden sm:inline-flex"
             >
               <Icons.twitter className="h-3 w-3 fill-current" />
               <span className="sr-only">Twitter</span>
