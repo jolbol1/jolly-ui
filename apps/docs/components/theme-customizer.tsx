@@ -69,10 +69,12 @@ export function ThemeCustomizer({
     <DialogTrigger>
       <Button
         variant="default"
-        className={cn(shrink && "h-9 w-9 p-0 sm:h-9 sm:w-auto sm:px-4 sm:py-2")}
+        className={cn(
+          shrink && "h-9 min-w-9 p-0 sm:py-2 lg:h-9 lg:w-auto lg:px-4"
+        )}
       >
-        <Settings2 className={cn("mr-2", shrink && "mr-0 sm:mr-2")} />
-        <p className={cn(shrink && "hidden sm:inline-block")}>Customize</p>
+        <Settings2 className={cn("mr-2", shrink && "mr-0 lg:mr-2")} />
+        <p className={cn(shrink && "hidden lg:inline-block")}>Customize</p>
       </Button>
       <DialogOverlay className="bg-transparent backdrop-blur-none">
         <DialogContent side="right" className="w-3/4 p-4 pb-0">

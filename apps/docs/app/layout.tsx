@@ -18,6 +18,8 @@ import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
 import { ThemeProvider } from "@/components/theme-provider"
 
+import "@docsearch/css"
+
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
