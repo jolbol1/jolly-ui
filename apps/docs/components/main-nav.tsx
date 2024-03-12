@@ -1,6 +1,5 @@
 "use client"
 
-import * as React from "react"
 import { usePathname } from "next/navigation"
 import { DocSearch } from "@docsearch/react"
 

@@ -132,6 +132,11 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Searchfield",
+          href: "/docs/components/searchfield",
+          items: [],
+        },
+        {
           title: "Slider",
           href: "/docs/components/slider",
           items: [],

@@ -117,6 +117,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/ui/radio-group")),
       files: ["registry/default/ui/radio-group.tsx"],
     },
+    "searchfield": {
+      name: "searchfield",
+      type: "components:ui",
+      registryDependencies: undefined,
+      component: React.lazy(() => import("@/registry/default/ui/searchfield")),
+      files: ["registry/default/ui/searchfield.tsx"],
+    },
     "select": {
       name: "select",
       type: "components:ui",
@@ -579,6 +586,20 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/example/radio/radio-group-orientation")),
       files: ["registry/default/example/radio/radio-group-orientation.tsx"],
     },
+    "searchfield-demo": {
+      name: "searchfield-demo",
+      type: "components:example/searchfield",
+      registryDependencies: ["searchfield"],
+      component: React.lazy(() => import("@/registry/default/example/searchfield/searchfield-demo")),
+      files: ["registry/default/example/searchfield/searchfield-demo.tsx"],
+    },
+    "searchfield-disabled": {
+      name: "searchfield-disabled",
+      type: "components:example/searchfield",
+      registryDependencies: ["searchfield"],
+      component: React.lazy(() => import("@/registry/default/example/searchfield/searchfield-disabled")),
+      files: ["registry/default/example/searchfield/searchfield-disabled.tsx"],
+    },
     "select-demo": {
       name: "select-demo",
       type: "components:example/select",
@@ -887,6 +908,13 @@ export const Index: Record<string, any> = {
       registryDependencies: ["label"],
       component: React.lazy(() => import("@/registry/new-york/ui/radio-group")),
       files: ["registry/new-york/ui/radio-group.tsx"],
+    },
+    "searchfield": {
+      name: "searchfield",
+      type: "components:ui",
+      registryDependencies: undefined,
+      component: React.lazy(() => import("@/registry/new-york/ui/searchfield")),
+      files: ["registry/new-york/ui/searchfield.tsx"],
     },
     "select": {
       name: "select",
@@ -1349,6 +1377,20 @@ export const Index: Record<string, any> = {
       registryDependencies: ["radio-group"],
       component: React.lazy(() => import("@/registry/new-york/example/radio/radio-group-orientation")),
       files: ["registry/new-york/example/radio/radio-group-orientation.tsx"],
+    },
+    "searchfield-demo": {
+      name: "searchfield-demo",
+      type: "components:example/searchfield",
+      registryDependencies: ["searchfield"],
+      component: React.lazy(() => import("@/registry/new-york/example/searchfield/searchfield-demo")),
+      files: ["registry/new-york/example/searchfield/searchfield-demo.tsx"],
+    },
+    "searchfield-disabled": {
+      name: "searchfield-disabled",
+      type: "components:example/searchfield",
+      registryDependencies: ["searchfield"],
+      component: React.lazy(() => import("@/registry/new-york/example/searchfield/searchfield-disabled")),
+      files: ["registry/new-york/example/searchfield/searchfield-disabled.tsx"],
     },
     "select-demo": {
       name: "select-demo",

@@ -179,6 +179,16 @@
     "type": "components:ui"
   },
   {
+    "name": "searchfield",
+    "dependencies": [
+      "react-aria-components"
+    ],
+    "files": [
+      "ui/searchfield.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
     "name": "select",
     "dependencies": [
       "react-aria-components"

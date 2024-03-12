@@ -104,6 +104,12 @@ const ui: Registry = [
     files: ["ui/radio-group.tsx"],
   },
   {
+    name: "searchfield",
+    type: "components:ui",
+    dependencies: ["react-aria-components"],
+    files: ["ui/searchfield.tsx"],
+  },
+  {
     name: "select",
     type: "components:ui",
     dependencies: ["react-aria-components"],
@@ -501,6 +507,18 @@ const example: Registry = [
     type: "components:example/radio",
     registryDependencies: ["radio-group"],
     files: ["example/radio/radio-group-orientation.tsx"],
+  },
+  {
+    name: "searchfield-demo",
+    type: "components:example/searchfield",
+    registryDependencies: ["searchfield"],
+    files: ["example/searchfield/searchfield-demo.tsx"],
+  },
+  {
+    name: "searchfield-disabled",
+    type: "components:example/searchfield",
+    registryDependencies: ["searchfield"],
+    files: ["example/searchfield/searchfield-disabled.tsx"],
   },
   {
     name: "select-demo",

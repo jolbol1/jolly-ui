@@ -106,7 +106,7 @@ export default async function DocPage({ params }: DocPageProps) {
           {doc.slugAsParams
             .split("/")
             .slice(0, -1)
-            .map((link, index) => {
+            .map((link) => {
               return (
                 <BreadcrumbItem key={link}>
                   <BreadcrumbLink className="capitalize" href={`/docs/${link}`}>
