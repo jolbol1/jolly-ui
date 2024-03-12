@@ -1,7 +1,8 @@
 {
   "name": "link",
   "dependencies": [
-    "react-aria-components"
+    "react-aria-components",
+    "class-variance-authority"
   ],
   "registryDependencies": [
     "button"

@@ -11,7 +11,7 @@ const ui: Registry = [
   {
     name: "button",
     type: "components:ui",
-    dependencies: ["react-aria-components"],
+    dependencies: ["react-aria-components", "class-variance-authority"],
     files: ["ui/button.tsx"],
   },
   {
@@ -44,7 +44,7 @@ const ui: Registry = [
   {
     name: "dialog",
     type: "components:ui",
-    dependencies: ["react-aria-components"],
+    dependencies: ["react-aria-components", "class-variance-authority"],
     files: ["ui/dialog.tsx"],
   },
   {
@@ -62,13 +62,13 @@ const ui: Registry = [
   {
     name: "label",
     type: "components:ui",
-    dependencies: ["react-aria-components"],
+    dependencies: ["react-aria-components", "class-variance-authority"],
     files: ["ui/label.tsx"],
   },
   {
     name: "link",
     type: "components:ui",
-    dependencies: ["react-aria-components"],
+    dependencies: ["react-aria-components", "class-variance-authority"],
     registryDependencies: ["button"],
     files: ["ui/link.tsx"],
   },
@@ -142,7 +142,7 @@ const ui: Registry = [
   {
     name: "toggle",
     type: "components:ui",
-    dependencies: ["react-aria-components"],
+    dependencies: ["react-aria-components", "class-variance-authority"],
     files: ["ui/toggle.tsx"],
   },
   {

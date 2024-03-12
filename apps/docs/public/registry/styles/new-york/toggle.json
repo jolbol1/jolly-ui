@@ -1,7 +1,8 @@
 {
   "name": "toggle",
   "dependencies": [
-    "react-aria-components"
+    "react-aria-components",
+    "class-variance-authority"
   ],
   "files": [
     {

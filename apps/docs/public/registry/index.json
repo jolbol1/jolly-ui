@@ -15,7 +15,8 @@
   {
     "name": "button",
     "dependencies": [
-      "react-aria-components"
+      "react-aria-components",
+      "class-variance-authority"
     ],
     "files": [
       "ui/button.tsx"
@@ -75,7 +76,8 @@
   {
     "name": "dialog",
     "dependencies": [
-      "react-aria-components"
+      "react-aria-components",
+      "class-variance-authority"
     ],
     "files": [
       "ui/dialog.tsx"
@@ -105,7 +107,8 @@
   {
     "name": "label",
     "dependencies": [
-      "react-aria-components"
+      "react-aria-components",
+      "class-variance-authority"
     ],
     "files": [
       "ui/label.tsx"
@@ -115,7 +118,8 @@
   {
     "name": "link",
     "dependencies": [
-      "react-aria-components"
+      "react-aria-components",
+      "class-variance-authority"
     ],
     "registryDependencies": [
       "button"
@@ -241,7 +245,8 @@
   {
     "name": "toggle",
     "dependencies": [
-      "react-aria-components"
+      "react-aria-components",
+      "class-variance-authority"
     ],
     "files": [
       "ui/toggle.tsx"
