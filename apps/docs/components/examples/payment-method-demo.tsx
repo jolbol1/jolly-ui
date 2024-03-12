@@ -45,7 +45,7 @@ export function CardsPaymentMethod() {
               value="card"
               id="card"
               showRadio={false}
-              className="border-muted hover:bg-accent hover:text-accent-foreground data-[selected]:border-primary flex flex-col items-center justify-between rounded-md border-2 bg-transparent p-4"
+              className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground data-[selected]:border-primary"
               aria-label="Card"
             >
               <svg
