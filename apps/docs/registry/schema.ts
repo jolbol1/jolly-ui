@@ -27,6 +27,7 @@ export const registrySchema = z.array(
       "components:example/popover",
       "components:example/progress",
       "components:example/radio",
+      "components:example/searchfield",
       "components:example/select",
       "components:example/slider",
       "components:example/switch",
