@@ -1,43 +1,40 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { DocSearchModal } from "@docsearch/react"
+import { useCallback, useRef, useState } from "react"
+import { DocSearchModal, useDocSearchKeyboardEvents } from "@docsearch/react"
 import { SearchIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/default/ui/button"
 
 export function Search() {
-  const [open, setOpen] = useState(false)
+  const searchButtonRef = useRef(null)
+  const [isOpen, setIsOpen] = useState(false)
 
-  useEffect(() => {
-    const down = (e: KeyboardEvent) => {
-      if (
-        (e.target instanceof HTMLElement && e.target.isContentEditable) ||
-        e.target instanceof HTMLInputElement ||
-        e.target instanceof HTMLTextAreaElement ||
-        e.target instanceof HTMLSelectElement
-      ) {
-        return
-      }
-      if ((e.key === "k" && (e.metaKey || e.ctrlKey)) || e.key === "/") {
-        e.preventDefault()
-        setOpen((open) => !open)
-      }
-    }
+  const onOpen = useCallback(() => {
+    setIsOpen(true)
+  }, [setIsOpen])
 
-    document.addEventListener("keydown", down)
-    return () => document.removeEventListener("keydown", down)
-  }, [])
+  const onClose = useCallback(() => {
+    setIsOpen(false)
+  }, [setIsOpen])
+
+  useDocSearchKeyboardEvents({
+    isOpen,
+    onOpen,
+    onClose,
+    searchButtonRef,
+  })
 
   return (
-    <>
+    <>     
       <Button
         variant="outline"
         className={cn(
           "relative h-8 w-full justify-start rounded-[0.5rem] bg-background pl-2 text-sm font-normal text-muted-foreground shadow-none lg:w-fit lg:pr-12"
         )}
-        onPress={() => setOpen(true)}
+        onPress={() => setIsOpen(true)}
+        ref={searchButtonRef}
       >
         <SearchIcon className="h-w mr-2 w-4" />
         <span className="hidden lg:inline-flex">Search documentation...</span>
@@ -46,13 +43,14 @@ export function Search() {
           <span className="text-xs">⌘</span>K
         </kbd>
       </Button>
-      {open ? (
+
+      {isOpen ? (
         <DocSearchModal
           initialScrollY={window.scrollY}
           appId="W733X7ZW2B"
           indexName="jollyui"
           apiKey="c1960e1f500fcb2442eb7e93e8db2593"
-          onClose={() => setOpen(false)}
+          onClose={onClose}
         />
       ) : null}
     </>
