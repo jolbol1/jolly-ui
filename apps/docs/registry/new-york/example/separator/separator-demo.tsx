@@ -22,3 +22,5 @@ export function SeparatorDemo() {
     </div>
   )
 }
+
+export default SeparatorDemo
