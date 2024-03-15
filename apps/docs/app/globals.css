@@ -177,3 +177,42 @@
 .slate {
   background-color: #8b8d98;
 }
+
+.DocSearch-Modal {
+  --docsearch-highlight-color: hsl(var(--foreground));
+  --docsearch-searchbox-shadow: inset 0 0 0 2px hsl(var(--ring));
+  --docsearch-primary-color: hsl(var(--primary));
+  --docsearch-modal-background: hsl(var(--background));
+  --docsearch-footer-background: hsl(var(--background));
+  --docsearch-hit-shadow: 0 0 0 1px hsl(var(--ring));
+  --docsearch-hit-active-color: hsl(var(--foreground));
+  --docsearch-hit-background: hsl(var(--background));
+  --docsearch-hit-color: hsl(var(--foreground));
+  --docsearch-logo-color: hsl(var(--foreground));
+  --docsearch-key-gradient: hsl(var(--background));
+  --docsearch-modal-shadow: 0 0 0 1px hsl(var(--border));
+  --docsearch-footer-shadow: 0 0 0 1px hsl(var(--border));
+  --docsearch-muted-color: hsl(var(--muted-foreground));
+
+  --docsearch-text-color: hsl(var(--foreground));
+  --docsearch-searchbox-focus-background: hsl(var(--background));
+  --docsearch-searchbox-shadow: 0 0 0 1px hsl(var(--border));
+
+  .DocSearch-Hit[aria-selected="true"] a {
+    background-color: hsl(var(--accent));
+  }
+
+  .DocSearch-Form {
+    box-shadow: unset;
+    border: 1px solid hsl(var(--border));
+  }
+
+  .DocSearch-Hit a {
+    box-shadow: unset;
+    border: 1px solid hsl(var(--border));
+  }
+}
+
+.DocSearch-Container {
+  --docsearch-container-background: rgba(0, 0, 0, 0.8);
+}
