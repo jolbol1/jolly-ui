@@ -1,7 +1,6 @@
 "use client"
 
 import { usePathname } from "next/navigation"
-import { DocSearch } from "@docsearch/react"
 
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"

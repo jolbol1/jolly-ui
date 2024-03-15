@@ -551,6 +551,12 @@ const example: Registry = [
     files: ["example/select/select-sections.tsx"],
   },
   {
+    name: "separator-demo",
+    type: "components:example/separator",
+    registryDependencies: ["separator"],
+    files: ["example/separator/separator-demo.tsx"],
+  },
+  {
     name: "slider-demo",
     type: "components:example/slider",
     registryDependencies: ["slider"],
