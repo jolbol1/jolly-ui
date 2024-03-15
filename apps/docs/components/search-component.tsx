@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { DocSearchModal } from "@docsearch/react"
 import { SearchIcon } from "lucide-react"
 
@@ -9,6 +9,27 @@ import { Button } from "@/registry/default/ui/button"
 
 export function Search() {
   const [open, setOpen] = useState(false)
+
+  useEffect(() => {
+    const down = (e: KeyboardEvent) => {
+      if (
+        (e.target instanceof HTMLElement && e.target.isContentEditable) ||
+        e.target instanceof HTMLInputElement ||
+        e.target instanceof HTMLTextAreaElement ||
+        e.target instanceof HTMLSelectElement
+      ) {
+        return
+      }
+      if ((e.key === "k" && (e.metaKey || e.ctrlKey)) || e.key === "/") {
+        e.preventDefault()
+        setOpen((open) => !open)
+      }
+    }
+
+    document.addEventListener("keydown", down)
+    return () => document.removeEventListener("keydown", down)
+  }, [])
+
   return (
     <>
       <Button
@@ -21,6 +42,9 @@ export function Search() {
         <SearchIcon className="h-w mr-2 w-4" />
         <span className="hidden lg:inline-flex">Search documentation...</span>
         <span className="inline-flex lg:hidden">Search...</span>
+        <kbd className="pointer-events-none absolute right-[0.3rem] top-[0.3rem] hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium sm:flex">
+          <span className="text-xs">⌘</span>K
+        </kbd>
       </Button>
       {open ? (
         <DocSearchModal
