@@ -21,6 +21,13 @@ Licensed under the [MIT license](https://github.com/shadcn/ui/blob/main/LICENSE.
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Lorde4Avalon"><img src="https://avatars.githubusercontent.com/u/74342663?v=4?s=100" width="100px;" alt="Lorde"/><br /><sub><b>Lorde</b></sub></a><br /><a href="#doc-Lorde4Avalon" title="Documentation">📖</a></td>
+    </tr>
+  </tbody>
+</table>
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
