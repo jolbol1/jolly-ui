@@ -178,6 +178,23 @@
   background-color: #8b8d98;
 }
 
+/* Override modal style (specificity issue) */
+.DocSearch .DocSearch-Modal {
+  border-radius: var(--radius);
+
+  .DocSearch-Form {
+    border-radius: calc(var(--radius) - 2px);
+  }
+
+  .DocSearch-Hit a {
+    border-radius: calc(var(--radius) - 2px);
+  }
+
+  .DocSearch-Footer {
+    border-radius: var(--radius);
+  }
+}
+
 .DocSearch-Modal {
   --docsearch-highlight-color: hsl(var(--foreground));
   --docsearch-searchbox-shadow: inset 0 0 0 2px hsl(var(--ring));
