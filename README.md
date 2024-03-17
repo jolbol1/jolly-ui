@@ -15,3 +15,14 @@ Please read the [contributing guide](/CONTRIBUTING.md).
 ## License
 
 Licensed under the [MIT license](https://github.com/shadcn/ui/blob/main/LICENSE.md).
+
+## Contributors
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
