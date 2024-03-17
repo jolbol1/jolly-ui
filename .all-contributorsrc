@@ -18,6 +18,24 @@
         "code",
         "design"
       ]
+    },
+    {
+      "login": "GregorGabric",
+      "name": "Gregor Gabrič",
+      "avatar_url": "https://avatars.githubusercontent.com/u/83283727?v=4",
+      "profile": "https://github.com/GregorGabric",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "Lorde4Avalon",
+      "name": "Lorde",
+      "avatar_url": "https://avatars.githubusercontent.com/u/74342663?v=4",
+      "profile": "https://github.com/Lorde4Avalon",
+      "contributions": [
+        "doc"
+      ]
     }
   ]
 }
