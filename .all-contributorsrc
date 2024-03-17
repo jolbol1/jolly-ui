@@ -1,4 +1,23 @@
 {
   "projectName": "jolly-ui",
-  "projectOwner": "jolbol1"
+  "projectOwner": "jolbol1",
+  "files": [
+    "README.md"
+  ],
+  "commitType": "docs",
+  "commitConvention": "angular",
+  "contributorsPerLine": 7,
+  "contributors": [
+    {
+      "login": "jolbol1",
+      "name": "James Shopland",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5064896?v=4",
+      "profile": "http://jamesshopland.com",
+      "contributions": [
+        "doc",
+        "code",
+        "design"
+      ]
+    }
+  ]
 }
