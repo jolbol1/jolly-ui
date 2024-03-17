@@ -1,4 +1,21 @@
 {
   "projectName": "jolly-ui",
-  "projectOwner": "jolbol1"
+  "projectOwner": "jolbol1",
+  "files": [
+    "README.md"
+  ],
+  "commitType": "docs",
+  "commitConvention": "angular",
+  "contributorsPerLine": 7,
+  "contributors": [
+    {
+      "login": "GregorGabric",
+      "name": "Gregor Gabrič",
+      "avatar_url": "https://avatars.githubusercontent.com/u/83283727?v=4",
+      "profile": "https://github.com/GregorGabric",
+      "contributions": [
+        "doc"
+      ]
+    }
+  ]
 }
