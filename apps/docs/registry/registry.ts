@@ -134,6 +134,12 @@ const ui: Registry = [
     files: ["ui/switch.tsx"],
   },
   {
+    name: "tabs",
+    type: "components:ui",
+    dependencies: ["react-aria-components"],
+    files: ["ui/tabs.tsx"],
+  },
+  {
     name: "textarea",
     type: "components:ui",
     dependencies: ["react-aria-components"],
