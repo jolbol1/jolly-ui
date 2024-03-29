@@ -152,6 +152,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/ui/switch")),
       files: ["registry/default/ui/switch.tsx"],
     },
+    "tabs": {
+      name: "tabs",
+      type: "components:ui",
+      registryDependencies: undefined,
+      component: React.lazy(() => import("@/registry/default/ui/tabs")),
+      files: ["registry/default/ui/tabs.tsx"],
+    },
     "textarea": {
       name: "textarea",
       type: "components:ui",
@@ -950,6 +957,13 @@ export const Index: Record<string, any> = {
       registryDependencies: undefined,
       component: React.lazy(() => import("@/registry/new-york/ui/switch")),
       files: ["registry/new-york/ui/switch.tsx"],
+    },
+    "tabs": {
+      name: "tabs",
+      type: "components:ui",
+      registryDependencies: undefined,
+      component: React.lazy(() => import("@/registry/new-york/ui/tabs")),
+      files: ["registry/new-york/ui/tabs.tsx"],
     },
     "textarea": {
       name: "textarea",

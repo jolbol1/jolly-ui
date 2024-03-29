@@ -233,6 +233,16 @@
     "type": "components:ui"
   },
   {
+    "name": "tabs",
+    "dependencies": [
+      "react-aria-components"
+    ],
+    "files": [
+      "ui/tabs.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
     "name": "textarea",
     "dependencies": [
       "react-aria-components"
