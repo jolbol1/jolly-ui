@@ -13,7 +13,7 @@ export function DropdownMenuSection() {
   return (
     <MenuTrigger>
       <Button variant="outline">Open</Button>
-      <MenuPopover>
+      <MenuPopover className="min-w-[8rem]">
         <Menu>
           <MenuSection>
             <MenuHeader separator>Styles</MenuHeader>

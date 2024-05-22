@@ -14,7 +14,7 @@ export function DropdownMenuDemo() {
       <Button aria-label="Menu" size="icon">
         <MenuIcon className="h-4 w-4" />
       </Button>
-      <MenuPopover>
+      <MenuPopover className="min-w-[8rem]">
         <Menu onAction={typeof window !== "undefined" ? alert : console.log}>
           <MenuItem id="open">Open</MenuItem>
           <MenuItem id="rename">Rename…</MenuItem>

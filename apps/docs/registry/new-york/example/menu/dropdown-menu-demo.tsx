@@ -1,3 +1,5 @@
+import { ChevronRightIcon } from "@radix-ui/react-icons"
+
 import { Button } from "@/registry/new-york/ui/button"
 import {
   Menu,
@@ -8,16 +10,17 @@ import {
   MenuSection,
   MenuSeparator,
   MenuTrigger,
+  SubmenuTrigger,
 } from "@/registry/new-york/ui/menu"
 
 export function DropdownMenuFull() {
   return (
     <MenuTrigger>
       <Button variant="outline">Open</Button>
-      <MenuPopover placement="top">
-        <Menu disabledKeys={["api"]} className="w-56">
+      <MenuPopover placement="top" className="min-w-[8rem]">
+        <Menu className="w-56">
           <MenuSection>
-            <MenuHeader separator>My Account</MenuHeader>
+            <MenuHeader separator>My Accounts</MenuHeader>
             <MenuItem>
               Profile
               <MenuKeyboard>⇧⌘P</MenuKeyboard>
@@ -37,7 +40,23 @@ export function DropdownMenuFull() {
           </MenuSection>
           <MenuSeparator />
           <MenuSection>
-            <MenuItem>Team</MenuItem>
+            <MenuItem>
+              <span>Team</span>
+            </MenuItem>
+            <SubmenuTrigger>
+              <MenuItem>
+                <span>Invite users</span>
+                <ChevronRightIcon className="ml-auto h-4 w-4" />
+              </MenuItem>
+              <MenuPopover className="min-w-[8rem]">
+                <Menu>
+                  <MenuItem>Email</MenuItem>
+                  <MenuItem>Message</MenuItem>
+                  <MenuSeparator />
+                  <MenuItem>More...</MenuItem>
+                </Menu>
+              </MenuPopover>
+            </SubmenuTrigger>
             <MenuItem>
               New Team
               <MenuKeyboard>⌘+T</MenuKeyboard>
@@ -46,7 +65,7 @@ export function DropdownMenuFull() {
           <MenuSeparator />
           <MenuItem>GitHub</MenuItem>
           <MenuItem>Support</MenuItem>
-          <MenuItem id="api">API</MenuItem>
+          <MenuItem>API</MenuItem>
           <MenuSeparator />
           <MenuItem>
             Log out

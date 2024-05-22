@@ -10,7 +10,7 @@ export function DropdownMenuDemo() {
   return (
     <MenuTrigger>
       <Button aria-label="Menu">☰</Button>
-      <MenuPopover>
+      <MenuPopover className="min-w-[8rem]">
         <Menu onAction={typeof window !== "undefined" ? alert : console.log}>
           <MenuItem id="open">Open</MenuItem>
           <MenuItem id="rename">Rename…</MenuItem>

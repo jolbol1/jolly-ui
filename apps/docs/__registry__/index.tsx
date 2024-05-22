@@ -495,6 +495,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/example/menu/dropdown-menu-basic")),
       files: ["registry/default/example/menu/dropdown-menu-basic.tsx"],
     },
+    "dropdown-menu-sub-dynamic": {
+      name: "dropdown-menu-sub-dynamic",
+      type: "components:example/menu",
+      registryDependencies: ["menu"],
+      component: React.lazy(() => import("@/registry/default/example/menu/dropdown-menu-sub-dynamic")),
+      files: ["registry/default/example/menu/dropdown-menu-sub-dynamic.tsx"],
+    },
     "dropdown-menu-checkboxes": {
       name: "dropdown-menu-checkboxes",
       type: "components:example/menu",
@@ -1300,6 +1307,13 @@ export const Index: Record<string, any> = {
       registryDependencies: ["menu"],
       component: React.lazy(() => import("@/registry/new-york/example/menu/dropdown-menu-basic")),
       files: ["registry/new-york/example/menu/dropdown-menu-basic.tsx"],
+    },
+    "dropdown-menu-sub-dynamic": {
+      name: "dropdown-menu-sub-dynamic",
+      type: "components:example/menu",
+      registryDependencies: ["menu"],
+      component: React.lazy(() => import("@/registry/new-york/example/menu/dropdown-menu-sub-dynamic")),
+      files: ["registry/new-york/example/menu/dropdown-menu-sub-dynamic.tsx"],
     },
     "dropdown-menu-checkboxes": {
       name: "dropdown-menu-checkboxes",

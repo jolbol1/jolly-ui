@@ -54,6 +54,10 @@ npx @sly-cli/sly add jolly-ui menu
 
 <ComponentPreview name="dropdown-menu-demo" />
 
+#### Submenu
+
+As in the example above, You can create a submenu by wrapping a `MenuItem` in a `SubmenuTrigger`. Then inside the SubmenuTrigger you can place a `MenuPopover` and `Menu` to create a submenu, using that the same as a menu.
+
 #### Separator
 
 In the example above, you can place a `MenuSeparator` between sections. Alternatively, you can use the `separator` prop on a `MenuHeader` to create a border as well.
@@ -90,3 +94,7 @@ See the [client side routing guide](https://react-spectrum.adobe.com/react-aria/
 ### Dynamic
 
 <ComponentPreview name="dropdown-menu-dynamic" />
+
+## Dynamic (+Submenu)
+
+<ComponentPreview name="dropdown-menu-sub-dynamic" />

@@ -431,6 +431,12 @@ const example: Registry = [
     files: ["example/menu/dropdown-menu-basic.tsx"],
   },
   {
+    name: "dropdown-menu-sub-dynamic",
+    type: "components:example/menu",
+    registryDependencies: ["menu"],
+    files: ["example/menu/dropdown-menu-sub-dynamic.tsx"],
+  },
+  {
     name: "dropdown-menu-checkboxes",
     type: "components:example/menu",
     registryDependencies: ["menu"],

@@ -19,7 +19,7 @@ export function DropdownMenuRadio() {
   return (
     <MenuTrigger>
       <Button variant="outline">Open</Button>
-      <MenuPopover placement="bottom">
+      <MenuPopover placement="bottom" className="min-w-[8rem]">
         <Menu
           selectionMode="single"
           selectedKeys={selected}

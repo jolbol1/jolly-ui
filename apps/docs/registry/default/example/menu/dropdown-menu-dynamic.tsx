@@ -37,7 +37,7 @@ export function DropdownMenuDynamic() {
   return (
     <MenuTrigger>
       <Button variant="outline">Window</Button>
-      <MenuPopover>
+      <MenuPopover className="min-w-[8rem]">
         <Menu
           items={openWindows}
           selectionMode="multiple"
