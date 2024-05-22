@@ -29,6 +29,12 @@ const ui: Registry = [
     files: ["ui/checkbox.tsx"],
   },
   {
+    name: "color",
+    type: "components:ui",
+    dependencies: ["react-aria-components"],
+    files: ["ui/color.tsx"],
+  },
+  {
     name: "combobox",
     type: "components:ui",
     dependencies: ["react-aria-components"],
@@ -297,6 +303,30 @@ const example: Registry = [
     type: "components:example/checkbox",
     registryDependencies: ["checkbox"],
     files: ["example/checkbox/checkbox-with-text.tsx"],
+  },
+  {
+    name: "color-area",
+    type: "components:example/color",
+    registryDependencies: ["color"],
+    files: ["example/color/color-area.tsx"],
+  },
+  {
+    name: "color-slider",
+    type: "components:example/color",
+    registryDependencies: ["color"],
+    files: ["example/color/color-slider.tsx"],
+  },
+  {
+    name: "color-swatch-picker",
+    type: "components:example/color",
+    registryDependencies: ["color"],
+    files: ["example/color/color-swatch-picker.tsx"],
+  },
+  {
+    name: "color-wheel",
+    type: "components:example/color",
+    registryDependencies: ["color"],
+    files: ["example/color/color-wheel.tsx"],
   },
   {
     name: "combobox-basic",

@@ -89,6 +89,17 @@ export const docsConfig: DocsConfig = {
       ],
     },
     {
+      title: "Color",
+      items: [
+        {
+          title: "Primitives",
+          href: "/docs/components/color",
+          items: [],
+          label: "Beta"
+        },
+      ],
+    },
+    {
       title: "Date and Time",
       items: [
         {
