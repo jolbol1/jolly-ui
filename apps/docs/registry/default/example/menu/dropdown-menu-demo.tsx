@@ -1,13 +1,18 @@
 import {
+  ChevronRight,
   Cloud,
   CreditCard,
   Github,
   Keyboard,
   LifeBuoy,
   LogOut,
+  Mail,
+  MessageSquare,
   Plus,
+  PlusCircle,
   Settings,
   User,
+  UserPlus,
   Users,
 } from "lucide-react"
 
@@ -21,13 +26,14 @@ import {
   MenuSection,
   MenuSeparator,
   MenuTrigger,
+  SubmenuTrigger,
 } from "@/registry/default/ui/menu"
 
 export function DropdownMenuFull() {
   return (
     <MenuTrigger>
       <Button variant="outline">Open</Button>
-      <MenuPopover placement="top">
+      <MenuPopover placement="top" className="min-w-[8rem]">
         <Menu className="w-56">
           <MenuSection>
             <MenuHeader separator>My Accounts</MenuHeader>
@@ -58,6 +64,30 @@ export function DropdownMenuFull() {
               <Users className="mr-2 h-4 w-4" />
               <span>Team</span>
             </MenuItem>
+            <SubmenuTrigger>
+              <MenuItem>
+                <UserPlus className="mr-2 h-4 w-4" />
+                <span>Invite users</span>
+                <ChevronRight className="ml-auto h-4 w-4" />
+              </MenuItem>
+              <MenuPopover className="min-w-[8rem]">
+                <Menu>
+                  <MenuItem>
+                    <Mail className="mr-2 h-4 w-4" />
+                    <span>Email</span>
+                  </MenuItem>
+                  <MenuItem>
+                    <MessageSquare className="mr-2 h-4 w-4" />
+                    <span>Message</span>
+                  </MenuItem>
+                  <MenuSeparator />
+                  <MenuItem>
+                    <PlusCircle className="mr-2 h-4 w-4" />
+                    <span>More...</span>
+                  </MenuItem>
+                </Menu>
+              </MenuPopover>
+            </SubmenuTrigger>
             <MenuItem>
               <Plus className="mr-2 h-4 w-4" />
               <span>New Team</span>

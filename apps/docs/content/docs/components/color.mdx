@@ -1,0 +1,81 @@
+---
+title: Color
+description: 🚧 Primitives for color selection
+component: true
+links:
+  doc: https://react-spectrum.adobe.com/react-aria/ColorArea.html
+---
+
+<Callout type="danger">
+🚧 **UNDER CONSTRUCTION**
+
+I am currently working on these. I intend to have several examples of how to integrate the following primitives into a full color picker, for several color channels.
+You can consult the [React Aria Documentation](https://react-spectrum.adobe.com/react-aria/ColorArea.html) for how to use these primitives.
+
+Todo:
+
+- Add New-York style
+- Add ColorPicker
+- Add Examples
+
+</Callout>
+
+<ComponentPreview name="color-area" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Copy & Paste</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx @sly-cli/sly add jolly-ui color
+```
+
+**Note: Only the default style can be installed via CLI at the moment**
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="color" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+### Color Area
+
+A color area allows users to adjust two channels of an RGB, HSL or HSB color value against a two-dimensional gradient background.
+
+<ComponentPreview name="color-area" />
+
+### Color Slider
+
+A color slider allows users to adjust an individual channel of a color value.
+
+<ComponentPreview name="color-slider" />
+
+### Color Swatch Picker
+
+A ColorSwatchPicker displays a list of color swatches and allows a user to select one of them.
+
+<ComponentPreview name="color-swatch-picker" />
+
+### Color Wheel
+
+A color wheel allows users to adjust the hue of an HSL or HSB color value on a circular track.
+
+<ComponentPreview name="color-wheel" />

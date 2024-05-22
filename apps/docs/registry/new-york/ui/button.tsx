@@ -43,26 +43,22 @@ export interface ButtonProps
   extends _ButtonProps,
     VariantProps<typeof buttonVariants> {}
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, ...props }, ref) => {
-    return (
-      <_Button
-        className={(values) =>
-          cn(
-            buttonVariants({
-              variant,
-              size,
-              className:
-                typeof className === "function" ? className(values) : className,
-            })
-          )
-        }
-        ref={ref}
-        {...props}
-      />
-    )
-  }
-)
-Button.displayName = "Button"
+const Button = ({ className, variant, size, ...props }: ButtonProps) => {
+  return (
+    <_Button
+      className={(values) =>
+        cn(
+          buttonVariants({
+            variant,
+            size,
+            className:
+              typeof className === "function" ? className(values) : className,
+          })
+        )
+      }
+      {...props}
+    />
+  )
+}
 
 export { Button, buttonVariants }

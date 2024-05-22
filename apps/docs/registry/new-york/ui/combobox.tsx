@@ -69,7 +69,7 @@ const ComboboxListBox = <T extends object>({
 }: ListBoxProps<T>) => <ListBox className={cn("p-1", className)} {...props} />
 
 export interface ComboboxLabelProps
-  extends React.ComponentPropsWithoutRef<typeof Header> {
+  extends React.ComponentProps<typeof Header> {
   separator?: boolean
 }
 

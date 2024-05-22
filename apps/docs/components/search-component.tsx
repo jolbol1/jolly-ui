@@ -1,11 +1,12 @@
 "use client"
 
-import { useCallback, useRef, useState } from "react"
+import React, { useCallback, useRef, useState } from "react"
 import { DocSearchModal, useDocSearchKeyboardEvents } from "@docsearch/react"
 import { SearchIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
-import { Button } from "@/registry/default/ui/button"
+
+import { Button } from "./button"
 
 export function Search() {
   const searchButtonRef = useRef(null)
@@ -27,7 +28,7 @@ export function Search() {
   })
 
   return (
-    <>     
+    <>
       <Button
         variant="outline"
         className={cn(

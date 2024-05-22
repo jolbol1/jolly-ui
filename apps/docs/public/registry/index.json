@@ -50,6 +50,16 @@
     "type": "components:ui"
   },
   {
+    "name": "color",
+    "dependencies": [
+      "react-aria-components"
+    ],
+    "files": [
+      "ui/color.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
     "name": "combobox",
     "dependencies": [
       "react-aria-components"

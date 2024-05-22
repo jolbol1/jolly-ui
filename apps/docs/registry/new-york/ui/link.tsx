@@ -19,7 +19,9 @@ const _Link = ({ className, variant, size, ...props }: _LinkProps) => {
             variant,
             size,
             className:
-              typeof className === "function" ? className(values) : className,
+              typeof className === "function"
+                ? className({ ...values, defaultClassName: undefined })
+                : className,
           })
         )
       }

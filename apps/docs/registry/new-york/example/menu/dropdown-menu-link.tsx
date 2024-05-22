@@ -12,7 +12,7 @@ export function DropdownMenuLink() {
       <Button variant="outline" aria-label="Links">
         Links
       </Button>
-      <MenuPopover>
+      <MenuPopover className="min-w-[8rem]">
         <Menu>
           <MenuItem href="../../../docs/components/button">Button</MenuItem>
           <MenuItem href="../../../docs/components/label">Label</MenuItem>

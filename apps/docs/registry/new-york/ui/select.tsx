@@ -85,7 +85,7 @@ const SelectContent = <T extends object>({
 const SelectHeader = ({
   className,
   ...props
-}: React.ComponentPropsWithoutRef<typeof Header>) => (
+}: React.ComponentProps<typeof Header>) => (
   <Header
     className={cn("px-2 py-1.5 text-sm font-semibold", className)}
     {...props}

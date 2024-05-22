@@ -29,6 +29,12 @@ const ui: Registry = [
     files: ["ui/checkbox.tsx"],
   },
   {
+    name: "color",
+    type: "components:ui",
+    dependencies: ["react-aria-components"],
+    files: ["ui/color.tsx"],
+  },
+  {
     name: "combobox",
     type: "components:ui",
     dependencies: ["react-aria-components"],
@@ -299,6 +305,30 @@ const example: Registry = [
     files: ["example/checkbox/checkbox-with-text.tsx"],
   },
   {
+    name: "color-area",
+    type: "components:example/color",
+    registryDependencies: ["color"],
+    files: ["example/color/color-area.tsx"],
+  },
+  {
+    name: "color-slider",
+    type: "components:example/color",
+    registryDependencies: ["color"],
+    files: ["example/color/color-slider.tsx"],
+  },
+  {
+    name: "color-swatch-picker",
+    type: "components:example/color",
+    registryDependencies: ["color"],
+    files: ["example/color/color-swatch-picker.tsx"],
+  },
+  {
+    name: "color-wheel",
+    type: "components:example/color",
+    registryDependencies: ["color"],
+    files: ["example/color/color-wheel.tsx"],
+  },
+  {
     name: "combobox-basic",
     type: "components:example/combobox",
     registryDependencies: ["combobox"],
@@ -429,6 +459,12 @@ const example: Registry = [
     type: "components:example/menu",
     registryDependencies: ["menu"],
     files: ["example/menu/dropdown-menu-basic.tsx"],
+  },
+  {
+    name: "dropdown-menu-sub-dynamic",
+    type: "components:example/menu",
+    registryDependencies: ["menu"],
+    files: ["example/menu/dropdown-menu-sub-dynamic.tsx"],
   },
   {
     name: "dropdown-menu-checkboxes",
