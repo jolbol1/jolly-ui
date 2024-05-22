@@ -101,8 +101,7 @@ const MenuRadioItem = ({ className, children, ...props }: MenuItemProps) => (
   </MenuItem>
 )
 
-export interface MenuHeaderProps
-  extends React.ComponentPropsWithoutRef<typeof Header> {
+export interface MenuHeaderProps extends React.ComponentProps<typeof Header> {
   inset?: boolean
   separator?: boolean
 }

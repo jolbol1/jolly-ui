@@ -66,7 +66,7 @@ const SelectTrigger = ({ className, children, ...props }: ButtonProps) => (
 const SelectHeader = ({
   className,
   ...props
-}: React.ComponentPropsWithoutRef<typeof Header>) => (
+}: React.ComponentProps<typeof Header>) => (
   <Header
     className={cn(" py-1.5 pl-8 pr-2 text-sm font-semibold", className)}
     {...props}

@@ -51,7 +51,7 @@ const ComboboxInput = ({ className, ...props }: InputProps) => (
 )
 
 export interface ComboboxLabelProps
-  extends React.ComponentPropsWithoutRef<typeof Header> {
+  extends React.ComponentProps<typeof Header> {
   separator?: boolean
   offset?: boolean
 }

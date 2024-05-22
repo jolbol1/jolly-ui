@@ -53,7 +53,7 @@ const _DialogOverlay = ({
 )
 
 export interface DialogContentProps
-  extends Omit<React.ComponentPropsWithoutRef<typeof Modal>, "children">,
+  extends Omit<React.ComponentProps<typeof Modal>, "children">,
     VariantProps<typeof sheetVariants> {
   children?: DialogProps["children"]
   role?: DialogProps["role"]

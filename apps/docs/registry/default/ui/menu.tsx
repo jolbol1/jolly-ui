@@ -57,8 +57,7 @@ const _MenuItem = ({ className, inset, ...props }: _MenuItemProps) => (
   />
 )
 
-export interface MenuHeaderProps
-  extends React.ComponentPropsWithoutRef<typeof Header> {
+export interface MenuHeaderProps extends React.ComponentProps<typeof Header> {
   inset?: boolean
   separator?: boolean
 }

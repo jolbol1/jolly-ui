@@ -53,15 +53,14 @@ const _SliderTrack = ({ className, ...props }: SliderTrackProps) => (
   />
 )
 
-const _SliderFillTrack = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => {
+const _SliderFillTrack = ({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement>) => {
   let state = React.useContext(SliderStateContext)!
   const orientation = state.orientation === "vertical" ? "height" : "width"
   return (
     <div
-      ref={ref}
       style={{ [orientation]: state.getThumbPercent(0) * 100 + "%" }}
       className={cn(
         "absolute rounded-full bg-primary",
@@ -74,8 +73,7 @@ const _SliderFillTrack = React.forwardRef<
       {...props}
     />
   )
-})
-_SliderFillTrack.displayName = "SliderFillTrack"
+}
 
 const _SliderThumb = ({ className }: SliderThumbProps) => (
   <SliderThumb
