@@ -1,3 +1,5 @@
+"use client"
+
 import { Link } from "react-aria-components"
 
 import { siteConfig } from "@/config/site"
