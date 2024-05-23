@@ -9,9 +9,9 @@ import {
 
 export function SelectDemo() {
   return (
-    <Select aria-label="item selection">
+    <Select placeholder="Select an item" aria-label="item selection">
       <SelectTrigger className="w-[180px]">
-        <SelectValue placeholder="Select an item" />
+        <SelectValue />
       </SelectTrigger>
       <SelectPopover>
         <SelectContent aria-label="items">

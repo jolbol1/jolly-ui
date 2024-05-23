@@ -2,7 +2,7 @@ import {
   defineDocumentType,
   defineNestedType,
   makeSource,
-} from "contentlayer/source-files"
+} from "contentlayer2/source-files"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import rehypePrettyCode from "rehype-pretty-code"
 import rehypeSlug from "rehype-slug"
@@ -13,7 +13,7 @@ import { visit } from "unist-util-visit"
 import { rehypeComponent } from "./lib/rehype-component"
 import { rehypeNpmCommand } from "./lib/rehype-npm-command"
 
-/** @type {import('contentlayer/source-files').ComputedFields} */
+/** @type {import('contentlayer2/source-files').ComputedFields} */
 const computedFields = {
   slug: {
     type: "string",
@@ -112,26 +112,13 @@ export default makeSource({
       [
         rehypePrettyCode,
         {
-          theme: "github-dark",
-          onVisitLine(node) {
-            // Prevent lines from collapsing in `display: grid` mode, and allow empty
-            // lines to be copy/pasted
-            if (node.children.length === 0) {
-              node.children = [{ type: "text", value: " " }]
-            }
-          },
-          onVisitHighlightedLine(node) {
-            node.properties.className.push("line--highlighted")
-          },
-          onVisitHighlightedWord(node) {
-            node.properties.className = ["word--highlighted"]
-          },
+          theme: "github-dark-default",
         },
       ],
       () => (tree) => {
         visit(tree, (node) => {
-          if (node?.type === "element" && node?.tagName === "div") {
-            if (!("data-rehype-pretty-code-fragment" in node.properties)) {
+          if (node?.type === "element" && node?.tagName === "figure") {
+            if (!("data-rehype-pretty-code-figure" in node.properties)) {
               return
             }
 

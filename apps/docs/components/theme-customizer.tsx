@@ -97,6 +97,7 @@ export function ThemeCustomizer({
                     <Label className="text-xs">Font</Label>
 
                     <Select
+                      placeholder="Select a font"
                       aria-label="Font Select"
                       selectedKey={currentFontFamily.label}
                       onSelectionChange={(key) =>
@@ -108,7 +109,7 @@ export function ThemeCustomizer({
                       }
                     >
                       <SelectTrigger className="w-full">
-                        <SelectValue placeholder="Select a font" />
+                        <SelectValue />
                       </SelectTrigger>
                       <SelectPopover>
                         <SelectContent>
@@ -330,7 +331,7 @@ function CustomizerCode() {
   }, [hasCopied])
 
   return (
-    <div data-rehype-pretty-code-fragment="">
+    <div data-rehype-pretty-code-figure="">
       {activeTheme && (
         <Button
           size="sm"

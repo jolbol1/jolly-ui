@@ -42,6 +42,7 @@ export function DatePickerWithPresets() {
         popoverClassName="p-2"
       >
         <Select
+          placeholder="Select"
           aria-label="Quick Options"
           onSelectionChange={(value) =>
             setDate(
@@ -52,7 +53,7 @@ export function DatePickerWithPresets() {
           }
         >
           <SelectTrigger>
-            <SelectValue placeholder="Select" />
+            <SelectValue />
           </SelectTrigger>
           <SelectPopover placement="bottom">
             <SelectContent>

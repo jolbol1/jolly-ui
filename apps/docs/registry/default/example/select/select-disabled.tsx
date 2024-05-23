@@ -9,9 +9,13 @@ import {
 
 export function SelectDisabled() {
   return (
-    <Select aria-label="item selection" disabledKeys={["cat", "kangaroo"]}>
+    <Select
+      placeholder="Select an item"
+      aria-label="item selection"
+      disabledKeys={["cat", "kangaroo"]}
+    >
       <SelectTrigger className="w-[180px]">
-        <SelectValue placeholder="Select an item" />
+        <SelectValue />
       </SelectTrigger>
       <SelectPopover>
         <SelectContent aria-label="items">

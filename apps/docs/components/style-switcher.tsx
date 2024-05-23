@@ -26,6 +26,7 @@ export function StyleSwitcher({ className }: { className?: string }) {
   return !mounted ? null : (
     <Select
       aria-label="Select Style"
+      placeholder="Select style"
       defaultSelectedKey={currentStyle}
       onSelectionChange={(key) => updateStyle(key as Style["name"])}
     >
@@ -36,7 +37,7 @@ export function StyleSwitcher({ className }: { className?: string }) {
         )}
       >
         <span className="text-muted-foreground">Style: </span>
-        <SelectValue placeholder="Select style" />
+        <SelectValue />
       </SelectTrigger>
       <SelectPopover>
         <SelectContent>
