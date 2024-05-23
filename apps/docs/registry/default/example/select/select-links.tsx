@@ -9,9 +9,9 @@ import {
 
 export function SelectLinks() {
   return (
-    <Select aria-label="projects">
+    <Select placeholder="Select an item" aria-label="projects">
       <SelectTrigger className="w-[180px]">
-        <SelectValue placeholder="Select an item" />
+        <SelectValue />
       </SelectTrigger>
       <SelectPopover>
         <SelectContent aria-label="items">

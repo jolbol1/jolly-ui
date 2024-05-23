@@ -26,9 +26,9 @@ export function CodeBlockWrapper({
         ) : (
           <div className="relative my-6 overflow-hidden rounded-md">
             <div className="[&amp;_pre]:my-0 [&amp;_pre]:max-h-[650px] [&amp;_pre]:pb-[100px]">
-              <div data-rehype-pretty-code-fragment="">
+              <div data-rehype-pretty-code-figure="">
                 <pre
-                  className="mb-4 mt-6 h-[650px] overflow-x-auto rounded-lg border bg-zinc-950 py-4 dark:bg-zinc-900"
+                  className="mb-4 mt-6 h-[650px] overflow-x-auto rounded-lg border"
                   data-language="tsx"
                   data-theme="default"
                 >

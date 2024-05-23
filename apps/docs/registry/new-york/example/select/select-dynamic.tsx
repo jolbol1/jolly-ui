@@ -43,9 +43,9 @@ let options: SelectOptions = [
 
 export function SelectDynamic() {
   return (
-    <Select aria-label="fruit selection">
+    <Select placeholder="Select an item" aria-label="fruit selection">
       <SelectTrigger className="w-[180px]">
-        <SelectValue placeholder="Select an item" />
+        <SelectValue />
       </SelectTrigger>
       <SelectPopover>
         <SelectContent aria-label="items" items={options}>
