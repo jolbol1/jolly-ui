@@ -311,6 +311,67 @@ const example: Registry = [
     files: ["example/color/color-area.tsx"],
   },
   {
+    name: "color-picker-eye",
+    type: "components:example/color/pickers",
+    registryDependencies: ["color"],
+    files: ["example/color/pickers/color-picker-eye.tsx"],
+  },
+  {
+    name: "color-picker-hex",
+    type: "components:example/color/pickers",
+    registryDependencies: ["color"],
+    files: ["example/color/pickers/color-picker-hex.tsx"],
+  },
+  {
+    name: "color-picker-slider",
+    type: "components:example/color/pickers",
+    registryDependencies: ["color"],
+    files: ["example/color/pickers/color-picker-slider.tsx"],
+  },
+  {
+    name: "color-picker-hexa",
+    type: "components:example/color/pickers",
+    registryDependencies: ["color"],
+    files: ["example/color/pickers/color-picker-hexa.tsx"],
+  }, {
+    name: "color-picker-hsb",
+    type: "components:example/color/pickers",
+    registryDependencies: ["color"],
+    files: ["example/color/pickers/color-picker-hsb.tsx"],
+  }, {
+    name: "color-picker-hsba",
+    type: "components:example/color/pickers",
+    registryDependencies: ["color"],
+    files: ["example/color/pickers/color-picker-hsba.tsx"],
+  },
+  {
+    name: "color-picker-multi",
+    type: "components:example/color/pickers",
+    registryDependencies: ["color"],
+    files: ["example/color/pickers/color-picker-multi.tsx"],
+  },
+  {
+    name: "color-picker-hsl",
+    type: "components:example/color/pickers",
+    registryDependencies: ["color"],
+    files: ["example/color/pickers/color-picker-hsl.tsx"],
+  }, {
+    name: "color-picker-hsla",
+    type: "components:example/color/pickers",
+    registryDependencies: ["color"],
+    files: ["example/color/pickers/color-picker-hsla.tsx"],
+  }, {
+    name: "color-picker-rgb",
+    type: "components:example/color/pickers",
+    registryDependencies: ["color"],
+    files: ["example/color/pickers/color-picker-rgb.tsx"],
+  }, {
+    name: "color-picker-rgba",
+    type: "components:example/color/pickers",
+    registryDependencies: ["color"],
+    files: ["example/color/pickers/color-picker-rgba.tsx"],
+  },
+  {
     name: "color-slider",
     type: "components:example/color",
     registryDependencies: ["color"],

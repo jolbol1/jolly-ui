@@ -1,6 +1,7 @@
 import {
   ColorArea as _ColorArea,
   ColorField as _ColorField,
+  ColorPicker as _ColorPicker,
   ColorSlider as _ColorSlider,
   ColorSwatch as _ColorSwatch,
   ColorSwatchPicker as _ColorSwatchPicker,
@@ -8,6 +9,7 @@ import {
   ColorThumb as _ColorThumb,
   ColorWheel as _ColorWheel,
   ColorWheelTrack as _ColorWheelTrack,
+  SliderOutput as _SliderOutput,
   SliderTrack as _SliderTrack,
 } from "react-aria-components"
 
@@ -18,6 +20,10 @@ const ColorSlider = _ColorSlider
 const ColorField = _ColorField
 
 const ColorWheelTrack = _ColorWheelTrack
+
+const ColorPicker = _ColorPicker
+
+const SliderOutput = _SliderOutput
 
 interface ColorWheelProps
   extends Omit<
@@ -81,7 +87,7 @@ function ColorThumb({
   return (
     <_ColorThumb
       className={cn(
-        "box-border size-5 rounded-[50%] border-2 border-white shadow-md data-[focus-visible]:size-6",
+        "z-10 box-border size-5 rounded-[50%] border-2 border-white shadow-md data-[focus-visible]:size-6",
         className
       )}
       {...props}
@@ -108,7 +114,7 @@ function ColorSwatchPickerItem({
   return (
     <_ColorSwatchPickerItem
       className={cn(
-        "w-fit overflow-hidden rounded-md ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+        "size-8 overflow-hidden rounded-md border-2 ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring  data-[disabled]:pointer-events-none data-[selected]:border-white data-[disabled]:opacity-50",
         className
       )}
       {...props}
@@ -129,8 +135,10 @@ export {
   ColorField,
   ColorWheelTrack,
   ColorWheel,
+  ColorPicker,
   ColorArea,
   SliderTrack,
+  SliderOutput,
   ColorThumb,
   ColorSwatchPicker,
   ColorSwatchPickerItem,

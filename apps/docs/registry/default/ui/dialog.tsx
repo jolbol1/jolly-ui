@@ -4,10 +4,10 @@ import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 import { X } from "lucide-react"
 import {
+  Dialog as _Dialog,
+  DialogTrigger as _DialogTrigger,
   Button,
-  Dialog,
   DialogProps,
-  DialogTrigger,
   Heading,
   HeadingProps,
   Modal,
@@ -33,9 +33,11 @@ const sheetVariants = cva(
   }
 )
 
-const _DialogTrigger = DialogTrigger
+const DialogTrigger = _DialogTrigger
 
-const _DialogOverlay = ({
+const Dialog = _Dialog
+
+const DialogOverlay = ({
   className,
   isDismissable = true,
   ...props
@@ -138,10 +140,11 @@ const DialogTitle = ({ className, ...props }: HeadingProps) => (
 )
 
 export {
-  _DialogOverlay as DialogOverlay,
-  _DialogTrigger as DialogTrigger,
+  DialogOverlay,
+  DialogTrigger,
   DialogContent,
   DialogHeader,
   DialogFooter,
   DialogTitle,
+  Dialog,
 }
