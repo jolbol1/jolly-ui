@@ -60,6 +60,40 @@ npx @sly-cli/sly add jolly-ui color label dialog popover input button
 
 ### Eye Dropper
 
+You can make an eyedropper component by using a [Button](./button) and react-aria context. Check browser support [here](https://caniuse.com/?search=EyeDropper).
+
+For example:
+
+```tsx
+function EyeDropperButton() {
+  let state = React.useContext(ColorPickerStateContext)!
+
+  // Check browser support. ()
+  // @ts-ignore
+  if (typeof EyeDropper === "undefined") {
+    return null
+  }
+
+  return (
+    <Button
+      aria-label="Eye dropper"
+      size="icon"
+      variant="outline"
+      onPress={() => {
+        // @ts-ignore
+        new EyeDropper()
+          .open()
+          .then((result: { sRGBHex: string }) =>
+            state.setColor(parseColor(result.sRGBHex))
+          )
+      }}
+    >
+      <Pipette />
+    </Button>
+  )
+}
+```
+
 <ComponentPreview name="color-picker-eye" />
 
 ## Color Spaces
