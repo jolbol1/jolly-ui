@@ -1,26 +1,14 @@
 ---
-title: Color
-description: 🚧 Primitives for color selection
+title: Color Pickers
+description: Examples of combining the Primitives to create a full color picker
 component: true
 links:
-  doc: https://react-spectrum.adobe.com/react-aria/ColorArea.html
+  doc: https://react-spectrum.adobe.com/react-aria/ColorPicker.html
 ---
 
-<Callout type="danger">
-🚧 **UNDER CONSTRUCTION**
+The following are examples of how you can combine the [Primitives](./color-primitives) to create a full color picker.
 
-I am currently working on these. I intend to have several examples of how to integrate the following primitives into a full color picker, for several color channels.
-You can consult the [React Aria Documentation](https://react-spectrum.adobe.com/react-aria/ColorArea.html) for how to use these primitives.
-
-Todo:
-
-- Add New-York style
-- Add ColorPicker
-- Add Examples
-
-</Callout>
-
-<ComponentPreview name="color-area" />
+<ComponentPreview name="color-picker-hex" />
 
 ## Installation
 
@@ -33,7 +21,7 @@ Todo:
 <TabsContent value="cli">
 
 ```bash
-npx @sly-cli/sly add jolly-ui color
+npx @sly-cli/sly add jolly-ui color label dialog popover input button
 ```
 
 **Note: Only the default style can be installed via CLI at the moment**
@@ -56,26 +44,88 @@ npx @sly-cli/sly add jolly-ui color
 
 </Tabs>
 
-### Color Area
+## Color Pickers
 
-A color area allows users to adjust two channels of an RGB, HSL or HSB color value against a two-dimensional gradient background.
+### Combined
 
-<ComponentPreview name="color-area" />
+<ComponentPreview name="color-picker-hex" />
 
-### Color Slider
+### Multiple Color Spaces
 
-A color slider allows users to adjust an individual channel of a color value.
+<ComponentPreview name="color-picker-multi" />
 
-<ComponentPreview name="color-slider" />
+### Sliders
 
-### Color Swatch Picker
+<ComponentPreview name="color-picker-slider" />
 
-A ColorSwatchPicker displays a list of color swatches and allows a user to select one of them.
+### Eye Dropper
 
-<ComponentPreview name="color-swatch-picker" />
+You can make an eyedropper component by using a [Button](./button) and react-aria context. Check browser support [here](https://caniuse.com/?search=EyeDropper).
 
-### Color Wheel
+For example:
 
-A color wheel allows users to adjust the hue of an HSL or HSB color value on a circular track.
+```tsx
+function EyeDropperButton() {
+  let state = React.useContext(ColorPickerStateContext)!
 
-<ComponentPreview name="color-wheel" />
+  // Check browser support. ()
+  // @ts-ignore
+  if (typeof EyeDropper === "undefined") {
+    return null
+  }
+
+  return (
+    <Button
+      aria-label="Eye dropper"
+      size="icon"
+      variant="outline"
+      onPress={() => {
+        // @ts-ignore
+        new EyeDropper()
+          .open()
+          .then((result: { sRGBHex: string }) =>
+            state.setColor(parseColor(result.sRGBHex))
+          )
+      }}
+    >
+      <Pipette />
+    </Button>
+  )
+}
+```
+
+<ComponentPreview name="color-picker-eye" />
+
+## Color Spaces
+
+### Hex
+
+<ComponentPreview name="color-picker-hex" />
+
+### Hex + Alpha
+
+<ComponentPreview name="color-picker-hexa" />
+
+### HSB
+
+<ComponentPreview name="color-picker-hsb" />
+
+### HSBA
+
+<ComponentPreview name="color-picker-hsba" />
+
+### HSL
+
+<ComponentPreview name="color-picker-hsl" />
+
+### HSLA
+
+<ComponentPreview name="color-picker-hsla" />
+
+### RGB
+
+<ComponentPreview name="color-picker-rgb" />
+
+### RGBA
+
+<ComponentPreview name="color-picker-rgba" />

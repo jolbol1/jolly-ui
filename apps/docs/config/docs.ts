@@ -92,8 +92,14 @@ export const docsConfig: DocsConfig = {
       title: "Color",
       items: [
         {
-          title: "Primitives",
+          title: "Color Pickers",
           href: "/docs/components/color",
+          items: [],
+          label: "Beta"
+        },
+        {
+          title: "Primitives",
+          href: "/docs/components/color-primitives",
           items: [],
           label: "Beta"
         },
