@@ -3,6 +3,7 @@
 import * as React from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { YouTubeEmbed } from "@next/third-parties/google"
 import { useMDXComponent } from "next-contentlayer2/hooks"
 import { NpmCommands } from "types/unist"
 
@@ -21,6 +22,7 @@ import { Tab, TabList, TabPanel, Tabs } from "@/registry/default/ui/tabs"
 import { Style } from "@/registry/styles"
 
 const components = {
+  YouTubeEmbed,
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1
       className={cn(
