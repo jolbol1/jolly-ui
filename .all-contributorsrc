@@ -36,6 +36,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "nxsdev",
+      "name": "noxis",
+      "avatar_url": "https://avatars.githubusercontent.com/u/81478127?v=4",
+      "profile": "https://github.com/nxsdev",
+      "contributions": [
+        "design"
+      ]
     }
   ]
 }
