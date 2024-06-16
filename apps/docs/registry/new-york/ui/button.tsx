@@ -10,7 +10,7 @@ import {
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50 data-[focused]:outline-none data-[focus-visible]:ring-1 data-[focus-visible]:ring-ring",
   {
     variants: {
       variant: {
@@ -43,22 +43,26 @@ export interface ButtonProps
   extends _ButtonProps,
     VariantProps<typeof buttonVariants> {}
 
-const Button = ({ className, variant, size, ...props }: ButtonProps) => {
-  return (
-    <_Button
-      className={(values) =>
-        cn(
-          buttonVariants({
-            variant,
-            size,
-            className:
-              typeof className === "function" ? className(values) : className,
-          })
-        )
-      }
-      {...props}
-    />
-  )
-}
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant, size, ...props }, ref) => {
+    return (
+      <_Button
+        className={(values) =>
+          cn(
+            buttonVariants({
+              variant,
+              size,
+              className:
+                typeof className === "function" ? className(values) : className,
+            })
+          )
+        }
+        ref={ref}
+        {...props}
+      />
+    )
+  }
+)
+Button.displayName = "Button"
 
 export { Button, buttonVariants }
