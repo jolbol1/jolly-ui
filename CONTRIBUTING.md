@@ -2,6 +2,10 @@
 
 Thanks for your interest in contributing to Jolly-UI
 
+## Code Style Guidelines
+
+Please ensure you follow the [code style guidelines](./CODE-STYLE.md) when contributing.
+
 ## About this repository
 
 This repository is a monorepo.
