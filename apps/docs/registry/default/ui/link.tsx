@@ -2,33 +2,36 @@
 
 import * as React from "react"
 import { type VariantProps } from "class-variance-authority"
-import { Link, LinkProps, LinkRenderProps } from "react-aria-components"
+import {
+  Link as AriaLink,
+  LinkProps as AriaLinkProps,
+  composeRenderProps,
+} from "react-aria-components"
 
 import { cn } from "@/lib/utils"
 
 import { buttonVariants } from "./button"
 
-interface _LinkProps extends LinkProps, VariantProps<typeof buttonVariants> {}
+interface LinkProps
+  extends AriaLinkProps,
+    VariantProps<typeof buttonVariants> {}
 
-const _Link = ({ className, variant, size, ...props }: _LinkProps) => {
+const Link = ({ className, variant, size, ...props }: LinkProps) => {
   return (
-    <Link
-      className={(values: LinkRenderProps) =>
+    <AriaLink
+      className={composeRenderProps(className, (className) =>
         cn(
           buttonVariants({
             variant,
             size,
-            className:
-              typeof className === "function"
-                ? className({ ...values, defaultClassName: undefined })
-                : className,
+            className,
           })
         )
-      }
+      )}
       {...props}
     />
   )
 }
 
-export { _Link as Link }
-export type { _LinkProps as LinkProps }
+export { Link }
+export type { LinkProps }

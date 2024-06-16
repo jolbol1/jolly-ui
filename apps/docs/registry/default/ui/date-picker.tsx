@@ -2,32 +2,32 @@ import { getLocalTimeZone } from "@internationalized/date"
 import { format } from "date-fns"
 import { CalendarIcon } from "lucide-react"
 import {
-  DatePicker,
-  DateRangePicker,
-  DateRangePickerProps,
-  DateValue,
-  Dialog,
-  DialogProps,
-  Group,
-  GroupProps,
-  PopoverProps,
-  RangeCalendarProps,
+  DatePicker as AriaDatePicker,
+  DateRangePicker as AriaDateRangePicker,
+  DateRangePickerProps as AriaDateRangePickerProps,
+  DateValue as AriaDateValue,
+  Dialog as AriaDialog,
+  DialogProps as AriaDialogProps,
+  Group as AriaGroup,
+  GroupProps as AriaGroupProps,
+  PopoverProps as AriaPopoverProps,
+  composeRenderProps,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/default/ui/button"
 import { Popover } from "@/registry/default/ui/popover"
 
-const _DatePicker = DatePicker
+const DatePicker = AriaDatePicker
 
-const _DateRangePicker = DateRangePicker
+const DateRangePicker = AriaDateRangePicker
 
-export interface _DatePickerButtonProps extends GroupProps {
-  date?: DateValue
+export interface DatePickerButtonProps extends AriaGroupProps {
+  date?: AriaDateValue
 }
 
-const _DatePickerButton = ({ date, ...props }: _DatePickerButtonProps) => (
-  <Group {...props}>
+const DatePickerButton = ({ date, ...props }: DatePickerButtonProps) => (
+  <AriaGroup {...props}>
     <Button
       variant="outline"
       className={cn(
@@ -35,7 +35,7 @@ const _DatePickerButton = ({ date, ...props }: _DatePickerButtonProps) => (
         !date && "text-muted-foreground"
       )}
     >
-      <CalendarIcon className="mr-2 h-4 w-4" />
+      <CalendarIcon className="mr-2 size-4" />
 
       {date ? (
         format(date?.toDate(getLocalTimeZone()), "PPP")
@@ -43,18 +43,18 @@ const _DatePickerButton = ({ date, ...props }: _DatePickerButtonProps) => (
         <span>Pick a date</span>
       )}
     </Button>
-  </Group>
+  </AriaGroup>
 )
 
-export interface _DateRangePickerButtonProps extends GroupProps {
-  date?: DateRangePickerProps<DateValue>["value"]
+export interface DateRangePickerButtonProps extends AriaGroupProps {
+  date?: AriaDateRangePickerProps<AriaDateValue>["value"]
 }
 
-const _DateRangePickerButton = ({
+const DateRangePickerButton = ({
   date,
   ...props
-}: _DateRangePickerButtonProps) => (
-  <Group {...props}>
+}: DateRangePickerButtonProps) => (
+  <AriaGroup {...props}>
     <Button
       variant="outline"
       className={cn(
@@ -62,7 +62,7 @@ const _DateRangePickerButton = ({
         !date && "text-muted-foreground"
       )}
     >
-      <CalendarIcon className="mr-2 h-4 w-4" />
+      <CalendarIcon className="mr-2 size-4" />
 
       {date?.end ? (
         <>
@@ -73,25 +73,20 @@ const _DateRangePickerButton = ({
         <span>Pick a date</span>
       )}
     </Button>
-  </Group>
+  </AriaGroup>
 )
 
-const _DatePickerContent = ({
+const DatePickerContent = ({
   className,
   popoverClassName,
   ...props
-}: DialogProps & { popoverClassName?: PopoverProps["className"] }) => (
+}: AriaDialogProps & { popoverClassName?: AriaPopoverProps["className"] }) => (
   <Popover
-    className={(values) =>
-      cn(
-        "w-auto p-3",
-        typeof popoverClassName === "function"
-          ? popoverClassName(values)
-          : popoverClassName
-      )
-    }
+    className={composeRenderProps(popoverClassName, (className) =>
+      cn("w-auto p-3", className)
+    )}
   >
-    <Dialog
+    <AriaDialog
       className={cn(
         "flex w-full flex-col space-y-4 outline-none sm:flex-row sm:space-x-4 sm:space-y-0",
         className
@@ -102,9 +97,9 @@ const _DatePickerContent = ({
 )
 
 export {
-  _DatePicker as DatePicker,
-  _DatePickerButton as DatePickerButton,
-  _DatePickerContent as DatePickerContent,
-  _DateRangePicker as DateRangePicker,
-  _DateRangePickerButton as DateRangePickerButton,
+  DatePicker,
+  DatePickerButton,
+  DatePickerContent,
+  DateRangePicker,
+  DateRangePickerButton,
 }

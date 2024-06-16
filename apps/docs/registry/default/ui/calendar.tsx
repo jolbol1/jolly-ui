@@ -4,79 +4,80 @@ import * as React from "react"
 import { getLocalTimeZone, today } from "@internationalized/date"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import {
-  Button,
-  Calendar,
-  CalendarCell,
-  CalendarCellProps,
-  CalendarGrid,
-  CalendarGridBody,
-  CalendarGridBodyProps,
-  CalendarGridHeader,
-  CalendarGridHeaderProps,
-  CalendarGridProps,
-  CalendarHeaderCell,
-  CalendarHeaderCellProps,
-  Heading,
-  RangeCalendar,
-  RangeCalendarStateContext,
+  Button as AriaButton,
+  Calendar as AriaCalendar,
+  CalendarCell as AriaCalendarCell,
+  CalendarCellProps as AriaCalendarCellProps,
+  CalendarGrid as AriaCalendarGrid,
+  CalendarGridBody as AriaCalendarGridBody,
+  CalendarGridBodyProps as AriaCalendarGridBodyProps,
+  CalendarGridHeader as AriaCalendarGridHeader,
+  CalendarGridHeaderProps as AriaCalendarGridHeaderProps,
+  CalendarGridProps as AriaCalendarGridProps,
+  CalendarHeaderCell as AriaCalendarHeaderCell,
+  CalendarHeaderCellProps as AriaCalendarHeaderCellProps,
+  Heading as AriaHeading,
+  RangeCalendar as AriaRangeCalendar,
+  RangeCalendarStateContext as AriaRangeCalendarStateContext,
+  composeRenderProps,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/registry/default/ui/button"
 
-const _Calendar = Calendar
+const Calendar = AriaCalendar
 
-const _RangeCalendar = RangeCalendar
+const RangeCalendar = AriaRangeCalendar
 
-const _CalendarHeading = ({
+const CalendarHeading = ({
   ...props
 }: React.HTMLAttributes<HTMLHeadElement>) => (
   <header className="relative flex items-center justify-center pt-1" {...props}>
-    <Heading className="text-sm font-medium" />
+    <AriaHeading className="text-sm font-medium" />
     <div className="flex items-center">
-      <Button
+      <AriaButton
         slot="next"
         className={cn(
           buttonVariants({ variant: "outline" }),
-          "h-7 w-7 bg-transparent p-0 opacity-50 data-[hovered]:opacity-100",
+          "size-7 bg-transparent p-0 opacity-50 data-[hovered]:opacity-100",
           "absolute right-1 text-popover-foreground"
         )}
       >
-        <ChevronRight className="h-4 w-4" />
-      </Button>
-      <Button
+        <ChevronRight className="size-4" />
+      </AriaButton>
+      <AriaButton
         slot="previous"
         className={cn(
           buttonVariants({ variant: "outline" }),
-          "h-7 w-7 bg-transparent p-0 opacity-50 data-[hovered]:opacity-100",
+          "size-7 bg-transparent p-0 opacity-50 data-[hovered]:opacity-100",
           "absolute left-1 text-popover-foreground"
         )}
       >
-        <ChevronLeft className="h-4 w-4" />
-      </Button>
+        <ChevronLeft className="size-4" />
+      </AriaButton>
     </div>
   </header>
 )
 
-const _CalendarGrid = ({ className, ...props }: CalendarGridProps) => (
-  <CalendarGrid
+const CalendarGrid = ({ className, ...props }: AriaCalendarGridProps) => (
+  <AriaCalendarGrid
     className={cn("mt-4 w-full border-collapse space-y-1", className)}
     {...props}
   />
 )
 
-const _CalendarGridHeader = ({
+const CalendarGridHeader = ({
   className,
   ...props
-}: CalendarGridHeaderProps) => (
-  <CalendarGridHeader className={cn("[&>tr]:flex", className)} {...props} />
+}: AriaCalendarGridHeaderProps) => (
+  <AriaCalendarGridHeader className={cn("[&>tr]:flex", className)} {...props} />
 )
 
-const _CalendarHeaderCell = ({
+const CalendarHeaderCell = ({
   className,
   ...props
-}: CalendarHeaderCellProps) => (
-  <CalendarHeaderCell
+}: AriaCalendarHeaderCellProps) => (
+  <AriaCalendarHeaderCell
     className={cn(
       "w-9 rounded-md text-[0.8rem] font-normal text-muted-foreground",
       className
@@ -85,8 +86,11 @@ const _CalendarHeaderCell = ({
   />
 )
 
-const _CalendarGridBody = ({ className, ...props }: CalendarGridBodyProps) => (
-  <CalendarGridBody
+const CalendarGridBody = ({
+  className,
+  ...props
+}: AriaCalendarGridBodyProps) => (
+  <AriaCalendarGridBody
     className={cn(
       "[&>tr>td]:p-0 [&>tr]:mt-2 [&>tr]:flex [&>tr]:w-full",
       "[&>tr>td:first-child>div]:rounded-l-md [&>tr>td:last-child>div]:rounded-r-md",
@@ -96,31 +100,38 @@ const _CalendarGridBody = ({ className, ...props }: CalendarGridBodyProps) => (
   />
 )
 
-const _CalendarCell = ({ className, date, ...props }: CalendarCellProps) => {
-  const isRange = Boolean(React.useContext(RangeCalendarStateContext))
+const CalendarCell = ({ className, date, ...props }: AriaCalendarCellProps) => {
+  const isRange = Boolean(React.useContext(AriaRangeCalendarStateContext))
   return (
-    <CalendarCell
-      className={(values) =>
+    <AriaCalendarCell
+      className={composeRenderProps(className, (className, renderProps) =>
         cn(
-          "inline-flex h-9 w-9 items-center justify-center whitespace-nowrap rounded-md  p-0 text-sm font-normal ring-offset-background transition-colors data-[disabled]:pointer-events-none data-[hovered]:bg-accent data-[hovered]:text-accent-foreground data-[disabled]:opacity-50 data-[selected]:opacity-100",
+          "inline-flex size-9 items-center justify-center whitespace-nowrap rounded-md p-0 text-sm font-normal ring-offset-background transition-colors",
+          /* Hover */
+          "data-[hovered]:bg-accent data-[hovered]:text-accent-foreground",
+          /* Disabled */
+          "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+          /* Selected */
+          "data-[selected]:opacity-100",
+          /* Logic */
           date.compare(today(getLocalTimeZone())) === 0 &&
             "bg-accent text-accent-foreground",
-          values.isDisabled && "text-muted-foreground opacity-50",
-          values.isFocusVisible &&
-            values.isFocused &&
+          renderProps.isDisabled && "text-muted-foreground opacity-50",
+          renderProps.isFocusVisible &&
+            renderProps.isFocused &&
             "outline-none ring-2 ring-ring ring-offset-2",
-          values.isSelected &&
+          renderProps.isSelected &&
             isRange &&
             "rounded-none bg-accent text-accent-foreground",
-          ((values.isSelected && !isRange) ||
-            values.isSelectionStart ||
-            values.isSelectionEnd) &&
+          ((renderProps.isSelected && !isRange) ||
+            renderProps.isSelectionStart ||
+            renderProps.isSelectionEnd) &&
             "rounded-md bg-primary text-primary-foreground data-[focused]:bg-primary data-[hovered]:bg-primary data-[focused]:text-primary-foreground data-[hovered]:text-primary-foreground",
-          values.isOutsideMonth &&
+          renderProps.isOutsideMonth &&
             "text-muted-foreground opacity-50 data-[selected]:bg-accent/50 data-[selected]:text-muted-foreground data-[selected]:opacity-30",
-          typeof className === "function" ? className(values) : className
+          className
         )
-      }
+      )}
       date={date}
       {...props}
     />
@@ -128,12 +139,12 @@ const _CalendarCell = ({ className, date, ...props }: CalendarCellProps) => {
 }
 
 export {
-  _Calendar as Calendar,
-  _CalendarCell as CalendarCell,
-  _CalendarGrid as CalendarGrid,
-  _CalendarGridBody as CalendarGridBody,
-  _CalendarGridHeader as CalendarGridHeader,
-  _CalendarHeaderCell as CalendarHeaderCell,
-  _CalendarHeading as CalendarHeading,
-  _RangeCalendar as RangeCalendar,
+  Calendar,
+  CalendarCell,
+  CalendarGrid,
+  CalendarGridBody,
+  CalendarGridHeader,
+  CalendarHeaderCell,
+  CalendarHeading,
+  RangeCalendar,
 }

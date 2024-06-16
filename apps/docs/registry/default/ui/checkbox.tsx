@@ -3,41 +3,44 @@
 import * as React from "react"
 import { Check, Minus } from "lucide-react"
 import {
-  Checkbox,
-  CheckboxGroup,
-  type CheckboxProps,
+  Checkbox as AriaCheckbox,
+  CheckboxGroup as AriaCheckboxGroup,
+  composeRenderProps,
+  type CheckboxProps as AriaCheckboxProps,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"
 
 import { labelVariants } from "./label"
 
-const _CheckboxGroup = CheckboxGroup
+const CheckboxGroup = AriaCheckboxGroup
 
-const _Checkbox = ({ className, children, ...props }: CheckboxProps) => (
-  <Checkbox
-    className={(values) =>
+const Checkbox = ({ className, children, ...props }: AriaCheckboxProps) => (
+  <AriaCheckbox
+    className={composeRenderProps(className, (className) =>
       cn(
-        "group flex items-center gap-x-2  data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 ",
+        "group flex items-center gap-x-2",
+        /* Disabled */
+        "data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 ",
         labelVariants,
-        typeof className === "function" ? className(values) : className
+        className
       )
-    }
+    )}
     {...props}
   >
-    {(values) => (
+    {composeRenderProps(children, (children, renderProps) => (
       <>
-        <div className="h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background group-data-[indeterminate]:bg-primary group-data-[selected]:bg-primary  group-data-[indeterminate]:text-primary-foreground group-data-[selected]:text-primary-foreground group-data-[focus-visible]:outline-none group-data-[focus-visible]:ring-2 group-data-[focus-visible]:ring-ring group-data-[focus-visible]:ring-offset-2">
-          {values.isIndeterminate ? (
-            <Minus className="h-[0.875rem] w-[0.875rem]" />
-          ) : values.isSelected ? (
-            <Check className="h-4 w-[0.875rem]" />
+        <div className="size-4 shrink-0 rounded-sm border border-primary ring-offset-background group-data-[indeterminate]:bg-primary group-data-[selected]:bg-primary group-data-[indeterminate]:text-primary-foreground  group-data-[selected]:text-primary-foreground group-data-[focus-visible]:outline-none group-data-[focus-visible]:ring-2 group-data-[focus-visible]:ring-ring group-data-[focus-visible]:ring-offset-2">
+          {renderProps.isIndeterminate ? (
+            <Minus className="size-3.5" />
+          ) : renderProps.isSelected ? (
+            <Check className="h-4 w-3.5" />
           ) : null}
         </div>
-        {typeof children === "function" ? children(values) : children}
+        {children}
       </>
-    )}
-  </Checkbox>
+    ))}
+  </AriaCheckbox>
 )
 
-export { _Checkbox as Checkbox, _CheckboxGroup as CheckboxGroup }
+export { Checkbox, CheckboxGroup }

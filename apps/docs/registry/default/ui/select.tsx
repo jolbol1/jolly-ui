@@ -3,113 +3,135 @@
 import * as React from "react"
 import { Check, ChevronDown } from "lucide-react"
 import {
-  Button,
-  ButtonProps,
-  Collection,
-  Header,
-  ListBox,
-  ListBoxItem,
-  ListBoxItemProps,
-  ListBoxProps,
-  Popover,
-  PopoverProps,
-  Section,
-  Select,
-  SelectValue,
-  SelectValueProps,
-  Separator,
-  SeparatorProps,
+  Button as AriaButton,
+  ButtonProps as AriaButtonProps,
+  Collection as AriaCollection,
+  Header as AriaHeader,
+  ListBox as AriaListBox,
+  ListBoxItem as AriaListBoxItem,
+  ListBoxItemProps as AriaListBoxItemProps,
+  ListBoxProps as AriaListBoxProps,
+  Popover as AriaPopover,
+  PopoverProps as AriaPopoverProps,
+  Section as AriaSection,
+  Select as AriaSelect,
+  SelectValue as AriaSelectValue,
+  SelectValueProps as AriaSelectValueProps,
+  Separator as AriaSeparator,
+  SeparatorProps as AriaSeparatorProps,
+  composeRenderProps,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"
 
-const _Select = Select
+const Select = AriaSelect
 
-const SelectSection = Section
+const SelectSection = AriaSection
 
-const SelectCollection = Collection
+const SelectCollection = AriaCollection
 
-const _SelectValue = <T extends object>({
+const SelectValue = <T extends object>({
   className,
   ...props
-}: SelectValueProps<T>) => (
-  <SelectValue
-    className={(values) =>
-      cn(
-        "data-[placeholder]:text-muted-foreground",
-        typeof className === "function" ? className(values) : className
-      )
-    }
+}: AriaSelectValueProps<T>) => (
+  <AriaSelectValue
+    className={composeRenderProps(className, (className) =>
+      cn("data-[placeholder]:text-muted-foreground", className)
+    )}
     {...props}
   />
 )
 
-const SelectTrigger = ({ className, children, ...props }: ButtonProps) => (
-  <Button
-    className={(values) =>
+const SelectTrigger = ({ className, children, ...props }: AriaButtonProps) => (
+  <AriaButton
+    className={composeRenderProps(className, (className) =>
       cn(
-        "flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 data-[focused]:outline-none data-[focused]:ring-2 data-[focused]:ring-ring data-[focused]:ring-offset-2",
-        typeof className === "function" ? className(values) : className
+        "flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background",
+        /* Disabled *
+        "data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
+        /* Focused */
+        "data-[focused]:outline-none data-[focused]:ring-2 data-[focused]:ring-ring data-[focused]:ring-offset-2",
+        className
       )
-    }
+    )}
     {...props}
   >
-    {(values) => (
+    {composeRenderProps(children, (children) => (
       <>
-        {typeof children === "function" ? children(values) : children}
-        <ChevronDown aria-hidden="true" className="h-4 w-4 opacity-50" />
+        {children}
+        <ChevronDown aria-hidden="true" className="size-4 opacity-50" />
       </>
-    )}
-  </Button>
+    ))}
+  </AriaButton>
 )
 
 const SelectHeader = ({
   className,
   ...props
-}: React.ComponentProps<typeof Header>) => (
-  <Header
+}: React.ComponentProps<typeof AriaHeader>) => (
+  <AriaHeader
     className={cn(" py-1.5 pl-8 pr-2 text-sm font-semibold", className)}
     {...props}
   />
 )
 
-const SelectItem = ({ className, children, ...props }: ListBoxItemProps) => (
-  <ListBoxItem
-    className={(values) =>
+const SelectItem = ({
+  className,
+  children,
+  ...props
+}: AriaListBoxItemProps) => (
+  <AriaListBoxItem
+    className={composeRenderProps(className, (className) =>
       cn(
-        "relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none data-[disabled]:pointer-events-none data-[focused]:bg-accent data-[focused]:text-accent-foreground data-[disabled]:opacity-50",
-        typeof className === "function" ? className(values) : className
+        "relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none",
+        /* Disabled */
+        "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+        /* Focused */
+        "data-[focused]:bg-accent data-[focused]:text-accent-foreground",
+        className
       )
-    }
+    )}
     {...props}
   >
-    {(values) => (
+    {composeRenderProps(children, (children, renderProps) => (
       <>
-        {values.isSelected && (
-          <span className="absolute left-2 flex h-4 w-4 items-center justify-center">
-            <Check className="h-4 w-4" />
+        {renderProps.isSelected && (
+          <span className="absolute left-2 flex size-4 items-center justify-center">
+            <Check className="size-4" />
           </span>
         )}
-        {typeof children === "function" ? children(values) : children}
+        {children}
       </>
-    )}
-  </ListBoxItem>
+    ))}
+  </AriaListBoxItem>
 )
 
-const SelectSeparator = ({ className, ...props }: SeparatorProps) => (
-  <Separator className={cn("-mx-1 my-1 h-px bg-muted", className)} {...props} />
+const SelectSeparator = ({ className, ...props }: AriaSeparatorProps) => (
+  <AriaSeparator
+    className={cn("-mx-1 my-1 h-px bg-muted", className)}
+    {...props}
+  />
 )
 
-const SelectPopover = ({ className, offset = 0, ...props }: PopoverProps) => (
-  <Popover
+const SelectPopover = ({
+  className,
+  offset = 0,
+  ...props
+}: AriaPopoverProps) => (
+  <AriaPopover
     offset={offset}
-    className={(values) =>
+    className={composeRenderProps(className, (className) =>
       cn(
-        "relative z-50 w-[--trigger-width]  min-w-[8rem] overflow-y-auto rounded-md border bg-popover text-popover-foreground shadow-md data-[entering]:animate-in data-[exiting]:animate-out data-[entering]:fade-in-0 data-[exiting]:fade-out-0 data-[exiting]:zoom-out-95 data-[placement=bottom]:slide-in-from-top-2 data-[placement=left]:slide-in-from-right-2 data-[placement=right]:slide-in-from-left-2 data-[placement=top]:slide-in-from-bottom-2",
-        "data-[placement=bottom]:translate-y-1 data-[placement=left]:-translate-x-1 data-[placement=right]:translate-x-1 data-[placement=top]:-translate-y-1",
-        typeof className === "function" ? className(values) : className
+        "relative z-50 w-[--trigger-width]  min-w-32 overflow-y-auto rounded-md border bg-popover text-popover-foreground shadow-md",
+        /* Entering */
+        "data-[entering]:animate-in  data-[entering]:fade-in-0 ",
+        /* Exiting */
+        "data-[exiting]:animate-out data-[exiting]:fade-out-0 data-[exiting]:zoom-out-95",
+        /* Placement */
+        "data-[placement=bottom]:translate-y-1 data-[placement=left]:-translate-x-1 data-[placement=right]:translate-x-1 data-[placement=top]:-translate-y-1 data-[placement=bottom]:slide-in-from-top-2 data-[placement=left]:slide-in-from-right-2 data-[placement=right]:slide-in-from-left-2 data-[placement=top]:slide-in-from-bottom-2",
+        className
       )
-    }
+    )}
     {...props}
   />
 )
@@ -117,19 +139,19 @@ const SelectPopover = ({ className, offset = 0, ...props }: PopoverProps) => (
 const SelectContent = <T extends object>({
   className,
   ...props
-}: ListBoxProps<T>) => (
-  <ListBox
-    className={(values) =>
-      cn("p-1", typeof className === "function" ? className(values) : className)
-    }
+}: AriaListBoxProps<T>) => (
+  <AriaListBox
+    className={composeRenderProps(className, (className) =>
+      cn("p-1", className)
+    )}
     {...props}
   />
 )
 
 export {
-  _Select as Select,
+  Select,
   SelectSection,
-  _SelectValue as SelectValue,
+  SelectValue,
   SelectContent,
   SelectTrigger,
   SelectHeader,
@@ -138,4 +160,4 @@ export {
   SelectPopover,
   SelectCollection,
 }
-export type { PopoverProps as SelectPopoverProps }
+export type { AriaPopoverProps as SelectPopoverProps }
