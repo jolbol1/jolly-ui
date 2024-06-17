@@ -34,16 +34,7 @@ const RadioGroup = ({
   )
 }
 
-interface RadioProps extends AriaRadioProps {
-  showRadio?: boolean
-}
-
-const Radio = ({
-  className,
-  children,
-  showRadio = true,
-  ...props
-}: RadioProps) => {
+const Radio = ({ className, children, ...props }: AriaRadioProps) => {
   return (
     <AriaRadio
       className={composeRenderProps(className, (className) =>
@@ -59,21 +50,19 @@ const Radio = ({
     >
       {composeRenderProps(children, (children, renderProps) => (
         <>
-          {showRadio && (
-            <span
-              className={cn(
-                "flex aspect-square size-4 items-center justify-center rounded-full border border-primary text-primary ring-offset-background",
-                /* Focus */
-                "group-data-[focused]:outline-none",
-                "group-data-[focus-visible]:ring-2 group-data-[focus-visible]:ring-ring group-data-[focus-visible]:ring-offset-2",
-                "group-data-[disabled]:cursor-not-allowed group-data-[disabled]:opacity-50"
-              )}
-            >
-              {renderProps.isSelected && (
-                <Circle className="size-2.5 fill-current text-current" />
-              )}
-            </span>
-          )}
+          <span
+            className={cn(
+              "flex aspect-square size-4 items-center justify-center rounded-full border border-primary text-primary ring-offset-background",
+              /* Focus */
+              "group-data-[focused]:outline-none",
+              "group-data-[focus-visible]:ring-2 group-data-[focus-visible]:ring-ring group-data-[focus-visible]:ring-offset-2",
+              "group-data-[disabled]:cursor-not-allowed group-data-[disabled]:opacity-50"
+            )}
+          >
+            {renderProps.isSelected && (
+              <Circle className="size-2.5 fill-current text-current" />
+            )}
+          </span>
           {children}
         </>
       ))}
@@ -82,4 +71,3 @@ const Radio = ({
 }
 
 export { RadioGroup, Radio }
-export type { RadioProps }
