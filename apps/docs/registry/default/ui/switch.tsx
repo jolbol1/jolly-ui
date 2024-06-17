@@ -21,10 +21,24 @@ const Switch = ({ children, className, ...props }: AriaSwitchProps) => (
   >
     {composeRenderProps(children, (children) => (
       <>
-        <div className="h-[24px] w-[44px] shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-input transition-colors group-data-[selected]:bg-primary group-data-[disabled]:opacity-50 group-data-[focus-visible]:outline-none group-data-[focus-visible]:ring-2 group-data-[focus-visible]:ring-ring group-data-[focus-visible]:ring-offset-2 group-data-[focus-visible]:ring-offset-background">
+        <div
+          className={cn(
+            "peer inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors",
+            /* Focus Visible */
+            "group-data-[focus-visible]:outline-none group-data-[focus-visible]:ring-2 group-data-[focus-visible]:ring-ring group-data-[focus-visible]:ring-offset-2 group-data-[focus-visible]:ring-offset-background",
+            /* Disabled */
+            "group-data-[disabled]:cursor-not-allowed group-data-[disabled]:opacity-50",
+            /* Selected */
+            "bg-input group-data-[selected]:bg-primary",
+            /* Resets */
+            "focus-visible:outline-none"
+          )}
+        >
           <div
             className={cn(
-              "pointer-events-none block size-5 translate-x-0 rounded-full bg-background shadow-lg ring-0 transition-transform group-data-[selected]:translate-x-5"
+              "pointer-events-none block size-5 rounded-full bg-background shadow-lg ring-0 transition-transform",
+              /* Selected */
+              "translate-x-0 group-data-[selected]:translate-x-5"
             )}
           />
         </div>

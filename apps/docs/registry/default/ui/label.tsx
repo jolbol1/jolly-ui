@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils"
 const labelVariants = cva([
   "text-sm font-medium leading-none",
   /* Disabled */
-  "peer-disabled:cursor-not-allowed peer-disabled:opacity-70 data-[disabled]:cursor-not-allowed data-[disabled]:opacity-70",
+  "data-[disabled]:cursor-not-allowed data-[disabled]:opacity-70",
 ])
 
 const Label = ({ className, ...props }: AriaLabelProps) => (

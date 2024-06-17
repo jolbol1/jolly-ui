@@ -21,7 +21,7 @@ const Checkbox = ({ className, children, ...props }: AriaCheckboxProps) => (
       cn(
         "group flex items-center gap-x-2",
         /* Disabled */
-        "data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 ",
+        "data-[disabled]:cursor-not-allowed data-[disabled]:opacity-70",
         labelVariants,
         className
       )
@@ -30,11 +30,23 @@ const Checkbox = ({ className, children, ...props }: AriaCheckboxProps) => (
   >
     {composeRenderProps(children, (children, renderProps) => (
       <>
-        <div className="size-4 shrink-0 rounded-sm border border-primary ring-offset-background group-data-[indeterminate]:bg-primary group-data-[selected]:bg-primary group-data-[indeterminate]:text-primary-foreground  group-data-[selected]:text-primary-foreground group-data-[focus-visible]:outline-none group-data-[focus-visible]:ring-2 group-data-[focus-visible]:ring-ring group-data-[focus-visible]:ring-offset-2">
+        <div
+          className={cn(
+            "flex size-4 shrink-0 items-center justify-center rounded-sm border border-primary text-current ring-offset-background",
+            /* Focus Visible */
+            "group-data-[focus-visible]:outline-none group-data-[focus-visible]:ring-2 group-data-[focus-visible]:ring-ring group-data-[focus-visible]:ring-offset-2",
+            /* Selected */
+            "group-data-[indeterminate]:bg-primary group-data-[selected]:bg-primary group-data-[indeterminate]:text-primary-foreground  group-data-[selected]:text-primary-foreground",
+            /* Disabled */
+            "group-data-[disabled]:cursor-not-allowed group-data-[disabled]:opacity-50",
+            /* Resets */
+            "focus-visible:outline-none"
+          )}
+        >
           {renderProps.isIndeterminate ? (
-            <Minus className="size-3.5" />
+            <Minus className="size-4" />
           ) : renderProps.isSelected ? (
-            <Check className="h-4 w-3.5" />
+            <Check className="size-4" />
           ) : null}
         </div>
         {children}

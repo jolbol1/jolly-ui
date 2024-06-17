@@ -21,6 +21,8 @@ const toggleVariants = cva(
     "data-[selected]:bg-accent data-[selected]:text-accent-foreground",
     /* Focus Visible */
     "data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2",
+    /* Resets */
+    "focus-visible:outline-none",
   ],
   {
     variants: {

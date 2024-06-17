@@ -49,8 +49,8 @@ const Radio = ({
       className={composeRenderProps(className, (className) =>
         cn(
           "group flex items-center gap-x-2",
-          /* Focused */
-          "data-[focused]:outline-none",
+          /* Disabled */
+          "data-[disabled]:cursor-not-allowed data-[disabled]:opacity-70",
           labelVariants,
           className
         )
@@ -60,7 +60,15 @@ const Radio = ({
       {composeRenderProps(children, (children, renderProps) => (
         <>
           {showRadio && (
-            <span className="flex aspect-square size-4 items-center justify-center rounded-full border border-primary text-primary ring-offset-background group-data-[disabled]:opacity-50 group-data-[focus-visible]:ring-2 group-data-[focus-visible]:ring-ring group-data-[focus-visible]:ring-offset-2">
+            <span
+              className={cn(
+                "flex aspect-square size-4 items-center justify-center rounded-full border border-primary text-primary ring-offset-background",
+                /* Focus */
+                "group-data-[focused]:outline-none",
+                "group-data-[focus-visible]:ring-2 group-data-[focus-visible]:ring-ring group-data-[focus-visible]:ring-offset-2",
+                "group-data-[disabled]:cursor-not-allowed group-data-[disabled]:opacity-50"
+              )}
+            >
               {renderProps.isSelected && (
                 <Circle className="size-2.5 fill-current text-current" />
               )}
