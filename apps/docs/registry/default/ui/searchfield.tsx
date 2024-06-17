@@ -1,6 +1,8 @@
 import {
   Button as AriaButton,
   ButtonProps as AriaButtonProps,
+  Group as AriaGroup,
+  GroupProps as AriaGroupProps,
   Input as AriaInput,
   InputProps as AriaInputProps,
   SearchField as AriaSearchField,
@@ -10,12 +12,23 @@ import {
 
 import { cn } from "@/lib/utils"
 
+function SearchField({ className, ...props }: AriaSearchFieldProps) {
+  return (
+    <AriaSearchField
+      className={composeRenderProps(className, (className) =>
+        cn("group", className)
+      )}
+      {...props}
+    />
+  )
+}
+
 function SearchFieldInput({ className, ...props }: AriaInputProps) {
   return (
     <AriaInput
       className={composeRenderProps(className, (className) =>
         cn(
-          "min-w-0 flex-1 bg-background px-2 py-1.5 outline outline-0 [&::-webkit-search-cancel-button]:hidden",
+          "min-w-0 flex-1 bg-background px-2 py-1.5 outline outline-0 placeholder:text-muted-foreground [&::-webkit-search-cancel-button]:hidden",
           className
         )
       )}
@@ -24,12 +37,16 @@ function SearchFieldInput({ className, ...props }: AriaInputProps) {
   )
 }
 
-function SearchField({ className, ...props }: AriaSearchFieldProps) {
+function SearchFieldGroup({ className, ...props }: AriaGroupProps) {
   return (
-    <AriaSearchField
+    <AriaGroup
       className={composeRenderProps(className, (className) =>
         cn(
-          "group flex h-10 w-full items-center overflow-hidden rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-within:outline-none focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2 group-data-[disabled]:opacity-50",
+          "flex h-10 w-full items-center overflow-hidden rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background",
+          /* Focus Within */
+          "data-[focus-within]:outline-none data-[focus-within]:ring-2 data-[focus-within]:ring-ring data-[focus-within]:ring-offset-2",
+          /* Disabled */
+          "data-[disabled]:opacity-50",
           className
         )
       )}
@@ -43,7 +60,13 @@ function SearchFieldClear({ className, ...props }: AriaButtonProps) {
     <AriaButton
       className={composeRenderProps(className, (className) =>
         cn(
-          "mr-1 rounded-sm opacity-70 ring-offset-background transition-opacity data-[hovered]:opacity-100 group-data-[disabled]:pointer-events-none group-data-[empty]:invisible",
+          "mr-1 rounded-sm opacity-70 ring-offset-background transition-opacity",
+          /* Hover */
+          "data-[hovered]:opacity-100",
+          /* Disabled */
+          "data-[disabled]:pointer-events-none",
+          /* Empty */
+          "group-data-[empty]:invisible",
           className
         )
       )}
@@ -52,4 +75,4 @@ function SearchFieldClear({ className, ...props }: AriaButtonProps) {
   )
 }
 
-export { SearchField, SearchFieldInput, SearchFieldClear }
+export { SearchField, SearchFieldGroup, SearchFieldInput, SearchFieldClear }
