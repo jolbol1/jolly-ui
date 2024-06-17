@@ -218,3 +218,32 @@ const Button = forwardRef(({ className, ...props }, ref) => (
 ```
 
 By adopting these practices, JollyUI components will be more flexible, easier to maintain, and ready for future updates in React.
+
+### Handle All Exports at the End of the File
+
+To maintain a clear and organized structure, all export statements should be placed at the end of the file. This avoids inline exports and keeps the codebase consistent.
+
+#### Example
+
+##### Good:
+
+```tsx
+
+const Button = ({ className, ...props }: ButtonProps) => (
+  <AriaButton className={className} {...props} />
+)
+
+// Export at the end
+export { Button }
+export type { ButtonProps }
+```
+
+##### Bad:
+
+```tsx
+export const Button = ({ className, ...props }: ButtonProps) => (
+  <AriaButton className={className} {...props} />
+)
+```
+
+By placing all export statements at the end of the file, the code is easier to read and maintain, and it ensures a consistent style throughout the codebase.

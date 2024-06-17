@@ -9,7 +9,7 @@ import {
 
 import { cn } from "@/lib/utils"
 
-export interface ProgressProps extends AriaProgressBarProps {
+interface ProgressProps extends AriaProgressBarProps {
   barClassName?: string
   fillClassName?: string
 }
@@ -52,3 +52,4 @@ const Progress = ({
 )
 
 export { Progress }
+export type { ProgressProps }

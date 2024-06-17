@@ -77,8 +77,7 @@ const MenuItem = ({ className, inset, ...props }: MenuItemProps) => (
   />
 )
 
-export interface MenuHeaderProps
-  extends React.ComponentProps<typeof AriaHeader> {
+interface MenuHeaderProps extends React.ComponentProps<typeof AriaHeader> {
   inset?: boolean
   separator?: boolean
 }
@@ -183,4 +182,4 @@ export {
   MenuSection,
   SubmenuTrigger,
 }
-export type { MenuItemProps }
+export type { MenuItemProps, MenuHeaderProps }

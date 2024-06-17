@@ -54,9 +54,7 @@ const ComboboxInput = ({ className, ...props }: AriaInputProps) => (
     </AriaButton>
   </AriaGroup>
 )
-
-export interface ComboboxLabelProps
-  extends React.ComponentProps<typeof AriaHeader> {
+interface ComboboxLabelProps extends React.ComponentProps<typeof AriaHeader> {
   separator?: boolean
   offset?: boolean
 }
@@ -160,3 +158,4 @@ export {
   ComboboxSeparator,
   ComboboxCollection,
 }
+export type { ComboboxLabelProps }

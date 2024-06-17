@@ -44,7 +44,7 @@ const toggleVariants = cva(
   }
 )
 
-export interface ToggleProps
+interface ToggleProps
   extends AriaToggleButtonProps,
     VariantProps<typeof toggleVariants> {}
 
@@ -64,3 +64,4 @@ const Toggle = ({ className, variant, size, ...props }: ToggleProps) => (
 )
 
 export { Toggle, toggleVariants }
+export type { ToggleProps }

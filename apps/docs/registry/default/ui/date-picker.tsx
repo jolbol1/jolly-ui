@@ -22,7 +22,7 @@ const DatePicker = AriaDatePicker
 
 const DateRangePicker = AriaDateRangePicker
 
-export interface DatePickerButtonProps extends AriaGroupProps {
+interface DatePickerButtonProps extends AriaGroupProps {
   date?: AriaDateValue
 }
 
@@ -46,7 +46,7 @@ const DatePickerButton = ({ date, ...props }: DatePickerButtonProps) => (
   </AriaGroup>
 )
 
-export interface DateRangePickerButtonProps extends AriaGroupProps {
+interface DateRangePickerButtonProps extends AriaGroupProps {
   date?: AriaDateRangePickerProps<AriaDateValue>["value"]
 }
 
@@ -103,3 +103,4 @@ export {
   DateRangePicker,
   DateRangePickerButton,
 }
+export type { DatePickerButtonProps, DateRangePickerButtonProps }

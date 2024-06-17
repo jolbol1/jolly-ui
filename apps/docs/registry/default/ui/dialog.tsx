@@ -65,7 +65,7 @@ const DialogOverlay = ({
   />
 )
 
-export interface DialogContentProps
+interface DialogContentProps
   extends Omit<React.ComponentProps<typeof AriaModal>, "children">,
     VariantProps<typeof sheetVariants> {
   children?: AriaDialogProps["children"]
@@ -161,3 +161,4 @@ export {
   DialogTitle,
   Dialog,
 }
+export type { DialogContentProps }

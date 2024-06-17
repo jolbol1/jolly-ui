@@ -34,7 +34,7 @@ const RadioGroup = ({
   )
 }
 
-export interface RadioProps extends AriaRadioProps {
+interface RadioProps extends AriaRadioProps {
   showRadio?: boolean
 }
 
@@ -82,3 +82,4 @@ const Radio = ({
 }
 
 export { RadioGroup, Radio }
+export type { RadioProps }
