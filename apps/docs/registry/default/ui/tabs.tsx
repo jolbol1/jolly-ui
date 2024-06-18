@@ -9,12 +9,24 @@ import {
   TabPanelProps as AriaTabPanelProps,
   TabProps as AriaTabProps,
   Tabs as AriaTabs,
+  TabsProps as AriaTabsProps,
   composeRenderProps,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"
 
-const Tabs = AriaTabs
+/* 
+ClassName is done this way due to bug in react-aria-components. Currently nested tabs merge classNames.
+https://github.com/adobe/react-spectrum/issues/5469
+*/
+function Tabs({ className, ...props }: AriaTabsProps) {
+  return (
+    <AriaTabs
+      className={composeRenderProps(className, (className) => cn(className))}
+      {...props}
+    />
+  )
+}
 
 const TabList = <T extends object>({
   className,
@@ -35,11 +47,9 @@ const Tab = ({ className, ...props }: AriaTabProps) => (
   <AriaTab
     className={composeRenderProps(className, (className) =>
       cn(
-        "inline-flex cursor-pointer items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all",
+        "inline-flex cursor-pointer justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium outline-none ring-offset-background transition-all",
         /* Focus Visible */
-        "data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2",
-        /* Focused */
-        "data-[focused]:outline-none",
+        "data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2",
         /* Disabled */
         "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
         /* Selected */
