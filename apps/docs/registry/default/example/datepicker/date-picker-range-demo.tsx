@@ -1,6 +1,6 @@
-import React from "react"
-import { parseDate } from "@internationalized/date"
+import { CalendarIcon } from "lucide-react"
 
+import { Button } from "@/registry/default/ui/button"
 import {
   CalendarCell,
   CalendarGrid,
@@ -13,24 +13,27 @@ import {
 import {
   DatePickerContent,
   DateRangePicker,
-  DateRangePickerButton,
 } from "@/registry/default/ui/date-picker"
+import { DateInput } from "@/registry/default/ui/datefield"
+import { FieldGroup } from "@/registry/default/ui/field"
 
-export function DatepickerDemo({ ...props }) {
-  let [date, setDate] = React.useState({
-    start: parseDate("2024-01-20"),
-    end: parseDate("2024-02-09"),
-  })
-
+export function DatepickerDemo() {
   return (
-    <DateRangePicker
-      aria-label="Select Date"
-      shouldCloseOnSelect={false}
-      value={date}
-      onChange={setDate}
-      {...props}
-    >
-      <DateRangePickerButton className="w-[300px]" date={date} />
+    <DateRangePicker>
+      <FieldGroup className="min-w-[300px]">
+        <DateInput variant="ghost" slot="start" />
+        <span aria-hidden className="px-2 text-sm text-muted-foreground">
+          –
+        </span>
+        <DateInput className="flex-1" variant="ghost" slot="end" />
+        <Button
+          variant="ghost"
+          size="icon"
+          className="mr-1 size-6 data-[focus-visible]:ring-offset-0"
+        >
+          <CalendarIcon aria-hidden className="size-4" />
+        </Button>
+      </FieldGroup>
       <DatePickerContent>
         <RangeCalendar pageBehavior="visible">
           <CalendarHeading />
@@ -39,11 +42,7 @@ export function DatepickerDemo({ ...props }) {
               {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
             </CalendarGridHeader>
             <CalendarGridBody>
-              {(date) => (
-                <>
-                  <CalendarCell date={date} />
-                </>
-              )}
+              {(date) => <CalendarCell date={date} />}
             </CalendarGridBody>
           </CalendarGrid>
         </RangeCalendar>
