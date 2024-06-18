@@ -1,6 +1,15 @@
 import React from "react"
-import { parseDate } from "@internationalized/date"
+import { getLocalTimeZone, parseDate } from "@internationalized/date"
+import { format } from "date-fns"
+import { CalendarIcon } from "lucide-react"
+import {
+  DateRangePickerProps as AriaDateRangePickerProps,
+  DateValue as AriaDateValue,
+  Group as AriaGroup,
+  GroupProps as AriaGroupProps,
+} from "react-aria-components"
 
+import { cn } from "@/lib/utils"
 import {
   CalendarCell,
   CalendarGrid,
@@ -13,8 +22,39 @@ import {
 import {
   DatePickerContent,
   DateRangePicker,
-  DateRangePickerButton,
 } from "@/registry/default/ui/date-picker"
+
+import { Button } from "../../ui/button"
+
+interface DateRangePickerButtonProps extends AriaGroupProps {
+  date?: AriaDateRangePickerProps<AriaDateValue>["value"]
+}
+
+const DateRangePickerButton = ({
+  date,
+  ...props
+}: DateRangePickerButtonProps) => (
+  <AriaGroup {...props}>
+    <Button
+      variant="outline"
+      className={cn(
+        "w-[280px] justify-start text-left font-normal",
+        !date && "text-muted-foreground"
+      )}
+    >
+      <CalendarIcon className="mr-2 size-4" />
+
+      {date?.end ? (
+        <>
+          {format(date.start.toDate(getLocalTimeZone()), "LLL dd, y")} -{" "}
+          {format(date.end.toDate(getLocalTimeZone()), "LLL dd, y")}
+        </>
+      ) : (
+        <span>Pick a date</span>
+      )}
+    </Button>
+  </AriaGroup>
+)
 
 export function DatepickerDemo({ ...props }) {
   let [date, setDate] = React.useState({
@@ -39,11 +79,7 @@ export function DatepickerDemo({ ...props }) {
               {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
             </CalendarGridHeader>
             <CalendarGridBody>
-              {(date) => (
-                <>
-                  <CalendarCell date={date} />
-                </>
-              )}
+              {(date) => <CalendarCell date={date} />}
             </CalendarGridBody>
           </CalendarGrid>
         </RangeCalendar>
