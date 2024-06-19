@@ -42,7 +42,11 @@ const sheetVariants = cva(
 
 const DialogTrigger = AriaDialogTrigger
 
-const Dialog = AriaDialog
+function Dialog({ className, ...props }: AriaDialogProps) {
+  return (
+    <AriaDialog className={cn("p-4 outline outline-0", className)} {...props} />
+  )
+}
 
 const DialogOverlay = ({
   className,
