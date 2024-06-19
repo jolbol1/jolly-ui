@@ -7,11 +7,12 @@ import {
   ListBoxItemProps as AriaListBoxItemProps,
   ListBoxProps as AriaListBoxProps,
   Section as AriaSection,
-  SectionProps as AriaSectionProps,
   composeRenderProps,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"
+
+const ListBoxSection = AriaSection
 
 const ListBoxCollection = AriaCollection
 
@@ -32,41 +33,42 @@ function ListBox<T extends object>({
   )
 }
 
-const ListBoxItem = ({
+const ListBoxItem = <T extends object>({
   className,
   children,
   ...props
-}: AriaListBoxItemProps) => (
-  <AriaListBoxItem
-    className={composeRenderProps(className, (className) =>
-      cn(
-        "relative flex w-full cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none",
-        /* Disabled */
-        "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
-        /* Focused */
-        "data-[focused]:bg-accent data-[focused]:text-accent-foreground",
-        /* Selection */
-        "data-[selection-mode]:pl-8",
-        className
-      )
-    )}
-    {...props}
-  >
-    {composeRenderProps(children, (children, renderProps) => (
-      <>
-        {renderProps.isSelected && (
-          <span className="absolute left-2 flex size-4 items-center justify-center">
-            <Check className="size-4" />
-          </span>
-        )}
-        {children}
-      </>
-    ))}
-  </AriaListBoxItem>
-)
-
-function ListBoxSection<T extends object>(props: AriaSectionProps<T>) {
-  return <AriaSection {...props} />
+}: AriaListBoxItemProps<T>) => {
+  return (
+    <AriaListBoxItem
+      textValue={
+        props.textValue || (typeof children === "string" ? children : undefined)
+      }
+      className={composeRenderProps(className, (className) =>
+        cn(
+          "relative flex w-full cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none",
+          /* Disabled */
+          "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+          /* Focused */
+          "data-[focused]:bg-accent data-[focused]:text-accent-foreground",
+          /* Selection */
+          "data-[selection-mode]:pl-8",
+          className
+        )
+      )}
+      {...props}
+    >
+      {composeRenderProps(children, (children, renderProps) => (
+        <>
+          {renderProps.isSelected && (
+            <span className="absolute left-2 flex size-4 items-center justify-center">
+              <Check className="size-4" />
+            </span>
+          )}
+          {children}
+        </>
+      ))}
+    </AriaListBoxItem>
+  )
 }
 
 function ListBoxHeader({
@@ -75,7 +77,7 @@ function ListBoxHeader({
 }: React.ComponentProps<typeof AriaHeader>) {
   return (
     <AriaHeader
-      className={cn("px-2 py-1.5 text-sm font-semibold", className)}
+      className={cn("py-1.5 pl-8 pr-2 text-sm font-semibold", className)}
       {...props}
     />
   )
@@ -84,7 +86,7 @@ function ListBoxHeader({
 export {
   ListBox,
   ListBoxItem,
-  ListBoxCollection,
-  ListBoxSection,
   ListBoxHeader,
+  ListBoxSection,
+  ListBoxCollection,
 }

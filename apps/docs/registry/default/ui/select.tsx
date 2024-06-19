@@ -1,16 +1,12 @@
 "use client"
 
-import * as React from "react"
 import { ChevronDown } from "lucide-react"
 import {
   Button as AriaButton,
   ButtonProps as AriaButtonProps,
-  Collection as AriaCollection,
-  Header as AriaHeader,
   ListBox as AriaListBox,
   ListBoxProps as AriaListBoxProps,
   PopoverProps as AriaPopoverProps,
-  Section as AriaSection,
   Select as AriaSelect,
   SelectValue as AriaSelectValue,
   SelectValueProps as AriaSelectValueProps,
@@ -19,16 +15,23 @@ import {
 
 import { cn } from "@/lib/utils"
 
-import { ListBoxItem } from "./listbox"
+import {
+  ListBoxCollection,
+  ListBoxHeader,
+  ListBoxItem,
+  ListBoxSection,
+} from "./listbox"
 import { Popover } from "./popover"
 
 const Select = AriaSelect
 
 const SelectItem = ListBoxItem
 
-const SelectSection = AriaSection
+const SelectHeader = ListBoxHeader
 
-const SelectCollection = AriaCollection
+const SelectSection = ListBoxSection
+
+const SelectCollection = ListBoxCollection
 
 const SelectValue = <T extends object>({
   className,
@@ -63,16 +66,6 @@ const SelectTrigger = ({ className, children, ...props }: AriaButtonProps) => (
       </>
     ))}
   </AriaButton>
-)
-
-const SelectHeader = ({
-  className,
-  ...props
-}: React.ComponentProps<typeof AriaHeader>) => (
-  <AriaHeader
-    className={cn(" py-1.5 pl-8 pr-2 text-sm font-semibold", className)}
-    {...props}
-  />
 )
 
 const SelectPopover = ({ className, ...props }: AriaPopoverProps) => (
