@@ -1,8 +1,11 @@
 import { Button } from "@/registry/default/ui/button"
-import { Dialog } from "@/registry/default/ui/dialog"
 import { Input } from "@/registry/default/ui/input"
 import { Label } from "@/registry/default/ui/label"
-import { Popover, PopoverTrigger } from "@/registry/default/ui/popover"
+import {
+  Popover,
+  PopoverDialog,
+  PopoverTrigger,
+} from "@/registry/default/ui/popover"
 
 export function PopoverPosition() {
   return (
@@ -10,33 +13,33 @@ export function PopoverPosition() {
       <PopoverTrigger>
         <Button variant="outline">Left</Button>
         <Popover placement="start">
-          <Dialog>
+          <PopoverDialog>
             <DemoContent />
-          </Dialog>
+          </PopoverDialog>
         </Popover>
       </PopoverTrigger>
       <PopoverTrigger>
         <Button variant="outline">Up</Button>
         <Popover placement="top">
-          <Dialog>
+          <PopoverDialog>
             <DemoContent />
-          </Dialog>
+          </PopoverDialog>
         </Popover>
       </PopoverTrigger>
       <PopoverTrigger>
         <Button variant="outline">Down</Button>
         <Popover placement="bottom">
-          <Dialog>
+          <PopoverDialog>
             <DemoContent />
-          </Dialog>
+          </PopoverDialog>
         </Popover>
       </PopoverTrigger>
       <PopoverTrigger>
         <Button variant="outline">Right</Button>
         <Popover placement="end">
-          <Dialog>
+          <PopoverDialog>
             <DemoContent />
-          </Dialog>
+          </PopoverDialog>
         </Popover>
       </PopoverTrigger>
     </div>

@@ -42,12 +42,6 @@ const sheetVariants = cva(
 
 const DialogTrigger = AriaDialogTrigger
 
-function Dialog({ className, ...props }: AriaDialogProps) {
-  return (
-    <AriaDialog className={cn("p-4 outline outline-0", className)} {...props} />
-  )
-}
-
 const DialogOverlay = ({
   className,
   isDismissable = true,
@@ -88,16 +82,15 @@ const DialogContent = ({
   <AriaModal
     className={composeRenderProps(className, (className) =>
       cn(
-        !side &&
-          "fixed left-1/2 top-1/2 z-50 w-full max-w-lg -translate-x-1/2 -translate-y-1/2 border bg-background p-6 shadow-lg duration-200 data-[exiting]:duration-300 data-[entering]:animate-in data-[exiting]:animate-out data-[entering]:fade-in-0 data-[exiting]:fade-out-0 data-[entering]:zoom-in-95 data-[exiting]:zoom-out-95 data-[entering]:slide-in-from-left-1/2 data-[entering]:slide-in-from-top-[48%] data-[exiting]:slide-out-to-left-1/2 data-[exiting]:slide-out-to-top-[48%] sm:rounded-lg md:w-full",
-        side && sheetVariants({ side }),
-        side && "h-full p-6",
+        side
+          ? sheetVariants({ side, className: "h-full p-6" })
+          : "fixed left-1/2 top-1/2 z-50 w-full max-w-lg -translate-x-1/2 -translate-y-1/2 border bg-background p-6 shadow-lg duration-200 data-[exiting]:duration-300 data-[entering]:animate-in data-[exiting]:animate-out data-[entering]:fade-in-0 data-[exiting]:fade-out-0 data-[entering]:zoom-in-95 data-[exiting]:zoom-out-95 data-[entering]:slide-in-from-left-1/2 data-[entering]:slide-in-from-top-[48%] data-[exiting]:slide-out-to-left-1/2 data-[exiting]:slide-out-to-top-[48%] sm:rounded-lg md:w-full",
         className
       )
     )}
     {...props}
   >
-    <Dialog
+    <AriaDialog
       role={role}
       className={cn(!side && "grid h-full gap-4", "h-full outline-none")}
     >
@@ -115,7 +108,7 @@ const DialogContent = ({
           )}
         </>
       ))}
-    </Dialog>
+    </AriaDialog>
   </AriaModal>
 )
 
@@ -156,13 +149,26 @@ const DialogTitle = ({ className, ...props }: AriaHeadingProps) => (
   />
 )
 
+const DialogDescription = ({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLParagraphElement>) => (
+  <p
+    className={cn(
+      "flex flex-col space-y-1.5 text-center sm:text-left",
+      className
+    )}
+    {...props}
+  />
+)
+
 export {
   DialogOverlay,
   DialogTrigger,
   DialogContent,
+  DialogDescription,
   DialogHeader,
   DialogFooter,
   DialogTitle,
-  Dialog,
 }
 export type { DialogContentProps }

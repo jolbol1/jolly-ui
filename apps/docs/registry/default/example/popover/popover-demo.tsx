@@ -1,16 +1,18 @@
 import { Button } from "@/registry/default/ui/button"
 import { Input } from "@/registry/default/ui/input"
 import { Label } from "@/registry/default/ui/label"
-import { Popover, PopoverTrigger } from "@/registry/default/ui/popover"
-
-import { Dialog } from "../../ui/dialog"
+import {
+  Popover,
+  PopoverDialog,
+  PopoverTrigger,
+} from "@/registry/default/ui/popover"
 
 export function PopoverDemo() {
   return (
     <PopoverTrigger>
       <Button variant="outline">Open popover</Button>
       <Popover className="w-80">
-        <Dialog>
+        <PopoverDialog>
           <div className="grid gap-4 ">
             <div className="space-y-2">
               <h4 className="font-medium leading-none">Dimensions</h4>
@@ -53,7 +55,7 @@ export function PopoverDemo() {
               </div>
             </div>
           </div>
-        </Dialog>
+        </PopoverDialog>
       </Popover>
     </PopoverTrigger>
   )

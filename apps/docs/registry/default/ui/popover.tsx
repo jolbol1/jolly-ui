@@ -2,6 +2,8 @@
 
 import * as React from "react"
 import {
+  Dialog as AriaDialog,
+  DialogProps as AriaDialogProps,
   DialogTrigger as AriaDialogTrigger,
   Popover as AriaPopover,
   PopoverProps as AriaPopoverProps,
@@ -31,4 +33,10 @@ const Popover = ({ className, offset = 4, ...props }: AriaPopoverProps) => (
   />
 )
 
-export { Popover, PopoverTrigger }
+function PopoverDialog({ className, ...props }: AriaDialogProps) {
+  return (
+    <AriaDialog className={cn("p-4 outline outline-0", className)} {...props} />
+  )
+}
+
+export { Popover, PopoverTrigger, PopoverDialog }
