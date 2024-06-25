@@ -2,12 +2,11 @@ import { Italic } from "lucide-react"
 
 import { Toggle } from "@/registry/default/ui/toggle"
 
-export function ToggleWithText() {
+export default function ToggleWithText() {
   return (
     <Toggle aria-label="Toggle italic">
-      <Italic className="mr-2 h-4 w-4" />
+      <Italic className="mr-2 size-4" />
       Italic
     </Toggle>
   )
 }
-export default ToggleWithText

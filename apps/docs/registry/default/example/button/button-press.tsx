@@ -1,7 +1,5 @@
 import { Button } from "@/registry/default/ui/button"
 
-export function ButtonPress() {
+export default function ButtonPress() {
   return <Button onPress={() => alert("You pressed me")}>Button</Button>
 }
-
-export default ButtonPress
