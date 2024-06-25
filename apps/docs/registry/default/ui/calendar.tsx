@@ -20,6 +20,7 @@ import {
   RangeCalendar as AriaRangeCalendar,
   RangeCalendarStateContext as AriaRangeCalendarStateContext,
   composeRenderProps,
+  useLocale,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"
@@ -29,39 +30,52 @@ const Calendar = AriaCalendar
 
 const RangeCalendar = AriaRangeCalendar
 
-const CalendarHeading = ({
-  ...props
-}: React.HTMLAttributes<HTMLHeadElement>) => (
-  <header className="relative flex items-center justify-center pt-1" {...props}>
-    <AriaHeading className="text-sm font-medium" />
-    <div className="flex items-center">
-      <AriaButton
-        slot="next"
-        className={cn(
-          buttonVariants({ variant: "outline" }),
-          "size-7 bg-transparent p-0 opacity-50 data-[hovered]:opacity-100",
-          "absolute right-1 text-popover-foreground"
-        )}
-      >
-        <ChevronRight className="size-4" />
-      </AriaButton>
+const CalendarHeading = (props: React.HTMLAttributes<HTMLElement>) => {
+  let { direction } = useLocale()
+
+  return (
+    <header className="flex w-full items-center gap-1 px-1 pb-4" {...props}>
       <AriaButton
         slot="previous"
         className={cn(
           buttonVariants({ variant: "outline" }),
-          "size-7 bg-transparent p-0 opacity-50 data-[hovered]:opacity-100",
-          "absolute left-1 text-popover-foreground"
+          "size-7 bg-transparent p-0 opacity-50",
+          /* Hover */
+          "data-[hovered]:opacity-100"
         )}
       >
-        <ChevronLeft className="size-4" />
+        {direction === "rtl" ? (
+          <ChevronRight aria-hidden className="size-4" />
+        ) : (
+          <ChevronLeft aria-hidden className="size-4" />
+        )}
       </AriaButton>
-    </div>
-  </header>
-)
+      <AriaHeading className="grow text-center text-sm font-medium" />
+      <AriaButton
+        slot="next"
+        className={cn(
+          buttonVariants({ variant: "outline" }),
+          "size-7 bg-transparent p-0 opacity-50",
+          /* Hover */
+          "data-[hovered]:opacity-100"
+        )}
+      >
+        {direction === "rtl" ? (
+          <ChevronLeft aria-hidden className="size-4" />
+        ) : (
+          <ChevronRight aria-hidden className="size-4" />
+        )}
+      </AriaButton>
+    </header>
+  )
+}
 
 const CalendarGrid = ({ className, ...props }: AriaCalendarGridProps) => (
   <AriaCalendarGrid
-    className={cn("mt-4 w-full border-collapse space-y-1", className)}
+    className={cn(
+      " border-separate border-spacing-x-0 border-spacing-y-1 ",
+      className
+    )}
     {...props}
   />
 )
@@ -69,19 +83,14 @@ const CalendarGrid = ({ className, ...props }: AriaCalendarGridProps) => (
 const CalendarGridHeader = ({
   className,
   ...props
-}: AriaCalendarGridHeaderProps) => (
-  <AriaCalendarGridHeader className={cn("[&>tr]:flex", className)} {...props} />
-)
+}: AriaCalendarGridHeaderProps) => <AriaCalendarGridHeader {...props} />
 
 const CalendarHeaderCell = ({
   className,
   ...props
 }: AriaCalendarHeaderCellProps) => (
   <AriaCalendarHeaderCell
-    className={cn(
-      "w-9 rounded-md text-[0.8rem] font-normal text-muted-foreground",
-      className
-    )}
+    className="w-9 rounded-md text-[0.8rem] font-normal text-muted-foreground"
     {...props}
   />
 )
@@ -90,49 +99,44 @@ const CalendarGridBody = ({
   className,
   ...props
 }: AriaCalendarGridBodyProps) => (
-  <AriaCalendarGridBody
-    className={cn(
-      "[&>tr>td]:p-0 [&>tr]:mt-2 [&>tr]:flex [&>tr]:w-full",
-      "[&>tr>td:first-child>div]:rounded-l-md [&>tr>td:last-child>div]:rounded-r-md",
-      className
-    )}
-    {...props}
-  />
+  <AriaCalendarGridBody className={cn("[&>tr>td]:p-0 ")} {...props} />
 )
 
-const CalendarCell = ({ className, date, ...props }: AriaCalendarCellProps) => {
+const CalendarCell = ({ className, ...props }: AriaCalendarCellProps) => {
   const isRange = Boolean(React.useContext(AriaRangeCalendarStateContext))
   return (
     <AriaCalendarCell
       className={composeRenderProps(className, (className, renderProps) =>
         cn(
-          "inline-flex size-9 items-center justify-center whitespace-nowrap rounded-md p-0 text-sm font-normal ring-offset-background transition-colors",
-          /* Hover */
-          "data-[hovered]:bg-accent data-[hovered]:text-accent-foreground",
+          buttonVariants({ variant: "ghost" }),
+          "relative flex size-9 items-center justify-center p-0 text-sm font-normal",
           /* Disabled */
-          "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
-          /* Selected */
-          "data-[selected]:opacity-100",
-          /* Logic */
-          date.compare(today(getLocalTimeZone())) === 0 &&
-            "bg-accent text-accent-foreground",
           renderProps.isDisabled && "text-muted-foreground opacity-50",
-          renderProps.isFocusVisible &&
-            renderProps.isFocused &&
-            "outline-none ring-2 ring-ring ring-offset-2",
+          /* Selected */
+          renderProps.isSelected &&
+            "bg-primary text-primary-foreground data-[focused]:bg-primary  data-[focused]:text-primary-foreground",
+          /* Hover */
+          renderProps.isHovered &&
+            renderProps.isSelected &&
+            (renderProps.isSelectionStart ||
+              renderProps.isSelectionEnd ||
+              !isRange) &&
+            "data-[hovered]:bg-primary data-[hovered]:text-primary-foreground",
+          /* Selection Start/End */
           renderProps.isSelected &&
             isRange &&
+            !renderProps.isSelectionStart &&
+            !renderProps.isSelectionEnd &&
             "rounded-none bg-accent text-accent-foreground",
-          ((renderProps.isSelected && !isRange) ||
-            renderProps.isSelectionStart ||
-            renderProps.isSelectionEnd) &&
-            "rounded-md bg-primary text-primary-foreground data-[focused]:bg-primary data-[hovered]:bg-primary data-[focused]:text-primary-foreground data-[hovered]:text-primary-foreground",
+          /* Outside Month */
           renderProps.isOutsideMonth &&
             "text-muted-foreground opacity-50 data-[selected]:bg-accent/50 data-[selected]:text-muted-foreground data-[selected]:opacity-30",
+          /* Current Date */
+          renderProps.date.compare(today(getLocalTimeZone())) === 0 &&
+            "bg-accent text-accent-foreground",
           className
         )
       )}
-      date={date}
       {...props}
     />
   )
