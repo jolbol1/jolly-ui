@@ -21,6 +21,7 @@ export const registrySchema = z.array(
       "components:example/dialog",
       "components:example/dropzone",
       "components:example/file-trigger",
+      "components:example/grid-list",
       "components:example/input",
       "components:example/label",
       "components:example/link",

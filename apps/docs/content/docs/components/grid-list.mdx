@@ -1,0 +1,79 @@
+---
+title: GridList
+description: A GridList displays a list of interactive items in a grid layout.
+featured: true
+component: true
+links:
+  doc: https://react-spectrum.adobe.com/react-aria/GridList.html
+---
+
+<ComponentPreview name="grid-list-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Copy & Paste</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx @sly-cli/sly add jolly-ui grid-list
+```
+
+Note: Only the default style can be installed via CLI at the moment
+
+</TabsContent>
+<TabsContent value="manual">
+<Steps>
+<Step>Copy and paste the following code into your project: grid-list.tsx</Step>
+<ComponentSource name="grid-list" />
+<Step>Update the import paths to match your project setup.</Step>
+</Steps>
+</TabsContent>
+</Tabs>
+
+## Usage
+
+```tsx
+import { GridList } from "@/components/ui/grid-list"
+
+;<GridList aria-label="Example grid list">{/* GridList items */}</GridList>
+```
+
+## Examples
+
+### Demo
+
+<ComponentPreview name="grid-list-demo" />
+### Direct Row Actions
+<ComponentPreview name="grid-list-direct-row-actions" />
+### Disabled Behavior
+<ComponentPreview name="grid-list-disabled-behavior" />
+### Disabled Items
+<ComponentPreview name="grid-list-disabled-items" />
+### Disabled Keys
+<ComponentPreview name="grid-list-disabled-keys" />
+### Disallow Empty Selection
+<ComponentPreview name="grid-list-disallow-empty" />
+### Drag Between Lists
+<ComponentPreview name="grid-list-drag-between" />
+### Drag and Drop
+<ComponentPreview name="grid-list-drag-drop" />
+### Empty State
+<ComponentPreview name="grid-list-empty" />
+### With Links
+<ComponentPreview name="grid-list-links" />
+### Multi-Select
+<ComponentPreview name="grid-list-multi-select" />
+### Replace Items
+<ComponentPreview name="grid-list-replace" />
+### Row Actions
+<ComponentPreview name="grid-list-row-actions" />
+### Single Select
+<ComponentPreview name="grid-list-single-select" />
+### Custom Content
+<ComponentPreview name="grid-list-content" />

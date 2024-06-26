@@ -9,6 +9,13 @@ const ui: Registry = [
     files: ["ui/breadcrumbs.tsx"],
   },
   {
+    name: "grid-list",
+    type: "components:ui",
+    dependencies: ["react-aria-components"],
+    registryDependencies: ["checkbox"],
+    files: ["ui/grid-list.tsx"],
+  },
+  {
     name: "button",
     type: "components:ui",
     dependencies: ["react-aria-components", "class-variance-authority"],
@@ -797,6 +804,99 @@ const example: Registry = [
     registryDependencies: ["tooltip"],
     files: ["example/tooltip/tooltip-position.tsx"],
   },
+
+
+  // GridList
+  {
+    name: "grid-list-content",
+    type: "components:example/grid-list",
+    registryDependencies: ["grid-list"],
+    files: ["example/grid-list/grid-list-content.tsx"],
+  },
+  {
+    name: "grid-list-demo",
+    type: "components:example/grid-list",
+    registryDependencies: ["grid-list"],
+    files: ["example/grid-list/grid-list-demo.tsx"],
+  },
+  {
+    name: "grid-list-direct-row-actions",
+    type: "components:example/grid-list",
+    registryDependencies: ["grid-list"],
+    files: ["example/grid-list/grid-list-direct-row-actions.tsx"],
+  },
+  {
+    name: "grid-list-disabled-behavior",
+    type: "components:example/grid-list",
+    registryDependencies: ["grid-list"],
+    files: ["example/grid-list/grid-list-disabled-behavior.tsx"],
+  },
+  {
+    name: "grid-list-disabled-items",
+    type: "components:example/grid-list",
+    registryDependencies: ["grid-list"],
+    files: ["example/grid-list/grid-list-disabled-items.tsx"],
+  },
+  {
+    name: "grid-list-disabled-keys",
+    type: "components:example/grid-list",
+    registryDependencies: ["grid-list"],
+    files: ["example/grid-list/grid-list-disabled-keys.tsx"],
+  },
+  {
+    name: "grid-list-disallow-empty",
+    type: "components:example/grid-list",
+    registryDependencies: ["grid-list"],
+    files: ["example/grid-list/grid-list-disallow-empty.tsx"],
+  },
+  {
+    name: "grid-list-drag-between",
+    type: "components:example/grid-list",
+    registryDependencies: ["grid-list"],
+    files: ["example/grid-list/grid-list-drag-between.tsx"],
+  },
+  {
+    name: "grid-list-drag-drop",
+    type: "components:example/grid-list",
+    registryDependencies: ["grid-list"],
+    files: ["example/grid-list/grid-list-drag-drop.tsx"],
+  },
+  {
+    name: "grid-list-empty",
+    type: "components:example/grid-list",
+    registryDependencies: ["grid-list"],
+    files: ["example/grid-list/grid-list-empty.tsx"],
+  },
+  {
+    name: "grid-list-links",
+    type: "components:example/grid-list",
+    registryDependencies: ["grid-list"],
+    files: ["example/grid-list/grid-list-links.tsx"],
+  },
+  {
+    name: "grid-list-multi-select",
+    type: "components:example/grid-list",
+    registryDependencies: ["grid-list"],
+    files: ["example/grid-list/grid-list-multi-select.tsx"],
+  },
+  {
+    name: "grid-list-replace",
+    type: "components:example/grid-list",
+    registryDependencies: ["grid-list"],
+    files: ["example/grid-list/grid-list-replace.tsx"],
+  },
+  {
+    name: "grid-list-row-actions",
+    type: "components:example/grid-list",
+    registryDependencies: ["grid-list"],
+    files: ["example/grid-list/grid-list-row-actions.tsx"],
+  },
+  {
+    name: "grid-list-single-select",
+    type: "components:example/grid-list",
+    registryDependencies: ["grid-list"],
+    files: ["example/grid-list/grid-list-single-select.tsx"],
+  }
 ]
 
 export const registry: Registry = [...ui, ...example]

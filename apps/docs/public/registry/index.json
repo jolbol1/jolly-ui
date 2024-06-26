@@ -13,6 +13,19 @@
     "type": "components:ui"
   },
   {
+    "name": "grid-list",
+    "dependencies": [
+      "react-aria-components"
+    ],
+    "registryDependencies": [
+      "checkbox"
+    ],
+    "files": [
+      "ui/grid-list.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
     "name": "button",
     "dependencies": [
       "react-aria-components",

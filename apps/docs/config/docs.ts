@@ -82,6 +82,11 @@ export const docsConfig: DocsConfig = {
       title: "Collections",
       items: [
         {
+          title: "GridList",
+          href: "/docs/components/grid-list",
+          items: [],
+        },
+        {
           title: "Menu",
           href: "/docs/components/menu",
           items: [],
