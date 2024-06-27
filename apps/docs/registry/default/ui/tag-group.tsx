@@ -21,7 +21,12 @@ function TagList<T extends object>({
   return (
     <AriaTagList
       className={composeRenderProps(className, (className) =>
-        cn("flex flex-wrap gap-2", className)
+        cn(
+          "flex flex-wrap gap-2",
+          /* Empty */
+          "data-[empty]:text-sm data-[empty]:text-muted-foreground",
+          className
+        )
       )}
       {...props}
     />
@@ -33,6 +38,8 @@ const badgeVariants = cva(
     "inline-flex items-center gap-2 rounded-full border px-2.5 py-0.5 text-xs font-semibold ring-offset-background transition-colors",
     /* Focus */
     "data-[focused]:outline-none data-[focused]:ring-2 data-[focused]:ring-ring data-[focused]:ring-offset-2",
+    /* Disabled */
+    "data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
   ],
   {
     variants: {

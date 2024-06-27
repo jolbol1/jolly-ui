@@ -1,13 +1,13 @@
 ---
 title: Menu
-description: A menu displays a list of actions or options that a user can choose.
+description: A Menu displays a list of actions or options that a user can choose.
 featured: true
 component: true
 links:
-  doc: https://react-spectrum.adobe.com/react-aria/Menu.htm
+  doc: https://react-spectrum.adobe.com/react-aria/Menu.html
 ---
 
-<ComponentPreview name="dropdown-menu-demo" />
+<ComponentPreview name="menu-demo" />
 
 ## Installation
 
@@ -24,15 +24,13 @@ links:
 npx @sly-cli/sly add jolly-ui menu
 ```
 
-**Note: Only the default style can be installed via CLI at the moment**
-
 </TabsContent>
 
 <TabsContent value="manual">
 
 <Steps>
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>Copy and paste the following code into your project: menu.tsx</Step>
 
 <ComponentSource name="menu" />
 
@@ -44,57 +42,60 @@ npx @sly-cli/sly add jolly-ui menu
 
 </Tabs>
 
-## Usage
+## Examples
 
-### Basic
+### Demo
 
-<ComponentPreview name="dropdown-menu-basic" />
+<ComponentPreview name="menu-demo" />
 
-### Full
+### Custom Content
 
-<ComponentPreview name="dropdown-menu-demo" />
+<ComponentPreview name="menu-content" />
 
-#### Submenu
+### Disabled Items
 
-As in the example above, You can create a submenu by wrapping a `MenuItem` in a `SubmenuTrigger`. Then inside the SubmenuTrigger you can place a `MenuPopover` and `Menu` to create a submenu, using that the same as a menu.
+<ComponentPreview name="menu-disabled-items" />
 
-#### Separator
+### Disabled Keys
 
-In the example above, you can place a `MenuSeparator` between sections. Alternatively, you can use the `separator` prop on a `MenuHeader` to create a border as well.
-
-### Selection
-
-#### Multiple
-
-<ComponentPreview name="dropdown-menu-checkboxes" />
-
-#### Single
-
-<ComponentPreview name="dropdown-menu-radio-group" />
+<ComponentPreview name="menu-disabled-keys" />
 
 ### Links
 
-By default, interacting with an item in a Menu triggers onAction and optionally onSelectionChange depending on the selectionMode.
-Alternatively, items may be links to another page or website. This can be achieved by passing the href prop to the `<MenuItem>` component. Link items in a menu are not selectable.
+<ComponentPreview name="menu-links" />
 
-#### Client side routing
+### Long Press
 
-The `<MenuItem>` component works with frameworks and client side routers like Next.js, Remix and React Router.
-As with other React Aria components that support links, this works via the RouterProvider component at the root of your app.
-See the [client side routing guide](https://react-spectrum.adobe.com/react-aria/routing.html) to learn how to set this up.
+<ComponentPreview name="menu-long-press" />
 
-<ComponentPreview name="dropdown-menu-link" />
+### Dynamic Sections
 
-## Sections
+<ComponentPreview name="menu-sections-dynamic" />
 
-### Static
+### Sections
 
-<ComponentPreview name="dropdown-menu-section" />
+<ComponentPreview name="menu-sections" />
 
-### Dynamic
+### Multiple Selection
 
-<ComponentPreview name="dropdown-menu-dynamic" />
+<ComponentPreview name="menu-selection-multiple" />
 
-## Dynamic (+Submenu)
+### Single Selection
 
-<ComponentPreview name="dropdown-menu-sub-dynamic" />
+<ComponentPreview name="menu-selection-single" />
+
+### Separators
+
+<ComponentPreview name="menu-separators" />
+
+### Dynamic Submenu
+
+<ComponentPreview name="menu-sub-menu-dynamic" />
+
+### Submenu
+
+<ComponentPreview name="menu-sub-menu" />
+
+### Text Slots
+
+<ComponentPreview name="menu-text-slots" />

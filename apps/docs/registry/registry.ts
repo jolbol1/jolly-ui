@@ -8,19 +8,7 @@ const ui: Registry = [
     registryDependencies: ["button"],
     files: ["ui/breadcrumbs.tsx"],
   },
-  {
-    name: "grid-list",
-    type: "components:ui",
-    dependencies: ["react-aria-components"],
-    registryDependencies: ["checkbox"],
-    files: ["ui/grid-list.tsx"],
-  },
-  {
-    name: "button",
-    type: "components:ui",
-    dependencies: ["react-aria-components", "class-variance-authority"],
-    files: ["ui/button.tsx"],
-  },
+
   {
     name: "calendar",
     type: "components:ui",
@@ -158,6 +146,20 @@ const ui: Registry = [
     dependencies: ["react-aria-components"],
     files: ["ui/textarea.tsx"],
   },
+
+  {
+    name: "tooltip",
+    type: "components:ui",
+    dependencies: ["react-aria-components"],
+    files: ["ui/tooltip.tsx"],
+  },
+  // NEW CHECKED
+  {
+    name: "button",
+    type: "components:ui",
+    dependencies: ["react-aria-components", "class-variance-authority"],
+    files: ["ui/button.tsx"],
+  },
   {
     name: "toggle",
     type: "components:ui",
@@ -165,11 +167,25 @@ const ui: Registry = [
     files: ["ui/toggle.tsx"],
   },
   {
-    name: "tooltip",
+    name: "grid-list",
     type: "components:ui",
     dependencies: ["react-aria-components"],
-    files: ["ui/tooltip.tsx"],
+    registryDependencies: ["checkbox"],
+    files: ["ui/grid-list.tsx"],
   },
+  {
+    name: "list-box",
+    type: "components:ui",
+    dependencies: ["react-aria-components"],
+    files: ["ui/grid-list.tsx"],
+  },
+  {
+    name: "tag-group",
+    type: "components:ui",
+    dependencies: ["react-aria-components"],
+    files: ["ui/tag-group.tsx"],
+  },
+
 ]
 
 const example: Registry = [
@@ -209,66 +225,7 @@ const example: Registry = [
     registryDependencies: ["breadcrumbs"],
     files: ["example/breadcrumbs/breadcrumbs-items.tsx"],
   },
-  {
-    name: "button-demo",
-    type: "components:example/button",
-    registryDependencies: ["button"],
-    files: ["example/button/button-demo.tsx"],
-  },
-  {
-    name: "button-ghost",
-    type: "components:example/button",
-    registryDependencies: ["button"],
-    files: ["example/button/button-ghost.tsx"],
-  },
-  {
-    name: "button-icon",
-    type: "components:example/button",
-    registryDependencies: ["button"],
-    files: ["example/button/button-icon.tsx"],
-  },
-  {
-    name: "button-link",
-    type: "components:example/button",
-    registryDependencies: ["button"],
-    files: ["example/button/button-link.tsx"],
-  },
-  {
-    name: "button-loading",
-    type: "components:example/button",
-    registryDependencies: ["button"],
-    files: ["example/button/button-loading.tsx"],
-  },
-  {
-    name: "button-press",
-    type: "components:example/button",
-    registryDependencies: ["button"],
-    files: ["example/button/button-press.tsx"],
-  },
-  {
-    name: "button-secondary",
-    type: "components:example/button",
-    registryDependencies: ["button"],
-    files: ["example/button/button-secondary.tsx"],
-  },
-  {
-    name: "button-with-icon",
-    type: "components:example/button",
-    registryDependencies: ["button"],
-    files: ["example/button/button-with-icon.tsx"],
-  },
-  {
-    name: "button-outline",
-    type: "components:example/button",
-    registryDependencies: ["button"],
-    files: ["example/button/button-outline.tsx"],
-  },
-  {
-    name: "button-destructive",
-    type: "components:example/button",
-    registryDependencies: ["button"],
-    files: ["example/button/button-destructive.tsx"],
-  },
+
   {
     name: "calendar-demo",
     type: "components:example/calendar",
@@ -522,54 +479,7 @@ const example: Registry = [
     registryDependencies: ["link"],
     files: ["example/link/link-variants.tsx"],
   },
-  {
-    name: "dropdown-menu-basic",
-    type: "components:example/menu",
-    registryDependencies: ["menu"],
-    files: ["example/menu/dropdown-menu-basic.tsx"],
-  },
-  {
-    name: "dropdown-menu-sub-dynamic",
-    type: "components:example/menu",
-    registryDependencies: ["menu"],
-    files: ["example/menu/dropdown-menu-sub-dynamic.tsx"],
-  },
-  {
-    name: "dropdown-menu-checkboxes",
-    type: "components:example/menu",
-    registryDependencies: ["menu"],
-    files: ["example/menu/dropdown-menu-checkboxes.tsx"],
-  },
-  {
-    name: "dropdown-menu-demo",
-    type: "components:example/menu",
-    registryDependencies: ["menu"],
-    files: ["example/menu/dropdown-menu-demo.tsx"],
-  },
-  {
-    name: "dropdown-menu-dynamic",
-    type: "components:example/menu",
-    registryDependencies: ["menu"],
-    files: ["example/menu/dropdown-menu-dynamic.tsx"],
-  },
-  {
-    name: "dropdown-menu-link",
-    type: "components:example/menu",
-    registryDependencies: ["menu"],
-    files: ["example/menu/dropdown-menu-link.tsx"],
-  },
-  {
-    name: "dropdown-menu-radio-group",
-    type: "components:example/menu",
-    registryDependencies: ["menu"],
-    files: ["example/menu/dropdown-menu-radio-group.tsx"],
-  },
-  {
-    name: "dropdown-menu-section",
-    type: "components:example/menu",
-    registryDependencies: ["menu"],
-    files: ["example/menu/dropdown-menu-section.tsx"],
-  },
+
   {
     name: "meter-demo",
     type: "components:example/meter",
@@ -756,6 +666,79 @@ const example: Registry = [
     registryDependencies: ["textfield"],
     files: ["example/textfield/textfield-textarea.tsx"],
   },
+
+  {
+    name: "tooltip-demo",
+    type: "components:example/tooltip",
+    registryDependencies: ["tooltip"],
+    files: ["example/tooltip/tooltip-demo.tsx"],
+  },
+  {
+    name: "tooltip-position",
+    type: "components:example/tooltip",
+    registryDependencies: ["tooltip"],
+    files: ["example/tooltip/tooltip-position.tsx"],
+  },
+  {
+    name: "button-demo",
+    type: "components:example/button",
+    registryDependencies: ["button"],
+    files: ["example/button/button-demo.tsx"],
+  },
+  {
+    name: "button-ghost",
+    type: "components:example/button",
+    registryDependencies: ["button"],
+    files: ["example/button/button-ghost.tsx"],
+  },
+  {
+    name: "button-icon",
+    type: "components:example/button",
+    registryDependencies: ["button"],
+    files: ["example/button/button-icon.tsx"],
+  },
+  {
+    name: "button-link",
+    type: "components:example/button",
+    registryDependencies: ["button"],
+    files: ["example/button/button-link.tsx"],
+  },
+  {
+    name: "button-loading",
+    type: "components:example/button",
+    registryDependencies: ["button"],
+    files: ["example/button/button-loading.tsx"],
+  },
+  {
+    name: "button-press",
+    type: "components:example/button",
+    registryDependencies: ["button"],
+    files: ["example/button/button-press.tsx"],
+  },
+  {
+    name: "button-secondary",
+    type: "components:example/button",
+    registryDependencies: ["button"],
+    files: ["example/button/button-secondary.tsx"],
+  },
+  {
+    name: "button-with-icon",
+    type: "components:example/button",
+    registryDependencies: ["button"],
+    files: ["example/button/button-with-icon.tsx"],
+  },
+  {
+    name: "button-outline",
+    type: "components:example/button",
+    registryDependencies: ["button"],
+    files: ["example/button/button-outline.tsx"],
+  },
+  {
+    name: "button-destructive",
+    type: "components:example/button",
+    registryDependencies: ["button"],
+    files: ["example/button/button-destructive.tsx"],
+  },
   {
     name: "toggle-demo",
     type: "components:example/toggle",
@@ -791,18 +774,6 @@ const example: Registry = [
     type: "components:example/toggle",
     registryDependencies: ["toggle"],
     files: ["example/toggle/toggle-with-text.tsx"],
-  },
-  {
-    name: "tooltip-demo",
-    type: "components:example/tooltip",
-    registryDependencies: ["tooltip"],
-    files: ["example/tooltip/tooltip-demo.tsx"],
-  },
-  {
-    name: "tooltip-position",
-    type: "components:example/tooltip",
-    registryDependencies: ["tooltip"],
-    files: ["example/tooltip/tooltip-position.tsx"],
   },
 
 
@@ -896,7 +867,231 @@ const example: Registry = [
     type: "components:example/grid-list",
     registryDependencies: ["grid-list"],
     files: ["example/grid-list/grid-list-single-select.tsx"],
+  },
+
+  // ListBox
+  {
+    name: "list-box-content",
+    type: "components:example/list-box",
+    registryDependencies: ["list-box"],
+    files: ["example/list-box/list-box-content.tsx"],
+  },
+  {
+    name: "list-box-demo",
+    type: "components:example/list-box",
+    registryDependencies: ["list-box"],
+    files: ["example/list-box/list-box-demo.tsx"],
+  },
+  {
+    name: "list-box-disabled-items",
+    type: "components:example/list-box",
+    registryDependencies: ["list-box"],
+    files: ["example/list-box/list-box-disabled-items.tsx"],
+  },
+  {
+    name: "list-box-disabled-keys",
+    type: "components:example/list-box",
+    registryDependencies: ["list-box"],
+    files: ["example/list-box/list-box-disabled-keys.tsx"],
+  },
+  {
+    name: "list-box-drag-between",
+    type: "components:example/list-box",
+    registryDependencies: ["list-box"],
+    files: ["example/list-box/list-box-drag-between.tsx"],
+  },
+  {
+    name: "list-box-drag-drop",
+    type: "components:example/list-box",
+    registryDependencies: ["list-box"],
+    files: ["example/list-box/list-box-drag-drop.tsx"],
+  },
+  {
+    name: "list-box-dynamic",
+    type: "components:example/list-box",
+    registryDependencies: ["list-box"],
+    files: ["example/list-box/list-box-dynamic.tsx"],
+  },
+  {
+    name: "list-box-empty",
+    type: "components:example/list-box",
+    registryDependencies: ["list-box"],
+    files: ["example/list-box/list-box-empty.tsx"],
+  },
+  {
+    name: "list-box-links-replace",
+    type: "components:example/list-box",
+    registryDependencies: ["list-box"],
+    files: ["example/list-box/list-box-links-replace.tsx"],
+  },
+  {
+    name: "list-box-links",
+    type: "components:example/list-box",
+    registryDependencies: ["list-box"],
+    files: ["example/list-box/list-box-links.tsx"],
+  },
+  {
+    name: "list-box-sections",
+    type: "components:example/list-box",
+    registryDependencies: ["list-box"],
+    files: ["example/list-box/list-box-sections.tsx"],
+  },
+  {
+    name: "list-box-selection-replace",
+    type: "components:example/list-box",
+    registryDependencies: ["list-box"],
+    files: ["example/list-box/list-box-selection-replace.tsx"],
+  },
+  {
+    name: "list-box-text-slot",
+    type: "components:example/list-box",
+    registryDependencies: ["list-box"],
+    files: ["example/list-box/list-box-text-slot.tsx"],
+  },
+
+
+  // Menu
+  {
+    name: "menu-content",
+    type: "components:example/menu",
+    registryDependencies: ["menu"],
+    files: ["example/menu/menu-content.tsx"],
+  },
+  {
+    name: "menu-demo",
+    type: "components:example/menu",
+    registryDependencies: ["menu"],
+    files: ["example/menu/menu-demo.tsx"],
+  },
+  {
+    name: "menu-disabled-items",
+    type: "components:example/menu",
+    registryDependencies: ["menu"],
+    files: ["example/menu/menu-disabled-items.tsx"],
+  },
+  {
+    name: "menu-disabled-keys",
+    type: "components:example/menu",
+    registryDependencies: ["menu"],
+    files: ["example/menu/menu-disabled-keys.tsx"],
+  },
+  {
+    name: "menu-links",
+    type: "components:example/menu",
+    registryDependencies: ["menu"],
+    files: ["example/menu/menu-links.tsx"],
+  },
+  {
+    name: "menu-long-press",
+    type: "components:example/menu",
+    registryDependencies: ["menu"],
+    files: ["example/menu/menu-long-press.tsx"],
+  },
+  {
+    name: "menu-sections-dynamic",
+    type: "components:example/menu",
+    registryDependencies: ["menu"],
+    files: ["example/menu/menu-sections-dynamic.tsx"],
+  },
+  {
+    name: "menu-sections",
+    type: "components:example/menu",
+    registryDependencies: ["menu"],
+    files: ["example/menu/menu-sections.tsx"],
+  },
+  {
+    name: "menu-selection-multiple",
+    type: "components:example/menu",
+    registryDependencies: ["menu"],
+    files: ["example/menu/menu-selection-multiple.tsx"],
+  },
+  {
+    name: "menu-selection-single",
+    type: "components:example/menu",
+    registryDependencies: ["menu"],
+    files: ["example/menu/menu-selection-single.tsx"],
+  },
+  {
+    name: "menu-separators",
+    type: "components:example/menu",
+    registryDependencies: ["menu"],
+    files: ["example/menu/menu-separators.tsx"],
+  },
+  {
+    name: "menu-sub-menu-dynamic",
+    type: "components:example/menu",
+    registryDependencies: ["menu"],
+    files: ["example/menu/menu-sub-menu-dynamic.tsx"],
+  },
+  {
+    name: "menu-sub-menu",
+    type: "components:example/menu",
+    registryDependencies: ["menu"],
+    files: ["example/menu/menu-sub-menu.tsx"],
+  },
+  {
+    name: "menu-text-slots",
+    type: "components:example/menu",
+    registryDependencies: ["menu"],
+    files: ["example/menu/menu-text-slots.tsx"],
+  },
+
+  //TagGroup
+  {
+    name: "tag-error-text",
+    type: "components:example/tag-group",
+    registryDependencies: ["tag"],
+    files: ["example/tag/tag-error-text.tsx"],
+  },
+  {
+    name: "tag-group-demo",
+    type: "components:example/tag-group",
+    registryDependencies: ["tag-group"],
+    files: ["example/tag-group/tag-group-demo.tsx"],
+  },
+  {
+    name: "tag-group-disabled-items",
+    type: "components:example/tag-group",
+    registryDependencies: ["tag-group"],
+    files: ["example/tag-group/tag-group-disabled-items.tsx"],
+  },
+  {
+    name: "tag-group-disabled-keys",
+    type: "components:example/tag-group",
+    registryDependencies: ["tag-group"],
+    files: ["example/tag-group/tag-group-disabled-keys.tsx"],
+  },
+  {
+    name: "tag-group-empty",
+    type: "components:example/tag-group",
+    registryDependencies: ["tag-group"],
+    files: ["example/tag-group/tag-group-empty.tsx"],
+  },
+  {
+    name: "tag-group-helper",
+    type: "components:example/tag-group",
+    registryDependencies: ["tag-group"],
+    files: ["example/tag-group/tag-group-helper.tsx"],
+  },
+  {
+    name: "tag-group-links",
+    type: "components:example/tag-group",
+    registryDependencies: ["tag-group"],
+    files: ["example/tag-group/tag-group-links.tsx"],
+  },
+  {
+    name: "tag-group-remove",
+    type: "components:example/tag-group",
+    registryDependencies: ["tag-group"],
+    files: ["example/tag-group/tag-group-remove.tsx"],
+  },
+  {
+    name: "tag-group-selection",
+    type: "components:example/tag-group",
+    registryDependencies: ["tag-group"],
+    files: ["example/tag-group/tag-group-selection.tsx"],
   }
+
 ]
 
 export const registry: Registry = [...ui, ...example]

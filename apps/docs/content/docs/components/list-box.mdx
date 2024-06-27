@@ -1,0 +1,113 @@
+---
+title: ListBox
+description: A ListBox displays a list of options and allows a user to select one or more of them.
+featured: true
+component: true
+links:
+  doc: https://react-spectrum.adobe.com/react-aria/ListBox.html
+---
+
+<ComponentPreview name="list-box-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Copy & Paste</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx @sly-cli/sly add jolly-ui list-box
+```
+
+**Note: Only the default style can be installed via CLI at the moment**
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project: list-box.tsx</Step>
+
+<ComponentSource name="list-box" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx
+import { Item, ListBox } from "@/components/ui/list-box"
+```
+
+```tsx
+<ListBox aria-label="Example list box">
+  <Item>Option 1</Item>
+  <Item>Option 2</Item>
+  <Item>Option 3</Item>
+</ListBox>
+```
+
+## Examples
+
+### Demo
+
+<ComponentPreview name="list-box-demo" />
+
+### Custom Content
+
+<ComponentPreview name="list-box-content" />
+
+### Disabled Items
+
+<ComponentPreview name="list-box-disabled-items" />
+
+### Disabled Keys
+
+<ComponentPreview name="list-box-disabled-keys" />
+
+### Drag Between Lists
+
+<ComponentPreview name="list-box-drag-between" />
+
+### Drag and Drop
+
+<ComponentPreview name="list-box-drag-drop" />
+
+### Dynamic Content
+
+<ComponentPreview name="list-box-dynamic" />
+
+### Empty State
+
+<ComponentPreview name="list-box-empty" />
+
+### Links with Replace
+
+<ComponentPreview name="list-box-links-replace" />
+
+### Links
+
+<ComponentPreview name="list-box-links" />
+
+### Sections
+
+<ComponentPreview name="list-box-sections" />
+
+### Selection Replace
+
+<ComponentPreview name="list-box-selection-replace" />
+
+### Text Slot
+
+<ComponentPreview name="list-box-text-slot" />

@@ -14,11 +14,12 @@ import {
   SeparatorProps as AriaSeparatorProps,
   SubmenuTrigger as AriaSubmenuTrigger,
   composeRenderProps,
+  PopoverProps,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"
 
-import { ListBoxCollection, ListBoxSection } from "./listbox"
+import { ListBoxCollection, ListBoxSection } from "./list-box"
 import { SelectPopover } from "./select"
 
 const MenuTrigger = AriaMenuTrigger
@@ -29,7 +30,16 @@ const MenuSection = ListBoxSection
 
 const MenuCollection = ListBoxCollection
 
-const MenuPopover = SelectPopover
+function MenuPopover({ className, ...props }: PopoverProps) {
+  return (
+    <SelectPopover
+      className={composeRenderProps(className, (className) =>
+        cn("w-auto", className)
+      )}
+      {...props}
+    />
+  )
+}
 
 const Menu = <T extends object>({ className, ...props }: AriaMenuProps<T>) => (
   <AriaMenu

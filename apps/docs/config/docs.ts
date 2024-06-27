@@ -87,8 +87,25 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "ListBox",
+          href: "/docs/components/list-box",
+          items: [],
+        },
+        {
           title: "Menu",
           href: "/docs/components/menu",
+          items: [],
+        },
+        {
+          title: "Table",
+          href: "/docs/components/",
+          items: [],
+          disabled: true,
+          label: "Coming Soon"
+        },
+        {
+          title: "TagGroup",
+          href: "/docs/components/tag-group",
           items: [],
         },
       ],

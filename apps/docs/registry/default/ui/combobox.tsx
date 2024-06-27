@@ -17,7 +17,7 @@ import {
   ListBoxHeader,
   ListBoxItem,
   ListBoxSection,
-} from "./listbox"
+} from "./list-box"
 import { Popover } from "./popover"
 
 const Combobox = AriaComboBox

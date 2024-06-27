@@ -13,30 +13,6 @@
     "type": "components:ui"
   },
   {
-    "name": "grid-list",
-    "dependencies": [
-      "react-aria-components"
-    ],
-    "registryDependencies": [
-      "checkbox"
-    ],
-    "files": [
-      "ui/grid-list.tsx"
-    ],
-    "type": "components:ui"
-  },
-  {
-    "name": "button",
-    "dependencies": [
-      "react-aria-components",
-      "class-variance-authority"
-    ],
-    "files": [
-      "ui/button.tsx"
-    ],
-    "type": "components:ui"
-  },
-  {
     "name": "calendar",
     "dependencies": [
       "react-aria-components"
@@ -276,6 +252,27 @@
     "type": "components:ui"
   },
   {
+    "name": "tooltip",
+    "dependencies": [
+      "react-aria-components"
+    ],
+    "files": [
+      "ui/tooltip.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
+    "name": "button",
+    "dependencies": [
+      "react-aria-components",
+      "class-variance-authority"
+    ],
+    "files": [
+      "ui/button.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
     "name": "toggle",
     "dependencies": [
       "react-aria-components",
@@ -287,12 +284,35 @@
     "type": "components:ui"
   },
   {
-    "name": "tooltip",
+    "name": "grid-list",
+    "dependencies": [
+      "react-aria-components"
+    ],
+    "registryDependencies": [
+      "checkbox"
+    ],
+    "files": [
+      "ui/grid-list.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
+    "name": "list-box",
     "dependencies": [
       "react-aria-components"
     ],
     "files": [
-      "ui/tooltip.tsx"
+      "ui/grid-list.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
+    "name": "tag-group",
+    "dependencies": [
+      "react-aria-components"
+    ],
+    "files": [
+      "ui/tag-group.tsx"
     ],
     "type": "components:ui"
   }
