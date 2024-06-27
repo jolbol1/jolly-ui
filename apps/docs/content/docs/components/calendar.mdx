@@ -1,6 +1,7 @@
 ---
 title: Calendar
-description: A date field component that allows users to enter and edit date.
+description: A Calendar allows users to view and select dates or date ranges.
+featured: true
 component: true
 links:
   doc: https://react-spectrum.adobe.com/react-aria/Calendar.html
@@ -23,25 +24,13 @@ links:
 npx @sly-cli/sly add jolly-ui calendar
 ```
 
-**Note: Only the default style can be installed via CLI at the moment**
-
 </TabsContent>
 
 <TabsContent value="manual">
 
 <Steps>
 
-<Step>Install the following dependencies:</Step>
-
-```bash
-npm install @internationalized/date date-fns
-```
-
-<Step>Add the `Button` component to your project.</Step>
-
-The `Calendar` component uses the `Button` component. Make sure you have it installed in your project.
-
-<Step>Copy and paste the following code into your project.</Step>
+<Step>Copy and paste the following code into your project: calendar.tsx</Step>
 
 <ComponentSource name="calendar" />
 
@@ -53,41 +42,32 @@ The `Calendar` component uses the `Button` component. Make sure you have it inst
 
 </Tabs>
 
-## Usage
+## Examples
 
-```tsx
-import {
-  Calendar,
-  CalendarCell,
-  CalendarGrid,
-  CalendarGridBody,
-  CalendarGridHeader,
-  CalendarHeaderCell,
-  CalendarHeading,
-} from "@/registry/default/ui/calendar"
-```
+### Demo
 
-```tsx
+<ComponentPreview name="calendar-demo" />
 
-return (
-  <Calendar>
-    <CalendarHeading />
-    <CalendarGrid>
-      <CalendarGridHeader>
-        {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
-      </CalendarGridHeader>
-      <CalendarGridBody>
-        {(date) => (
-          <>
-            <CalendarCell date={date} />
-          </>
-        )}
-      </CalendarGridBody>
-    </CalendarGrid>
-  </Calendar>
-)
-```
+### Disabled Calendar
 
-## Date Picker
+<ComponentPreview name="calendar-disabled" />
 
-You can use the `<Calendar>` component to build a date picker. See the [Date Picker](/docs/components/date-picker) page for more information.
+### Calendar with Error
+
+<ComponentPreview name="calendar-error" />
+
+### Multi-Selection Calendar
+
+<ComponentPreview name="calendar-multi" />
+
+### Read-only Calendar
+
+<ComponentPreview name="calendar-readonly" />
+
+### Calendar with Unavailable Dates
+
+<ComponentPreview name="calendar-unavailable" />
+
+### Calendar with Validation
+
+<ComponentPreview name="calendar-validation" />

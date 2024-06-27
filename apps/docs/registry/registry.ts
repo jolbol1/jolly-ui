@@ -9,13 +9,7 @@ const ui: Registry = [
     files: ["ui/breadcrumbs.tsx"],
   },
 
-  {
-    name: "calendar",
-    type: "components:ui",
-    dependencies: ["react-aria-components"],
-    registryDependencies: ["button"],
-    files: ["ui/calendar.tsx"],
-  },
+
   {
     name: "checkbox",
     type: "components:ui",
@@ -186,6 +180,22 @@ const ui: Registry = [
     files: ["ui/tag-group.tsx"],
   },
 
+  {
+    name: "calendar",
+    type: "components:ui",
+    dependencies: ["react-aria-components"],
+    registryDependencies: ["button"],
+    files: ["ui/calendar.tsx"],
+  },
+
+  {
+    name: "datefield",
+    type: "components:ui",
+    dependencies: ["react-aria-components"],
+    registryDependencies: ["button"],
+    files: ["ui/datefield.tsx"],
+  },
+
 ]
 
 const example: Registry = [
@@ -226,12 +236,6 @@ const example: Registry = [
     files: ["example/breadcrumbs/breadcrumbs-items.tsx"],
   },
 
-  {
-    name: "calendar-demo",
-    type: "components:example/calendar",
-    registryDependencies: ["calendar"],
-    files: ["example/calendar/calendar-demo.tsx"],
-  },
   {
     name: "checkbox-demo",
     type: "components:example/checkbox",
@@ -1090,6 +1094,88 @@ const example: Registry = [
     type: "components:example/tag-group",
     registryDependencies: ["tag-group"],
     files: ["example/tag-group/tag-group-selection.tsx"],
+  },
+
+  // Calendar
+  {
+    name: "calendar-demo",
+    type: "components:example/calendar",
+    registryDependencies: ["calendar"],
+    files: ["example/calendar/calendar-demo.tsx"],
+  },
+  {
+    name: "calendar-disabled",
+    type: "components:example/calendar",
+    registryDependencies: ["calendar"],
+    files: ["example/calendar/calendar-disabled.tsx"],
+  },
+  {
+    name: "calendar-error",
+    type: "components:example/calendar",
+    registryDependencies: ["calendar"],
+    files: ["example/calendar/calendar-error.tsx"],
+  },
+  {
+    name: "calendar-multi",
+    type: "components:example/calendar",
+    registryDependencies: ["calendar"],
+    files: ["example/calendar/calendar-multi.tsx"],
+  },
+  {
+    name: "calendar-readonly",
+    type: "components:example/calendar",
+    registryDependencies: ["calendar"],
+    files: ["example/calendar/calendar-readonly.tsx"],
+  },
+  {
+    name: "calendar-unavailable",
+    type: "components:example/calendar",
+    registryDependencies: ["calendar"],
+    files: ["example/calendar/calendar-unavailable.tsx"],
+  },
+  {
+    name: "calendar-validation",
+    type: "components:example/calendar",
+    registryDependencies: ["calendar"],
+    files: ["example/calendar/calendar-validation.tsx"],
+  },
+
+  // DateField
+  {
+    name: "datefield-demo",
+    type: "components:example/datefield",
+    registryDependencies: ["datefield"],
+    files: ["example/datefield/datefield-demo.tsx"],
+  },
+  {
+    name: "datefield-description",
+    type: "components:example/datefield",
+    registryDependencies: ["datefield"],
+    files: ["example/datefield/datefield-description.tsx"],
+  },
+  {
+    name: "datefield-granularity",
+    type: "components:example/datefield",
+    registryDependencies: ["datefield"],
+    files: ["example/datefield/datefield-granularity.tsx"],
+  },
+  {
+    name: "datefield-timezone",
+    type: "components:example/datefield",
+    registryDependencies: ["datefield"],
+    files: ["example/datefield/datefield-timezone.tsx"],
+  },
+  {
+    name: "datefield-validation-min-max",
+    type: "components:example/datefield",
+    registryDependencies: ["datefield"],
+    files: ["example/datefield/datefield-validation-min-max.tsx"],
+  },
+  {
+    name: "datefield-validation",
+    type: "components:example/datefield",
+    registryDependencies: ["datefield"],
+    files: ["example/datefield/datefield-validation.tsx"],
   }
 
 ]

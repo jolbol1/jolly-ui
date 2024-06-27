@@ -133,7 +133,12 @@ const CalendarCell = ({ className, ...props }: AriaCalendarCellProps) => {
             "text-muted-foreground opacity-50 data-[selected]:bg-accent/50 data-[selected]:text-muted-foreground data-[selected]:opacity-30",
           /* Current Date */
           renderProps.date.compare(today(getLocalTimeZone())) === 0 &&
+            !renderProps.isSelected &&
             "bg-accent text-accent-foreground",
+          /* Unavailable Date */
+          renderProps.isUnavailable && "cursor-default text-destructive ",
+          renderProps.isInvalid &&
+            "bg-destructive text-destructive-foreground data-[focused]:bg-destructive data-[hovered]:bg-destructive data-[focused]:text-destructive-foreground data-[hovered]:text-destructive-foreground",
           className
         )
       )}

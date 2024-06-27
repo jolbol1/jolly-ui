@@ -29,6 +29,8 @@ function DateSegment({ className, ...props }: AriaDateSegmentProps) {
           "data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
           /* Focused */
           "data-[focused]:bg-accent data-[focused]:text-accent-foreground",
+          /* Invalid */
+          "data-[invalid]:data-[focused]:bg-destructive data-[invalid]:data-[focused]:text-destructive-foreground data-[invalid]:text-destructive",
           className
         )
       )}

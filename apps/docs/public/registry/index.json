@@ -13,19 +13,6 @@
     "type": "components:ui"
   },
   {
-    "name": "calendar",
-    "dependencies": [
-      "react-aria-components"
-    ],
-    "registryDependencies": [
-      "button"
-    ],
-    "files": [
-      "ui/calendar.tsx"
-    ],
-    "type": "components:ui"
-  },
-  {
     "name": "checkbox",
     "dependencies": [
       "react-aria-components"
@@ -313,6 +300,32 @@
     ],
     "files": [
       "ui/tag-group.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
+    "name": "calendar",
+    "dependencies": [
+      "react-aria-components"
+    ],
+    "registryDependencies": [
+      "button"
+    ],
+    "files": [
+      "ui/calendar.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
+    "name": "datefield",
+    "dependencies": [
+      "react-aria-components"
+    ],
+    "registryDependencies": [
+      "button"
+    ],
+    "files": [
+      "ui/datefield.tsx"
     ],
     "type": "components:ui"
   }

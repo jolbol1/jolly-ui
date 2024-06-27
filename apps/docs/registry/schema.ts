@@ -17,6 +17,7 @@ export const registrySchema = z.array(
       "components:example/combobox",
       "components:example/color",
       "components:example/color/pickers",
+      "components:example/datefield",
       "components:example/datepicker",
       "components:example/dialog",
       "components:example/dropzone",

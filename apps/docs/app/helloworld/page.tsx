@@ -1,186 +1,144 @@
 "use client"
 
 import React from "react"
-import { Selection, Text } from "react-aria-components"
-import { useListData } from "react-stately"
+import {
+  CalendarDate,
+  getLocalTimeZone,
+  parseAbsoluteToLocal,
+  parseZonedDateTime,
+  today,
+} from "@internationalized/date"
+import { Form, Text } from "react-aria-components"
 
-import { Label } from "@/registry/default/ui/field"
-import { Tag, TagGroup, TagList } from "@/registry/default/ui/tag-group"
+import { Button } from "@/registry/default/ui/button"
+import {
+  DateField,
+  DateInput,
+  DateSegment,
+} from "@/registry/default/ui/datefield"
+import { FieldError, Label } from "@/registry/default/ui/field"
 
 export default function Page() {
   return (
     <div className="flex h-screen w-full flex-wrap items-center justify-center gap-6">
-      <TagGroupDemo />
-      <TagGroupRemove />
-      <TagGroupSelection />
-      <TagLinks />
-      <TagDisabledItems />
-      <TagDisabledKeys />
-      <TagGroupEmpty />
-      <TagHelperText />
-      <TagErrorText />
+      <DateFieldDemo />
+      <DateFieldTimeZone />
+      <DateFieldGranularity />
+      <DateFieldValidation />
+      <DateFieldValidationMinMax />
+      <DateFieldDescription />
     </div>
   )
 }
 
-export function TagGroupDemo() {
+function DateFieldDemo() {
   return (
-    <TagGroup className="space-y-1" selectionMode="multiple">
-      <Label>Categories</Label>
-      <TagList>
-        <Tag>News</Tag>
-        <Tag>Travel</Tag>
-        <Tag>Gaming</Tag>
-        <Tag>Shopping</Tag>
-      </TagList>
-    </TagGroup>
+    <DateField className={"min-w-[150px] space-y-1"}>
+      <Label>Birth date</Label>
+      <DateInput />
+    </DateField>
   )
 }
 
-function TagGroupRemove() {
-  let list = useListData({
-    initialItems: [
-      { id: 1, name: "News" },
-      { id: 2, name: "Travel" },
-      { id: 3, name: "Gaming" },
-      { id: 4, name: "Shopping" },
-    ],
-  })
-
+function DateFieldTimeZone() {
   return (
-    <TagGroup
-      className="space-y-1"
-      selectionMode="multiple"
-      onRemove={(keys) => list.remove(...keys)}
-    >
-      <Label>Categories</Label>
-      <TagList items={list.items}>{(item) => <Tag>{item.name}</Tag>}</TagList>
-    </TagGroup>
-  )
-}
-
-function TagGroupSelection() {
-  let [selected, setSelected] = React.useState<Selection>(new Set(["parking"]))
-
-  return (
-    <TagGroup
-      className="space-y-1"
-      selectionMode="multiple"
-      selectedKeys={selected}
-      onSelectionChange={setSelected}
-    >
-      <Label>Amenities</Label>
-      <TagList>
-        <Tag id="laundry">Laundry</Tag>
-        <Tag id="fitness">Fitness center</Tag>
-        <Tag id="parking">Parking</Tag>
-        <Tag id="pool">Swimming pool</Tag>
-        <Tag id="breakfast">Breakfast</Tag>
-      </TagList>
-    </TagGroup>
-  )
-}
-
-export function TagLinks() {
-  return (
-    <TagGroup className="space-y-1">
-      <Label>Links</Label>
-      <TagList>
-        <Tag href="https://adobe.com/" target="_blank">
-          Adobe
-        </Tag>
-        <Tag href="https://apple.com/" target="_blank">
-          Apple
-        </Tag>
-        <Tag href="https://google.com/" target="_blank">
-          Google
-        </Tag>
-        <Tag href="https://microsoft.com/" target="_blank">
-          Microsoft
-        </Tag>
-      </TagList>
-    </TagGroup>
-  )
-}
-
-export function TagDisabledItems() {
-  return (
-    <TagGroup selectionMode="multiple" className="space-y-1">
-      <Label>Sandwich contents</Label>
-      <TagList>
-        <Tag>Lettuce</Tag>
-        <Tag>Tomato</Tag>
-        <Tag>Cheese</Tag>
-        <Tag isDisabled>Tuna Salad</Tag>
-        <Tag>Egg Salad</Tag>
-        <Tag>Ham</Tag>
-      </TagList>
-    </TagGroup>
-  )
-}
-
-function TagDisabledKeys() {
-  let options = [
-    { id: 1, name: "News" },
-    { id: 2, name: "Travel" },
-    { id: 3, name: "Gaming" },
-    { id: 4, name: "Shopping" },
-  ]
-
-  return (
-    <TagGroup
-      selectionMode="multiple"
-      disabledKeys={[2, 4]}
-      className="space-y-1"
-    >
-      <Label>Categories</Label>
-      <TagList items={options}>{(item) => <Tag>{item.name}</Tag>}</TagList>
-    </TagGroup>
-  )
-}
-
-function TagGroupEmpty() {
-  return (
-    <TagGroup>
-      <Label>Categories</Label>
-      <TagList renderEmptyState={() => "No categories."}>{[]}</TagList>
-    </TagGroup>
-  )
-}
-
-function TagHelperText() {
-  return (
-    <TagGroup className="space-y-1">
-      <Label>Categories</Label>
-      <TagList>
-        <Tag>News</Tag>
-        <Tag>Travel</Tag>
-        <Tag>Gaming</Tag>
-        <Tag>Shopping</Tag>
-      </TagList>
-      <Text className="text-sm text-muted-foreground" slot="description">
-        Your selected categories.
-      </Text>
-    </TagGroup>
-  )
-}
-
-function TagErrorText() {
-  return (
-    <TagGroup className="space-y-1">
-      <Label>Categories</Label>
-      <TagList>
-        <Tag>News</Tag>
-        <Tag>Travel</Tag>
-        <Tag>Gaming</Tag>
-        <Tag>Shopping</Tag>
-      </TagList>
-      <Text
-        className="text-sm font-medium text-destructive"
-        slot="errorMessage"
+    <div className="flex flex-col gap-2">
+      <DateField
+        defaultValue={parseZonedDateTime(
+          "2022-11-07T00:45[America/Los_Angeles]"
+        )}
+        className={"min-w-[150px] space-y-1"}
       >
-        Invalid set of categories.
+        <Label>Event date</Label>
+        <DateInput />
+      </DateField>
+      <DateField
+        defaultValue={parseAbsoluteToLocal("2021-11-07T07:45:00Z")}
+        className={"min-w-[150px] space-y-1"}
+      >
+        <Label>Event date</Label>
+        <DateInput />
+      </DateField>
+    </div>
+  )
+}
+
+function DateFieldGranularity() {
+  let [date, setDate] = React.useState(
+    parseAbsoluteToLocal("2021-04-07T18:45:22Z")
+  )
+  return (
+    <div className="flex flex-col gap-2">
+      <DateField
+        value={date}
+        onChange={setDate}
+        granularity="second"
+        defaultValue={parseZonedDateTime(
+          "2022-11-07T00:45[America/Los_Angeles]"
+        )}
+        className={"min-w-[150px] space-y-1"}
+      >
+        <Label>Date and Time</Label>
+        <DateInput />
+      </DateField>
+      <DateField
+        value={date}
+        onChange={setDate}
+        granularity="day"
+        defaultValue={parseZonedDateTime(
+          "2022-11-07T00:45[America/Los_Angeles]"
+        )}
+        className={"min-w-[150px] space-y-1"}
+      >
+        <Label>Date</Label>
+        <DateInput />
+      </DateField>
+    </div>
+  )
+}
+
+function DateFieldValidation() {
+  return (
+    <Form>
+      <DateField isRequired className={"min-w-[150px] space-y-1"}>
+        <Label>Appointment date</Label>
+        <DateInput />
+        <FieldError />
+      </DateField>
+      <Button className="mt-1" type="submit">
+        Submit
+      </Button>
+    </Form>
+  )
+}
+
+function DateFieldValidationMinMax() {
+  return (
+    <Form className="flex flex-col gap-2">
+      <DateField
+        minValue={today(getLocalTimeZone())}
+        isRequired
+        className={"flex min-w-[150px] flex-col gap-2"}
+      >
+        <Label>Appointment date</Label>
+        <DateInput />
+        <FieldError />
+      </DateField>
+      <Button className="w-fit" type="submit">
+        Submit
+      </Button>
+    </Form>
+  )
+}
+
+function DateFieldDescription() {
+  return (
+    <DateField granularity="hour" isRequired className={"flex flex-col gap-2"}>
+      <Label>Appointment date</Label>
+      <DateInput className={"w-[180px]"} />
+      <Text className="text-sm text-muted-foreground" slot="description">
+        Please select a weekday between 9 AM and 5 PM.
       </Text>
-    </TagGroup>
+    </DateField>
   )
 }

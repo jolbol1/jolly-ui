@@ -1,3 +1,5 @@
+import { getLocalTimeZone, today } from "@internationalized/date"
+
 import {
   Calendar,
   CalendarCell,
@@ -8,9 +10,12 @@ import {
   CalendarHeading,
 } from "@/registry/default/ui/calendar"
 
-export default function CalendarDemo() {
+export default function CalendarValidation() {
   return (
-    <Calendar aria-label="Appointment date">
+    <Calendar
+      minValue={today(getLocalTimeZone())}
+      aria-label="Appointment date"
+    >
       <CalendarHeading />
       <CalendarGrid>
         <CalendarGridHeader>

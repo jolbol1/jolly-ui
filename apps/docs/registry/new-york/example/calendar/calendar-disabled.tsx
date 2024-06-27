@@ -8,9 +8,9 @@ import {
   CalendarHeading,
 } from "@/registry/default/ui/calendar"
 
-export default function CalendarDemo() {
+export default function CalendarDisabled() {
   return (
-    <Calendar aria-label="Appointment date">
+    <Calendar isDisabled aria-label="Appointment date">
       <CalendarHeading />
       <CalendarGrid>
         <CalendarGridHeader>

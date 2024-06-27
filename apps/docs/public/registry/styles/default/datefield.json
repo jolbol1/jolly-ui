@@ -1,0 +1,16 @@
+{
+  "name": "datefield",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "name": "datefield.tsx",
+      "content": "import { VariantProps } from \"class-variance-authority\"\r\nimport {\r\n  DateField as AriaDateField,\r\n  DateInput as AriaDateInput,\r\n  DateInputProps as AriaDateInputProps,\r\n  DateSegment as AriaDateSegment,\r\n  DateSegmentProps as AriaDateSegmentProps,\r\n  TimeField as AriaTimeField,\r\n  composeRenderProps,\r\n} from \"react-aria-components\"\r\n\r\nimport { cn } from \"@/lib/utils\"\r\n\r\nimport { fieldGroupVariants } from \"./field\"\r\n\r\nconst DateField = AriaDateField\r\n\r\nconst TimeField = AriaTimeField\r\n\r\nfunction DateSegment({ className, ...props }: AriaDateSegmentProps) {\r\n  return (\r\n    <AriaDateSegment\r\n      className={composeRenderProps(className, (className) =>\r\n        cn(\r\n          \"type-literal:px-0 inline rounded p-0.5 caret-transparent outline outline-0\",\r\n          /* Placeholder */\r\n          \"data-[placeholder]:text-muted-foreground\",\r\n          /* Disabled */\r\n          \"data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50\",\r\n          /* Focused */\r\n          \"data-[focused]:bg-accent data-[focused]:text-accent-foreground\",\r\n          /* Invalid */\r\n          \"data-[invalid]:data-[focused]:bg-destructive data-[invalid]:data-[focused]:text-destructive-foreground data-[invalid]:text-destructive\",\r\n          className\r\n        )\r\n      )}\r\n      {...props}\r\n    />\r\n  )\r\n}\r\n\r\ninterface DateInputProps\r\n  extends AriaDateInputProps,\r\n    VariantProps<typeof fieldGroupVariants> {}\r\n\r\nfunction DateInput({\r\n  className,\r\n  variant,\r\n  ...props\r\n}: Omit<DateInputProps, \"children\">) {\r\n  return (\r\n    <AriaDateInput\r\n      className={composeRenderProps(className, (className) =>\r\n        cn(fieldGroupVariants({ variant }), \"text-sm\", className)\r\n      )}\r\n      {...props}\r\n    >\r\n      {(segment) => <DateSegment segment={segment} />}\r\n    </AriaDateInput>\r\n  )\r\n}\r\n\r\nexport { DateField, DateSegment, DateInput, TimeField }\r\nexport type { DateInputProps }\r\n"
+    }
+  ],
+  "type": "components:ui"
+}
