@@ -1,12 +1,13 @@
 ---
-title: Date Picker
-description: A date picker component with range and presets.
+title: DatePicker
+description: A DatePicker combines a DateField and a Calendar popover to allow users to enter or select a date value.
+featured: true
 component: true
 links:
-  doc: https://react-spectrum.adobe.com/react-aria/Calendar.html
+  doc: https://react-spectrum.adobe.com/react-aria/DatePicker.html
 ---
 
-<ComponentPreview name="date-picker-demo" />
+<ComponentPreview name="datepicker-demo" />
 
 ## Installation
 
@@ -20,10 +21,8 @@ links:
 <TabsContent value="cli">
 
 ```bash
-npx @sly-cli/sly add jolly-ui date-picker
+npx @sly-cli/sly add jolly-ui datepicker
 ```
-
-**Note: Only the default style can be installed via CLI at the moment**
 
 </TabsContent>
 
@@ -31,19 +30,9 @@ npx @sly-cli/sly add jolly-ui date-picker
 
 <Steps>
 
-<Step>Install the following dependencies:</Step>
+<Step>Copy and paste the following code into your project: datepicker.tsx</Step>
 
-```bash
-npm install @internationalized/date date-fns
-```
-
-<Step>Add the `Button` component to your project.</Step>
-
-The `DatePicker` component uses the `Calendar` and `Popover` component. Make sure you have them installed in your project.
-
-<Step>Copy and paste the following code into your project.</Step>
-
-<ComponentSource name="date-picker" />
+<ComponentSource name="datepicker" />
 
 <Step>Update the import paths to match your project setup.</Step>
 
@@ -53,67 +42,36 @@ The `DatePicker` component uses the `Calendar` and `Popover` component. Make sur
 
 </Tabs>
 
-## Usage
-
-```tsx
-"use client"
-
-import React from "react"
-import { type DateValue } from "react-aria-components"
-
-import {
-  Calendar,
-  CalendarCell,
-  CalendarGrid,
-  CalendarGridBody,
-  CalendarGridHeader,
-  CalendarHeaderCell,
-  CalendarHeading,
-} from "@/registry/default/ui/calendar"
-import {
-  DatePicker,
-  DatePickerButton,
-  DatePickerContent,
-} from "@/registry/default/ui/date-picker"
-
-export default function DatepickerDemo({ ...props }) {
-  const [date, setDate] = React.useState<DateValue>()
-
-  return (
-    <DatePicker shouldCloseOnSelect={false} onChange={setDate} {...props}>
-      <DatePickerButton date={date} />
-      <DatePickerContent>
-        <Calendar>
-          <CalendarHeading />
-          <CalendarGrid>
-            <CalendarGridHeader>
-              {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
-            </CalendarGridHeader>
-            <CalendarGridBody>
-              {(date) => (
-                <>
-                  <CalendarCell date={date} />
-                </>
-              )}
-            </CalendarGridBody>
-          </CalendarGrid>
-        </Calendar>
-      </DatePickerContent>
-    </DatePicker>
-  )
-}
-```
-
 ## Examples
 
-### Date Picker
+### Demo
 
-<ComponentPreview name="date-picker-demo" />
+<ComponentPreview name="datepicker-demo" />
 
-### Date Range Picker
+### DatePicker with Custom Validation
 
-<ComponentPreview name="date-picker-range-demo" />
+<ComponentPreview name="datepicker-custom-validation" />
 
-### With Presets
+### DatePicker with Description
 
-<ComponentPreview name="date-picker-with-presets" />
+<ComponentPreview name="datepicker-description" />
+
+### DatePicker with Custom Granularity
+
+<ComponentPreview name="datepicker-granularity" />
+
+### DatePicker with Min/Max Dates
+
+<ComponentPreview name="datepicker-min-max" />
+
+### DatePicker with Timezone
+
+<ComponentPreview name="datepicker-timezone" />
+
+### DatePicker with Unavailable Dates
+
+<ComponentPreview name="datepicker-unavailable" />
+
+### DatePicker with Validation
+
+<ComponentPreview name="datepicker-validation" />

@@ -388,24 +388,6 @@ const example: Registry = [
     files: ["example/combobox/combobox-section.tsx"],
   },
   {
-    name: "date-picker-demo",
-    type: "components:example/datepicker",
-    registryDependencies: ["datepicker"],
-    files: ["example/datepicker/date-picker-demo.tsx"],
-  },
-  {
-    name: "date-picker-range-demo",
-    type: "components:example/datepicker",
-    registryDependencies: ["datepicker"],
-    files: ["example/datepicker/date-picker-range-demo.tsx"],
-  },
-  {
-    name: "date-picker-with-presets",
-    type: "components:example/datepicker",
-    registryDependencies: ["datepicker"],
-    files: ["example/datepicker/date-picker-with-presets.tsx"],
-  },
-  {
     name: "dialog-alert-demo",
     type: "components:example/dialog",
     registryDependencies: ["dialog"],
@@ -1176,7 +1158,58 @@ const example: Registry = [
     type: "components:example/datefield",
     registryDependencies: ["datefield"],
     files: ["example/datefield/datefield-validation.tsx"],
+  },
+
+  // Datepicker
+  {
+    name: "datepicker-custom-validation",
+    type: "components:example/datepicker",
+    registryDependencies: ["datepicker"],
+    files: ["example/datepicker/datepicker-custom-validation.tsx"],
+  },
+  {
+    name: "datepicker-demo",
+    type: "components:example/datepicker",
+    registryDependencies: ["datepicker"],
+    files: ["example/datepicker/datepicker-demo.tsx"],
+  },
+  {
+    name: "datepicker-description",
+    type: "components:example/datepicker",
+    registryDependencies: ["datepicker"],
+    files: ["example/datepicker/datepicker-description.tsx"],
+  },
+  {
+    name: "datepicker-granularity",
+    type: "components:example/datepicker",
+    registryDependencies: ["datepicker"],
+    files: ["example/datepicker/datepicker-granularity.tsx"],
+  },
+  {
+    name: "datepicker-min-max",
+    type: "components:example/datepicker",
+    registryDependencies: ["datepicker"],
+    files: ["example/datepicker/datepicker-min-max.tsx"],
+  },
+  {
+    name: "datepicker-timezone",
+    type: "components:example/datepicker",
+    registryDependencies: ["datepicker"],
+    files: ["example/datepicker/datepicker-timezone.tsx"],
+  },
+  {
+    name: "datepicker-unavailable",
+    type: "components:example/datepicker",
+    registryDependencies: ["datepicker"],
+    files: ["example/datepicker/datepicker-unavailable.tsx"],
+  },
+  {
+    name: "datepicker-validation",
+    type: "components:example/datepicker",
+    registryDependencies: ["datepicker"],
+    files: ["example/datepicker/datepicker-validation.tsx"],
   }
+
 
 ]
 

@@ -1,4 +1,5 @@
 import { CalendarIcon } from "lucide-react"
+import { Text } from "react-aria-components"
 
 import { Button } from "@/registry/default/ui/button"
 import {
@@ -15,12 +16,13 @@ import {
   DatePickerContent,
 } from "@/registry/default/ui/date-picker"
 import { DateInput } from "@/registry/default/ui/datefield"
-import { FieldGroup } from "@/registry/default/ui/field"
+import { FieldError, FieldGroup, Label } from "@/registry/default/ui/field"
 
-export function DatepickerDemo() {
+export default function DatepickerDescription() {
   return (
-    <DatePicker className="min-w-[208px]">
-      <FieldGroup>
+    <DatePicker className="group min-w-[208px] flex flex-col gap-2">
+      <Label>Appointment Date</Label>
+      <FieldGroup className="min-w-[208px] w-fit">
         <DateInput className="flex-1" variant="ghost" />
         <Button
           variant="ghost"
@@ -30,6 +32,10 @@ export function DatepickerDemo() {
           <CalendarIcon aria-hidden className="size-4" />
         </Button>
       </FieldGroup>
+      <Text className="text-sm text-muted-foreground" slot="description">
+        Please select a weekday between 9 AM and 5 PM.
+      </Text>
+      <FieldError />
       <DatePickerContent>
         <Calendar>
           <CalendarHeading />
@@ -46,4 +52,3 @@ export function DatepickerDemo() {
     </DatePicker>
   )
 }
-export default DatepickerDemo

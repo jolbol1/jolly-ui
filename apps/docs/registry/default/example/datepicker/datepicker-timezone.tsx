@@ -1,31 +1,32 @@
+import { parseZonedDateTime } from "@internationalized/date"
 import { CalendarIcon } from "lucide-react"
 
 import { Button } from "@/registry/default/ui/button"
 import {
+  Calendar,
   CalendarCell,
   CalendarGrid,
   CalendarGridBody,
   CalendarGridHeader,
   CalendarHeaderCell,
   CalendarHeading,
-  RangeCalendar,
 } from "@/registry/default/ui/calendar"
 import {
+  DatePicker,
   DatePickerContent,
-  DateRangePicker,
 } from "@/registry/default/ui/date-picker"
 import { DateInput } from "@/registry/default/ui/datefield"
-import { FieldGroup } from "@/registry/default/ui/field"
+import { FieldGroup, Label } from "@/registry/default/ui/field"
 
-export function DatepickerDemo() {
+export default function DatepickerTimezone() {
   return (
-    <DateRangePicker>
-      <FieldGroup className="min-w-[300px]">
-        <DateInput variant="ghost" slot="start" />
-        <span aria-hidden className="px-2 text-sm text-muted-foreground">
-          –
-        </span>
-        <DateInput className="flex-1" variant="ghost" slot="end" />
+    <DatePicker
+      defaultValue={parseZonedDateTime("2022-11-07T00:45[America/Los_Angeles]")}
+      className="min-w-[208px] space-y-1"
+    >
+      <Label>Date</Label>
+      <FieldGroup>
+        <DateInput className="flex-1" variant="ghost" />
         <Button
           variant="ghost"
           size="icon"
@@ -35,7 +36,7 @@ export function DatepickerDemo() {
         </Button>
       </FieldGroup>
       <DatePickerContent>
-        <RangeCalendar pageBehavior="visible">
+        <Calendar>
           <CalendarHeading />
           <CalendarGrid>
             <CalendarGridHeader>
@@ -45,9 +46,8 @@ export function DatepickerDemo() {
               {(date) => <CalendarCell date={date} />}
             </CalendarGridBody>
           </CalendarGrid>
-        </RangeCalendar>
+        </Calendar>
       </DatePickerContent>
-    </DateRangePicker>
+    </DatePicker>
   )
 }
-export default DatepickerDemo
