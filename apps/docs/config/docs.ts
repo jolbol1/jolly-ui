@@ -186,6 +186,11 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Form",
+          href: "/docs/components/form",
+          items: [],
+        },
+        {
           title: "Radio Group",
           href: "/docs/components/radio-group",
           items: [],

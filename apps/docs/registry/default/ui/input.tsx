@@ -2,10 +2,13 @@ import * as React from "react"
 import {
   Input as AriaInput,
   InputProps as AriaInputProps,
+  TextField as AriaTextField,
   composeRenderProps,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"
+
+const TextField = AriaTextField
 
 const Input = ({ className, ...props }: AriaInputProps) => {
   return (
@@ -27,4 +30,4 @@ const Input = ({ className, ...props }: AriaInputProps) => {
   )
 }
 
-export { Input }
+export { Input, TextField }

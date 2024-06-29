@@ -1587,6 +1587,27 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/example/checkbox-group/checkbox-group-validation")),
       files: ["registry/default/example/checkbox-group/checkbox-group-validation.tsx"],
     },
+    "form-demo": {
+      name: "form-demo",
+      type: "components:example/form",
+      registryDependencies: ["form"],
+      component: React.lazy(() => import("@/registry/default/example/form/form-demo")),
+      files: ["registry/default/example/form/form-demo.tsx"],
+    },
+    "form-validation-behavior": {
+      name: "form-validation-behavior",
+      type: "components:example/form",
+      registryDependencies: ["form"],
+      component: React.lazy(() => import("@/registry/default/example/form/form-validation-behavior")),
+      files: ["registry/default/example/form/form-validation-behavior.tsx"],
+    },
+    "form-validation": {
+      name: "form-validation",
+      type: "components:example/form",
+      registryDependencies: ["form"],
+      component: React.lazy(() => import("@/registry/default/example/form/form-validation")),
+      files: ["registry/default/example/form/form-validation.tsx"],
+    },
   },  "new-york": {
     "breadcrumbs": {
       name: "breadcrumbs",
@@ -3169,6 +3190,27 @@ export const Index: Record<string, any> = {
       registryDependencies: ["checkbox-group"],
       component: React.lazy(() => import("@/registry/new-york/example/checkbox-group/checkbox-group-validation")),
       files: ["registry/new-york/example/checkbox-group/checkbox-group-validation.tsx"],
+    },
+    "form-demo": {
+      name: "form-demo",
+      type: "components:example/form",
+      registryDependencies: ["form"],
+      component: React.lazy(() => import("@/registry/new-york/example/form/form-demo")),
+      files: ["registry/new-york/example/form/form-demo.tsx"],
+    },
+    "form-validation-behavior": {
+      name: "form-validation-behavior",
+      type: "components:example/form",
+      registryDependencies: ["form"],
+      component: React.lazy(() => import("@/registry/new-york/example/form/form-validation-behavior")),
+      files: ["registry/new-york/example/form/form-validation-behavior.tsx"],
+    },
+    "form-validation": {
+      name: "form-validation",
+      type: "components:example/form",
+      registryDependencies: ["form"],
+      component: React.lazy(() => import("@/registry/new-york/example/form/form-validation")),
+      files: ["registry/new-york/example/form/form-validation.tsx"],
     },
   },
 }

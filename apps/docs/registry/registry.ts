@@ -1405,6 +1405,26 @@ const example: Registry = [
     type: "components:example/checkbox-group",
     registryDependencies: ["checkbox-group"],
     files: ["example/checkbox-group/checkbox-group-validation.tsx"],
+  },
+
+  // Form
+  {
+    name: "form-demo",
+    type: "components:example/form",
+    registryDependencies: ["form"],
+    files: ["example/form/form-demo.tsx"],
+  },
+  {
+    name: "form-validation-behavior",
+    type: "components:example/form",
+    registryDependencies: ["form"],
+    files: ["example/form/form-validation-behavior.tsx"],
+  },
+  {
+    name: "form-validation",
+    type: "components:example/form",
+    registryDependencies: ["form"],
+    files: ["example/form/form-validation.tsx"],
   }
 
 ]
