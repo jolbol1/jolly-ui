@@ -1,9 +1,10 @@
 "use client"
 
 import React from "react"
-import { type DateValue } from "react-aria-components"
+import { CalendarIcon } from "lucide-react"
 
 import { Card } from "@/components/card"
+import { Button } from "@/registry/default/ui/button"
 import {
   Calendar,
   CalendarCell,
@@ -15,45 +16,43 @@ import {
 } from "@/registry/default/ui/calendar"
 import {
   DatePicker,
-  DatePickerButton,
   DatePickerContent,
 } from "@/registry/default/ui/date-picker"
+import { DateInput } from "@/registry/default/ui/datefield"
+import { FieldGroup } from "@/registry/default/ui/field"
 import { Label } from "@/registry/default/ui/label"
 
 // TODO: Better Example
 
 export function CardDatePicker() {
-  const [date, setDate] = React.useState<DateValue>()
-
   return (
     <Card className="flex flex-col items-center gap-2 p-4">
-      <div className="flex flex-col gap-2">
+      <DatePicker className="min-w-[208px] space-y-1">
         <Label>Date</Label>
-        <DatePicker
-          aria-label="Select Date"
-          shouldCloseOnSelect={false}
-          onChange={setDate}
-        >
-          <DatePickerButton date={date} />
-          <DatePickerContent>
-            <Calendar>
-              <CalendarHeading />
-              <CalendarGrid>
-                <CalendarGridHeader>
-                  {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
-                </CalendarGridHeader>
-                <CalendarGridBody>
-                  {(date) => (
-                    <>
-                      <CalendarCell date={date} />
-                    </>
-                  )}
-                </CalendarGridBody>
-              </CalendarGrid>
-            </Calendar>
-          </DatePickerContent>
-        </DatePicker>
-      </div>
+        <FieldGroup>
+          <DateInput className="flex-1" variant="ghost" />
+          <Button
+            variant="ghost"
+            size="icon"
+            className="mr-1 size-6 data-[focus-visible]:ring-offset-0"
+          >
+            <CalendarIcon aria-hidden className="size-4" />
+          </Button>
+        </FieldGroup>
+        <DatePickerContent>
+          <Calendar>
+            <CalendarHeading />
+            <CalendarGrid>
+              <CalendarGridHeader>
+                {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
+              </CalendarGridHeader>
+              <CalendarGridBody>
+                {(date) => <CalendarCell date={date} />}
+              </CalendarGridBody>
+            </CalendarGrid>
+          </Calendar>
+        </DatePickerContent>
+      </DatePicker>
     </Card>
   )
 }

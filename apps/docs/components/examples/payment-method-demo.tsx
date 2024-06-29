@@ -15,8 +15,8 @@ import { Label } from "@/registry/default/ui/label"
 import { Radio, RadioGroup } from "@/registry/default/ui/radio-group"
 import {
   Select,
-  SelectContent,
   SelectItem,
+  SelectListBox,
   SelectPopover,
   SelectTrigger,
   SelectValue,
@@ -44,8 +44,7 @@ export function CardsPaymentMethod() {
             <Radio
               value="card"
               id="card"
-              showRadio={false}
-              className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground data-[selected]:border-primary"
+              className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground data-[selected]:border-primary [&>.jolly-Radio]:hidden"
               aria-label="Card"
             >
               <svg
@@ -70,8 +69,7 @@ export function CardsPaymentMethod() {
             <Radio
               value="paypal"
               id="paypal"
-              showRadio={false}
-              className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground data-[selected]:border-primary"
+              className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground data-[selected]:border-primary [&>.jolly-Radio]:hidden"
               aria-label="Paypal"
             >
               <Icons.paypal aria-hidden className="mb-3 h-6 w-6" />
@@ -83,8 +81,7 @@ export function CardsPaymentMethod() {
             <Radio
               value="apple"
               id="apple"
-              showRadio={false}
-              className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground data-[selected]:border-primary "
+              className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground data-[selected]:border-primary [&>.jolly-Radio]:hidden"
               aria-label="Apple"
             >
               <Icons.apple aria-hidden className="mb-3 h-6 w-6" />
@@ -112,7 +109,7 @@ export function CardsPaymentMethod() {
                 <SelectValue />
               </SelectTrigger>
               <SelectPopover>
-                <SelectContent>
+                <SelectListBox>
                   <SelectItem textValue="January" id="1">
                     January
                   </SelectItem>
@@ -149,7 +146,7 @@ export function CardsPaymentMethod() {
                   <SelectItem textValue="December" id="12">
                     December
                   </SelectItem>
-                </SelectContent>
+                </SelectListBox>
               </SelectPopover>
             </Select>
           </div>
@@ -160,7 +157,7 @@ export function CardsPaymentMethod() {
                 <SelectValue />
               </SelectTrigger>
               <SelectPopover>
-                <SelectContent>
+                <SelectListBox>
                   {Array.from({ length: 10 }, (_, i) => (
                     <SelectItem
                       textValue={`${new Date().getFullYear() + i}`}
@@ -170,7 +167,7 @@ export function CardsPaymentMethod() {
                       {new Date().getFullYear() + i}
                     </SelectItem>
                   ))}
-                </SelectContent>
+                </SelectListBox>
               </SelectPopover>
             </Select>
           </div>
