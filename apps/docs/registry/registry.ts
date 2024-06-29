@@ -1208,8 +1208,114 @@ const example: Registry = [
     type: "components:example/datepicker",
     registryDependencies: ["datepicker"],
     files: ["example/datepicker/datepicker-validation.tsx"],
-  }
+  },
 
+  //Date range picker
+  {
+    name: "date-range-non-continuous",
+    type: "components:example/date-range-picker",
+    registryDependencies: ["date-range-picker"],
+    files: ["example/date-range-picker/date-range-non-continuous.tsx"],
+  },
+  {
+    name: "date-range-picker-custom-validation",
+    type: "components:example/date-range-picker",
+    registryDependencies: ["date-range-picker"],
+    files: ["example/date-range-picker/date-range-picker-custom-validation.tsx"],
+  },
+  {
+    name: "date-range-picker-demo",
+    type: "components:example/date-range-picker",
+    registryDependencies: ["date-range-picker"],
+    files: ["example/date-range-picker/date-range-picker-demo.tsx"],
+  },
+  {
+    name: "date-range-picker-description",
+    type: "components:example/date-range-picker",
+    registryDependencies: ["date-range-picker"],
+    files: ["example/date-range-picker/date-range-picker-description.tsx"],
+  },
+  {
+    name: "date-range-picker-granularity",
+    type: "components:example/date-range-picker",
+    registryDependencies: ["date-range-picker"],
+    files: ["example/date-range-picker/date-range-picker-granularity.tsx"],
+  },
+  {
+    name: "date-range-picker-min-max",
+    type: "components:example/date-range-picker",
+    registryDependencies: ["date-range-picker"],
+    files: ["example/date-range-picker/date-range-picker-min-max.tsx"],
+  },
+  {
+    name: "date-range-picker-timezone",
+    type: "components:example/date-range-picker",
+    registryDependencies: ["date-range-picker"],
+    files: ["example/date-range-picker/date-range-picker-timezone.tsx"],
+  },
+  {
+    name: "date-range-picker-validation",
+    type: "components:example/date-range-picker",
+    registryDependencies: ["date-range-picker"],
+    files: ["example/date-range-picker/date-range-picker-validation.tsx"],
+  },
+  {
+    name: "date-range-unavailable",
+    type: "components:example/date-range-picker",
+    registryDependencies: ["date-range-picker"],
+    files: ["example/date-range-picker/date-range-unavailable.tsx"],
+  },
+
+  // Range Calendar
+
+  {
+    name: "range-calendar-demo",
+    type: "components:example/range-calendar",
+    registryDependencies: ["range-calendar"],
+    files: ["example/range-calendar/range-calendar-demo.tsx"],
+  },
+  {
+    name: "range-calendar-disabled",
+    type: "components:example/range-calendar",
+    registryDependencies: ["range-calendar"],
+    files: ["example/range-calendar/range-calendar-disabled.tsx"],
+  },
+  {
+    name: "range-calendar-error",
+    type: "components:example/range-calendar",
+    registryDependencies: ["range-calendar"],
+    files: ["example/range-calendar/range-calendar-error.tsx"],
+  },
+  {
+    name: "range-calendar-multi-month",
+    type: "components:example/range-calendar",
+    registryDependencies: ["range-calendar"],
+    files: ["example/range-calendar/range-calendar-multi-month.tsx"],
+  },
+  {
+    name: "range-calendar-non-continuous",
+    type: "components:example/range-calendar",
+    registryDependencies: ["range-calendar"],
+    files: ["example/range-calendar/range-calendar-non-continuous.tsx"],
+  },
+  {
+    name: "range-calendar-readonly",
+    type: "components:example/range-calendar",
+    registryDependencies: ["range-calendar"],
+    files: ["example/range-calendar/range-calendar-readonly.tsx"],
+  },
+  {
+    name: "range-calendar-unavailable",
+    type: "components:example/range-calendar",
+    registryDependencies: ["range-calendar"],
+    files: ["example/range-calendar/range-calendar-unavailable.tsx"],
+  },
+  {
+    name: "range-calendar-validation",
+    type: "components:example/range-calendar",
+    registryDependencies: ["range-calendar"],
+    files: ["example/range-calendar/range-calendar-validation.tsx"],
+  }
 
 ]
 

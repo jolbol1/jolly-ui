@@ -1,268 +1,101 @@
 "use client"
 
 import React from "react"
-import {
-  getLocalTimeZone,
-  isWeekend,
-  parseAbsoluteToLocal,
-  parseZonedDateTime,
-  today,
-} from "@internationalized/date"
-import { CalendarIcon } from "lucide-react"
-import { DateValue, Form, Text, useLocale } from "react-aria-components"
+import { getLocalTimeZone, isWeekend, today } from "@internationalized/date"
+import { DateValue, Text, useLocale } from "react-aria-components"
 
-import { Button } from "@/registry/default/ui/button"
 import {
-  Calendar,
   CalendarCell,
   CalendarGrid,
   CalendarGridBody,
   CalendarGridHeader,
   CalendarHeaderCell,
   CalendarHeading,
+  RangeCalendar,
 } from "@/registry/default/ui/calendar"
-import {
-  DatePicker,
-  DatePickerContent,
-} from "@/registry/default/ui/date-picker"
-import { DateInput, DateSegment } from "@/registry/default/ui/datefield"
-import { FieldError, FieldGroup, Label } from "@/registry/default/ui/field"
 
 export default function Page() {
   return (
     <div className="flex h-screen w-full flex-wrap items-center justify-center gap-6">
-      <DatepickerDemo />
-      <DatepickerTimezone />
-      <DatepickerGranularity />
-      <DatepickerValidation />
-      <DatepickerMinMax />
-      <DatepickerUnavailable />
-      <DatepickerCustomValidation />
-      <DatepickerDescription />
+      <RangeCalendarDemo />
+      <RangeCalendarMultiMonth />
+      <RangeCalendarValidation />
+      <RangeCalendarUnavailable />
+      <RangeCalendarNonContinuous />
+      <RangeCalendarError />
+      <RangeCalendarDisabled />
+      <RangeCalendarReadonly />
     </div>
   )
 }
 
-export function DatepickerDemo() {
+export function RangeCalendarDemo() {
   return (
-    <DatePicker className="min-w-[208px] space-y-1">
-      <Label>Date</Label>
-      <FieldGroup>
-        <DateInput className="flex-1" variant="ghost" />
-        <Button
-          variant="ghost"
-          size="icon"
-          className="mr-1 size-6 data-[focus-visible]:ring-offset-0"
-        >
-          <CalendarIcon aria-hidden className="size-4" />
-        </Button>
-      </FieldGroup>
-      <DatePickerContent>
-        <Calendar>
-          <CalendarHeading />
-          <CalendarGrid>
-            <CalendarGridHeader>
-              {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
-            </CalendarGridHeader>
-            <CalendarGridBody>
-              {(date) => <CalendarCell date={date} />}
-            </CalendarGridBody>
-          </CalendarGrid>
-        </Calendar>
-      </DatePickerContent>
-    </DatePicker>
+    <RangeCalendar aria-label="Trip dates">
+      <CalendarHeading />
+      <CalendarGrid>
+        <CalendarGridHeader>
+          {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
+        </CalendarGridHeader>
+        <CalendarGridBody>
+          {(date) => <CalendarCell date={date} />}
+        </CalendarGridBody>
+      </CalendarGrid>
+    </RangeCalendar>
   )
 }
 
-export function DatepickerTimezone() {
+export function RangeCalendarMultiMonth() {
   return (
-    <DatePicker
-      defaultValue={parseZonedDateTime("2022-11-07T00:45[America/Los_Angeles]")}
-      className="min-w-[208px] space-y-1"
-    >
-      <Label>Date</Label>
-      <FieldGroup>
-        <DateInput className="flex-1" variant="ghost" />
-        <Button
-          variant="ghost"
-          size="icon"
-          className="mr-1 size-6 data-[focus-visible]:ring-offset-0"
-        >
-          <CalendarIcon aria-hidden className="size-4" />
-        </Button>
-      </FieldGroup>
-      <DatePickerContent>
-        <Calendar>
-          <CalendarHeading />
-          <CalendarGrid>
-            <CalendarGridHeader>
-              {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
-            </CalendarGridHeader>
-            <CalendarGridBody>
-              {(date) => <CalendarCell date={date} />}
-            </CalendarGridBody>
-          </CalendarGrid>
-        </Calendar>
-      </DatePickerContent>
-    </DatePicker>
+    <RangeCalendar aria-label="Trip dates" visibleDuration={{ months: 3 }}>
+      <CalendarHeading />
+      <div style={{ display: "flex", gap: 30, overflow: "auto" }}>
+        <CalendarGrid>
+          <CalendarGridHeader>
+            {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
+          </CalendarGridHeader>
+          <CalendarGridBody>
+            {(date) => <CalendarCell date={date} />}
+          </CalendarGridBody>
+        </CalendarGrid>
+        <CalendarGrid offset={{ months: 1 }}>
+          <CalendarGridHeader>
+            {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
+          </CalendarGridHeader>
+          <CalendarGridBody>
+            {(date) => <CalendarCell date={date} />}
+          </CalendarGridBody>
+        </CalendarGrid>
+        <CalendarGrid offset={{ months: 2 }}>
+          <CalendarGridHeader>
+            {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
+          </CalendarGridHeader>
+          <CalendarGridBody>
+            {(date) => <CalendarCell date={date} />}
+          </CalendarGridBody>
+        </CalendarGrid>
+      </div>
+    </RangeCalendar>
   )
 }
 
-export function DatepickerGranularity() {
-  let [date, setDate] = React.useState(
-    parseAbsoluteToLocal("2021-04-07T18:45:22Z")
-  )
-
+export function RangeCalendarValidation() {
   return (
-    <div className="flex flex-col gap-2">
-      <DatePicker
-        value={date}
-        onChange={setDate}
-        granularity="second"
-        className="min-w-[208px] space-y-1"
-      >
-        <Label>Date and Time</Label>
-        <FieldGroup>
-          <DateInput className="flex-1" variant="ghost" />
-          <Button
-            variant="ghost"
-            size="icon"
-            className="mr-1 size-6 data-[focus-visible]:ring-offset-0"
-          >
-            <CalendarIcon aria-hidden className="size-4" />
-          </Button>
-        </FieldGroup>
-        <DatePickerContent>
-          <Calendar>
-            <CalendarHeading />
-            <CalendarGrid>
-              <CalendarGridHeader>
-                {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
-              </CalendarGridHeader>
-              <CalendarGridBody>
-                {(date) => <CalendarCell date={date} />}
-              </CalendarGridBody>
-            </CalendarGrid>
-          </Calendar>
-        </DatePickerContent>
-      </DatePicker>
-
-      <DatePicker
-        value={date}
-        onChange={setDate}
-        granularity="day"
-        className="min-w-[208px] space-y-1"
-      >
-        <Label>Day</Label>
-        <FieldGroup>
-          <DateInput className="flex-1" variant="ghost" />
-          <Button
-            variant="ghost"
-            size="icon"
-            className="mr-1 size-6 data-[focus-visible]:ring-offset-0"
-          >
-            <CalendarIcon aria-hidden className="size-4" />
-          </Button>
-        </FieldGroup>
-        <DatePickerContent>
-          <Calendar>
-            <CalendarHeading />
-            <CalendarGrid>
-              <CalendarGridHeader>
-                {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
-              </CalendarGridHeader>
-              <CalendarGridBody>
-                {(date) => <CalendarCell date={date} />}
-              </CalendarGridBody>
-            </CalendarGrid>
-          </Calendar>
-        </DatePickerContent>
-      </DatePicker>
-    </div>
+    <RangeCalendar minValue={today(getLocalTimeZone())} aria-label="Trip dates">
+      <CalendarHeading />
+      <CalendarGrid>
+        <CalendarGridHeader>
+          {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
+        </CalendarGridHeader>
+        <CalendarGridBody>
+          {(date) => <CalendarCell date={date} />}
+        </CalendarGridBody>
+      </CalendarGrid>
+    </RangeCalendar>
   )
 }
 
-export function DatepickerValidation() {
-  return (
-    <Form className="flex flex-col gap-2">
-      <DatePicker
-        isRequired
-        className="group min-w-[208px] flex flex-col gap-2"
-      >
-        <Label>Appointment Date</Label>
-        <FieldGroup>
-          <DateInput className="flex-1" variant="ghost" />
-          <Button
-            variant="ghost"
-            size="icon"
-            className="mr-1 size-6 data-[focus-visible]:ring-offset-0"
-          >
-            <CalendarIcon aria-hidden className="size-4" />
-          </Button>
-        </FieldGroup>
-        <FieldError />
-        <DatePickerContent>
-          <Calendar>
-            <CalendarHeading />
-            <CalendarGrid>
-              <CalendarGridHeader>
-                {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
-              </CalendarGridHeader>
-              <CalendarGridBody>
-                {(date) => <CalendarCell date={date} />}
-              </CalendarGridBody>
-            </CalendarGrid>
-          </Calendar>
-        </DatePickerContent>
-      </DatePicker>
-      <Button type="submit" className="w-fit">
-        Submit
-      </Button>
-    </Form>
-  )
-}
-
-export function DatepickerMinMax() {
-  return (
-    <Form className="flex flex-col gap-2">
-      <DatePicker
-        minValue={today(getLocalTimeZone())}
-        className="group min-w-[208px] flex flex-col gap-2"
-      >
-        <Label>Appointment Date</Label>
-        <FieldGroup>
-          <DateInput className="flex-1" variant="ghost" />
-          <Button
-            variant="ghost"
-            size="icon"
-            className="mr-1 size-6 data-[focus-visible]:ring-offset-0"
-          >
-            <CalendarIcon aria-hidden className="size-4" />
-          </Button>
-        </FieldGroup>
-        <FieldError />
-        <DatePickerContent>
-          <Calendar>
-            <CalendarHeading />
-            <CalendarGrid>
-              <CalendarGridHeader>
-                {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
-              </CalendarGridHeader>
-              <CalendarGridBody>
-                {(date) => <CalendarCell date={date} />}
-              </CalendarGridBody>
-            </CalendarGrid>
-          </Calendar>
-        </DatePickerContent>
-      </DatePicker>
-      <Button type="submit" className="w-fit">
-        Submit
-      </Button>
-    </Form>
-  )
-}
-
-export function DatepickerUnavailable() {
+export function RangeCalendarUnavailable() {
   let now = today(getLocalTimeZone())
   let disabledRanges = [
     [now, now.add({ days: 5 })],
@@ -270,118 +103,119 @@ export function DatepickerUnavailable() {
     [now.add({ days: 23 }), now.add({ days: 24 })],
   ]
 
-  let { locale } = useLocale()
   let isDateUnavailable = (date: DateValue) =>
-    isWeekend(date, locale) ||
     disabledRanges.some(
       (interval) =>
         date.compare(interval[0]!) >= 0 && date.compare(interval[1]!) <= 0
     )
-
   return (
-    <DatePicker
+    <RangeCalendar
       minValue={today(getLocalTimeZone())}
-      className="group min-w-[208px] flex flex-col gap-2"
       isDateUnavailable={isDateUnavailable}
+      aria-label="Trip dates"
     >
-      <Label>Appointment Date</Label>
-      <FieldGroup>
-        <DateInput className="flex-1" variant="ghost" />
-        <Button
-          variant="ghost"
-          size="icon"
-          className="mr-1 size-6 data-[focus-visible]:ring-offset-0"
-        >
-          <CalendarIcon aria-hidden className="size-4" />
-        </Button>
-      </FieldGroup>
-      <DatePickerContent>
-        <Calendar>
-          <CalendarHeading />
-          <CalendarGrid>
-            <CalendarGridHeader>
-              {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
-            </CalendarGridHeader>
-            <CalendarGridBody>
-              {(date) => <CalendarCell date={date} />}
-            </CalendarGridBody>
-          </CalendarGrid>
-        </Calendar>
-      </DatePickerContent>
-    </DatePicker>
+      <CalendarHeading />
+      <CalendarGrid>
+        <CalendarGridHeader>
+          {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
+        </CalendarGridHeader>
+        <CalendarGridBody>
+          {(date) => <CalendarCell date={date} />}
+        </CalendarGridBody>
+      </CalendarGrid>
+    </RangeCalendar>
   )
 }
 
-export function DatepickerCustomValidation() {
+export function RangeCalendarNonContinuous() {
   let { locale } = useLocale()
 
   return (
-    <DatePicker
-      className="group min-w-[208px] flex flex-col gap-2"
-      validate={(date) =>
-        date && isWeekend(date, locale) ? "We are closed on weekends." : null
-      }
+    <RangeCalendar
+      isDateUnavailable={(date) => isWeekend(date, locale)}
+      allowsNonContiguousRanges
+      aria-label="Trip dates"
     >
-      <Label>Appointment Date</Label>
-      <FieldGroup>
-        <DateInput className="flex-1" variant="ghost" />
-        <Button
-          variant="ghost"
-          size="icon"
-          className="mr-1 size-6 data-[focus-visible]:ring-offset-0"
-        >
-          <CalendarIcon aria-hidden className="size-4" />
-        </Button>
-      </FieldGroup>
-      <FieldError />
-      <DatePickerContent>
-        <Calendar>
-          <CalendarHeading />
-          <CalendarGrid>
-            <CalendarGridHeader>
-              {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
-            </CalendarGridHeader>
-            <CalendarGridBody>
-              {(date) => <CalendarCell date={date} />}
-            </CalendarGridBody>
-          </CalendarGrid>
-        </Calendar>
-      </DatePickerContent>
-    </DatePicker>
+      <CalendarHeading />
+      <CalendarGrid>
+        <CalendarGridHeader>
+          {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
+        </CalendarGridHeader>
+        <CalendarGridBody>
+          {(date) => <CalendarCell date={date} />}
+        </CalendarGridBody>
+      </CalendarGrid>
+    </RangeCalendar>
   )
 }
 
-export function DatepickerDescription() {
+export function RangeCalendarError() {
+  let [range, setRange] = React.useState({
+    start: today(getLocalTimeZone()),
+    end: today(getLocalTimeZone()).add({ weeks: 1, days: 3 }),
+  })
+  let isInvalid = range.end.compare(range.start) > 7
+
   return (
-    <DatePicker className="group min-w-[208px] flex flex-col gap-2">
-      <Label>Appointment Date</Label>
-      <FieldGroup className="min-w-[208px] w-fit">
-        <DateInput className="flex-1" variant="ghost" />
-        <Button
-          variant="ghost"
-          size="icon"
-          className="mr-1 size-6 data-[focus-visible]:ring-offset-0"
-        >
-          <CalendarIcon aria-hidden className="size-4" />
-        </Button>
-      </FieldGroup>
-      <Text className="text-sm text-muted-foreground" slot="description">
-        Please select a weekday between 9 AM and 5 PM.
-      </Text>
-      <FieldError />
-      <DatePickerContent>
-        <Calendar>
-          <CalendarHeading />
-          <CalendarGrid>
-            <CalendarGridHeader>
-              {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
-            </CalendarGridHeader>
-            <CalendarGridBody>
-              {(date) => <CalendarCell date={date} />}
-            </CalendarGridBody>
-          </CalendarGrid>
-        </Calendar>
-      </DatePickerContent>
-    </DatePicker>
+    <RangeCalendar
+      aria-label="Trip dates"
+      value={range}
+      onChange={setRange}
+      isInvalid={isInvalid}
+    >
+      <CalendarHeading />
+      <CalendarGrid>
+        <CalendarGridHeader>
+          {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
+        </CalendarGridHeader>
+        <CalendarGridBody>
+          {(date) => <CalendarCell date={date} />}
+        </CalendarGridBody>
+      </CalendarGrid>
+      {isInvalid && (
+        <Text className="text-sm text-destructive" slot="errorMessage">
+          Maximum stay duration is 1 week
+        </Text>
+      )}
+    </RangeCalendar>
+  )
+}
+
+export function RangeCalendarDisabled() {
+  return (
+    <RangeCalendar isDisabled aria-label="Trip dates">
+      <CalendarHeading />
+      <CalendarGrid>
+        <CalendarGridHeader>
+          {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
+        </CalendarGridHeader>
+        <CalendarGridBody>
+          {(date) => <CalendarCell date={date} />}
+        </CalendarGridBody>
+      </CalendarGrid>
+    </RangeCalendar>
+  )
+}
+
+export function RangeCalendarReadonly() {
+  return (
+    <RangeCalendar
+      isReadOnly
+      value={{
+        start: today(getLocalTimeZone()),
+        end: today(getLocalTimeZone()).add({ weeks: 1 }),
+      }}
+      aria-label="Trip dates"
+    >
+      <CalendarHeading />
+      <CalendarGrid>
+        <CalendarGridHeader>
+          {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
+        </CalendarGridHeader>
+        <CalendarGridBody>
+          {(date) => <CalendarCell date={date} />}
+        </CalendarGridBody>
+      </CalendarGrid>
+    </RangeCalendar>
   )
 }

@@ -145,6 +145,16 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/date-picker",
           items: [],
         },
+        {
+          title: "Date Range Picker",
+          href: "/docs/components/date-range-picker",
+          items: [],
+        },
+        {
+          title: "Range Calendar",
+          href: "/docs/components/range-calendar",
+          items: [],
+        },
       ],
     },
     {
