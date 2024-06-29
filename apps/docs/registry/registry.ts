@@ -1798,7 +1798,7 @@ const example: Registry = [
     files: ["example/toolbar/toolbar-demo.tsx"],
   },
   {
-    name: "toolbar-vertical-demo",
+    name: "toolbar-vertical",
     type: "components:example/toolbar",
     registryDependencies: ["toolbar"],
     files: ["example/toolbar/toolbar-vertical.tsx"],
