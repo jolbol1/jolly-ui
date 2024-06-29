@@ -155,6 +155,11 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/range-calendar",
           items: [],
         },
+        {
+          title: "TimeField",
+          href: "/docs/components/timefield",
+          items: [],
+        },
       ],
     },
     {

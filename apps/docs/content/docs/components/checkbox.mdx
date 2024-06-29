@@ -1,6 +1,7 @@
 ---
 title: Checkbox
-description: A checkbox allows a user to select multiple items from a list of individual items, or to mark one individual item as selected.
+description: A Checkbox allows users to select multiple items from a list of individual items, or to mark one individual item as selected.
+featured: true
 component: true
 links:
   doc: https://react-spectrum.adobe.com/react-aria/Checkbox.html
@@ -16,13 +17,12 @@ links:
   <TabsTrigger value="cli">CLI</TabsTrigger>
   <TabsTrigger value="manual">Copy & Paste</TabsTrigger>
 </TabsList>
+
 <TabsContent value="cli">
 
 ```bash
 npx @sly-cli/sly add jolly-ui checkbox
 ```
-
-**Note: Only the default style can be installed via CLI at the moment**
 
 </TabsContent>
 
@@ -30,7 +30,7 @@ npx @sly-cli/sly add jolly-ui checkbox
 
 <Steps>
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>Copy and paste the following code into your project: checkbox.tsx</Step>
 
 <ComponentSource name="checkbox" />
 
@@ -42,34 +42,24 @@ npx @sly-cli/sly add jolly-ui checkbox
 
 </Tabs>
 
-## Usage
-
-```tsx
-import { Checkbox } from "@/components/ui/checkbox"
-```
-
-```tsx
-<Checkbox />
-```
-
 ## Examples
 
-### With text
+### Demo
 
-<ComponentPreview name="checkbox-with-text" />
+<ComponentPreview name="checkbox-demo" />
 
-### Disabled
+### Disabled Checkbox
 
 <ComponentPreview name="checkbox-disabled" />
 
-### Readonly
-
-<ComponentPreview name="checkbox-readonly" />
-
-### Indeterminate
+### Indeterminate Checkbox
 
 <ComponentPreview name="checkbox-indeterminate" />
 
-### Group
+### Read-only Checkbox
 
-View [Checkbox Group](../../../docs/components/checkbox-group) for examples.
+<ComponentPreview name="checkbox-readonly" />
+
+### Checkbox with Validation
+
+<ComponentPreview name="checkbox-validation" />

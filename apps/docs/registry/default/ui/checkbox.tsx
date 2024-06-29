@@ -39,6 +39,8 @@ const Checkbox = ({ className, children, ...props }: AriaCheckboxProps) => (
             "group-data-[indeterminate]:bg-primary group-data-[selected]:bg-primary group-data-[indeterminate]:text-primary-foreground  group-data-[selected]:text-primary-foreground",
             /* Disabled */
             "group-data-[disabled]:cursor-not-allowed group-data-[disabled]:opacity-50",
+            /* Invalid */
+            "group-data-[invalid]:border-destructive group-data-[invalid]:group-data-[selected]:bg-destructive group-data-[invalid]:group-data-[selected]:text-destructive-foreground",
             /* Resets */
             "focus-visible:outline-none"
           )}

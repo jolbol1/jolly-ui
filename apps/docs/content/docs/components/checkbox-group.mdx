@@ -1,6 +1,7 @@
 ---
-title: Checkbox Group
-description: A checkbox group allows a user to select multiple items from a list of options.
+title: CheckboxGroup
+description: A CheckboxGroup allows users to select multiple items from a list of options.
+featured: true
 component: true
 links:
   doc: https://react-spectrum.adobe.com/react-aria/CheckboxGroup.html
@@ -10,20 +11,32 @@ links:
 
 ## Installation
 
-<Tabs defaultValue="manual">
+<Tabs defaultValue="cli">
 
 <TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
   <TabsTrigger value="manual">Copy & Paste</TabsTrigger>
 </TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx @sly-cli/sly add jolly-ui checkbox-group
+```
+
+</TabsContent>
 
 <TabsContent value="manual">
 
 <Steps>
 
 <Step>
-  CheckboxGroup is installed as part of
-  [Checkbox](../../../docs/components/checkbox).
+  Copy and paste the following code into your project: checkbox-group.tsx
 </Step>
+
+<ComponentSource name="checkbox-group" />
+
+<Step>Update the import paths to match your project setup.</Step>
 
 </Steps>
 
@@ -31,8 +44,32 @@ links:
 
 </Tabs>
 
-## Usage
+## Examples
 
-### Basic
+### Demo
 
 <ComponentPreview name="checkbox-group-demo" />
+
+### CheckboxGroup with Description
+
+<ComponentPreview name="checkbox-group-description" />
+
+### CheckboxGroup with Individual Disabled Items
+
+<ComponentPreview name="checkbox-group-disabled-individual" />
+
+### Disabled CheckboxGroup
+
+<ComponentPreview name="checkbox-group-disabled" />
+
+### CheckboxGroup with Individual Item Validation
+
+<ComponentPreview name="checkbox-group-individual-validation" />
+
+### Read-only CheckboxGroup
+
+<ComponentPreview name="checkbox-group-readonly" />
+
+### CheckboxGroup with Validation
+
+<ComponentPreview name="checkbox-group-validation" />

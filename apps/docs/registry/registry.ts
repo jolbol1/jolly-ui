@@ -236,42 +236,7 @@ const example: Registry = [
     files: ["example/breadcrumbs/breadcrumbs-items.tsx"],
   },
 
-  {
-    name: "checkbox-demo",
-    type: "components:example/checkbox",
-    registryDependencies: ["checkbox"],
-    files: ["example/checkbox/checkbox-demo.tsx"],
-  },
-  {
-    name: "checkbox-disabled",
-    type: "components:example/checkbox",
-    registryDependencies: ["checkbox"],
-    files: ["example/checkbox/checkbox-disabled.tsx"],
-  },
-  {
-    name: "checkbox-group-demo",
-    type: "components:example/checkbox",
-    registryDependencies: ["checkbox"],
-    files: ["example/checkbox/checkbox-group-demo.tsx"],
-  },
-  {
-    name: "checkbox-indeterminate",
-    type: "components:example/checkbox",
-    registryDependencies: ["checkbox"],
-    files: ["example/checkbox/checkbox-indeterminate.tsx"],
-  },
-  {
-    name: "checkbox-readonly",
-    type: "components:example/checkbox",
-    registryDependencies: ["checkbox"],
-    files: ["example/checkbox/checkbox-readonly.tsx"],
-  },
-  {
-    name: "checkbox-with-text",
-    type: "components:example/checkbox",
-    registryDependencies: ["checkbox"],
-    files: ["example/checkbox/checkbox-with-text.tsx"],
-  },
+
   {
     name: "color-area",
     type: "components:example/color",
@@ -410,18 +375,6 @@ const example: Registry = [
     type: "components:example/dialog",
     registryDependencies: ["dialog"],
     files: ["example/dialog/dialog-sheet.tsx"],
-  },
-  {
-    name: "dropzone-demo",
-    type: "components:example/dropzone",
-    registryDependencies: ["dropzone"],
-    files: ["example/dropzone/dropzone-demo.tsx"],
-  },
-  {
-    name: "dropzone-file",
-    type: "components:example/dropzone",
-    registryDependencies: ["dropzone"],
-    files: ["example/dropzone/dropzone-file.tsx"],
   },
   {
     name: "file-trigger-button-demo",
@@ -1315,6 +1268,143 @@ const example: Registry = [
     type: "components:example/range-calendar",
     registryDependencies: ["range-calendar"],
     files: ["example/range-calendar/range-calendar-validation.tsx"],
+  }
+
+  // TimeField
+  ,
+  {
+    name: "timefield-custom-validation",
+    type: "components:example/timefield",
+    registryDependencies: ["timefield"],
+    files: ["example/timefield/timefield-custom-validation.tsx"],
+  },
+  {
+    name: "timefield-demo",
+    type: "components:example/timefield",
+    registryDependencies: ["timefield"],
+    files: ["example/timefield/timefield-demo.tsx"],
+  },
+  {
+    name: "timefield-description",
+    type: "components:example/timefield",
+    registryDependencies: ["timefield"],
+    files: ["example/timefield/timefield-description.tsx"],
+  },
+  {
+    name: "timefield-granularity",
+    type: "components:example/timefield",
+    registryDependencies: ["timefield"],
+    files: ["example/timefield/timefield-granularity.tsx"],
+  },
+  {
+    name: "timefield-min-max",
+    type: "components:example/timefield",
+    registryDependencies: ["timefield"],
+    files: ["example/timefield/timefield-min-max.tsx"],
+  },
+  {
+    name: "timefield-timezone",
+    type: "components:example/timefield",
+    registryDependencies: ["timefield"],
+    files: ["example/timefield/timefield-timezone.tsx"],
+  },
+  {
+    name: "timefield-validation",
+    type: "components:example/timefield",
+    registryDependencies: ["timefield"],
+    files: ["example/timefield/timefield-validation.tsx"],
+  },
+
+  // Dropzone
+  {
+    name: "dropzone-demo",
+    type: "components:example/dropzone",
+    registryDependencies: ["dropzone"],
+    files: ["example/dropzone/dropzone-demo.tsx"],
+  },
+  {
+    name: "dropzone-file",
+    type: "components:example/dropzone",
+    registryDependencies: ["dropzone"],
+    files: ["example/dropzone/dropzone-file.tsx"],
+  },
+
+  // Checkbox
+
+  {
+    name: "checkbox-demo",
+    type: "components:example/checkbox",
+    registryDependencies: ["checkbox"],
+    files: ["example/checkbox/checkbox-demo.tsx"],
+  },
+  {
+    name: "checkbox-disabled",
+    type: "components:example/checkbox",
+    registryDependencies: ["checkbox"],
+    files: ["example/checkbox/checkbox-disabled.tsx"],
+  },
+  {
+    name: "checkbox-indeterminate",
+    type: "components:example/checkbox",
+    registryDependencies: ["checkbox"],
+    files: ["example/checkbox/checkbox-indeterminate.tsx"],
+  },
+  {
+    name: "checkbox-readonly",
+    type: "components:example/checkbox",
+    registryDependencies: ["checkbox"],
+    files: ["example/checkbox/checkbox-readonly.tsx"],
+  },
+  {
+    name: "checkbox-validation",
+    type: "components:example/checkbox",
+    registryDependencies: ["checkbox"],
+    files: ["example/checkbox/checkbox-validation.tsx"],
+  },
+
+  // CheckboxGroup
+
+  {
+    name: "checkbox-group-demo",
+    type: "components:example/checkbox-group",
+    registryDependencies: ["checkbox-group"],
+    files: ["example/checkbox-group/checkbox-group-demo.tsx"],
+  },
+  {
+    name: "checkbox-group-description",
+    type: "components:example/checkbox-group",
+    registryDependencies: ["checkbox-group"],
+    files: ["example/checkbox-group/checkbox-group-description.tsx"],
+  },
+  {
+    name: "checkbox-group-disabled-individual",
+    type: "components:example/checkbox-group",
+    registryDependencies: ["checkbox-group"],
+    files: ["example/checkbox-group/checkbox-group-disabled-individual.tsx"],
+  },
+  {
+    name: "checkbox-group-disabled",
+    type: "components:example/checkbox-group",
+    registryDependencies: ["checkbox-group"],
+    files: ["example/checkbox-group/checkbox-group-disabled.tsx"],
+  },
+  {
+    name: "checkbox-group-individual-validation",
+    type: "components:example/checkbox-group",
+    registryDependencies: ["checkbox-group"],
+    files: ["example/checkbox-group/checkbox-group-individual-validation.tsx"],
+  },
+  {
+    name: "checkbox-group-readonly",
+    type: "components:example/checkbox-group",
+    registryDependencies: ["checkbox-group"],
+    files: ["example/checkbox-group/checkbox-group-readonly.tsx"],
+  },
+  {
+    name: "checkbox-group-validation",
+    type: "components:example/checkbox-group",
+    registryDependencies: ["checkbox-group"],
+    files: ["example/checkbox-group/checkbox-group-validation.tsx"],
   }
 
 ]

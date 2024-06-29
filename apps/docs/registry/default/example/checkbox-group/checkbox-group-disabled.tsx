@@ -1,16 +1,13 @@
-"use client"
-
 import { Checkbox, CheckboxGroup } from "@/registry/default/ui/checkbox"
-import { Label } from "@/registry/default/ui/label"
+import { Label } from "@/registry/default/ui/field"
 
-export function CheckboxGroupDemo() {
+export default function CheckboxGroupDisabled() {
   return (
-    <CheckboxGroup defaultValue={["baseball"]} className="flex flex-col gap-2">
-      <Label>Favorite Sports</Label>
+    <CheckboxGroup isDisabled>
+      <Label>Favorite sports</Label>
       <Checkbox value="soccer">Soccer</Checkbox>
       <Checkbox value="baseball">Baseball</Checkbox>
       <Checkbox value="basketball">Basketball</Checkbox>
     </CheckboxGroup>
   )
 }
-export default CheckboxGroupDemo
