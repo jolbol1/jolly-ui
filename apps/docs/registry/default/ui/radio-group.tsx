@@ -55,8 +55,12 @@ const Radio = ({ className, children, ...props }: AriaRadioProps) => {
               "flex aspect-square size-4 items-center justify-center rounded-full border border-primary text-primary ring-offset-background",
               /* Focus */
               "group-data-[focused]:outline-none",
+              /* Focus Visible */
               "group-data-[focus-visible]:ring-2 group-data-[focus-visible]:ring-ring group-data-[focus-visible]:ring-offset-2",
-              "group-data-[disabled]:cursor-not-allowed group-data-[disabled]:opacity-50"
+              /* Disabled */
+              "group-data-[disabled]:cursor-not-allowed group-data-[disabled]:opacity-50",
+              /* Invalid */
+              "group-data-[invalid]:border-destructive"
             )}
           >
             {renderProps.isSelected && (

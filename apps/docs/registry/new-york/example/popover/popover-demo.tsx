@@ -1,57 +1,30 @@
-import { Button } from "@/registry/new-york/ui/button"
-import { Input } from "@/registry/new-york/ui/input"
-import { Label } from "@/registry/new-york/ui/label"
-import { Popover, PopoverTrigger } from "@/registry/new-york/ui/popover"
+import { Button } from "@/registry/default/ui/button"
+import {
+  Popover,
+  PopoverDialog,
+  PopoverTrigger,
+} from "@/registry/default/ui/popover"
+import { Switch } from "@/registry/default/ui/switch"
 
-export function PopoverDemo() {
+export default function PopoverDemo() {
   return (
     <PopoverTrigger>
-      <Button variant="outline">Open popover</Button>
-      <Popover className="w-80">
-        <div className="grid gap-4">
-          <div className="space-y-2">
-            <h4 className="font-medium leading-none">Dimensions</h4>
-            <p className="text-sm text-muted-foreground">
-              Set the dimensions for the layer.
-            </p>
+      <Button variant="outline">Settings</Button>
+      <Popover>
+        <PopoverDialog>
+          <div className="flex flex-col gap-4">
+            <Switch defaultSelected>
+              <div className="indicator" /> Wi-Fi
+            </Switch>
+            <Switch defaultSelected>
+              <div className="indicator" /> Bluetooth
+            </Switch>
+            <Switch>
+              <div className="indicator" /> Mute
+            </Switch>
           </div>
-          <div className="grid gap-2">
-            <div className="grid grid-cols-3 items-center gap-4">
-              <Label htmlFor="width">Width</Label>
-              <Input
-                id="width"
-                defaultValue="100%"
-                className="col-span-2 h-8"
-              />
-            </div>
-            <div className="grid grid-cols-3 items-center gap-4">
-              <Label htmlFor="maxWidth">Max. width</Label>
-              <Input
-                id="maxWidth"
-                defaultValue="300px"
-                className="col-span-2 h-8"
-              />
-            </div>
-            <div className="grid grid-cols-3 items-center gap-4">
-              <Label htmlFor="height">Height</Label>
-              <Input
-                id="height"
-                defaultValue="25px"
-                className="col-span-2 h-8"
-              />
-            </div>
-            <div className="grid grid-cols-3 items-center gap-4">
-              <Label htmlFor="maxHeight">Max. height</Label>
-              <Input
-                id="maxHeight"
-                defaultValue="none"
-                className="col-span-2 h-8"
-              />
-            </div>
-          </div>
-        </div>
+        </PopoverDialog>
       </Popover>
     </PopoverTrigger>
   )
 }
-export default PopoverDemo

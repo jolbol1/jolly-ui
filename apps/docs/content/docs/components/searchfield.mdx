@@ -1,8 +1,8 @@
 ---
-title: Searchfield
-description: A search field allows a user to enter and clear a search query.
-component: true
+title: SearchField
+description: A SearchField allows a user to enter and clear text, with an optional icon to trigger the search.
 featured: true
+component: true
 links:
   doc: https://react-spectrum.adobe.com/react-aria/SearchField.html
 ---
@@ -24,15 +24,15 @@ links:
 npx @sly-cli/sly add jolly-ui searchfield
 ```
 
-**Note: Only the default style can be installed via CLI at the moment**
-
 </TabsContent>
 
 <TabsContent value="manual">
 
 <Steps>
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>
+  Copy and paste the following code into your project: searchfield.tsx
+</Step>
 
 <ComponentSource name="searchfield" />
 
@@ -44,18 +44,24 @@ npx @sly-cli/sly add jolly-ui searchfield
 
 </Tabs>
 
-## Usage
+## Examples
 
-### Basic
+### Demo
 
 <ComponentPreview name="searchfield-demo" />
 
-### Disabled
+### SearchField with Description
+
+<ComponentPreview name="searchfield-description" />
+
+### Disabled SearchField
 
 <ComponentPreview name="searchfield-disabled" />
 
-### Custom Icons
+### Read-only SearchField
 
-You provide the icons for the magnifying glass and close button. Please ensure you use `aria-hidden` on these.
+<ComponentPreview name="searchfield-readonly" />
 
-<ComponentPreview name="searchfield-demo" />
+### SearchField with Validation
+
+<ComponentPreview name="searchfield-validation" />

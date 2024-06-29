@@ -1,19 +1,22 @@
+import { Label } from "@/registry/default/ui/field"
 import {
   Slider,
   SliderFillTrack,
+  SliderOutput,
   SliderThumb,
   SliderTrack,
-} from "@/registry/new-york/ui/slider"
+} from "@/registry/default/ui/slider"
 
-export function SliderDemo() {
+export default function SliderDemo() {
   return (
     <Slider
-      aria-label="slider demo"
-      defaultValue={[50]}
-      maxValue={100}
-      step={1}
-      className="w-[60%]"
+      defaultValue={30}
+      className="w-[60%] flex flex-col items-start gap-2"
     >
+      <div className="flex w-full justify-between">
+        <Label>Opacity</Label>
+        <SliderOutput />
+      </div>
       <SliderTrack>
         <SliderFillTrack />
         <SliderThumb />
@@ -21,4 +24,3 @@ export function SliderDemo() {
     </Slider>
   )
 }
-export default SliderDemo

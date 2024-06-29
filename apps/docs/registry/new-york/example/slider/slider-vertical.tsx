@@ -3,17 +3,16 @@ import {
   SliderFillTrack,
   SliderThumb,
   SliderTrack,
-} from "@/registry/new-york/ui/slider"
+} from "@/registry/default/ui/slider"
 
-export function SliderVertical() {
+export default function SliderVertical() {
   return (
     <Slider
-      aria-label="slider demo"
-      defaultValue={[50]}
-      maxValue={100}
-      step={1}
-      className="h-[150px]"
       orientation="vertical"
+      aria-label="Opacity"
+      maxValue={1}
+      step={0.01}
+      className="max-h-[200px] h-[60%] flex flex-col items-start gap-2"
     >
       <SliderTrack>
         <SliderFillTrack />
@@ -22,4 +21,3 @@ export function SliderVertical() {
     </Slider>
   )
 }
-export default SliderVertical

@@ -353,30 +353,6 @@ const example: Registry = [
     files: ["example/combobox/combobox-section.tsx"],
   },
   {
-    name: "dialog-alert-demo",
-    type: "components:example/dialog",
-    registryDependencies: ["dialog"],
-    files: ["example/dialog/dialog-alert-demo.tsx"],
-  },
-  {
-    name: "dialog-close-button",
-    type: "components:example/dialog",
-    registryDependencies: ["dialog"],
-    files: ["example/dialog/dialog-close-button.tsx"],
-  },
-  {
-    name: "dialog-demo",
-    type: "components:example/dialog",
-    registryDependencies: ["dialog"],
-    files: ["example/dialog/dialog-demo.tsx"],
-  },
-  {
-    name: "dialog-sheet",
-    type: "components:example/dialog",
-    registryDependencies: ["dialog"],
-    files: ["example/dialog/dialog-sheet.tsx"],
-  },
-  {
     name: "file-trigger-button-demo",
     type: "components:example/file-trigger",
     registryDependencies: ["button"],
@@ -432,18 +408,6 @@ const example: Registry = [
     files: ["example/meter/meter-value.tsx"],
   },
   {
-    name: "popover-demo",
-    type: "components:example/popover",
-    registryDependencies: ["popover"],
-    files: ["example/popover/popover-demo.tsx"],
-  },
-  {
-    name: "popover-position",
-    type: "components:example/popover",
-    registryDependencies: ["popover"],
-    files: ["example/popover/popover-position.tsx"],
-  },
-  {
     name: "progress-demo",
     type: "components:example/progress",
     registryDependencies: ["progress"],
@@ -454,30 +418,6 @@ const example: Registry = [
     type: "components:example/progress",
     registryDependencies: ["progress"],
     files: ["example/progress/progress-value.tsx"],
-  },
-  {
-    name: "radio-group-demo",
-    type: "components:example/radio",
-    registryDependencies: ["radio-group"],
-    files: ["example/radio/radio-group-demo.tsx"],
-  },
-  {
-    name: "radio-group-orientation",
-    type: "components:example/radio",
-    registryDependencies: ["radio-group"],
-    files: ["example/radio/radio-group-orientation.tsx"],
-  },
-  {
-    name: "searchfield-demo",
-    type: "components:example/searchfield",
-    registryDependencies: ["searchfield"],
-    files: ["example/searchfield/searchfield-demo.tsx"],
-  },
-  {
-    name: "searchfield-disabled",
-    type: "components:example/searchfield",
-    registryDependencies: ["searchfield"],
-    files: ["example/searchfield/searchfield-disabled.tsx"],
   },
   {
     name: "select-demo",
@@ -516,24 +456,6 @@ const example: Registry = [
     files: ["example/separator/separator-demo.tsx"],
   },
   {
-    name: "slider-demo",
-    type: "components:example/slider",
-    registryDependencies: ["slider"],
-    files: ["example/slider/slider-demo.tsx"],
-  },
-  {
-    name: "slider-value",
-    type: "components:example/slider",
-    registryDependencies: ["slider"],
-    files: ["example/slider/slider-value.tsx"],
-  },
-  {
-    name: "slider-vertical",
-    type: "components:example/slider",
-    registryDependencies: ["slider"],
-    files: ["example/slider/slider-vertical.tsx"],
-  },
-  {
     name: "switch-demo",
     type: "components:example/switch",
     registryDependencies: ["switch"],
@@ -550,12 +472,6 @@ const example: Registry = [
     type: "components:example/switch",
     registryDependencies: ["switch"],
     files: ["example/switch/switch-readonly.tsx"],
-  },
-  {
-    name: "tabs-demo",
-    type: "components:example/tabs",
-    registryDependencies: ["tabs"],
-    files: ["example/tabs/tabs-demo.tsx"],
   },
   {
     name: "textarea-demo",
@@ -586,37 +502,6 @@ const example: Registry = [
     type: "components:example/textarea",
     registryDependencies: ["textarea"],
     files: ["example/textarea/textarea-with-text.tsx"],
-  },
-  {
-    name: "textfield-demo",
-    type: "components:example/textfield",
-    registryDependencies: ["textfield"],
-    files: ["example/textfield/textfield-demo.tsx"],
-  },
-  {
-    name: "textfield-desc",
-    type: "components:example/textfield",
-    registryDependencies: ["textfield"],
-    files: ["example/textfield/textfield-desc.tsx"],
-  },
-  {
-    name: "textfield-textarea",
-    type: "components:example/textfield",
-    registryDependencies: ["textfield"],
-    files: ["example/textfield/textfield-textarea.tsx"],
-  },
-
-  {
-    name: "tooltip-demo",
-    type: "components:example/tooltip",
-    registryDependencies: ["tooltip"],
-    files: ["example/tooltip/tooltip-demo.tsx"],
-  },
-  {
-    name: "tooltip-position",
-    type: "components:example/tooltip",
-    registryDependencies: ["tooltip"],
-    files: ["example/tooltip/tooltip-position.tsx"],
   },
   {
     name: "button-demo",
@@ -1425,7 +1310,390 @@ const example: Registry = [
     type: "components:example/form",
     registryDependencies: ["form"],
     files: ["example/form/form-validation.tsx"],
-  }
+  },
+
+  // NumberField
+  {
+    name: "numberfield-currency",
+    type: "components:example/numberfield",
+    registryDependencies: ["numberfield"],
+    files: ["example/numberfield/numberfield-currency.tsx"],
+  },
+  {
+    name: "numberfield-demo",
+    type: "components:example/numberfield",
+    registryDependencies: ["numberfield"],
+    files: ["example/numberfield/numberfield-demo.tsx"],
+  },
+  {
+    name: "numberfield-description",
+    type: "components:example/numberfield",
+    registryDependencies: ["numberfield"],
+    files: ["example/numberfield/numberfield-description.tsx"],
+  },
+  {
+    name: "numberfield-disabled",
+    type: "components:example/numberfield",
+    registryDependencies: ["numberfield"],
+    files: ["example/numberfield/numberfield-disabled.tsx"],
+  },
+  {
+    name: "numberfield-formatting",
+    type: "components:example/numberfield",
+    registryDependencies: ["numberfield"],
+    files: ["example/numberfield/numberfield-formatting.tsx"],
+  },
+  {
+    name: "numberfield-percentages",
+    type: "components:example/numberfield",
+    registryDependencies: ["numberfield"],
+    files: ["example/numberfield/numberfield-percentages.tsx"],
+  },
+  {
+    name: "numberfield-readonly",
+    type: "components:example/numberfield",
+    registryDependencies: ["numberfield"],
+    files: ["example/numberfield/numberfield-readonly.tsx"],
+  },
+  {
+    name: "numberfield-step-values",
+    type: "components:example/numberfield",
+    registryDependencies: ["numberfield"],
+    files: ["example/numberfield/numberfield-step-values.tsx"],
+  },
+  {
+    name: "numberfield-units",
+    type: "components:example/numberfield",
+    registryDependencies: ["numberfield"],
+    files: ["example/numberfield/numberfield-units.tsx"],
+  },
+  {
+    name: "numberfield-validation-error",
+    type: "components:example/numberfield",
+    registryDependencies: ["numberfield"],
+    files: ["example/numberfield/numberfield-validation-error.tsx"],
+  },
+  {
+    name: "numberfield-validation",
+    type: "components:example/numberfield",
+    registryDependencies: ["numberfield"],
+    files: ["example/numberfield/numberfield-validation.tsx"],
+  },
+
+  // RadioGroup
+
+  {
+    name: "radio-group-demo",
+    type: "components:example/radio-group",
+    registryDependencies: ["radio-group"],
+    files: ["example/radio-group/radio-group-demo.tsx"],
+  },
+  {
+    name: "radio-group-description",
+    type: "components:example/radio-group",
+    registryDependencies: ["radio-group"],
+    files: ["example/radio-group/radio-group-description.tsx"],
+  },
+  {
+    name: "radio-group-disabled-individual",
+    type: "components:example/radio-group",
+    registryDependencies: ["radio-group"],
+    files: ["example/radio-group/radio-group-disabled-individual.tsx"],
+  },
+  {
+    name: "radio-group-disabled",
+    type: "components:example/radio-group",
+    registryDependencies: ["radio-group"],
+    files: ["example/radio-group/radio-group-disabled.tsx"],
+  },
+  {
+    name: "radio-group-orientation",
+    type: "components:example/radio-group",
+    registryDependencies: ["radio-group"],
+    files: ["example/radio-group/radio-group-orientation.tsx"],
+  },
+  {
+    name: "radio-group-readonly",
+    type: "components:example/radio-group",
+    registryDependencies: ["radio-group"],
+    files: ["example/radio-group/radio-group-readonly.tsx"],
+  },
+  {
+    name: "radio-group-validation",
+    type: "components:example/radio-group",
+    registryDependencies: ["radio-group"],
+    files: ["example/radio-group/radio-group-validation.tsx"],
+  },
+
+  // SearchField
+  {
+    name: "searchfield-demo",
+    type: "components:example/searchfield",
+    registryDependencies: ["searchfield"],
+    files: ["example/searchfield/searchfield-demo.tsx"],
+  },
+  {
+    name: "searchfield-description",
+    type: "components:example/searchfield",
+    registryDependencies: ["searchfield"],
+    files: ["example/searchfield/searchfield-description.tsx"],
+  },
+  {
+    name: "searchfield-disabled",
+    type: "components:example/searchfield",
+    registryDependencies: ["searchfield"],
+    files: ["example/searchfield/searchfield-disabled.tsx"],
+  },
+  {
+    name: "searchfield-readonly",
+    type: "components:example/searchfield",
+    registryDependencies: ["searchfield"],
+    files: ["example/searchfield/searchfield-readonly.tsx"],
+  },
+  {
+    name: "searchfield-validation",
+    type: "components:example/searchfield",
+    registryDependencies: ["searchfield"],
+    files: ["example/searchfield/searchfield-validation.tsx"],
+  },
+
+  //Slider
+  {
+    name: "slider-demo",
+    type: "components:example/slider",
+    registryDependencies: ["slider"],
+    files: ["example/slider/slider-demo.tsx"],
+  },
+  {
+    name: "slider-disabled",
+    type: "components:example/slider",
+    registryDependencies: ["slider"],
+    files: ["example/slider/slider-disabled.tsx"],
+  },
+  {
+    name: "slider-step-values",
+    type: "components:example/slider",
+    registryDependencies: ["slider"],
+    files: ["example/slider/slider-step-values.tsx"],
+  },
+  {
+    name: "slider-values",
+    type: "components:example/slider",
+    registryDependencies: ["slider"],
+    files: ["example/slider/slider-values.tsx"],
+  },
+  {
+    name: "slider-vertical",
+    type: "components:example/slider",
+    registryDependencies: ["slider"],
+    files: ["example/slider/slider-vertical.tsx"],
+  },
+
+  // TextField
+
+  {
+    name: "textfield-demo",
+    type: "components:example/textfield",
+    registryDependencies: ["textfield"],
+    files: ["example/textfield/textfield-demo.tsx"],
+  },
+  {
+    name: "textfield-description",
+    type: "components:example/textfield",
+    registryDependencies: ["textfield"],
+    files: ["example/textfield/textfield-description.tsx"],
+  },
+  {
+    name: "textfield-disabled",
+    type: "components:example/textfield",
+    registryDependencies: ["textfield"],
+    files: ["example/textfield/textfield-disabled.tsx"],
+  },
+  {
+    name: "textfield-multiline",
+    type: "components:example/textfield",
+    registryDependencies: ["textfield"],
+    files: ["example/textfield/textfield-multiline.tsx"],
+  },
+  {
+    name: "textfield-readonly",
+    type: "components:example/textfield",
+    registryDependencies: ["textfield"],
+    files: ["example/textfield/textfield-readonly.tsx"],
+  },
+  {
+    name: "textfield-validation",
+    type: "components:example/textfield",
+    registryDependencies: ["textfield"],
+    files: ["example/textfield/textfield-validation.tsx"],
+  },
+
+  //Tabs
+  {
+    name: "tabs-demo",
+    type: "components:example/tabs",
+    registryDependencies: ["tabs"],
+    files: ["example/tabs/tabs-demo.tsx"],
+  },
+  {
+    name: "tabs-disabled-dynamic",
+    type: "components:example/tabs",
+    registryDependencies: ["tabs"],
+    files: ["example/tabs/tabs-disabled-dynamic.tsx"],
+  },
+  {
+    name: "tabs-disabled-items",
+    type: "components:example/tabs",
+    registryDependencies: ["tabs"],
+    files: ["example/tabs/tabs-disabled-items.tsx"],
+  },
+  {
+    name: "tabs-disabled",
+    type: "components:example/tabs",
+    registryDependencies: ["tabs"],
+    files: ["example/tabs/tabs-disabled.tsx"],
+  },
+  {
+    name: "tabs-dynamic",
+    type: "components:example/tabs",
+    registryDependencies: ["tabs"],
+    files: ["example/tabs/tabs-dynamic.tsx"],
+  },
+  {
+    name: "tabs-focus",
+    type: "components:example/tabs",
+    registryDependencies: ["tabs"],
+    files: ["example/tabs/tabs-focus.tsx"],
+  },
+  {
+    name: "tabs-vertical",
+    type: "components:example/tabs",
+    registryDependencies: ["tabs"],
+    files: ["example/tabs/tabs-vertical.tsx"],
+  },
+
+  // Dialog
+  {
+    name: "dialog-alert-demo",
+    type: "components:example/dialog",
+    registryDependencies: ["dialog"],
+    files: ["example/dialog/dialog-alert-demo.tsx"],
+  },
+  {
+    name: "dialog-demo",
+    type: "components:example/dialog",
+    registryDependencies: ["dialog"],
+    files: ["example/dialog/dialog-demo.tsx"],
+  },
+  {
+    name: "dialog-sheet",
+    type: "components:example/dialog",
+    registryDependencies: ["dialog"],
+    files: ["example/dialog/dialog-sheet.tsx"],
+  },
+  {
+    name: "dialog-popover",
+    type: "components:example/dialog",
+    registryDependencies: ["dialog"],
+    files: ["example/dialog/dialog-popover.tsx"],
+  },
+
+  //Modal
+  {
+    name: "modal-demo",
+    type: "components:example/modal",
+    registryDependencies: ["dialog"],
+    files: ["example/modal/modal-demo.tsx"],
+  },
+  {
+    name: "modal-sheet",
+    type: "components:example/modal",
+    registryDependencies: ["dialog"],
+    files: ["example/modal/modal-sheet.tsx"],
+  },
+  {
+    name: "modal-dismissable",
+    type: "components:example/modal",
+    registryDependencies: ["dialog"],
+    files: ["example/modal/modal-dismissable.tsx"],
+  },
+  {
+    name: "modal-keyboard-dismissable",
+    type: "components:example/modal",
+    registryDependencies: ["dialog"],
+    files: ["example/modal/modal-keyboard-dismissable.tsx"],
+  },
+
+  // Popover
+  {
+    name: "popover-container-padding",
+    type: "components:example/popover",
+    registryDependencies: ["popover"],
+    files: ["example/popover/popover-container-padding.tsx"],
+  },
+  {
+    name: "popover-cross-offset",
+    type: "components:example/popover",
+    registryDependencies: ["popover"],
+    files: ["example/popover/popover-cross-offset.tsx"],
+  },
+  {
+    name: "popover-demo",
+    type: "components:example/popover",
+    registryDependencies: ["popover"],
+    files: ["example/popover/popover-demo.tsx"],
+  },
+  {
+    name: "popover-flipping",
+    type: "components:example/popover",
+    registryDependencies: ["popover"],
+    files: ["example/popover/popover-flipping.tsx"],
+  },
+  {
+    name: "popover-offset",
+    type: "components:example/popover",
+    registryDependencies: ["popover"],
+    files: ["example/popover/popover-offset.tsx"],
+  },
+  {
+    name: "popover-position",
+    type: "components:example/popover",
+    registryDependencies: ["popover"],
+    files: ["example/popover/popover-position.tsx"],
+  },
+
+  // Tooltip
+  {
+    name: "tooltip-demo",
+    type: "components:example/tooltip",
+    registryDependencies: ["tooltip"],
+    files: ["example/tooltip/tooltip-demo.tsx"],
+  },
+  {
+    name: "tooltip-position",
+    type: "components:example/tooltip",
+    registryDependencies: ["tooltip"],
+    files: ["example/tooltip/tooltip-position.tsx"],
+  },
+  {
+    name: "tooltip-offset",
+    type: "components:example/tooltip",
+    registryDependencies: ["tooltip"],
+    files: ["example/tooltip/tooltip-offset.tsx"],
+  },
+  {
+    name: "tooltip-cross-offset",
+    type: "components:example/tooltip",
+    registryDependencies: ["tooltip"],
+    files: ["example/tooltip/tooltip-cross-offset.tsx"],
+  },
+  {
+    name: "tooltip-disabled",
+    type: "components:example/tooltip",
+    registryDependencies: ["tooltip"],
+    files: ["example/tooltip/tooltip-disabled.tsx"],
+  },
+
 
 ]
 

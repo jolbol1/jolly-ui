@@ -30,6 +30,8 @@ const Switch = ({ children, className, ...props }: AriaSwitchProps) => (
             "group-data-[disabled]:cursor-not-allowed group-data-[disabled]:opacity-50",
             /* Selected */
             "bg-input group-data-[selected]:bg-primary",
+            /* Readonly */
+            "group-data-[readonly]:cursor-default",
             /* Resets */
             "focus-visible:outline-none"
           )}

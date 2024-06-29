@@ -15,14 +15,17 @@ import {
 
 import { cn } from "@/lib/utils"
 
-/* 
-ClassName is done this way due to bug in react-aria-components. Currently nested tabs merge classNames.
-https://github.com/adobe/react-spectrum/issues/5469
-*/
 function Tabs({ className, ...props }: AriaTabsProps) {
   return (
     <AriaTabs
-      className={composeRenderProps(className, (className) => cn(className))}
+      className={composeRenderProps(className, (className) =>
+        cn(
+          "flex flex-col gap-2",
+          /* Orientation */
+          "data-[orientation=vertical]:flex-row",
+          className
+        )
+      )}
       {...props}
     />
   )
@@ -36,6 +39,8 @@ const TabList = <T extends object>({
     className={composeRenderProps(className, (className) =>
       cn(
         "inline-flex h-10 items-center justify-center rounded-md bg-muted p-1 text-muted-foreground",
+        /* Orientation */
+        "data-[orientation=vertical]:flex-col h-auto",
         className
       )
     )}
@@ -47,7 +52,7 @@ const Tab = ({ className, ...props }: AriaTabProps) => (
   <AriaTab
     className={composeRenderProps(className, (className) =>
       cn(
-        "inline-flex cursor-pointer justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium outline-none ring-offset-background transition-all",
+        "inline-flex w-full cursor-pointer justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium outline-none ring-offset-background transition-all",
         /* Focus Visible */
         "data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2",
         /* Disabled */

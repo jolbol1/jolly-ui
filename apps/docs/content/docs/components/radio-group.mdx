@@ -1,6 +1,7 @@
 ---
-title: Radio Group
-description: A radio group allows a user to select a single item from a list of mutually exclusive options.
+title: RadioGroup
+description: A RadioGroup allows users to select a single option from a list of mutually exclusive options.
+featured: true
 component: true
 links:
   doc: https://react-spectrum.adobe.com/react-aria/RadioGroup.html
@@ -23,15 +24,15 @@ links:
 npx @sly-cli/sly add jolly-ui radio-group
 ```
 
-**Note: Only the default style can be installed via CLI at the moment**
-
 </TabsContent>
 
 <TabsContent value="manual">
 
 <Steps>
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>
+  Copy and paste the following code into your project: radio-group.tsx
+</Step>
 
 <ComponentSource name="radio-group" />
 
@@ -43,14 +44,32 @@ npx @sly-cli/sly add jolly-ui radio-group
 
 </Tabs>
 
-## Usage
+## Examples
 
-### Basic
+### Demo
 
 <ComponentPreview name="radio-group-demo" />
 
-### Orientation
+### RadioGroup with Description
 
-Radio Groups are vertically oriented by default. The orientation prop can be used to change the orientation to horizontal.
+<ComponentPreview name="radio-group-description" />
+
+### RadioGroup with Individual Disabled Options
+
+<ComponentPreview name="radio-group-disabled-individual" />
+
+### Disabled RadioGroup
+
+<ComponentPreview name="radio-group-disabled" />
+
+### RadioGroup with Different Orientations
 
 <ComponentPreview name="radio-group-orientation" />
+
+### Read-only RadioGroup
+
+<ComponentPreview name="radio-group-readonly" />
+
+### RadioGroup with Validation
+
+<ComponentPreview name="radio-group-validation" />

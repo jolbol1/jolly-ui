@@ -1,35 +1,69 @@
 ---
 title: TextField
-description: A text field allows a user to enter a plain text value with a keyboard.
+description: A TextField allows users to enter and edit text.
+featured: true
 component: true
 links:
   doc: https://react-spectrum.adobe.com/react-aria/TextField.html
 ---
 
-Text fields can be built with `<Input>` or `<TextArea>` and `<Label>` elements, but you must manually ensure that they are semantically connected via ids for accessibility.
-`TextField` helps automate this, and handle other accessibility features while allowing for custom styling.
+<ComponentPreview name="textfield-demo" />
 
 ## Installation
 
-You can use the `TextField` import from react-aria-components as it does not need default styling.
-Install the [Input](../../../docs/components/input), [Label](../../../docs/components/label) or [TextArea](../../../docs/components/textarea) component to use within from their respective pages.
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Copy & Paste</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx @sly-cli/sly add jolly-ui textfield
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project: textfield.tsx</Step>
+
+<ComponentSource name="textfield" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Examples
+
+### Demo
 
 <ComponentPreview name="textfield-demo" />
 
-## Usage
+### TextField with Description
 
-Basic usages below. View [Input](../../../docs/components/input) and [TextArea](../../../docs/components/textarea) for more examples.
+<ComponentPreview name="textfield-description" />
 
-### Input
+### Disabled TextField
 
-<ComponentPreview name="textfield-demo" />
+<ComponentPreview name="textfield-disabled" />
 
-### Text Area
+### Multiline TextField
 
-<ComponentPreview name="textfield-textarea" />
+<ComponentPreview name="textfield-multiline" />
 
-### Description
+### Read-only TextField
 
-TextField also supports optional description and error message elements, which can be used to provide more context about the field, and any validation messages.
+<ComponentPreview name="textfield-readonly" />
 
-<ComponentPreview name="textfield-desc" />
+### TextField with Validation
+
+<ComponentPreview name="textfield-validation" />

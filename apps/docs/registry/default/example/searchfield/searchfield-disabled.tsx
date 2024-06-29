@@ -1,18 +1,19 @@
 import { SearchIcon, XIcon } from "lucide-react"
 
-import { FieldGroup } from "@/registry/default/ui/field"
+import { FieldGroup, Label } from "@/registry/default/ui/field"
 import {
   SearchField,
   SearchFieldClear,
   SearchFieldInput,
 } from "@/registry/default/ui/searchfield"
 
-export function SearchFieldDemo() {
+export default function SearchFieldDisabled() {
   return (
     <SearchField isDisabled className="max-w-[200px]">
+      <Label>Search</Label>
       <FieldGroup>
         <SearchIcon aria-hidden className="size-4 text-muted-foreground" />
-        <SearchFieldInput />
+        <SearchFieldInput placeholder="Search..." />
         <SearchFieldClear>
           <XIcon aria-hidden className="size-4" />
         </SearchFieldClear>
@@ -20,5 +21,3 @@ export function SearchFieldDemo() {
     </SearchField>
   )
 }
-
-export default SearchFieldDemo

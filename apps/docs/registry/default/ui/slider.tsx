@@ -4,6 +4,7 @@ import * as React from "react"
 import {
   Slider as AriaSlider,
   SliderOutput as AriaSliderOutput,
+  SliderOutputProps as AriaSliderOutputProps,
   SliderProps as AriaSliderProps,
   SliderStateContext as AriaSliderStateContext,
   SliderThumb as AriaSliderThumb,
@@ -15,7 +16,11 @@ import {
 
 import { cn } from "@/lib/utils"
 
-const SliderOutput = AriaSliderOutput
+import { labelVariants } from "./field"
+
+const SliderOutput = ({ className, ...props }: AriaSliderOutputProps) => (
+  <AriaSliderOutput className={cn(labelVariants(), className)} {...props} />
+)
 
 const Slider = ({
   className,
@@ -47,6 +52,8 @@ const SliderTrack = ({ className, ...props }: AriaSliderTrackProps) => (
           "h-full w-2": renderProps.orientation === "vertical",
         },
         "relative grow rounded-full bg-secondary",
+        /* Disabled */
+        "data-[disabled]:opacity-50",
         className
       )
     )}
@@ -82,7 +89,7 @@ const SliderThumb = ({ className }: AriaSliderThumbProps) => (
       cn(
         "left-1/2 top-1/2 block size-5 rounded-full border-2 border-primary bg-background ring-offset-background transition-colors",
         /* Disabled */
-        "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+        "data-[disabled]:pointer-events-none",
         /* Focus Visible */
         "data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2",
         className

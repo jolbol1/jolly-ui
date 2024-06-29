@@ -191,6 +191,11 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "NumberField",
+          href: "/docs/components/numberfield",
+          items: [],
+        },
+        {
           title: "Radio Group",
           href: "/docs/components/radio-group",
           items: [],
@@ -243,6 +248,11 @@ export const docsConfig: DocsConfig = {
         {
           title: "Dialog",
           href: "/docs/components/dialog",
+          items: [],
+        },
+        {
+          title: "Modal",
+          href: "/docs/components/modal",
           items: [],
         },
         {
