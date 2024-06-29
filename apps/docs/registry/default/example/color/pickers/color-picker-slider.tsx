@@ -18,8 +18,8 @@ import { Label } from "@/registry/default/ui/label"
 import { Popover } from "@/registry/default/ui/popover"
 import {
   Select,
-  SelectContent,
   SelectItem,
+  SelectListBox,
   SelectPopover,
   SelectTrigger,
   SelectValue,
@@ -37,7 +37,7 @@ export function PickerSliders() {
           Fill Color
         </Button>
         <Popover placement="bottom start" className="w-fit">
-          <Dialog className="outline-none flex flex-col gap-4">
+          <Dialog className="p-3 outline-none flex flex-col gap-4">
             <Select
               selectedKey={space}
               onSelectionChange={(s) => setSpace(s as ColorSpace)}
@@ -47,7 +47,7 @@ export function PickerSliders() {
                 <SelectValue />
               </SelectTrigger>
               <SelectPopover>
-                <SelectContent aria-label="items">
+                <SelectListBox aria-label="items">
                   <SelectItem id="rgb" textValue="rgb">
                     RGB
                   </SelectItem>
@@ -57,7 +57,7 @@ export function PickerSliders() {
                   <SelectItem id="hsb" textValue="hsb">
                     HSB
                   </SelectItem>
-                </SelectContent>
+                </SelectListBox>
               </SelectPopover>
             </Select>
             {getColorChannels(space).map((channel) => (

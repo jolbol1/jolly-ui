@@ -1,10 +1,9 @@
-"use client"
+import React from "react"
 
-import * as React from "react"
-
+import { Label } from "@/registry/default/ui/field"
 import { Meter } from "@/registry/default/ui/meter"
 
-export function MeterDemo() {
+export default function MeterDemo() {
   const [progress, setProgress] = React.useState(13)
 
   React.useEffect(() => {
@@ -12,6 +11,14 @@ export function MeterDemo() {
     return () => clearTimeout(timer)
   }, [])
 
-  return <Meter aria-label="meter bar" value={progress} className="w-[60%]" />
+  return (
+    <Meter value={progress} className={"w-[60%]"}>
+      {({ valueText }) => (
+        <div className="w-full flex justify-between">
+          <Label>Storage space</Label>
+          <span className="value">{valueText}</span>
+        </div>
+      )}
+    </Meter>
+  )
 }
-export default MeterDemo

@@ -25,8 +25,8 @@ import { Label } from "@/registry/default/ui/label"
 import { Popover } from "@/registry/default/ui/popover"
 import {
   Select,
-  SelectContent,
   SelectItem,
+  SelectListBox,
   SelectPopover,
   SelectTrigger,
   SelectValue,
@@ -72,7 +72,7 @@ export function PickerMulti() {
           Fill Color
         </Button>
         <Popover placement="bottom start" className="w-fit">
-          <Dialog className="outline-none flex flex-col gap-4">
+          <Dialog className="p-3 outline-none flex flex-col gap-4">
             <div>
               <ColorArea
                 colorSpace="hsb"
@@ -97,7 +97,7 @@ export function PickerMulti() {
                 <SelectValue />
               </SelectTrigger>
               <SelectPopover>
-                <SelectContent aria-label="items">
+                <SelectListBox aria-label="items">
                   <SelectItem id="rgb" textValue="rgb">
                     RGB
                   </SelectItem>
@@ -107,7 +107,7 @@ export function PickerMulti() {
                   <SelectItem id="hsb" textValue="hsb">
                     HSB
                   </SelectItem>
-                </SelectContent>
+                </SelectListBox>
               </SelectPopover>
             </Select>
             <div className="grid grid-cols-3 gap-1 w-[192px]">

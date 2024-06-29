@@ -18,6 +18,8 @@ import {
 
 import { cn } from "@/lib/utils"
 
+const Dialog = AriaDialog
+
 const sheetVariants = cva(
   [
     "fixed z-50 gap-4 bg-background shadow-lg transition ease-in-out",
@@ -163,6 +165,7 @@ const DialogDescription = ({
 )
 
 export {
+  Dialog,
   DialogOverlay,
   DialogTrigger,
   DialogContent,

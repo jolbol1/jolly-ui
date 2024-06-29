@@ -1,8 +1,8 @@
 ---
 title: Select
-description: A select displays a collapsible list of options and allows a user to select one of them.
-component: true
+description: A Select displays a collapsible list of options and allows a user to select one of them.
 featured: true
+component: true
 links:
   doc: https://react-spectrum.adobe.com/react-aria/Select.html
 ---
@@ -24,15 +24,13 @@ links:
 npx @sly-cli/sly add jolly-ui select
 ```
 
-**Note: Only the default style can be installed via CLI at the moment**
-
 </TabsContent>
 
 <TabsContent value="manual">
 
 <Steps>
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>Copy and paste the following code into your project: select.tsx</Step>
 
 <ComponentSource name="select" />
 
@@ -44,38 +42,44 @@ npx @sly-cli/sly add jolly-ui select
 
 </Tabs>
 
-## Usage
+## Examples
 
-### Basic
+### Demo
 
 <ComponentPreview name="select-demo" />
 
-### Links
+### Select with Custom Content
 
-The `<SelectItem>` component works with frameworks and client side routers like Next.js, Remix and React Router.
-As with other React Aria components that support links, this works via the RouterProvider component at the root of your app.
-See the [client side routing guide](https://react-spectrum.adobe.com/react-aria/routing.html) to learn how to set this up.
+<ComponentPreview name="select-content" />
+
+### Select with Description
+
+<ComponentPreview name="select-description" />
+
+### Select with Disabled Items
+
+<ComponentPreview name="select-disabled-items" />
+
+### Disabled Select
+
+<ComponentPreview name="select-disabled" />
+
+### Select with Links
 
 <ComponentPreview name="select-links" />
 
-### Sections
+### Select with Dynamic Sections
 
-#### Static Items
+<ComponentPreview name="select-sections-dynamic" />
+
+### Select with Sections
 
 <ComponentPreview name="select-sections" />
 
-#### Dynamic Items
+### Select with Text Slots
 
-Sections used with dynamic items are populated from a hierarchical data structure. Similarly to the props on Select, `<SelectSection>` takes an array of data using the items prop.
-If the section also has a header, the `SelectCollection` component can be used to render the child items.
+<ComponentPreview name="select-text-slots" />
 
-<ComponentPreview name="select-dynamic" />
+### Select with Validation
 
-### Disabled
-
-Select supports marking items as disabled using the disabledKeys prop.
-Each key in this list corresponds with the id prop passed to the `SelectItem` component, or automatically derived from the values passed to the items prop.
-See [Collections](https://react-spectrum.adobe.com/react-stately/Collections.html) for more details.
-Disabled items are not focusable, selectable, or keyboard navigable.
-
-<ComponentPreview name="select-disabled" />
+<ComponentPreview name="select-validation" />

@@ -1,47 +1,48 @@
+import { Label } from "@/registry/default/ui/field"
 import {
   Select,
-  SelectContent,
   SelectHeader,
   SelectItem,
+  SelectListBox,
   SelectPopover,
   SelectSection,
   SelectTrigger,
   SelectValue,
-} from "@/registry/new-york/ui/select"
+} from "@/registry/default/ui/select"
 
-export function SelectSections() {
+export default function SelectSections() {
   return (
-    <Select placeholder="Select an item" aria-label="fruit selection">
-      <SelectTrigger className="w-[180px]">
+    <Select className="w-[200px]" placeholder="Select an item">
+      <Label>Preferred fruit or vegetable</Label>
+      <SelectTrigger>
         <SelectValue />
       </SelectTrigger>
       <SelectPopover>
-        <SelectContent aria-label="items">
+        <SelectListBox>
           <SelectSection>
             <SelectHeader>Fruit</SelectHeader>
-            <SelectItem textValue="Apple">Apple</SelectItem>
-            <SelectItem textValue="Banana">Banana</SelectItem>
-            <SelectItem textValue="Orange">Orange</SelectItem>
-            <SelectItem textValue="Honeydew">Honeydew</SelectItem>
-            <SelectItem textValue="Grapes">Grapes</SelectItem>
-            <SelectItem textValue="Watermelon">Watermelon</SelectItem>
-            <SelectItem textValue="Cantaloupe">Cantaloupe</SelectItem>
-            <SelectItem textValue="Pear">Pear</SelectItem>
+            <SelectItem id="Apple">Apple</SelectItem>
+            <SelectItem id="Banana">Banana</SelectItem>
+            <SelectItem id="Orange">Orange</SelectItem>
+            <SelectItem id="Honeydew">Honeydew</SelectItem>
+            <SelectItem id="Grapes">Grapes</SelectItem>
+            <SelectItem id="Watermelon">Watermelon</SelectItem>
+            <SelectItem id="Cantaloupe">Cantaloupe</SelectItem>
+            <SelectItem id="Pear">Pear</SelectItem>
           </SelectSection>
           <SelectSection>
             <SelectHeader>Vegetable</SelectHeader>
-            <SelectItem textValue="Cabbage">Cabbage</SelectItem>
-            <SelectItem textValue="Broccoli">Broccoli</SelectItem>
-            <SelectItem textValue="Carrots">Carrots</SelectItem>
-            <SelectItem textValue="Lettuce">Lettuce</SelectItem>
-            <SelectItem textValue="Spinach">Spinach</SelectItem>
-            <SelectItem textValue="Bok Choy">Bok Choy</SelectItem>
-            <SelectItem textValue="Cauliflower">Cauliflower</SelectItem>
-            <SelectItem textValue="Potatoes">Potatoes</SelectItem>
+            <SelectItem id="Cabbage">Cabbage</SelectItem>
+            <SelectItem id="Broccoli">Broccoli</SelectItem>
+            <SelectItem id="Carrots">Carrots</SelectItem>
+            <SelectItem id="Lettuce">Lettuce</SelectItem>
+            <SelectItem id="Spinach">Spinach</SelectItem>
+            <SelectItem id="Bok Choy">Bok Choy</SelectItem>
+            <SelectItem id="Cauliflower">Cauliflower</SelectItem>
+            <SelectItem id="Potatoes">Potatoes</SelectItem>
           </SelectSection>
-        </SelectContent>
+        </SelectListBox>
       </SelectPopover>
     </Select>
   )
 }
-export default SelectSections

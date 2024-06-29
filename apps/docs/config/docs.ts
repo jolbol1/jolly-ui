@@ -298,26 +298,16 @@ export const docsConfig: DocsConfig = {
       ],
     },
     {
-      title: "Primitive",
+      title: "Content",
       items: [
         {
-          title: "Label",
-          href: "/docs/components/label",
+          title: "Group",
+          href: "/docs/components/group",
           items: [],
         },
         {
-          title: "Input",
-          href: "/docs/components/input",
-          items: [],
-        },
-        {
-          title: "Separator",
-          href: "/docs/components/separator",
-          items: [],
-        },
-        {
-          title: "TextArea",
-          href: "/docs/components/textarea",
+          title: "Toolbar",
+          href: "/docs/components/toolbar",
           items: [],
         },
       ],

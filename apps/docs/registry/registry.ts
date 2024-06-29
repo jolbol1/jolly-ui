@@ -366,60 +366,6 @@ const example: Registry = [
   },
 
   {
-    name: "meter-demo",
-    type: "components:example/meter",
-    registryDependencies: ["meter"],
-    files: ["example/meter/meter-demo.tsx"],
-  },
-  {
-    name: "meter-value",
-    type: "components:example/meter",
-    registryDependencies: ["meter"],
-    files: ["example/meter/meter-value.tsx"],
-  },
-  {
-    name: "progress-demo",
-    type: "components:example/progress",
-    registryDependencies: ["progress"],
-    files: ["example/progress/progress-demo.tsx"],
-  },
-  {
-    name: "progress-value",
-    type: "components:example/progress",
-    registryDependencies: ["progress"],
-    files: ["example/progress/progress-value.tsx"],
-  },
-  {
-    name: "select-demo",
-    type: "components:example/select",
-    registryDependencies: ["select"],
-    files: ["example/select/select-demo.tsx"],
-  },
-  {
-    name: "select-disabled",
-    type: "components:example/select",
-    registryDependencies: ["select"],
-    files: ["example/select/select-disabled.tsx"],
-  },
-  {
-    name: "select-dynamic",
-    type: "components:example/select",
-    registryDependencies: ["select"],
-    files: ["example/select/select-dynamic.tsx"],
-  },
-  {
-    name: "select-links",
-    type: "components:example/select",
-    registryDependencies: ["select"],
-    files: ["example/select/select-links.tsx"],
-  },
-  {
-    name: "select-sections",
-    type: "components:example/select",
-    registryDependencies: ["select"],
-    files: ["example/select/select-sections.tsx"],
-  },
-  {
     name: "separator-demo",
     type: "components:example/separator",
     registryDependencies: ["separator"],
@@ -1725,8 +1671,138 @@ const example: Registry = [
     type: "components:example/combobox",
     registryDependencies: ["combobox"],
     files: ["example/combobox/combobox-validation.tsx"],
-  }
+  },
 
+  // Select
+  {
+    name: "select-content",
+    type: "components:example/select",
+    registryDependencies: ["select"],
+    files: ["example/select/select-content.tsx"],
+  },
+  {
+    name: "select-demo",
+    type: "components:example/select",
+    registryDependencies: ["select"],
+    files: ["example/select/select-demo.tsx"],
+  },
+  {
+    name: "select-description",
+    type: "components:example/select",
+    registryDependencies: ["select"],
+    files: ["example/select/select-description.tsx"],
+  },
+  {
+    name: "select-disabled-items",
+    type: "components:example/select",
+    registryDependencies: ["select"],
+    files: ["example/select/select-disabled-items.tsx"],
+  },
+  {
+    name: "select-disabled",
+    type: "components:example/select",
+    registryDependencies: ["select"],
+    files: ["example/select/select-disabled.tsx"],
+  },
+  {
+    name: "select-links",
+    type: "components:example/select",
+    registryDependencies: ["select"],
+    files: ["example/select/select-links.tsx"],
+  },
+  {
+    name: "select-sections-dynamic",
+    type: "components:example/select",
+    registryDependencies: ["select"],
+    files: ["example/select/select-sections-dynamic.tsx"],
+  },
+  {
+    name: "select-sections",
+    type: "components:example/select",
+    registryDependencies: ["select"],
+    files: ["example/select/select-sections.tsx"],
+  },
+  {
+    name: "select-text-slots",
+    type: "components:example/select",
+    registryDependencies: ["select"],
+    files: ["example/select/select-text-slots.tsx"],
+  },
+  {
+    name: "select-validation",
+    type: "components:example/select",
+    registryDependencies: ["select"],
+    files: ["example/select/select-validation.tsx"],
+  },
+
+  // Meter
+  {
+    name: "meter-custom-format",
+    type: "components:example/meter",
+    registryDependencies: ["meter"],
+    files: ["example/meter/meter-custom-format.tsx"],
+  },
+  {
+    name: "meter-demo",
+    type: "components:example/meter",
+    registryDependencies: ["meter"],
+    files: ["example/meter/meter-demo.tsx"],
+  },
+  {
+    name: "meter-value-format",
+    type: "components:example/meter",
+    registryDependencies: ["meter"],
+    files: ["example/meter/meter-value-format.tsx"],
+  },
+
+  // Progress
+  {
+    name: "progress-custom-format",
+    type: "components:example/progress",
+    registryDependencies: ["progress"],
+    files: ["example/progress/progress-custom-format.tsx"],
+  },
+  {
+    name: "progress-demo",
+    type: "components:example/progress",
+    registryDependencies: ["progress"],
+    files: ["example/progress/progress-demo.tsx"],
+  },
+  {
+    name: "progress-value-format",
+    type: "components:example/progress",
+    registryDependencies: ["progress"],
+    files: ["example/progress/progress-value-format.tsx"],
+  },
+
+  // Group
+
+  {
+    name: "group-demo",
+    type: "components:example/group",
+    registryDependencies: ["group"],
+    files: ["example/group/group-demo.tsx"],
+  },
+  {
+    name: "group-label",
+    type: "components:example/group",
+    registryDependencies: ["group"],
+    files: ["example/group/group-label.tsx"],
+  },
+
+  // Toolbar
+  {
+    name: "toolbar-demo",
+    type: "components:example/toolbar",
+    registryDependencies: ["toolbar"],
+    files: ["example/toolbar/toolbar-demo.tsx"],
+  },
+  {
+    name: "toolbar-vertical-demo",
+    type: "components:example/toolbar",
+    registryDependencies: ["toolbar"],
+    files: ["example/toolbar/toolbar-vertical.tsx"],
+  },
 
 
 ]

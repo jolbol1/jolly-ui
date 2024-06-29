@@ -39,7 +39,12 @@ const SelectValue = <T extends object>({
 }: AriaSelectValueProps<T>) => (
   <AriaSelectValue
     className={composeRenderProps(className, (className) =>
-      cn("line-clamp-1 data-[placeholder]:text-muted-foreground", className)
+      cn(
+        "line-clamp-1 data-[placeholder]:text-muted-foreground",
+        /* Description */
+        "[&>[slot=description]]:hidden",
+        className
+      )
     )}
     {...props}
   />

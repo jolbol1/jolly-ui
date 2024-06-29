@@ -1,6 +1,7 @@
 ---
 title: Progress
-description: Progress bars show either determinate or indeterminate progress of an operation over time.
+description: A Progress bar shows the progression of a system operation such as downloading, uploading, processing, etc. in a visual way.
+featured: true
 component: true
 links:
   doc: https://react-spectrum.adobe.com/react-aria/ProgressBar.html
@@ -23,15 +24,13 @@ links:
 npx @sly-cli/sly add jolly-ui progress
 ```
 
-**Note: Only the default style can be installed via CLI at the moment**
-
 </TabsContent>
 
 <TabsContent value="manual">
 
 <Steps>
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>Copy and paste the following code into your project: progress.tsx</Step>
 
 <ComponentSource name="progress" />
 
@@ -43,17 +42,16 @@ npx @sly-cli/sly add jolly-ui progress
 
 </Tabs>
 
-## Usage
+## Examples
 
-### Basic
+### Demo
 
 <ComponentPreview name="progress-demo" />
 
-### Value Label
+### Progress with Custom Format
 
-Values are formatted as a percentage by default, but this can be modified by using the formatOptions prop to specify a different format.
-`formatOptions` is compatible with the option parameter of [Intl.NumberFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat) and is applied based on the current locale.
+<ComponentPreview name="progress-custom-format" />
 
-For more options see [react aria components](https://react-spectrum.adobe.com/react-aria/ProgressBar.html#labeling) docs.
+### Progress with Value Format
 
-<ComponentPreview name="progress-value" />
+<ComponentPreview name="progress-value-format" />

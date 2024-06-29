@@ -31,7 +31,7 @@ export function HsbaPicker() {
           HSBA Color
         </Button>
         <Popover placement="bottom start" className="w-fit">
-          <Dialog className="outline-none flex flex-col gap-4">
+          <Dialog className="p-3 outline-none flex flex-col gap-4">
             <div>
               <ColorArea
                 colorSpace="hsb"
