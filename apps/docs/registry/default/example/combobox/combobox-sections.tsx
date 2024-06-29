@@ -1,26 +1,32 @@
-"use client"
+import { ChevronsUpDown } from "lucide-react"
 
+import { Button } from "@/registry/default/ui/button"
 import {
   Combobox,
+  ComboboxHeader,
   ComboboxInput,
   ComboboxItem,
-  ComboboxLabel,
   ComboboxListBox,
   ComboboxPopover,
   ComboboxSection,
-} from "@/registry/new-york/ui/combobox"
+} from "@/registry/default/ui/combobox"
+import { FieldGroup } from "@/registry/default/ui/field"
+import { Label } from "@/registry/default/ui/label"
 
-export function ComboboxSectionDemo() {
+export default function ComoboxSections() {
   return (
-    <Combobox aria-label="food">
-      <ComboboxInput
-        className="w-[200px]"
-        placeholder="Select a fruit or vegetable..."
-      />
+    <Combobox>
+      <Label>Preferred fruit or vegetable</Label>
+      <FieldGroup className="p-0">
+        <ComboboxInput />
+        <Button variant="ghost" size="icon" className="h-6 w-6 p-1 mr-1">
+          <ChevronsUpDown aria-hidden="true" className="h-4 w-4 opacity-50" />
+        </Button>
+      </FieldGroup>
       <ComboboxPopover>
         <ComboboxListBox>
           <ComboboxSection>
-            <ComboboxLabel separator>Fruit</ComboboxLabel>
+            <ComboboxHeader>Fruit</ComboboxHeader>
             <ComboboxItem id="Apple">Apple</ComboboxItem>
             <ComboboxItem id="Banana">Banana</ComboboxItem>
             <ComboboxItem id="Orange">Orange</ComboboxItem>
@@ -31,7 +37,7 @@ export function ComboboxSectionDemo() {
             <ComboboxItem id="Pear">Pear</ComboboxItem>
           </ComboboxSection>
           <ComboboxSection>
-            <ComboboxItem>Vegetable</ComboboxItem>
+            <ComboboxHeader>Vegetable</ComboboxHeader>
             <ComboboxItem id="Cabbage">Cabbage</ComboboxItem>
             <ComboboxItem id="Broccoli">Broccoli</ComboboxItem>
             <ComboboxItem id="Carrots">Carrots</ComboboxItem>
@@ -46,4 +52,3 @@ export function ComboboxSectionDemo() {
     </Combobox>
   )
 }
-export default ComboboxSectionDemo

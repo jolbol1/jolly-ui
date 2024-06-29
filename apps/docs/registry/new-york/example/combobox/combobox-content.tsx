@@ -11,10 +11,22 @@ import {
 import { FieldGroup } from "@/registry/default/ui/field"
 import { Label } from "@/registry/default/ui/label"
 
-export default function ComboboxDemo() {
+export default function ComboboxContent() {
+  let options = [
+    { id: 1, name: "Aerospace" },
+    { id: 2, name: "Mechanical" },
+    { id: 3, name: "Civil" },
+    { id: 4, name: "Biomedical" },
+    { id: 5, name: "Nuclear" },
+    { id: 6, name: "Industrial" },
+    { id: 7, name: "Chemical" },
+    { id: 8, name: "Agricultural" },
+    { id: 9, name: "Electrical" },
+  ]
+
   return (
-    <Combobox>
-      <Label>Favorite Animal</Label>
+    <Combobox defaultItems={options}>
+      <Label>Major</Label>
       <FieldGroup className="p-0">
         <ComboboxInput />
         <Button variant="ghost" size="icon" className="h-6 w-6 p-1 mr-1">
@@ -22,13 +34,8 @@ export default function ComboboxDemo() {
         </Button>
       </FieldGroup>
       <ComboboxPopover>
-        <ComboboxListBox>
-          <ComboboxItem textValue="Aardvark">Aardvark</ComboboxItem>
-          <ComboboxItem textValue="Cat">Cat</ComboboxItem>
-          <ComboboxItem textValue="Dog">Dog</ComboboxItem>
-          <ComboboxItem textValue="Kangaroo">Kangaroo</ComboboxItem>
-          <ComboboxItem textValue="Panda">Panda</ComboboxItem>
-          <ComboboxItem textValue="Snake">Snake</ComboboxItem>
+        <ComboboxListBox<(typeof options)[number]>>
+          {(item) => <ComboboxItem>{item.name}</ComboboxItem>}
         </ComboboxListBox>
       </ComboboxPopover>
     </Combobox>

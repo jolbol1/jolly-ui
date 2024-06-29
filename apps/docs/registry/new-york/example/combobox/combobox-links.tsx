@@ -11,10 +11,10 @@ import {
 import { FieldGroup } from "@/registry/default/ui/field"
 import { Label } from "@/registry/default/ui/label"
 
-export default function ComboboxDemo() {
+export default function ComboboxLinks() {
   return (
     <Combobox>
-      <Label>Favorite Animal</Label>
+      <Label>Tech company websites</Label>
       <FieldGroup className="p-0">
         <ComboboxInput />
         <Button variant="ghost" size="icon" className="h-6 w-6 p-1 mr-1">
@@ -23,12 +23,18 @@ export default function ComboboxDemo() {
       </FieldGroup>
       <ComboboxPopover>
         <ComboboxListBox>
-          <ComboboxItem textValue="Aardvark">Aardvark</ComboboxItem>
-          <ComboboxItem textValue="Cat">Cat</ComboboxItem>
-          <ComboboxItem textValue="Dog">Dog</ComboboxItem>
-          <ComboboxItem textValue="Kangaroo">Kangaroo</ComboboxItem>
-          <ComboboxItem textValue="Panda">Panda</ComboboxItem>
-          <ComboboxItem textValue="Snake">Snake</ComboboxItem>
+          <ComboboxItem href="https://adobe.com/" target="_blank">
+            Adobe
+          </ComboboxItem>
+          <ComboboxItem href="https://apple.com/" target="_blank">
+            Apple
+          </ComboboxItem>
+          <ComboboxItem href="https://google.com/" target="_blank">
+            Google
+          </ComboboxItem>
+          <ComboboxItem href="https://microsoft.com/" target="_blank">
+            Microsoft
+          </ComboboxItem>
         </ComboboxListBox>
       </ComboboxPopover>
     </Combobox>

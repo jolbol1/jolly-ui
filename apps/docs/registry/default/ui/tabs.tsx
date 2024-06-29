@@ -20,7 +20,7 @@ function Tabs({ className, ...props }: AriaTabsProps) {
     <AriaTabs
       className={composeRenderProps(className, (className) =>
         cn(
-          "flex flex-col gap-2",
+          "flex flex-col gap-2 group",
           /* Orientation */
           "data-[orientation=vertical]:flex-row",
           className
@@ -52,13 +52,15 @@ const Tab = ({ className, ...props }: AriaTabProps) => (
   <AriaTab
     className={composeRenderProps(className, (className) =>
       cn(
-        "inline-flex w-full cursor-pointer justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium outline-none ring-offset-background transition-all",
+        "inline-flex cursor-pointer justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium outline-none ring-offset-background transition-all",
         /* Focus Visible */
         "data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2",
         /* Disabled */
         "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
         /* Selected */
         "data-[selected]:bg-background data-[selected]:text-foreground data-[selected]:shadow-sm ",
+        /* Orientation */
+        "group-data-[orientation=vertical]:w-full",
         className
       )
     )}

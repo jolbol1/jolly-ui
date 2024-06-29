@@ -1,4 +1,5 @@
 import { ChevronsUpDown } from "lucide-react"
+import { Text } from "react-aria-components"
 
 import { Button } from "@/registry/default/ui/button"
 import {
@@ -11,9 +12,9 @@ import {
 import { FieldGroup } from "@/registry/default/ui/field"
 import { Label } from "@/registry/default/ui/label"
 
-export default function ComboboxDemo() {
+export default function ComboboxDescription() {
   return (
-    <Combobox>
+    <Combobox name="animal" isRequired>
       <Label>Favorite Animal</Label>
       <FieldGroup className="p-0">
         <ComboboxInput />
@@ -21,14 +22,17 @@ export default function ComboboxDemo() {
           <ChevronsUpDown aria-hidden="true" className="h-4 w-4 opacity-50" />
         </Button>
       </FieldGroup>
+      <Text className="text-sm text-muted-foreground" slot="description">
+        Please select an animal.
+      </Text>
       <ComboboxPopover>
         <ComboboxListBox>
-          <ComboboxItem textValue="Aardvark">Aardvark</ComboboxItem>
-          <ComboboxItem textValue="Cat">Cat</ComboboxItem>
-          <ComboboxItem textValue="Dog">Dog</ComboboxItem>
-          <ComboboxItem textValue="Kangaroo">Kangaroo</ComboboxItem>
-          <ComboboxItem textValue="Panda">Panda</ComboboxItem>
-          <ComboboxItem textValue="Snake">Snake</ComboboxItem>
+          <ComboboxItem id="red panda">Red Panda</ComboboxItem>
+          <ComboboxItem id="cat">Cat</ComboboxItem>
+          <ComboboxItem id="dog">Dog</ComboboxItem>
+          <ComboboxItem id="aardvark">Aardvark</ComboboxItem>
+          <ComboboxItem id="kangaroo">Kangaroo</ComboboxItem>
+          <ComboboxItem id="snake">Snake</ComboboxItem>
         </ComboboxListBox>
       </ComboboxPopover>
     </Combobox>

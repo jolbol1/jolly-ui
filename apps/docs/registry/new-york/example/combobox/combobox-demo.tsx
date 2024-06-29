@@ -1,65 +1,36 @@
-"use client"
+import { ChevronsUpDown } from "lucide-react"
 
+import { Button } from "@/registry/default/ui/button"
 import {
   Combobox,
-  ComboboxCollection,
   ComboboxInput,
   ComboboxItem,
-  ComboboxLabel,
   ComboboxListBox,
   ComboboxPopover,
-  ComboboxSection,
-} from "@/registry/new-york/ui/combobox"
+} from "@/registry/default/ui/combobox"
+import { FieldGroup } from "@/registry/default/ui/field"
+import { Label } from "@/registry/default/ui/label"
 
-const frameworks = [
-  {
-    value: "next.js",
-    label: "Next.js",
-  },
-  {
-    value: "sveltekit",
-    label: "SvelteKit",
-  },
-  {
-    value: "nuxt.js",
-    label: "Nuxt.js",
-  },
-  {
-    value: "remix",
-    label: "Remix",
-  },
-  {
-    value: "astro",
-    label: "Astro",
-  },
-]
-
-export function ComboboxDemo() {
+export default function ComboboxDemo() {
   return (
-    <Combobox aria-label="Select Framework">
-      <ComboboxInput
-        className="w-[200px]"
-        placeholder="Select a framework..."
-      />
+    <Combobox>
+      <Label>Favorite Animal</Label>
+      <FieldGroup className="p-0">
+        <ComboboxInput />
+        <Button variant="ghost" size="icon" className="h-6 w-6 p-1 mr-1">
+          <ChevronsUpDown aria-hidden="true" className="h-4 w-4 opacity-50" />
+        </Button>
+      </FieldGroup>
       <ComboboxPopover>
         <ComboboxListBox>
-          <ComboboxSection>
-            <ComboboxLabel separator>Frameworks</ComboboxLabel>
-            <ComboboxCollection items={frameworks}>
-              {(item) => (
-                <ComboboxItem
-                  textValue={item.label}
-                  id={item.value}
-                  key={item.value}
-                >
-                  {item.label}
-                </ComboboxItem>
-              )}
-            </ComboboxCollection>
-          </ComboboxSection>
+          <ComboboxItem textValue="Aardvark">Aardvark</ComboboxItem>
+          <ComboboxItem textValue="Cat">Cat</ComboboxItem>
+          <ComboboxItem textValue="Dog">Dog</ComboboxItem>
+          <ComboboxItem textValue="Kangaroo">Kangaroo</ComboboxItem>
+          <ComboboxItem textValue="Panda">Panda</ComboboxItem>
+          <ComboboxItem textValue="Snake">Snake</ComboboxItem>
         </ComboboxListBox>
       </ComboboxPopover>
     </Combobox>
   )
 }
-export default ComboboxDemo

@@ -34,7 +34,7 @@ const ComboboxInput = ({ className, ...props }: AriaInputProps) => (
   <AriaInput
     className={composeRenderProps(className, (className) =>
       cn(
-        "flex h-10 w-full bg-background px-3 outline-none file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground",
+        "flex h-10 w-full bg-background px-3 py-2 outline-none file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground",
         /* Disabled */
         "data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
         className

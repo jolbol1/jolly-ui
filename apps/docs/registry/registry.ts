@@ -323,36 +323,6 @@ const example: Registry = [
     files: ["example/color/color-wheel.tsx"],
   },
   {
-    name: "combobox-basic",
-    type: "components:example/combobox",
-    registryDependencies: ["combobox"],
-    files: ["example/combobox/combobox-basic.tsx"],
-  },
-  {
-    name: "combobox-demo",
-    type: "components:example/combobox",
-    registryDependencies: ["combobox"],
-    files: ["example/combobox/combobox-demo.tsx"],
-  },
-  {
-    name: "combobox-dynamic",
-    type: "components:example/combobox",
-    registryDependencies: ["combobox"],
-    files: ["example/combobox/combobox-dynamic.tsx"],
-  },
-  {
-    name: "combobox-link",
-    type: "components:example/combobox",
-    registryDependencies: ["combobox"],
-    files: ["example/combobox/combobox-link.tsx"],
-  },
-  {
-    name: "combobox-section",
-    type: "components:example/combobox",
-    registryDependencies: ["combobox"],
-    files: ["example/combobox/combobox-section.tsx"],
-  },
-  {
     name: "file-trigger-button-demo",
     type: "components:example/file-trigger",
     registryDependencies: ["button"],
@@ -1693,6 +1663,70 @@ const example: Registry = [
     registryDependencies: ["tooltip"],
     files: ["example/tooltip/tooltip-disabled.tsx"],
   },
+
+  //Combobox
+
+  {
+    name: "combobox-content",
+    type: "components:example/combobox",
+    registryDependencies: ["combobox"],
+    files: ["example/combobox/combobox-content.tsx"],
+  },
+  {
+    name: "combobox-demo",
+    type: "components:example/combobox",
+    registryDependencies: ["combobox"],
+    files: ["example/combobox/combobox-demo.tsx"],
+  },
+  {
+    name: "combobox-description",
+    type: "components:example/combobox",
+    registryDependencies: ["combobox"],
+    files: ["example/combobox/combobox-description.tsx"],
+  },
+  {
+    name: "combobox-disabled",
+    type: "components:example/combobox",
+    registryDependencies: ["combobox"],
+    files: ["example/combobox/combobox-disabled.tsx"],
+  },
+  {
+    name: "combobox-links",
+    type: "components:example/combobox",
+    registryDependencies: ["combobox"],
+    files: ["example/combobox/combobox-links.tsx"],
+  },
+  {
+    name: "combobox-menu-trigger",
+    type: "components:example/combobox",
+    registryDependencies: ["combobox"],
+    files: ["example/combobox/combobox-menu-trigger.tsx"],
+  },
+  {
+    name: "combobox-sections-dynamic",
+    type: "components:example/combobox",
+    registryDependencies: ["combobox"],
+    files: ["example/combobox/combobox-sections-dynamic.tsx"],
+  },
+  {
+    name: "combobox-sections",
+    type: "components:example/combobox",
+    registryDependencies: ["combobox"],
+    files: ["example/combobox/combobox-sections.tsx"],
+  },
+  {
+    name: "combobox-text-slots",
+    type: "components:example/combobox",
+    registryDependencies: ["combobox"],
+    files: ["example/combobox/combobox-text-slots.tsx"],
+  },
+  {
+    name: "combobox-validation",
+    type: "components:example/combobox",
+    registryDependencies: ["combobox"],
+    files: ["example/combobox/combobox-validation.tsx"],
+  }
+
 
 
 ]
