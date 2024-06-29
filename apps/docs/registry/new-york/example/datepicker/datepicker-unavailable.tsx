@@ -2,7 +2,7 @@ import { getLocalTimeZone, isWeekend, today } from "@internationalized/date"
 import { CalendarIcon } from "lucide-react"
 import { DateValue, useLocale } from "react-aria-components"
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from "@/registry/new-york/ui/button"
 import {
   Calendar,
   CalendarCell,
@@ -11,15 +11,15 @@ import {
   CalendarGridHeader,
   CalendarHeaderCell,
   CalendarHeading,
-} from "@/registry/default/ui/calendar"
+} from "@/registry/new-york/ui/calendar"
 import {
   DatePicker,
   DatePickerContent,
-} from "@/registry/default/ui/date-picker"
-import { DateInput } from "@/registry/default/ui/datefield"
-import { FieldGroup, Label } from "@/registry/default/ui/field"
+} from "@/registry/new-york/ui/date-picker"
+import { DateInput } from "@/registry/new-york/ui/datefield"
+import { FieldGroup, Label } from "@/registry/new-york/ui/field"
 
-export function DatepickerUnavailable() {
+export default function DatepickerUnavailable() {
   let now = today(getLocalTimeZone())
   let disabledRanges = [
     [now, now.add({ days: 5 })],

@@ -1,7 +1,7 @@
 import React from "react"
 import { Selection } from "react-aria-components"
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from "@/registry/new-york/ui/button"
 import {
   Menu,
   MenuCollection,
@@ -10,7 +10,7 @@ import {
   MenuPopover,
   MenuSection,
   MenuTrigger,
-} from "@/registry/default/ui/menu"
+} from "@/registry/new-york/ui/menu"
 
 export default function MenuSectionsDynamic() {
   let [selected, setSelected] = React.useState<Selection>(new Set([1, 3]))

@@ -3,9 +3,9 @@
 import { Brush, LassoSelect, MousePointer2, Move, Pencil } from "lucide-react"
 import { Group } from "react-aria-components"
 
-import { Button } from "@/registry/default/ui/button"
-import { Separator } from "@/registry/default/ui/separator"
-import { Toolbar } from "@/registry/default/ui/toolbar"
+import { Button } from "@/registry/new-york/ui/button"
+import { Separator } from "@/registry/new-york/ui/separator"
+import { Toolbar } from "@/registry/new-york/ui/toolbar"
 
 export default function ToolbarVerticalDemo() {
   return (

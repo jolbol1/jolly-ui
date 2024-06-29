@@ -1,4 +1,4 @@
-import { GridList } from "@/registry/default/ui/grid-list"
+import { GridList } from "@/registry/new-york/ui/grid-list"
 
 export default function GridListEmptyState() {
   return (

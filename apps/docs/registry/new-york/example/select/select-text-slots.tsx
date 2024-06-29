@@ -1,6 +1,6 @@
 import { Text } from "react-aria-components"
 
-import { Label } from "@/registry/default/ui/field"
+import { Label } from "@/registry/new-york/ui/field"
 import {
   Select,
   SelectItem,
@@ -8,7 +8,7 @@ import {
   SelectPopover,
   SelectTrigger,
   SelectValue,
-} from "@/registry/default/ui/select"
+} from "@/registry/new-york/ui/select"
 
 export default function SelectTextSlots() {
   return (

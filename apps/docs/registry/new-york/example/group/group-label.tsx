@@ -2,7 +2,7 @@
 
 import { Input as AriaInput } from "react-aria-components"
 
-import { FieldGroup, Label } from "@/registry/default/ui/field"
+import { FieldGroup, Label } from "@/registry/new-york/ui/field"
 
 export default function GroupLabel() {
   return (

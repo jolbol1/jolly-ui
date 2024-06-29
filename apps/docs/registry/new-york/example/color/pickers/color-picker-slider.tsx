@@ -18,8 +18,8 @@ import { Label } from "@/registry/new-york/ui/label"
 import { Popover } from "@/registry/new-york/ui/popover"
 import {
   Select,
-  SelectContent,
   SelectItem,
+  SelectListBox,
   SelectPopover,
   SelectTrigger,
   SelectValue,
@@ -47,7 +47,7 @@ export function PickerSliders() {
                 <SelectValue />
               </SelectTrigger>
               <SelectPopover>
-                <SelectContent aria-label="items">
+                <SelectListBox aria-label="items">
                   <SelectItem id="rgb" textValue="rgb">
                     RGB
                   </SelectItem>
@@ -57,7 +57,7 @@ export function PickerSliders() {
                   <SelectItem id="hsb" textValue="hsb">
                     HSB
                   </SelectItem>
-                </SelectContent>
+                </SelectListBox>
               </SelectPopover>
             </Select>
             {getColorChannels(space).map((channel) => (

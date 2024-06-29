@@ -1,5 +1,5 @@
 import React from "react"
-import { MagicWandIcon } from "@radix-ui/react-icons"
+import { Pipette } from "lucide-react"
 import {
   ColorPickerStateContext,
   getColorChannels,
@@ -21,11 +21,12 @@ import {
 } from "@/registry/new-york/ui/color"
 import { Dialog, DialogTrigger } from "@/registry/new-york/ui/dialog"
 import { Input } from "@/registry/new-york/ui/input"
+import { Label } from "@/registry/new-york/ui/label"
 import { Popover } from "@/registry/new-york/ui/popover"
 import {
   Select,
-  SelectContent,
   SelectItem,
+  SelectListBox,
   SelectPopover,
   SelectTrigger,
   SelectValue,
@@ -54,7 +55,7 @@ function EyeDropperButton() {
           )
       }}
     >
-      <MagicWandIcon />
+      <Pipette />
     </Button>
   )
 }
@@ -96,7 +97,7 @@ export function PickerMulti() {
                 <SelectValue />
               </SelectTrigger>
               <SelectPopover>
-                <SelectContent aria-label="items">
+                <SelectListBox aria-label="items">
                   <SelectItem id="rgb" textValue="rgb">
                     RGB
                   </SelectItem>
@@ -106,7 +107,7 @@ export function PickerMulti() {
                   <SelectItem id="hsb" textValue="hsb">
                     HSB
                   </SelectItem>
-                </SelectContent>
+                </SelectListBox>
               </SelectPopover>
             </Select>
             <div className="grid grid-cols-3 gap-1 w-[192px]">

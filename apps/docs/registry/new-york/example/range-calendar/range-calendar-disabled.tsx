@@ -6,9 +6,9 @@ import {
   CalendarHeaderCell,
   CalendarHeading,
   RangeCalendar,
-} from "@/registry/default/ui/calendar"
+} from "@/registry/new-york/ui/calendar"
 
-export function RangeCalendarDisabled() {
+export default function RangeCalendarDisabled() {
   return (
     <RangeCalendar isDisabled aria-label="Trip dates">
       <CalendarHeading />

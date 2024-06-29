@@ -9,9 +9,9 @@ import {
   CalendarHeaderCell,
   CalendarHeading,
   RangeCalendar,
-} from "@/registry/default/ui/calendar"
+} from "@/registry/new-york/ui/calendar"
 
-export function RangeCalendarUnavailable() {
+export default function RangeCalendarUnavailable() {
   let now = today(getLocalTimeZone())
   let disabledRanges = [
     [now, now.add({ days: 5 })],

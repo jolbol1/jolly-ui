@@ -1,5 +1,5 @@
-import { Checkbox, CheckboxGroup } from "@/registry/default/ui/checkbox"
-import { Label } from "@/registry/default/ui/field"
+import { Checkbox, CheckboxGroup } from "@/registry/new-york/ui/checkbox"
+import { Label } from "@/registry/new-york/ui/field"
 
 export default function CheckboxGroupDisabled() {
   return (

@@ -1,22 +1,23 @@
 "use client"
 
-import { ChevronRightIcon, DotsHorizontalIcon } from "@radix-ui/react-icons"
+import { ChevronRight, MoreHorizontal } from "lucide-react"
 import {
-  Breadcrumb,
-  BreadcrumbProps,
-  Breadcrumbs,
-  BreadcrumbsProps,
-  Link,
-  LinkProps,
+  Breadcrumb as AriaBreadcrumb,
+  BreadcrumbProps as AriaBreadcrumbProps,
+  Breadcrumbs as AriaBreadcrumbs,
+  BreadcrumbsProps as AriaBreadcrumbsProps,
+  Link as AriaLink,
+  LinkProps as AriaLinkProps,
+  composeRenderProps,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"
 
-const _Breadcrumbs = <T extends object>({
+const Breadcrumbs = <T extends object>({
   className,
   ...props
-}: BreadcrumbsProps<T>) => (
-  <Breadcrumbs
+}: AriaBreadcrumbsProps<T>) => (
+  <AriaBreadcrumbs
     className={cn(
       "flex flex-wrap items-center gap-1.5 break-words text-sm text-muted-foreground sm:gap-2.5",
       className
@@ -25,18 +26,26 @@ const _Breadcrumbs = <T extends object>({
   />
 )
 
-const BreadcrumbItem = ({ className, ...props }: BreadcrumbProps) => (
-  <Breadcrumb
+const BreadcrumbItem = ({ className, ...props }: AriaBreadcrumbProps) => (
+  <AriaBreadcrumb
     className={cn("inline-flex items-center gap-1.5 sm:gap-2.5", className)}
     {...props}
   />
 )
 
-const BreadcrumbLink = ({ className, ...props }: LinkProps) => (
-  <Link
-    className={cn(
-      "transition-colors hover:text-foreground data-[disabled]:pointer-events-none data-[current]:pointer-events-auto data-[current]:opacity-100 data-[disabled]:opacity-50",
-      className
+const BreadcrumbLink = ({ className, ...props }: AriaLinkProps) => (
+  <AriaLink
+    className={composeRenderProps(className, (className) =>
+      cn(
+        "transition-colors",
+        /* Hover */
+        "data-[hovered]:text-foreground",
+        /* Disabled */
+        "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+        /* Current */
+        "data-[current]:pointer-events-auto data-[current]:opacity-100",
+        className
+      )
     )}
     {...props}
   />
@@ -53,7 +62,7 @@ const BreadcrumbSeparator = ({
     className={cn("[&>svg]:size-3.5", className)}
     {...props}
   >
-    {children || <ChevronRightIcon />}
+    {children || <ChevronRight />}
   </span>
 )
 
@@ -64,22 +73,27 @@ const BreadcrumbEllipsis = ({
   <span
     role="presentation"
     aria-hidden="true"
-    className={cn("flex h-9 w-9 items-center justify-center", className)}
+    className={cn("flex size-9 items-center justify-center", className)}
     {...props}
   >
-    <DotsHorizontalIcon className="h-4 w-4" />
+    <MoreHorizontal className="size-4" />
     <span className="sr-only">More</span>
   </span>
 )
 
-interface BreadcrumbPageProps extends Omit<LinkProps, "href"> {}
+interface BreadcrumbPageProps extends Omit<AriaLinkProps, "href"> {}
 
 const BreadcrumbPage = ({ className, ...props }: BreadcrumbPageProps) => (
-  <Link className={cn("font-normal text-foreground", className)} {...props} />
+  <AriaLink
+    className={composeRenderProps(className, (className) =>
+      cn("font-normal text-foreground", className)
+    )}
+    {...props}
+  />
 )
 
 export {
-  _Breadcrumbs as Breadcrumbs,
+  Breadcrumbs,
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbPage,

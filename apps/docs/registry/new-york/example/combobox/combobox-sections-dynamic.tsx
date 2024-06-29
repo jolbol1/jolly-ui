@@ -1,6 +1,6 @@
 import { ChevronsUpDown } from "lucide-react"
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from "@/registry/new-york/ui/button"
 import {
   Combobox,
   ComboboxCollection,
@@ -10,9 +10,9 @@ import {
   ComboboxListBox,
   ComboboxPopover,
   ComboboxSection,
-} from "@/registry/default/ui/combobox"
-import { FieldGroup } from "@/registry/default/ui/field"
-import { Label } from "@/registry/default/ui/label"
+} from "@/registry/new-york/ui/combobox"
+import { FieldGroup } from "@/registry/new-york/ui/field"
+import { Label } from "@/registry/new-york/ui/label"
 
 export default function ComboboxSectionsDynamic() {
   let options = [

@@ -1,5 +1,5 @@
-import { Label } from "@/registry/default/ui/field"
-import { Progress } from "@/registry/default/ui/progress"
+import { Label } from "@/registry/new-york/ui/field"
+import { Progress } from "@/registry/new-york/ui/progress"
 
 export default function ProgressCustomFormat() {
   return (

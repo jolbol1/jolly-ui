@@ -1,13 +1,13 @@
 import { SearchIcon, XIcon } from "lucide-react"
 import { Form } from "react-aria-components"
 
-import { Button } from "@/registry/default/ui/button"
-import { FieldError, FieldGroup, Label } from "@/registry/default/ui/field"
+import { Button } from "@/registry/new-york/ui/button"
+import { FieldError, FieldGroup, Label } from "@/registry/new-york/ui/field"
 import {
   SearchField,
   SearchFieldClear,
   SearchFieldInput,
-} from "@/registry/default/ui/searchfield"
+} from "@/registry/new-york/ui/searchfield"
 
 export default function SearchFieldValidation() {
   return (

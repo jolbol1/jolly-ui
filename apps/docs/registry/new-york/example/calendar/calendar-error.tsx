@@ -10,7 +10,7 @@ import {
   CalendarGridHeader,
   CalendarHeaderCell,
   CalendarHeading,
-} from "@/registry/default/ui/calendar"
+} from "@/registry/new-york/ui/calendar"
 
 export default function CalendarError() {
   let [date, setDate] = React.useState(today(getLocalTimeZone()))

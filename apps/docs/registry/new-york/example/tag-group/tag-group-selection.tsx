@@ -1,8 +1,8 @@
 import React from "react"
 import type { Selection } from "react-aria-components"
 
-import { Label } from "@/registry/default/ui/label"
-import { Tag, TagGroup, TagList } from "@/registry/default/ui/tag-group"
+import { Label } from "@/registry/new-york/ui/label"
+import { Tag, TagGroup, TagList } from "@/registry/new-york/ui/tag-group"
 
 export default function TagGroupSelection() {
   let [selected, setSelected] = React.useState<Selection>(new Set(["parking"]))

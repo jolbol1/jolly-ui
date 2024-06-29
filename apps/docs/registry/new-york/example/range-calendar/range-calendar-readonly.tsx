@@ -8,9 +8,9 @@ import {
   CalendarHeaderCell,
   CalendarHeading,
   RangeCalendar,
-} from "@/registry/default/ui/calendar"
+} from "@/registry/new-york/ui/calendar"
 
-export function RangeCalendarReadonly() {
+export default function RangeCalendarReadonly() {
   return (
     <RangeCalendar
       isReadOnly

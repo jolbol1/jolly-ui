@@ -1,7 +1,7 @@
 import { parseAbsoluteToLocal } from "@internationalized/date"
 import { CalendarIcon } from "lucide-react"
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from "@/registry/new-york/ui/button"
 import {
   CalendarCell,
   CalendarGrid,
@@ -10,15 +10,15 @@ import {
   CalendarHeaderCell,
   CalendarHeading,
   RangeCalendar,
-} from "@/registry/default/ui/calendar"
+} from "@/registry/new-york/ui/calendar"
 import {
   DatePickerContent,
   DateRangePicker,
-} from "@/registry/default/ui/date-picker"
-import { DateInput } from "@/registry/default/ui/datefield"
-import { FieldGroup, Label } from "@/registry/default/ui/field"
+} from "@/registry/new-york/ui/date-picker"
+import { DateInput } from "@/registry/new-york/ui/datefield"
+import { FieldGroup, Label } from "@/registry/new-york/ui/field"
 
-export function DateRangePickerTimezone() {
+export default function DateRangePickerTimezone() {
   return (
     <DateRangePicker
       defaultValue={{

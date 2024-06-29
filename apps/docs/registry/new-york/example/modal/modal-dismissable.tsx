@@ -1,4 +1,4 @@
-import { Button } from "@/registry/default/ui/button"
+import { Button } from "@/registry/new-york/ui/button"
 import {
   DialogContent,
   DialogDescription,
@@ -7,7 +7,7 @@ import {
   DialogOverlay,
   DialogTitle,
   DialogTrigger,
-} from "@/registry/default/ui/dialog"
+} from "@/registry/new-york/ui/dialog"
 
 export default function ModalDismissable() {
   return (

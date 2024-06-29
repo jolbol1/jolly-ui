@@ -1,4 +1,4 @@
-import { Button } from "@/registry/default/ui/button"
+import { Button } from "@/registry/new-york/ui/button"
 import {
   DialogContent,
   DialogFooter,
@@ -6,51 +6,36 @@ import {
   DialogOverlay,
   DialogTitle,
   DialogTrigger,
-} from "@/registry/default/ui/dialog"
-import { Input } from "@/registry/default/ui/input"
-import { Label } from "@/registry/default/ui/label"
+} from "@/registry/new-york/ui/dialog"
+import { Input, TextField } from "@/registry/new-york/ui/input"
+import { Label } from "@/registry/new-york/ui/label"
 
-export function DialogSheet() {
+export default function ModalSheet() {
   return (
     <DialogTrigger>
       <Button variant="outline">Edit Profile</Button>
       <DialogOverlay>
         <DialogContent side="right" className="sm:max-w-[425px]">
           <DialogHeader>
-            <DialogTitle>Edit profile</DialogTitle>
-            <p className="text-sm text-muted-foreground">
-              Make changes to your profile here. Click save when you&apos;re
-              done.
-            </p>
+            <DialogTitle>Sign up</DialogTitle>
           </DialogHeader>
           <div className="grid gap-4 py-4">
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="name" className="text-right">
-                Name
-              </Label>
-              <Input
-                id="name"
-                defaultValue="Pedro Duarte"
-                className="col-span-3"
-              />
-            </div>
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="username" className="text-right">
-                Username
-              </Label>
-              <Input
-                id="username"
-                defaultValue="@peduarte"
-                className="col-span-3"
-              />
-            </div>
+            <TextField autoFocus>
+              <Label>First Name</Label>
+              <Input />
+            </TextField>
+            <TextField>
+              <Label>Last Name</Label>
+              <Input />
+            </TextField>
           </div>
           <DialogFooter>
-            <Button type="submit">Save changes</Button>
+            <Button onPress={close} type="submit">
+              Save changes
+            </Button>
           </DialogFooter>
         </DialogContent>
       </DialogOverlay>
     </DialogTrigger>
   )
 }
-export default DialogSheet

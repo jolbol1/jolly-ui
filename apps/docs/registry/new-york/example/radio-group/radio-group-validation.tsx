@@ -1,8 +1,8 @@
 import { Form } from "react-aria-components"
 
-import { Button } from "@/registry/default/ui/button"
-import { FieldError, Label } from "@/registry/default/ui/field"
-import { Radio, RadioGroup } from "@/registry/default/ui/radio-group"
+import { Button } from "@/registry/new-york/ui/button"
+import { FieldError, Label } from "@/registry/new-york/ui/field"
+import { Radio, RadioGroup } from "@/registry/new-york/ui/radio-group"
 
 export default function RadioGroupValidation() {
   return (

@@ -1,7 +1,7 @@
 import { isTextDropItem, useDragAndDrop } from "react-aria-components"
 import { useListData } from "react-stately"
 
-import { ListBox, ListBoxItem } from "@/registry/default/ui/list-box"
+import { ListBox, ListBoxItem } from "@/registry/new-york/ui/list-box"
 
 interface FileItem {
   id: string
@@ -98,7 +98,7 @@ function DndListBox(props: DndListBoxProps) {
   )
 }
 
-export function ListBoxDragBetween() {
+export default function ListBoxDragBetween() {
   return (
     <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
       <DndListBox

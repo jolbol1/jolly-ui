@@ -1,7 +1,7 @@
 import { CalendarIcon } from "lucide-react"
 import { Text } from "react-aria-components"
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from "@/registry/new-york/ui/button"
 import {
   Calendar,
   CalendarCell,
@@ -10,15 +10,15 @@ import {
   CalendarGridHeader,
   CalendarHeaderCell,
   CalendarHeading,
-} from "@/registry/default/ui/calendar"
+} from "@/registry/new-york/ui/calendar"
 import {
   DatePicker,
   DatePickerContent,
-} from "@/registry/default/ui/date-picker"
-import { DateInput } from "@/registry/default/ui/datefield"
-import { FieldError, FieldGroup, Label } from "@/registry/default/ui/field"
+} from "@/registry/new-york/ui/date-picker"
+import { DateInput } from "@/registry/new-york/ui/datefield"
+import { FieldError, FieldGroup, Label } from "@/registry/new-york/ui/field"
 
-export function DatepickerDescription() {
+export default function DatepickerDescription() {
   return (
     <DatePicker className="group min-w-[208px] flex flex-col gap-2">
       <Label>Appointment Date</Label>

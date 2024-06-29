@@ -1,4 +1,4 @@
-import { ListBox } from "@/registry/default/ui/list-box"
+import { ListBox } from "@/registry/new-york/ui/list-box"
 
 export default function ListBoxEmpty() {
   return (

@@ -1,7 +1,7 @@
 import { Pencil } from "lucide-react"
 
-import { Button } from "@/registry/default/ui/button"
-import { Tooltip, TooltipTrigger } from "@/registry/default/ui/tooltip"
+import { Button } from "@/registry/new-york/ui/button"
+import { Tooltip, TooltipTrigger } from "@/registry/new-york/ui/tooltip"
 
 export default function TooltipDemo() {
   return (

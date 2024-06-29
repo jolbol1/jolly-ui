@@ -8,9 +8,9 @@ import {
   CalendarHeaderCell,
   CalendarHeading,
   RangeCalendar,
-} from "@/registry/default/ui/calendar"
+} from "@/registry/new-york/ui/calendar"
 
-export function RangeCalendarValidation() {
+export default function RangeCalendarValidation() {
   return (
     <RangeCalendar minValue={today(getLocalTimeZone())} aria-label="Trip dates">
       <CalendarHeading />

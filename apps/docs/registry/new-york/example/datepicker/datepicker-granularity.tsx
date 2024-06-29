@@ -2,7 +2,7 @@ import React from "react"
 import { parseAbsoluteToLocal } from "@internationalized/date"
 import { CalendarIcon } from "lucide-react"
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from "@/registry/new-york/ui/button"
 import {
   Calendar,
   CalendarCell,
@@ -11,15 +11,15 @@ import {
   CalendarGridHeader,
   CalendarHeaderCell,
   CalendarHeading,
-} from "@/registry/default/ui/calendar"
+} from "@/registry/new-york/ui/calendar"
 import {
   DatePicker,
   DatePickerContent,
-} from "@/registry/default/ui/date-picker"
-import { DateInput } from "@/registry/default/ui/datefield"
-import { FieldGroup, Label } from "@/registry/default/ui/field"
+} from "@/registry/new-york/ui/date-picker"
+import { DateInput } from "@/registry/new-york/ui/datefield"
+import { FieldGroup, Label } from "@/registry/new-york/ui/field"
 
-export function DatepickerGranularity() {
+export default function DatepickerGranularity() {
   let [date, setDate] = React.useState(
     parseAbsoluteToLocal("2021-04-07T18:45:22Z")
   )

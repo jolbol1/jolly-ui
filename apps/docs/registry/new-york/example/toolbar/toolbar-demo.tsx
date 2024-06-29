@@ -3,11 +3,11 @@
 import { BoldIcon, ItalicIcon, UnderlineIcon } from "lucide-react"
 import { Group } from "react-aria-components"
 
-import { Button } from "@/registry/default/ui/button"
-import { Checkbox } from "@/registry/default/ui/checkbox"
-import { Separator } from "@/registry/default/ui/separator"
-import { Toggle } from "@/registry/default/ui/toggle"
-import { Toolbar } from "@/registry/default/ui/toolbar"
+import { Button } from "@/registry/new-york/ui/button"
+import { Checkbox } from "@/registry/new-york/ui/checkbox"
+import { Separator } from "@/registry/new-york/ui/separator"
+import { Toggle } from "@/registry/new-york/ui/toggle"
+import { Toolbar } from "@/registry/new-york/ui/toolbar"
 
 export default function ToolbarDemo() {
   return (

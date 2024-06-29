@@ -1,12 +1,12 @@
 import { SearchIcon, XIcon } from "lucide-react"
 import { Text } from "react-aria-components"
 
-import { FieldGroup, Label } from "@/registry/default/ui/field"
+import { FieldGroup, Label } from "@/registry/new-york/ui/field"
 import {
   SearchField,
   SearchFieldClear,
   SearchFieldInput,
-} from "@/registry/default/ui/searchfield"
+} from "@/registry/new-york/ui/searchfield"
 
 export default function SearchFieldDescription() {
   return (

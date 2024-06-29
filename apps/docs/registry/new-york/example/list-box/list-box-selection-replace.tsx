@@ -1,4 +1,4 @@
-import { ListBox, ListBoxItem } from "@/registry/default/ui/list-box"
+import { ListBox, ListBoxItem } from "@/registry/new-york/ui/list-box"
 
 export default function ListBoxSelectionReplace() {
   return (

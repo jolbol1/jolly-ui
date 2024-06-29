@@ -1,5 +1,5 @@
-import { Label } from "@/registry/default/ui/field"
-import { Tag, TagGroup, TagList } from "@/registry/default/ui/tag-group"
+import { Label } from "@/registry/new-york/ui/field"
+import { Tag, TagGroup, TagList } from "@/registry/new-york/ui/tag-group"
 
 export default function TagDisabledItems() {
   return (

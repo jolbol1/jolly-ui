@@ -6,9 +6,9 @@ import {
   CalendarHeaderCell,
   CalendarHeading,
   RangeCalendar,
-} from "@/registry/default/ui/calendar"
+} from "@/registry/new-york/ui/calendar"
 
-export function RangeCalendarDemo() {
+export default function RangeCalendarDemo() {
   return (
     <RangeCalendar aria-label="Trip dates">
       <CalendarHeading />

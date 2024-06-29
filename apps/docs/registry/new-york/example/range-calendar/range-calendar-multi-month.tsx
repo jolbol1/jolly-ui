@@ -6,9 +6,9 @@ import {
   CalendarHeaderCell,
   CalendarHeading,
   RangeCalendar,
-} from "@/registry/default/ui/calendar"
+} from "@/registry/new-york/ui/calendar"
 
-export function RangeCalendarMultiMonth() {
+export default function RangeCalendarMultiMonth() {
   return (
     <RangeCalendar aria-label="Trip dates" visibleDuration={{ months: 3 }}>
       <CalendarHeading />

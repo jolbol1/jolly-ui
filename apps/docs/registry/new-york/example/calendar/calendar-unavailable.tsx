@@ -9,7 +9,7 @@ import {
   CalendarGridHeader,
   CalendarHeaderCell,
   CalendarHeading,
-} from "@/registry/default/ui/calendar"
+} from "@/registry/new-york/ui/calendar"
 
 export default function CalendarUnavailable() {
   let now = today(getLocalTimeZone())

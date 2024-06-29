@@ -1,18 +1,30 @@
 import * as React from "react"
-import { TextArea, TextAreaProps } from "react-aria-components"
+import {
+  TextArea as AriaTextArea,
+  TextAreaProps as AriaTextAreaProps,
+  composeRenderProps,
+} from "react-aria-components"
 
 import { cn } from "@/lib/utils"
 
-const _TextArea = ({ className, ...props }: TextAreaProps) => {
+const TextArea = ({ className, ...props }: AriaTextAreaProps) => {
   return (
-    <TextArea
-      className={cn(
-        "flex min-h-[60px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
-        className
+    <AriaTextArea
+      className={composeRenderProps(className, (className) =>
+        cn(
+          "flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground",
+          /* Focused */
+          "data-[focused]:outline-none data-[focused]:ring-2 data-[focused]:ring-ring data-[focused]:ring-offset-2",
+          /* Disabled */
+          "data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
+          /* Resets */
+          "focus-visible:outline-none",
+          className
+        )
       )}
       {...props}
     />
   )
 }
 
-export { _TextArea as TextArea }
+export { TextArea }

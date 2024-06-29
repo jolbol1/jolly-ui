@@ -1,7 +1,7 @@
 import { parseZonedDateTime } from "@internationalized/date"
 import { CalendarIcon } from "lucide-react"
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from "@/registry/new-york/ui/button"
 import {
   Calendar,
   CalendarCell,
@@ -10,15 +10,15 @@ import {
   CalendarGridHeader,
   CalendarHeaderCell,
   CalendarHeading,
-} from "@/registry/default/ui/calendar"
+} from "@/registry/new-york/ui/calendar"
 import {
   DatePicker,
   DatePickerContent,
-} from "@/registry/default/ui/date-picker"
-import { DateInput } from "@/registry/default/ui/datefield"
-import { FieldGroup, Label } from "@/registry/default/ui/field"
+} from "@/registry/new-york/ui/date-picker"
+import { DateInput } from "@/registry/new-york/ui/datefield"
+import { FieldGroup, Label } from "@/registry/new-york/ui/field"
 
-export function DatepickerTimezone() {
+export default function DatepickerTimezone() {
   return (
     <DatePicker
       defaultValue={parseZonedDateTime("2022-11-07T00:45[America/Los_Angeles]")}

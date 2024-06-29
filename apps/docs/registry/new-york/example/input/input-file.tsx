@@ -9,5 +9,4 @@ export function InputFile() {
     </div>
   )
 }
-
 export default InputFile

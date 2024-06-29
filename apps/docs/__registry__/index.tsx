@@ -1993,6 +1993,20 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/example/group/group-label")),
       files: ["registry/default/example/group/group-label.tsx"],
     },
+    "toolbar-demo": {
+      name: "toolbar-demo",
+      type: "components:example/toolbar",
+      registryDependencies: ["toolbar"],
+      component: React.lazy(() => import("@/registry/default/example/toolbar/toolbar-demo")),
+      files: ["registry/default/example/toolbar/toolbar-demo.tsx"],
+    },
+    "toolbar-vertical-demo": {
+      name: "toolbar-vertical-demo",
+      type: "components:example/toolbar",
+      registryDependencies: ["toolbar"],
+      component: React.lazy(() => import("@/registry/default/example/toolbar/toolbar-vertical-demo")),
+      files: ["registry/default/example/toolbar/toolbar-vertical.tsx"],
+    },
   },  "new-york": {
     "breadcrumbs": {
       name: "breadcrumbs",
@@ -3981,6 +3995,20 @@ export const Index: Record<string, any> = {
       registryDependencies: ["group"],
       component: React.lazy(() => import("@/registry/new-york/example/group/group-label")),
       files: ["registry/new-york/example/group/group-label.tsx"],
+    },
+    "toolbar-demo": {
+      name: "toolbar-demo",
+      type: "components:example/toolbar",
+      registryDependencies: ["toolbar"],
+      component: React.lazy(() => import("@/registry/new-york/example/toolbar/toolbar-demo")),
+      files: ["registry/new-york/example/toolbar/toolbar-demo.tsx"],
+    },
+    "toolbar-vertical-demo": {
+      name: "toolbar-vertical-demo",
+      type: "components:example/toolbar",
+      registryDependencies: ["toolbar"],
+      component: React.lazy(() => import("@/registry/new-york/example/toolbar/toolbar-vertical-demo")),
+      files: ["registry/new-york/example/toolbar/toolbar-vertical.tsx"],
     },
   },
 }

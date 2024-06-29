@@ -7,7 +7,7 @@ import {
   ListBoxHeader,
   ListBoxItem,
   ListBoxSection,
-} from "@/registry/default/ui/list-box"
+} from "@/registry/new-york/ui/list-box"
 
 export default function ListBoxDynamic() {
   let options = [

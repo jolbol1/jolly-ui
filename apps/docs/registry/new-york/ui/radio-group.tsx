@@ -1,72 +1,77 @@
 "use client"
 
-import { CheckIcon } from "@radix-ui/react-icons"
+import { Circle } from "lucide-react"
 import {
-  Radio,
-  RadioGroup,
-  RadioGroupProps,
-  RadioProps,
+  Radio as AriaRadio,
+  RadioGroup as AriaRadioGroup,
+  RadioGroupProps as AriaRadioGroupProps,
+  RadioProps as AriaRadioProps,
+  composeRenderProps,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"
-import { labelVariants } from "@/registry/new-york/ui/label"
 
-const _RadioGroup = ({
+import { labelVariants } from "./label"
+
+const RadioGroup = ({
   className,
   orientation = "vertical",
   ...props
-}: RadioGroupProps) => {
+}: AriaRadioGroupProps) => {
   return (
-    <RadioGroup
-      className={(values) =>
+    <AriaRadioGroup
+      className={composeRenderProps(className, (className) =>
         cn(
           {
             "grid gap-2": orientation === "vertical",
             "flex items-center gap-2": orientation === "horizontal",
           },
-          typeof className === "function" ? className(values) : className
+          className
         )
-      }
+      )}
       {...props}
     />
   )
 }
 
-export interface _RadioProps extends RadioProps {
-  showRadio?: boolean
-}
-
-const _Radio = ({
-  className,
-  showRadio = true,
-  children,
-  ...props
-}: _RadioProps) => {
+const Radio = ({ className, children, ...props }: AriaRadioProps) => {
   return (
-    <Radio
-      className={(values) =>
+    <AriaRadio
+      className={composeRenderProps(className, (className) =>
         cn(
-          "group flex items-center gap-x-2 data-[focused]:outline-none ",
+          "group flex items-center gap-x-2",
+          /* Disabled */
+          "data-[disabled]:cursor-not-allowed data-[disabled]:opacity-70",
           labelVariants,
-          typeof className === "function" ? className(values) : className
+          className
         )
-      }
+      )}
       {...props}
     >
-      {(values) => (
+      {composeRenderProps(children, (children, renderProps) => (
         <>
-          {showRadio && (
-            <span className="flex aspect-square h-4 w-4 items-center justify-center rounded-full border  border-primary text-primary shadow data-[disabled]:opacity-50 group-data-[focus-visible]:ring-1 group-data-[focus-visible]:ring-ring">
-              {values.isSelected && (
-                <CheckIcon className="h-3.5 w-3.5 fill-primary" />
-              )}
-            </span>
-          )}
-          {typeof children === "function" ? children(values) : children}
+          <span
+            className={cn(
+              "flex aspect-square size-4 items-center justify-center rounded-full border border-primary text-primary ring-offset-background",
+              /* Focus */
+              "group-data-[focused]:outline-none",
+              /* Focus Visible */
+              "group-data-[focus-visible]:ring-2 group-data-[focus-visible]:ring-ring group-data-[focus-visible]:ring-offset-2",
+              /* Disabled */
+              "group-data-[disabled]:cursor-not-allowed group-data-[disabled]:opacity-50",
+              /* Invalid */
+              "group-data-[invalid]:border-destructive"
+            )}
+          >
+            {renderProps.isSelected && (
+              <Circle className="size-2.5 fill-current text-current" />
+            )}
+          </span>
+          {children}
         </>
-      )}
-    </Radio>
+      ))}
+    </AriaRadio>
   )
 }
 
-export { _RadioGroup as RadioGroup, _Radio as Radio }
+export { RadioGroup, Radio }

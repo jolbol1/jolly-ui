@@ -1,12 +1,8 @@
-import { ListBox, ListBoxItem } from "@/registry/default/ui/list-box"
+import { ListBox, ListBoxItem } from "@/registry/new-york/ui/list-box"
 
 export default function ListBoxDemo() {
   return (
-    <ListBox
-      className={"max-h-[200px]"}
-      aria-label="Favorite animal"
-      selectionMode="single"
-    >
+    <ListBox aria-label="Favorite animal" selectionMode="single">
       <ListBoxItem>Aardvark</ListBoxItem>
       <ListBoxItem>Cat</ListBoxItem>
       <ListBoxItem>Dog</ListBoxItem>

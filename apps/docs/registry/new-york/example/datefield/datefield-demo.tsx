@@ -1,5 +1,5 @@
-import { DateField, DateInput } from "@/registry/default/ui/datefield"
-import { Label } from "@/registry/default/ui/field"
+import { DateField, DateInput } from "@/registry/new-york/ui/datefield"
+import { Label } from "@/registry/new-york/ui/field"
 
 export default function DateFieldDemo() {
   return (

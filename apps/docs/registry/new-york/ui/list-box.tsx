@@ -25,7 +25,9 @@ function ListBox<T extends object>({
       className={composeRenderProps(className, (className) =>
         cn(
           className,
-          "group rounded-md border bg-popover p-1 text-popover-foreground shadow-md outline-none"
+          "group overflow-auto rounded-md border bg-popover p-1 text-popover-foreground shadow-md outline-none",
+          /* Empty */
+          "data-[empty]:p-6 data-[empty]:text-center data-[empty]:text-sm"
         )
       )}
       {...props}
@@ -50,6 +52,8 @@ const ListBoxItem = <T extends object>({
           "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
           /* Focused */
           "data-[focused]:bg-accent data-[focused]:text-accent-foreground",
+          /* Hovered */
+          "data-[hovered]:bg-accent data-[hovered]:text-accent-foreground",
           /* Selection */
           "data-[selection-mode]:pl-8",
           className

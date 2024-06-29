@@ -1,13 +1,13 @@
 import React from "react"
 import type { Selection } from "react-aria-components"
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from "@/registry/new-york/ui/button"
 import {
   Menu,
   MenuItem,
   MenuPopover,
   MenuTrigger,
-} from "@/registry/default/ui/menu"
+} from "@/registry/new-york/ui/menu"
 
 export default function MenuSelectionMultiple() {
   let [selected, setSelected] = React.useState<Selection>(

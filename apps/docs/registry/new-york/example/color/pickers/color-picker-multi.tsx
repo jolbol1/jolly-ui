@@ -20,8 +20,8 @@ import { Label } from "@/registry/new-york/ui/label"
 import { Popover } from "@/registry/new-york/ui/popover"
 import {
   Select,
-  SelectContent,
   SelectItem,
+  SelectListBox,
   SelectPopover,
   SelectTrigger,
   SelectValue,
@@ -64,7 +64,7 @@ export function PickerMulti() {
                 <SelectValue />
               </SelectTrigger>
               <SelectPopover>
-                <SelectContent aria-label="items">
+                <SelectListBox aria-label="items">
                   <SelectItem id="rgb" textValue="rgb">
                     RGB
                   </SelectItem>
@@ -74,7 +74,7 @@ export function PickerMulti() {
                   <SelectItem id="hsb" textValue="hsb">
                     HSB
                   </SelectItem>
-                </SelectContent>
+                </SelectListBox>
               </SelectPopover>
             </Select>
             <div className="grid grid-cols-3 gap-1 w-[192px]">

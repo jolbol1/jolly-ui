@@ -1,16 +1,16 @@
 import { ChevronsUpDown } from "lucide-react"
 import { Form } from "react-aria-components"
 
-import { Button } from "@/registry/default/ui/button"
+import { Button } from "@/registry/new-york/ui/button"
 import {
   Combobox,
   ComboboxInput,
   ComboboxItem,
   ComboboxListBox,
   ComboboxPopover,
-} from "@/registry/default/ui/combobox"
-import { FieldError, FieldGroup } from "@/registry/default/ui/field"
-import { Label } from "@/registry/default/ui/label"
+} from "@/registry/new-york/ui/combobox"
+import { FieldError, FieldGroup } from "@/registry/new-york/ui/field"
+import { Label } from "@/registry/new-york/ui/label"
 
 export default function ComboboxValidation() {
   return (

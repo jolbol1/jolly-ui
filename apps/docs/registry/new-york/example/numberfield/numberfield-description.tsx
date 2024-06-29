@@ -1,11 +1,11 @@
 import { Text } from "react-aria-components"
 
-import { FieldGroup, Label } from "@/registry/default/ui/field"
+import { FieldGroup, Label } from "@/registry/new-york/ui/field"
 import {
   NumberField,
   NumberFieldInput,
   NumberFieldSteppers,
-} from "@/registry/default/ui/numberfield"
+} from "@/registry/new-york/ui/numberfield"
 
 export default function NumberFieldDescription() {
   return (

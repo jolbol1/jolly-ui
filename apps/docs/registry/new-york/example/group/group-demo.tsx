@@ -1,9 +1,9 @@
 import { PlusIcon } from "lucide-react"
 import { Input as AriaInput } from "react-aria-components"
 
-import { Button } from "@/registry/default/ui/button"
-import { FieldGroup, Label } from "@/registry/default/ui/field"
-import { TextField } from "@/registry/default/ui/input"
+import { Button } from "@/registry/new-york/ui/button"
+import { FieldGroup, Label } from "@/registry/new-york/ui/field"
+import { TextField } from "@/registry/new-york/ui/input"
 
 export default function GroupDemo() {
   return (

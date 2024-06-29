@@ -2,7 +2,7 @@ import {
   ColorThumb,
   ColorWheel,
   ColorWheelTrack,
-} from "@/registry/default/ui/color"
+} from "@/registry/new-york/ui/color"
 
 export function ColorWheelDemo() {
   return (

@@ -1,4 +1,4 @@
-import { GridList, GridListItem } from "@/registry/default/ui/grid-list"
+import { GridList, GridListItem } from "@/registry/new-york/ui/grid-list"
 
 export default function GridListDisallowEmptySelection() {
   return (

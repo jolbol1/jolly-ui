@@ -1,6 +1,6 @@
 import { Text } from "react-aria-components"
 
-import { ListBox, ListBoxItem } from "@/registry/default/ui/list-box"
+import { ListBox, ListBoxItem } from "@/registry/new-york/ui/list-box"
 
 export default function ListBoxTextSlot() {
   return (

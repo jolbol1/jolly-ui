@@ -1,11 +1,11 @@
-import { Label } from "@/registry/default/ui/field"
+import { Label } from "@/registry/new-york/ui/field"
 import {
   Slider,
   SliderFillTrack,
   SliderOutput,
   SliderThumb,
   SliderTrack,
-} from "@/registry/default/ui/slider"
+} from "@/registry/new-york/ui/slider"
 
 export default function SliderValues() {
   return (

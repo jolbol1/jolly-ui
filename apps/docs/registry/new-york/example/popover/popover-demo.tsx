@@ -1,10 +1,10 @@
-import { Button } from "@/registry/default/ui/button"
+import { Button } from "@/registry/new-york/ui/button"
 import {
   Popover,
   PopoverDialog,
   PopoverTrigger,
-} from "@/registry/default/ui/popover"
-import { Switch } from "@/registry/default/ui/switch"
+} from "@/registry/new-york/ui/popover"
+import { Switch } from "@/registry/new-york/ui/switch"
 
 export default function PopoverDemo() {
   return (

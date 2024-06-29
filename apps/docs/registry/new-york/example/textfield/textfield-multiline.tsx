@@ -1,6 +1,6 @@
-import { Label } from "@/registry/default/ui/field"
-import { TextField } from "@/registry/default/ui/input"
-import { TextArea } from "@/registry/default/ui/textarea"
+import { Label } from "@/registry/new-york/ui/field"
+import { TextField } from "@/registry/new-york/ui/input"
+import { TextArea } from "@/registry/new-york/ui/textarea"
 
 export default function TextFieldMultiline() {
   return (

@@ -1,6 +1,5 @@
 import { Button } from "@/registry/new-york/ui/button"
 
-export function ButtonOutline() {
+export default function ButtonOutline() {
   return <Button variant="outline">Outline</Button>
 }
-export default ButtonOutline

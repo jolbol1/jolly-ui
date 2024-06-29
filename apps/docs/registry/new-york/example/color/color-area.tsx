@@ -1,4 +1,4 @@
-import { ColorArea, ColorThumb } from "@/registry/default/ui/color"
+import { ColorArea, ColorThumb } from "@/registry/new-york/ui/color"
 
 export function ColorAreaDemo() {
   return (

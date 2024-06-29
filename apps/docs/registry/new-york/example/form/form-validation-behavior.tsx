@@ -1,8 +1,8 @@
 import { Form } from "react-aria-components"
 
-import { Button } from "@/registry/default/ui/button"
-import { FieldError, Label } from "@/registry/default/ui/field"
-import { Input, TextField } from "@/registry/default/ui/input"
+import { Button } from "@/registry/new-york/ui/button"
+import { FieldError, Label } from "@/registry/new-york/ui/field"
+import { Input, TextField } from "@/registry/new-york/ui/input"
 
 export default function FormValidationBehavior() {
   return (
@@ -10,7 +10,6 @@ export default function FormValidationBehavior() {
       <TextField
         name="username"
         defaultValue="admin"
-        className="group"
         isRequired
         validate={(value) => (value === "admin" ? "Nice try." : null)}
       >

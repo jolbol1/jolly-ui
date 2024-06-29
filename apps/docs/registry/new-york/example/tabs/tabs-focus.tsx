@@ -1,5 +1,5 @@
-import { Input } from "@/registry/default/ui/input"
-import { Tab, TabList, TabPanel, Tabs } from "@/registry/default/ui/tabs"
+import { Input } from "@/registry/new-york/ui/input"
+import { Tab, TabList, TabPanel, Tabs } from "@/registry/new-york/ui/tabs"
 
 export default function TabsFocus() {
   return (

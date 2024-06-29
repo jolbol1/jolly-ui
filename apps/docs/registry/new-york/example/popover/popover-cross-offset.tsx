@@ -1,9 +1,9 @@
-import { Button } from "@/registry/default/ui/button"
+import { Button } from "@/registry/new-york/ui/button"
 import {
   Popover,
   PopoverDialog,
   PopoverTrigger,
-} from "@/registry/default/ui/popover"
+} from "@/registry/new-york/ui/popover"
 
 export default function PopoverCrossOffset() {
   return (

@@ -1,9 +1,9 @@
 import { getLocalTimeZone, today } from "@internationalized/date"
 import { Form } from "react-aria-components"
 
-import { Button } from "@/registry/default/ui/button"
-import { DateField, DateInput } from "@/registry/default/ui/datefield"
-import { FieldError, Label } from "@/registry/default/ui/field"
+import { Button } from "@/registry/new-york/ui/button"
+import { DateField, DateInput } from "@/registry/new-york/ui/datefield"
+import { FieldError, Label } from "@/registry/new-york/ui/field"
 
 export default function DateFieldValidationMinMax() {
   return (
@@ -14,7 +14,7 @@ export default function DateFieldValidationMinMax() {
         className={"flex min-w-[150px] flex-col gap-2"}
       >
         <Label>Appointment date</Label>
-        <DateInput />
+        <DateInput className={"w-[180px]"} />
         <FieldError />
       </DateField>
       <Button className="w-fit" type="submit">

@@ -3,7 +3,7 @@ import {
   SliderFillTrack,
   SliderThumb,
   SliderTrack,
-} from "@/registry/default/ui/slider"
+} from "@/registry/new-york/ui/slider"
 
 export default function SliderVertical() {
   return (
@@ -12,7 +12,7 @@ export default function SliderVertical() {
       aria-label="Opacity"
       maxValue={1}
       step={0.01}
-      className="max-h-[200px] h-[60%] flex flex-col items-start gap-2"
+      className="h-[150px] flex flex-col items-start gap-2"
     >
       <SliderTrack>
         <SliderFillTrack />

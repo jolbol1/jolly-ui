@@ -1,8 +1,8 @@
 import React from "react"
 import { Collection } from "react-aria-components"
 
-import { Button } from "@/registry/default/ui/button"
-import { Tab, TabList, TabPanel, Tabs } from "@/registry/default/ui/tabs"
+import { Button } from "@/registry/new-york/ui/button"
+import { Tab, TabList, TabPanel, Tabs } from "@/registry/new-york/ui/tabs"
 
 export default function TabsDynamic() {
   let [tabs, setTabs] = React.useState([

@@ -1,5 +1,5 @@
-import { Label } from "@/registry/default/ui/field"
-import { Meter } from "@/registry/default/ui/meter"
+import { Label } from "@/registry/new-york/ui/field"
+import { Meter } from "@/registry/new-york/ui/meter"
 
 export default function MeterValueFormat() {
   return (
