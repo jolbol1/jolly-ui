@@ -5,7 +5,7 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**", "storybook-static/**"],
+      "outputs": [".next/**", "!.next/cache/**"],
       "env": ["NEXT_PUBLIC_APP_URL"]
     },
     "lint": {

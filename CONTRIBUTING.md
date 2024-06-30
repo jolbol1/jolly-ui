@@ -40,7 +40,6 @@ packages
 | `apps/docs/components` | The React components for the website.    |
 | `apps/docs/content`    | The content for the website.             |
 | `apps/docs/registry`   | The registry for the components.         |
-| `apps/storybook`       | Storbook for components                  |
 
 ## Development
 
@@ -78,12 +77,6 @@ pnpm install
 
 ```bash
 pnpm --filter=docs dev
-```
-
-2. To run the storybook:
-
-```bash
-pnpm --filter=storybook dev
 ```
 
 ## Documentation

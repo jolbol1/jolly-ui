@@ -36,7 +36,7 @@ yarn-error.log*
 # Misc
 .DS_Store
 *.pem
-storybook-static/
+
 
 # turbo
 .turbo
