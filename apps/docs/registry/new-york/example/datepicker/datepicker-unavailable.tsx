@@ -1,5 +1,5 @@
 import { getLocalTimeZone, isWeekend, today } from "@internationalized/date"
-import { CalendarIcon } from "lucide-react"
+import { CalendarIcon } from "@radix-ui/react-icons"
 import { DateValue, useLocale } from "react-aria-components"
 
 import { Button } from "@/registry/new-york/ui/button"

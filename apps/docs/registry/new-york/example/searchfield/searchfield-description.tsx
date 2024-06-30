@@ -1,4 +1,4 @@
-import { SearchIcon, XIcon } from "lucide-react"
+import { Cross2Icon, MagnifyingGlassIcon } from "@radix-ui/react-icons"
 import { Text } from "react-aria-components"
 
 import { FieldGroup, Label } from "@/registry/new-york/ui/field"
@@ -13,10 +13,13 @@ export default function SearchFieldDescription() {
     <SearchField className="group flex min-w-[200px] flex-col gap-2" isRequired>
       <Label>Search</Label>
       <FieldGroup className="w-fit min-w-[200px]">
-        <SearchIcon aria-hidden className="size-4 text-muted-foreground" />
+        <MagnifyingGlassIcon
+          aria-hidden
+          className="size-4 text-muted-foreground"
+        />
         <SearchFieldInput placeholder="Search..." />
         <SearchFieldClear>
-          <XIcon aria-hidden className="size-4" />
+          <Cross2Icon aria-hidden className="size-4" />
         </SearchFieldClear>
       </FieldGroup>
       <Text className="text-sm text-muted-foreground" slot="description">

@@ -1,4 +1,4 @@
-import { SearchIcon, XIcon } from "lucide-react"
+import { Cross2Icon, MagnifyingGlassIcon } from "@radix-ui/react-icons"
 
 import { FieldGroup, Label } from "@/registry/new-york/ui/field"
 import {
@@ -12,10 +12,13 @@ export default function SearchFieldDisabled() {
     <SearchField isDisabled className="max-w-[200px]">
       <Label>Search</Label>
       <FieldGroup>
-        <SearchIcon aria-hidden className="size-4 text-muted-foreground" />
+        <MagnifyingGlassIcon
+          aria-hidden
+          className="size-4 text-muted-foreground"
+        />
         <SearchFieldInput placeholder="Search..." />
         <SearchFieldClear>
-          <XIcon aria-hidden className="size-4" />
+          <Cross2Icon aria-hidden className="size-4" />
         </SearchFieldClear>
       </FieldGroup>
     </SearchField>

@@ -1,4 +1,4 @@
-import { SearchIcon, XIcon } from "lucide-react"
+import { Cross2Icon, MagnifyingGlassIcon } from "@radix-ui/react-icons"
 import { Form } from "react-aria-components"
 
 import { Button } from "@/registry/new-york/ui/button"
@@ -15,10 +15,13 @@ export default function SearchFieldValidation() {
       <SearchField className="group max-w-[200px]" isRequired>
         <Label>Search</Label>
         <FieldGroup>
-          <SearchIcon aria-hidden className="size-4 text-muted-foreground" />
+          <MagnifyingGlassIcon
+            aria-hidden
+            className="size-4 text-muted-foreground"
+          />
           <SearchFieldInput placeholder="Search..." />
           <SearchFieldClear>
-            <XIcon aria-hidden className="size-4" />
+            <Cross2Icon aria-hidden className="size-4" />
           </SearchFieldClear>
         </FieldGroup>
         <FieldError />

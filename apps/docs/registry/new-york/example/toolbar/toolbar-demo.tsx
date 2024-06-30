@@ -1,6 +1,10 @@
 "use client"
 
-import { BoldIcon, ItalicIcon, UnderlineIcon } from "lucide-react"
+import {
+  FontBoldIcon,
+  FontItalicIcon,
+  UnderlineIcon,
+} from "@radix-ui/react-icons"
 import { Group } from "react-aria-components"
 
 import { Button } from "@/registry/new-york/ui/button"
@@ -14,10 +18,10 @@ export default function ToolbarDemo() {
     <Toolbar aria-label="Text formatting">
       <Group aria-label="Style" className="space-x-2">
         <Toggle className="w-10" variant="outline" aria-label="Bold">
-          <BoldIcon className="size-4" />
+          <FontBoldIcon className="size-4" />
         </Toggle>
         <Toggle className="w-10" variant="outline" aria-label="Italic">
-          <ItalicIcon className="size-4" />
+          <FontItalicIcon className="size-4" />
         </Toggle>
         <Toggle className="w-10" variant="outline" aria-label="Underline">
           <UnderlineIcon className="size-4" />

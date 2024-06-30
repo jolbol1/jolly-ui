@@ -1,6 +1,12 @@
 "use client"
 
-import { Brush, LassoSelect, MousePointer2, Move, Pencil } from "lucide-react"
+import {
+  CursorArrowIcon,
+  MagicWandIcon,
+  MoveIcon,
+  Pencil1Icon,
+  Pencil2Icon,
+} from "@radix-ui/react-icons"
 import { Group } from "react-aria-components"
 
 import { Button } from "@/registry/new-york/ui/button"
@@ -12,22 +18,22 @@ export default function ToolbarVerticalDemo() {
     <Toolbar aria-label="Tools" orientation="vertical">
       <Group aria-label="Select" className="flex flex-col gap-2">
         <Button variant="outline" size="icon" aria-label="Move">
-          <Move className="size-4" />
+          <MoveIcon className="size-4" />
         </Button>
         <Button variant="outline" size="icon" aria-label="Rectangle">
-          <MousePointer2 className="size-4" />
+          <CursorArrowIcon className="size-4" />
         </Button>
         <Button variant="outline" size="icon" aria-label="Polygon">
-          <LassoSelect className="size-4" />
+          <MagicWandIcon className="size-4" />
         </Button>
       </Group>
       <Separator orientation="horizontal" />
       <Group aria-label="Draw" className={"flex flex-col gap-2"}>
         <Button variant="outline" size="icon" aria-label="Brush">
-          <Brush className="size-4" />
+          <Pencil2Icon className="size-4" />
         </Button>
         <Button variant="outline" size="icon" aria-label="Pencil">
-          <Pencil className="size-4" />
+          <Pencil1Icon className="size-4" />
         </Button>
       </Group>
     </Toolbar>

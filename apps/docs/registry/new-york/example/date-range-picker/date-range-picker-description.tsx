@@ -1,4 +1,4 @@
-import { CalendarIcon } from "lucide-react"
+import { CalendarIcon } from "@radix-ui/react-icons"
 import { Text } from "react-aria-components"
 
 import { Button } from "@/registry/new-york/ui/button"

@@ -1,4 +1,4 @@
-import { SearchIcon, XIcon } from "lucide-react"
+import { Cross2Icon, MagnifyingGlassIcon } from "@radix-ui/react-icons"
 import {
   Button as AriaButton,
   ButtonProps as AriaButtonProps,
@@ -102,10 +102,13 @@ function JollySearchField({
     >
       <Label>{label}</Label>
       <FieldGroup>
-        <SearchIcon aria-hidden className="size-4 text-muted-foreground" />
+        <MagnifyingGlassIcon
+          aria-hidden
+          className="size-4 text-muted-foreground"
+        />
         <SearchFieldInput placeholder="Search..." />
         <SearchFieldClear>
-          <XIcon aria-hidden className="size-4" />
+          <Cross2Icon aria-hidden className="size-4" />
         </SearchFieldClear>
       </FieldGroup>
       {description && (

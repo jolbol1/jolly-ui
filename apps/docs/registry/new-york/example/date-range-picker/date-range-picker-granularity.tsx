@@ -1,6 +1,6 @@
 import React from "react"
 import { parseAbsoluteToLocal } from "@internationalized/date"
-import { CalendarIcon } from "lucide-react"
+import { CalendarIcon } from "@radix-ui/react-icons"
 
 import { Button } from "@/registry/new-york/ui/button"
 import {

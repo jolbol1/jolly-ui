@@ -1,4 +1,4 @@
-import { GripHorizontal } from "lucide-react"
+import { DragHandleHorizontalIcon } from "@radix-ui/react-icons"
 import {
   Button as AriaButton,
   GridList as AriaGridList,
@@ -64,7 +64,7 @@ export function GridListItem({
           {/* Add elements for drag and drop and selection. */}
           {renderProps.allowsDragging && (
             <AriaButton slot="drag">
-              <GripHorizontal className="size-4" />
+              <DragHandleHorizontalIcon className="size-4" />
             </AriaButton>
           )}
           {renderProps.selectionMode === "multiple" &&

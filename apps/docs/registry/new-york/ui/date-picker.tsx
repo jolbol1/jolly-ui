@@ -1,4 +1,4 @@
-import { CalendarIcon } from "lucide-react"
+import { CalendarIcon } from "@radix-ui/react-icons"
 import {
   DatePicker as AriaDatePicker,
   DatePickerProps as AriaDatePickerProps,

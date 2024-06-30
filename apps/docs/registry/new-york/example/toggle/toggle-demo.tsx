@@ -1,11 +1,11 @@
-import { Bold } from "lucide-react"
+import { FontBoldIcon } from "@radix-ui/react-icons"
 
 import { Toggle } from "@/registry/new-york/ui/toggle"
 
 export default function ToggleDemo() {
   return (
     <Toggle aria-label="Toggle italic">
-      <Bold className="size-4" />
+      <FontBoldIcon className="size-4" />
     </Toggle>
   )
 }

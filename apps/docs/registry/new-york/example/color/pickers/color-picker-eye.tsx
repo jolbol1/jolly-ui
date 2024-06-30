@@ -1,5 +1,5 @@
 import React from "react"
-import { Pipette } from "lucide-react"
+import { MagicWandIcon } from "@radix-ui/react-icons"
 import {
   ColorPickerStateContext,
   getColorChannels,
@@ -55,7 +55,7 @@ function EyeDropperButton() {
           )
       }}
     >
-      <Pipette />
+      <MagicWandIcon />
     </Button>
   )
 }

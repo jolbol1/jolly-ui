@@ -1,4 +1,4 @@
-import { ChevronDown, ChevronUp } from "lucide-react"
+import { CaretDownIcon, CaretUpIcon } from "@radix-ui/react-icons"
 import {
   ButtonProps as AriaButtonProps,
   Input as AriaInput,
@@ -44,11 +44,11 @@ function NumberFieldSteppers({
       {...props}
     >
       <NumberFieldStepper slot="increment">
-        <ChevronUp aria-hidden className="size-4" />
+        <CaretUpIcon aria-hidden className="size-4" />
       </NumberFieldStepper>
       <div className="border-b" />
       <NumberFieldStepper slot="decrement">
-        <ChevronDown aria-hidden className="size-4" />
+        <CaretDownIcon aria-hidden className="size-4" />
       </NumberFieldStepper>
     </div>
   )

@@ -1,7 +1,6 @@
 "use client"
 
 import { CaretSortIcon } from "@radix-ui/react-icons"
-import { ChevronDown } from "lucide-react"
 import {
   Button as AriaButton,
   ButtonProps as AriaButtonProps,

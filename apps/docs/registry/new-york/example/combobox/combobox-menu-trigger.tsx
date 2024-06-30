@@ -1,4 +1,4 @@
-import { ChevronsUpDown } from "lucide-react"
+import { CaretSortIcon } from "@radix-ui/react-icons"
 
 import { Button } from "@/registry/new-york/ui/button"
 import {
@@ -19,7 +19,7 @@ export default function ComboboxMenuTrigger() {
         <FieldGroup className="p-0">
           <ComboboxInput />
           <Button variant="ghost" size="icon" className="mr-1 size-6 p-1">
-            <ChevronsUpDown aria-hidden="true" className="size-4 opacity-50" />
+            <CaretSortIcon aria-hidden="true" className="size-4 opacity-50" />
           </Button>
         </FieldGroup>
         <ComboboxPopover>
@@ -38,7 +38,7 @@ export default function ComboboxMenuTrigger() {
         <FieldGroup className="p-0">
           <ComboboxInput />
           <Button variant="ghost" size="icon" className="mr-1 size-6 p-1">
-            <ChevronsUpDown aria-hidden="true" className="size-4 opacity-50" />
+            <CaretSortIcon aria-hidden="true" className="size-4 opacity-50" />
           </Button>
         </FieldGroup>
         <ComboboxPopover>
@@ -57,7 +57,7 @@ export default function ComboboxMenuTrigger() {
         <FieldGroup className="p-0">
           <ComboboxInput />
           <Button variant="ghost" size="icon" className="mr-1 size-6 p-1">
-            <ChevronsUpDown aria-hidden="true" className="size-4 opacity-50" />
+            <CaretSortIcon aria-hidden="true" className="size-4 opacity-50" />
           </Button>
         </FieldGroup>
         <ComboboxPopover>

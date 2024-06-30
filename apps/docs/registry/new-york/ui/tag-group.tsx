@@ -1,5 +1,5 @@
+import { Cross2Icon } from "@radix-ui/react-icons"
 import { cva } from "class-variance-authority"
-import { XIcon } from "lucide-react"
 import {
   Button as AriaButton,
   Tag as AriaTag,
@@ -106,7 +106,7 @@ function Tag({ children, className, ...props }: AriaTagProps) {
                 className
               )}
             >
-              <XIcon aria-hidden className="size-3" />
+              <Cross2Icon aria-hidden className="size-3" />
             </AriaButton>
           )}
         </>

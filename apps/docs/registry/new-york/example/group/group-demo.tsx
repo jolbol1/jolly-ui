@@ -1,4 +1,4 @@
-import { PlusIcon } from "lucide-react"
+import { PlusIcon } from "@radix-ui/react-icons"
 import { Input as AriaInput } from "react-aria-components"
 
 import { Button } from "@/registry/new-york/ui/button"
