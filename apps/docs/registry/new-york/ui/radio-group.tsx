@@ -1,6 +1,6 @@
 "use client"
 
-import { Circle } from "lucide-react"
+import { CheckIcon } from "@radix-ui/react-icons"
 import {
   Radio as AriaRadio,
   RadioGroup as AriaRadioGroup,
@@ -52,11 +52,11 @@ const Radio = ({ className, children, ...props }: AriaRadioProps) => {
         <>
           <span
             className={cn(
-              "flex aspect-square size-4 items-center justify-center rounded-full border border-primary text-primary ring-offset-background",
+              "flex aspect-square size-4 items-center justify-center rounded-full border border-primary text-primary shadow",
               /* Focus */
               "group-data-[focused]:outline-none",
               /* Focus Visible */
-              "group-data-[focus-visible]:ring-2 group-data-[focus-visible]:ring-ring group-data-[focus-visible]:ring-offset-2",
+              "group-data-[focus-visible]:ring-1 group-data-[focus-visible]:ring-ring",
               /* Disabled */
               "group-data-[disabled]:cursor-not-allowed group-data-[disabled]:opacity-50",
               /* Invalid */
@@ -64,7 +64,7 @@ const Radio = ({ className, children, ...props }: AriaRadioProps) => {
             )}
           >
             {renderProps.isSelected && (
-              <Circle className="size-2.5 fill-current text-current" />
+              <CheckIcon className="size-3.5 fill-primary" />
             )}
           </span>
           {children}

@@ -48,10 +48,10 @@ const SliderTrack = ({ className, ...props }: AriaSliderTrackProps) => (
     className={composeRenderProps(className, (className, renderProps) =>
       cn(
         {
-          "h-2 w-full": renderProps.orientation === "horizontal",
-          "h-full w-2": renderProps.orientation === "vertical",
+          "h-1.5 w-full": renderProps.orientation === "horizontal",
+          "h-full w-1.5": renderProps.orientation === "vertical",
         },
-        "relative grow rounded-full bg-secondary",
+        "relative grow rounded-full bg-primary/20",
         /* Disabled */
         "data-[disabled]:opacity-50",
         className
@@ -87,11 +87,11 @@ const SliderThumb = ({ className }: AriaSliderThumbProps) => (
   <AriaSliderThumb
     className={composeRenderProps(className, (className) =>
       cn(
-        "left-1/2 top-1/2 block size-5 rounded-full border-2 border-primary bg-background ring-offset-background transition-colors",
+        "left-1/2 top-1/2 block size-4 rounded-full border border-primary/50 bg-background shadow transition-colors",
         /* Disabled */
         "data-[disabled]:pointer-events-none",
         /* Focus Visible */
-        "data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2",
+        "data-[focus-visible]:outline-none data-[focus-visible]:ring-1 data-[focus-visible]:ring-ring",
         className
       )
     )}

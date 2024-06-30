@@ -35,9 +35,9 @@ function TagList<T extends object>({
 
 const badgeVariants = cva(
   [
-    "inline-flex items-center gap-2 rounded-full border px-2.5 py-0.5 text-xs font-semibold ring-offset-background transition-colors",
+    "inline-flex items-center gap-2 rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors",
     /* Focus */
-    "data-[focused]:outline-none data-[focused]:ring-2 data-[focused]:ring-ring data-[focused]:ring-offset-2",
+    "data-[focused]:outline-none data-[focused]:ring-1 data-[focused]:ring-ring ",
     /* Disabled */
     "data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
   ],
@@ -45,7 +45,7 @@ const badgeVariants = cva(
     variants: {
       variant: {
         default: [
-          "border-transparent bg-primary text-primary-foreground",
+          "border-transparent bg-primary text-primary-foreground shadow",
           /* Hover */
           "data-[hovered]:bg-primary/80",
         ],
@@ -55,7 +55,7 @@ const badgeVariants = cva(
           "data-[hovered]:bg-secondary/80",
         ],
         destructive: [
-          "border-transparent bg-destructive text-destructive-foreground",
+          "border-transparent bg-destructive text-destructive-foreground shadow",
           /* Hover */
           "data-[hovered]:bg-destructive/80",
         ],

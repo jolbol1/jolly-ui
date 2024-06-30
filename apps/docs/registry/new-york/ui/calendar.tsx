@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { getLocalTimeZone, today } from "@internationalized/date"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons"
 import {
   Button as AriaButton,
   Calendar as AriaCalendar,
@@ -45,9 +45,9 @@ const CalendarHeading = (props: React.HTMLAttributes<HTMLElement>) => {
         )}
       >
         {direction === "rtl" ? (
-          <ChevronRight aria-hidden className="size-4" />
+          <ChevronRightIcon aria-hidden className="size-4" />
         ) : (
-          <ChevronLeft aria-hidden className="size-4" />
+          <ChevronLeftIcon aria-hidden className="size-4" />
         )}
       </AriaButton>
       <AriaHeading className="grow text-center text-sm font-medium" />
@@ -61,9 +61,9 @@ const CalendarHeading = (props: React.HTMLAttributes<HTMLElement>) => {
         )}
       >
         {direction === "rtl" ? (
-          <ChevronLeft aria-hidden className="size-4" />
+          <ChevronLeftIcon aria-hidden className="size-4" />
         ) : (
-          <ChevronRight aria-hidden className="size-4" />
+          <ChevronRightIcon aria-hidden className="size-4" />
         )}
       </AriaButton>
     </header>
@@ -80,17 +80,19 @@ const CalendarGrid = ({ className, ...props }: AriaCalendarGridProps) => (
   />
 )
 
-const CalendarGridHeader = ({
-  className,
-  ...props
-}: AriaCalendarGridHeaderProps) => <AriaCalendarGridHeader {...props} />
+const CalendarGridHeader = ({ ...props }: AriaCalendarGridHeaderProps) => (
+  <AriaCalendarGridHeader {...props} />
+)
 
 const CalendarHeaderCell = ({
   className,
   ...props
 }: AriaCalendarHeaderCellProps) => (
   <AriaCalendarHeaderCell
-    className="w-9 rounded-md text-[0.8rem] font-normal text-muted-foreground"
+    className={cn(
+      "w-8 rounded-md text-[0.8rem] font-normal text-muted-foreground",
+      className
+    )}
     {...props}
   />
 )
@@ -99,7 +101,7 @@ const CalendarGridBody = ({
   className,
   ...props
 }: AriaCalendarGridBodyProps) => (
-  <AriaCalendarGridBody className={cn("[&>tr>td]:p-0 ")} {...props} />
+  <AriaCalendarGridBody className={cn("[&>tr>td]:p-0", className)} {...props} />
 )
 
 const CalendarCell = ({ className, ...props }: AriaCalendarCellProps) => {
@@ -109,7 +111,7 @@ const CalendarCell = ({ className, ...props }: AriaCalendarCellProps) => {
       className={composeRenderProps(className, (className, renderProps) =>
         cn(
           buttonVariants({ variant: "ghost" }),
-          "relative flex size-9 items-center justify-center p-0 text-sm font-normal",
+          "relative flex size-8 items-center justify-center p-0 text-sm font-normal",
           /* Disabled */
           renderProps.isDisabled && "text-muted-foreground opacity-50",
           /* Selected */

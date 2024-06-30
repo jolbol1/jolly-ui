@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Check, Minus } from "lucide-react"
+import { CheckIcon, MinusIcon } from "@radix-ui/react-icons"
 import {
   Checkbox as AriaCheckbox,
   CheckboxGroup as AriaCheckboxGroup,
@@ -32,9 +32,9 @@ const Checkbox = ({ className, children, ...props }: AriaCheckboxProps) => (
       <>
         <div
           className={cn(
-            "flex size-4 shrink-0 items-center justify-center rounded-sm border border-primary text-current ring-offset-background",
+            "flex size-4 shrink-0 items-center justify-center rounded-sm border border-primary text-current shadow",
             /* Focus Visible */
-            "group-data-[focus-visible]:outline-none group-data-[focus-visible]:ring-2 group-data-[focus-visible]:ring-ring group-data-[focus-visible]:ring-offset-2",
+            "group-data-[focus-visible]:outline-none group-data-[focus-visible]:ring-1 group-data-[focus-visible]:ring-ring",
             /* Selected */
             "group-data-[indeterminate]:bg-primary group-data-[selected]:bg-primary group-data-[indeterminate]:text-primary-foreground  group-data-[selected]:text-primary-foreground",
             /* Disabled */
@@ -46,9 +46,9 @@ const Checkbox = ({ className, children, ...props }: AriaCheckboxProps) => (
           )}
         >
           {renderProps.isIndeterminate ? (
-            <Minus className="size-4" />
+            <MinusIcon className="size-4" />
           ) : renderProps.isSelected ? (
-            <Check className="size-4" />
+            <CheckIcon className="size-4" />
           ) : null}
         </div>
         {children}

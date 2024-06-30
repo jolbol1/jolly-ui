@@ -1,5 +1,6 @@
 "use client"
 
+import { CaretSortIcon } from "@radix-ui/react-icons"
 import { ChevronDown } from "lucide-react"
 import {
   Button as AriaButton,
@@ -54,11 +55,11 @@ const SelectTrigger = ({ className, children, ...props }: AriaButtonProps) => (
   <AriaButton
     className={composeRenderProps(className, (className) =>
       cn(
-        "flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background",
+        "flex h-9 w-full items-center justify-between whitespace-nowrap rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm",
         /* Disabled */
         "data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
         /* Focused */
-        "data-[focused]:outline-none data-[focused]:ring-2 data-[focused]:ring-ring data-[focused]:ring-offset-2",
+        "data-[focused]:outline-none data-[focused]:ring-1 data-[focused]:ring-ring",
         className
       )
     )}
@@ -67,7 +68,7 @@ const SelectTrigger = ({ className, children, ...props }: AriaButtonProps) => (
     {composeRenderProps(children, (children) => (
       <>
         {children}
-        <ChevronDown aria-hidden="true" className="size-4 opacity-50" />
+        <CaretSortIcon aria-hidden="true" className="size-4 opacity-50" />
       </>
     ))}
   </AriaButton>

@@ -80,17 +80,19 @@ const CalendarGrid = ({ className, ...props }: AriaCalendarGridProps) => (
   />
 )
 
-const CalendarGridHeader = ({
-  className,
-  ...props
-}: AriaCalendarGridHeaderProps) => <AriaCalendarGridHeader {...props} />
+const CalendarGridHeader = ({ ...props }: AriaCalendarGridHeaderProps) => (
+  <AriaCalendarGridHeader {...props} />
+)
 
 const CalendarHeaderCell = ({
   className,
   ...props
 }: AriaCalendarHeaderCellProps) => (
   <AriaCalendarHeaderCell
-    className="w-9 rounded-md text-[0.8rem] font-normal text-muted-foreground"
+    className={cn(
+      "w-9 rounded-md text-[0.8rem] font-normal text-muted-foreground",
+      className
+    )}
     {...props}
   />
 )
@@ -99,7 +101,7 @@ const CalendarGridBody = ({
   className,
   ...props
 }: AriaCalendarGridBodyProps) => (
-  <AriaCalendarGridBody className={cn("[&>tr>td]:p-0 ")} {...props} />
+  <AriaCalendarGridBody className={cn("[&>tr>td]:p-0", className)} {...props} />
 )
 
 const CalendarCell = ({ className, ...props }: AriaCalendarCellProps) => {

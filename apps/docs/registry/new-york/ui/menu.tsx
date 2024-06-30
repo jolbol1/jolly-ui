@@ -1,7 +1,11 @@
 "use client"
 
 import * as React from "react"
-import { Check, ChevronRight, Circle } from "lucide-react"
+import {
+  CheckIcon,
+  ChevronRightIcon,
+  DotFilledIcon,
+} from "@radix-ui/react-icons"
 import {
   Header as AriaHeader,
   Keyboard as AriaKeyboard,
@@ -76,10 +80,10 @@ const MenuItem = ({ children, className, ...props }: AriaMenuItemProps) => (
           {renderProps.isSelected && (
             <>
               {renderProps.selectionMode == "single" && (
-                <Circle className="size-2 fill-current" />
+                <DotFilledIcon className="size-4 fill-current" />
               )}
               {renderProps.selectionMode == "multiple" && (
-                <Check className="size-4" />
+                <CheckIcon className="size-4" />
               )}
             </>
           )}
@@ -87,7 +91,9 @@ const MenuItem = ({ children, className, ...props }: AriaMenuItemProps) => (
 
         {children}
 
-        {renderProps.hasSubmenu && <ChevronRight className="ml-auto size-4" />}
+        {renderProps.hasSubmenu && (
+          <ChevronRightIcon className="ml-auto size-4" />
+        )}
       </>
     ))}
   </AriaMenuItem>

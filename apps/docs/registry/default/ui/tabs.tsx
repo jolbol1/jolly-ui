@@ -20,7 +20,7 @@ function Tabs({ className, ...props }: AriaTabsProps) {
     <AriaTabs
       className={composeRenderProps(className, (className) =>
         cn(
-          "flex flex-col gap-2 group",
+          "group flex flex-col gap-2",
           /* Orientation */
           "data-[orientation=vertical]:flex-row",
           className
@@ -40,7 +40,7 @@ const TabList = <T extends object>({
       cn(
         "inline-flex h-10 items-center justify-center rounded-md bg-muted p-1 text-muted-foreground",
         /* Orientation */
-        "data-[orientation=vertical]:flex-col h-auto",
+        "data-[orientation=vertical]:h-auto data-[orientation=vertical]:flex-col",
         className
       )
     )}

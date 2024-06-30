@@ -1,4 +1,4 @@
-import { Check } from "lucide-react"
+import { CheckIcon } from "@radix-ui/react-icons"
 import {
   Collection as AriaCollection,
   Header as AriaHeader,
@@ -55,7 +55,7 @@ const ListBoxItem = <T extends object>({
           /* Hovered */
           "data-[hovered]:bg-accent data-[hovered]:text-accent-foreground",
           /* Selection */
-          "data-[selection-mode]:pl-8",
+          "data-[selection-mode]:pr-8",
           className
         )
       )}
@@ -64,8 +64,8 @@ const ListBoxItem = <T extends object>({
       {composeRenderProps(children, (children, renderProps) => (
         <>
           {renderProps.isSelected && (
-            <span className="absolute left-2 flex size-4 items-center justify-center">
-              <Check className="size-4" />
+            <span className="absolute right-2 flex size-4 items-center justify-center">
+              <CheckIcon className="size-4" />
             </span>
           )}
           {children}
@@ -81,7 +81,7 @@ function ListBoxHeader({
 }: React.ComponentProps<typeof AriaHeader>) {
   return (
     <AriaHeader
-      className={cn("py-1.5 pl-8 pr-2 text-sm font-semibold", className)}
+      className={cn("px-2 py-1.5 text-sm font-semibold", className)}
       {...props}
     />
   )

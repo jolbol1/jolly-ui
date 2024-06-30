@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils"
 
 const toggleVariants = cva(
   [
-    "inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors",
+    "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors",
     /* Disabled */
     "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
     /* Hover */
@@ -20,7 +20,7 @@ const toggleVariants = cva(
     /* Selected */
     "data-[selected]:bg-accent data-[selected]:text-accent-foreground",
     /* Focus Visible */
-    "data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2",
+    "data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring",
     /* Resets */
     "focus-visible:outline-none",
   ],
@@ -29,12 +29,12 @@ const toggleVariants = cva(
       variant: {
         default: "bg-transparent",
         outline:
-          "border border-input bg-transparent data-[hovered]:bg-accent data-[hovered]:text-accent-foreground",
+          "border border-input bg-transparent shadow-sm data-[hovered]:bg-accent data-[hovered]:text-accent-foreground",
       },
       size: {
-        default: "h-10 px-3",
-        sm: "h-9 px-2.5",
-        lg: "h-11 px-5",
+        default: "h-9 px-3",
+        sm: "h-8 px-2",
+        lg: "h-10 px-3",
       },
     },
     defaultVariants: {
