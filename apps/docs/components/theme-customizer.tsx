@@ -23,8 +23,8 @@ import { Link } from "@/registry/new-york/ui/link"
 import {
   Select,
   SelectCollection,
-  SelectContent,
   SelectItem,
+  SelectListBox,
   SelectPopover,
   SelectTrigger,
   SelectValue,
@@ -112,7 +112,7 @@ export function ThemeCustomizer({
                         <SelectValue />
                       </SelectTrigger>
                       <SelectPopover>
-                        <SelectContent>
+                        <SelectListBox>
                           <SelectCollection items={fontFamilies}>
                             {(item) => (
                               <SelectItem
@@ -125,7 +125,7 @@ export function ThemeCustomizer({
                               </SelectItem>
                             )}
                           </SelectCollection>
-                        </SelectContent>
+                        </SelectListBox>
                       </SelectPopover>
                     </Select>
                   </div>

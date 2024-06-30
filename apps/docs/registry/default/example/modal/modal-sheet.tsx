@@ -16,24 +16,28 @@ export default function ModalSheet() {
       <Button variant="outline">Edit Profile</Button>
       <DialogOverlay>
         <DialogContent side="right" className="sm:max-w-[425px]">
-          <DialogHeader>
-            <DialogTitle>Sign up</DialogTitle>
-          </DialogHeader>
-          <div className="grid gap-4 py-4">
-            <TextField autoFocus>
-              <Label>First Name</Label>
-              <Input />
-            </TextField>
-            <TextField>
-              <Label>Last Name</Label>
-              <Input />
-            </TextField>
-          </div>
-          <DialogFooter>
-            <Button onPress={close} type="submit">
-              Save changes
-            </Button>
-          </DialogFooter>
+          {({ close }) => (
+            <>
+              <DialogHeader>
+                <DialogTitle>Sign up</DialogTitle>
+              </DialogHeader>
+              <div className="grid gap-4 py-4">
+                <TextField autoFocus>
+                  <Label>First Name</Label>
+                  <Input />
+                </TextField>
+                <TextField>
+                  <Label>Last Name</Label>
+                  <Input />
+                </TextField>
+              </div>
+              <DialogFooter>
+                <Button onPress={close} type="submit">
+                  Save changes
+                </Button>
+              </DialogFooter>
+            </>
+          )}
         </DialogContent>
       </DialogOverlay>
     </DialogTrigger>
