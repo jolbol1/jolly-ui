@@ -67,7 +67,7 @@ export function ComponentExample({
             )
           )}
         </div>
-        <TabPanel id="preview" className="rounded-md border overflow-auto">
+        <TabPanel id="preview" className="overflow-auto rounded-md border">
           <div
             className={cn("flex min-h-[350px] justify-center p-10", {
               "items-center": align === "center",

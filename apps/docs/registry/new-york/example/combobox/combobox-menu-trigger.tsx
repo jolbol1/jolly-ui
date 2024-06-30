@@ -13,13 +13,13 @@ import { Label } from "@/registry/new-york/ui/label"
 
 export default function ComboboxMenuTrigger() {
   return (
-    <div className="flex gap-6 flex-col">
+    <div className="flex flex-col gap-6">
       <Combobox menuTrigger="input">
         <Label>Favorite Animal (Input)</Label>
         <FieldGroup className="p-0">
           <ComboboxInput />
-          <Button variant="ghost" size="icon" className="h-6 w-6 p-1 mr-1">
-            <ChevronsUpDown aria-hidden="true" className="h-4 w-4 opacity-50" />
+          <Button variant="ghost" size="icon" className="mr-1 size-6 p-1">
+            <ChevronsUpDown aria-hidden="true" className="size-4 opacity-50" />
           </Button>
         </FieldGroup>
         <ComboboxPopover>
@@ -37,8 +37,8 @@ export default function ComboboxMenuTrigger() {
         <Label>Favorite Animal (Focus)</Label>
         <FieldGroup className="p-0">
           <ComboboxInput />
-          <Button variant="ghost" size="icon" className="h-6 w-6 p-1 mr-1">
-            <ChevronsUpDown aria-hidden="true" className="h-4 w-4 opacity-50" />
+          <Button variant="ghost" size="icon" className="mr-1 size-6 p-1">
+            <ChevronsUpDown aria-hidden="true" className="size-4 opacity-50" />
           </Button>
         </FieldGroup>
         <ComboboxPopover>
@@ -56,8 +56,8 @@ export default function ComboboxMenuTrigger() {
         <Label>Favorite Animal (Manual)</Label>
         <FieldGroup className="p-0">
           <ComboboxInput />
-          <Button variant="ghost" size="icon" className="h-6 w-6 p-1 mr-1">
-            <ChevronsUpDown aria-hidden="true" className="h-4 w-4 opacity-50" />
+          <Button variant="ghost" size="icon" className="mr-1 size-6 p-1">
+            <ChevronsUpDown aria-hidden="true" className="size-4 opacity-50" />
           </Button>
         </FieldGroup>
         <ComboboxPopover>

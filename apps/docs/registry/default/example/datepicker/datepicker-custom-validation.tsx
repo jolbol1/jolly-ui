@@ -24,7 +24,7 @@ export default function DatepickerCustomValidation() {
 
   return (
     <DatePicker
-      className="group min-w-[208px] flex flex-col gap-2"
+      className="group flex min-w-[208px] flex-col gap-2"
       validate={(date) =>
         date && isWeekend(date, locale) ? "We are closed on weekends." : null
       }

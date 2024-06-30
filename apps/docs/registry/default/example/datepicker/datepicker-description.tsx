@@ -20,9 +20,9 @@ import { FieldError, FieldGroup, Label } from "@/registry/default/ui/field"
 
 export default function DatepickerDescription() {
   return (
-    <DatePicker className="group min-w-[208px] flex flex-col gap-2">
+    <DatePicker className="group flex min-w-[208px] flex-col gap-2">
       <Label>Appointment Date</Label>
-      <FieldGroup className="min-w-[208px] w-fit">
+      <FieldGroup className="w-fit min-w-[208px]">
         <DateInput className="flex-1" variant="ghost" />
         <Button
           variant="ghost"

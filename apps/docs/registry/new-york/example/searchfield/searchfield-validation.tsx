@@ -12,7 +12,7 @@ import {
 export default function SearchFieldValidation() {
   return (
     <Form className="flex flex-col gap-2">
-      <SearchField className="max-w-[200px] group" isRequired>
+      <SearchField className="group max-w-[200px]" isRequired>
         <Label>Search</Label>
         <FieldGroup>
           <SearchIcon aria-hidden className="size-4 text-muted-foreground" />

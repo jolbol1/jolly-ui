@@ -26,18 +26,18 @@ export function HslaPicker() {
   return (
     <ColorPicker value={color} onChange={setColor}>
       <DialogTrigger>
-        <Button variant="ghost" className="h-fit flex gap-2 items-center p-1">
-          <ColorSwatch className="rounded-md size-8 border-2" />
+        <Button variant="ghost" className="flex h-fit items-center gap-2 p-1">
+          <ColorSwatch className="size-8 rounded-md border-2" />
           HSLA Color
         </Button>
         <Popover placement="bottom start" className="w-fit">
-          <Dialog className="p-3 outline-none flex flex-col gap-4">
+          <Dialog className="flex flex-col gap-4 p-3 outline-none">
             <div>
               <ColorArea
                 colorSpace="hsb"
                 xChannel="saturation"
                 yChannel="brightness"
-                className="border-b-0 rounded-b-none h-[136px]"
+                className="h-[136px] rounded-b-none border-b-0"
               >
                 <ColorThumb className="z-50" />
               </ColorArea>
@@ -58,7 +58,7 @@ export function HslaPicker() {
                 </SliderTrack>
               </ColorSlider>
             </div>
-            <div className="grid grid-cols-4 gap-1 w-[192px]">
+            <div className="grid w-[192px] grid-cols-4 gap-1">
               {getColorChannels("hsl").map((channel) => (
                 <ColorField
                   colorSpace="hsl"

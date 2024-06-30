@@ -14,7 +14,7 @@ export default function SliderStepValues() {
       minValue={0}
       maxValue={100}
       step={5}
-      className="w-[60%] flex flex-col items-start gap-2"
+      className="flex w-3/5 flex-col items-start gap-2"
     >
       <div className="flex w-full justify-between">
         <Label>Amount</Label>

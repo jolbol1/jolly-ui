@@ -10,9 +10,9 @@ import {
 
 export default function SearchFieldDescription() {
   return (
-    <SearchField className="min-w-[200px] group flex flex-col gap-2" isRequired>
+    <SearchField className="group flex min-w-[200px] flex-col gap-2" isRequired>
       <Label>Search</Label>
-      <FieldGroup className="min-w-[200px] w-fit">
+      <FieldGroup className="w-fit min-w-[200px]">
         <SearchIcon aria-hidden className="size-4 text-muted-foreground" />
         <SearchFieldInput placeholder="Search..." />
         <SearchFieldClear>

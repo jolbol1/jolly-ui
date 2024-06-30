@@ -7,7 +7,7 @@ export default function TooltipDisabled() {
   return (
     <TooltipTrigger isDisabled>
       <Button variant="outline" size="icon" aria-label="Edit">
-        <Pencil className="h-4 w-4" />
+        <Pencil className="size-4" />
       </Button>
       <Tooltip>Edit</Tooltip>
     </TooltipTrigger>

@@ -12,7 +12,7 @@ export default function SliderVertical() {
       aria-label="Opacity"
       maxValue={1}
       step={0.01}
-      className="h-[150px] flex flex-col items-start gap-2"
+      className="flex h-[150px] flex-col items-start gap-2"
     >
       <SliderTrack>
         <SliderFillTrack />

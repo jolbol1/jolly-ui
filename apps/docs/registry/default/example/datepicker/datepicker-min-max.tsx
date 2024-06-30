@@ -24,7 +24,7 @@ export default function DatepickerMinMax() {
     <Form className="flex flex-col gap-2">
       <DatePicker
         minValue={today(getLocalTimeZone())}
-        className="group min-w-[208px] flex flex-col gap-2"
+        className="group flex min-w-[208px] flex-col gap-2"
       >
         <Label>Appointment Date</Label>
         <FieldGroup>

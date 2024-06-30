@@ -27,7 +27,7 @@ export default function DateRangeNonContinuous() {
       <DateRangePicker
         isDateUnavailable={(date) => isWeekend(date, locale)}
         allowsNonContiguousRanges
-        className="min-w-[320px] space-y-1 group"
+        className="group min-w-[320px] space-y-1"
       >
         <Label>Time off request</Label>
         <FieldGroup>

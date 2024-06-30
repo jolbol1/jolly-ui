@@ -56,7 +56,7 @@ export function CardsPaymentMethod() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
-                className="mb-3 h-6 w-6"
+                className="mb-3 size-6"
               >
                 <rect width="20" height="14" x="2" y="5" rx="2" />
                 <path d="M2 10h20" />
@@ -72,7 +72,7 @@ export function CardsPaymentMethod() {
               className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground data-[selected]:border-primary [&>.jolly-Radio]:hidden"
               aria-label="Paypal"
             >
-              <Icons.paypal aria-hidden className="mb-3 h-6 w-6" />
+              <Icons.paypal aria-hidden className="mb-3 size-6" />
               Paypal
             </Radio>
           </div>
@@ -84,7 +84,7 @@ export function CardsPaymentMethod() {
               className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground data-[selected]:border-primary [&>.jolly-Radio]:hidden"
               aria-label="Apple"
             >
-              <Icons.apple aria-hidden className="mb-3 h-6 w-6" />
+              <Icons.apple aria-hidden className="mb-3 size-6" />
               Apple
             </Radio>
           </div>

@@ -7,7 +7,7 @@ export default function TooltipOffset() {
   return (
     <TooltipTrigger>
       <Button variant="outline" size="icon" aria-label="Edit">
-        <MoveRight className="h-4 w-4" />
+        <MoveRight className="size-4" />
       </Button>
       <Tooltip placement="bottom" crossOffset={60}>
         This will shift over to the right.

@@ -12,7 +12,7 @@ import {
 
 export default function SelectDescription() {
   return (
-    <Select isRequired className="w-[200px] group" placeholder="Select an item">
+    <Select isRequired className="group w-[200px]" placeholder="Select an item">
       <Label>Favorite Animal</Label>
       <SelectTrigger>
         <SelectValue />

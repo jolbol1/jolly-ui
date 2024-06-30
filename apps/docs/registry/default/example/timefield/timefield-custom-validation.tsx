@@ -16,7 +16,7 @@ export default function TimeFieldCustomValidation() {
         className={"group"}
       >
         <Label>Meeting time</Label>
-        <DateInput className={"min-w-[100px] w-fit"} />
+        <DateInput className={"w-fit min-w-[100px]"} />
         <FieldError />
       </TimeField>
       <Button className="w-fit" type="submit">

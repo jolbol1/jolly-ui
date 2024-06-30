@@ -14,7 +14,7 @@ export function Announcement() {
       🎉 <Separator className="mx-2 h-4" orientation="vertical" />{" "}
       <span className="sm:hidden">Color Pickers and Submenu!</span>
       <span className="hidden sm:inline">Color Pickers and Submenu!</span>
-      <ArrowRightIcon className="ml-1 h-4 w-4" />
+      <ArrowRightIcon className="ml-1 size-4" />
     </Link>
   )
 }

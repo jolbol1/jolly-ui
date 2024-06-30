@@ -161,14 +161,14 @@ export function ThemeCustomizer({
                               <>
                                 <span
                                   className={cn(
-                                    "mr-1 flex h-4 w-4 shrink-0 -translate-x-1 items-center justify-center rounded-full ",
+                                    "mr-1 flex size-4 shrink-0 -translate-x-1 items-center justify-center rounded-full ",
                                     theme.name
                                   )}
                                 >
                                   {isSelected && (
                                     <CheckIcon
                                       className={cn(
-                                        "h-3 w-3 text-white",
+                                        "size-3 text-white",
                                         theme.name === "zinc" && "text-black"
                                       )}
                                     />
@@ -216,14 +216,14 @@ export function ThemeCustomizer({
                               <>
                                 <span
                                   className={cn(
-                                    "mr-1 flex h-4 w-4 shrink-0 -translate-x-1 items-center justify-center rounded-full",
+                                    "mr-1 flex size-4 shrink-0 -translate-x-1 items-center justify-center rounded-full",
                                     theme.name
                                   )}
                                 >
                                   {isSelected && (
                                     <CheckIcon
                                       className={cn(
-                                        "h-3 w-3 text-white",
+                                        "size-3 text-white",
                                         theme.name === "zinc" && "text-black"
                                       )}
                                     />
@@ -272,7 +272,7 @@ export function ThemeCustomizer({
                             mode === "light" && "border-2 border-primary"
                           )}
                         >
-                          <SunIcon className="mr-1 h-4 w-4 -translate-x-1" />
+                          <SunIcon className="mr-1 size-4 -translate-x-1" />
                           Light
                         </Button>
                         <Button
@@ -283,7 +283,7 @@ export function ThemeCustomizer({
                             mode === "dark" && "border-2 border-primary"
                           )}
                         >
-                          <MoonIcon className="mr-1 h-4 w-4 -translate-x-1" />
+                          <MoonIcon className="mr-1 size-4 -translate-x-1" />
                           Dark
                         </Button>
                       </>
@@ -345,9 +345,9 @@ function CustomizerCode() {
           className="absolute right-6 top-4 z-[100] bg-muted text-muted-foreground hover:bg-muted hover:text-muted-foreground"
         >
           {hasCopied ? (
-            <CheckIcon className="mr-2 h-4 w-4" />
+            <CheckIcon className="mr-2 size-4" />
           ) : (
-            <CopyIcon className="mr-2 h-4 w-4" />
+            <CopyIcon className="mr-2 size-4" />
           )}
           Copy
         </Button>

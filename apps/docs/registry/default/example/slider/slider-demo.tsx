@@ -11,7 +11,7 @@ export default function SliderDemo() {
   return (
     <Slider
       defaultValue={30}
-      className="w-[60%] flex flex-col items-start gap-2"
+      className="flex w-3/5 flex-col items-start gap-2"
     >
       <div className="flex w-full justify-between">
         <Label>Opacity</Label>

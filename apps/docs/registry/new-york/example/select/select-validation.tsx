@@ -16,7 +16,7 @@ export default function SelectValidation() {
     <Form className="flex flex-col gap-2">
       <Select
         isRequired
-        className="w-[200px] group"
+        className="group w-[200px]"
         placeholder="Select an item"
       >
         <Label>Favorite Animal</Label>

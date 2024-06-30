@@ -47,7 +47,7 @@ export default function DateRangeUnavailable() {
             ? "Selected date range may not include unavailable dates."
             : null
         }
-        className="min-w-[320px] space-y-1 group"
+        className="group min-w-[320px] space-y-1"
       >
         <Label>Trip dates</Label>
         <FieldGroup>

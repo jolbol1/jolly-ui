@@ -12,9 +12,9 @@ export default function MeterDemo() {
   }, [])
 
   return (
-    <Meter value={progress} className={"w-[60%]"}>
+    <Meter value={progress} className={"w-3/5"}>
       {({ valueText }) => (
-        <div className="w-full flex justify-between">
+        <div className="flex w-full justify-between">
           <Label>Storage space</Label>
           <span className="value">{valueText}</span>
         </div>

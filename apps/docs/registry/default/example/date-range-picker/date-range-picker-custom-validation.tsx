@@ -32,7 +32,7 @@ export default function DateRangeCustomValidation() {
           start: today(getLocalTimeZone()),
           end: today(getLocalTimeZone()).add({ weeks: 1, days: 3 }),
         }}
-        className="min-w-[320px] space-y-1 group"
+        className="group min-w-[320px] space-y-1"
       >
         <Label>Trip dates</Label>
         <FieldGroup>

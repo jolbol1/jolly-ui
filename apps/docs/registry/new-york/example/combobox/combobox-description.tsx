@@ -18,8 +18,8 @@ export default function ComboboxDescription() {
       <Label>Favorite Animal</Label>
       <FieldGroup className="p-0">
         <ComboboxInput />
-        <Button variant="ghost" size="icon" className="h-6 w-6 p-1 mr-1">
-          <ChevronsUpDown aria-hidden="true" className="h-4 w-4 opacity-50" />
+        <Button variant="ghost" size="icon" className="mr-1 size-6 p-1">
+          <ChevronsUpDown aria-hidden="true" className="size-4 opacity-50" />
         </Button>
       </FieldGroup>
       <Text className="text-sm text-muted-foreground" slot="description">

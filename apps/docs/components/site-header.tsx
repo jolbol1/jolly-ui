@@ -29,7 +29,7 @@ export function SiteHeader() {
               rel="noreferrer"
               className="hidden sm:inline-flex"
             >
-              <Icons.gitHub className="h-4 w-4" />
+              <Icons.gitHub className="size-4" />
               <span className="sr-only">GitHub</span>
             </Link>
             <Link
@@ -40,7 +40,7 @@ export function SiteHeader() {
               rel="noreferrer"
               className="hidden sm:inline-flex"
             >
-              <Icons.twitter className="h-3 w-3 fill-current" />
+              <Icons.twitter className="size-3 fill-current" />
               <span className="sr-only">Twitter</span>
             </Link>
             <ModeToggle />
