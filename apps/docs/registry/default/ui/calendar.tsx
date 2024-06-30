@@ -16,10 +16,14 @@ import {
   CalendarGridProps as AriaCalendarGridProps,
   CalendarHeaderCell as AriaCalendarHeaderCell,
   CalendarHeaderCellProps as AriaCalendarHeaderCellProps,
+  CalendarProps as AriaCalendarProps,
+  DateValue as AriaDateValue,
   Heading as AriaHeading,
   RangeCalendar as AriaRangeCalendar,
+  RangeCalendarProps as AriaRangeCalendarProps,
   RangeCalendarStateContext as AriaRangeCalendarStateContext,
   composeRenderProps,
+  Text,
   useLocale,
 } from "react-aria-components"
 
@@ -149,6 +153,76 @@ const CalendarCell = ({ className, ...props }: AriaCalendarCellProps) => {
   )
 }
 
+interface JollyCalendarProps<T extends AriaDateValue>
+  extends AriaCalendarProps<T> {
+  errorMessage?: string
+}
+
+function JollyCalendar<T extends AriaDateValue>({
+  errorMessage,
+  className,
+  ...props
+}: JollyCalendarProps<T>) {
+  return (
+    <Calendar
+      className={composeRenderProps(className, (className) =>
+        cn("w-fit", className)
+      )}
+      {...props}
+    >
+      <CalendarHeading />
+      <CalendarGrid>
+        <CalendarGridHeader>
+          {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
+        </CalendarGridHeader>
+        <CalendarGridBody>
+          {(date) => <CalendarCell date={date} />}
+        </CalendarGridBody>
+      </CalendarGrid>
+      {errorMessage && (
+        <Text className="text-sm text-destructive" slot="errorMessage">
+          {errorMessage}
+        </Text>
+      )}
+    </Calendar>
+  )
+}
+
+interface JollyRangeCalendarProps<T extends AriaDateValue>
+  extends AriaRangeCalendarProps<T> {
+  errorMessage?: string
+}
+
+function JollyRangeCalendar<T extends AriaDateValue>({
+  errorMessage,
+  className,
+  ...props
+}: JollyRangeCalendarProps<T>) {
+  return (
+    <RangeCalendar
+      className={composeRenderProps(className, (className) =>
+        cn("w-fit", className)
+      )}
+      {...props}
+    >
+      <CalendarHeading />
+      <CalendarGrid>
+        <CalendarGridHeader>
+          {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
+        </CalendarGridHeader>
+        <CalendarGridBody>
+          {(date) => <CalendarCell date={date} />}
+        </CalendarGridBody>
+      </CalendarGrid>
+      {errorMessage && (
+        <Text slot="errorMessage" className="text-sm text-destructive">
+          {errorMessage}
+        </Text>
+      )}
+    </RangeCalendar>
+  )
+}
+
 export {
   Calendar,
   CalendarCell,
@@ -158,4 +232,7 @@ export {
   CalendarHeaderCell,
   CalendarHeading,
   RangeCalendar,
+  JollyCalendar,
+  JollyRangeCalendar,
 }
+export type { JollyCalendarProps, JollyRangeCalendarProps }

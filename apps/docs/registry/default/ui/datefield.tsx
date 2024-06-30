@@ -1,17 +1,23 @@
 import { VariantProps } from "class-variance-authority"
 import {
   DateField as AriaDateField,
+  DateFieldProps as AriaDateFieldProps,
   DateInput as AriaDateInput,
   DateInputProps as AriaDateInputProps,
   DateSegment as AriaDateSegment,
   DateSegmentProps as AriaDateSegmentProps,
+  DateValue as AriaDateValue,
   TimeField as AriaTimeField,
+  TimeFieldProps as AriaTimeFieldProps,
+  TimeValue as AriaTimeValue,
+  ValidationResult as AriaValidationResult,
   composeRenderProps,
+  Text,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"
 
-import { fieldGroupVariants } from "./field"
+import { FieldError, fieldGroupVariants, Label } from "./field"
 
 const DateField = AriaDateField
 
@@ -60,5 +66,74 @@ function DateInput({
   )
 }
 
-export { DateField, DateSegment, DateInput, TimeField }
-export type { DateInputProps }
+interface JollyDateFieldProps<T extends AriaDateValue>
+  extends AriaDateFieldProps<T> {
+  label?: string
+  description?: string
+  errorMessage?: string | ((validation: AriaValidationResult) => string)
+}
+
+function JollyDateField<T extends AriaDateValue>({
+  label,
+  description,
+  className,
+  errorMessage,
+  ...props
+}: JollyDateFieldProps<T>) {
+  return (
+    <DateField
+      className={composeRenderProps(className, (className) =>
+        cn("group flex flex-col gap-2", className)
+      )}
+      {...props}
+    >
+      <Label>{label}</Label>
+      <DateInput />
+      {description && (
+        <Text className="text-sm text-muted-foreground" slot="description">
+          {description}
+        </Text>
+      )}
+      <FieldError>{errorMessage}</FieldError>
+    </DateField>
+  )
+}
+
+interface JollyTimeFieldProps<T extends AriaTimeValue>
+  extends AriaTimeFieldProps<T> {
+  label?: string
+  description?: string
+  errorMessage?: string | ((validation: AriaValidationResult) => string)
+}
+
+function JollyTimeField<T extends AriaTimeValue>({
+  label,
+  description,
+  errorMessage,
+  className,
+  ...props
+}: JollyTimeFieldProps<T>) {
+  return (
+    <TimeField
+      className={composeRenderProps(className, (className) =>
+        cn("group flex flex-col gap-2", className)
+      )}
+      {...props}
+    >
+      <Label>{label}</Label>
+      <DateInput />
+      {description && <Text slot="description">{description}</Text>}
+      <FieldError>{errorMessage}</FieldError>
+    </TimeField>
+  )
+}
+
+export {
+  DateField,
+  DateSegment,
+  DateInput,
+  TimeField,
+  JollyDateField,
+  JollyTimeField,
+}
+export type { DateInputProps, JollyDateFieldProps, JollyTimeFieldProps }

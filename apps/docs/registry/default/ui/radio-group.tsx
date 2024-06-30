@@ -6,11 +6,14 @@ import {
   RadioGroup as AriaRadioGroup,
   RadioGroupProps as AriaRadioGroupProps,
   RadioProps as AriaRadioProps,
+  ValidationResult as AriaValidationResult,
   composeRenderProps,
+  Text,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"
 
+import { FieldError, Label } from "./field"
 import { labelVariants } from "./label"
 
 const RadioGroup = ({
@@ -74,4 +77,42 @@ const Radio = ({ className, children, ...props }: AriaRadioProps) => {
   )
 }
 
-export { RadioGroup, Radio }
+interface JollyRadioGroupProps extends AriaRadioGroupProps {
+  label?: string
+  description?: string
+  errorMessage?: string | ((validation: AriaValidationResult) => string)
+}
+
+function JollyRadioGroup({
+  label,
+  description,
+  className,
+  errorMessage,
+  children,
+  ...props
+}: JollyRadioGroupProps) {
+  return (
+    <RadioGroup
+      className={composeRenderProps(className, (className) =>
+        cn("group flex flex-col gap-2", className)
+      )}
+      {...props}
+    >
+      {composeRenderProps(children, (children) => (
+        <>
+          <Label>{label}</Label>
+          {children}
+          {description && (
+            <Text slot="description" className="text-sm text-muted-foreground">
+              {description}
+            </Text>
+          )}
+          <FieldError>{errorMessage}</FieldError>
+        </>
+      ))}
+    </RadioGroup>
+  )
+}
+
+export { RadioGroup, Radio, JollyRadioGroup }
+export type { JollyRadioGroupProps }

@@ -9,6 +9,8 @@ import {
 
 import { cn } from "@/lib/utils"
 
+import { Label, labelVariants } from "./label"
+
 interface MeterProps extends AriaMeterProps {
   barClassName?: string
   fillClassName?: string
@@ -51,5 +53,33 @@ const Meter = ({
   </AriaMeter>
 )
 
-export { Meter }
-export type { MeterProps }
+interface JollyMeterProps extends MeterProps {
+  label?: string
+  showValue?: boolean
+}
+
+function JollyMeter({
+  label,
+  className,
+  showValue = true,
+  ...props
+}: JollyMeterProps) {
+  return (
+    <Meter
+      className={composeRenderProps(className, (className) =>
+        cn("group flex flex-col gap-2", className)
+      )}
+      {...props}
+    >
+      {({ valueText }) => (
+        <div className="flex w-full justify-between">
+          <Label>{label}</Label>
+          {showValue && <span className={labelVariants()}>{valueText}</span>}
+        </div>
+      )}
+    </Meter>
+  )
+}
+
+export { Meter, JollyMeter }
+export type { MeterProps, JollyMeterProps }

@@ -1,3 +1,4 @@
+import { SearchIcon, XIcon } from "lucide-react"
 import {
   Button as AriaButton,
   ButtonProps as AriaButtonProps,
@@ -7,10 +8,14 @@ import {
   InputProps as AriaInputProps,
   SearchField as AriaSearchField,
   SearchFieldProps as AriaSearchFieldProps,
+  ValidationResult as AriaValidationResult,
   composeRenderProps,
+  Text,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"
+
+import { FieldError, FieldGroup, Label } from "./field"
 
 function SearchField({ className, ...props }: AriaSearchFieldProps) {
   return (
@@ -75,4 +80,49 @@ function SearchFieldClear({ className, ...props }: AriaButtonProps) {
   )
 }
 
-export { SearchField, SearchFieldGroup, SearchFieldInput, SearchFieldClear }
+interface JollySearchFieldProps extends AriaSearchFieldProps {
+  label?: string
+  description?: string
+  errorMessage?: string | ((validation: AriaValidationResult) => string)
+}
+
+function JollySearchField({
+  label,
+  description,
+  className,
+  errorMessage,
+  ...props
+}: JollySearchFieldProps) {
+  return (
+    <SearchField
+      className={composeRenderProps(className, (className) =>
+        cn("group flex flex-col gap-2", className)
+      )}
+      {...props}
+    >
+      <Label>{label}</Label>
+      <FieldGroup>
+        <SearchIcon aria-hidden className="size-4 text-muted-foreground" />
+        <SearchFieldInput placeholder="Search..." />
+        <SearchFieldClear>
+          <XIcon aria-hidden className="size-4" />
+        </SearchFieldClear>
+      </FieldGroup>
+      {description && (
+        <Text className="text-sm text-muted-foreground" slot="description">
+          {description}
+        </Text>
+      )}
+      <FieldError>{errorMessage}</FieldError>
+    </SearchField>
+  )
+}
+
+export {
+  SearchField,
+  SearchFieldGroup,
+  SearchFieldInput,
+  SearchFieldClear,
+  JollySearchField,
+}
+export type { JollySearchFieldProps }

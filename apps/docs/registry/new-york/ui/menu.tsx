@@ -6,6 +6,7 @@ import {
   ChevronRightIcon,
   DotFilledIcon,
 } from "@radix-ui/react-icons"
+import { VariantProps } from "class-variance-authority"
 import {
   Header as AriaHeader,
   Keyboard as AriaKeyboard,
@@ -14,6 +15,7 @@ import {
   MenuItemProps as AriaMenuItemProps,
   MenuProps as AriaMenuProps,
   MenuTrigger as AriaMenuTrigger,
+  MenuTriggerProps as AriaMenuTriggerProps,
   Separator as AriaSeparator,
   SeparatorProps as AriaSeparatorProps,
   SubmenuTrigger as AriaSubmenuTrigger,
@@ -23,6 +25,7 @@ import {
 
 import { cn } from "@/lib/utils"
 
+import { Button, buttonVariants } from "./button"
 import { ListBoxCollection, ListBoxSection } from "./list-box"
 import { SelectPopover } from "./select"
 
@@ -140,6 +143,31 @@ const MenuKeyboard = ({
   )
 }
 
+interface JollyMenuProps<T>
+  extends AriaMenuProps<T>,
+    VariantProps<typeof buttonVariants>,
+    Omit<AriaMenuTriggerProps, "children"> {
+  label?: string
+}
+function JollyMenu<T extends object>({
+  label,
+  children,
+  variant,
+  size,
+  ...props
+}: JollyMenuProps<T>) {
+  return (
+    <MenuTrigger {...props}>
+      <Button variant={variant} size={size}>
+        {label}
+      </Button>
+      <MenuPopover className="min-w-[--trigger-width]">
+        <Menu {...props}>{children}</Menu>
+      </MenuPopover>
+    </MenuTrigger>
+  )
+}
+
 export {
   MenuTrigger,
   Menu,
@@ -151,5 +179,6 @@ export {
   MenuSection,
   MenuSubTrigger,
   MenuCollection,
+  JollyMenu,
 }
-export type { MenuHeaderProps }
+export type { MenuHeaderProps, JollyMenuProps }

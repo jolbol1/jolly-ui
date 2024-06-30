@@ -9,6 +9,8 @@ import {
 
 import { cn } from "@/lib/utils"
 
+import { Label, labelVariants } from "./field"
+
 interface ProgressProps extends AriaProgressBarProps {
   barClassName?: string
   fillClassName?: string
@@ -51,5 +53,33 @@ const Progress = ({
   </AriaProgressBar>
 )
 
-export { Progress }
-export type { ProgressProps }
+interface JollyProgressBarProps extends ProgressProps {
+  label?: string
+  showValue?: boolean
+}
+
+function JollyProgressBar({
+  label,
+  className,
+  showValue = true,
+  ...props
+}: JollyProgressBarProps) {
+  return (
+    <Progress
+      className={composeRenderProps(className, (className) =>
+        cn("group flex flex-col gap-2", className)
+      )}
+      {...props}
+    >
+      {({ valueText }) => (
+        <div className="flex w-full justify-between">
+          <Label>{label}</Label>
+          {showValue && <span className={labelVariants()}>{valueText}</span>}
+        </div>
+      )}
+    </Progress>
+  )
+}
+
+export { Progress, JollyProgressBar }
+export type { ProgressProps, JollyProgressBarProps }

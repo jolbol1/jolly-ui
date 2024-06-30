@@ -4,12 +4,16 @@ import {
   Input as AriaInput,
   InputProps as AriaInputProps,
   NumberField as AriaNumberField,
+  NumberFieldProps as AriaNumberFieldProps,
+  ValidationResult as AriaValidationResult,
   composeRenderProps,
+  Text,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"
 
 import { Button } from "./button"
+import { FieldError, FieldGroup, Label } from "./field"
 
 const NumberField = AriaNumberField
 
@@ -63,9 +67,47 @@ function NumberFieldStepper({ className, ...props }: AriaButtonProps) {
   )
 }
 
+interface JollyNumberFieldProps extends AriaNumberFieldProps {
+  label?: string
+  description?: string
+  errorMessage?: string | ((validation: AriaValidationResult) => string)
+}
+
+function JollyNumberField({
+  label,
+  description,
+  errorMessage,
+  className,
+  ...props
+}: JollyNumberFieldProps) {
+  return (
+    <NumberField
+      className={composeRenderProps(className, (className) =>
+        cn("group flex flex-col gap-2", className)
+      )}
+      {...props}
+    >
+      <Label>{label}</Label>
+      <FieldGroup>
+        <NumberFieldInput />
+        <NumberFieldSteppers />
+      </FieldGroup>
+      {description && (
+        <Text className="text-sm text-muted-foreground" slot="description">
+          {description}
+        </Text>
+      )}
+      <FieldError>{errorMessage}</FieldError>
+    </NumberField>
+  )
+}
+
 export {
   NumberField,
   NumberFieldInput,
   NumberFieldSteppers,
   NumberFieldStepper,
+  JollyNumberField,
 }
+
+export type { JollyNumberFieldProps }

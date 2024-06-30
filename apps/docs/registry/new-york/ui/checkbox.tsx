@@ -5,13 +5,17 @@ import { CheckIcon, MinusIcon } from "@radix-ui/react-icons"
 import {
   Checkbox as AriaCheckbox,
   CheckboxGroup as AriaCheckboxGroup,
+  CheckboxGroupProps as AriaCheckboxGroupProps,
+  ValidationResult as AriaValidationResult,
   composeRenderProps,
+  Text,
   type CheckboxProps as AriaCheckboxProps,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"
 
-import { labelVariants } from "./label"
+import { FieldError } from "./field"
+import { Label, labelVariants } from "./label"
 
 const CheckboxGroup = AriaCheckboxGroup
 
@@ -57,4 +61,42 @@ const Checkbox = ({ className, children, ...props }: AriaCheckboxProps) => (
   </AriaCheckbox>
 )
 
-export { Checkbox, CheckboxGroup }
+interface JollyCheckboxGroupProps extends AriaCheckboxGroupProps {
+  label?: string
+  description?: string
+  errorMessage?: string | ((validation: AriaValidationResult) => string)
+}
+
+function JollyCheckboxGroup({
+  label,
+  description,
+  errorMessage,
+  className,
+  children,
+  ...props
+}: JollyCheckboxGroupProps) {
+  return (
+    <CheckboxGroup
+      className={composeRenderProps(className, (className) =>
+        cn("group flex flex-col gap-2", className)
+      )}
+      {...props}
+    >
+      {composeRenderProps(children, (children) => (
+        <>
+          <Label>{label}</Label>
+          {children}
+          {description && (
+            <Text className="text-sm text-muted-foreground" slot="description">
+              {description}
+            </Text>
+          )}
+          <FieldError>{errorMessage}</FieldError>
+        </>
+      ))}
+    </CheckboxGroup>
+  )
+}
+
+export { Checkbox, CheckboxGroup, JollyCheckboxGroup }
+export type { JollyCheckboxGroupProps }

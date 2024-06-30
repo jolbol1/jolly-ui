@@ -9,13 +9,17 @@ import {
   ListBoxProps as AriaListBoxProps,
   PopoverProps as AriaPopoverProps,
   Select as AriaSelect,
+  SelectProps as AriaSelectProps,
   SelectValue as AriaSelectValue,
   SelectValueProps as AriaSelectValueProps,
+  ValidationResult as AriaValidationResult,
   composeRenderProps,
+  Text,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"
 
+import { FieldError, Label } from "./field"
 import {
   ListBoxCollection,
   ListBoxHeader,
@@ -98,6 +102,48 @@ const SelectListBox = <T extends object>({
   />
 )
 
+interface JollySelectProps<T extends object>
+  extends Omit<AriaSelectProps<T>, "children"> {
+  label?: string
+  description?: string
+  errorMessage?: string | ((validation: AriaValidationResult) => string)
+  items?: Iterable<T>
+  children: React.ReactNode | ((item: T) => React.ReactNode)
+}
+
+function JollySelect<T extends object>({
+  label,
+  description,
+  errorMessage,
+  children,
+  className,
+  items,
+  ...props
+}: JollySelectProps<T>) {
+  return (
+    <Select
+      className={composeRenderProps(className, (className) =>
+        cn("group flex flex-col gap-2", className)
+      )}
+      {...props}
+    >
+      <Label>{label}</Label>
+      <SelectTrigger>
+        <SelectValue />
+      </SelectTrigger>
+      {description && (
+        <Text className="text-sm text-muted-foreground" slot="description">
+          {description}
+        </Text>
+      )}
+      <FieldError>{errorMessage}</FieldError>
+      <SelectPopover>
+        <SelectListBox items={items}>{children}</SelectListBox>
+      </SelectPopover>
+    </Select>
+  )
+}
+
 export {
   Select,
   SelectValue,
@@ -108,4 +154,6 @@ export {
   SelectListBox,
   SelectSection,
   SelectCollection,
+  JollySelect,
 }
+export type { JollySelectProps }

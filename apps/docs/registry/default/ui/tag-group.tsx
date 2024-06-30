@@ -4,13 +4,17 @@ import {
   Button as AriaButton,
   Tag as AriaTag,
   TagGroup as AriaTagGroup,
+  TagGroupProps as AriaTagGroupProps,
   TagList as AriaTagList,
   TagListProps as AriaTagListProps,
   TagProps as AriaTagProps,
   composeRenderProps,
+  Text,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"
+
+import { Label } from "./field"
 
 const TagGroup = AriaTagGroup
 
@@ -111,4 +115,43 @@ function Tag({ children, className, ...props }: AriaTagProps) {
   )
 }
 
-export { TagGroup, TagList, Tag, badgeVariants }
+interface JollyTagGroupProps<T>
+  extends Omit<AriaTagGroupProps, "children">,
+    Pick<AriaTagListProps<T>, "items" | "children" | "renderEmptyState"> {
+  label?: string
+  description?: string
+  errorMessage?: string
+}
+
+function JollyTagGroup<T extends object>({
+  label,
+  description,
+  className,
+  errorMessage,
+  items,
+  children,
+  renderEmptyState,
+  ...props
+}: JollyTagGroupProps<T>) {
+  return (
+    <TagGroup className={cn("group flex flex-col gap-2", className)} {...props}>
+      <Label>{label}</Label>
+      <TagList items={items} renderEmptyState={renderEmptyState}>
+        {children}
+      </TagList>
+      {description && (
+        <Text className="text-sm text-muted-foreground" slot="description">
+          {description}
+        </Text>
+      )}
+      {errorMessage && (
+        <Text className="text-sm text-destructive" slot="errorMessage">
+          {errorMessage}
+        </Text>
+      )}
+    </TagGroup>
+  )
+}
+
+export { TagGroup, TagList, Tag, badgeVariants, JollyTagGroup }
+export type { JollyTagGroupProps }
