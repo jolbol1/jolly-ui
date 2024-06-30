@@ -101,7 +101,7 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/",
           items: [],
           disabled: true,
-          label: "Coming Soon"
+          label: "Coming Soon",
         },
         {
           title: "TagGroup",
@@ -117,13 +117,13 @@ export const docsConfig: DocsConfig = {
           title: "Color Pickers",
           href: "/docs/components/color",
           items: [],
-          label: "Beta"
+          label: "Beta",
         },
         {
           title: "Primitives",
           href: "/docs/components/color-primitives",
           items: [],
-          label: "Beta"
+          label: "Beta",
         },
       ],
     },

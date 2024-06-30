@@ -2,6 +2,7 @@ import { notFound } from "next/navigation"
 import { allDocs } from "contentlayer/generated"
 
 import "@/styles/mdx.css"
+
 import type { Metadata } from "next"
 import Link from "next/link"
 import { ExternalLinkIcon } from "@radix-ui/react-icons"
@@ -19,8 +20,8 @@ import { BreadcrumbPage } from "@/registry/default/ui/breadcrumbs"
 import {
   BreadcrumbItem,
   BreadcrumbLink,
-  BreadcrumbSeparator,
   Breadcrumbs,
+  BreadcrumbSeparator,
 } from "@/registry/new-york/ui/breadcrumbs"
 
 interface DocPageProps {

@@ -2,8 +2,8 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbPage,
-  BreadcrumbSeparator,
   Breadcrumbs,
+  BreadcrumbSeparator,
 } from "@/registry/default/ui/breadcrumbs"
 
 export function BreadcrumbsDemo() {

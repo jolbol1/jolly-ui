@@ -9,7 +9,6 @@ const ui: Registry = [
     files: ["ui/breadcrumbs.tsx"],
   },
 
-
   {
     name: "checkbox",
     type: "components:ui",
@@ -195,7 +194,6 @@ const ui: Registry = [
     registryDependencies: ["button"],
     files: ["ui/datefield.tsx"],
   },
-
 ]
 
 const example: Registry = [
@@ -236,7 +234,6 @@ const example: Registry = [
     files: ["example/breadcrumbs/breadcrumbs-items.tsx"],
   },
 
-
   {
     name: "color-area",
     type: "components:example/color",
@@ -266,12 +263,14 @@ const example: Registry = [
     type: "components:example/color/pickers",
     registryDependencies: ["color"],
     files: ["example/color/pickers/color-picker-hexa.tsx"],
-  }, {
+  },
+  {
     name: "color-picker-hsb",
     type: "components:example/color/pickers",
     registryDependencies: ["color"],
     files: ["example/color/pickers/color-picker-hsb.tsx"],
-  }, {
+  },
+  {
     name: "color-picker-hsba",
     type: "components:example/color/pickers",
     registryDependencies: ["color"],
@@ -288,17 +287,20 @@ const example: Registry = [
     type: "components:example/color/pickers",
     registryDependencies: ["color"],
     files: ["example/color/pickers/color-picker-hsl.tsx"],
-  }, {
+  },
+  {
     name: "color-picker-hsla",
     type: "components:example/color/pickers",
     registryDependencies: ["color"],
     files: ["example/color/pickers/color-picker-hsla.tsx"],
-  }, {
+  },
+  {
     name: "color-picker-rgb",
     type: "components:example/color/pickers",
     registryDependencies: ["color"],
     files: ["example/color/pickers/color-picker-rgb.tsx"],
-  }, {
+  },
+  {
     name: "color-picker-rgba",
     type: "components:example/color/pickers",
     registryDependencies: ["color"],
@@ -516,7 +518,6 @@ const example: Registry = [
     files: ["example/toggle/toggle-with-text.tsx"],
   },
 
-
   // GridList
   {
     name: "grid-list-content",
@@ -688,7 +689,6 @@ const example: Registry = [
     registryDependencies: ["list-box"],
     files: ["example/list-box/list-box-text-slot.tsx"],
   },
-
 
   // Menu
   {
@@ -975,7 +975,9 @@ const example: Registry = [
     name: "date-range-picker-custom-validation",
     type: "components:example/date-range-picker",
     registryDependencies: ["date-range-picker"],
-    files: ["example/date-range-picker/date-range-picker-custom-validation.tsx"],
+    files: [
+      "example/date-range-picker/date-range-picker-custom-validation.tsx",
+    ],
   },
   {
     name: "date-range-picker-demo",
@@ -1069,10 +1071,8 @@ const example: Registry = [
     type: "components:example/range-calendar",
     registryDependencies: ["range-calendar"],
     files: ["example/range-calendar/range-calendar-validation.tsx"],
-  }
-
+  },
   // TimeField
-  ,
   {
     name: "timefield-custom-validation",
     type: "components:example/timefield",
@@ -1803,8 +1803,6 @@ const example: Registry = [
     registryDependencies: ["toolbar"],
     files: ["example/toolbar/toolbar-vertical.tsx"],
   },
-
-
 ]
 
 export const registry: Registry = [...ui, ...example]
