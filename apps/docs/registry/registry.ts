@@ -875,6 +875,12 @@ const example: Registry = [
     registryDependencies: ["calendar"],
     files: ["example/calendar/calendar-validation.tsx"],
   },
+  {
+    name: "calendar-reusable",
+    type: "components:example/calendar",
+    registryDependencies: ["calendar"],
+    files: ["example/calendar/calendar-reusable.tsx"],
+  },
 
   // DateField
   {
@@ -1803,6 +1809,8 @@ const example: Registry = [
     registryDependencies: ["toolbar"],
     files: ["example/toolbar/toolbar-vertical.tsx"],
   },
+
+  //Reusable
 ]
 
 export const registry: Registry = [...ui, ...example]
