@@ -14,7 +14,7 @@ import {
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"
-import { FieldGroup } from "@/registry/default/ui/field"
+import { FieldGroup } from "@/registry/new-york/ui/field"
 import { Popover } from "@/registry/new-york/ui/popover"
 
 import { Button } from "./button"

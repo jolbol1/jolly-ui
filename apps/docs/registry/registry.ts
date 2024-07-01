@@ -775,6 +775,12 @@ const example: Registry = [
     registryDependencies: ["menu"],
     files: ["example/menu/menu-text-slots.tsx"],
   },
+  {
+    name: "menu-reusable",
+    type: "components:example/menu",
+    registryDependencies: ["menu"],
+    files: ["example/menu/menu-reusable.tsx"],
+  },
 
   //TagGroup
   {
@@ -830,6 +836,12 @@ const example: Registry = [
     type: "components:example/tag-group",
     registryDependencies: ["tag-group"],
     files: ["example/tag-group/tag-group-selection.tsx"],
+  },
+  {
+    name: "tag-group-reusable",
+    type: "components:example/tag-group",
+    registryDependencies: ["tag-group"],
+    files: ["example/tag-group/tag-group-reusable.tsx"],
   },
 
   // Calendar
@@ -919,6 +931,12 @@ const example: Registry = [
     registryDependencies: ["datefield"],
     files: ["example/datefield/datefield-validation.tsx"],
   },
+  {
+    name: "datefield-reusable",
+    type: "components:example/datefield",
+    registryDependencies: ["datefield"],
+    files: ["example/datefield/datefield-reusable.tsx"],
+  },
 
   // Datepicker
   {
@@ -968,6 +986,12 @@ const example: Registry = [
     type: "components:example/datepicker",
     registryDependencies: ["datepicker"],
     files: ["example/datepicker/datepicker-validation.tsx"],
+  },
+  {
+    name: "datepicker-reusable",
+    type: "components:example/datepicker",
+    registryDependencies: ["datepicker"],
+    files: ["example/datepicker/datepicker-reusable.tsx"],
   },
 
   //Date range picker
@@ -1168,6 +1192,12 @@ const example: Registry = [
     registryDependencies: ["checkbox"],
     files: ["example/checkbox/checkbox-validation.tsx"],
   },
+  {
+    name: "checkbox-reusbale",
+    type: "components:example/checkbox",
+    registryDependencies: ["checkbox"],
+    files: ["example/checkbox/checkbox-reusbale.tsx"],
+  },
 
   // CheckboxGroup
 
@@ -1301,6 +1331,12 @@ const example: Registry = [
     registryDependencies: ["numberfield"],
     files: ["example/numberfield/numberfield-validation.tsx"],
   },
+  {
+    name: "numberfield-reusable",
+    type: "components:example/numberfield",
+    registryDependencies: ["numberfield"],
+    files: ["example/numberfield/numberfield-reusable.tsx"],
+  },
 
   // RadioGroup
 
@@ -1346,6 +1382,12 @@ const example: Registry = [
     registryDependencies: ["radio-group"],
     files: ["example/radio-group/radio-group-validation.tsx"],
   },
+  {
+    name: "radio-group-reusable",
+    type: "components:example/radio-group",
+    registryDependencies: ["radio-group"],
+    files: ["example/radio-group/radio-group-reusable.tsx"],
+  },
 
   // SearchField
   {
@@ -1377,6 +1419,12 @@ const example: Registry = [
     type: "components:example/searchfield",
     registryDependencies: ["searchfield"],
     files: ["example/searchfield/searchfield-validation.tsx"],
+  },
+  {
+    name: "searchfield-reusable",
+    type: "components:example/searchfield",
+    registryDependencies: ["searchfield"],
+    files: ["example/searchfield/searchfield-reusable.tsx"],
   },
 
   //Slider
@@ -1448,6 +1496,12 @@ const example: Registry = [
     type: "components:example/textfield",
     registryDependencies: ["textfield"],
     files: ["example/textfield/textfield-validation.tsx"],
+  },
+  {
+    name: "textfield-reusable",
+    type: "components:example/textfield",
+    registryDependencies: ["textfield"],
+    files: ["example/textfield/textfield-reusable.tsx"],
   },
 
   //Tabs
@@ -1678,6 +1732,12 @@ const example: Registry = [
     registryDependencies: ["combobox"],
     files: ["example/combobox/combobox-validation.tsx"],
   },
+  {
+    name: "combobox-reusable",
+    type: "components:example/combobox",
+    registryDependencies: ["combobox"],
+    files: ["example/combobox/combobox-reusable.tsx"],
+  },
 
   // Select
   {
@@ -1740,6 +1800,12 @@ const example: Registry = [
     registryDependencies: ["select"],
     files: ["example/select/select-validation.tsx"],
   },
+  {
+    name: "select-reusable",
+    type: "components:example/select",
+    registryDependencies: ["select"],
+    files: ["example/select/select-reusable.tsx"],
+  },
 
   // Meter
   {
@@ -1760,6 +1826,12 @@ const example: Registry = [
     registryDependencies: ["meter"],
     files: ["example/meter/meter-value-format.tsx"],
   },
+  {
+    name: "meter-reusable",
+    type: "components:example/meter",
+    registryDependencies: ["meter"],
+    files: ["example/meter/meter-reusable.tsx"],
+  },
 
   // Progress
   {
@@ -1779,6 +1851,12 @@ const example: Registry = [
     type: "components:example/progress",
     registryDependencies: ["progress"],
     files: ["example/progress/progress-value-format.tsx"],
+  },
+  {
+    name: "progress-reusable",
+    type: "components:example/progress",
+    registryDependencies: ["progress"],
+    files: ["example/progress/progress-reusable.tsx"],
   },
 
   // Group
