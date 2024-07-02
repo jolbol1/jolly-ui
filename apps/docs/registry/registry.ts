@@ -1051,6 +1051,12 @@ const example: Registry = [
     registryDependencies: ["date-range-picker"],
     files: ["example/date-range-picker/date-range-unavailable.tsx"],
   },
+  {
+    name: "date-range-picker-reusable",
+    type: "components:example/date-range-picker",
+    registryDependencies: ["date-range-picker"],
+    files: ["example/date-range-picker/date-range-picker-reusable.tsx"],
+  },
 
   // Range Calendar
 
@@ -1102,6 +1108,12 @@ const example: Registry = [
     registryDependencies: ["range-calendar"],
     files: ["example/range-calendar/range-calendar-validation.tsx"],
   },
+  {
+    name: "range-calendar-reusable",
+    type: "components:example/range-calendar",
+    registryDependencies: ["range-calendar"],
+    files: ["example/range-calendar/range-calendar-reusable.tsx"],
+  },
   // TimeField
   {
     name: "timefield-custom-validation",
@@ -1144,6 +1156,12 @@ const example: Registry = [
     type: "components:example/timefield",
     registryDependencies: ["timefield"],
     files: ["example/timefield/timefield-validation.tsx"],
+  },
+  {
+    name: "timefield-reusable",
+    type: "components:example/timefield",
+    registryDependencies: ["timefield"],
+    files: ["example/timefield/timefield-reusable.tsx"],
   },
 
   // Dropzone
