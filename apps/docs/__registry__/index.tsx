@@ -880,6 +880,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/example/menu/menu-text-slots")),
       files: ["registry/default/example/menu/menu-text-slots.tsx"],
     },
+    "menu-reusable": {
+      name: "menu-reusable",
+      type: "components:example/menu",
+      registryDependencies: ["menu"],
+      component: React.lazy(() => import("@/registry/default/example/menu/menu-reusable")),
+      files: ["registry/default/example/menu/menu-reusable.tsx"],
+    },
     "tag-error-text": {
       name: "tag-error-text",
       type: "components:example/tag-group",
@@ -943,6 +950,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/example/tag-group/tag-group-selection")),
       files: ["registry/default/example/tag-group/tag-group-selection.tsx"],
     },
+    "tag-group-reusable": {
+      name: "tag-group-reusable",
+      type: "components:example/tag-group",
+      registryDependencies: ["tag-group"],
+      component: React.lazy(() => import("@/registry/default/example/tag-group/tag-group-reusable")),
+      files: ["registry/default/example/tag-group/tag-group-reusable.tsx"],
+    },
     "calendar-demo": {
       name: "calendar-demo",
       type: "components:example/calendar",
@@ -992,6 +1006,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/example/calendar/calendar-validation")),
       files: ["registry/default/example/calendar/calendar-validation.tsx"],
     },
+    "calendar-reusable": {
+      name: "calendar-reusable",
+      type: "components:example/calendar",
+      registryDependencies: ["calendar"],
+      component: React.lazy(() => import("@/registry/default/example/calendar/calendar-reusable")),
+      files: ["registry/default/example/calendar/calendar-reusable.tsx"],
+    },
     "datefield-demo": {
       name: "datefield-demo",
       type: "components:example/datefield",
@@ -1033,6 +1054,13 @@ export const Index: Record<string, any> = {
       registryDependencies: ["datefield"],
       component: React.lazy(() => import("@/registry/default/example/datefield/datefield-validation")),
       files: ["registry/default/example/datefield/datefield-validation.tsx"],
+    },
+    "datefield-reusable": {
+      name: "datefield-reusable",
+      type: "components:example/datefield",
+      registryDependencies: ["datefield"],
+      component: React.lazy(() => import("@/registry/default/example/datefield/datefield-reusable")),
+      files: ["registry/default/example/datefield/datefield-reusable.tsx"],
     },
     "datepicker-custom-validation": {
       name: "datepicker-custom-validation",
@@ -1089,6 +1117,13 @@ export const Index: Record<string, any> = {
       registryDependencies: ["datepicker"],
       component: React.lazy(() => import("@/registry/default/example/datepicker/datepicker-validation")),
       files: ["registry/default/example/datepicker/datepicker-validation.tsx"],
+    },
+    "datepicker-reusable": {
+      name: "datepicker-reusable",
+      type: "components:example/datepicker",
+      registryDependencies: ["datepicker"],
+      component: React.lazy(() => import("@/registry/default/example/datepicker/datepicker-reusable")),
+      files: ["registry/default/example/datepicker/datepicker-reusable.tsx"],
     },
     "date-range-non-continuous": {
       name: "date-range-non-continuous",
@@ -1153,6 +1188,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/example/date-range-picker/date-range-unavailable")),
       files: ["registry/default/example/date-range-picker/date-range-unavailable.tsx"],
     },
+    "date-range-picker-reusable": {
+      name: "date-range-picker-reusable",
+      type: "components:example/date-range-picker",
+      registryDependencies: ["date-range-picker"],
+      component: React.lazy(() => import("@/registry/default/example/date-range-picker/date-range-picker-reusable")),
+      files: ["registry/default/example/date-range-picker/date-range-picker-reusable.tsx"],
+    },
     "range-calendar-demo": {
       name: "range-calendar-demo",
       type: "components:example/range-calendar",
@@ -1209,6 +1251,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/example/range-calendar/range-calendar-validation")),
       files: ["registry/default/example/range-calendar/range-calendar-validation.tsx"],
     },
+    "range-calendar-reusable": {
+      name: "range-calendar-reusable",
+      type: "components:example/range-calendar",
+      registryDependencies: ["range-calendar"],
+      component: React.lazy(() => import("@/registry/default/example/range-calendar/range-calendar-reusable")),
+      files: ["registry/default/example/range-calendar/range-calendar-reusable.tsx"],
+    },
     "timefield-custom-validation": {
       name: "timefield-custom-validation",
       type: "components:example/timefield",
@@ -1258,6 +1307,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/example/timefield/timefield-validation")),
       files: ["registry/default/example/timefield/timefield-validation.tsx"],
     },
+    "timefield-reusable": {
+      name: "timefield-reusable",
+      type: "components:example/timefield",
+      registryDependencies: ["timefield"],
+      component: React.lazy(() => import("@/registry/default/example/timefield/timefield-reusable")),
+      files: ["registry/default/example/timefield/timefield-reusable.tsx"],
+    },
     "dropzone-demo": {
       name: "dropzone-demo",
       type: "components:example/dropzone",
@@ -1306,6 +1362,13 @@ export const Index: Record<string, any> = {
       registryDependencies: ["checkbox"],
       component: React.lazy(() => import("@/registry/default/example/checkbox/checkbox-validation")),
       files: ["registry/default/example/checkbox/checkbox-validation.tsx"],
+    },
+    "checkbox-reusbale": {
+      name: "checkbox-reusbale",
+      type: "components:example/checkbox",
+      registryDependencies: ["checkbox"],
+      component: React.lazy(() => import("@/registry/default/example/checkbox/checkbox-reusbale")),
+      files: ["registry/default/example/checkbox/checkbox-reusbale.tsx"],
     },
     "checkbox-group-demo": {
       name: "checkbox-group-demo",
@@ -1454,6 +1517,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/example/numberfield/numberfield-validation")),
       files: ["registry/default/example/numberfield/numberfield-validation.tsx"],
     },
+    "numberfield-reusable": {
+      name: "numberfield-reusable",
+      type: "components:example/numberfield",
+      registryDependencies: ["numberfield"],
+      component: React.lazy(() => import("@/registry/default/example/numberfield/numberfield-reusable")),
+      files: ["registry/default/example/numberfield/numberfield-reusable.tsx"],
+    },
     "radio-group-demo": {
       name: "radio-group-demo",
       type: "components:example/radio-group",
@@ -1503,6 +1573,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/example/radio-group/radio-group-validation")),
       files: ["registry/default/example/radio-group/radio-group-validation.tsx"],
     },
+    "radio-group-reusable": {
+      name: "radio-group-reusable",
+      type: "components:example/radio-group",
+      registryDependencies: ["radio-group"],
+      component: React.lazy(() => import("@/registry/default/example/radio-group/radio-group-reusable")),
+      files: ["registry/default/example/radio-group/radio-group-reusable.tsx"],
+    },
     "searchfield-demo": {
       name: "searchfield-demo",
       type: "components:example/searchfield",
@@ -1537,6 +1614,13 @@ export const Index: Record<string, any> = {
       registryDependencies: ["searchfield"],
       component: React.lazy(() => import("@/registry/default/example/searchfield/searchfield-validation")),
       files: ["registry/default/example/searchfield/searchfield-validation.tsx"],
+    },
+    "searchfield-reusable": {
+      name: "searchfield-reusable",
+      type: "components:example/searchfield",
+      registryDependencies: ["searchfield"],
+      component: React.lazy(() => import("@/registry/default/example/searchfield/searchfield-reusable")),
+      files: ["registry/default/example/searchfield/searchfield-reusable.tsx"],
     },
     "slider-demo": {
       name: "slider-demo",
@@ -1614,6 +1698,13 @@ export const Index: Record<string, any> = {
       registryDependencies: ["textfield"],
       component: React.lazy(() => import("@/registry/default/example/textfield/textfield-validation")),
       files: ["registry/default/example/textfield/textfield-validation.tsx"],
+    },
+    "textfield-reusable": {
+      name: "textfield-reusable",
+      type: "components:example/textfield",
+      registryDependencies: ["textfield"],
+      component: React.lazy(() => import("@/registry/default/example/textfield/textfield-reusable")),
+      files: ["registry/default/example/textfield/textfield-reusable.tsx"],
     },
     "tabs-demo": {
       name: "tabs-demo",
@@ -1867,6 +1958,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/example/combobox/combobox-validation")),
       files: ["registry/default/example/combobox/combobox-validation.tsx"],
     },
+    "combobox-reusable": {
+      name: "combobox-reusable",
+      type: "components:example/combobox",
+      registryDependencies: ["combobox"],
+      component: React.lazy(() => import("@/registry/default/example/combobox/combobox-reusable")),
+      files: ["registry/default/example/combobox/combobox-reusable.tsx"],
+    },
     "select-content": {
       name: "select-content",
       type: "components:example/select",
@@ -1937,6 +2035,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/example/select/select-validation")),
       files: ["registry/default/example/select/select-validation.tsx"],
     },
+    "select-reusable": {
+      name: "select-reusable",
+      type: "components:example/select",
+      registryDependencies: ["select"],
+      component: React.lazy(() => import("@/registry/default/example/select/select-reusable")),
+      files: ["registry/default/example/select/select-reusable.tsx"],
+    },
     "meter-custom-format": {
       name: "meter-custom-format",
       type: "components:example/meter",
@@ -1958,6 +2063,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/example/meter/meter-value-format")),
       files: ["registry/default/example/meter/meter-value-format.tsx"],
     },
+    "meter-reusable": {
+      name: "meter-reusable",
+      type: "components:example/meter",
+      registryDependencies: ["meter"],
+      component: React.lazy(() => import("@/registry/default/example/meter/meter-reusable")),
+      files: ["registry/default/example/meter/meter-reusable.tsx"],
+    },
     "progress-custom-format": {
       name: "progress-custom-format",
       type: "components:example/progress",
@@ -1978,6 +2090,13 @@ export const Index: Record<string, any> = {
       registryDependencies: ["progress"],
       component: React.lazy(() => import("@/registry/default/example/progress/progress-value-format")),
       files: ["registry/default/example/progress/progress-value-format.tsx"],
+    },
+    "progress-reusable": {
+      name: "progress-reusable",
+      type: "components:example/progress",
+      registryDependencies: ["progress"],
+      component: React.lazy(() => import("@/registry/default/example/progress/progress-reusable")),
+      files: ["registry/default/example/progress/progress-reusable.tsx"],
     },
     "group-demo": {
       name: "group-demo",
@@ -2883,6 +3002,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/new-york/example/menu/menu-text-slots")),
       files: ["registry/new-york/example/menu/menu-text-slots.tsx"],
     },
+    "menu-reusable": {
+      name: "menu-reusable",
+      type: "components:example/menu",
+      registryDependencies: ["menu"],
+      component: React.lazy(() => import("@/registry/new-york/example/menu/menu-reusable")),
+      files: ["registry/new-york/example/menu/menu-reusable.tsx"],
+    },
     "tag-error-text": {
       name: "tag-error-text",
       type: "components:example/tag-group",
@@ -2946,6 +3072,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/new-york/example/tag-group/tag-group-selection")),
       files: ["registry/new-york/example/tag-group/tag-group-selection.tsx"],
     },
+    "tag-group-reusable": {
+      name: "tag-group-reusable",
+      type: "components:example/tag-group",
+      registryDependencies: ["tag-group"],
+      component: React.lazy(() => import("@/registry/new-york/example/tag-group/tag-group-reusable")),
+      files: ["registry/new-york/example/tag-group/tag-group-reusable.tsx"],
+    },
     "calendar-demo": {
       name: "calendar-demo",
       type: "components:example/calendar",
@@ -2995,6 +3128,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/new-york/example/calendar/calendar-validation")),
       files: ["registry/new-york/example/calendar/calendar-validation.tsx"],
     },
+    "calendar-reusable": {
+      name: "calendar-reusable",
+      type: "components:example/calendar",
+      registryDependencies: ["calendar"],
+      component: React.lazy(() => import("@/registry/new-york/example/calendar/calendar-reusable")),
+      files: ["registry/new-york/example/calendar/calendar-reusable.tsx"],
+    },
     "datefield-demo": {
       name: "datefield-demo",
       type: "components:example/datefield",
@@ -3036,6 +3176,13 @@ export const Index: Record<string, any> = {
       registryDependencies: ["datefield"],
       component: React.lazy(() => import("@/registry/new-york/example/datefield/datefield-validation")),
       files: ["registry/new-york/example/datefield/datefield-validation.tsx"],
+    },
+    "datefield-reusable": {
+      name: "datefield-reusable",
+      type: "components:example/datefield",
+      registryDependencies: ["datefield"],
+      component: React.lazy(() => import("@/registry/new-york/example/datefield/datefield-reusable")),
+      files: ["registry/new-york/example/datefield/datefield-reusable.tsx"],
     },
     "datepicker-custom-validation": {
       name: "datepicker-custom-validation",
@@ -3092,6 +3239,13 @@ export const Index: Record<string, any> = {
       registryDependencies: ["datepicker"],
       component: React.lazy(() => import("@/registry/new-york/example/datepicker/datepicker-validation")),
       files: ["registry/new-york/example/datepicker/datepicker-validation.tsx"],
+    },
+    "datepicker-reusable": {
+      name: "datepicker-reusable",
+      type: "components:example/datepicker",
+      registryDependencies: ["datepicker"],
+      component: React.lazy(() => import("@/registry/new-york/example/datepicker/datepicker-reusable")),
+      files: ["registry/new-york/example/datepicker/datepicker-reusable.tsx"],
     },
     "date-range-non-continuous": {
       name: "date-range-non-continuous",
@@ -3156,6 +3310,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/new-york/example/date-range-picker/date-range-unavailable")),
       files: ["registry/new-york/example/date-range-picker/date-range-unavailable.tsx"],
     },
+    "date-range-picker-reusable": {
+      name: "date-range-picker-reusable",
+      type: "components:example/date-range-picker",
+      registryDependencies: ["date-range-picker"],
+      component: React.lazy(() => import("@/registry/new-york/example/date-range-picker/date-range-picker-reusable")),
+      files: ["registry/new-york/example/date-range-picker/date-range-picker-reusable.tsx"],
+    },
     "range-calendar-demo": {
       name: "range-calendar-demo",
       type: "components:example/range-calendar",
@@ -3212,6 +3373,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/new-york/example/range-calendar/range-calendar-validation")),
       files: ["registry/new-york/example/range-calendar/range-calendar-validation.tsx"],
     },
+    "range-calendar-reusable": {
+      name: "range-calendar-reusable",
+      type: "components:example/range-calendar",
+      registryDependencies: ["range-calendar"],
+      component: React.lazy(() => import("@/registry/new-york/example/range-calendar/range-calendar-reusable")),
+      files: ["registry/new-york/example/range-calendar/range-calendar-reusable.tsx"],
+    },
     "timefield-custom-validation": {
       name: "timefield-custom-validation",
       type: "components:example/timefield",
@@ -3261,6 +3429,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/new-york/example/timefield/timefield-validation")),
       files: ["registry/new-york/example/timefield/timefield-validation.tsx"],
     },
+    "timefield-reusable": {
+      name: "timefield-reusable",
+      type: "components:example/timefield",
+      registryDependencies: ["timefield"],
+      component: React.lazy(() => import("@/registry/new-york/example/timefield/timefield-reusable")),
+      files: ["registry/new-york/example/timefield/timefield-reusable.tsx"],
+    },
     "dropzone-demo": {
       name: "dropzone-demo",
       type: "components:example/dropzone",
@@ -3309,6 +3484,13 @@ export const Index: Record<string, any> = {
       registryDependencies: ["checkbox"],
       component: React.lazy(() => import("@/registry/new-york/example/checkbox/checkbox-validation")),
       files: ["registry/new-york/example/checkbox/checkbox-validation.tsx"],
+    },
+    "checkbox-reusbale": {
+      name: "checkbox-reusbale",
+      type: "components:example/checkbox",
+      registryDependencies: ["checkbox"],
+      component: React.lazy(() => import("@/registry/new-york/example/checkbox/checkbox-reusbale")),
+      files: ["registry/new-york/example/checkbox/checkbox-reusbale.tsx"],
     },
     "checkbox-group-demo": {
       name: "checkbox-group-demo",
@@ -3457,6 +3639,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/new-york/example/numberfield/numberfield-validation")),
       files: ["registry/new-york/example/numberfield/numberfield-validation.tsx"],
     },
+    "numberfield-reusable": {
+      name: "numberfield-reusable",
+      type: "components:example/numberfield",
+      registryDependencies: ["numberfield"],
+      component: React.lazy(() => import("@/registry/new-york/example/numberfield/numberfield-reusable")),
+      files: ["registry/new-york/example/numberfield/numberfield-reusable.tsx"],
+    },
     "radio-group-demo": {
       name: "radio-group-demo",
       type: "components:example/radio-group",
@@ -3506,6 +3695,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/new-york/example/radio-group/radio-group-validation")),
       files: ["registry/new-york/example/radio-group/radio-group-validation.tsx"],
     },
+    "radio-group-reusable": {
+      name: "radio-group-reusable",
+      type: "components:example/radio-group",
+      registryDependencies: ["radio-group"],
+      component: React.lazy(() => import("@/registry/new-york/example/radio-group/radio-group-reusable")),
+      files: ["registry/new-york/example/radio-group/radio-group-reusable.tsx"],
+    },
     "searchfield-demo": {
       name: "searchfield-demo",
       type: "components:example/searchfield",
@@ -3540,6 +3736,13 @@ export const Index: Record<string, any> = {
       registryDependencies: ["searchfield"],
       component: React.lazy(() => import("@/registry/new-york/example/searchfield/searchfield-validation")),
       files: ["registry/new-york/example/searchfield/searchfield-validation.tsx"],
+    },
+    "searchfield-reusable": {
+      name: "searchfield-reusable",
+      type: "components:example/searchfield",
+      registryDependencies: ["searchfield"],
+      component: React.lazy(() => import("@/registry/new-york/example/searchfield/searchfield-reusable")),
+      files: ["registry/new-york/example/searchfield/searchfield-reusable.tsx"],
     },
     "slider-demo": {
       name: "slider-demo",
@@ -3617,6 +3820,13 @@ export const Index: Record<string, any> = {
       registryDependencies: ["textfield"],
       component: React.lazy(() => import("@/registry/new-york/example/textfield/textfield-validation")),
       files: ["registry/new-york/example/textfield/textfield-validation.tsx"],
+    },
+    "textfield-reusable": {
+      name: "textfield-reusable",
+      type: "components:example/textfield",
+      registryDependencies: ["textfield"],
+      component: React.lazy(() => import("@/registry/new-york/example/textfield/textfield-reusable")),
+      files: ["registry/new-york/example/textfield/textfield-reusable.tsx"],
     },
     "tabs-demo": {
       name: "tabs-demo",
@@ -3870,6 +4080,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/new-york/example/combobox/combobox-validation")),
       files: ["registry/new-york/example/combobox/combobox-validation.tsx"],
     },
+    "combobox-reusable": {
+      name: "combobox-reusable",
+      type: "components:example/combobox",
+      registryDependencies: ["combobox"],
+      component: React.lazy(() => import("@/registry/new-york/example/combobox/combobox-reusable")),
+      files: ["registry/new-york/example/combobox/combobox-reusable.tsx"],
+    },
     "select-content": {
       name: "select-content",
       type: "components:example/select",
@@ -3940,6 +4157,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/new-york/example/select/select-validation")),
       files: ["registry/new-york/example/select/select-validation.tsx"],
     },
+    "select-reusable": {
+      name: "select-reusable",
+      type: "components:example/select",
+      registryDependencies: ["select"],
+      component: React.lazy(() => import("@/registry/new-york/example/select/select-reusable")),
+      files: ["registry/new-york/example/select/select-reusable.tsx"],
+    },
     "meter-custom-format": {
       name: "meter-custom-format",
       type: "components:example/meter",
@@ -3961,6 +4185,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/new-york/example/meter/meter-value-format")),
       files: ["registry/new-york/example/meter/meter-value-format.tsx"],
     },
+    "meter-reusable": {
+      name: "meter-reusable",
+      type: "components:example/meter",
+      registryDependencies: ["meter"],
+      component: React.lazy(() => import("@/registry/new-york/example/meter/meter-reusable")),
+      files: ["registry/new-york/example/meter/meter-reusable.tsx"],
+    },
     "progress-custom-format": {
       name: "progress-custom-format",
       type: "components:example/progress",
@@ -3981,6 +4212,13 @@ export const Index: Record<string, any> = {
       registryDependencies: ["progress"],
       component: React.lazy(() => import("@/registry/new-york/example/progress/progress-value-format")),
       files: ["registry/new-york/example/progress/progress-value-format.tsx"],
+    },
+    "progress-reusable": {
+      name: "progress-reusable",
+      type: "components:example/progress",
+      registryDependencies: ["progress"],
+      component: React.lazy(() => import("@/registry/new-york/example/progress/progress-reusable")),
+      files: ["registry/new-york/example/progress/progress-reusable.tsx"],
     },
     "group-demo": {
       name: "group-demo",
