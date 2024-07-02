@@ -1,9 +1,8 @@
 import fs from "fs"
 import path from "path"
+import { UnistNode, UnistTree } from "types/unist"
 import { u } from "unist-builder"
 import { visit } from "unist-util-visit"
-
-import { UnistNode, UnistTree } from "@/types/unist"
 
 import { Index } from "../__registry__"
 import { styles } from "../registry/styles"
@@ -39,11 +38,11 @@ export function rehypeComponent() {
               const component = Index[style.name][name]
               src = fileName
                 ? component.files.find((file: string) => {
-                    return (
-                      file.endsWith(`${fileName}.tsx`) ||
-                      file.endsWith(`${fileName}.ts`)
-                    )
-                  }) || component.files[0]
+                  return (
+                    file.endsWith(`${fileName}.tsx`) ||
+                    file.endsWith(`${fileName}.ts`)
+                  )
+                }) || component.files[0]
                 : component.files[0]
             }
 
@@ -58,7 +57,7 @@ export function rehypeComponent() {
               `@/registry/${style.name}/`,
               "@/components/"
             )
-            source = source.replace(/^export default.*$/gm, "")
+            source = source.replaceAll("export default", "export")
 
             // Add code as children so that rehype can take over at build time.
             node.children?.push(
@@ -120,7 +119,7 @@ export function rehypeComponent() {
               `@/registry/${style.name}/`,
               "@/components/"
             )
-            source = source.replace(/^export default.*$/gm, "")
+            source = source.replaceAll("export default", "export")
 
             // Add code as children so that rehype can take over at build time.
             node.children?.push(
@@ -157,3 +156,4 @@ export function rehypeComponent() {
 function getNodeAttributeByName(node: UnistNode, name: string) {
   return node.attributes?.find((attribute) => attribute.name === name)
 }
+
