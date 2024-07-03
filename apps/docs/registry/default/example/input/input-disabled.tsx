@@ -1,6 +1,6 @@
 import { TextField } from "react-aria-components"
 
-import { Input } from "@/registry/default/ui/input"
+import { Input } from "@/registry/default/ui/textfield"
 
 export function InputDisabled() {
   return (

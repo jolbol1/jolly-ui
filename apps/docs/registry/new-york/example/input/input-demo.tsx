@@ -1,6 +1,6 @@
 import { TextField } from "react-aria-components"
 
-import { Input } from "@/registry/new-york/ui/input"
+import { Input } from "@/registry/new-york/ui/textfield"
 
 export function InputDemo() {
   return (

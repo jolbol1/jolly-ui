@@ -11,7 +11,6 @@ import {
 import { Icons } from "@/components/icons"
 import { Button } from "@/registry/default/ui/button"
 import { Label } from "@/registry/default/ui/field"
-import { Input } from "@/registry/default/ui/input"
 import { Radio, RadioGroup } from "@/registry/default/ui/radio-group"
 import {
   Select,
@@ -21,6 +20,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/registry/default/ui/select"
+import { Input } from "@/registry/default/ui/textfield"
 
 // TODO: Use form best practices
 // TODO: Look into select items and textValue needed issue

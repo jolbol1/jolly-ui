@@ -15,7 +15,6 @@ import {
   SliderTrack,
 } from "@/registry/default/ui/color"
 import { Dialog, DialogTrigger } from "@/registry/default/ui/dialog"
-import { Input } from "@/registry/default/ui/input"
 import { Popover } from "@/registry/default/ui/popover"
 import {
   Select,
@@ -25,6 +24,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/registry/default/ui/select"
+import { Input } from "@/registry/default/ui/textfield"
 
 export function PickerMulti() {
   let [color, setColor] = React.useState(parseColor("hsl(60, 100%, 50%)"))

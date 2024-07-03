@@ -8,7 +8,7 @@ import {
   DialogTrigger,
 } from "@/registry/default/ui/dialog"
 import { Label } from "@/registry/default/ui/field"
-import { Input, TextField } from "@/registry/default/ui/input"
+import { Input, TextField } from "@/registry/default/ui/textfield"
 
 export default function ModalSheet() {
   return (

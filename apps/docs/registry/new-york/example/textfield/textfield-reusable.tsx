@@ -1,4 +1,4 @@
-import { JollyTextField } from "@/registry/new-york/ui/input"
+import { JollyTextField } from "@/registry/new-york/ui/textfield"
 
 export default function TextfieldReusable() {
   return (

@@ -1,4 +1,4 @@
-import { JollyTextField } from "@/registry/default/ui/input"
+import { JollyTextField } from "@/registry/default/ui/textfield"
 
 export default function TextfieldReusable() {
   return (

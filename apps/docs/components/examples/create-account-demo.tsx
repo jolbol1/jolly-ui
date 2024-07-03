@@ -11,7 +11,7 @@ import {
 import { Icons } from "@/components/icons"
 import { Button } from "@/registry/default/ui/button"
 import { Label } from "@/registry/default/ui/field"
-import { Input } from "@/registry/default/ui/input"
+import { Input } from "@/registry/default/ui/textfield"
 
 export function CardsCreateAccount() {
   return (

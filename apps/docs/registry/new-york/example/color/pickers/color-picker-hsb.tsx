@@ -15,8 +15,8 @@ import {
 } from "@/registry/new-york/ui/color"
 import { Dialog, DialogTrigger } from "@/registry/new-york/ui/dialog"
 import { Label } from "@/registry/new-york/ui/field"
-import { Input } from "@/registry/new-york/ui/input"
 import { Popover } from "@/registry/new-york/ui/popover"
+import { Input } from "@/registry/new-york/ui/textfield"
 
 export function HsbPicker() {
   let [color, setColor] = React.useState(parseColor("hsb(120, 100%, 100%)"))

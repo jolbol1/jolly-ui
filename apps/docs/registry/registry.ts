@@ -8,7 +8,19 @@ const ui: Registry = [
     registryDependencies: ["button"],
     files: ["ui/breadcrumbs.tsx"],
   },
-
+  {
+    name: "button",
+    type: "components:ui",
+    dependencies: ["react-aria-components", "class-variance-authority"],
+    files: ["ui/button.tsx"],
+  },
+  {
+    name: "calendar",
+    type: "components:ui",
+    dependencies: ["react-aria-components"],
+    registryDependencies: ["button"],
+    files: ["ui/calendar.tsx"],
+  },
   {
     name: "checkbox",
     type: "components:ui",
@@ -36,6 +48,13 @@ const ui: Registry = [
     files: ["ui/date-picker.tsx"],
   },
   {
+    name: "datefield",
+    type: "components:ui",
+    dependencies: ["react-aria-components"],
+    registryDependencies: ["button"],
+    files: ["ui/datefield.tsx"],
+  },
+  {
     name: "dialog",
     type: "components:ui",
     dependencies: ["react-aria-components", "class-variance-authority"],
@@ -48,10 +67,17 @@ const ui: Registry = [
     files: ["ui/dropzone.tsx"],
   },
   {
-    name: "input",
+    name: "grid-list",
     type: "components:ui",
     dependencies: ["react-aria-components"],
-    files: ["ui/input.tsx"],
+    registryDependencies: ["checkbox"],
+    files: ["ui/grid-list.tsx"],
+  },
+  {
+    name: "textfield",
+    type: "components:ui",
+    dependencies: ["react-aria-components"],
+    files: ["ui/textfield.tsx"],
   },
   {
     name: "link",
@@ -59,6 +85,12 @@ const ui: Registry = [
     dependencies: ["react-aria-components", "class-variance-authority"],
     registryDependencies: ["button"],
     files: ["ui/link.tsx"],
+  },
+  {
+    name: "list-box",
+    type: "components:ui",
+    dependencies: ["react-aria-components"],
+    files: ["ui/grid-list.tsx"],
   },
   {
     name: "menu",
@@ -128,24 +160,16 @@ const ui: Registry = [
     files: ["ui/tabs.tsx"],
   },
   {
+    name: "tag-group",
+    type: "components:ui",
+    dependencies: ["react-aria-components"],
+    files: ["ui/tag-group.tsx"],
+  },
+  {
     name: "textarea",
     type: "components:ui",
     dependencies: ["react-aria-components"],
     files: ["ui/textarea.tsx"],
-  },
-
-  {
-    name: "tooltip",
-    type: "components:ui",
-    dependencies: ["react-aria-components"],
-    files: ["ui/tooltip.tsx"],
-  },
-  // NEW CHECKED
-  {
-    name: "button",
-    type: "components:ui",
-    dependencies: ["react-aria-components", "class-variance-authority"],
-    files: ["ui/button.tsx"],
   },
   {
     name: "toggle",
@@ -154,39 +178,10 @@ const ui: Registry = [
     files: ["ui/toggle.tsx"],
   },
   {
-    name: "grid-list",
+    name: "tooltip",
     type: "components:ui",
     dependencies: ["react-aria-components"],
-    registryDependencies: ["checkbox"],
-    files: ["ui/grid-list.tsx"],
-  },
-  {
-    name: "list-box",
-    type: "components:ui",
-    dependencies: ["react-aria-components"],
-    files: ["ui/grid-list.tsx"],
-  },
-  {
-    name: "tag-group",
-    type: "components:ui",
-    dependencies: ["react-aria-components"],
-    files: ["ui/tag-group.tsx"],
-  },
-
-  {
-    name: "calendar",
-    type: "components:ui",
-    dependencies: ["react-aria-components"],
-    registryDependencies: ["button"],
-    files: ["ui/calendar.tsx"],
-  },
-
-  {
-    name: "datefield",
-    type: "components:ui",
-    dependencies: ["react-aria-components"],
-    registryDependencies: ["button"],
-    files: ["ui/datefield.tsx"],
+    files: ["ui/tooltip.tsx"],
   },
 ]
 

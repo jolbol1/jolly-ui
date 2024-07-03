@@ -3,7 +3,7 @@ import { Input as AriaInput } from "react-aria-components"
 
 import { Button } from "@/registry/default/ui/button"
 import { FieldGroup, Label } from "@/registry/default/ui/field"
-import { TextField } from "@/registry/default/ui/input"
+import { TextField } from "@/registry/default/ui/textfield"
 
 export default function GroupDemo() {
   return (

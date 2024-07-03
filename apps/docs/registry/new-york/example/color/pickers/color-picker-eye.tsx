@@ -21,7 +21,6 @@ import {
 } from "@/registry/new-york/ui/color"
 import { Dialog, DialogTrigger } from "@/registry/new-york/ui/dialog"
 import { Label } from "@/registry/new-york/ui/field"
-import { Input } from "@/registry/new-york/ui/input"
 import { Popover } from "@/registry/new-york/ui/popover"
 import {
   Select,
@@ -31,6 +30,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/registry/new-york/ui/select"
+import { Input } from "@/registry/new-york/ui/textfield"
 
 function EyeDropperButton() {
   let state = React.useContext(ColorPickerStateContext)!

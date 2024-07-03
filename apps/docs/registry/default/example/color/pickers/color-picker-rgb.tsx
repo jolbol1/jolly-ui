@@ -15,8 +15,8 @@ import {
 } from "@/registry/default/ui/color"
 import { Dialog, DialogTrigger } from "@/registry/default/ui/dialog"
 import { Label } from "@/registry/default/ui/field"
-import { Input } from "@/registry/default/ui/input"
 import { Popover } from "@/registry/default/ui/popover"
+import { Input } from "@/registry/default/ui/textfield"
 
 export function RgbPicker() {
   let [color, setColor] = React.useState(parseColor("rgb(0, 255, 0)"))
