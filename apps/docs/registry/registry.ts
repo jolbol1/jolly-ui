@@ -166,12 +166,6 @@ const ui: Registry = [
     files: ["ui/tag-group.tsx"],
   },
   {
-    name: "textarea",
-    type: "components:ui",
-    dependencies: ["react-aria-components"],
-    files: ["ui/textarea.tsx"],
-  },
-  {
     name: "toggle",
     type: "components:ui",
     dependencies: ["react-aria-components", "class-variance-authority"],
@@ -373,36 +367,6 @@ const example: Registry = [
     type: "components:example/switch",
     registryDependencies: ["switch"],
     files: ["example/switch/switch-readonly.tsx"],
-  },
-  {
-    name: "textarea-demo",
-    type: "components:example/textarea",
-    registryDependencies: ["textarea"],
-    files: ["example/textarea/textarea-demo.tsx"],
-  },
-  {
-    name: "textarea-disabled",
-    type: "components:example/textarea",
-    registryDependencies: ["textarea"],
-    files: ["example/textarea/textarea-disabled.tsx"],
-  },
-  {
-    name: "textarea-with-button",
-    type: "components:example/textarea",
-    registryDependencies: ["textarea"],
-    files: ["example/textarea/textarea-with-button.tsx"],
-  },
-  {
-    name: "textarea-with-label",
-    type: "components:example/textarea",
-    registryDependencies: ["textarea"],
-    files: ["example/textarea/textarea-with-label.tsx"],
-  },
-  {
-    name: "textarea-with-text",
-    type: "components:example/textarea",
-    registryDependencies: ["textarea"],
-    files: ["example/textarea/textarea-with-text.tsx"],
   },
   {
     name: "button-demo",
