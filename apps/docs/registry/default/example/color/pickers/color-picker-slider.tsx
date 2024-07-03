@@ -14,7 +14,7 @@ import {
   SliderTrack,
 } from "@/registry/default/ui/color"
 import { Dialog, DialogTrigger } from "@/registry/default/ui/dialog"
-import { Label } from "@/registry/default/ui/label"
+import { Label } from "@/registry/default/ui/field"
 import { Popover } from "@/registry/default/ui/popover"
 import {
   Select,

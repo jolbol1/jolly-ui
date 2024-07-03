@@ -1,7 +1,7 @@
 import React from "react"
 import type { Selection } from "react-aria-components"
 
-import { Label } from "@/registry/default/ui/label"
+import { Label } from "@/registry/default/ui/field"
 import { Tag, TagGroup, TagList } from "@/registry/default/ui/tag-group"
 
 export default function TagGroupSelection() {

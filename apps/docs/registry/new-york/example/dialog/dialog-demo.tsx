@@ -7,8 +7,8 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/registry/new-york/ui/dialog"
+import { Label } from "@/registry/new-york/ui/field"
 import { Input, TextField } from "@/registry/new-york/ui/input"
-import { Label } from "@/registry/new-york/ui/label"
 
 export default function DialogDemo() {
   return (

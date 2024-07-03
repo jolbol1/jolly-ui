@@ -10,8 +10,8 @@ import {
 } from "@/components/card"
 import { Icons } from "@/components/icons"
 import { Button } from "@/registry/default/ui/button"
+import { Label } from "@/registry/default/ui/field"
 import { Input } from "@/registry/default/ui/input"
-import { Label } from "@/registry/default/ui/label"
 
 export function CardsCreateAccount() {
   return (

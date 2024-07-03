@@ -10,8 +10,7 @@ import {
   ComboboxPopover,
   ComboboxSection,
 } from "@/registry/default/ui/combobox"
-import { FieldGroup } from "@/registry/default/ui/field"
-import { Label } from "@/registry/default/ui/label"
+import { FieldGroup, Label } from "@/registry/default/ui/field"
 
 export default function ComoboxSections() {
   return (

@@ -14,8 +14,7 @@ import {
 
 import { cn } from "@/lib/utils"
 
-import { FieldError } from "./field"
-import { Label, labelVariants } from "./label"
+import { FieldError, Label, labelVariants } from "./field"
 
 const CheckboxGroup = AriaCheckboxGroup
 

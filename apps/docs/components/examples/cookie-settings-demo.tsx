@@ -9,7 +9,7 @@ import {
   CardTitle,
 } from "@/components/card"
 import { Button } from "@/registry/default/ui/button"
-import { Label } from "@/registry/default/ui/label"
+import { Label } from "@/registry/default/ui/field"
 import { Switch } from "@/registry/default/ui/switch"
 
 // TODO: Look into multiple label issue

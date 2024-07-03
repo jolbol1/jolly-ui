@@ -91,17 +91,6 @@
     "type": "components:ui"
   },
   {
-    "name": "label",
-    "dependencies": [
-      "react-aria-components",
-      "class-variance-authority"
-    ],
-    "files": [
-      "ui/label.tsx"
-    ],
-    "type": "components:ui"
-  },
-  {
     "name": "link",
     "dependencies": [
       "react-aria-components",

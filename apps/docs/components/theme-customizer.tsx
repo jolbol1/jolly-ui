@@ -18,7 +18,7 @@ import {
   DialogOverlay,
   DialogTrigger,
 } from "@/registry/new-york/ui/dialog"
-import { Label } from "@/registry/new-york/ui/label"
+import { Label } from "@/registry/new-york/ui/field"
 import { Link } from "@/registry/new-york/ui/link"
 import {
   Select,

@@ -9,8 +9,7 @@ import {
 
 import { cn } from "@/lib/utils"
 
-import { Label } from "./field"
-import { labelVariants } from "./label"
+import { Label, labelVariants } from "./field"
 
 interface MeterProps extends AriaMeterProps {
   barClassName?: string

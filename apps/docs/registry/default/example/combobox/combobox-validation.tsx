@@ -9,8 +9,7 @@ import {
   ComboboxListBox,
   ComboboxPopover,
 } from "@/registry/default/ui/combobox"
-import { FieldError, FieldGroup } from "@/registry/default/ui/field"
-import { Label } from "@/registry/default/ui/label"
+import { FieldError, FieldGroup, Label } from "@/registry/default/ui/field"
 
 export default function ComboboxValidation() {
   return (

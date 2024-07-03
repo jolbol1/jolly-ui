@@ -54,12 +54,6 @@ const ui: Registry = [
     files: ["ui/input.tsx"],
   },
   {
-    name: "label",
-    type: "components:ui",
-    dependencies: ["react-aria-components", "class-variance-authority"],
-    files: ["ui/label.tsx"],
-  },
-  {
     name: "link",
     type: "components:ui",
     dependencies: ["react-aria-components", "class-variance-authority"],
@@ -347,12 +341,6 @@ const example: Registry = [
     type: "components:example/input",
     registryDependencies: ["input"],
     files: ["example/input/input-disabled.tsx"],
-  },
-  {
-    name: "label-demo",
-    type: "components:example/label",
-    registryDependencies: ["label"],
-    files: ["example/label/label-demo.tsx"],
   },
   {
     name: "link-demo",

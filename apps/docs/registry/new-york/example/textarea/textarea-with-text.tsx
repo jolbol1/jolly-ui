@@ -1,6 +1,6 @@
 import { Text, TextField } from "react-aria-components"
 
-import { Label } from "@/registry/new-york/ui/label"
+import { Label } from "@/registry/new-york/ui/field"
 import { TextArea } from "@/registry/new-york/ui/textarea"
 
 export function TextareaWithText() {

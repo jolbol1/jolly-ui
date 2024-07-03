@@ -61,13 +61,6 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/ui/input")),
       files: ["registry/default/ui/input.tsx"],
     },
-    "label": {
-      name: "label",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: React.lazy(() => import("@/registry/default/ui/label")),
-      files: ["registry/default/ui/label.tsx"],
-    },
     "link": {
       name: "link",
       type: "components:ui",
@@ -389,13 +382,6 @@ export const Index: Record<string, any> = {
       registryDependencies: ["input"],
       component: React.lazy(() => import("@/registry/default/example/input/input-disabled")),
       files: ["registry/default/example/input/input-disabled.tsx"],
-    },
-    "label-demo": {
-      name: "label-demo",
-      type: "components:example/label",
-      registryDependencies: ["label"],
-      component: React.lazy(() => import("@/registry/default/example/label/label-demo")),
-      files: ["registry/default/example/label/label-demo.tsx"],
     },
     "link-demo": {
       name: "link-demo",
@@ -2183,13 +2169,6 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/new-york/ui/input")),
       files: ["registry/new-york/ui/input.tsx"],
     },
-    "label": {
-      name: "label",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: React.lazy(() => import("@/registry/new-york/ui/label")),
-      files: ["registry/new-york/ui/label.tsx"],
-    },
     "link": {
       name: "link",
       type: "components:ui",
@@ -2511,13 +2490,6 @@ export const Index: Record<string, any> = {
       registryDependencies: ["input"],
       component: React.lazy(() => import("@/registry/new-york/example/input/input-disabled")),
       files: ["registry/new-york/example/input/input-disabled.tsx"],
-    },
-    "label-demo": {
-      name: "label-demo",
-      type: "components:example/label",
-      registryDependencies: ["label"],
-      component: React.lazy(() => import("@/registry/new-york/example/label/label-demo")),
-      files: ["registry/new-york/example/label/label-demo.tsx"],
     },
     "link-demo": {
       name: "link-demo",

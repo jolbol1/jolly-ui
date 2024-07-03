@@ -14,8 +14,8 @@ import {
   SliderTrack,
 } from "@/registry/new-york/ui/color"
 import { Dialog, DialogTrigger } from "@/registry/new-york/ui/dialog"
+import { Label } from "@/registry/new-york/ui/field"
 import { Input } from "@/registry/new-york/ui/input"
-import { Label } from "@/registry/new-york/ui/label"
 import { Popover } from "@/registry/new-york/ui/popover"
 
 export function RgbPicker() {

@@ -14,8 +14,8 @@ import {
   SliderTrack,
 } from "@/registry/default/ui/color"
 import { Dialog, DialogTrigger } from "@/registry/default/ui/dialog"
+import { Label } from "@/registry/default/ui/field"
 import { Input } from "@/registry/default/ui/input"
-import { Label } from "@/registry/default/ui/label"
 import { Popover } from "@/registry/default/ui/popover"
 
 export function HslaPicker() {

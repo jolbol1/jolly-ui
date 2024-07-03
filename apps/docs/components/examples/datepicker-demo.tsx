@@ -19,8 +19,7 @@ import {
   DatePickerContent,
 } from "@/registry/default/ui/date-picker"
 import { DateInput } from "@/registry/default/ui/datefield"
-import { FieldGroup } from "@/registry/default/ui/field"
-import { Label } from "@/registry/default/ui/label"
+import { FieldGroup, Label } from "@/registry/default/ui/field"
 
 // TODO: Better Example
 

@@ -9,8 +9,7 @@ import {
   ComboboxListBox,
   ComboboxPopover,
 } from "@/registry/new-york/ui/combobox"
-import { FieldGroup } from "@/registry/new-york/ui/field"
-import { Label } from "@/registry/new-york/ui/label"
+import { FieldGroup, Label } from "@/registry/new-york/ui/field"
 
 export default function ComboboxTextSlot() {
   return (
