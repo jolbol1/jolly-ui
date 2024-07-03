@@ -369,20 +369,6 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/example/file-trigger/file-trigger-input-file")),
       files: ["registry/default/example/file-trigger/file-trigger-input-file.tsx"],
     },
-    "input-demo": {
-      name: "input-demo",
-      type: "components:example/input",
-      registryDependencies: ["input"],
-      component: React.lazy(() => import("@/registry/default/example/input/input-demo")),
-      files: ["registry/default/example/input/input-demo.tsx"],
-    },
-    "input-disabled": {
-      name: "input-disabled",
-      type: "components:example/input",
-      registryDependencies: ["input"],
-      component: React.lazy(() => import("@/registry/default/example/input/input-disabled")),
-      files: ["registry/default/example/input/input-disabled.tsx"],
-    },
     "link-demo": {
       name: "link-demo",
       type: "components:example/link",
@@ -2441,20 +2427,6 @@ export const Index: Record<string, any> = {
       registryDependencies: ["input"],
       component: React.lazy(() => import("@/registry/new-york/example/file-trigger/file-trigger-input-file")),
       files: ["registry/new-york/example/file-trigger/file-trigger-input-file.tsx"],
-    },
-    "input-demo": {
-      name: "input-demo",
-      type: "components:example/input",
-      registryDependencies: ["input"],
-      component: React.lazy(() => import("@/registry/new-york/example/input/input-demo")),
-      files: ["registry/new-york/example/input/input-demo.tsx"],
-    },
-    "input-disabled": {
-      name: "input-disabled",
-      type: "components:example/input",
-      registryDependencies: ["input"],
-      component: React.lazy(() => import("@/registry/new-york/example/input/input-disabled")),
-      files: ["registry/new-york/example/input/input-disabled.tsx"],
     },
     "link-demo": {
       name: "link-demo",

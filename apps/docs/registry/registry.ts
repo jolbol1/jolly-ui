@@ -335,18 +335,6 @@ const example: Registry = [
     files: ["example/file-trigger/file-trigger-input-file.tsx"],
   },
   {
-    name: "input-demo",
-    type: "components:example/input",
-    registryDependencies: ["input"],
-    files: ["example/input/input-demo.tsx"],
-  },
-  {
-    name: "input-disabled",
-    type: "components:example/input",
-    registryDependencies: ["input"],
-    files: ["example/input/input-disabled.tsx"],
-  },
-  {
     name: "link-demo",
     type: "components:example/link",
     registryDependencies: ["link"],
