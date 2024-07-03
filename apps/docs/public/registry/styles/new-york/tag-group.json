@@ -1,7 +1,11 @@
 {
   "name": "tag-group",
   "dependencies": [
-    "react-aria-components"
+    "react-aria-components",
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "field"
   ],
   "files": [
     {

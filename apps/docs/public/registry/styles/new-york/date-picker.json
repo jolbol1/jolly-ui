@@ -4,8 +4,12 @@
     "react-aria-components"
   ],
   "registryDependencies": [
+    "field",
+    "popover",
     "button",
-    "popover"
+    "calendar",
+    "datefield",
+    "field"
   ],
   "files": [
     {

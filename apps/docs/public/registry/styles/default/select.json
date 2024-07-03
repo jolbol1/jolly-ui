@@ -3,6 +3,10 @@
   "dependencies": [
     "react-aria-components"
   ],
+  "registryDependencies": [
+    "field",
+    "popover"
+  ],
   "files": [
     {
       "name": "select.tsx",

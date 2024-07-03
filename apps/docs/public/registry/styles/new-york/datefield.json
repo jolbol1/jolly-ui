@@ -1,10 +1,11 @@
 {
   "name": "datefield",
   "dependencies": [
-    "react-aria-components"
+    "react-aria-components",
+    "class-variance-authority"
   ],
   "registryDependencies": [
-    "button"
+    "field"
   ],
   "files": [
     {

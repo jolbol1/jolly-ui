@@ -1,7 +1,13 @@
 {
   "name": "menu",
   "dependencies": [
-    "react-aria-components"
+    "react-aria-components",
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "button",
+    "list-box",
+    "select"
   ],
   "files": [
     {

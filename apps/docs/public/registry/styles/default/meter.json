@@ -3,6 +3,9 @@
   "dependencies": [
     "react-aria-components"
   ],
+  "registryDependencies": [
+    "field"
+  ],
   "files": [
     {
       "name": "meter.tsx",

@@ -3,6 +3,12 @@
   "dependencies": [
     "react-aria-components"
   ],
+  "registryDependencies": [
+    "field",
+    "popover",
+    "button",
+    "list-box"
+  ],
   "files": [
     {
       "name": "combobox.tsx",

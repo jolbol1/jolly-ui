@@ -26,7 +26,8 @@
   {
     "name": "calendar",
     "dependencies": [
-      "react-aria-components"
+      "react-aria-components",
+      "@internationalized/date"
     ],
     "registryDependencies": [
       "button"
@@ -42,7 +43,7 @@
       "react-aria-components"
     ],
     "registryDependencies": [
-      "label"
+      "field"
     ],
     "files": [
       "ui/checkbox.tsx"
@@ -64,6 +65,12 @@
     "dependencies": [
       "react-aria-components"
     ],
+    "registryDependencies": [
+      "field",
+      "popover",
+      "button",
+      "list-box"
+    ],
     "files": [
       "ui/combobox.tsx"
     ],
@@ -75,8 +82,12 @@
       "react-aria-components"
     ],
     "registryDependencies": [
+      "field",
+      "popover",
       "button",
-      "popover"
+      "calendar",
+      "datefield",
+      "field"
     ],
     "files": [
       "ui/date-picker.tsx"
@@ -86,10 +97,11 @@
   {
     "name": "datefield",
     "dependencies": [
-      "react-aria-components"
+      "react-aria-components",
+      "class-variance-authority"
     ],
     "registryDependencies": [
-      "button"
+      "field"
     ],
     "files": [
       "ui/datefield.tsx"
@@ -118,6 +130,17 @@
     "type": "components:ui"
   },
   {
+    "name": "field",
+    "dependencies": [
+      "react-aria-components",
+      "class-variance-authority"
+    ],
+    "files": [
+      "ui/field.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
     "name": "grid-list",
     "dependencies": [
       "react-aria-components"
@@ -127,16 +150,6 @@
     ],
     "files": [
       "ui/grid-list.tsx"
-    ],
-    "type": "components:ui"
-  },
-  {
-    "name": "textfield",
-    "dependencies": [
-      "react-aria-components"
-    ],
-    "files": [
-      "ui/textfield.tsx"
     ],
     "type": "components:ui"
   },
@@ -167,7 +180,13 @@
   {
     "name": "menu",
     "dependencies": [
-      "react-aria-components"
+      "react-aria-components",
+      "class-variance-authority"
+    ],
+    "registryDependencies": [
+      "button",
+      "list-box",
+      "select"
     ],
     "files": [
       "ui/menu.tsx"
@@ -178,6 +197,9 @@
     "name": "meter",
     "dependencies": [
       "react-aria-components"
+    ],
+    "registryDependencies": [
+      "field"
     ],
     "files": [
       "ui/meter.tsx"
@@ -199,6 +221,9 @@
     "dependencies": [
       "react-aria-components"
     ],
+    "registryDependencies": [
+      "field"
+    ],
     "files": [
       "ui/progress.tsx"
     ],
@@ -210,7 +235,7 @@
       "react-aria-components"
     ],
     "registryDependencies": [
-      "label"
+      "field"
     ],
     "files": [
       "ui/radio-group.tsx"
@@ -222,6 +247,9 @@
     "dependencies": [
       "react-aria-components"
     ],
+    "registryDependencies": [
+      "field"
+    ],
     "files": [
       "ui/searchfield.tsx"
     ],
@@ -231,6 +259,10 @@
     "name": "select",
     "dependencies": [
       "react-aria-components"
+    ],
+    "registryDependencies": [
+      "field",
+      "popover"
     ],
     "files": [
       "ui/select.tsx"
@@ -251,6 +283,9 @@
     "name": "slider",
     "dependencies": [
       "react-aria-components"
+    ],
+    "registryDependencies": [
+      "field"
     ],
     "files": [
       "ui/slider.tsx"
@@ -280,10 +315,27 @@
   {
     "name": "tag-group",
     "dependencies": [
-      "react-aria-components"
+      "react-aria-components",
+      "class-variance-authority"
+    ],
+    "registryDependencies": [
+      "field"
     ],
     "files": [
       "ui/tag-group.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
+    "name": "textfield",
+    "dependencies": [
+      "react-aria-components"
+    ],
+    "registryDependencies": [
+      "field"
+    ],
+    "files": [
+      "ui/textfield.tsx"
     ],
     "type": "components:ui"
   },
