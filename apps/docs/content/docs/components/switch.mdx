@@ -6,6 +6,8 @@ links:
   doc: https://react-spectrum.adobe.com/react-aria/Switch.html
 ---
 
+There is no native HTML element with switch styling. `<input type="checkbox">` is the closest semantically, but isn't styled or exposed to assistive technology as a switch. Switch helps achieve accessible switches that can be styled as needed.
+
 <ComponentPreview name="switch-demo" />
 
 ## Installation
@@ -22,8 +24,6 @@ links:
 ```bash
 npx @sly-cli/sly add jolly-ui switch
 ```
-
-**Note: Only the default style can be installed via CLI at the moment**
 
 </TabsContent>
 
@@ -53,6 +53,6 @@ npx @sly-cli/sly add jolly-ui switch
 
 <ComponentPreview name="switch-disabled" />
 
-### Readonly
+#### Readonly
 
 <ComponentPreview name="switch-readonly" />

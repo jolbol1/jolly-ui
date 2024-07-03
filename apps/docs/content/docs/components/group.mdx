@@ -1,11 +1,13 @@
 ---
 title: Group
-description: A Group component is used to create a logical grouping of related interface elements, often with a label.
+description: A group represents a set of related UI controls, and supports interactive states for styling.
 featured: true
 component: true
 links:
-  doc: https://react-spectrum.adobe.com/react-aria/useGroup.html
+  doc: https://react-spectrum.adobe.com/react-aria/Group.html
 ---
+
+A group can be created with a `<div role="group">` or via the HTML `<fieldset>` element. The Group component supports additional UI states, and can be used standalone or as part of a larger pattern such as NumberField or DatePicker.
 
 <ComponentPreview name="group-demo" />
 
@@ -48,10 +50,6 @@ npx @sly-cli/sly add jolly-ui group
 
 <ComponentPreview name="group-demo" />
 
-This example shows a basic implementation of the Group component.
-
-### Group with Label
+### Labeling
 
 <ComponentPreview name="group-label" />
-
-This example demonstrates how to use a Group component with a visible label, which can improve accessibility and user understanding of the grouped elements.

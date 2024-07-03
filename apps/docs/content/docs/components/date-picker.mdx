@@ -7,6 +7,8 @@ links:
   doc: https://react-spectrum.adobe.com/react-aria/DatePicker.html
 ---
 
+A date picker can be built using `<input type="date">`, but this is very limited in functionality, lacking in internationalization capabilities, inconsistent between browsers, and difficult to style. DatePicker helps achieve accessible and international date and time pickers that can be styled as needed.
+
 <ComponentPreview name="datepicker-demo" />
 
 ## Installation
@@ -42,40 +44,57 @@ npx @sly-cli/sly add jolly-ui datepicker
 
 </Tabs>
 
+## Composed Components
+
+A DatePicker uses the following components, which may also be used standalone or reused in other components.
+
+<ComponentCards>
+  <ComponentCard component="label" />
+  <ComponentCard component="datefield" />
+  <ComponentCard component="button" />
+  <ComponentCard component="popover" />
+  <ComponentCard component="dialog" />
+  <ComponentCard component="calendar" />
+</ComponentCards>
+
 ## Reusable Wrapper - Example
+
+If you will use a DatePicker in multiple places in your app, you can wrap all of the pieces into a reusable component. This way, the DOM structure, styling code, and other logic are defined in a single place and reused everywhere to ensure consistency.
 
 <ComponentPreview name="datepicker-reusable" />
 
 ## Examples
 
-### Demo
+### Basic
 
 <ComponentPreview name="datepicker-demo" />
 
-### DatePicker with Custom Validation
+### Values
 
-<ComponentPreview name="datepicker-custom-validation" />
-
-### DatePicker with Description
-
-<ComponentPreview name="datepicker-description" />
-
-### DatePicker with Custom Granularity
-
-<ComponentPreview name="datepicker-granularity" />
-
-### DatePicker with Min/Max Dates
-
-<ComponentPreview name="datepicker-min-max" />
-
-### DatePicker with Timezone
+#### Timezones
 
 <ComponentPreview name="datepicker-timezone" />
 
-### DatePicker with Unavailable Dates
+#### Granularity
+
+<ComponentPreview name="datepicker-granularity" />
+
+### Validation
+
+<ComponentPreview name="datepicker-validation" />
+
+#### Min/Max Dates
+
+<ComponentPreview name="datepicker-min-max" />
+
+#### Unavailable Dates
 
 <ComponentPreview name="datepicker-unavailable" />
 
-### DatePicker with Validation
+#### Custom Validation
 
-<ComponentPreview name="datepicker-validation" />
+<ComponentPreview name="datepicker-custom-validation" />
+
+#### Description
+
+<ComponentPreview name="datepicker-description" />

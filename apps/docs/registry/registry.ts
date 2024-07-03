@@ -331,6 +331,12 @@ const example: Registry = [
     files: ["example/file-trigger/file-trigger-button-demo.tsx"],
   },
   {
+    name: "file-trigger-input-file",
+    type: "components:example/file-trigger",
+    registryDependencies: ["input"],
+    files: ["example/file-trigger/file-trigger-input-file.tsx"],
+  },
+  {
     name: "input-demo",
     type: "components:example/input",
     registryDependencies: ["input"],
@@ -341,12 +347,6 @@ const example: Registry = [
     type: "components:example/input",
     registryDependencies: ["input"],
     files: ["example/input/input-disabled.tsx"],
-  },
-  {
-    name: "input-file",
-    type: "components:example/input",
-    registryDependencies: ["input"],
-    files: ["example/input/input-file.tsx"],
   },
   {
     name: "label-demo",
@@ -1210,12 +1210,7 @@ const example: Registry = [
     registryDependencies: ["checkbox"],
     files: ["example/checkbox/checkbox-validation.tsx"],
   },
-  {
-    name: "checkbox-reusbale",
-    type: "components:example/checkbox",
-    registryDependencies: ["checkbox"],
-    files: ["example/checkbox/checkbox-reusbale.tsx"],
-  },
+
 
   // CheckboxGroup
 
@@ -1260,6 +1255,12 @@ const example: Registry = [
     type: "components:example/checkbox-group",
     registryDependencies: ["checkbox-group"],
     files: ["example/checkbox-group/checkbox-group-validation.tsx"],
+  },
+  {
+    name: "checkbox-group-reusable",
+    type: "components:example/checkbox-group",
+    registryDependencies: ["checkbox"],
+    files: ["example/checkbox-group/checkbox-reusable.tsx"],
   },
 
   // Form

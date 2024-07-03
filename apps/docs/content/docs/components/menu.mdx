@@ -7,6 +7,8 @@ links:
   doc: https://react-spectrum.adobe.com/react-aria/Menu.html
 ---
 
+There is no native element to implement a menu in HTML that is widely supported. MenuTrigger and Menu help achieve accessible menu components that can be styled as needed.
+
 <ComponentPreview name="menu-demo" />
 
 ## Installation
@@ -42,64 +44,87 @@ npx @sly-cli/sly add jolly-ui menu
 
 </Tabs>
 
+## Composed Components
+
+A Menu uses the following components, which may also be used standalone or reused in other components.
+
+<ComponentCards>
+  <ComponentCard component="button" />
+  <ComponentCard component="popover" />
+</ComponentCards>
+
 ## Reusable Wrapper - Example
+
+If you will use a Menu in multiple places in your app, you can wrap all of the pieces into a reusable component. This way, the DOM structure, styling code, and other logic are defined in a single place and reused everywhere to ensure consistency.
 
 <ComponentPreview name="menu-reusable" />
 
 ## Examples
 
-### Demo
+### Basic
 
 <ComponentPreview name="menu-demo" />
 
-### Custom Content
+### Dynamic Content
 
 <ComponentPreview name="menu-content" />
 
-### Disabled Items
+### Selection
 
-<ComponentPreview name="menu-disabled-items" />
+#### Single Selection
 
-### Disabled Keys
+<ComponentPreview name="menu-selection-single" />
 
-<ComponentPreview name="menu-disabled-keys" />
+#### Multiple Selection
+
+<ComponentPreview name="menu-selection-multiple" />
 
 ### Links
 
 <ComponentPreview name="menu-links" />
 
-### Long Press
+#### Client Side Routing
 
-<ComponentPreview name="menu-long-press" />
-
-### Dynamic Sections
-
-<ComponentPreview name="menu-sections-dynamic" />
+The `<MenuItem>` component works with frameworks and client side routers like Next.js, Remix and React Router.
+As with other React Aria components that support links, this works via the `RouterProvider` component at the root of your app.
+See the [client side routing guide](https://react-spectrum.adobe.com/react-aria/routing.html) to learn how to set this up.
 
 ### Sections
 
+#### Static
+
 <ComponentPreview name="menu-sections" />
 
-### Multiple Selection
+#### Dynamic
 
-<ComponentPreview name="menu-selection-multiple" />
+<ComponentPreview name="menu-sections-dynamic" />
 
-### Single Selection
-
-<ComponentPreview name="menu-selection-single" />
-
-### Separators
+#### Separators
 
 <ComponentPreview name="menu-separators" />
-
-### Dynamic Submenu
-
-<ComponentPreview name="menu-sub-menu-dynamic" />
-
-### Submenu
-
-<ComponentPreview name="menu-sub-menu" />
 
 ### Text Slots
 
 <ComponentPreview name="menu-text-slots" />
+
+### Long Press
+
+<ComponentPreview name="menu-long-press" />
+
+### Disabled Items
+
+<ComponentPreview name="menu-disabled-items" />
+
+In dynamic collections, it may be more convenient to use the disabledKeys prop at the Menu level instead of isDisabled on individual items. Each key in this list corresponds with the id prop passed to the MenuItem component, or automatically derived from the values passed to the items prop (see the [Collections](https://react-spectrum.adobe.com/react-aria/collections.html) for more details). An item is considered disabled if its id exists in disabledKeys or if it has isDisabled.
+
+<ComponentPreview name="menu-disabled-keys" />
+
+### Submenus
+
+#### Static
+
+<ComponentPreview name="menu-sub-menu" />
+
+#### Dynamic
+
+<ComponentPreview name="menu-sub-menu-dynamic" />

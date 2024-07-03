@@ -7,6 +7,8 @@ links:
   doc: https://react-spectrum.adobe.com/react-aria/DateRangePicker.html
 ---
 
+A date range picker can be built using two separate `<input type="date">` elements, but this is very limited in functionality, lacking in internationalization capabilities, inconsistent between browsers, and difficult to style. DateRangePicker helps achieve accessible and international date and time range pickers that can be styled as needed.
+
 <ComponentPreview name="date-range-picker-demo" />
 
 ## Installation
@@ -44,44 +46,61 @@ npx @sly-cli/sly add jolly-ui date-range-picker
 
 </Tabs>
 
+## Composed Components
+
+A DateRangePicker uses the following components, which may also be used standalone or reused in other components.
+
+<ComponentCards>
+  <ComponentCard component="label" />
+  <ComponentCard component="datefield" />
+  <ComponentCard component="button" />
+  <ComponentCard component="popover" />
+  <ComponentCard component="dialog" />
+  <ComponentCard component="rangeCalendar" />
+</ComponentCards>
+
 ## Reusable Wrapper - Example
+
+If you will use a DateRangePicker in multiple places in your app, you can wrap all of the pieces into a reusable component. This way, the DOM structure, styling code, and other logic are defined in a single place and reused everywhere to ensure consistency.
 
 <ComponentPreview name="date-range-picker-reusable" />
 
 ## Examples
 
-### Demo
+### Basic
 
 <ComponentPreview name="date-range-picker-demo" />
 
-### Non-Continuous Date Range
+### Values
 
-<ComponentPreview name="date-range-non-continuous" />
-
-### DateRangePicker with Custom Validation
-
-<ComponentPreview name="date-range-picker-custom-validation" />
-
-### DateRangePicker with Description
-
-<ComponentPreview name="date-range-picker-description" />
-
-### DateRangePicker with Custom Granularity
-
-<ComponentPreview name="date-range-picker-granularity" />
-
-### DateRangePicker with Min/Max Dates
-
-<ComponentPreview name="date-range-picker-min-max" />
-
-### DateRangePicker with Timezone
+#### Timezones
 
 <ComponentPreview name="date-range-picker-timezone" />
 
-### DateRangePicker with Validation
+#### Granularity
+
+<ComponentPreview name="date-range-picker-granularity" />
+
+### Validation
 
 <ComponentPreview name="date-range-picker-validation" />
 
-### DateRangePicker with Unavailable Dates
+#### Min/Max Dates
+
+<ComponentPreview name="date-range-picker-min-max" />
+
+#### Custom Validation
+
+<ComponentPreview name="date-range-picker-custom-validation" />
+
+#### Unavailable Dates
 
 <ComponentPreview name="date-range-unavailable" />
+
+#### Non-Continuous Ranges
+
+<ComponentPreview name="date-range-non-continuous" />
+
+#### Description
+
+<ComponentPreview name="date-range-picker-description" />

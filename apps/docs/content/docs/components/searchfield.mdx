@@ -1,11 +1,14 @@
 ---
 title: SearchField
-description: A SearchField allows a user to enter and clear text, with an optional icon to trigger the search.
+description: A search field allows a user to enter and clear a search query.
+
 featured: true
 component: true
 links:
   doc: https://react-spectrum.adobe.com/react-aria/SearchField.html
 ---
+
+Search fields can be built with `<input type="search">`, but these can be hard to style consistently cross browser. SearchField helps achieve accessible search fields that can be styled as needed.
 
 <ComponentPreview name="searchfield-demo" />
 
@@ -44,28 +47,40 @@ npx @sly-cli/sly add jolly-ui searchfield
 
 </Tabs>
 
+## Composed Components
+
+A SearchField uses the following components, which may also be used standalone or reused in other components.
+
+<ComponentCards>
+  <ComponentCard component="label" />
+  <ComponentCard component="input" />
+  <ComponentCard component="button" />
+</ComponentCards>
+
 ## Reusable Wrapper - Example
+
+If you will use a SearchField in multiple places in your app, you can wrap all of the pieces into a reusable component. This way, the DOM structure, styling code, and other logic are defined in a single place and reused everywhere to ensure consistency.
 
 <ComponentPreview name="searchfield-reusable" />
 
 ## Examples
 
-### Demo
+### Basic
 
 <ComponentPreview name="searchfield-demo" />
 
-### SearchField with Description
+### Validation
+
+<ComponentPreview name="searchfield-validation" />
+
+#### Description
 
 <ComponentPreview name="searchfield-description" />
 
-### Disabled SearchField
+### Disabled
 
 <ComponentPreview name="searchfield-disabled" />
 
-### Read-only SearchField
+#### Read-only
 
 <ComponentPreview name="searchfield-readonly" />
-
-### SearchField with Validation
-
-<ComponentPreview name="searchfield-validation" />

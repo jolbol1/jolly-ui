@@ -7,6 +7,8 @@ links:
   doc: https://react-spectrum.adobe.com/react-aria/Meter.html
 ---
 
+The `<meter>` HTML element can be used to build a meter, however it is very difficult to style cross browser. Meter helps achieve accessible meters that can be styled as needed.
+
 <ComponentPreview name="meter-demo" />
 
 ## Installation
@@ -44,18 +46,22 @@ npx @sly-cli/sly add jolly-ui meter
 
 ## Reusable Wrapper - Example
 
+If you will use a Meter in multiple places in your app, you can wrap all of the pieces into a reusable component. This way, the DOM structure, styling code, and other logic are defined in a single place and reused everywhere to ensure consistency.
+
 <ComponentPreview name="meter-reusable" />
 
 ## Examples
 
-### Demo
+### Basic
 
 <ComponentPreview name="meter-demo" />
 
-### Meter with Custom Format
+### Labeling
 
-<ComponentPreview name="meter-custom-format" />
-
-### Meter with Value Format
+#### Value Formatting
 
 <ComponentPreview name="meter-value-format" />
+
+#### Custom value label
+
+<ComponentPreview name="meter-custom-format" />

@@ -7,6 +7,8 @@ links:
   doc: https://react-spectrum.adobe.com/react-aria/CheckboxGroup.html
 ---
 
+Checkbox groups can be built in HTML with the `<fieldset>` and `<input>` elements, however these can be difficult to style. CheckboxGroup helps achieve accessible checkbox groups that can be styled as needed.
+
 <ComponentPreview name="checkbox-group-demo" />
 
 ## Installation
@@ -43,33 +45,49 @@ npx @sly-cli/sly add jolly-ui checkbox-group
 </TabsContent>
 
 </Tabs>
+## Composed Components
+
+A CheckboxGroup uses the following components, which may also be used standalone or reused in other components.
+
+<ComponentCards>
+  <ComponentCard component="label" />
+  <ComponentCard component="checkbox" />
+</ComponentCards>
+
+## Reusable Wrapper - Example
+
+If you will use a CheckboxGroup in multiple places in your app, you can wrap all of the pieces into a reusable component. This way, the DOM structure, styling code, and other logic are defined in a single place and reused everywhere to ensure consistency.
+
+<ComponentPreview name="checkbox-group-reusable" />
 
 ## Examples
 
-### Demo
+### Basic
 
 <ComponentPreview name="checkbox-group-demo" />
 
-### CheckboxGroup with Description
+### Validation
 
-<ComponentPreview name="checkbox-group-description" />
+<ComponentPreview name="checkbox-group-validation" />
 
-### CheckboxGroup with Individual Disabled Items
-
-<ComponentPreview name="checkbox-group-disabled-individual" />
-
-### Disabled CheckboxGroup
-
-<ComponentPreview name="checkbox-group-disabled" />
-
-### CheckboxGroup with Individual Item Validation
+#### Individual Checkbox Validation
 
 <ComponentPreview name="checkbox-group-individual-validation" />
 
-### Read-only CheckboxGroup
+#### Description
+
+<ComponentPreview name="checkbox-group-description" />
+
+### Disabled
+
+The entire CheckboxGroup can be disabled with the isDisabled prop.
+
+<ComponentPreview name="checkbox-group-disabled" />
+
+To disable an individual checkbox, pass isDisabled to the Checkbox instead.
+
+<ComponentPreview name="checkbox-group-disabled-individual" />
+
+#### Read-only
 
 <ComponentPreview name="checkbox-group-readonly" />
-
-### CheckboxGroup with Validation
-
-<ComponentPreview name="checkbox-group-validation" />

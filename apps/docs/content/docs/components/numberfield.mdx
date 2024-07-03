@@ -7,6 +7,8 @@ links:
   doc: https://react-spectrum.adobe.com/react-aria/NumberField.html
 ---
 
+Number fields can be built with `<input type="number">`, but the behavior is very inconsistent across browsers and platforms, it supports limited localized formatting options, and it is challenging to style the stepper buttons. NumberField helps achieve accessible number fields that support internationalized formatting options and can be styled as needed.
+
 <ComponentPreview name="numberfield-demo" />
 
 ## Installation
@@ -44,52 +46,66 @@ npx @sly-cli/sly add jolly-ui numberfield
 
 </Tabs>
 
+## Composed Components
+
+A NumberField uses the following components, which may also be used standalone or reused in other components.
+
+<ComponentCards>
+  <ComponentCard component="label" />
+  <ComponentCard component="input" />
+  <ComponentCard component="button" />
+</ComponentCards>
+
 ## Reusable Wrapper - Example
+
+If you will use a NumberField in multiple places in your app, you can wrap all of the pieces into a reusable component. This way, the DOM structure, styling code, and other logic are defined in a single place and reused everywhere to ensure consistency.
 
 <ComponentPreview name="numberfield-reusable" />
 
 ## Examples
 
-### Demo
+### Basic
+
+#### Decimals
 
 <ComponentPreview name="numberfield-demo" />
 
-### Currency NumberField
-
-<ComponentPreview name="numberfield-currency" />
-
-### NumberField with Description
-
-<ComponentPreview name="numberfield-description" />
-
-### Disabled NumberField
-
-<ComponentPreview name="numberfield-disabled" />
-
-### Formatted NumberField
+### Number formatting
 
 <ComponentPreview name="numberfield-formatting" />
 
-### Percentage NumberField
+#### Currency
+
+<ComponentPreview name="numberfield-currency" />
+
+#### Percentages
 
 <ComponentPreview name="numberfield-percentages" />
 
-### Read-only NumberField
-
-<ComponentPreview name="numberfield-readonly" />
-
-### NumberField with Step Values
-
-<ComponentPreview name="numberfield-step-values" />
-
-### NumberField with Units
+#### Units
 
 <ComponentPreview name="numberfield-units" />
 
-### NumberField with Validation Error
+### Validation
+
+<ComponentPreview name="numberfield-validation" />
+
+#### Step Values
+
+<ComponentPreview name="numberfield-step-values" />
+
+#### Validation errors
 
 <ComponentPreview name="numberfield-validation-error" />
 
-### NumberField with Validation
+#### Description
 
-<ComponentPreview name="numberfield-validation" />
+<ComponentPreview name="numberfield-description" />
+
+### Disabled
+
+<ComponentPreview name="numberfield-disabled" />
+
+#### Read-only
+
+<ComponentPreview name="numberfield-readonly" />

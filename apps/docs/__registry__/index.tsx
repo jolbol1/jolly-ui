@@ -369,6 +369,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/example/file-trigger/file-trigger-button-demo")),
       files: ["registry/default/example/file-trigger/file-trigger-button-demo.tsx"],
     },
+    "file-trigger-input-file": {
+      name: "file-trigger-input-file",
+      type: "components:example/file-trigger",
+      registryDependencies: ["input"],
+      component: React.lazy(() => import("@/registry/default/example/file-trigger/file-trigger-input-file")),
+      files: ["registry/default/example/file-trigger/file-trigger-input-file.tsx"],
+    },
     "input-demo": {
       name: "input-demo",
       type: "components:example/input",
@@ -382,13 +389,6 @@ export const Index: Record<string, any> = {
       registryDependencies: ["input"],
       component: React.lazy(() => import("@/registry/default/example/input/input-disabled")),
       files: ["registry/default/example/input/input-disabled.tsx"],
-    },
-    "input-file": {
-      name: "input-file",
-      type: "components:example/input",
-      registryDependencies: ["input"],
-      component: React.lazy(() => import("@/registry/default/example/input/input-file")),
-      files: ["registry/default/example/input/input-file.tsx"],
     },
     "label-demo": {
       name: "label-demo",
@@ -1363,13 +1363,6 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/example/checkbox/checkbox-validation")),
       files: ["registry/default/example/checkbox/checkbox-validation.tsx"],
     },
-    "checkbox-reusbale": {
-      name: "checkbox-reusbale",
-      type: "components:example/checkbox",
-      registryDependencies: ["checkbox"],
-      component: React.lazy(() => import("@/registry/default/example/checkbox/checkbox-reusbale")),
-      files: ["registry/default/example/checkbox/checkbox-reusbale.tsx"],
-    },
     "checkbox-group-demo": {
       name: "checkbox-group-demo",
       type: "components:example/checkbox-group",
@@ -1418,6 +1411,13 @@ export const Index: Record<string, any> = {
       registryDependencies: ["checkbox-group"],
       component: React.lazy(() => import("@/registry/default/example/checkbox-group/checkbox-group-validation")),
       files: ["registry/default/example/checkbox-group/checkbox-group-validation.tsx"],
+    },
+    "checkbox-group-reusable": {
+      name: "checkbox-group-reusable",
+      type: "components:example/checkbox-group",
+      registryDependencies: ["checkbox"],
+      component: React.lazy(() => import("@/registry/default/example/checkbox-group/checkbox-group-reusable")),
+      files: ["registry/default/example/checkbox-group/checkbox-reusable.tsx"],
     },
     "form-demo": {
       name: "form-demo",
@@ -2491,6 +2491,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/new-york/example/file-trigger/file-trigger-button-demo")),
       files: ["registry/new-york/example/file-trigger/file-trigger-button-demo.tsx"],
     },
+    "file-trigger-input-file": {
+      name: "file-trigger-input-file",
+      type: "components:example/file-trigger",
+      registryDependencies: ["input"],
+      component: React.lazy(() => import("@/registry/new-york/example/file-trigger/file-trigger-input-file")),
+      files: ["registry/new-york/example/file-trigger/file-trigger-input-file.tsx"],
+    },
     "input-demo": {
       name: "input-demo",
       type: "components:example/input",
@@ -2504,13 +2511,6 @@ export const Index: Record<string, any> = {
       registryDependencies: ["input"],
       component: React.lazy(() => import("@/registry/new-york/example/input/input-disabled")),
       files: ["registry/new-york/example/input/input-disabled.tsx"],
-    },
-    "input-file": {
-      name: "input-file",
-      type: "components:example/input",
-      registryDependencies: ["input"],
-      component: React.lazy(() => import("@/registry/new-york/example/input/input-file")),
-      files: ["registry/new-york/example/input/input-file.tsx"],
     },
     "label-demo": {
       name: "label-demo",
@@ -3485,13 +3485,6 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/new-york/example/checkbox/checkbox-validation")),
       files: ["registry/new-york/example/checkbox/checkbox-validation.tsx"],
     },
-    "checkbox-reusbale": {
-      name: "checkbox-reusbale",
-      type: "components:example/checkbox",
-      registryDependencies: ["checkbox"],
-      component: React.lazy(() => import("@/registry/new-york/example/checkbox/checkbox-reusbale")),
-      files: ["registry/new-york/example/checkbox/checkbox-reusbale.tsx"],
-    },
     "checkbox-group-demo": {
       name: "checkbox-group-demo",
       type: "components:example/checkbox-group",
@@ -3540,6 +3533,13 @@ export const Index: Record<string, any> = {
       registryDependencies: ["checkbox-group"],
       component: React.lazy(() => import("@/registry/new-york/example/checkbox-group/checkbox-group-validation")),
       files: ["registry/new-york/example/checkbox-group/checkbox-group-validation.tsx"],
+    },
+    "checkbox-group-reusable": {
+      name: "checkbox-group-reusable",
+      type: "components:example/checkbox-group",
+      registryDependencies: ["checkbox"],
+      component: React.lazy(() => import("@/registry/new-york/example/checkbox-group/checkbox-group-reusable")),
+      files: ["registry/new-york/example/checkbox-group/checkbox-reusable.tsx"],
     },
     "form-demo": {
       name: "form-demo",

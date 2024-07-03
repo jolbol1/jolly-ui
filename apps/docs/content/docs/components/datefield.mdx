@@ -1,6 +1,6 @@
 ---
 title: DateField
-description: A DateField allows users to enter and edit date values using a text field.
+description: A date field allows users to enter and edit date and time values using a keyboard. Each part of a date value is displayed in an individually editable segment.
 featured: true
 component: true
 links:
@@ -10,6 +10,8 @@ links:
 <ComponentPreview name="datefield-demo" />
 
 ## Installation
+
+A date field can be built using `<input type="date">`, but this is very limited in functionality, lacking in internationalization capabilities, inconsistent between browsers, and difficult to style. DateField helps achieve accessible and international date and time fields that can be styled as needed.
 
 <Tabs defaultValue="cli">
 
@@ -42,32 +44,44 @@ npx @sly-cli/sly add jolly-ui datefield
 
 </Tabs>
 
+## Composed Components
+
+A DateField uses the following components, which may also be used standalone or reused in other components.
+
+<ComponentCards>
+  <ComponentCard component="label" />
+</ComponentCards>
+
 ## Reusable Wrapper - Example
+
+If you will use a DateField in multiple places in your app, you can wrap all of the pieces into a reusable component. This way, the DOM structure, styling code, and other logic are defined in a single place and reused everywhere to ensure consistency.
 
 <ComponentPreview name="datefield-reusable" />
 
 ## Examples
 
-### Demo
+### Basic
 
 <ComponentPreview name="datefield-demo" />
 
-### DateField with Description
+### Values
 
-<ComponentPreview name="datefield-description" />
-
-### DateField with Custom Granularity
-
-<ComponentPreview name="datefield-granularity" />
-
-### DateField with Timezone
+#### Timezones
 
 <ComponentPreview name="datefield-timezone" />
 
-### DateField with Min/Max Validation
+#### Granularity
+
+<ComponentPreview name="datefield-granularity" />
+
+### Validation
+
+<ComponentPreview name="datefield-validation" />
+
+#### Min/Max Values
 
 <ComponentPreview name="datefield-validation-min-max" />
 
-### DateField with Validation
+#### Description
 
-<ComponentPreview name="datefield-validation" />
+<ComponentPreview name="datefield-description" />

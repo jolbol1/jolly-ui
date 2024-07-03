@@ -7,6 +7,8 @@ links:
   doc: https://react-spectrum.adobe.com/react-aria/RadioGroup.html
 ---
 
+Radio groups can be built in HTML with the `<fieldset>` and `<input>` elements, however these can be difficult to style. RadioGroup and Radio help achieve accessible radio groups that can be styled as needed.
+
 <ComponentPreview name="radio-group-demo" />
 
 ## Installation
@@ -44,36 +46,48 @@ npx @sly-cli/sly add jolly-ui radio-group
 
 </Tabs>
 
+## Composed Components
+
+A RadioGroup uses the following components, which may also be used standalone or reused in other components.
+
+<ComponentCards>
+  <ComponentCard component="label" />
+</ComponentCards>
+
 ## Reusable Wrapper - Example
+
+If you will use a RadioGroup in multiple places in your app, you can wrap all of the pieces into a reusable component. This way, the DOM structure, styling code, and other logic are defined in a single place and reused everywhere to ensure consistency.
 
 <ComponentPreview name="radio-group-reusable" />
 
 ## Examples
 
-### Demo
+### Basic
 
 <ComponentPreview name="radio-group-demo" />
 
-### RadioGroup with Description
+### Validation
+
+<ComponentPreview name="radio-group-validation" />
+
+#### Description
 
 <ComponentPreview name="radio-group-description" />
 
-### RadioGroup with Individual Disabled Options
-
-<ComponentPreview name="radio-group-disabled-individual" />
-
-### Disabled RadioGroup
-
-<ComponentPreview name="radio-group-disabled" />
-
-### RadioGroup with Different Orientations
+### Orientation
 
 <ComponentPreview name="radio-group-orientation" />
 
-### Read-only RadioGroup
+### Disabled
+
+The entire RadioGroup can be disabled with the isDisabled prop.
+
+<ComponentPreview name="radio-group-disabled" />
+
+To disable an individual radio, pass isDisabled to the Radio instead.
+
+<ComponentPreview name="radio-group-disabled-individual" />
+
+#### Read-only
 
 <ComponentPreview name="radio-group-readonly" />
-
-### RadioGroup with Validation
-
-<ComponentPreview name="radio-group-validation" />

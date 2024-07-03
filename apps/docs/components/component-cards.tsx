@@ -44,12 +44,37 @@ const componentCards = {
       "A calendar displays one or more date grids and allows users to select a single date.",
     href: "/docs/components/calendar",
   },
+  rangeCalendar: {
+    name: "RangeCalendar",
+    description:
+      "A range calendar displays one or more date grids and allows users to select a contiguous range of dates.",
+    href: "/docs/components/range-calendar",
+  },
+  fileTrigger: {
+    name: "FileTrigger",
+    description:
+      "A FileTrigger allows a user to access the file system with any pressable React Aria or React Spectrum component, or custom components built with usePress.",
+    href: "/docs/components/file-trigger",
+  },
+  input: {
+    name: "Input",
+    description:
+      "An input allows a user to enter a plain text value with a keyboard.",
+    href: "/docs/components/input",
+  },
+  listbox: {
+    name: "ListBox",
+    description:
+      "A listbox displays a list of options and allows a user to select one or more of them.",
+    href: "/docs/components/list-box",
+  },
 }
 
 type Components = keyof typeof componentCards
 
 export function ComponentCard({ component }: { component: Components }) {
   const componentData = componentCards[component]
+
   return (
     <Link
       aria-label={componentData.name}

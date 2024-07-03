@@ -7,6 +7,8 @@ links:
   doc: https://react-spectrum.adobe.com/react-aria/RangeCalendar.html
 ---
 
+There is no standalone range calendar element in HTML. Two separate `<input type="date">` elements could be used, but this is very limited in functionality, lacking in internationalization capabilities, inconsistent between browsers, and difficult to style. RangeCalendar helps achieve accessible and international range calendar components that can be styled as needed.
+
 <ComponentPreview name="range-calendar-demo" />
 
 ## Installation
@@ -44,40 +46,50 @@ npx @sly-cli/sly add jolly-ui range-calendar
 
 </Tabs>
 
+## Composed Components
+
+A RangeCalendar uses the following components, which may also be used standalone or reused in other components.
+
+<ComponentCards>
+  <ComponentCard component="button" />
+</ComponentCards>
+
 ## Reusable Wrapper - Example
+
+If you will use a RangeCalendar in multiple places in your app, you can wrap all of the pieces into a reusable component. This way, the DOM structure, styling code, and other logic are defined in a single place and reused everywhere to ensure consistency.
 
 <ComponentPreview name="range-calendar-reusable" />
 
 ## Examples
 
-### Demo
+### Basic
 
 <ComponentPreview name="range-calendar-demo" />
 
-### Disabled RangeCalendar
-
-<ComponentPreview name="range-calendar-disabled" />
-
-### RangeCalendar with Error
-
-<ComponentPreview name="range-calendar-error" />
-
-### Multi-Month RangeCalendar
+### Multi-Month
 
 <ComponentPreview name="range-calendar-multi-month" />
 
-### Non-Continuous Date Range
+### Validation
 
-<ComponentPreview name="range-calendar-non-continuous" />
+<ComponentPreview name="range-calendar-validation" />
 
-### Read-only RangeCalendar
-
-<ComponentPreview name="range-calendar-readonly" />
-
-### RangeCalendar with Unavailable Dates
+#### Unavailable Dates
 
 <ComponentPreview name="range-calendar-unavailable" />
 
-### RangeCalendar with Validation
+#### Non-Continuous Ranges
 
-<ComponentPreview name="range-calendar-validation" />
+<ComponentPreview name="range-calendar-non-continuous" />
+
+#### Error Message
+
+<ComponentPreview name="range-calendar-error" />
+
+### Disabled
+
+<ComponentPreview name="range-calendar-disabled" />
+
+#### Read-only
+
+<ComponentPreview name="range-calendar-readonly" />

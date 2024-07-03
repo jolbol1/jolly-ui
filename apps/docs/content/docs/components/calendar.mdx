@@ -1,11 +1,13 @@
 ---
 title: Calendar
-description: A Calendar allows users to view and select dates or date ranges.
+description: A calendar displays one or more date grids and allows users to select a single date.
 featured: true
 component: true
 links:
   doc: https://react-spectrum.adobe.com/react-aria/Calendar.html
 ---
+
+There is no standalone calendar element in HTML. `<input type="date">`is close, but this is very limited in functionality, lacking in internationalization capabilities, inconsistent between browsers, and difficult to style. Calendar helps achieve accessible and international calendar components that can be styled as needed.
 
 <ComponentPreview name="calendar-demo" />
 
@@ -42,36 +44,46 @@ npx @sly-cli/sly add jolly-ui calendar
 
 </Tabs>
 
+### Composed Components
+
+A Calendar uses the following components, which may also be used standalone or reused in other components.
+
+<ComponentCards>
+  <ComponentCard component="button" />
+</ComponentCards>
+
 ## Reusable Wrapper - Example
+
+If you will use a Calendar in multiple places in your app, you can wrap all of the pieces into a reusable component. This way, the DOM structure, styling code, and other logic are defined in a single place and reused everywhere to ensure consistency.
 
 <ComponentPreview name="calendar-reusable" />
 
 ## Examples
 
-### Demo
+### Basic
 
 <ComponentPreview name="calendar-demo" />
 
-### Disabled Calendar
-
-<ComponentPreview name="calendar-disabled" />
-
-### Calendar with Error
-
-<ComponentPreview name="calendar-error" />
-
-### Multi-Selection Calendar
+### Multi-month
 
 <ComponentPreview name="calendar-multi" />
 
-### Read-only Calendar
+### Validation
 
-<ComponentPreview name="calendar-readonly" />
+<ComponentPreview name="calendar-validation" />
 
-### Calendar with Unavailable Dates
+#### Unavailable Dates
 
 <ComponentPreview name="calendar-unavailable" />
 
-### Calendar with Validation
+#### Error Message
 
-<ComponentPreview name="calendar-validation" />
+<ComponentPreview name="calendar-error" />
+
+### Disabled
+
+<ComponentPreview name="calendar-disabled" />
+
+#### Read-only
+
+<ComponentPreview name="calendar-readonly" />

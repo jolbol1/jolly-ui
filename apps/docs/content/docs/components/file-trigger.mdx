@@ -6,6 +6,8 @@ links:
   doc: https://react-spectrum.adobe.com/react-aria/FileTrigger.html
 ---
 
+FileTrigger extends the functionality of the standard file input element by working with a pressable child such as a Button to create accessible file inputs that can be style as needed.
+
 <ComponentPreview name="file-trigger-button-demo" />
 
 ## Installation
@@ -24,7 +26,14 @@ links:
   Install the button.tsx component [here](../../../docs/components/button)
 </Step>
 
-<Step>Import FileTrigger from react-aria-components</Step>
+<Step>
+  Import FileTrigger from react-aria-components
+
+```tsx
+import { FileTrigger } from "react-aria-components"
+```
+
+</Step>
 
 </Steps>
 
@@ -32,7 +41,13 @@ links:
 
 </Tabs>
 
-## Usage
+## Composed Components
+
+A FileTrigger wraps around a pressable child such as a button, and includes a visually hidden input element that allows the user to select files from their device.
+
+<ComponentCards>
+  <ComponentCard component="button" />
+</ComponentCards>
 
 ### Button
 
@@ -43,4 +58,7 @@ links:
 A file input can be created with an `<Input type=“file”>` element, but this supports limited styling options and may not integrate well with the overall design of a website or application.
 To overcome this, [FileTrigger](../../../docs/components/file-trigger) extends the functionality of the standard file input element by working with a pressable child such as a Button to create accessible file inputs that can be style as needed.
 
-<ComponentPreview name="input-file" className="[&_input]:max-w-xs" />
+<ComponentPreview
+  name="file-trigger-input-file"
+  className="[&_input]:max-w-xs"
+/>

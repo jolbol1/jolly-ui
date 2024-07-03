@@ -1,11 +1,13 @@
 ---
 title: Slider
-description: A Slider allows users to quickly select a value within a range. It can be used to adjust settings like volume, brightness, or applying image filters.
+description: A slider allows a user to select one or more values within a range.
 featured: true
 component: true
 links:
   doc: https://react-spectrum.adobe.com/react-aria/Slider.html
 ---
+
+The `<input type="range">` HTML element can be used to build a slider, however it is very difficult to style cross browser. Slider helps achieve accessible sliders that can be styled as needed.
 
 <ComponentPreview name="slider-demo" />
 
@@ -44,22 +46,26 @@ npx @sly-cli/sly add jolly-ui slider
 
 ## Examples
 
-### Demo
+### Basic
 
 <ComponentPreview name="slider-demo" />
 
-### Disabled Slider
+### Validation
 
-<ComponentPreview name="slider-disabled" />
-
-### Slider with Step Values
-
-<ComponentPreview name="slider-step-values" />
-
-### Slider with Custom Values
+#### Custom value scale
 
 <ComponentPreview name="slider-values" />
 
-### Vertical Slider
+#### Step values
+
+<ComponentPreview name="slider-step-values" />
+
+### Visual Options
+
+#### Vertical orientation
 
 <ComponentPreview name="slider-vertical" />
+
+#### Disabled
+
+<ComponentPreview name="slider-disabled" />

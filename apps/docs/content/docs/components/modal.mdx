@@ -1,11 +1,14 @@
 ---
 title: Modal
-description: A dialog is an overlay shown above other content in an application.
+description: A modal is an overlay element which blocks interaction with elements outside it.
+
 featured: true
 component: true
 links:
   doc: https://react-spectrum.adobe.com/react-aria/Modal.html
 ---
+
+The HTML `<dialog>` element can be used to build modals. However, it is not yet widely supported across browsers, and building fully accessible custom dialogs from scratch is very difficult and error prone. Modal helps achieve accessible modals that can be styled as needed.
 
 <ComponentPreview name="modal-demo" />
 
@@ -23,8 +26,6 @@ links:
 ```bash
 npx @sly-cli/sly add jolly-ui dialog
 ```
-
-**Note: Only the default style can be installed via CLI at the moment**
 
 </TabsContent>
 
@@ -44,17 +45,19 @@ npx @sly-cli/sly add jolly-ui dialog
 
 </Tabs>
 
-## Usage
+## Examples
 
 ### Basic
 
 <ComponentPreview name="modal-demo" />
 
-### Dismissable
+### Interactions
+
+#### Dismissable
 
 <ComponentPreview name="modal-dismissable" />
 
-### Keyboard Dismissable
+#### Keyboard Dismiss Disabled
 
 <ComponentPreview name="modal-keyboard-dismissable" />
 

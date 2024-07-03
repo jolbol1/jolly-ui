@@ -1,11 +1,13 @@
 ---
 title: TimeField
-description: A TimeField allows users to enter and edit time values using a text field.
+description: A time field allows users to enter and edit time values using a keyboard. Each part of a time value is displayed in an individually editable segment.
 featured: true
 component: true
 links:
   doc: https://react-spectrum.adobe.com/react-aria/TimeField.html
 ---
+
+A time field can be built using `<input type="time">`, but this is very limited in functionality, lacking in internationalization capabilities, inconsistent between browsers, and difficult to style. TimeField helps achieve accessible and international time fields that can be styled as needed.
 
 <ComponentPreview name="timefield-demo" />
 
@@ -42,36 +44,48 @@ npx @sly-cli/sly add jolly-ui timefield
 
 </Tabs>
 
+## Composed Components
+
+A TimeField uses the following components, which may also be used standalone or reused in other components.
+
+<ComponentCards>
+  <ComponentCard component="label" />
+</ComponentCards>
+
 ## Reusable Wrapper - Example
+
+If you will use a TimeField in multiple places in your app, you can wrap all of the pieces into a reusable component. This way, the DOM structure, styling code, and other logic are defined in a single place and reused everywhere to ensure consistency.
 
 <ComponentPreview name="timefield-reusable" />
 
 ## Examples
 
-### Demo
+### Basic
 
 <ComponentPreview name="timefield-demo" />
 
-### TimeField with Custom Validation
+### Values
 
-<ComponentPreview name="timefield-custom-validation" />
-
-### TimeField with Description
-
-<ComponentPreview name="timefield-description" />
-
-### TimeField with Custom Granularity
-
-<ComponentPreview name="timefield-granularity" />
-
-### TimeField with Min/Max Time
-
-<ComponentPreview name="timefield-min-max" />
-
-### TimeField with Timezone
+#### Timezones
 
 <ComponentPreview name="timefield-timezone" />
 
-### TimeField with Validation
+#### Granularity
+
+<ComponentPreview name="timefield-granularity" />
+
+### Validation
 
 <ComponentPreview name="timefield-validation" />
+
+#### Min/Max values
+
+<ComponentPreview name="timefield-min-max" />
+
+#### Custom Validation
+
+<ComponentPreview name="timefield-custom-validation" />
+
+#### Description
+
+<ComponentPreview name="timefield-description" />

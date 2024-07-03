@@ -7,6 +7,8 @@ links:
   doc: https://react-spectrum.adobe.com/react-aria/Link.html
 ---
 
+Links can be created in HTML with the `<a>` element with an href attribute. However, if the link does not have an href, and is handled client side with JavaScript instead, it will not be exposed to assistive technology properly. Link helps achieve accessible links with either native HTML elements or custom element types.
+
 <ComponentPreview name="link-demo" />
 
 ## Installation
@@ -23,8 +25,6 @@ links:
 ```bash
 npx @sly-cli/sly add jolly-ui link
 ```
-
-**Note: Only the default style can be installed via CLI at the moment**
 
 </TabsContent>
 

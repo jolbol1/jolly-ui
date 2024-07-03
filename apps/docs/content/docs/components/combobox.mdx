@@ -7,6 +7,8 @@ links:
   doc: https://react-spectrum.adobe.com/react-aria/ComboBox.html
 ---
 
+A combo box can be built using the `<datalist>` HTML element, but this is very limited in functionality and difficult to style. ComboBox helps achieve accessible combo box and autocomplete components that can be styled as needed.
+
 <ComponentPreview name="combobox-demo" />
 
 ## Installation
@@ -42,48 +44,78 @@ npx @sly-cli/sly add jolly-ui combobox
 
 </Tabs>
 
+## Composed Components
+
+A ComboBox uses the following components, which may also be used standalone or reused in other components.
+
+<ComponentCards>
+  <ComponentCard component="label" />
+  <ComponentCard component="input" />
+  <ComponentCard component="button" />
+  <ComponentCard component="popover" />
+  <ComponentCard component="listbox" />
+</ComponentCards>
+
 ## Reusable Wrapper - Example
+
+If you will use a ComboBox in multiple places in your app, you can wrap all of the pieces into a reusable component. This way, the DOM structure, styling code, and other logic are defined in a single place and reused everywhere to ensure consistency.
 
 <ComponentPreview name="combobox-reusable" />
 
 ## Examples
 
-### Demo
+### Basic
 
 <ComponentPreview name="combobox-demo" />
 
-### ComboBox with Custom Content
+### Content
+
+ComboBox follows the [Collection Components API](https://react-spectrum.adobe.com/react-aria/collections.html), accepting both static and dynamic collections. The examples above show static collections, which can be used when the full list of options is known ahead of time. Dynamic collections, as shown below, can be used when the options come from an external data source such as an API call, or update over time.
 
 <ComponentPreview name="combobox-content" />
 
-### ComboBox with Description
-
-<ComponentPreview name="combobox-description" />
-
-### Disabled ComboBox
-
-<ComponentPreview name="combobox-disabled" />
-
-### ComboBox with Links
+### Links
 
 <ComponentPreview name="combobox-links" />
 
-### ComboBox with Menu Trigger
+#### Client Side Routing
 
-<ComponentPreview name="combobox-menu-trigger" />
+The `<ComboboxItem>` component works with frameworks and client side routers like Next.js, Remix and React Router.
+As with other React Aria components that support links, this works via the `RouterProvider` component at the root of your app.
+See the [client side routing guide](https://react-spectrum.adobe.com/react-aria/routing.html) to learn how to set this up.
 
-### ComboBox with Dynamic Sections
+### Sections
 
-<ComponentPreview name="combobox-sections-dynamic" />
-
-### ComboBox with Sections
+#### Static
 
 <ComponentPreview name="combobox-sections" />
 
-### ComboBox with Text Slots
+#### Dynamic
+
+<ComponentPreview name="combobox-sections-dynamic" />
+
+### Text Slots
 
 <ComponentPreview name="combobox-text-slots" />
 
-### ComboBox with Validation
+### Menu Trigger Behavior
+
+ComboBox supports three different menuTrigger prop values:
+
+- input (default): ComboBox menu opens when the user edits the input text.
+- focus: ComboBox menu opens when the user focuses the ComboBox input.
+- manual: ComboBox menu only opens when the user presses the trigger button or uses the arrow keys.
+
+<ComponentPreview name="combobox-menu-trigger" />
+
+### Validation
 
 <ComponentPreview name="combobox-validation" />
+
+#### Description
+
+<ComponentPreview name="combobox-description" />
+
+### Disabled
+
+<ComponentPreview name="combobox-disabled" />

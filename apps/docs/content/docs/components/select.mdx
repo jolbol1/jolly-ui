@@ -7,6 +7,8 @@ links:
   doc: https://react-spectrum.adobe.com/react-aria/Select.html
 ---
 
+A select can be built using the `<select>` and `<option>` HTML elements, but this is not possible to style consistently cross browser, especially the options. Select helps achieve accessible select components that can be styled as needed without compromising on high quality interactions.
+
 <ComponentPreview name="select-demo" />
 
 ## Installation
@@ -42,48 +44,76 @@ npx @sly-cli/sly add jolly-ui select
 
 </Tabs>
 
+## Composed Components
+
+A Select uses the following components, which may also be used standalone or reused in other components.
+
+<ComponentCards>
+  <ComponentCard component="label" />
+  <ComponentCard component="button" />
+  <ComponentCard component="popover" />
+  <ComponentCard component="listbox" />
+</ComponentCards>
+
 ## Reusable Wrapper - Example
+
+If you will use a Select in multiple places in your app, you can wrap all of the pieces into a reusable component. This way, the DOM structure, styling code, and other logic are defined in a single place and reused everywhere to ensure consistency.
 
 <ComponentPreview name="select-reusable" />
 
 ## Examples
 
-### Demo
+### Basic
 
 <ComponentPreview name="select-demo" />
 
-### Select with Custom Content
+### Content
+
+Select follows the [Collection Components API](https://react-spectrum.adobe.com/react-aria/collections.html), accepting both static and dynamic collections. The examples above show static collections, which can be used when the full list of options is known ahead of time. Dynamic collections, as shown below, can be used when the options come from an external data source such as an API call, or update over time.
 
 <ComponentPreview name="select-content" />
 
-### Select with Description
-
-<ComponentPreview name="select-description" />
-
-### Select with Disabled Items
-
-<ComponentPreview name="select-disabled-items" />
-
-### Disabled Select
-
-<ComponentPreview name="select-disabled" />
-
-### Select with Links
+### Links
 
 <ComponentPreview name="select-links" />
 
-### Select with Dynamic Sections
+#### Client Side Routing
 
-<ComponentPreview name="select-sections-dynamic" />
+The `<SelectItem>` component works with frameworks and client side routers like Next.js, Remix and React Router.
+As with other React Aria components that support links, this works via the `RouterProvider` component at the root of your app.
+See the [client side routing guide](https://react-spectrum.adobe.com/react-aria/routing.html) to learn how to set this up.
 
-### Select with Sections
+### Sections
+
+#### Static
 
 <ComponentPreview name="select-sections" />
 
-### Select with Text Slots
+#### Dynamic
+
+<ComponentPreview name="select-sections-dynamic" />
+
+### Text Slots
 
 <ComponentPreview name="select-text-slots" />
 
-### Select with Validation
+### Validation
 
 <ComponentPreview name="select-validation" />
+
+#### Description
+
+<ComponentPreview name="select-description" />
+
+### Disabled
+
+A Select can be fully disabled using the isDisabled prop.
+
+<ComponentPreview name="select-disabled" />
+
+Select supports marking items as disabled using the disabledKeys prop. Each key in
+this list corresponds with the id prop passed to the ListBoxItem component, or automatically
+derived from the values passed to the items prop. See the Collections guide for more
+details.
+
+<ComponentPreview name="select-disabled-items" />

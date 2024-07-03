@@ -1,11 +1,13 @@
 ---
 title: Toolbar
-description: A Toolbar is a container for grouping a set of controls, such as buttons, menubuttons, or checkboxes.
+description: A toolbar is a container for a set of interactive controls, such as buttons, dropdown menus, or checkboxes, with arrow key navigation.
 featured: true
 component: true
 links:
   doc: https://react-spectrum.adobe.com/react-aria/Toolbar.html
 ---
+
+There is no built-in HTML toolbar element. Toolbar helps achieve accessible toolbars with arrow key navigation that can be styled as needed.
 
 <ComponentPreview name="toolbar-demo" />
 
@@ -44,14 +46,12 @@ npx @sly-cli/sly add jolly-ui toolbar
 
 ## Examples
 
-### Demo
+### Basic
 
 <ComponentPreview name="toolbar-demo" />
 
-This example shows a basic horizontal Toolbar implementation with various controls.
+### Orientation
 
-### Vertical Toolbar
+By default, toolbars are horizontally oriented. The orientation prop can be set to "vertical" to change the arrow key navigation behavior.
 
 <ComponentPreview name="toolbar-vertical" />
-
-This example demonstrates a vertical orientation of the Toolbar, which can be useful for certain UI layouts or when space is limited horizontally.

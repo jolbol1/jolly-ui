@@ -1,11 +1,13 @@
 ---
 title: TagGroup
-description: Tags represent a set of interactive keywords that help label, organize, and categorize content.
+description: A tag group is a focusable list of labels, categories, keywords, filters, or other items, with support for keyboard navigation, selection, and removal.
 featured: true
 component: true
 links:
-  doc: https://react-spectrum.adobe.com/react-aria/Tag.html
+  doc: https://react-spectrum.adobe.com/react-aria/TagGroup.html
 ---
+
+A static tag list can be built using `<ul>` or `<ol>` HTML elements, but does not support any user interactions. HTML lists are meant for static content, rather than lists with rich interactions such as keyboard navigation, item selection, removal, etc. TagGroup helps achieve accessible and interactive tag list components that can be styled as needed.
 
 <ComponentPreview name="tag-group-demo" />
 
@@ -45,47 +47,63 @@ npx @sly-cli/sly add jolly-ui tag-group
 
 </Tabs>
 
+## Composed Components
+
+A TagGroup uses the following components, which may also be used standalone or reused in other components.
+
+<ComponentCards>
+  <ComponentCard component="button" />
+  <ComponentCard component="label" />
+</ComponentCards>
+
 ## Reusable Wrapper - Example
+
+If you will use a TagGroup in multiple places in your app, you can wrap all of the pieces into a reusable component. This way, the DOM structure, styling code, and other logic are defined in a single place and reused everywhere to ensure consistency.
 
 <ComponentPreview name="tag-group-reusable" />
 
 ## Examples
 
-### TagGroup Demo
+### Basic
 
 <ComponentPreview name="tag-group-demo" />
 
-### Tag with Error Text
-
-<ComponentPreview name="tag-error-text" />
-
-### TagGroup with Disabled Items
-
-<ComponentPreview name="tag-group-disabled-items" />
-
-### TagGroup with Disabled Keys
-
-<ComponentPreview name="tag-group-disabled-keys" />
-
-### Empty TagGroup
-
-<ComponentPreview name="tag-group-empty" />
-
-### TagGroup with Helper Text
-
-<ComponentPreview name="tag-group-helper" />
-
-### TagGroup with Links
-
-<ComponentPreview name="tag-group-links" />
-
-### TagGroup with Removable Tags
+### Removing Tags
 
 <ComponentPreview name="tag-group-remove" />
 
-### TagGroup with Selection
+### Selection
 
 <ComponentPreview name="tag-group-selection" />
-```
 
-This MDX file includes the title and description for both Tag and TagGroup components, installation instructions, and a list of all the demos you provided, each with an appropriate title and `ComponentPreview` tag.
+### Links
+
+<ComponentPreview name="tag-group-links" />
+
+#### Client Side Routing
+
+The `<Tag>` component works with frameworks and client side routers like Next.js, Remix and React Router.
+As with other React Aria components that support links, this works via the `RouterProvider` component at the root of your app.
+See the [client side routing guide](https://react-spectrum.adobe.com/react-aria/routing.html) to learn how to set this up.
+
+### Disabled Tags
+
+<ComponentPreview name="tag-group-disabled-items" />
+
+In dynamic collections, it may be more convenient to use the disabledKeys prop at the TagGroup level instead of isDisabled on individual tags. Each key in this list corresponds with the id prop passed to the Tag component, or automatically derived from the values passed to the items prop (see the [Collections](https://react-spectrum.adobe.com/react-aria/collections.html) for more details). A tag is considered disabled if its id exists in disabledKeys or if it has isDisabled.
+
+<ComponentPreview name="tag-group-disabled-keys" />
+
+### Empty State
+
+<ComponentPreview name="tag-group-empty" />
+
+### Help Text
+
+#### Description
+
+<ComponentPreview name="tag-group-helper" />
+
+#### Error Message
+
+<ComponentPreview name="tag-error-text" />

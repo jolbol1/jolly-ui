@@ -1,11 +1,13 @@
 ---
 title: Form
-description: A Form component provides a way to group inputs and handle form submission and validation.
+description: A form is a group of inputs that allows users to submit data to a server, with support for providing field validation errors.
 featured: true
 component: true
 links:
-  doc: https://react-spectrum.adobe.com/react-aria/useForm.html
+  doc: https://react-spectrum.adobe.com/react-aria/Form.html
 ---
+
+The HTML `<form>` element can be used to build forms. React Aria's Form component extends HTML forms with support for providing server-side validation errors to the fields within it.
 
 <ComponentPreview name="form-demo" />
 
@@ -44,14 +46,18 @@ npx @sly-cli/sly add jolly-ui form
 
 ## Examples
 
-### Demo
+### Basic
 
 <ComponentPreview name="form-demo" />
 
-### Form with Validation Behavior
-
-<ComponentPreview name="form-validation-behavior" />
-
-### Form with Validation
+### Validation
 
 <ComponentPreview name="form-validation" />
+
+#### Validation Behavior
+
+By default, native HTML form validation is used to display errors and block form submission. To instead use ARIA attributes for form validation, set the validationBehavior prop to "aria". This will not block form submission, and will display validation errors to the user in realtime as the value is edited.
+
+The validationBehavior can be set at the form level to apply to all fields, or at the field level to override the form's behavior for a specific field.
+
+<ComponentPreview name="form-validation-behavior" />

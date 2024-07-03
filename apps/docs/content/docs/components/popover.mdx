@@ -1,11 +1,14 @@
 ---
 title: Popover
-description: A Popover displays content in a floating container positioned relative to a trigger element.
+description: A popover is an overlay element positioned relative to a trigger.
+
 featured: true
 component: true
 links:
-  doc: https://react-spectrum.adobe.com/react-aria/usePopover.html
+  doc: https://react-spectrum.adobe.com/react-aria/Popover.html
 ---
+
+There is no built in way to create popovers in HTML. Popover helps achieve accessible popovers that can be styled as needed.
 
 <ComponentPreview name="popover-demo" />
 
@@ -44,26 +47,26 @@ npx @sly-cli/sly add jolly-ui popover
 
 ## Examples
 
-### Demo
+### Basic
 
 <ComponentPreview name="popover-demo" />
 
-### Popover with Container Padding
+### Positioning
 
-<ComponentPreview name="popover-container-padding" />
+#### Placement
 
-### Popover with Cross Offset
+<ComponentPreview name="popover-position" />
 
-<ComponentPreview name="popover-cross-offset" />
-
-### Popover with Flipping
-
-<ComponentPreview name="popover-flipping" />
-
-### Popover with Offset
+#### Offset and Cross offset
 
 <ComponentPreview name="popover-offset" />
 
-### Popover with Custom Position
+<ComponentPreview name="popover-cross-offset" />
 
-<ComponentPreview name="popover-position" />
+#### Flipping
+
+<ComponentPreview name="popover-flipping" />
+
+#### Container Padding
+
+<ComponentPreview name="popover-container-padding" />
