@@ -4,29 +4,43 @@
 import * as React from "react"
 
 export const Index: Record<string, any> = {
-  default: {
-    breadcrumbs: {
+  "default": {
+    "breadcrumbs": {
       name: "breadcrumbs",
       type: "components:ui",
       registryDependencies: ["button"],
       component: React.lazy(() => import("@/registry/default/ui/breadcrumbs")),
       files: ["registry/default/ui/breadcrumbs.tsx"],
     },
-    checkbox: {
+    "button": {
+      name: "button",
+      type: "components:ui",
+      registryDependencies: undefined,
+      component: React.lazy(() => import("@/registry/default/ui/button")),
+      files: ["registry/default/ui/button.tsx"],
+    },
+    "calendar": {
+      name: "calendar",
+      type: "components:ui",
+      registryDependencies: ["button"],
+      component: React.lazy(() => import("@/registry/default/ui/calendar")),
+      files: ["registry/default/ui/calendar.tsx"],
+    },
+    "checkbox": {
       name: "checkbox",
       type: "components:ui",
       registryDependencies: ["label"],
       component: React.lazy(() => import("@/registry/default/ui/checkbox")),
       files: ["registry/default/ui/checkbox.tsx"],
     },
-    color: {
+    "color": {
       name: "color",
       type: "components:ui",
       registryDependencies: undefined,
       component: React.lazy(() => import("@/registry/default/ui/color")),
       files: ["registry/default/ui/color.tsx"],
     },
-    combobox: {
+    "combobox": {
       name: "combobox",
       type: "components:ui",
       registryDependencies: undefined,
@@ -36,60 +50,81 @@ export const Index: Record<string, any> = {
     "date-picker": {
       name: "date-picker",
       type: "components:ui",
-      registryDependencies: ["button", "popover"],
+      registryDependencies: ["button","popover"],
       component: React.lazy(() => import("@/registry/default/ui/date-picker")),
       files: ["registry/default/ui/date-picker.tsx"],
     },
-    dialog: {
+    "datefield": {
+      name: "datefield",
+      type: "components:ui",
+      registryDependencies: ["button"],
+      component: React.lazy(() => import("@/registry/default/ui/datefield")),
+      files: ["registry/default/ui/datefield.tsx"],
+    },
+    "dialog": {
       name: "dialog",
       type: "components:ui",
       registryDependencies: undefined,
       component: React.lazy(() => import("@/registry/default/ui/dialog")),
       files: ["registry/default/ui/dialog.tsx"],
     },
-    dropzone: {
+    "dropzone": {
       name: "dropzone",
       type: "components:ui",
       registryDependencies: undefined,
       component: React.lazy(() => import("@/registry/default/ui/dropzone")),
       files: ["registry/default/ui/dropzone.tsx"],
     },
-    input: {
-      name: "input",
+    "grid-list": {
+      name: "grid-list",
+      type: "components:ui",
+      registryDependencies: ["checkbox"],
+      component: React.lazy(() => import("@/registry/default/ui/grid-list")),
+      files: ["registry/default/ui/grid-list.tsx"],
+    },
+    "textfield": {
+      name: "textfield",
       type: "components:ui",
       registryDependencies: undefined,
       component: React.lazy(() => import("@/registry/default/ui/textfield")),
       files: ["registry/default/ui/textfield.tsx"],
     },
-    link: {
+    "link": {
       name: "link",
       type: "components:ui",
       registryDependencies: ["button"],
       component: React.lazy(() => import("@/registry/default/ui/link")),
       files: ["registry/default/ui/link.tsx"],
     },
-    menu: {
+    "list-box": {
+      name: "list-box",
+      type: "components:ui",
+      registryDependencies: undefined,
+      component: React.lazy(() => import("@/registry/default/ui/list-box")),
+      files: ["registry/default/ui/grid-list.tsx"],
+    },
+    "menu": {
       name: "menu",
       type: "components:ui",
       registryDependencies: undefined,
       component: React.lazy(() => import("@/registry/default/ui/menu")),
       files: ["registry/default/ui/menu.tsx"],
     },
-    meter: {
+    "meter": {
       name: "meter",
       type: "components:ui",
       registryDependencies: undefined,
       component: React.lazy(() => import("@/registry/default/ui/meter")),
       files: ["registry/default/ui/meter.tsx"],
     },
-    popover: {
+    "popover": {
       name: "popover",
       type: "components:ui",
       registryDependencies: undefined,
       component: React.lazy(() => import("@/registry/default/ui/popover")),
       files: ["registry/default/ui/popover.tsx"],
     },
-    progress: {
+    "progress": {
       name: "progress",
       type: "components:ui",
       registryDependencies: undefined,
@@ -103,89 +138,47 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/ui/radio-group")),
       files: ["registry/default/ui/radio-group.tsx"],
     },
-    searchfield: {
+    "searchfield": {
       name: "searchfield",
       type: "components:ui",
       registryDependencies: undefined,
       component: React.lazy(() => import("@/registry/default/ui/searchfield")),
       files: ["registry/default/ui/searchfield.tsx"],
     },
-    select: {
+    "select": {
       name: "select",
       type: "components:ui",
       registryDependencies: undefined,
       component: React.lazy(() => import("@/registry/default/ui/select")),
       files: ["registry/default/ui/select.tsx"],
     },
-    separator: {
+    "separator": {
       name: "separator",
       type: "components:ui",
       registryDependencies: undefined,
       component: React.lazy(() => import("@/registry/default/ui/separator")),
       files: ["registry/default/ui/separator.tsx"],
     },
-    slider: {
+    "slider": {
       name: "slider",
       type: "components:ui",
       registryDependencies: undefined,
       component: React.lazy(() => import("@/registry/default/ui/slider")),
       files: ["registry/default/ui/slider.tsx"],
     },
-    switch: {
+    "switch": {
       name: "switch",
       type: "components:ui",
       registryDependencies: undefined,
       component: React.lazy(() => import("@/registry/default/ui/switch")),
       files: ["registry/default/ui/switch.tsx"],
     },
-    tabs: {
+    "tabs": {
       name: "tabs",
       type: "components:ui",
       registryDependencies: undefined,
       component: React.lazy(() => import("@/registry/default/ui/tabs")),
       files: ["registry/default/ui/tabs.tsx"],
-    },
-    textarea: {
-      name: "textarea",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: React.lazy(() => import("@/registry/default/ui/textarea")),
-      files: ["registry/default/ui/textarea.tsx"],
-    },
-    tooltip: {
-      name: "tooltip",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: React.lazy(() => import("@/registry/default/ui/tooltip")),
-      files: ["registry/default/ui/tooltip.tsx"],
-    },
-    button: {
-      name: "button",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: React.lazy(() => import("@/registry/default/ui/button")),
-      files: ["registry/default/ui/button.tsx"],
-    },
-    toggle: {
-      name: "toggle",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: React.lazy(() => import("@/registry/default/ui/toggle")),
-      files: ["registry/default/ui/toggle.tsx"],
-    },
-    "grid-list": {
-      name: "grid-list",
-      type: "components:ui",
-      registryDependencies: ["checkbox"],
-      component: React.lazy(() => import("@/registry/default/ui/grid-list")),
-      files: ["registry/default/ui/grid-list.tsx"],
-    },
-    "list-box": {
-      name: "list-box",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: React.lazy(() => import("@/registry/default/ui/list-box")),
-      files: ["registry/default/ui/grid-list.tsx"],
     },
     "tag-group": {
       name: "tag-group",
@@ -194,2801 +187,1926 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/ui/tag-group")),
       files: ["registry/default/ui/tag-group.tsx"],
     },
-    calendar: {
-      name: "calendar",
+    "toggle": {
+      name: "toggle",
       type: "components:ui",
-      registryDependencies: ["button"],
-      component: React.lazy(() => import("@/registry/default/ui/calendar")),
-      files: ["registry/default/ui/calendar.tsx"],
+      registryDependencies: undefined,
+      component: React.lazy(() => import("@/registry/default/ui/toggle")),
+      files: ["registry/default/ui/toggle.tsx"],
     },
-    datefield: {
-      name: "datefield",
+    "tooltip": {
+      name: "tooltip",
       type: "components:ui",
-      registryDependencies: ["button"],
-      component: React.lazy(() => import("@/registry/default/ui/datefield")),
-      files: ["registry/default/ui/datefield.tsx"],
+      registryDependencies: undefined,
+      component: React.lazy(() => import("@/registry/default/ui/tooltip")),
+      files: ["registry/default/ui/tooltip.tsx"],
     },
     "breadcrumbs-demo": {
       name: "breadcrumbs-demo",
       type: "components:example/breadcrumbs",
       registryDependencies: ["breadcrumbs"],
-      component: React.lazy(
-        () => import("@/registry/default/example/breadcrumbs/breadcrumbs-demo")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/breadcrumbs/breadcrumbs-demo")),
       files: ["registry/default/example/breadcrumbs/breadcrumbs-demo.tsx"],
     },
     "breadcrumbs-dropdown": {
       name: "breadcrumbs-dropdown",
       type: "components:example/breadcrumbs",
       registryDependencies: ["breadcrumbs"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/breadcrumbs/breadcrumbs-dropdown")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/breadcrumbs/breadcrumbs-dropdown")),
       files: ["registry/default/example/breadcrumbs/breadcrumbs-dropdown.tsx"],
     },
     "breadcrumbs-disabled": {
       name: "breadcrumbs-disabled",
       type: "components:example/breadcrumbs",
       registryDependencies: ["breadcrumbs"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/breadcrumbs/breadcrumbs-disabled")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/breadcrumbs/breadcrumbs-disabled")),
       files: ["registry/default/example/breadcrumbs/breadcrumbs-disabled.tsx"],
     },
     "breadcrumbs-ellipsis": {
       name: "breadcrumbs-ellipsis",
       type: "components:example/breadcrumbs",
       registryDependencies: ["breadcrumbs"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/breadcrumbs/breadcrumbs-ellipsis")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/breadcrumbs/breadcrumbs-ellipsis")),
       files: ["registry/default/example/breadcrumbs/breadcrumbs-ellipsis.tsx"],
     },
     "breadcrumbs-separator": {
       name: "breadcrumbs-separator",
       type: "components:example/breadcrumbs",
       registryDependencies: ["breadcrumbs"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/breadcrumbs/breadcrumbs-separator")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/breadcrumbs/breadcrumbs-separator")),
       files: ["registry/default/example/breadcrumbs/breadcrumbs-separator.tsx"],
     },
     "breadcrumbs-items": {
       name: "breadcrumbs-items",
       type: "components:example/breadcrumbs",
       registryDependencies: ["breadcrumbs"],
-      component: React.lazy(
-        () => import("@/registry/default/example/breadcrumbs/breadcrumbs-items")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/breadcrumbs/breadcrumbs-items")),
       files: ["registry/default/example/breadcrumbs/breadcrumbs-items.tsx"],
     },
     "color-area": {
       name: "color-area",
       type: "components:example/color",
       registryDependencies: ["color"],
-      component: React.lazy(
-        () => import("@/registry/default/example/color/color-area")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/color/color-area")),
       files: ["registry/default/example/color/color-area.tsx"],
     },
     "color-picker-eye": {
       name: "color-picker-eye",
       type: "components:example/color/pickers",
       registryDependencies: ["color"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/color/pickers/color-picker-eye")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/color/pickers/color-picker-eye")),
       files: ["registry/default/example/color/pickers/color-picker-eye.tsx"],
     },
     "color-picker-hex": {
       name: "color-picker-hex",
       type: "components:example/color/pickers",
       registryDependencies: ["color"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/color/pickers/color-picker-hex")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/color/pickers/color-picker-hex")),
       files: ["registry/default/example/color/pickers/color-picker-hex.tsx"],
     },
     "color-picker-slider": {
       name: "color-picker-slider",
       type: "components:example/color/pickers",
       registryDependencies: ["color"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/color/pickers/color-picker-slider")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/color/pickers/color-picker-slider")),
       files: ["registry/default/example/color/pickers/color-picker-slider.tsx"],
     },
     "color-picker-hexa": {
       name: "color-picker-hexa",
       type: "components:example/color/pickers",
       registryDependencies: ["color"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/color/pickers/color-picker-hexa")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/color/pickers/color-picker-hexa")),
       files: ["registry/default/example/color/pickers/color-picker-hexa.tsx"],
     },
     "color-picker-hsb": {
       name: "color-picker-hsb",
       type: "components:example/color/pickers",
       registryDependencies: ["color"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/color/pickers/color-picker-hsb")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/color/pickers/color-picker-hsb")),
       files: ["registry/default/example/color/pickers/color-picker-hsb.tsx"],
     },
     "color-picker-hsba": {
       name: "color-picker-hsba",
       type: "components:example/color/pickers",
       registryDependencies: ["color"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/color/pickers/color-picker-hsba")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/color/pickers/color-picker-hsba")),
       files: ["registry/default/example/color/pickers/color-picker-hsba.tsx"],
     },
     "color-picker-multi": {
       name: "color-picker-multi",
       type: "components:example/color/pickers",
       registryDependencies: ["color"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/color/pickers/color-picker-multi")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/color/pickers/color-picker-multi")),
       files: ["registry/default/example/color/pickers/color-picker-multi.tsx"],
     },
     "color-picker-hsl": {
       name: "color-picker-hsl",
       type: "components:example/color/pickers",
       registryDependencies: ["color"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/color/pickers/color-picker-hsl")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/color/pickers/color-picker-hsl")),
       files: ["registry/default/example/color/pickers/color-picker-hsl.tsx"],
     },
     "color-picker-hsla": {
       name: "color-picker-hsla",
       type: "components:example/color/pickers",
       registryDependencies: ["color"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/color/pickers/color-picker-hsla")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/color/pickers/color-picker-hsla")),
       files: ["registry/default/example/color/pickers/color-picker-hsla.tsx"],
     },
     "color-picker-rgb": {
       name: "color-picker-rgb",
       type: "components:example/color/pickers",
       registryDependencies: ["color"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/color/pickers/color-picker-rgb")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/color/pickers/color-picker-rgb")),
       files: ["registry/default/example/color/pickers/color-picker-rgb.tsx"],
     },
     "color-picker-rgba": {
       name: "color-picker-rgba",
       type: "components:example/color/pickers",
       registryDependencies: ["color"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/color/pickers/color-picker-rgba")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/color/pickers/color-picker-rgba")),
       files: ["registry/default/example/color/pickers/color-picker-rgba.tsx"],
     },
     "color-slider": {
       name: "color-slider",
       type: "components:example/color",
       registryDependencies: ["color"],
-      component: React.lazy(
-        () => import("@/registry/default/example/color/color-slider")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/color/color-slider")),
       files: ["registry/default/example/color/color-slider.tsx"],
     },
     "color-swatch-picker": {
       name: "color-swatch-picker",
       type: "components:example/color",
       registryDependencies: ["color"],
-      component: React.lazy(
-        () => import("@/registry/default/example/color/color-swatch-picker")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/color/color-swatch-picker")),
       files: ["registry/default/example/color/color-swatch-picker.tsx"],
     },
     "color-wheel": {
       name: "color-wheel",
       type: "components:example/color",
       registryDependencies: ["color"],
-      component: React.lazy(
-        () => import("@/registry/default/example/color/color-wheel")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/color/color-wheel")),
       files: ["registry/default/example/color/color-wheel.tsx"],
     },
     "file-trigger-button-demo": {
       name: "file-trigger-button-demo",
       type: "components:example/file-trigger",
       registryDependencies: ["button"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/file-trigger/file-trigger-button-demo"
-          )
-      ),
-      files: [
-        "registry/default/example/file-trigger/file-trigger-button-demo.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/file-trigger/file-trigger-button-demo")),
+      files: ["registry/default/example/file-trigger/file-trigger-button-demo.tsx"],
     },
     "file-trigger-input-file": {
       name: "file-trigger-input-file",
       type: "components:example/file-trigger",
       registryDependencies: ["input"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/file-trigger/file-trigger-input-file"
-          )
-      ),
-      files: [
-        "registry/default/example/file-trigger/file-trigger-input-file.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/file-trigger/file-trigger-input-file")),
+      files: ["registry/default/example/file-trigger/file-trigger-input-file.tsx"],
     },
     "input-demo": {
       name: "input-demo",
       type: "components:example/input",
       registryDependencies: ["input"],
-      component: React.lazy(
-        () => import("@/registry/default/example/input/input-demo")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/input/input-demo")),
       files: ["registry/default/example/input/input-demo.tsx"],
     },
     "input-disabled": {
       name: "input-disabled",
       type: "components:example/input",
       registryDependencies: ["input"],
-      component: React.lazy(
-        () => import("@/registry/default/example/input/input-disabled")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/input/input-disabled")),
       files: ["registry/default/example/input/input-disabled.tsx"],
     },
     "link-demo": {
       name: "link-demo",
       type: "components:example/link",
       registryDependencies: ["link"],
-      component: React.lazy(
-        () => import("@/registry/default/example/link/link-demo")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/link/link-demo")),
       files: ["registry/default/example/link/link-demo.tsx"],
     },
     "link-variants": {
       name: "link-variants",
       type: "components:example/link",
       registryDependencies: ["link"],
-      component: React.lazy(
-        () => import("@/registry/default/example/link/link-variants")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/link/link-variants")),
       files: ["registry/default/example/link/link-variants.tsx"],
     },
     "separator-demo": {
       name: "separator-demo",
       type: "components:example/separator",
       registryDependencies: ["separator"],
-      component: React.lazy(
-        () => import("@/registry/default/example/separator/separator-demo")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/separator/separator-demo")),
       files: ["registry/default/example/separator/separator-demo.tsx"],
     },
     "switch-demo": {
       name: "switch-demo",
       type: "components:example/switch",
       registryDependencies: ["switch"],
-      component: React.lazy(
-        () => import("@/registry/default/example/switch/switch-demo")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/switch/switch-demo")),
       files: ["registry/default/example/switch/switch-demo.tsx"],
     },
     "switch-disabled": {
       name: "switch-disabled",
       type: "components:example/switch",
       registryDependencies: ["switch"],
-      component: React.lazy(
-        () => import("@/registry/default/example/switch/switch-disabled")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/switch/switch-disabled")),
       files: ["registry/default/example/switch/switch-disabled.tsx"],
     },
     "switch-readonly": {
       name: "switch-readonly",
       type: "components:example/switch",
       registryDependencies: ["switch"],
-      component: React.lazy(
-        () => import("@/registry/default/example/switch/switch-readonly")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/switch/switch-readonly")),
       files: ["registry/default/example/switch/switch-readonly.tsx"],
-    },
-    "textarea-demo": {
-      name: "textarea-demo",
-      type: "components:example/textarea",
-      registryDependencies: ["textarea"],
-      component: React.lazy(
-        () => import("@/registry/default/example/textarea/textarea-demo")
-      ),
-      files: ["registry/default/example/textarea/textarea-demo.tsx"],
-    },
-    "textarea-disabled": {
-      name: "textarea-disabled",
-      type: "components:example/textarea",
-      registryDependencies: ["textarea"],
-      component: React.lazy(
-        () => import("@/registry/default/example/textarea/textarea-disabled")
-      ),
-      files: ["registry/default/example/textarea/textarea-disabled.tsx"],
-    },
-    "textarea-with-button": {
-      name: "textarea-with-button",
-      type: "components:example/textarea",
-      registryDependencies: ["textarea"],
-      component: React.lazy(
-        () => import("@/registry/default/example/textarea/textarea-with-button")
-      ),
-      files: ["registry/default/example/textarea/textarea-with-button.tsx"],
-    },
-    "textarea-with-label": {
-      name: "textarea-with-label",
-      type: "components:example/textarea",
-      registryDependencies: ["textarea"],
-      component: React.lazy(
-        () => import("@/registry/default/example/textarea/textarea-with-label")
-      ),
-      files: ["registry/default/example/textarea/textarea-with-label.tsx"],
-    },
-    "textarea-with-text": {
-      name: "textarea-with-text",
-      type: "components:example/textarea",
-      registryDependencies: ["textarea"],
-      component: React.lazy(
-        () => import("@/registry/default/example/textarea/textarea-with-text")
-      ),
-      files: ["registry/default/example/textarea/textarea-with-text.tsx"],
     },
     "button-demo": {
       name: "button-demo",
       type: "components:example/button",
       registryDependencies: ["button"],
-      component: React.lazy(
-        () => import("@/registry/default/example/button/button-demo")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/button/button-demo")),
       files: ["registry/default/example/button/button-demo.tsx"],
     },
     "button-ghost": {
       name: "button-ghost",
       type: "components:example/button",
       registryDependencies: ["button"],
-      component: React.lazy(
-        () => import("@/registry/default/example/button/button-ghost")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/button/button-ghost")),
       files: ["registry/default/example/button/button-ghost.tsx"],
     },
     "button-icon": {
       name: "button-icon",
       type: "components:example/button",
       registryDependencies: ["button"],
-      component: React.lazy(
-        () => import("@/registry/default/example/button/button-icon")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/button/button-icon")),
       files: ["registry/default/example/button/button-icon.tsx"],
     },
     "button-link": {
       name: "button-link",
       type: "components:example/button",
       registryDependencies: ["button"],
-      component: React.lazy(
-        () => import("@/registry/default/example/button/button-link")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/button/button-link")),
       files: ["registry/default/example/button/button-link.tsx"],
     },
     "button-loading": {
       name: "button-loading",
       type: "components:example/button",
       registryDependencies: ["button"],
-      component: React.lazy(
-        () => import("@/registry/default/example/button/button-loading")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/button/button-loading")),
       files: ["registry/default/example/button/button-loading.tsx"],
     },
     "button-press": {
       name: "button-press",
       type: "components:example/button",
       registryDependencies: ["button"],
-      component: React.lazy(
-        () => import("@/registry/default/example/button/button-press")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/button/button-press")),
       files: ["registry/default/example/button/button-press.tsx"],
     },
     "button-secondary": {
       name: "button-secondary",
       type: "components:example/button",
       registryDependencies: ["button"],
-      component: React.lazy(
-        () => import("@/registry/default/example/button/button-secondary")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/button/button-secondary")),
       files: ["registry/default/example/button/button-secondary.tsx"],
     },
     "button-with-icon": {
       name: "button-with-icon",
       type: "components:example/button",
       registryDependencies: ["button"],
-      component: React.lazy(
-        () => import("@/registry/default/example/button/button-with-icon")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/button/button-with-icon")),
       files: ["registry/default/example/button/button-with-icon.tsx"],
     },
     "button-outline": {
       name: "button-outline",
       type: "components:example/button",
       registryDependencies: ["button"],
-      component: React.lazy(
-        () => import("@/registry/default/example/button/button-outline")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/button/button-outline")),
       files: ["registry/default/example/button/button-outline.tsx"],
     },
     "button-destructive": {
       name: "button-destructive",
       type: "components:example/button",
       registryDependencies: ["button"],
-      component: React.lazy(
-        () => import("@/registry/default/example/button/button-destructive")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/button/button-destructive")),
       files: ["registry/default/example/button/button-destructive.tsx"],
     },
     "toggle-demo": {
       name: "toggle-demo",
       type: "components:example/toggle",
       registryDependencies: ["toggle"],
-      component: React.lazy(
-        () => import("@/registry/default/example/toggle/toggle-demo")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/toggle/toggle-demo")),
       files: ["registry/default/example/toggle/toggle-demo.tsx"],
     },
     "toggle-disabled": {
       name: "toggle-disabled",
       type: "components:example/toggle",
       registryDependencies: ["toggle"],
-      component: React.lazy(
-        () => import("@/registry/default/example/toggle/toggle-disabled")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/toggle/toggle-disabled")),
       files: ["registry/default/example/toggle/toggle-disabled.tsx"],
     },
     "toggle-lg": {
       name: "toggle-lg",
       type: "components:example/toggle",
       registryDependencies: ["toggle"],
-      component: React.lazy(
-        () => import("@/registry/default/example/toggle/toggle-lg")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/toggle/toggle-lg")),
       files: ["registry/default/example/toggle/toggle-lg.tsx"],
     },
     "toggle-outline": {
       name: "toggle-outline",
       type: "components:example/toggle",
       registryDependencies: ["toggle"],
-      component: React.lazy(
-        () => import("@/registry/default/example/toggle/toggle-outline")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/toggle/toggle-outline")),
       files: ["registry/default/example/toggle/toggle-outline.tsx"],
     },
     "toggle-sm": {
       name: "toggle-sm",
       type: "components:example/toggle",
       registryDependencies: ["toggle"],
-      component: React.lazy(
-        () => import("@/registry/default/example/toggle/toggle-sm")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/toggle/toggle-sm")),
       files: ["registry/default/example/toggle/toggle-sm.tsx"],
     },
     "toggle-with-text": {
       name: "toggle-with-text",
       type: "components:example/toggle",
       registryDependencies: ["toggle"],
-      component: React.lazy(
-        () => import("@/registry/default/example/toggle/toggle-with-text")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/toggle/toggle-with-text")),
       files: ["registry/default/example/toggle/toggle-with-text.tsx"],
     },
     "grid-list-content": {
       name: "grid-list-content",
       type: "components:example/grid-list",
       registryDependencies: ["grid-list"],
-      component: React.lazy(
-        () => import("@/registry/default/example/grid-list/grid-list-content")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/grid-list/grid-list-content")),
       files: ["registry/default/example/grid-list/grid-list-content.tsx"],
     },
     "grid-list-demo": {
       name: "grid-list-demo",
       type: "components:example/grid-list",
       registryDependencies: ["grid-list"],
-      component: React.lazy(
-        () => import("@/registry/default/example/grid-list/grid-list-demo")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/grid-list/grid-list-demo")),
       files: ["registry/default/example/grid-list/grid-list-demo.tsx"],
     },
     "grid-list-direct-row-actions": {
       name: "grid-list-direct-row-actions",
       type: "components:example/grid-list",
       registryDependencies: ["grid-list"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/grid-list/grid-list-direct-row-actions"
-          )
-      ),
-      files: [
-        "registry/default/example/grid-list/grid-list-direct-row-actions.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/grid-list/grid-list-direct-row-actions")),
+      files: ["registry/default/example/grid-list/grid-list-direct-row-actions.tsx"],
     },
     "grid-list-disabled-behavior": {
       name: "grid-list-disabled-behavior",
       type: "components:example/grid-list",
       registryDependencies: ["grid-list"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/grid-list/grid-list-disabled-behavior"
-          )
-      ),
-      files: [
-        "registry/default/example/grid-list/grid-list-disabled-behavior.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/grid-list/grid-list-disabled-behavior")),
+      files: ["registry/default/example/grid-list/grid-list-disabled-behavior.tsx"],
     },
     "grid-list-disabled-items": {
       name: "grid-list-disabled-items",
       type: "components:example/grid-list",
       registryDependencies: ["grid-list"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/grid-list/grid-list-disabled-items"
-          )
-      ),
-      files: [
-        "registry/default/example/grid-list/grid-list-disabled-items.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/grid-list/grid-list-disabled-items")),
+      files: ["registry/default/example/grid-list/grid-list-disabled-items.tsx"],
     },
     "grid-list-disabled-keys": {
       name: "grid-list-disabled-keys",
       type: "components:example/grid-list",
       registryDependencies: ["grid-list"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/grid-list/grid-list-disabled-keys")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/grid-list/grid-list-disabled-keys")),
       files: ["registry/default/example/grid-list/grid-list-disabled-keys.tsx"],
     },
     "grid-list-disallow-empty": {
       name: "grid-list-disallow-empty",
       type: "components:example/grid-list",
       registryDependencies: ["grid-list"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/grid-list/grid-list-disallow-empty"
-          )
-      ),
-      files: [
-        "registry/default/example/grid-list/grid-list-disallow-empty.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/grid-list/grid-list-disallow-empty")),
+      files: ["registry/default/example/grid-list/grid-list-disallow-empty.tsx"],
     },
     "grid-list-drag-between": {
       name: "grid-list-drag-between",
       type: "components:example/grid-list",
       registryDependencies: ["grid-list"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/grid-list/grid-list-drag-between")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/grid-list/grid-list-drag-between")),
       files: ["registry/default/example/grid-list/grid-list-drag-between.tsx"],
     },
     "grid-list-drag-drop": {
       name: "grid-list-drag-drop",
       type: "components:example/grid-list",
       registryDependencies: ["grid-list"],
-      component: React.lazy(
-        () => import("@/registry/default/example/grid-list/grid-list-drag-drop")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/grid-list/grid-list-drag-drop")),
       files: ["registry/default/example/grid-list/grid-list-drag-drop.tsx"],
     },
     "grid-list-empty": {
       name: "grid-list-empty",
       type: "components:example/grid-list",
       registryDependencies: ["grid-list"],
-      component: React.lazy(
-        () => import("@/registry/default/example/grid-list/grid-list-empty")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/grid-list/grid-list-empty")),
       files: ["registry/default/example/grid-list/grid-list-empty.tsx"],
     },
     "grid-list-links": {
       name: "grid-list-links",
       type: "components:example/grid-list",
       registryDependencies: ["grid-list"],
-      component: React.lazy(
-        () => import("@/registry/default/example/grid-list/grid-list-links")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/grid-list/grid-list-links")),
       files: ["registry/default/example/grid-list/grid-list-links.tsx"],
     },
     "grid-list-multi-select": {
       name: "grid-list-multi-select",
       type: "components:example/grid-list",
       registryDependencies: ["grid-list"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/grid-list/grid-list-multi-select")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/grid-list/grid-list-multi-select")),
       files: ["registry/default/example/grid-list/grid-list-multi-select.tsx"],
     },
     "grid-list-replace": {
       name: "grid-list-replace",
       type: "components:example/grid-list",
       registryDependencies: ["grid-list"],
-      component: React.lazy(
-        () => import("@/registry/default/example/grid-list/grid-list-replace")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/grid-list/grid-list-replace")),
       files: ["registry/default/example/grid-list/grid-list-replace.tsx"],
     },
     "grid-list-row-actions": {
       name: "grid-list-row-actions",
       type: "components:example/grid-list",
       registryDependencies: ["grid-list"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/grid-list/grid-list-row-actions")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/grid-list/grid-list-row-actions")),
       files: ["registry/default/example/grid-list/grid-list-row-actions.tsx"],
     },
     "grid-list-single-select": {
       name: "grid-list-single-select",
       type: "components:example/grid-list",
       registryDependencies: ["grid-list"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/grid-list/grid-list-single-select")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/grid-list/grid-list-single-select")),
       files: ["registry/default/example/grid-list/grid-list-single-select.tsx"],
     },
     "list-box-content": {
       name: "list-box-content",
       type: "components:example/list-box",
       registryDependencies: ["list-box"],
-      component: React.lazy(
-        () => import("@/registry/default/example/list-box/list-box-content")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/list-box/list-box-content")),
       files: ["registry/default/example/list-box/list-box-content.tsx"],
     },
     "list-box-demo": {
       name: "list-box-demo",
       type: "components:example/list-box",
       registryDependencies: ["list-box"],
-      component: React.lazy(
-        () => import("@/registry/default/example/list-box/list-box-demo")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/list-box/list-box-demo")),
       files: ["registry/default/example/list-box/list-box-demo.tsx"],
     },
     "list-box-disabled-items": {
       name: "list-box-disabled-items",
       type: "components:example/list-box",
       registryDependencies: ["list-box"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/list-box/list-box-disabled-items")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/list-box/list-box-disabled-items")),
       files: ["registry/default/example/list-box/list-box-disabled-items.tsx"],
     },
     "list-box-disabled-keys": {
       name: "list-box-disabled-keys",
       type: "components:example/list-box",
       registryDependencies: ["list-box"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/list-box/list-box-disabled-keys")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/list-box/list-box-disabled-keys")),
       files: ["registry/default/example/list-box/list-box-disabled-keys.tsx"],
     },
     "list-box-drag-between": {
       name: "list-box-drag-between",
       type: "components:example/list-box",
       registryDependencies: ["list-box"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/list-box/list-box-drag-between")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/list-box/list-box-drag-between")),
       files: ["registry/default/example/list-box/list-box-drag-between.tsx"],
     },
     "list-box-drag-drop": {
       name: "list-box-drag-drop",
       type: "components:example/list-box",
       registryDependencies: ["list-box"],
-      component: React.lazy(
-        () => import("@/registry/default/example/list-box/list-box-drag-drop")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/list-box/list-box-drag-drop")),
       files: ["registry/default/example/list-box/list-box-drag-drop.tsx"],
     },
     "list-box-dynamic": {
       name: "list-box-dynamic",
       type: "components:example/list-box",
       registryDependencies: ["list-box"],
-      component: React.lazy(
-        () => import("@/registry/default/example/list-box/list-box-dynamic")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/list-box/list-box-dynamic")),
       files: ["registry/default/example/list-box/list-box-dynamic.tsx"],
     },
     "list-box-empty": {
       name: "list-box-empty",
       type: "components:example/list-box",
       registryDependencies: ["list-box"],
-      component: React.lazy(
-        () => import("@/registry/default/example/list-box/list-box-empty")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/list-box/list-box-empty")),
       files: ["registry/default/example/list-box/list-box-empty.tsx"],
     },
     "list-box-links-replace": {
       name: "list-box-links-replace",
       type: "components:example/list-box",
       registryDependencies: ["list-box"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/list-box/list-box-links-replace")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/list-box/list-box-links-replace")),
       files: ["registry/default/example/list-box/list-box-links-replace.tsx"],
     },
     "list-box-links": {
       name: "list-box-links",
       type: "components:example/list-box",
       registryDependencies: ["list-box"],
-      component: React.lazy(
-        () => import("@/registry/default/example/list-box/list-box-links")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/list-box/list-box-links")),
       files: ["registry/default/example/list-box/list-box-links.tsx"],
     },
     "list-box-sections": {
       name: "list-box-sections",
       type: "components:example/list-box",
       registryDependencies: ["list-box"],
-      component: React.lazy(
-        () => import("@/registry/default/example/list-box/list-box-sections")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/list-box/list-box-sections")),
       files: ["registry/default/example/list-box/list-box-sections.tsx"],
     },
     "list-box-selection-replace": {
       name: "list-box-selection-replace",
       type: "components:example/list-box",
       registryDependencies: ["list-box"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/list-box/list-box-selection-replace"
-          )
-      ),
-      files: [
-        "registry/default/example/list-box/list-box-selection-replace.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/list-box/list-box-selection-replace")),
+      files: ["registry/default/example/list-box/list-box-selection-replace.tsx"],
     },
     "list-box-text-slot": {
       name: "list-box-text-slot",
       type: "components:example/list-box",
       registryDependencies: ["list-box"],
-      component: React.lazy(
-        () => import("@/registry/default/example/list-box/list-box-text-slot")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/list-box/list-box-text-slot")),
       files: ["registry/default/example/list-box/list-box-text-slot.tsx"],
     },
     "menu-content": {
       name: "menu-content",
       type: "components:example/menu",
       registryDependencies: ["menu"],
-      component: React.lazy(
-        () => import("@/registry/default/example/menu/menu-content")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/menu/menu-content")),
       files: ["registry/default/example/menu/menu-content.tsx"],
     },
     "menu-demo": {
       name: "menu-demo",
       type: "components:example/menu",
       registryDependencies: ["menu"],
-      component: React.lazy(
-        () => import("@/registry/default/example/menu/menu-demo")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/menu/menu-demo")),
       files: ["registry/default/example/menu/menu-demo.tsx"],
     },
     "menu-disabled-items": {
       name: "menu-disabled-items",
       type: "components:example/menu",
       registryDependencies: ["menu"],
-      component: React.lazy(
-        () => import("@/registry/default/example/menu/menu-disabled-items")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/menu/menu-disabled-items")),
       files: ["registry/default/example/menu/menu-disabled-items.tsx"],
     },
     "menu-disabled-keys": {
       name: "menu-disabled-keys",
       type: "components:example/menu",
       registryDependencies: ["menu"],
-      component: React.lazy(
-        () => import("@/registry/default/example/menu/menu-disabled-keys")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/menu/menu-disabled-keys")),
       files: ["registry/default/example/menu/menu-disabled-keys.tsx"],
     },
     "menu-links": {
       name: "menu-links",
       type: "components:example/menu",
       registryDependencies: ["menu"],
-      component: React.lazy(
-        () => import("@/registry/default/example/menu/menu-links")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/menu/menu-links")),
       files: ["registry/default/example/menu/menu-links.tsx"],
     },
     "menu-long-press": {
       name: "menu-long-press",
       type: "components:example/menu",
       registryDependencies: ["menu"],
-      component: React.lazy(
-        () => import("@/registry/default/example/menu/menu-long-press")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/menu/menu-long-press")),
       files: ["registry/default/example/menu/menu-long-press.tsx"],
     },
     "menu-sections-dynamic": {
       name: "menu-sections-dynamic",
       type: "components:example/menu",
       registryDependencies: ["menu"],
-      component: React.lazy(
-        () => import("@/registry/default/example/menu/menu-sections-dynamic")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/menu/menu-sections-dynamic")),
       files: ["registry/default/example/menu/menu-sections-dynamic.tsx"],
     },
     "menu-sections": {
       name: "menu-sections",
       type: "components:example/menu",
       registryDependencies: ["menu"],
-      component: React.lazy(
-        () => import("@/registry/default/example/menu/menu-sections")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/menu/menu-sections")),
       files: ["registry/default/example/menu/menu-sections.tsx"],
     },
     "menu-selection-multiple": {
       name: "menu-selection-multiple",
       type: "components:example/menu",
       registryDependencies: ["menu"],
-      component: React.lazy(
-        () => import("@/registry/default/example/menu/menu-selection-multiple")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/menu/menu-selection-multiple")),
       files: ["registry/default/example/menu/menu-selection-multiple.tsx"],
     },
     "menu-selection-single": {
       name: "menu-selection-single",
       type: "components:example/menu",
       registryDependencies: ["menu"],
-      component: React.lazy(
-        () => import("@/registry/default/example/menu/menu-selection-single")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/menu/menu-selection-single")),
       files: ["registry/default/example/menu/menu-selection-single.tsx"],
     },
     "menu-separators": {
       name: "menu-separators",
       type: "components:example/menu",
       registryDependencies: ["menu"],
-      component: React.lazy(
-        () => import("@/registry/default/example/menu/menu-separators")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/menu/menu-separators")),
       files: ["registry/default/example/menu/menu-separators.tsx"],
     },
     "menu-sub-menu-dynamic": {
       name: "menu-sub-menu-dynamic",
       type: "components:example/menu",
       registryDependencies: ["menu"],
-      component: React.lazy(
-        () => import("@/registry/default/example/menu/menu-sub-menu-dynamic")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/menu/menu-sub-menu-dynamic")),
       files: ["registry/default/example/menu/menu-sub-menu-dynamic.tsx"],
     },
     "menu-sub-menu": {
       name: "menu-sub-menu",
       type: "components:example/menu",
       registryDependencies: ["menu"],
-      component: React.lazy(
-        () => import("@/registry/default/example/menu/menu-sub-menu")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/menu/menu-sub-menu")),
       files: ["registry/default/example/menu/menu-sub-menu.tsx"],
     },
     "menu-text-slots": {
       name: "menu-text-slots",
       type: "components:example/menu",
       registryDependencies: ["menu"],
-      component: React.lazy(
-        () => import("@/registry/default/example/menu/menu-text-slots")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/menu/menu-text-slots")),
       files: ["registry/default/example/menu/menu-text-slots.tsx"],
     },
     "menu-reusable": {
       name: "menu-reusable",
       type: "components:example/menu",
       registryDependencies: ["menu"],
-      component: React.lazy(
-        () => import("@/registry/default/example/menu/menu-reusable")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/menu/menu-reusable")),
       files: ["registry/default/example/menu/menu-reusable.tsx"],
     },
     "tag-error-text": {
       name: "tag-error-text",
       type: "components:example/tag-group",
       registryDependencies: ["tag"],
-      component: React.lazy(
-        () => import("@/registry/default/example/tag-group/tag-error-text")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/tag-group/tag-error-text")),
       files: ["registry/default/example/tag/tag-error-text.tsx"],
     },
     "tag-group-demo": {
       name: "tag-group-demo",
       type: "components:example/tag-group",
       registryDependencies: ["tag-group"],
-      component: React.lazy(
-        () => import("@/registry/default/example/tag-group/tag-group-demo")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/tag-group/tag-group-demo")),
       files: ["registry/default/example/tag-group/tag-group-demo.tsx"],
     },
     "tag-group-disabled-items": {
       name: "tag-group-disabled-items",
       type: "components:example/tag-group",
       registryDependencies: ["tag-group"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/tag-group/tag-group-disabled-items"
-          )
-      ),
-      files: [
-        "registry/default/example/tag-group/tag-group-disabled-items.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/tag-group/tag-group-disabled-items")),
+      files: ["registry/default/example/tag-group/tag-group-disabled-items.tsx"],
     },
     "tag-group-disabled-keys": {
       name: "tag-group-disabled-keys",
       type: "components:example/tag-group",
       registryDependencies: ["tag-group"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/tag-group/tag-group-disabled-keys")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/tag-group/tag-group-disabled-keys")),
       files: ["registry/default/example/tag-group/tag-group-disabled-keys.tsx"],
     },
     "tag-group-empty": {
       name: "tag-group-empty",
       type: "components:example/tag-group",
       registryDependencies: ["tag-group"],
-      component: React.lazy(
-        () => import("@/registry/default/example/tag-group/tag-group-empty")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/tag-group/tag-group-empty")),
       files: ["registry/default/example/tag-group/tag-group-empty.tsx"],
     },
     "tag-group-helper": {
       name: "tag-group-helper",
       type: "components:example/tag-group",
       registryDependencies: ["tag-group"],
-      component: React.lazy(
-        () => import("@/registry/default/example/tag-group/tag-group-helper")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/tag-group/tag-group-helper")),
       files: ["registry/default/example/tag-group/tag-group-helper.tsx"],
     },
     "tag-group-links": {
       name: "tag-group-links",
       type: "components:example/tag-group",
       registryDependencies: ["tag-group"],
-      component: React.lazy(
-        () => import("@/registry/default/example/tag-group/tag-group-links")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/tag-group/tag-group-links")),
       files: ["registry/default/example/tag-group/tag-group-links.tsx"],
     },
     "tag-group-remove": {
       name: "tag-group-remove",
       type: "components:example/tag-group",
       registryDependencies: ["tag-group"],
-      component: React.lazy(
-        () => import("@/registry/default/example/tag-group/tag-group-remove")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/tag-group/tag-group-remove")),
       files: ["registry/default/example/tag-group/tag-group-remove.tsx"],
     },
     "tag-group-selection": {
       name: "tag-group-selection",
       type: "components:example/tag-group",
       registryDependencies: ["tag-group"],
-      component: React.lazy(
-        () => import("@/registry/default/example/tag-group/tag-group-selection")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/tag-group/tag-group-selection")),
       files: ["registry/default/example/tag-group/tag-group-selection.tsx"],
     },
     "tag-group-reusable": {
       name: "tag-group-reusable",
       type: "components:example/tag-group",
       registryDependencies: ["tag-group"],
-      component: React.lazy(
-        () => import("@/registry/default/example/tag-group/tag-group-reusable")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/tag-group/tag-group-reusable")),
       files: ["registry/default/example/tag-group/tag-group-reusable.tsx"],
     },
     "calendar-demo": {
       name: "calendar-demo",
       type: "components:example/calendar",
       registryDependencies: ["calendar"],
-      component: React.lazy(
-        () => import("@/registry/default/example/calendar/calendar-demo")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/calendar/calendar-demo")),
       files: ["registry/default/example/calendar/calendar-demo.tsx"],
     },
     "calendar-disabled": {
       name: "calendar-disabled",
       type: "components:example/calendar",
       registryDependencies: ["calendar"],
-      component: React.lazy(
-        () => import("@/registry/default/example/calendar/calendar-disabled")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/calendar/calendar-disabled")),
       files: ["registry/default/example/calendar/calendar-disabled.tsx"],
     },
     "calendar-error": {
       name: "calendar-error",
       type: "components:example/calendar",
       registryDependencies: ["calendar"],
-      component: React.lazy(
-        () => import("@/registry/default/example/calendar/calendar-error")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/calendar/calendar-error")),
       files: ["registry/default/example/calendar/calendar-error.tsx"],
     },
     "calendar-multi": {
       name: "calendar-multi",
       type: "components:example/calendar",
       registryDependencies: ["calendar"],
-      component: React.lazy(
-        () => import("@/registry/default/example/calendar/calendar-multi")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/calendar/calendar-multi")),
       files: ["registry/default/example/calendar/calendar-multi.tsx"],
     },
     "calendar-readonly": {
       name: "calendar-readonly",
       type: "components:example/calendar",
       registryDependencies: ["calendar"],
-      component: React.lazy(
-        () => import("@/registry/default/example/calendar/calendar-readonly")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/calendar/calendar-readonly")),
       files: ["registry/default/example/calendar/calendar-readonly.tsx"],
     },
     "calendar-unavailable": {
       name: "calendar-unavailable",
       type: "components:example/calendar",
       registryDependencies: ["calendar"],
-      component: React.lazy(
-        () => import("@/registry/default/example/calendar/calendar-unavailable")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/calendar/calendar-unavailable")),
       files: ["registry/default/example/calendar/calendar-unavailable.tsx"],
     },
     "calendar-validation": {
       name: "calendar-validation",
       type: "components:example/calendar",
       registryDependencies: ["calendar"],
-      component: React.lazy(
-        () => import("@/registry/default/example/calendar/calendar-validation")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/calendar/calendar-validation")),
       files: ["registry/default/example/calendar/calendar-validation.tsx"],
     },
     "calendar-reusable": {
       name: "calendar-reusable",
       type: "components:example/calendar",
       registryDependencies: ["calendar"],
-      component: React.lazy(
-        () => import("@/registry/default/example/calendar/calendar-reusable")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/calendar/calendar-reusable")),
       files: ["registry/default/example/calendar/calendar-reusable.tsx"],
     },
     "datefield-demo": {
       name: "datefield-demo",
       type: "components:example/datefield",
       registryDependencies: ["datefield"],
-      component: React.lazy(
-        () => import("@/registry/default/example/datefield/datefield-demo")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/datefield/datefield-demo")),
       files: ["registry/default/example/datefield/datefield-demo.tsx"],
     },
     "datefield-description": {
       name: "datefield-description",
       type: "components:example/datefield",
       registryDependencies: ["datefield"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/datefield/datefield-description")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/datefield/datefield-description")),
       files: ["registry/default/example/datefield/datefield-description.tsx"],
     },
     "datefield-granularity": {
       name: "datefield-granularity",
       type: "components:example/datefield",
       registryDependencies: ["datefield"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/datefield/datefield-granularity")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/datefield/datefield-granularity")),
       files: ["registry/default/example/datefield/datefield-granularity.tsx"],
     },
     "datefield-timezone": {
       name: "datefield-timezone",
       type: "components:example/datefield",
       registryDependencies: ["datefield"],
-      component: React.lazy(
-        () => import("@/registry/default/example/datefield/datefield-timezone")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/datefield/datefield-timezone")),
       files: ["registry/default/example/datefield/datefield-timezone.tsx"],
     },
     "datefield-validation-min-max": {
       name: "datefield-validation-min-max",
       type: "components:example/datefield",
       registryDependencies: ["datefield"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/datefield/datefield-validation-min-max"
-          )
-      ),
-      files: [
-        "registry/default/example/datefield/datefield-validation-min-max.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/datefield/datefield-validation-min-max")),
+      files: ["registry/default/example/datefield/datefield-validation-min-max.tsx"],
     },
     "datefield-validation": {
       name: "datefield-validation",
       type: "components:example/datefield",
       registryDependencies: ["datefield"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/datefield/datefield-validation")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/datefield/datefield-validation")),
       files: ["registry/default/example/datefield/datefield-validation.tsx"],
     },
     "datefield-reusable": {
       name: "datefield-reusable",
       type: "components:example/datefield",
       registryDependencies: ["datefield"],
-      component: React.lazy(
-        () => import("@/registry/default/example/datefield/datefield-reusable")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/datefield/datefield-reusable")),
       files: ["registry/default/example/datefield/datefield-reusable.tsx"],
     },
     "datepicker-custom-validation": {
       name: "datepicker-custom-validation",
       type: "components:example/datepicker",
       registryDependencies: ["datepicker"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/datepicker/datepicker-custom-validation"
-          )
-      ),
-      files: [
-        "registry/default/example/datepicker/datepicker-custom-validation.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/datepicker/datepicker-custom-validation")),
+      files: ["registry/default/example/datepicker/datepicker-custom-validation.tsx"],
     },
     "datepicker-demo": {
       name: "datepicker-demo",
       type: "components:example/datepicker",
       registryDependencies: ["datepicker"],
-      component: React.lazy(
-        () => import("@/registry/default/example/datepicker/datepicker-demo")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/datepicker/datepicker-demo")),
       files: ["registry/default/example/datepicker/datepicker-demo.tsx"],
     },
     "datepicker-description": {
       name: "datepicker-description",
       type: "components:example/datepicker",
       registryDependencies: ["datepicker"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/datepicker/datepicker-description")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/datepicker/datepicker-description")),
       files: ["registry/default/example/datepicker/datepicker-description.tsx"],
     },
     "datepicker-granularity": {
       name: "datepicker-granularity",
       type: "components:example/datepicker",
       registryDependencies: ["datepicker"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/datepicker/datepicker-granularity")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/datepicker/datepicker-granularity")),
       files: ["registry/default/example/datepicker/datepicker-granularity.tsx"],
     },
     "datepicker-min-max": {
       name: "datepicker-min-max",
       type: "components:example/datepicker",
       registryDependencies: ["datepicker"],
-      component: React.lazy(
-        () => import("@/registry/default/example/datepicker/datepicker-min-max")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/datepicker/datepicker-min-max")),
       files: ["registry/default/example/datepicker/datepicker-min-max.tsx"],
     },
     "datepicker-timezone": {
       name: "datepicker-timezone",
       type: "components:example/datepicker",
       registryDependencies: ["datepicker"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/datepicker/datepicker-timezone")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/datepicker/datepicker-timezone")),
       files: ["registry/default/example/datepicker/datepicker-timezone.tsx"],
     },
     "datepicker-unavailable": {
       name: "datepicker-unavailable",
       type: "components:example/datepicker",
       registryDependencies: ["datepicker"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/datepicker/datepicker-unavailable")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/datepicker/datepicker-unavailable")),
       files: ["registry/default/example/datepicker/datepicker-unavailable.tsx"],
     },
     "datepicker-validation": {
       name: "datepicker-validation",
       type: "components:example/datepicker",
       registryDependencies: ["datepicker"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/datepicker/datepicker-validation")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/datepicker/datepicker-validation")),
       files: ["registry/default/example/datepicker/datepicker-validation.tsx"],
     },
     "datepicker-reusable": {
       name: "datepicker-reusable",
       type: "components:example/datepicker",
       registryDependencies: ["datepicker"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/datepicker/datepicker-reusable")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/datepicker/datepicker-reusable")),
       files: ["registry/default/example/datepicker/datepicker-reusable.tsx"],
     },
     "date-range-non-continuous": {
       name: "date-range-non-continuous",
       type: "components:example/date-range-picker",
       registryDependencies: ["date-range-picker"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/date-range-picker/date-range-non-continuous"
-          )
-      ),
-      files: [
-        "registry/default/example/date-range-picker/date-range-non-continuous.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/date-range-picker/date-range-non-continuous")),
+      files: ["registry/default/example/date-range-picker/date-range-non-continuous.tsx"],
     },
     "date-range-picker-custom-validation": {
       name: "date-range-picker-custom-validation",
       type: "components:example/date-range-picker",
       registryDependencies: ["date-range-picker"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/date-range-picker/date-range-picker-custom-validation"
-          )
-      ),
-      files: [
-        "registry/default/example/date-range-picker/date-range-picker-custom-validation.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/date-range-picker/date-range-picker-custom-validation")),
+      files: ["registry/default/example/date-range-picker/date-range-picker-custom-validation.tsx"],
     },
     "date-range-picker-demo": {
       name: "date-range-picker-demo",
       type: "components:example/date-range-picker",
       registryDependencies: ["date-range-picker"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/date-range-picker/date-range-picker-demo"
-          )
-      ),
-      files: [
-        "registry/default/example/date-range-picker/date-range-picker-demo.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/date-range-picker/date-range-picker-demo")),
+      files: ["registry/default/example/date-range-picker/date-range-picker-demo.tsx"],
     },
     "date-range-picker-description": {
       name: "date-range-picker-description",
       type: "components:example/date-range-picker",
       registryDependencies: ["date-range-picker"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/date-range-picker/date-range-picker-description"
-          )
-      ),
-      files: [
-        "registry/default/example/date-range-picker/date-range-picker-description.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/date-range-picker/date-range-picker-description")),
+      files: ["registry/default/example/date-range-picker/date-range-picker-description.tsx"],
     },
     "date-range-picker-granularity": {
       name: "date-range-picker-granularity",
       type: "components:example/date-range-picker",
       registryDependencies: ["date-range-picker"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/date-range-picker/date-range-picker-granularity"
-          )
-      ),
-      files: [
-        "registry/default/example/date-range-picker/date-range-picker-granularity.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/date-range-picker/date-range-picker-granularity")),
+      files: ["registry/default/example/date-range-picker/date-range-picker-granularity.tsx"],
     },
     "date-range-picker-min-max": {
       name: "date-range-picker-min-max",
       type: "components:example/date-range-picker",
       registryDependencies: ["date-range-picker"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/date-range-picker/date-range-picker-min-max"
-          )
-      ),
-      files: [
-        "registry/default/example/date-range-picker/date-range-picker-min-max.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/date-range-picker/date-range-picker-min-max")),
+      files: ["registry/default/example/date-range-picker/date-range-picker-min-max.tsx"],
     },
     "date-range-picker-timezone": {
       name: "date-range-picker-timezone",
       type: "components:example/date-range-picker",
       registryDependencies: ["date-range-picker"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/date-range-picker/date-range-picker-timezone"
-          )
-      ),
-      files: [
-        "registry/default/example/date-range-picker/date-range-picker-timezone.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/date-range-picker/date-range-picker-timezone")),
+      files: ["registry/default/example/date-range-picker/date-range-picker-timezone.tsx"],
     },
     "date-range-picker-validation": {
       name: "date-range-picker-validation",
       type: "components:example/date-range-picker",
       registryDependencies: ["date-range-picker"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/date-range-picker/date-range-picker-validation"
-          )
-      ),
-      files: [
-        "registry/default/example/date-range-picker/date-range-picker-validation.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/date-range-picker/date-range-picker-validation")),
+      files: ["registry/default/example/date-range-picker/date-range-picker-validation.tsx"],
     },
     "date-range-unavailable": {
       name: "date-range-unavailable",
       type: "components:example/date-range-picker",
       registryDependencies: ["date-range-picker"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/date-range-picker/date-range-unavailable"
-          )
-      ),
-      files: [
-        "registry/default/example/date-range-picker/date-range-unavailable.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/date-range-picker/date-range-unavailable")),
+      files: ["registry/default/example/date-range-picker/date-range-unavailable.tsx"],
     },
     "date-range-picker-reusable": {
       name: "date-range-picker-reusable",
       type: "components:example/date-range-picker",
       registryDependencies: ["date-range-picker"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/date-range-picker/date-range-picker-reusable"
-          )
-      ),
-      files: [
-        "registry/default/example/date-range-picker/date-range-picker-reusable.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/date-range-picker/date-range-picker-reusable")),
+      files: ["registry/default/example/date-range-picker/date-range-picker-reusable.tsx"],
     },
     "range-calendar-demo": {
       name: "range-calendar-demo",
       type: "components:example/range-calendar",
       registryDependencies: ["range-calendar"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/range-calendar/range-calendar-demo"
-          )
-      ),
-      files: [
-        "registry/default/example/range-calendar/range-calendar-demo.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/range-calendar/range-calendar-demo")),
+      files: ["registry/default/example/range-calendar/range-calendar-demo.tsx"],
     },
     "range-calendar-disabled": {
       name: "range-calendar-disabled",
       type: "components:example/range-calendar",
       registryDependencies: ["range-calendar"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/range-calendar/range-calendar-disabled"
-          )
-      ),
-      files: [
-        "registry/default/example/range-calendar/range-calendar-disabled.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/range-calendar/range-calendar-disabled")),
+      files: ["registry/default/example/range-calendar/range-calendar-disabled.tsx"],
     },
     "range-calendar-error": {
       name: "range-calendar-error",
       type: "components:example/range-calendar",
       registryDependencies: ["range-calendar"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/range-calendar/range-calendar-error"
-          )
-      ),
-      files: [
-        "registry/default/example/range-calendar/range-calendar-error.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/range-calendar/range-calendar-error")),
+      files: ["registry/default/example/range-calendar/range-calendar-error.tsx"],
     },
     "range-calendar-multi-month": {
       name: "range-calendar-multi-month",
       type: "components:example/range-calendar",
       registryDependencies: ["range-calendar"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/range-calendar/range-calendar-multi-month"
-          )
-      ),
-      files: [
-        "registry/default/example/range-calendar/range-calendar-multi-month.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/range-calendar/range-calendar-multi-month")),
+      files: ["registry/default/example/range-calendar/range-calendar-multi-month.tsx"],
     },
     "range-calendar-non-continuous": {
       name: "range-calendar-non-continuous",
       type: "components:example/range-calendar",
       registryDependencies: ["range-calendar"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/range-calendar/range-calendar-non-continuous"
-          )
-      ),
-      files: [
-        "registry/default/example/range-calendar/range-calendar-non-continuous.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/range-calendar/range-calendar-non-continuous")),
+      files: ["registry/default/example/range-calendar/range-calendar-non-continuous.tsx"],
     },
     "range-calendar-readonly": {
       name: "range-calendar-readonly",
       type: "components:example/range-calendar",
       registryDependencies: ["range-calendar"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/range-calendar/range-calendar-readonly"
-          )
-      ),
-      files: [
-        "registry/default/example/range-calendar/range-calendar-readonly.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/range-calendar/range-calendar-readonly")),
+      files: ["registry/default/example/range-calendar/range-calendar-readonly.tsx"],
     },
     "range-calendar-unavailable": {
       name: "range-calendar-unavailable",
       type: "components:example/range-calendar",
       registryDependencies: ["range-calendar"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/range-calendar/range-calendar-unavailable"
-          )
-      ),
-      files: [
-        "registry/default/example/range-calendar/range-calendar-unavailable.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/range-calendar/range-calendar-unavailable")),
+      files: ["registry/default/example/range-calendar/range-calendar-unavailable.tsx"],
     },
     "range-calendar-validation": {
       name: "range-calendar-validation",
       type: "components:example/range-calendar",
       registryDependencies: ["range-calendar"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/range-calendar/range-calendar-validation"
-          )
-      ),
-      files: [
-        "registry/default/example/range-calendar/range-calendar-validation.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/range-calendar/range-calendar-validation")),
+      files: ["registry/default/example/range-calendar/range-calendar-validation.tsx"],
     },
     "range-calendar-reusable": {
       name: "range-calendar-reusable",
       type: "components:example/range-calendar",
       registryDependencies: ["range-calendar"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/range-calendar/range-calendar-reusable"
-          )
-      ),
-      files: [
-        "registry/default/example/range-calendar/range-calendar-reusable.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/range-calendar/range-calendar-reusable")),
+      files: ["registry/default/example/range-calendar/range-calendar-reusable.tsx"],
     },
     "timefield-custom-validation": {
       name: "timefield-custom-validation",
       type: "components:example/timefield",
       registryDependencies: ["timefield"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/timefield/timefield-custom-validation"
-          )
-      ),
-      files: [
-        "registry/default/example/timefield/timefield-custom-validation.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/timefield/timefield-custom-validation")),
+      files: ["registry/default/example/timefield/timefield-custom-validation.tsx"],
     },
     "timefield-demo": {
       name: "timefield-demo",
       type: "components:example/timefield",
       registryDependencies: ["timefield"],
-      component: React.lazy(
-        () => import("@/registry/default/example/timefield/timefield-demo")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/timefield/timefield-demo")),
       files: ["registry/default/example/timefield/timefield-demo.tsx"],
     },
     "timefield-description": {
       name: "timefield-description",
       type: "components:example/timefield",
       registryDependencies: ["timefield"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/timefield/timefield-description")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/timefield/timefield-description")),
       files: ["registry/default/example/timefield/timefield-description.tsx"],
     },
     "timefield-granularity": {
       name: "timefield-granularity",
       type: "components:example/timefield",
       registryDependencies: ["timefield"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/timefield/timefield-granularity")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/timefield/timefield-granularity")),
       files: ["registry/default/example/timefield/timefield-granularity.tsx"],
     },
     "timefield-min-max": {
       name: "timefield-min-max",
       type: "components:example/timefield",
       registryDependencies: ["timefield"],
-      component: React.lazy(
-        () => import("@/registry/default/example/timefield/timefield-min-max")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/timefield/timefield-min-max")),
       files: ["registry/default/example/timefield/timefield-min-max.tsx"],
     },
     "timefield-timezone": {
       name: "timefield-timezone",
       type: "components:example/timefield",
       registryDependencies: ["timefield"],
-      component: React.lazy(
-        () => import("@/registry/default/example/timefield/timefield-timezone")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/timefield/timefield-timezone")),
       files: ["registry/default/example/timefield/timefield-timezone.tsx"],
     },
     "timefield-validation": {
       name: "timefield-validation",
       type: "components:example/timefield",
       registryDependencies: ["timefield"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/timefield/timefield-validation")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/timefield/timefield-validation")),
       files: ["registry/default/example/timefield/timefield-validation.tsx"],
     },
     "timefield-reusable": {
       name: "timefield-reusable",
       type: "components:example/timefield",
       registryDependencies: ["timefield"],
-      component: React.lazy(
-        () => import("@/registry/default/example/timefield/timefield-reusable")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/timefield/timefield-reusable")),
       files: ["registry/default/example/timefield/timefield-reusable.tsx"],
     },
     "dropzone-demo": {
       name: "dropzone-demo",
       type: "components:example/dropzone",
       registryDependencies: ["dropzone"],
-      component: React.lazy(
-        () => import("@/registry/default/example/dropzone/dropzone-demo")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/dropzone/dropzone-demo")),
       files: ["registry/default/example/dropzone/dropzone-demo.tsx"],
     },
     "dropzone-file": {
       name: "dropzone-file",
       type: "components:example/dropzone",
       registryDependencies: ["dropzone"],
-      component: React.lazy(
-        () => import("@/registry/default/example/dropzone/dropzone-file")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/dropzone/dropzone-file")),
       files: ["registry/default/example/dropzone/dropzone-file.tsx"],
     },
     "checkbox-demo": {
       name: "checkbox-demo",
       type: "components:example/checkbox",
       registryDependencies: ["checkbox"],
-      component: React.lazy(
-        () => import("@/registry/default/example/checkbox/checkbox-demo")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/checkbox/checkbox-demo")),
       files: ["registry/default/example/checkbox/checkbox-demo.tsx"],
     },
     "checkbox-disabled": {
       name: "checkbox-disabled",
       type: "components:example/checkbox",
       registryDependencies: ["checkbox"],
-      component: React.lazy(
-        () => import("@/registry/default/example/checkbox/checkbox-disabled")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/checkbox/checkbox-disabled")),
       files: ["registry/default/example/checkbox/checkbox-disabled.tsx"],
     },
     "checkbox-indeterminate": {
       name: "checkbox-indeterminate",
       type: "components:example/checkbox",
       registryDependencies: ["checkbox"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/checkbox/checkbox-indeterminate")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/checkbox/checkbox-indeterminate")),
       files: ["registry/default/example/checkbox/checkbox-indeterminate.tsx"],
     },
     "checkbox-readonly": {
       name: "checkbox-readonly",
       type: "components:example/checkbox",
       registryDependencies: ["checkbox"],
-      component: React.lazy(
-        () => import("@/registry/default/example/checkbox/checkbox-readonly")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/checkbox/checkbox-readonly")),
       files: ["registry/default/example/checkbox/checkbox-readonly.tsx"],
     },
     "checkbox-validation": {
       name: "checkbox-validation",
       type: "components:example/checkbox",
       registryDependencies: ["checkbox"],
-      component: React.lazy(
-        () => import("@/registry/default/example/checkbox/checkbox-validation")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/checkbox/checkbox-validation")),
       files: ["registry/default/example/checkbox/checkbox-validation.tsx"],
     },
     "checkbox-group-demo": {
       name: "checkbox-group-demo",
       type: "components:example/checkbox-group",
       registryDependencies: ["checkbox-group"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/checkbox-group/checkbox-group-demo"
-          )
-      ),
-      files: [
-        "registry/default/example/checkbox-group/checkbox-group-demo.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/checkbox-group/checkbox-group-demo")),
+      files: ["registry/default/example/checkbox-group/checkbox-group-demo.tsx"],
     },
     "checkbox-group-description": {
       name: "checkbox-group-description",
       type: "components:example/checkbox-group",
       registryDependencies: ["checkbox-group"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/checkbox-group/checkbox-group-description"
-          )
-      ),
-      files: [
-        "registry/default/example/checkbox-group/checkbox-group-description.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/checkbox-group/checkbox-group-description")),
+      files: ["registry/default/example/checkbox-group/checkbox-group-description.tsx"],
     },
     "checkbox-group-disabled-individual": {
       name: "checkbox-group-disabled-individual",
       type: "components:example/checkbox-group",
       registryDependencies: ["checkbox-group"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/checkbox-group/checkbox-group-disabled-individual"
-          )
-      ),
-      files: [
-        "registry/default/example/checkbox-group/checkbox-group-disabled-individual.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/checkbox-group/checkbox-group-disabled-individual")),
+      files: ["registry/default/example/checkbox-group/checkbox-group-disabled-individual.tsx"],
     },
     "checkbox-group-disabled": {
       name: "checkbox-group-disabled",
       type: "components:example/checkbox-group",
       registryDependencies: ["checkbox-group"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/checkbox-group/checkbox-group-disabled"
-          )
-      ),
-      files: [
-        "registry/default/example/checkbox-group/checkbox-group-disabled.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/checkbox-group/checkbox-group-disabled")),
+      files: ["registry/default/example/checkbox-group/checkbox-group-disabled.tsx"],
     },
     "checkbox-group-individual-validation": {
       name: "checkbox-group-individual-validation",
       type: "components:example/checkbox-group",
       registryDependencies: ["checkbox-group"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/checkbox-group/checkbox-group-individual-validation"
-          )
-      ),
-      files: [
-        "registry/default/example/checkbox-group/checkbox-group-individual-validation.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/checkbox-group/checkbox-group-individual-validation")),
+      files: ["registry/default/example/checkbox-group/checkbox-group-individual-validation.tsx"],
     },
     "checkbox-group-readonly": {
       name: "checkbox-group-readonly",
       type: "components:example/checkbox-group",
       registryDependencies: ["checkbox-group"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/checkbox-group/checkbox-group-readonly"
-          )
-      ),
-      files: [
-        "registry/default/example/checkbox-group/checkbox-group-readonly.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/checkbox-group/checkbox-group-readonly")),
+      files: ["registry/default/example/checkbox-group/checkbox-group-readonly.tsx"],
     },
     "checkbox-group-validation": {
       name: "checkbox-group-validation",
       type: "components:example/checkbox-group",
       registryDependencies: ["checkbox-group"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/checkbox-group/checkbox-group-validation"
-          )
-      ),
-      files: [
-        "registry/default/example/checkbox-group/checkbox-group-validation.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/checkbox-group/checkbox-group-validation")),
+      files: ["registry/default/example/checkbox-group/checkbox-group-validation.tsx"],
     },
     "checkbox-group-reusable": {
       name: "checkbox-group-reusable",
       type: "components:example/checkbox-group",
       registryDependencies: ["checkbox"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/checkbox-group/checkbox-group-reusable"
-          )
-      ),
+      component: React.lazy(() => import("@/registry/default/example/checkbox-group/checkbox-group-reusable")),
       files: ["registry/default/example/checkbox-group/checkbox-reusable.tsx"],
     },
     "form-demo": {
       name: "form-demo",
       type: "components:example/form",
       registryDependencies: ["form"],
-      component: React.lazy(
-        () => import("@/registry/default/example/form/form-demo")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/form/form-demo")),
       files: ["registry/default/example/form/form-demo.tsx"],
     },
     "form-validation-behavior": {
       name: "form-validation-behavior",
       type: "components:example/form",
       registryDependencies: ["form"],
-      component: React.lazy(
-        () => import("@/registry/default/example/form/form-validation-behavior")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/form/form-validation-behavior")),
       files: ["registry/default/example/form/form-validation-behavior.tsx"],
     },
     "form-validation": {
       name: "form-validation",
       type: "components:example/form",
       registryDependencies: ["form"],
-      component: React.lazy(
-        () => import("@/registry/default/example/form/form-validation")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/form/form-validation")),
       files: ["registry/default/example/form/form-validation.tsx"],
     },
     "numberfield-currency": {
       name: "numberfield-currency",
       type: "components:example/numberfield",
       registryDependencies: ["numberfield"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/numberfield/numberfield-currency")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/numberfield/numberfield-currency")),
       files: ["registry/default/example/numberfield/numberfield-currency.tsx"],
     },
     "numberfield-demo": {
       name: "numberfield-demo",
       type: "components:example/numberfield",
       registryDependencies: ["numberfield"],
-      component: React.lazy(
-        () => import("@/registry/default/example/numberfield/numberfield-demo")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/numberfield/numberfield-demo")),
       files: ["registry/default/example/numberfield/numberfield-demo.tsx"],
     },
     "numberfield-description": {
       name: "numberfield-description",
       type: "components:example/numberfield",
       registryDependencies: ["numberfield"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/numberfield/numberfield-description"
-          )
-      ),
-      files: [
-        "registry/default/example/numberfield/numberfield-description.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/numberfield/numberfield-description")),
+      files: ["registry/default/example/numberfield/numberfield-description.tsx"],
     },
     "numberfield-disabled": {
       name: "numberfield-disabled",
       type: "components:example/numberfield",
       registryDependencies: ["numberfield"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/numberfield/numberfield-disabled")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/numberfield/numberfield-disabled")),
       files: ["registry/default/example/numberfield/numberfield-disabled.tsx"],
     },
     "numberfield-formatting": {
       name: "numberfield-formatting",
       type: "components:example/numberfield",
       registryDependencies: ["numberfield"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/numberfield/numberfield-formatting"
-          )
-      ),
-      files: [
-        "registry/default/example/numberfield/numberfield-formatting.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/numberfield/numberfield-formatting")),
+      files: ["registry/default/example/numberfield/numberfield-formatting.tsx"],
     },
     "numberfield-percentages": {
       name: "numberfield-percentages",
       type: "components:example/numberfield",
       registryDependencies: ["numberfield"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/numberfield/numberfield-percentages"
-          )
-      ),
-      files: [
-        "registry/default/example/numberfield/numberfield-percentages.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/numberfield/numberfield-percentages")),
+      files: ["registry/default/example/numberfield/numberfield-percentages.tsx"],
     },
     "numberfield-readonly": {
       name: "numberfield-readonly",
       type: "components:example/numberfield",
       registryDependencies: ["numberfield"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/numberfield/numberfield-readonly")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/numberfield/numberfield-readonly")),
       files: ["registry/default/example/numberfield/numberfield-readonly.tsx"],
     },
     "numberfield-step-values": {
       name: "numberfield-step-values",
       type: "components:example/numberfield",
       registryDependencies: ["numberfield"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/numberfield/numberfield-step-values"
-          )
-      ),
-      files: [
-        "registry/default/example/numberfield/numberfield-step-values.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/numberfield/numberfield-step-values")),
+      files: ["registry/default/example/numberfield/numberfield-step-values.tsx"],
     },
     "numberfield-units": {
       name: "numberfield-units",
       type: "components:example/numberfield",
       registryDependencies: ["numberfield"],
-      component: React.lazy(
-        () => import("@/registry/default/example/numberfield/numberfield-units")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/numberfield/numberfield-units")),
       files: ["registry/default/example/numberfield/numberfield-units.tsx"],
     },
     "numberfield-validation-error": {
       name: "numberfield-validation-error",
       type: "components:example/numberfield",
       registryDependencies: ["numberfield"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/numberfield/numberfield-validation-error"
-          )
-      ),
-      files: [
-        "registry/default/example/numberfield/numberfield-validation-error.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/numberfield/numberfield-validation-error")),
+      files: ["registry/default/example/numberfield/numberfield-validation-error.tsx"],
     },
     "numberfield-validation": {
       name: "numberfield-validation",
       type: "components:example/numberfield",
       registryDependencies: ["numberfield"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/numberfield/numberfield-validation"
-          )
-      ),
-      files: [
-        "registry/default/example/numberfield/numberfield-validation.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/numberfield/numberfield-validation")),
+      files: ["registry/default/example/numberfield/numberfield-validation.tsx"],
     },
     "numberfield-reusable": {
       name: "numberfield-reusable",
       type: "components:example/numberfield",
       registryDependencies: ["numberfield"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/numberfield/numberfield-reusable")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/numberfield/numberfield-reusable")),
       files: ["registry/default/example/numberfield/numberfield-reusable.tsx"],
     },
     "radio-group-demo": {
       name: "radio-group-demo",
       type: "components:example/radio-group",
       registryDependencies: ["radio-group"],
-      component: React.lazy(
-        () => import("@/registry/default/example/radio-group/radio-group-demo")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/radio-group/radio-group-demo")),
       files: ["registry/default/example/radio-group/radio-group-demo.tsx"],
     },
     "radio-group-description": {
       name: "radio-group-description",
       type: "components:example/radio-group",
       registryDependencies: ["radio-group"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/radio-group/radio-group-description"
-          )
-      ),
-      files: [
-        "registry/default/example/radio-group/radio-group-description.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/radio-group/radio-group-description")),
+      files: ["registry/default/example/radio-group/radio-group-description.tsx"],
     },
     "radio-group-disabled-individual": {
       name: "radio-group-disabled-individual",
       type: "components:example/radio-group",
       registryDependencies: ["radio-group"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/radio-group/radio-group-disabled-individual"
-          )
-      ),
-      files: [
-        "registry/default/example/radio-group/radio-group-disabled-individual.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/radio-group/radio-group-disabled-individual")),
+      files: ["registry/default/example/radio-group/radio-group-disabled-individual.tsx"],
     },
     "radio-group-disabled": {
       name: "radio-group-disabled",
       type: "components:example/radio-group",
       registryDependencies: ["radio-group"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/radio-group/radio-group-disabled")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/radio-group/radio-group-disabled")),
       files: ["registry/default/example/radio-group/radio-group-disabled.tsx"],
     },
     "radio-group-orientation": {
       name: "radio-group-orientation",
       type: "components:example/radio-group",
       registryDependencies: ["radio-group"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/radio-group/radio-group-orientation"
-          )
-      ),
-      files: [
-        "registry/default/example/radio-group/radio-group-orientation.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/radio-group/radio-group-orientation")),
+      files: ["registry/default/example/radio-group/radio-group-orientation.tsx"],
     },
     "radio-group-readonly": {
       name: "radio-group-readonly",
       type: "components:example/radio-group",
       registryDependencies: ["radio-group"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/radio-group/radio-group-readonly")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/radio-group/radio-group-readonly")),
       files: ["registry/default/example/radio-group/radio-group-readonly.tsx"],
     },
     "radio-group-validation": {
       name: "radio-group-validation",
       type: "components:example/radio-group",
       registryDependencies: ["radio-group"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/radio-group/radio-group-validation"
-          )
-      ),
-      files: [
-        "registry/default/example/radio-group/radio-group-validation.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/radio-group/radio-group-validation")),
+      files: ["registry/default/example/radio-group/radio-group-validation.tsx"],
     },
     "radio-group-reusable": {
       name: "radio-group-reusable",
       type: "components:example/radio-group",
       registryDependencies: ["radio-group"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/radio-group/radio-group-reusable")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/radio-group/radio-group-reusable")),
       files: ["registry/default/example/radio-group/radio-group-reusable.tsx"],
     },
     "searchfield-demo": {
       name: "searchfield-demo",
       type: "components:example/searchfield",
       registryDependencies: ["searchfield"],
-      component: React.lazy(
-        () => import("@/registry/default/example/searchfield/searchfield-demo")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/searchfield/searchfield-demo")),
       files: ["registry/default/example/searchfield/searchfield-demo.tsx"],
     },
     "searchfield-description": {
       name: "searchfield-description",
       type: "components:example/searchfield",
       registryDependencies: ["searchfield"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/searchfield/searchfield-description"
-          )
-      ),
-      files: [
-        "registry/default/example/searchfield/searchfield-description.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/searchfield/searchfield-description")),
+      files: ["registry/default/example/searchfield/searchfield-description.tsx"],
     },
     "searchfield-disabled": {
       name: "searchfield-disabled",
       type: "components:example/searchfield",
       registryDependencies: ["searchfield"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/searchfield/searchfield-disabled")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/searchfield/searchfield-disabled")),
       files: ["registry/default/example/searchfield/searchfield-disabled.tsx"],
     },
     "searchfield-readonly": {
       name: "searchfield-readonly",
       type: "components:example/searchfield",
       registryDependencies: ["searchfield"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/searchfield/searchfield-readonly")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/searchfield/searchfield-readonly")),
       files: ["registry/default/example/searchfield/searchfield-readonly.tsx"],
     },
     "searchfield-validation": {
       name: "searchfield-validation",
       type: "components:example/searchfield",
       registryDependencies: ["searchfield"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/searchfield/searchfield-validation"
-          )
-      ),
-      files: [
-        "registry/default/example/searchfield/searchfield-validation.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/searchfield/searchfield-validation")),
+      files: ["registry/default/example/searchfield/searchfield-validation.tsx"],
     },
     "searchfield-reusable": {
       name: "searchfield-reusable",
       type: "components:example/searchfield",
       registryDependencies: ["searchfield"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/searchfield/searchfield-reusable")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/searchfield/searchfield-reusable")),
       files: ["registry/default/example/searchfield/searchfield-reusable.tsx"],
     },
     "slider-demo": {
       name: "slider-demo",
       type: "components:example/slider",
       registryDependencies: ["slider"],
-      component: React.lazy(
-        () => import("@/registry/default/example/slider/slider-demo")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/slider/slider-demo")),
       files: ["registry/default/example/slider/slider-demo.tsx"],
     },
     "slider-disabled": {
       name: "slider-disabled",
       type: "components:example/slider",
       registryDependencies: ["slider"],
-      component: React.lazy(
-        () => import("@/registry/default/example/slider/slider-disabled")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/slider/slider-disabled")),
       files: ["registry/default/example/slider/slider-disabled.tsx"],
     },
     "slider-step-values": {
       name: "slider-step-values",
       type: "components:example/slider",
       registryDependencies: ["slider"],
-      component: React.lazy(
-        () => import("@/registry/default/example/slider/slider-step-values")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/slider/slider-step-values")),
       files: ["registry/default/example/slider/slider-step-values.tsx"],
     },
     "slider-values": {
       name: "slider-values",
       type: "components:example/slider",
       registryDependencies: ["slider"],
-      component: React.lazy(
-        () => import("@/registry/default/example/slider/slider-values")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/slider/slider-values")),
       files: ["registry/default/example/slider/slider-values.tsx"],
     },
     "slider-vertical": {
       name: "slider-vertical",
       type: "components:example/slider",
       registryDependencies: ["slider"],
-      component: React.lazy(
-        () => import("@/registry/default/example/slider/slider-vertical")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/slider/slider-vertical")),
       files: ["registry/default/example/slider/slider-vertical.tsx"],
     },
     "textfield-demo": {
       name: "textfield-demo",
       type: "components:example/textfield",
       registryDependencies: ["textfield"],
-      component: React.lazy(
-        () => import("@/registry/default/example/textfield/textfield-demo")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/textfield/textfield-demo")),
       files: ["registry/default/example/textfield/textfield-demo.tsx"],
     },
     "textfield-description": {
       name: "textfield-description",
       type: "components:example/textfield",
       registryDependencies: ["textfield"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/textfield/textfield-description")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/textfield/textfield-description")),
       files: ["registry/default/example/textfield/textfield-description.tsx"],
     },
     "textfield-disabled": {
       name: "textfield-disabled",
       type: "components:example/textfield",
       registryDependencies: ["textfield"],
-      component: React.lazy(
-        () => import("@/registry/default/example/textfield/textfield-disabled")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/textfield/textfield-disabled")),
       files: ["registry/default/example/textfield/textfield-disabled.tsx"],
     },
     "textfield-multiline": {
       name: "textfield-multiline",
       type: "components:example/textfield",
       registryDependencies: ["textfield"],
-      component: React.lazy(
-        () => import("@/registry/default/example/textfield/textfield-multiline")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/textfield/textfield-multiline")),
       files: ["registry/default/example/textfield/textfield-multiline.tsx"],
     },
     "textfield-readonly": {
       name: "textfield-readonly",
       type: "components:example/textfield",
       registryDependencies: ["textfield"],
-      component: React.lazy(
-        () => import("@/registry/default/example/textfield/textfield-readonly")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/textfield/textfield-readonly")),
       files: ["registry/default/example/textfield/textfield-readonly.tsx"],
     },
     "textfield-validation": {
       name: "textfield-validation",
       type: "components:example/textfield",
       registryDependencies: ["textfield"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/textfield/textfield-validation")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/textfield/textfield-validation")),
       files: ["registry/default/example/textfield/textfield-validation.tsx"],
     },
     "textfield-reusable": {
       name: "textfield-reusable",
       type: "components:example/textfield",
       registryDependencies: ["textfield"],
-      component: React.lazy(
-        () => import("@/registry/default/example/textfield/textfield-reusable")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/textfield/textfield-reusable")),
       files: ["registry/default/example/textfield/textfield-reusable.tsx"],
     },
     "tabs-demo": {
       name: "tabs-demo",
       type: "components:example/tabs",
       registryDependencies: ["tabs"],
-      component: React.lazy(
-        () => import("@/registry/default/example/tabs/tabs-demo")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/tabs/tabs-demo")),
       files: ["registry/default/example/tabs/tabs-demo.tsx"],
     },
     "tabs-disabled-dynamic": {
       name: "tabs-disabled-dynamic",
       type: "components:example/tabs",
       registryDependencies: ["tabs"],
-      component: React.lazy(
-        () => import("@/registry/default/example/tabs/tabs-disabled-dynamic")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/tabs/tabs-disabled-dynamic")),
       files: ["registry/default/example/tabs/tabs-disabled-dynamic.tsx"],
     },
     "tabs-disabled-items": {
       name: "tabs-disabled-items",
       type: "components:example/tabs",
       registryDependencies: ["tabs"],
-      component: React.lazy(
-        () => import("@/registry/default/example/tabs/tabs-disabled-items")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/tabs/tabs-disabled-items")),
       files: ["registry/default/example/tabs/tabs-disabled-items.tsx"],
     },
     "tabs-disabled": {
       name: "tabs-disabled",
       type: "components:example/tabs",
       registryDependencies: ["tabs"],
-      component: React.lazy(
-        () => import("@/registry/default/example/tabs/tabs-disabled")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/tabs/tabs-disabled")),
       files: ["registry/default/example/tabs/tabs-disabled.tsx"],
     },
     "tabs-dynamic": {
       name: "tabs-dynamic",
       type: "components:example/tabs",
       registryDependencies: ["tabs"],
-      component: React.lazy(
-        () => import("@/registry/default/example/tabs/tabs-dynamic")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/tabs/tabs-dynamic")),
       files: ["registry/default/example/tabs/tabs-dynamic.tsx"],
     },
     "tabs-focus": {
       name: "tabs-focus",
       type: "components:example/tabs",
       registryDependencies: ["tabs"],
-      component: React.lazy(
-        () => import("@/registry/default/example/tabs/tabs-focus")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/tabs/tabs-focus")),
       files: ["registry/default/example/tabs/tabs-focus.tsx"],
     },
     "tabs-vertical": {
       name: "tabs-vertical",
       type: "components:example/tabs",
       registryDependencies: ["tabs"],
-      component: React.lazy(
-        () => import("@/registry/default/example/tabs/tabs-vertical")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/tabs/tabs-vertical")),
       files: ["registry/default/example/tabs/tabs-vertical.tsx"],
     },
     "dialog-alert-demo": {
       name: "dialog-alert-demo",
       type: "components:example/dialog",
       registryDependencies: ["dialog"],
-      component: React.lazy(
-        () => import("@/registry/default/example/dialog/dialog-alert-demo")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/dialog/dialog-alert-demo")),
       files: ["registry/default/example/dialog/dialog-alert-demo.tsx"],
     },
     "dialog-demo": {
       name: "dialog-demo",
       type: "components:example/dialog",
       registryDependencies: ["dialog"],
-      component: React.lazy(
-        () => import("@/registry/default/example/dialog/dialog-demo")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/dialog/dialog-demo")),
       files: ["registry/default/example/dialog/dialog-demo.tsx"],
     },
     "dialog-sheet": {
       name: "dialog-sheet",
       type: "components:example/dialog",
       registryDependencies: ["dialog"],
-      component: React.lazy(
-        () => import("@/registry/default/example/dialog/dialog-sheet")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/dialog/dialog-sheet")),
       files: ["registry/default/example/dialog/dialog-sheet.tsx"],
     },
     "dialog-popover": {
       name: "dialog-popover",
       type: "components:example/dialog",
       registryDependencies: ["dialog"],
-      component: React.lazy(
-        () => import("@/registry/default/example/dialog/dialog-popover")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/dialog/dialog-popover")),
       files: ["registry/default/example/dialog/dialog-popover.tsx"],
     },
     "modal-demo": {
       name: "modal-demo",
       type: "components:example/modal",
       registryDependencies: ["dialog"],
-      component: React.lazy(
-        () => import("@/registry/default/example/modal/modal-demo")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/modal/modal-demo")),
       files: ["registry/default/example/modal/modal-demo.tsx"],
     },
     "modal-sheet": {
       name: "modal-sheet",
       type: "components:example/modal",
       registryDependencies: ["dialog"],
-      component: React.lazy(
-        () => import("@/registry/default/example/modal/modal-sheet")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/modal/modal-sheet")),
       files: ["registry/default/example/modal/modal-sheet.tsx"],
     },
     "modal-dismissable": {
       name: "modal-dismissable",
       type: "components:example/modal",
       registryDependencies: ["dialog"],
-      component: React.lazy(
-        () => import("@/registry/default/example/modal/modal-dismissable")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/modal/modal-dismissable")),
       files: ["registry/default/example/modal/modal-dismissable.tsx"],
     },
     "modal-keyboard-dismissable": {
       name: "modal-keyboard-dismissable",
       type: "components:example/modal",
       registryDependencies: ["dialog"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/modal/modal-keyboard-dismissable")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/modal/modal-keyboard-dismissable")),
       files: ["registry/default/example/modal/modal-keyboard-dismissable.tsx"],
     },
     "popover-container-padding": {
       name: "popover-container-padding",
       type: "components:example/popover",
       registryDependencies: ["popover"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/popover/popover-container-padding")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/popover/popover-container-padding")),
       files: ["registry/default/example/popover/popover-container-padding.tsx"],
     },
     "popover-cross-offset": {
       name: "popover-cross-offset",
       type: "components:example/popover",
       registryDependencies: ["popover"],
-      component: React.lazy(
-        () => import("@/registry/default/example/popover/popover-cross-offset")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/popover/popover-cross-offset")),
       files: ["registry/default/example/popover/popover-cross-offset.tsx"],
     },
     "popover-demo": {
       name: "popover-demo",
       type: "components:example/popover",
       registryDependencies: ["popover"],
-      component: React.lazy(
-        () => import("@/registry/default/example/popover/popover-demo")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/popover/popover-demo")),
       files: ["registry/default/example/popover/popover-demo.tsx"],
     },
     "popover-flipping": {
       name: "popover-flipping",
       type: "components:example/popover",
       registryDependencies: ["popover"],
-      component: React.lazy(
-        () => import("@/registry/default/example/popover/popover-flipping")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/popover/popover-flipping")),
       files: ["registry/default/example/popover/popover-flipping.tsx"],
     },
     "popover-offset": {
       name: "popover-offset",
       type: "components:example/popover",
       registryDependencies: ["popover"],
-      component: React.lazy(
-        () => import("@/registry/default/example/popover/popover-offset")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/popover/popover-offset")),
       files: ["registry/default/example/popover/popover-offset.tsx"],
     },
     "popover-position": {
       name: "popover-position",
       type: "components:example/popover",
       registryDependencies: ["popover"],
-      component: React.lazy(
-        () => import("@/registry/default/example/popover/popover-position")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/popover/popover-position")),
       files: ["registry/default/example/popover/popover-position.tsx"],
     },
     "tooltip-demo": {
       name: "tooltip-demo",
       type: "components:example/tooltip",
       registryDependencies: ["tooltip"],
-      component: React.lazy(
-        () => import("@/registry/default/example/tooltip/tooltip-demo")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/tooltip/tooltip-demo")),
       files: ["registry/default/example/tooltip/tooltip-demo.tsx"],
     },
     "tooltip-position": {
       name: "tooltip-position",
       type: "components:example/tooltip",
       registryDependencies: ["tooltip"],
-      component: React.lazy(
-        () => import("@/registry/default/example/tooltip/tooltip-position")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/tooltip/tooltip-position")),
       files: ["registry/default/example/tooltip/tooltip-position.tsx"],
     },
     "tooltip-offset": {
       name: "tooltip-offset",
       type: "components:example/tooltip",
       registryDependencies: ["tooltip"],
-      component: React.lazy(
-        () => import("@/registry/default/example/tooltip/tooltip-offset")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/tooltip/tooltip-offset")),
       files: ["registry/default/example/tooltip/tooltip-offset.tsx"],
     },
     "tooltip-cross-offset": {
       name: "tooltip-cross-offset",
       type: "components:example/tooltip",
       registryDependencies: ["tooltip"],
-      component: React.lazy(
-        () => import("@/registry/default/example/tooltip/tooltip-cross-offset")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/tooltip/tooltip-cross-offset")),
       files: ["registry/default/example/tooltip/tooltip-cross-offset.tsx"],
     },
     "tooltip-disabled": {
       name: "tooltip-disabled",
       type: "components:example/tooltip",
       registryDependencies: ["tooltip"],
-      component: React.lazy(
-        () => import("@/registry/default/example/tooltip/tooltip-disabled")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/tooltip/tooltip-disabled")),
       files: ["registry/default/example/tooltip/tooltip-disabled.tsx"],
     },
     "combobox-content": {
       name: "combobox-content",
       type: "components:example/combobox",
       registryDependencies: ["combobox"],
-      component: React.lazy(
-        () => import("@/registry/default/example/combobox/combobox-content")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/combobox/combobox-content")),
       files: ["registry/default/example/combobox/combobox-content.tsx"],
     },
     "combobox-demo": {
       name: "combobox-demo",
       type: "components:example/combobox",
       registryDependencies: ["combobox"],
-      component: React.lazy(
-        () => import("@/registry/default/example/combobox/combobox-demo")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/combobox/combobox-demo")),
       files: ["registry/default/example/combobox/combobox-demo.tsx"],
     },
     "combobox-description": {
       name: "combobox-description",
       type: "components:example/combobox",
       registryDependencies: ["combobox"],
-      component: React.lazy(
-        () => import("@/registry/default/example/combobox/combobox-description")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/combobox/combobox-description")),
       files: ["registry/default/example/combobox/combobox-description.tsx"],
     },
     "combobox-disabled": {
       name: "combobox-disabled",
       type: "components:example/combobox",
       registryDependencies: ["combobox"],
-      component: React.lazy(
-        () => import("@/registry/default/example/combobox/combobox-disabled")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/combobox/combobox-disabled")),
       files: ["registry/default/example/combobox/combobox-disabled.tsx"],
     },
     "combobox-links": {
       name: "combobox-links",
       type: "components:example/combobox",
       registryDependencies: ["combobox"],
-      component: React.lazy(
-        () => import("@/registry/default/example/combobox/combobox-links")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/combobox/combobox-links")),
       files: ["registry/default/example/combobox/combobox-links.tsx"],
     },
     "combobox-menu-trigger": {
       name: "combobox-menu-trigger",
       type: "components:example/combobox",
       registryDependencies: ["combobox"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/combobox/combobox-menu-trigger")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/combobox/combobox-menu-trigger")),
       files: ["registry/default/example/combobox/combobox-menu-trigger.tsx"],
     },
     "combobox-sections-dynamic": {
       name: "combobox-sections-dynamic",
       type: "components:example/combobox",
       registryDependencies: ["combobox"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/default/example/combobox/combobox-sections-dynamic"
-          )
-      ),
-      files: [
-        "registry/default/example/combobox/combobox-sections-dynamic.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/default/example/combobox/combobox-sections-dynamic")),
+      files: ["registry/default/example/combobox/combobox-sections-dynamic.tsx"],
     },
     "combobox-sections": {
       name: "combobox-sections",
       type: "components:example/combobox",
       registryDependencies: ["combobox"],
-      component: React.lazy(
-        () => import("@/registry/default/example/combobox/combobox-sections")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/combobox/combobox-sections")),
       files: ["registry/default/example/combobox/combobox-sections.tsx"],
     },
     "combobox-text-slots": {
       name: "combobox-text-slots",
       type: "components:example/combobox",
       registryDependencies: ["combobox"],
-      component: React.lazy(
-        () => import("@/registry/default/example/combobox/combobox-text-slots")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/combobox/combobox-text-slots")),
       files: ["registry/default/example/combobox/combobox-text-slots.tsx"],
     },
     "combobox-validation": {
       name: "combobox-validation",
       type: "components:example/combobox",
       registryDependencies: ["combobox"],
-      component: React.lazy(
-        () => import("@/registry/default/example/combobox/combobox-validation")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/combobox/combobox-validation")),
       files: ["registry/default/example/combobox/combobox-validation.tsx"],
     },
     "combobox-reusable": {
       name: "combobox-reusable",
       type: "components:example/combobox",
       registryDependencies: ["combobox"],
-      component: React.lazy(
-        () => import("@/registry/default/example/combobox/combobox-reusable")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/combobox/combobox-reusable")),
       files: ["registry/default/example/combobox/combobox-reusable.tsx"],
     },
     "select-content": {
       name: "select-content",
       type: "components:example/select",
       registryDependencies: ["select"],
-      component: React.lazy(
-        () => import("@/registry/default/example/select/select-content")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/select/select-content")),
       files: ["registry/default/example/select/select-content.tsx"],
     },
     "select-demo": {
       name: "select-demo",
       type: "components:example/select",
       registryDependencies: ["select"],
-      component: React.lazy(
-        () => import("@/registry/default/example/select/select-demo")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/select/select-demo")),
       files: ["registry/default/example/select/select-demo.tsx"],
     },
     "select-description": {
       name: "select-description",
       type: "components:example/select",
       registryDependencies: ["select"],
-      component: React.lazy(
-        () => import("@/registry/default/example/select/select-description")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/select/select-description")),
       files: ["registry/default/example/select/select-description.tsx"],
     },
     "select-disabled-items": {
       name: "select-disabled-items",
       type: "components:example/select",
       registryDependencies: ["select"],
-      component: React.lazy(
-        () => import("@/registry/default/example/select/select-disabled-items")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/select/select-disabled-items")),
       files: ["registry/default/example/select/select-disabled-items.tsx"],
     },
     "select-disabled": {
       name: "select-disabled",
       type: "components:example/select",
       registryDependencies: ["select"],
-      component: React.lazy(
-        () => import("@/registry/default/example/select/select-disabled")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/select/select-disabled")),
       files: ["registry/default/example/select/select-disabled.tsx"],
     },
     "select-links": {
       name: "select-links",
       type: "components:example/select",
       registryDependencies: ["select"],
-      component: React.lazy(
-        () => import("@/registry/default/example/select/select-links")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/select/select-links")),
       files: ["registry/default/example/select/select-links.tsx"],
     },
     "select-sections-dynamic": {
       name: "select-sections-dynamic",
       type: "components:example/select",
       registryDependencies: ["select"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/select/select-sections-dynamic")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/select/select-sections-dynamic")),
       files: ["registry/default/example/select/select-sections-dynamic.tsx"],
     },
     "select-sections": {
       name: "select-sections",
       type: "components:example/select",
       registryDependencies: ["select"],
-      component: React.lazy(
-        () => import("@/registry/default/example/select/select-sections")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/select/select-sections")),
       files: ["registry/default/example/select/select-sections.tsx"],
     },
     "select-text-slots": {
       name: "select-text-slots",
       type: "components:example/select",
       registryDependencies: ["select"],
-      component: React.lazy(
-        () => import("@/registry/default/example/select/select-text-slots")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/select/select-text-slots")),
       files: ["registry/default/example/select/select-text-slots.tsx"],
     },
     "select-validation": {
       name: "select-validation",
       type: "components:example/select",
       registryDependencies: ["select"],
-      component: React.lazy(
-        () => import("@/registry/default/example/select/select-validation")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/select/select-validation")),
       files: ["registry/default/example/select/select-validation.tsx"],
     },
     "select-reusable": {
       name: "select-reusable",
       type: "components:example/select",
       registryDependencies: ["select"],
-      component: React.lazy(
-        () => import("@/registry/default/example/select/select-reusable")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/select/select-reusable")),
       files: ["registry/default/example/select/select-reusable.tsx"],
     },
     "meter-custom-format": {
       name: "meter-custom-format",
       type: "components:example/meter",
       registryDependencies: ["meter"],
-      component: React.lazy(
-        () => import("@/registry/default/example/meter/meter-custom-format")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/meter/meter-custom-format")),
       files: ["registry/default/example/meter/meter-custom-format.tsx"],
     },
     "meter-demo": {
       name: "meter-demo",
       type: "components:example/meter",
       registryDependencies: ["meter"],
-      component: React.lazy(
-        () => import("@/registry/default/example/meter/meter-demo")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/meter/meter-demo")),
       files: ["registry/default/example/meter/meter-demo.tsx"],
     },
     "meter-value-format": {
       name: "meter-value-format",
       type: "components:example/meter",
       registryDependencies: ["meter"],
-      component: React.lazy(
-        () => import("@/registry/default/example/meter/meter-value-format")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/meter/meter-value-format")),
       files: ["registry/default/example/meter/meter-value-format.tsx"],
     },
     "meter-reusable": {
       name: "meter-reusable",
       type: "components:example/meter",
       registryDependencies: ["meter"],
-      component: React.lazy(
-        () => import("@/registry/default/example/meter/meter-reusable")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/meter/meter-reusable")),
       files: ["registry/default/example/meter/meter-reusable.tsx"],
     },
     "progress-custom-format": {
       name: "progress-custom-format",
       type: "components:example/progress",
       registryDependencies: ["progress"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/progress/progress-custom-format")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/progress/progress-custom-format")),
       files: ["registry/default/example/progress/progress-custom-format.tsx"],
     },
     "progress-demo": {
       name: "progress-demo",
       type: "components:example/progress",
       registryDependencies: ["progress"],
-      component: React.lazy(
-        () => import("@/registry/default/example/progress/progress-demo")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/progress/progress-demo")),
       files: ["registry/default/example/progress/progress-demo.tsx"],
     },
     "progress-value-format": {
       name: "progress-value-format",
       type: "components:example/progress",
       registryDependencies: ["progress"],
-      component: React.lazy(
-        () =>
-          import("@/registry/default/example/progress/progress-value-format")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/progress/progress-value-format")),
       files: ["registry/default/example/progress/progress-value-format.tsx"],
     },
     "progress-reusable": {
       name: "progress-reusable",
       type: "components:example/progress",
       registryDependencies: ["progress"],
-      component: React.lazy(
-        () => import("@/registry/default/example/progress/progress-reusable")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/progress/progress-reusable")),
       files: ["registry/default/example/progress/progress-reusable.tsx"],
     },
     "group-demo": {
       name: "group-demo",
       type: "components:example/group",
       registryDependencies: ["group"],
-      component: React.lazy(
-        () => import("@/registry/default/example/group/group-demo")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/group/group-demo")),
       files: ["registry/default/example/group/group-demo.tsx"],
     },
     "group-label": {
       name: "group-label",
       type: "components:example/group",
       registryDependencies: ["group"],
-      component: React.lazy(
-        () => import("@/registry/default/example/group/group-label")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/group/group-label")),
       files: ["registry/default/example/group/group-label.tsx"],
     },
     "toolbar-demo": {
       name: "toolbar-demo",
       type: "components:example/toolbar",
       registryDependencies: ["toolbar"],
-      component: React.lazy(
-        () => import("@/registry/default/example/toolbar/toolbar-demo")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/toolbar/toolbar-demo")),
       files: ["registry/default/example/toolbar/toolbar-demo.tsx"],
     },
     "toolbar-vertical": {
       name: "toolbar-vertical",
       type: "components:example/toolbar",
       registryDependencies: ["toolbar"],
-      component: React.lazy(
-        () => import("@/registry/default/example/toolbar/toolbar-vertical")
-      ),
+      component: React.lazy(() => import("@/registry/default/example/toolbar/toolbar-vertical")),
       files: ["registry/default/example/toolbar/toolbar-vertical.tsx"],
     },
-  },
-  "new-york": {
-    breadcrumbs: {
+  },  "new-york": {
+    "breadcrumbs": {
       name: "breadcrumbs",
       type: "components:ui",
       registryDependencies: ["button"],
       component: React.lazy(() => import("@/registry/new-york/ui/breadcrumbs")),
       files: ["registry/new-york/ui/breadcrumbs.tsx"],
     },
-    checkbox: {
+    "button": {
+      name: "button",
+      type: "components:ui",
+      registryDependencies: undefined,
+      component: React.lazy(() => import("@/registry/new-york/ui/button")),
+      files: ["registry/new-york/ui/button.tsx"],
+    },
+    "calendar": {
+      name: "calendar",
+      type: "components:ui",
+      registryDependencies: ["button"],
+      component: React.lazy(() => import("@/registry/new-york/ui/calendar")),
+      files: ["registry/new-york/ui/calendar.tsx"],
+    },
+    "checkbox": {
       name: "checkbox",
       type: "components:ui",
       registryDependencies: ["label"],
       component: React.lazy(() => import("@/registry/new-york/ui/checkbox")),
       files: ["registry/new-york/ui/checkbox.tsx"],
     },
-    color: {
+    "color": {
       name: "color",
       type: "components:ui",
       registryDependencies: undefined,
       component: React.lazy(() => import("@/registry/new-york/ui/color")),
       files: ["registry/new-york/ui/color.tsx"],
     },
-    combobox: {
+    "combobox": {
       name: "combobox",
       type: "components:ui",
       registryDependencies: undefined,
@@ -2998,60 +2116,81 @@ export const Index: Record<string, any> = {
     "date-picker": {
       name: "date-picker",
       type: "components:ui",
-      registryDependencies: ["button", "popover"],
+      registryDependencies: ["button","popover"],
       component: React.lazy(() => import("@/registry/new-york/ui/date-picker")),
       files: ["registry/new-york/ui/date-picker.tsx"],
     },
-    dialog: {
+    "datefield": {
+      name: "datefield",
+      type: "components:ui",
+      registryDependencies: ["button"],
+      component: React.lazy(() => import("@/registry/new-york/ui/datefield")),
+      files: ["registry/new-york/ui/datefield.tsx"],
+    },
+    "dialog": {
       name: "dialog",
       type: "components:ui",
       registryDependencies: undefined,
       component: React.lazy(() => import("@/registry/new-york/ui/dialog")),
       files: ["registry/new-york/ui/dialog.tsx"],
     },
-    dropzone: {
+    "dropzone": {
       name: "dropzone",
       type: "components:ui",
       registryDependencies: undefined,
       component: React.lazy(() => import("@/registry/new-york/ui/dropzone")),
       files: ["registry/new-york/ui/dropzone.tsx"],
     },
-    input: {
-      name: "input",
+    "grid-list": {
+      name: "grid-list",
+      type: "components:ui",
+      registryDependencies: ["checkbox"],
+      component: React.lazy(() => import("@/registry/new-york/ui/grid-list")),
+      files: ["registry/new-york/ui/grid-list.tsx"],
+    },
+    "textfield": {
+      name: "textfield",
       type: "components:ui",
       registryDependencies: undefined,
       component: React.lazy(() => import("@/registry/new-york/ui/textfield")),
       files: ["registry/new-york/ui/textfield.tsx"],
     },
-    link: {
+    "link": {
       name: "link",
       type: "components:ui",
       registryDependencies: ["button"],
       component: React.lazy(() => import("@/registry/new-york/ui/link")),
       files: ["registry/new-york/ui/link.tsx"],
     },
-    menu: {
+    "list-box": {
+      name: "list-box",
+      type: "components:ui",
+      registryDependencies: undefined,
+      component: React.lazy(() => import("@/registry/new-york/ui/list-box")),
+      files: ["registry/new-york/ui/grid-list.tsx"],
+    },
+    "menu": {
       name: "menu",
       type: "components:ui",
       registryDependencies: undefined,
       component: React.lazy(() => import("@/registry/new-york/ui/menu")),
       files: ["registry/new-york/ui/menu.tsx"],
     },
-    meter: {
+    "meter": {
       name: "meter",
       type: "components:ui",
       registryDependencies: undefined,
       component: React.lazy(() => import("@/registry/new-york/ui/meter")),
       files: ["registry/new-york/ui/meter.tsx"],
     },
-    popover: {
+    "popover": {
       name: "popover",
       type: "components:ui",
       registryDependencies: undefined,
       component: React.lazy(() => import("@/registry/new-york/ui/popover")),
       files: ["registry/new-york/ui/popover.tsx"],
     },
-    progress: {
+    "progress": {
       name: "progress",
       type: "components:ui",
       registryDependencies: undefined,
@@ -3065,89 +2204,47 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/new-york/ui/radio-group")),
       files: ["registry/new-york/ui/radio-group.tsx"],
     },
-    searchfield: {
+    "searchfield": {
       name: "searchfield",
       type: "components:ui",
       registryDependencies: undefined,
       component: React.lazy(() => import("@/registry/new-york/ui/searchfield")),
       files: ["registry/new-york/ui/searchfield.tsx"],
     },
-    select: {
+    "select": {
       name: "select",
       type: "components:ui",
       registryDependencies: undefined,
       component: React.lazy(() => import("@/registry/new-york/ui/select")),
       files: ["registry/new-york/ui/select.tsx"],
     },
-    separator: {
+    "separator": {
       name: "separator",
       type: "components:ui",
       registryDependencies: undefined,
       component: React.lazy(() => import("@/registry/new-york/ui/separator")),
       files: ["registry/new-york/ui/separator.tsx"],
     },
-    slider: {
+    "slider": {
       name: "slider",
       type: "components:ui",
       registryDependencies: undefined,
       component: React.lazy(() => import("@/registry/new-york/ui/slider")),
       files: ["registry/new-york/ui/slider.tsx"],
     },
-    switch: {
+    "switch": {
       name: "switch",
       type: "components:ui",
       registryDependencies: undefined,
       component: React.lazy(() => import("@/registry/new-york/ui/switch")),
       files: ["registry/new-york/ui/switch.tsx"],
     },
-    tabs: {
+    "tabs": {
       name: "tabs",
       type: "components:ui",
       registryDependencies: undefined,
       component: React.lazy(() => import("@/registry/new-york/ui/tabs")),
       files: ["registry/new-york/ui/tabs.tsx"],
-    },
-    textarea: {
-      name: "textarea",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: React.lazy(() => import("@/registry/new-york/ui/textarea")),
-      files: ["registry/new-york/ui/textarea.tsx"],
-    },
-    tooltip: {
-      name: "tooltip",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: React.lazy(() => import("@/registry/new-york/ui/tooltip")),
-      files: ["registry/new-york/ui/tooltip.tsx"],
-    },
-    button: {
-      name: "button",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: React.lazy(() => import("@/registry/new-york/ui/button")),
-      files: ["registry/new-york/ui/button.tsx"],
-    },
-    toggle: {
-      name: "toggle",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: React.lazy(() => import("@/registry/new-york/ui/toggle")),
-      files: ["registry/new-york/ui/toggle.tsx"],
-    },
-    "grid-list": {
-      name: "grid-list",
-      type: "components:ui",
-      registryDependencies: ["checkbox"],
-      component: React.lazy(() => import("@/registry/new-york/ui/grid-list")),
-      files: ["registry/new-york/ui/grid-list.tsx"],
-    },
-    "list-box": {
-      name: "list-box",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: React.lazy(() => import("@/registry/new-york/ui/list-box")),
-      files: ["registry/new-york/ui/grid-list.tsx"],
     },
     "tag-group": {
       name: "tag-group",
@@ -3156,2821 +2253,1887 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/new-york/ui/tag-group")),
       files: ["registry/new-york/ui/tag-group.tsx"],
     },
-    calendar: {
-      name: "calendar",
+    "toggle": {
+      name: "toggle",
       type: "components:ui",
-      registryDependencies: ["button"],
-      component: React.lazy(() => import("@/registry/new-york/ui/calendar")),
-      files: ["registry/new-york/ui/calendar.tsx"],
+      registryDependencies: undefined,
+      component: React.lazy(() => import("@/registry/new-york/ui/toggle")),
+      files: ["registry/new-york/ui/toggle.tsx"],
     },
-    datefield: {
-      name: "datefield",
+    "tooltip": {
+      name: "tooltip",
       type: "components:ui",
-      registryDependencies: ["button"],
-      component: React.lazy(() => import("@/registry/new-york/ui/datefield")),
-      files: ["registry/new-york/ui/datefield.tsx"],
+      registryDependencies: undefined,
+      component: React.lazy(() => import("@/registry/new-york/ui/tooltip")),
+      files: ["registry/new-york/ui/tooltip.tsx"],
     },
     "breadcrumbs-demo": {
       name: "breadcrumbs-demo",
       type: "components:example/breadcrumbs",
       registryDependencies: ["breadcrumbs"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/breadcrumbs/breadcrumbs-demo")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/breadcrumbs/breadcrumbs-demo")),
       files: ["registry/new-york/example/breadcrumbs/breadcrumbs-demo.tsx"],
     },
     "breadcrumbs-dropdown": {
       name: "breadcrumbs-dropdown",
       type: "components:example/breadcrumbs",
       registryDependencies: ["breadcrumbs"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/breadcrumbs/breadcrumbs-dropdown")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/breadcrumbs/breadcrumbs-dropdown")),
       files: ["registry/new-york/example/breadcrumbs/breadcrumbs-dropdown.tsx"],
     },
     "breadcrumbs-disabled": {
       name: "breadcrumbs-disabled",
       type: "components:example/breadcrumbs",
       registryDependencies: ["breadcrumbs"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/breadcrumbs/breadcrumbs-disabled")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/breadcrumbs/breadcrumbs-disabled")),
       files: ["registry/new-york/example/breadcrumbs/breadcrumbs-disabled.tsx"],
     },
     "breadcrumbs-ellipsis": {
       name: "breadcrumbs-ellipsis",
       type: "components:example/breadcrumbs",
       registryDependencies: ["breadcrumbs"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/breadcrumbs/breadcrumbs-ellipsis")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/breadcrumbs/breadcrumbs-ellipsis")),
       files: ["registry/new-york/example/breadcrumbs/breadcrumbs-ellipsis.tsx"],
     },
     "breadcrumbs-separator": {
       name: "breadcrumbs-separator",
       type: "components:example/breadcrumbs",
       registryDependencies: ["breadcrumbs"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/breadcrumbs/breadcrumbs-separator"
-          )
-      ),
-      files: [
-        "registry/new-york/example/breadcrumbs/breadcrumbs-separator.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/breadcrumbs/breadcrumbs-separator")),
+      files: ["registry/new-york/example/breadcrumbs/breadcrumbs-separator.tsx"],
     },
     "breadcrumbs-items": {
       name: "breadcrumbs-items",
       type: "components:example/breadcrumbs",
       registryDependencies: ["breadcrumbs"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/breadcrumbs/breadcrumbs-items")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/breadcrumbs/breadcrumbs-items")),
       files: ["registry/new-york/example/breadcrumbs/breadcrumbs-items.tsx"],
     },
     "color-area": {
       name: "color-area",
       type: "components:example/color",
       registryDependencies: ["color"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/color/color-area")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/color/color-area")),
       files: ["registry/new-york/example/color/color-area.tsx"],
     },
     "color-picker-eye": {
       name: "color-picker-eye",
       type: "components:example/color/pickers",
       registryDependencies: ["color"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/color/pickers/color-picker-eye")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/color/pickers/color-picker-eye")),
       files: ["registry/new-york/example/color/pickers/color-picker-eye.tsx"],
     },
     "color-picker-hex": {
       name: "color-picker-hex",
       type: "components:example/color/pickers",
       registryDependencies: ["color"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/color/pickers/color-picker-hex")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/color/pickers/color-picker-hex")),
       files: ["registry/new-york/example/color/pickers/color-picker-hex.tsx"],
     },
     "color-picker-slider": {
       name: "color-picker-slider",
       type: "components:example/color/pickers",
       registryDependencies: ["color"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/color/pickers/color-picker-slider"
-          )
-      ),
-      files: [
-        "registry/new-york/example/color/pickers/color-picker-slider.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/color/pickers/color-picker-slider")),
+      files: ["registry/new-york/example/color/pickers/color-picker-slider.tsx"],
     },
     "color-picker-hexa": {
       name: "color-picker-hexa",
       type: "components:example/color/pickers",
       registryDependencies: ["color"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/color/pickers/color-picker-hexa")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/color/pickers/color-picker-hexa")),
       files: ["registry/new-york/example/color/pickers/color-picker-hexa.tsx"],
     },
     "color-picker-hsb": {
       name: "color-picker-hsb",
       type: "components:example/color/pickers",
       registryDependencies: ["color"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/color/pickers/color-picker-hsb")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/color/pickers/color-picker-hsb")),
       files: ["registry/new-york/example/color/pickers/color-picker-hsb.tsx"],
     },
     "color-picker-hsba": {
       name: "color-picker-hsba",
       type: "components:example/color/pickers",
       registryDependencies: ["color"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/color/pickers/color-picker-hsba")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/color/pickers/color-picker-hsba")),
       files: ["registry/new-york/example/color/pickers/color-picker-hsba.tsx"],
     },
     "color-picker-multi": {
       name: "color-picker-multi",
       type: "components:example/color/pickers",
       registryDependencies: ["color"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/color/pickers/color-picker-multi")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/color/pickers/color-picker-multi")),
       files: ["registry/new-york/example/color/pickers/color-picker-multi.tsx"],
     },
     "color-picker-hsl": {
       name: "color-picker-hsl",
       type: "components:example/color/pickers",
       registryDependencies: ["color"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/color/pickers/color-picker-hsl")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/color/pickers/color-picker-hsl")),
       files: ["registry/new-york/example/color/pickers/color-picker-hsl.tsx"],
     },
     "color-picker-hsla": {
       name: "color-picker-hsla",
       type: "components:example/color/pickers",
       registryDependencies: ["color"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/color/pickers/color-picker-hsla")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/color/pickers/color-picker-hsla")),
       files: ["registry/new-york/example/color/pickers/color-picker-hsla.tsx"],
     },
     "color-picker-rgb": {
       name: "color-picker-rgb",
       type: "components:example/color/pickers",
       registryDependencies: ["color"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/color/pickers/color-picker-rgb")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/color/pickers/color-picker-rgb")),
       files: ["registry/new-york/example/color/pickers/color-picker-rgb.tsx"],
     },
     "color-picker-rgba": {
       name: "color-picker-rgba",
       type: "components:example/color/pickers",
       registryDependencies: ["color"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/color/pickers/color-picker-rgba")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/color/pickers/color-picker-rgba")),
       files: ["registry/new-york/example/color/pickers/color-picker-rgba.tsx"],
     },
     "color-slider": {
       name: "color-slider",
       type: "components:example/color",
       registryDependencies: ["color"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/color/color-slider")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/color/color-slider")),
       files: ["registry/new-york/example/color/color-slider.tsx"],
     },
     "color-swatch-picker": {
       name: "color-swatch-picker",
       type: "components:example/color",
       registryDependencies: ["color"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/color/color-swatch-picker")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/color/color-swatch-picker")),
       files: ["registry/new-york/example/color/color-swatch-picker.tsx"],
     },
     "color-wheel": {
       name: "color-wheel",
       type: "components:example/color",
       registryDependencies: ["color"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/color/color-wheel")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/color/color-wheel")),
       files: ["registry/new-york/example/color/color-wheel.tsx"],
     },
     "file-trigger-button-demo": {
       name: "file-trigger-button-demo",
       type: "components:example/file-trigger",
       registryDependencies: ["button"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/file-trigger/file-trigger-button-demo"
-          )
-      ),
-      files: [
-        "registry/new-york/example/file-trigger/file-trigger-button-demo.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/file-trigger/file-trigger-button-demo")),
+      files: ["registry/new-york/example/file-trigger/file-trigger-button-demo.tsx"],
     },
     "file-trigger-input-file": {
       name: "file-trigger-input-file",
       type: "components:example/file-trigger",
       registryDependencies: ["input"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/file-trigger/file-trigger-input-file"
-          )
-      ),
-      files: [
-        "registry/new-york/example/file-trigger/file-trigger-input-file.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/file-trigger/file-trigger-input-file")),
+      files: ["registry/new-york/example/file-trigger/file-trigger-input-file.tsx"],
     },
     "input-demo": {
       name: "input-demo",
       type: "components:example/input",
       registryDependencies: ["input"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/input/input-demo")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/input/input-demo")),
       files: ["registry/new-york/example/input/input-demo.tsx"],
     },
     "input-disabled": {
       name: "input-disabled",
       type: "components:example/input",
       registryDependencies: ["input"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/input/input-disabled")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/input/input-disabled")),
       files: ["registry/new-york/example/input/input-disabled.tsx"],
     },
     "link-demo": {
       name: "link-demo",
       type: "components:example/link",
       registryDependencies: ["link"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/link/link-demo")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/link/link-demo")),
       files: ["registry/new-york/example/link/link-demo.tsx"],
     },
     "link-variants": {
       name: "link-variants",
       type: "components:example/link",
       registryDependencies: ["link"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/link/link-variants")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/link/link-variants")),
       files: ["registry/new-york/example/link/link-variants.tsx"],
     },
     "separator-demo": {
       name: "separator-demo",
       type: "components:example/separator",
       registryDependencies: ["separator"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/separator/separator-demo")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/separator/separator-demo")),
       files: ["registry/new-york/example/separator/separator-demo.tsx"],
     },
     "switch-demo": {
       name: "switch-demo",
       type: "components:example/switch",
       registryDependencies: ["switch"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/switch/switch-demo")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/switch/switch-demo")),
       files: ["registry/new-york/example/switch/switch-demo.tsx"],
     },
     "switch-disabled": {
       name: "switch-disabled",
       type: "components:example/switch",
       registryDependencies: ["switch"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/switch/switch-disabled")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/switch/switch-disabled")),
       files: ["registry/new-york/example/switch/switch-disabled.tsx"],
     },
     "switch-readonly": {
       name: "switch-readonly",
       type: "components:example/switch",
       registryDependencies: ["switch"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/switch/switch-readonly")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/switch/switch-readonly")),
       files: ["registry/new-york/example/switch/switch-readonly.tsx"],
-    },
-    "textarea-demo": {
-      name: "textarea-demo",
-      type: "components:example/textarea",
-      registryDependencies: ["textarea"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/textarea/textarea-demo")
-      ),
-      files: ["registry/new-york/example/textarea/textarea-demo.tsx"],
-    },
-    "textarea-disabled": {
-      name: "textarea-disabled",
-      type: "components:example/textarea",
-      registryDependencies: ["textarea"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/textarea/textarea-disabled")
-      ),
-      files: ["registry/new-york/example/textarea/textarea-disabled.tsx"],
-    },
-    "textarea-with-button": {
-      name: "textarea-with-button",
-      type: "components:example/textarea",
-      registryDependencies: ["textarea"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/textarea/textarea-with-button")
-      ),
-      files: ["registry/new-york/example/textarea/textarea-with-button.tsx"],
-    },
-    "textarea-with-label": {
-      name: "textarea-with-label",
-      type: "components:example/textarea",
-      registryDependencies: ["textarea"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/textarea/textarea-with-label")
-      ),
-      files: ["registry/new-york/example/textarea/textarea-with-label.tsx"],
-    },
-    "textarea-with-text": {
-      name: "textarea-with-text",
-      type: "components:example/textarea",
-      registryDependencies: ["textarea"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/textarea/textarea-with-text")
-      ),
-      files: ["registry/new-york/example/textarea/textarea-with-text.tsx"],
     },
     "button-demo": {
       name: "button-demo",
       type: "components:example/button",
       registryDependencies: ["button"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/button/button-demo")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/button/button-demo")),
       files: ["registry/new-york/example/button/button-demo.tsx"],
     },
     "button-ghost": {
       name: "button-ghost",
       type: "components:example/button",
       registryDependencies: ["button"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/button/button-ghost")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/button/button-ghost")),
       files: ["registry/new-york/example/button/button-ghost.tsx"],
     },
     "button-icon": {
       name: "button-icon",
       type: "components:example/button",
       registryDependencies: ["button"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/button/button-icon")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/button/button-icon")),
       files: ["registry/new-york/example/button/button-icon.tsx"],
     },
     "button-link": {
       name: "button-link",
       type: "components:example/button",
       registryDependencies: ["button"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/button/button-link")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/button/button-link")),
       files: ["registry/new-york/example/button/button-link.tsx"],
     },
     "button-loading": {
       name: "button-loading",
       type: "components:example/button",
       registryDependencies: ["button"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/button/button-loading")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/button/button-loading")),
       files: ["registry/new-york/example/button/button-loading.tsx"],
     },
     "button-press": {
       name: "button-press",
       type: "components:example/button",
       registryDependencies: ["button"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/button/button-press")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/button/button-press")),
       files: ["registry/new-york/example/button/button-press.tsx"],
     },
     "button-secondary": {
       name: "button-secondary",
       type: "components:example/button",
       registryDependencies: ["button"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/button/button-secondary")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/button/button-secondary")),
       files: ["registry/new-york/example/button/button-secondary.tsx"],
     },
     "button-with-icon": {
       name: "button-with-icon",
       type: "components:example/button",
       registryDependencies: ["button"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/button/button-with-icon")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/button/button-with-icon")),
       files: ["registry/new-york/example/button/button-with-icon.tsx"],
     },
     "button-outline": {
       name: "button-outline",
       type: "components:example/button",
       registryDependencies: ["button"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/button/button-outline")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/button/button-outline")),
       files: ["registry/new-york/example/button/button-outline.tsx"],
     },
     "button-destructive": {
       name: "button-destructive",
       type: "components:example/button",
       registryDependencies: ["button"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/button/button-destructive")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/button/button-destructive")),
       files: ["registry/new-york/example/button/button-destructive.tsx"],
     },
     "toggle-demo": {
       name: "toggle-demo",
       type: "components:example/toggle",
       registryDependencies: ["toggle"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/toggle/toggle-demo")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/toggle/toggle-demo")),
       files: ["registry/new-york/example/toggle/toggle-demo.tsx"],
     },
     "toggle-disabled": {
       name: "toggle-disabled",
       type: "components:example/toggle",
       registryDependencies: ["toggle"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/toggle/toggle-disabled")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/toggle/toggle-disabled")),
       files: ["registry/new-york/example/toggle/toggle-disabled.tsx"],
     },
     "toggle-lg": {
       name: "toggle-lg",
       type: "components:example/toggle",
       registryDependencies: ["toggle"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/toggle/toggle-lg")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/toggle/toggle-lg")),
       files: ["registry/new-york/example/toggle/toggle-lg.tsx"],
     },
     "toggle-outline": {
       name: "toggle-outline",
       type: "components:example/toggle",
       registryDependencies: ["toggle"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/toggle/toggle-outline")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/toggle/toggle-outline")),
       files: ["registry/new-york/example/toggle/toggle-outline.tsx"],
     },
     "toggle-sm": {
       name: "toggle-sm",
       type: "components:example/toggle",
       registryDependencies: ["toggle"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/toggle/toggle-sm")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/toggle/toggle-sm")),
       files: ["registry/new-york/example/toggle/toggle-sm.tsx"],
     },
     "toggle-with-text": {
       name: "toggle-with-text",
       type: "components:example/toggle",
       registryDependencies: ["toggle"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/toggle/toggle-with-text")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/toggle/toggle-with-text")),
       files: ["registry/new-york/example/toggle/toggle-with-text.tsx"],
     },
     "grid-list-content": {
       name: "grid-list-content",
       type: "components:example/grid-list",
       registryDependencies: ["grid-list"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/grid-list/grid-list-content")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/grid-list/grid-list-content")),
       files: ["registry/new-york/example/grid-list/grid-list-content.tsx"],
     },
     "grid-list-demo": {
       name: "grid-list-demo",
       type: "components:example/grid-list",
       registryDependencies: ["grid-list"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/grid-list/grid-list-demo")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/grid-list/grid-list-demo")),
       files: ["registry/new-york/example/grid-list/grid-list-demo.tsx"],
     },
     "grid-list-direct-row-actions": {
       name: "grid-list-direct-row-actions",
       type: "components:example/grid-list",
       registryDependencies: ["grid-list"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/grid-list/grid-list-direct-row-actions"
-          )
-      ),
-      files: [
-        "registry/new-york/example/grid-list/grid-list-direct-row-actions.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/grid-list/grid-list-direct-row-actions")),
+      files: ["registry/new-york/example/grid-list/grid-list-direct-row-actions.tsx"],
     },
     "grid-list-disabled-behavior": {
       name: "grid-list-disabled-behavior",
       type: "components:example/grid-list",
       registryDependencies: ["grid-list"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/grid-list/grid-list-disabled-behavior"
-          )
-      ),
-      files: [
-        "registry/new-york/example/grid-list/grid-list-disabled-behavior.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/grid-list/grid-list-disabled-behavior")),
+      files: ["registry/new-york/example/grid-list/grid-list-disabled-behavior.tsx"],
     },
     "grid-list-disabled-items": {
       name: "grid-list-disabled-items",
       type: "components:example/grid-list",
       registryDependencies: ["grid-list"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/grid-list/grid-list-disabled-items"
-          )
-      ),
-      files: [
-        "registry/new-york/example/grid-list/grid-list-disabled-items.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/grid-list/grid-list-disabled-items")),
+      files: ["registry/new-york/example/grid-list/grid-list-disabled-items.tsx"],
     },
     "grid-list-disabled-keys": {
       name: "grid-list-disabled-keys",
       type: "components:example/grid-list",
       registryDependencies: ["grid-list"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/grid-list/grid-list-disabled-keys"
-          )
-      ),
-      files: [
-        "registry/new-york/example/grid-list/grid-list-disabled-keys.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/grid-list/grid-list-disabled-keys")),
+      files: ["registry/new-york/example/grid-list/grid-list-disabled-keys.tsx"],
     },
     "grid-list-disallow-empty": {
       name: "grid-list-disallow-empty",
       type: "components:example/grid-list",
       registryDependencies: ["grid-list"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/grid-list/grid-list-disallow-empty"
-          )
-      ),
-      files: [
-        "registry/new-york/example/grid-list/grid-list-disallow-empty.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/grid-list/grid-list-disallow-empty")),
+      files: ["registry/new-york/example/grid-list/grid-list-disallow-empty.tsx"],
     },
     "grid-list-drag-between": {
       name: "grid-list-drag-between",
       type: "components:example/grid-list",
       registryDependencies: ["grid-list"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/grid-list/grid-list-drag-between")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/grid-list/grid-list-drag-between")),
       files: ["registry/new-york/example/grid-list/grid-list-drag-between.tsx"],
     },
     "grid-list-drag-drop": {
       name: "grid-list-drag-drop",
       type: "components:example/grid-list",
       registryDependencies: ["grid-list"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/grid-list/grid-list-drag-drop")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/grid-list/grid-list-drag-drop")),
       files: ["registry/new-york/example/grid-list/grid-list-drag-drop.tsx"],
     },
     "grid-list-empty": {
       name: "grid-list-empty",
       type: "components:example/grid-list",
       registryDependencies: ["grid-list"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/grid-list/grid-list-empty")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/grid-list/grid-list-empty")),
       files: ["registry/new-york/example/grid-list/grid-list-empty.tsx"],
     },
     "grid-list-links": {
       name: "grid-list-links",
       type: "components:example/grid-list",
       registryDependencies: ["grid-list"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/grid-list/grid-list-links")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/grid-list/grid-list-links")),
       files: ["registry/new-york/example/grid-list/grid-list-links.tsx"],
     },
     "grid-list-multi-select": {
       name: "grid-list-multi-select",
       type: "components:example/grid-list",
       registryDependencies: ["grid-list"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/grid-list/grid-list-multi-select")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/grid-list/grid-list-multi-select")),
       files: ["registry/new-york/example/grid-list/grid-list-multi-select.tsx"],
     },
     "grid-list-replace": {
       name: "grid-list-replace",
       type: "components:example/grid-list",
       registryDependencies: ["grid-list"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/grid-list/grid-list-replace")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/grid-list/grid-list-replace")),
       files: ["registry/new-york/example/grid-list/grid-list-replace.tsx"],
     },
     "grid-list-row-actions": {
       name: "grid-list-row-actions",
       type: "components:example/grid-list",
       registryDependencies: ["grid-list"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/grid-list/grid-list-row-actions")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/grid-list/grid-list-row-actions")),
       files: ["registry/new-york/example/grid-list/grid-list-row-actions.tsx"],
     },
     "grid-list-single-select": {
       name: "grid-list-single-select",
       type: "components:example/grid-list",
       registryDependencies: ["grid-list"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/grid-list/grid-list-single-select"
-          )
-      ),
-      files: [
-        "registry/new-york/example/grid-list/grid-list-single-select.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/grid-list/grid-list-single-select")),
+      files: ["registry/new-york/example/grid-list/grid-list-single-select.tsx"],
     },
     "list-box-content": {
       name: "list-box-content",
       type: "components:example/list-box",
       registryDependencies: ["list-box"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/list-box/list-box-content")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/list-box/list-box-content")),
       files: ["registry/new-york/example/list-box/list-box-content.tsx"],
     },
     "list-box-demo": {
       name: "list-box-demo",
       type: "components:example/list-box",
       registryDependencies: ["list-box"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/list-box/list-box-demo")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/list-box/list-box-demo")),
       files: ["registry/new-york/example/list-box/list-box-demo.tsx"],
     },
     "list-box-disabled-items": {
       name: "list-box-disabled-items",
       type: "components:example/list-box",
       registryDependencies: ["list-box"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/list-box/list-box-disabled-items")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/list-box/list-box-disabled-items")),
       files: ["registry/new-york/example/list-box/list-box-disabled-items.tsx"],
     },
     "list-box-disabled-keys": {
       name: "list-box-disabled-keys",
       type: "components:example/list-box",
       registryDependencies: ["list-box"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/list-box/list-box-disabled-keys")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/list-box/list-box-disabled-keys")),
       files: ["registry/new-york/example/list-box/list-box-disabled-keys.tsx"],
     },
     "list-box-drag-between": {
       name: "list-box-drag-between",
       type: "components:example/list-box",
       registryDependencies: ["list-box"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/list-box/list-box-drag-between")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/list-box/list-box-drag-between")),
       files: ["registry/new-york/example/list-box/list-box-drag-between.tsx"],
     },
     "list-box-drag-drop": {
       name: "list-box-drag-drop",
       type: "components:example/list-box",
       registryDependencies: ["list-box"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/list-box/list-box-drag-drop")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/list-box/list-box-drag-drop")),
       files: ["registry/new-york/example/list-box/list-box-drag-drop.tsx"],
     },
     "list-box-dynamic": {
       name: "list-box-dynamic",
       type: "components:example/list-box",
       registryDependencies: ["list-box"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/list-box/list-box-dynamic")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/list-box/list-box-dynamic")),
       files: ["registry/new-york/example/list-box/list-box-dynamic.tsx"],
     },
     "list-box-empty": {
       name: "list-box-empty",
       type: "components:example/list-box",
       registryDependencies: ["list-box"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/list-box/list-box-empty")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/list-box/list-box-empty")),
       files: ["registry/new-york/example/list-box/list-box-empty.tsx"],
     },
     "list-box-links-replace": {
       name: "list-box-links-replace",
       type: "components:example/list-box",
       registryDependencies: ["list-box"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/list-box/list-box-links-replace")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/list-box/list-box-links-replace")),
       files: ["registry/new-york/example/list-box/list-box-links-replace.tsx"],
     },
     "list-box-links": {
       name: "list-box-links",
       type: "components:example/list-box",
       registryDependencies: ["list-box"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/list-box/list-box-links")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/list-box/list-box-links")),
       files: ["registry/new-york/example/list-box/list-box-links.tsx"],
     },
     "list-box-sections": {
       name: "list-box-sections",
       type: "components:example/list-box",
       registryDependencies: ["list-box"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/list-box/list-box-sections")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/list-box/list-box-sections")),
       files: ["registry/new-york/example/list-box/list-box-sections.tsx"],
     },
     "list-box-selection-replace": {
       name: "list-box-selection-replace",
       type: "components:example/list-box",
       registryDependencies: ["list-box"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/list-box/list-box-selection-replace"
-          )
-      ),
-      files: [
-        "registry/new-york/example/list-box/list-box-selection-replace.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/list-box/list-box-selection-replace")),
+      files: ["registry/new-york/example/list-box/list-box-selection-replace.tsx"],
     },
     "list-box-text-slot": {
       name: "list-box-text-slot",
       type: "components:example/list-box",
       registryDependencies: ["list-box"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/list-box/list-box-text-slot")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/list-box/list-box-text-slot")),
       files: ["registry/new-york/example/list-box/list-box-text-slot.tsx"],
     },
     "menu-content": {
       name: "menu-content",
       type: "components:example/menu",
       registryDependencies: ["menu"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/menu/menu-content")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/menu/menu-content")),
       files: ["registry/new-york/example/menu/menu-content.tsx"],
     },
     "menu-demo": {
       name: "menu-demo",
       type: "components:example/menu",
       registryDependencies: ["menu"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/menu/menu-demo")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/menu/menu-demo")),
       files: ["registry/new-york/example/menu/menu-demo.tsx"],
     },
     "menu-disabled-items": {
       name: "menu-disabled-items",
       type: "components:example/menu",
       registryDependencies: ["menu"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/menu/menu-disabled-items")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/menu/menu-disabled-items")),
       files: ["registry/new-york/example/menu/menu-disabled-items.tsx"],
     },
     "menu-disabled-keys": {
       name: "menu-disabled-keys",
       type: "components:example/menu",
       registryDependencies: ["menu"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/menu/menu-disabled-keys")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/menu/menu-disabled-keys")),
       files: ["registry/new-york/example/menu/menu-disabled-keys.tsx"],
     },
     "menu-links": {
       name: "menu-links",
       type: "components:example/menu",
       registryDependencies: ["menu"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/menu/menu-links")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/menu/menu-links")),
       files: ["registry/new-york/example/menu/menu-links.tsx"],
     },
     "menu-long-press": {
       name: "menu-long-press",
       type: "components:example/menu",
       registryDependencies: ["menu"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/menu/menu-long-press")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/menu/menu-long-press")),
       files: ["registry/new-york/example/menu/menu-long-press.tsx"],
     },
     "menu-sections-dynamic": {
       name: "menu-sections-dynamic",
       type: "components:example/menu",
       registryDependencies: ["menu"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/menu/menu-sections-dynamic")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/menu/menu-sections-dynamic")),
       files: ["registry/new-york/example/menu/menu-sections-dynamic.tsx"],
     },
     "menu-sections": {
       name: "menu-sections",
       type: "components:example/menu",
       registryDependencies: ["menu"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/menu/menu-sections")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/menu/menu-sections")),
       files: ["registry/new-york/example/menu/menu-sections.tsx"],
     },
     "menu-selection-multiple": {
       name: "menu-selection-multiple",
       type: "components:example/menu",
       registryDependencies: ["menu"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/menu/menu-selection-multiple")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/menu/menu-selection-multiple")),
       files: ["registry/new-york/example/menu/menu-selection-multiple.tsx"],
     },
     "menu-selection-single": {
       name: "menu-selection-single",
       type: "components:example/menu",
       registryDependencies: ["menu"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/menu/menu-selection-single")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/menu/menu-selection-single")),
       files: ["registry/new-york/example/menu/menu-selection-single.tsx"],
     },
     "menu-separators": {
       name: "menu-separators",
       type: "components:example/menu",
       registryDependencies: ["menu"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/menu/menu-separators")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/menu/menu-separators")),
       files: ["registry/new-york/example/menu/menu-separators.tsx"],
     },
     "menu-sub-menu-dynamic": {
       name: "menu-sub-menu-dynamic",
       type: "components:example/menu",
       registryDependencies: ["menu"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/menu/menu-sub-menu-dynamic")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/menu/menu-sub-menu-dynamic")),
       files: ["registry/new-york/example/menu/menu-sub-menu-dynamic.tsx"],
     },
     "menu-sub-menu": {
       name: "menu-sub-menu",
       type: "components:example/menu",
       registryDependencies: ["menu"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/menu/menu-sub-menu")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/menu/menu-sub-menu")),
       files: ["registry/new-york/example/menu/menu-sub-menu.tsx"],
     },
     "menu-text-slots": {
       name: "menu-text-slots",
       type: "components:example/menu",
       registryDependencies: ["menu"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/menu/menu-text-slots")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/menu/menu-text-slots")),
       files: ["registry/new-york/example/menu/menu-text-slots.tsx"],
     },
     "menu-reusable": {
       name: "menu-reusable",
       type: "components:example/menu",
       registryDependencies: ["menu"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/menu/menu-reusable")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/menu/menu-reusable")),
       files: ["registry/new-york/example/menu/menu-reusable.tsx"],
     },
     "tag-error-text": {
       name: "tag-error-text",
       type: "components:example/tag-group",
       registryDependencies: ["tag"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/tag-group/tag-error-text")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/tag-group/tag-error-text")),
       files: ["registry/new-york/example/tag/tag-error-text.tsx"],
     },
     "tag-group-demo": {
       name: "tag-group-demo",
       type: "components:example/tag-group",
       registryDependencies: ["tag-group"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/tag-group/tag-group-demo")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/tag-group/tag-group-demo")),
       files: ["registry/new-york/example/tag-group/tag-group-demo.tsx"],
     },
     "tag-group-disabled-items": {
       name: "tag-group-disabled-items",
       type: "components:example/tag-group",
       registryDependencies: ["tag-group"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/tag-group/tag-group-disabled-items"
-          )
-      ),
-      files: [
-        "registry/new-york/example/tag-group/tag-group-disabled-items.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/tag-group/tag-group-disabled-items")),
+      files: ["registry/new-york/example/tag-group/tag-group-disabled-items.tsx"],
     },
     "tag-group-disabled-keys": {
       name: "tag-group-disabled-keys",
       type: "components:example/tag-group",
       registryDependencies: ["tag-group"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/tag-group/tag-group-disabled-keys"
-          )
-      ),
-      files: [
-        "registry/new-york/example/tag-group/tag-group-disabled-keys.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/tag-group/tag-group-disabled-keys")),
+      files: ["registry/new-york/example/tag-group/tag-group-disabled-keys.tsx"],
     },
     "tag-group-empty": {
       name: "tag-group-empty",
       type: "components:example/tag-group",
       registryDependencies: ["tag-group"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/tag-group/tag-group-empty")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/tag-group/tag-group-empty")),
       files: ["registry/new-york/example/tag-group/tag-group-empty.tsx"],
     },
     "tag-group-helper": {
       name: "tag-group-helper",
       type: "components:example/tag-group",
       registryDependencies: ["tag-group"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/tag-group/tag-group-helper")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/tag-group/tag-group-helper")),
       files: ["registry/new-york/example/tag-group/tag-group-helper.tsx"],
     },
     "tag-group-links": {
       name: "tag-group-links",
       type: "components:example/tag-group",
       registryDependencies: ["tag-group"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/tag-group/tag-group-links")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/tag-group/tag-group-links")),
       files: ["registry/new-york/example/tag-group/tag-group-links.tsx"],
     },
     "tag-group-remove": {
       name: "tag-group-remove",
       type: "components:example/tag-group",
       registryDependencies: ["tag-group"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/tag-group/tag-group-remove")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/tag-group/tag-group-remove")),
       files: ["registry/new-york/example/tag-group/tag-group-remove.tsx"],
     },
     "tag-group-selection": {
       name: "tag-group-selection",
       type: "components:example/tag-group",
       registryDependencies: ["tag-group"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/tag-group/tag-group-selection")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/tag-group/tag-group-selection")),
       files: ["registry/new-york/example/tag-group/tag-group-selection.tsx"],
     },
     "tag-group-reusable": {
       name: "tag-group-reusable",
       type: "components:example/tag-group",
       registryDependencies: ["tag-group"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/tag-group/tag-group-reusable")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/tag-group/tag-group-reusable")),
       files: ["registry/new-york/example/tag-group/tag-group-reusable.tsx"],
     },
     "calendar-demo": {
       name: "calendar-demo",
       type: "components:example/calendar",
       registryDependencies: ["calendar"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/calendar/calendar-demo")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/calendar/calendar-demo")),
       files: ["registry/new-york/example/calendar/calendar-demo.tsx"],
     },
     "calendar-disabled": {
       name: "calendar-disabled",
       type: "components:example/calendar",
       registryDependencies: ["calendar"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/calendar/calendar-disabled")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/calendar/calendar-disabled")),
       files: ["registry/new-york/example/calendar/calendar-disabled.tsx"],
     },
     "calendar-error": {
       name: "calendar-error",
       type: "components:example/calendar",
       registryDependencies: ["calendar"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/calendar/calendar-error")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/calendar/calendar-error")),
       files: ["registry/new-york/example/calendar/calendar-error.tsx"],
     },
     "calendar-multi": {
       name: "calendar-multi",
       type: "components:example/calendar",
       registryDependencies: ["calendar"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/calendar/calendar-multi")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/calendar/calendar-multi")),
       files: ["registry/new-york/example/calendar/calendar-multi.tsx"],
     },
     "calendar-readonly": {
       name: "calendar-readonly",
       type: "components:example/calendar",
       registryDependencies: ["calendar"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/calendar/calendar-readonly")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/calendar/calendar-readonly")),
       files: ["registry/new-york/example/calendar/calendar-readonly.tsx"],
     },
     "calendar-unavailable": {
       name: "calendar-unavailable",
       type: "components:example/calendar",
       registryDependencies: ["calendar"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/calendar/calendar-unavailable")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/calendar/calendar-unavailable")),
       files: ["registry/new-york/example/calendar/calendar-unavailable.tsx"],
     },
     "calendar-validation": {
       name: "calendar-validation",
       type: "components:example/calendar",
       registryDependencies: ["calendar"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/calendar/calendar-validation")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/calendar/calendar-validation")),
       files: ["registry/new-york/example/calendar/calendar-validation.tsx"],
     },
     "calendar-reusable": {
       name: "calendar-reusable",
       type: "components:example/calendar",
       registryDependencies: ["calendar"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/calendar/calendar-reusable")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/calendar/calendar-reusable")),
       files: ["registry/new-york/example/calendar/calendar-reusable.tsx"],
     },
     "datefield-demo": {
       name: "datefield-demo",
       type: "components:example/datefield",
       registryDependencies: ["datefield"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/datefield/datefield-demo")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/datefield/datefield-demo")),
       files: ["registry/new-york/example/datefield/datefield-demo.tsx"],
     },
     "datefield-description": {
       name: "datefield-description",
       type: "components:example/datefield",
       registryDependencies: ["datefield"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/datefield/datefield-description")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/datefield/datefield-description")),
       files: ["registry/new-york/example/datefield/datefield-description.tsx"],
     },
     "datefield-granularity": {
       name: "datefield-granularity",
       type: "components:example/datefield",
       registryDependencies: ["datefield"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/datefield/datefield-granularity")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/datefield/datefield-granularity")),
       files: ["registry/new-york/example/datefield/datefield-granularity.tsx"],
     },
     "datefield-timezone": {
       name: "datefield-timezone",
       type: "components:example/datefield",
       registryDependencies: ["datefield"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/datefield/datefield-timezone")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/datefield/datefield-timezone")),
       files: ["registry/new-york/example/datefield/datefield-timezone.tsx"],
     },
     "datefield-validation-min-max": {
       name: "datefield-validation-min-max",
       type: "components:example/datefield",
       registryDependencies: ["datefield"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/datefield/datefield-validation-min-max"
-          )
-      ),
-      files: [
-        "registry/new-york/example/datefield/datefield-validation-min-max.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/datefield/datefield-validation-min-max")),
+      files: ["registry/new-york/example/datefield/datefield-validation-min-max.tsx"],
     },
     "datefield-validation": {
       name: "datefield-validation",
       type: "components:example/datefield",
       registryDependencies: ["datefield"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/datefield/datefield-validation")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/datefield/datefield-validation")),
       files: ["registry/new-york/example/datefield/datefield-validation.tsx"],
     },
     "datefield-reusable": {
       name: "datefield-reusable",
       type: "components:example/datefield",
       registryDependencies: ["datefield"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/datefield/datefield-reusable")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/datefield/datefield-reusable")),
       files: ["registry/new-york/example/datefield/datefield-reusable.tsx"],
     },
     "datepicker-custom-validation": {
       name: "datepicker-custom-validation",
       type: "components:example/datepicker",
       registryDependencies: ["datepicker"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/datepicker/datepicker-custom-validation"
-          )
-      ),
-      files: [
-        "registry/new-york/example/datepicker/datepicker-custom-validation.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/datepicker/datepicker-custom-validation")),
+      files: ["registry/new-york/example/datepicker/datepicker-custom-validation.tsx"],
     },
     "datepicker-demo": {
       name: "datepicker-demo",
       type: "components:example/datepicker",
       registryDependencies: ["datepicker"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/datepicker/datepicker-demo")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/datepicker/datepicker-demo")),
       files: ["registry/new-york/example/datepicker/datepicker-demo.tsx"],
     },
     "datepicker-description": {
       name: "datepicker-description",
       type: "components:example/datepicker",
       registryDependencies: ["datepicker"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/datepicker/datepicker-description"
-          )
-      ),
-      files: [
-        "registry/new-york/example/datepicker/datepicker-description.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/datepicker/datepicker-description")),
+      files: ["registry/new-york/example/datepicker/datepicker-description.tsx"],
     },
     "datepicker-granularity": {
       name: "datepicker-granularity",
       type: "components:example/datepicker",
       registryDependencies: ["datepicker"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/datepicker/datepicker-granularity"
-          )
-      ),
-      files: [
-        "registry/new-york/example/datepicker/datepicker-granularity.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/datepicker/datepicker-granularity")),
+      files: ["registry/new-york/example/datepicker/datepicker-granularity.tsx"],
     },
     "datepicker-min-max": {
       name: "datepicker-min-max",
       type: "components:example/datepicker",
       registryDependencies: ["datepicker"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/datepicker/datepicker-min-max")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/datepicker/datepicker-min-max")),
       files: ["registry/new-york/example/datepicker/datepicker-min-max.tsx"],
     },
     "datepicker-timezone": {
       name: "datepicker-timezone",
       type: "components:example/datepicker",
       registryDependencies: ["datepicker"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/datepicker/datepicker-timezone")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/datepicker/datepicker-timezone")),
       files: ["registry/new-york/example/datepicker/datepicker-timezone.tsx"],
     },
     "datepicker-unavailable": {
       name: "datepicker-unavailable",
       type: "components:example/datepicker",
       registryDependencies: ["datepicker"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/datepicker/datepicker-unavailable"
-          )
-      ),
-      files: [
-        "registry/new-york/example/datepicker/datepicker-unavailable.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/datepicker/datepicker-unavailable")),
+      files: ["registry/new-york/example/datepicker/datepicker-unavailable.tsx"],
     },
     "datepicker-validation": {
       name: "datepicker-validation",
       type: "components:example/datepicker",
       registryDependencies: ["datepicker"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/datepicker/datepicker-validation")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/datepicker/datepicker-validation")),
       files: ["registry/new-york/example/datepicker/datepicker-validation.tsx"],
     },
     "datepicker-reusable": {
       name: "datepicker-reusable",
       type: "components:example/datepicker",
       registryDependencies: ["datepicker"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/datepicker/datepicker-reusable")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/datepicker/datepicker-reusable")),
       files: ["registry/new-york/example/datepicker/datepicker-reusable.tsx"],
     },
     "date-range-non-continuous": {
       name: "date-range-non-continuous",
       type: "components:example/date-range-picker",
       registryDependencies: ["date-range-picker"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/date-range-picker/date-range-non-continuous"
-          )
-      ),
-      files: [
-        "registry/new-york/example/date-range-picker/date-range-non-continuous.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/date-range-picker/date-range-non-continuous")),
+      files: ["registry/new-york/example/date-range-picker/date-range-non-continuous.tsx"],
     },
     "date-range-picker-custom-validation": {
       name: "date-range-picker-custom-validation",
       type: "components:example/date-range-picker",
       registryDependencies: ["date-range-picker"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/date-range-picker/date-range-picker-custom-validation"
-          )
-      ),
-      files: [
-        "registry/new-york/example/date-range-picker/date-range-picker-custom-validation.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/date-range-picker/date-range-picker-custom-validation")),
+      files: ["registry/new-york/example/date-range-picker/date-range-picker-custom-validation.tsx"],
     },
     "date-range-picker-demo": {
       name: "date-range-picker-demo",
       type: "components:example/date-range-picker",
       registryDependencies: ["date-range-picker"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/date-range-picker/date-range-picker-demo"
-          )
-      ),
-      files: [
-        "registry/new-york/example/date-range-picker/date-range-picker-demo.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/date-range-picker/date-range-picker-demo")),
+      files: ["registry/new-york/example/date-range-picker/date-range-picker-demo.tsx"],
     },
     "date-range-picker-description": {
       name: "date-range-picker-description",
       type: "components:example/date-range-picker",
       registryDependencies: ["date-range-picker"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/date-range-picker/date-range-picker-description"
-          )
-      ),
-      files: [
-        "registry/new-york/example/date-range-picker/date-range-picker-description.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/date-range-picker/date-range-picker-description")),
+      files: ["registry/new-york/example/date-range-picker/date-range-picker-description.tsx"],
     },
     "date-range-picker-granularity": {
       name: "date-range-picker-granularity",
       type: "components:example/date-range-picker",
       registryDependencies: ["date-range-picker"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/date-range-picker/date-range-picker-granularity"
-          )
-      ),
-      files: [
-        "registry/new-york/example/date-range-picker/date-range-picker-granularity.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/date-range-picker/date-range-picker-granularity")),
+      files: ["registry/new-york/example/date-range-picker/date-range-picker-granularity.tsx"],
     },
     "date-range-picker-min-max": {
       name: "date-range-picker-min-max",
       type: "components:example/date-range-picker",
       registryDependencies: ["date-range-picker"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/date-range-picker/date-range-picker-min-max"
-          )
-      ),
-      files: [
-        "registry/new-york/example/date-range-picker/date-range-picker-min-max.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/date-range-picker/date-range-picker-min-max")),
+      files: ["registry/new-york/example/date-range-picker/date-range-picker-min-max.tsx"],
     },
     "date-range-picker-timezone": {
       name: "date-range-picker-timezone",
       type: "components:example/date-range-picker",
       registryDependencies: ["date-range-picker"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/date-range-picker/date-range-picker-timezone"
-          )
-      ),
-      files: [
-        "registry/new-york/example/date-range-picker/date-range-picker-timezone.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/date-range-picker/date-range-picker-timezone")),
+      files: ["registry/new-york/example/date-range-picker/date-range-picker-timezone.tsx"],
     },
     "date-range-picker-validation": {
       name: "date-range-picker-validation",
       type: "components:example/date-range-picker",
       registryDependencies: ["date-range-picker"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/date-range-picker/date-range-picker-validation"
-          )
-      ),
-      files: [
-        "registry/new-york/example/date-range-picker/date-range-picker-validation.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/date-range-picker/date-range-picker-validation")),
+      files: ["registry/new-york/example/date-range-picker/date-range-picker-validation.tsx"],
     },
     "date-range-unavailable": {
       name: "date-range-unavailable",
       type: "components:example/date-range-picker",
       registryDependencies: ["date-range-picker"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/date-range-picker/date-range-unavailable"
-          )
-      ),
-      files: [
-        "registry/new-york/example/date-range-picker/date-range-unavailable.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/date-range-picker/date-range-unavailable")),
+      files: ["registry/new-york/example/date-range-picker/date-range-unavailable.tsx"],
     },
     "date-range-picker-reusable": {
       name: "date-range-picker-reusable",
       type: "components:example/date-range-picker",
       registryDependencies: ["date-range-picker"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/date-range-picker/date-range-picker-reusable"
-          )
-      ),
-      files: [
-        "registry/new-york/example/date-range-picker/date-range-picker-reusable.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/date-range-picker/date-range-picker-reusable")),
+      files: ["registry/new-york/example/date-range-picker/date-range-picker-reusable.tsx"],
     },
     "range-calendar-demo": {
       name: "range-calendar-demo",
       type: "components:example/range-calendar",
       registryDependencies: ["range-calendar"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/range-calendar/range-calendar-demo"
-          )
-      ),
-      files: [
-        "registry/new-york/example/range-calendar/range-calendar-demo.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/range-calendar/range-calendar-demo")),
+      files: ["registry/new-york/example/range-calendar/range-calendar-demo.tsx"],
     },
     "range-calendar-disabled": {
       name: "range-calendar-disabled",
       type: "components:example/range-calendar",
       registryDependencies: ["range-calendar"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/range-calendar/range-calendar-disabled"
-          )
-      ),
-      files: [
-        "registry/new-york/example/range-calendar/range-calendar-disabled.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/range-calendar/range-calendar-disabled")),
+      files: ["registry/new-york/example/range-calendar/range-calendar-disabled.tsx"],
     },
     "range-calendar-error": {
       name: "range-calendar-error",
       type: "components:example/range-calendar",
       registryDependencies: ["range-calendar"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/range-calendar/range-calendar-error"
-          )
-      ),
-      files: [
-        "registry/new-york/example/range-calendar/range-calendar-error.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/range-calendar/range-calendar-error")),
+      files: ["registry/new-york/example/range-calendar/range-calendar-error.tsx"],
     },
     "range-calendar-multi-month": {
       name: "range-calendar-multi-month",
       type: "components:example/range-calendar",
       registryDependencies: ["range-calendar"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/range-calendar/range-calendar-multi-month"
-          )
-      ),
-      files: [
-        "registry/new-york/example/range-calendar/range-calendar-multi-month.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/range-calendar/range-calendar-multi-month")),
+      files: ["registry/new-york/example/range-calendar/range-calendar-multi-month.tsx"],
     },
     "range-calendar-non-continuous": {
       name: "range-calendar-non-continuous",
       type: "components:example/range-calendar",
       registryDependencies: ["range-calendar"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/range-calendar/range-calendar-non-continuous"
-          )
-      ),
-      files: [
-        "registry/new-york/example/range-calendar/range-calendar-non-continuous.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/range-calendar/range-calendar-non-continuous")),
+      files: ["registry/new-york/example/range-calendar/range-calendar-non-continuous.tsx"],
     },
     "range-calendar-readonly": {
       name: "range-calendar-readonly",
       type: "components:example/range-calendar",
       registryDependencies: ["range-calendar"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/range-calendar/range-calendar-readonly"
-          )
-      ),
-      files: [
-        "registry/new-york/example/range-calendar/range-calendar-readonly.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/range-calendar/range-calendar-readonly")),
+      files: ["registry/new-york/example/range-calendar/range-calendar-readonly.tsx"],
     },
     "range-calendar-unavailable": {
       name: "range-calendar-unavailable",
       type: "components:example/range-calendar",
       registryDependencies: ["range-calendar"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/range-calendar/range-calendar-unavailable"
-          )
-      ),
-      files: [
-        "registry/new-york/example/range-calendar/range-calendar-unavailable.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/range-calendar/range-calendar-unavailable")),
+      files: ["registry/new-york/example/range-calendar/range-calendar-unavailable.tsx"],
     },
     "range-calendar-validation": {
       name: "range-calendar-validation",
       type: "components:example/range-calendar",
       registryDependencies: ["range-calendar"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/range-calendar/range-calendar-validation"
-          )
-      ),
-      files: [
-        "registry/new-york/example/range-calendar/range-calendar-validation.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/range-calendar/range-calendar-validation")),
+      files: ["registry/new-york/example/range-calendar/range-calendar-validation.tsx"],
     },
     "range-calendar-reusable": {
       name: "range-calendar-reusable",
       type: "components:example/range-calendar",
       registryDependencies: ["range-calendar"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/range-calendar/range-calendar-reusable"
-          )
-      ),
-      files: [
-        "registry/new-york/example/range-calendar/range-calendar-reusable.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/range-calendar/range-calendar-reusable")),
+      files: ["registry/new-york/example/range-calendar/range-calendar-reusable.tsx"],
     },
     "timefield-custom-validation": {
       name: "timefield-custom-validation",
       type: "components:example/timefield",
       registryDependencies: ["timefield"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/timefield/timefield-custom-validation"
-          )
-      ),
-      files: [
-        "registry/new-york/example/timefield/timefield-custom-validation.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/timefield/timefield-custom-validation")),
+      files: ["registry/new-york/example/timefield/timefield-custom-validation.tsx"],
     },
     "timefield-demo": {
       name: "timefield-demo",
       type: "components:example/timefield",
       registryDependencies: ["timefield"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/timefield/timefield-demo")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/timefield/timefield-demo")),
       files: ["registry/new-york/example/timefield/timefield-demo.tsx"],
     },
     "timefield-description": {
       name: "timefield-description",
       type: "components:example/timefield",
       registryDependencies: ["timefield"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/timefield/timefield-description")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/timefield/timefield-description")),
       files: ["registry/new-york/example/timefield/timefield-description.tsx"],
     },
     "timefield-granularity": {
       name: "timefield-granularity",
       type: "components:example/timefield",
       registryDependencies: ["timefield"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/timefield/timefield-granularity")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/timefield/timefield-granularity")),
       files: ["registry/new-york/example/timefield/timefield-granularity.tsx"],
     },
     "timefield-min-max": {
       name: "timefield-min-max",
       type: "components:example/timefield",
       registryDependencies: ["timefield"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/timefield/timefield-min-max")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/timefield/timefield-min-max")),
       files: ["registry/new-york/example/timefield/timefield-min-max.tsx"],
     },
     "timefield-timezone": {
       name: "timefield-timezone",
       type: "components:example/timefield",
       registryDependencies: ["timefield"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/timefield/timefield-timezone")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/timefield/timefield-timezone")),
       files: ["registry/new-york/example/timefield/timefield-timezone.tsx"],
     },
     "timefield-validation": {
       name: "timefield-validation",
       type: "components:example/timefield",
       registryDependencies: ["timefield"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/timefield/timefield-validation")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/timefield/timefield-validation")),
       files: ["registry/new-york/example/timefield/timefield-validation.tsx"],
     },
     "timefield-reusable": {
       name: "timefield-reusable",
       type: "components:example/timefield",
       registryDependencies: ["timefield"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/timefield/timefield-reusable")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/timefield/timefield-reusable")),
       files: ["registry/new-york/example/timefield/timefield-reusable.tsx"],
     },
     "dropzone-demo": {
       name: "dropzone-demo",
       type: "components:example/dropzone",
       registryDependencies: ["dropzone"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/dropzone/dropzone-demo")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/dropzone/dropzone-demo")),
       files: ["registry/new-york/example/dropzone/dropzone-demo.tsx"],
     },
     "dropzone-file": {
       name: "dropzone-file",
       type: "components:example/dropzone",
       registryDependencies: ["dropzone"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/dropzone/dropzone-file")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/dropzone/dropzone-file")),
       files: ["registry/new-york/example/dropzone/dropzone-file.tsx"],
     },
     "checkbox-demo": {
       name: "checkbox-demo",
       type: "components:example/checkbox",
       registryDependencies: ["checkbox"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/checkbox/checkbox-demo")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/checkbox/checkbox-demo")),
       files: ["registry/new-york/example/checkbox/checkbox-demo.tsx"],
     },
     "checkbox-disabled": {
       name: "checkbox-disabled",
       type: "components:example/checkbox",
       registryDependencies: ["checkbox"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/checkbox/checkbox-disabled")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/checkbox/checkbox-disabled")),
       files: ["registry/new-york/example/checkbox/checkbox-disabled.tsx"],
     },
     "checkbox-indeterminate": {
       name: "checkbox-indeterminate",
       type: "components:example/checkbox",
       registryDependencies: ["checkbox"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/checkbox/checkbox-indeterminate")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/checkbox/checkbox-indeterminate")),
       files: ["registry/new-york/example/checkbox/checkbox-indeterminate.tsx"],
     },
     "checkbox-readonly": {
       name: "checkbox-readonly",
       type: "components:example/checkbox",
       registryDependencies: ["checkbox"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/checkbox/checkbox-readonly")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/checkbox/checkbox-readonly")),
       files: ["registry/new-york/example/checkbox/checkbox-readonly.tsx"],
     },
     "checkbox-validation": {
       name: "checkbox-validation",
       type: "components:example/checkbox",
       registryDependencies: ["checkbox"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/checkbox/checkbox-validation")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/checkbox/checkbox-validation")),
       files: ["registry/new-york/example/checkbox/checkbox-validation.tsx"],
     },
     "checkbox-group-demo": {
       name: "checkbox-group-demo",
       type: "components:example/checkbox-group",
       registryDependencies: ["checkbox-group"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/checkbox-group/checkbox-group-demo"
-          )
-      ),
-      files: [
-        "registry/new-york/example/checkbox-group/checkbox-group-demo.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/checkbox-group/checkbox-group-demo")),
+      files: ["registry/new-york/example/checkbox-group/checkbox-group-demo.tsx"],
     },
     "checkbox-group-description": {
       name: "checkbox-group-description",
       type: "components:example/checkbox-group",
       registryDependencies: ["checkbox-group"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/checkbox-group/checkbox-group-description"
-          )
-      ),
-      files: [
-        "registry/new-york/example/checkbox-group/checkbox-group-description.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/checkbox-group/checkbox-group-description")),
+      files: ["registry/new-york/example/checkbox-group/checkbox-group-description.tsx"],
     },
     "checkbox-group-disabled-individual": {
       name: "checkbox-group-disabled-individual",
       type: "components:example/checkbox-group",
       registryDependencies: ["checkbox-group"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/checkbox-group/checkbox-group-disabled-individual"
-          )
-      ),
-      files: [
-        "registry/new-york/example/checkbox-group/checkbox-group-disabled-individual.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/checkbox-group/checkbox-group-disabled-individual")),
+      files: ["registry/new-york/example/checkbox-group/checkbox-group-disabled-individual.tsx"],
     },
     "checkbox-group-disabled": {
       name: "checkbox-group-disabled",
       type: "components:example/checkbox-group",
       registryDependencies: ["checkbox-group"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/checkbox-group/checkbox-group-disabled"
-          )
-      ),
-      files: [
-        "registry/new-york/example/checkbox-group/checkbox-group-disabled.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/checkbox-group/checkbox-group-disabled")),
+      files: ["registry/new-york/example/checkbox-group/checkbox-group-disabled.tsx"],
     },
     "checkbox-group-individual-validation": {
       name: "checkbox-group-individual-validation",
       type: "components:example/checkbox-group",
       registryDependencies: ["checkbox-group"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/checkbox-group/checkbox-group-individual-validation"
-          )
-      ),
-      files: [
-        "registry/new-york/example/checkbox-group/checkbox-group-individual-validation.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/checkbox-group/checkbox-group-individual-validation")),
+      files: ["registry/new-york/example/checkbox-group/checkbox-group-individual-validation.tsx"],
     },
     "checkbox-group-readonly": {
       name: "checkbox-group-readonly",
       type: "components:example/checkbox-group",
       registryDependencies: ["checkbox-group"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/checkbox-group/checkbox-group-readonly"
-          )
-      ),
-      files: [
-        "registry/new-york/example/checkbox-group/checkbox-group-readonly.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/checkbox-group/checkbox-group-readonly")),
+      files: ["registry/new-york/example/checkbox-group/checkbox-group-readonly.tsx"],
     },
     "checkbox-group-validation": {
       name: "checkbox-group-validation",
       type: "components:example/checkbox-group",
       registryDependencies: ["checkbox-group"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/checkbox-group/checkbox-group-validation"
-          )
-      ),
-      files: [
-        "registry/new-york/example/checkbox-group/checkbox-group-validation.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/checkbox-group/checkbox-group-validation")),
+      files: ["registry/new-york/example/checkbox-group/checkbox-group-validation.tsx"],
     },
     "checkbox-group-reusable": {
       name: "checkbox-group-reusable",
       type: "components:example/checkbox-group",
       registryDependencies: ["checkbox"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/checkbox-group/checkbox-group-reusable"
-          )
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/checkbox-group/checkbox-group-reusable")),
       files: ["registry/new-york/example/checkbox-group/checkbox-reusable.tsx"],
     },
     "form-demo": {
       name: "form-demo",
       type: "components:example/form",
       registryDependencies: ["form"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/form/form-demo")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/form/form-demo")),
       files: ["registry/new-york/example/form/form-demo.tsx"],
     },
     "form-validation-behavior": {
       name: "form-validation-behavior",
       type: "components:example/form",
       registryDependencies: ["form"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/form/form-validation-behavior")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/form/form-validation-behavior")),
       files: ["registry/new-york/example/form/form-validation-behavior.tsx"],
     },
     "form-validation": {
       name: "form-validation",
       type: "components:example/form",
       registryDependencies: ["form"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/form/form-validation")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/form/form-validation")),
       files: ["registry/new-york/example/form/form-validation.tsx"],
     },
     "numberfield-currency": {
       name: "numberfield-currency",
       type: "components:example/numberfield",
       registryDependencies: ["numberfield"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/numberfield/numberfield-currency")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/numberfield/numberfield-currency")),
       files: ["registry/new-york/example/numberfield/numberfield-currency.tsx"],
     },
     "numberfield-demo": {
       name: "numberfield-demo",
       type: "components:example/numberfield",
       registryDependencies: ["numberfield"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/numberfield/numberfield-demo")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/numberfield/numberfield-demo")),
       files: ["registry/new-york/example/numberfield/numberfield-demo.tsx"],
     },
     "numberfield-description": {
       name: "numberfield-description",
       type: "components:example/numberfield",
       registryDependencies: ["numberfield"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/numberfield/numberfield-description"
-          )
-      ),
-      files: [
-        "registry/new-york/example/numberfield/numberfield-description.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/numberfield/numberfield-description")),
+      files: ["registry/new-york/example/numberfield/numberfield-description.tsx"],
     },
     "numberfield-disabled": {
       name: "numberfield-disabled",
       type: "components:example/numberfield",
       registryDependencies: ["numberfield"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/numberfield/numberfield-disabled")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/numberfield/numberfield-disabled")),
       files: ["registry/new-york/example/numberfield/numberfield-disabled.tsx"],
     },
     "numberfield-formatting": {
       name: "numberfield-formatting",
       type: "components:example/numberfield",
       registryDependencies: ["numberfield"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/numberfield/numberfield-formatting"
-          )
-      ),
-      files: [
-        "registry/new-york/example/numberfield/numberfield-formatting.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/numberfield/numberfield-formatting")),
+      files: ["registry/new-york/example/numberfield/numberfield-formatting.tsx"],
     },
     "numberfield-percentages": {
       name: "numberfield-percentages",
       type: "components:example/numberfield",
       registryDependencies: ["numberfield"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/numberfield/numberfield-percentages"
-          )
-      ),
-      files: [
-        "registry/new-york/example/numberfield/numberfield-percentages.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/numberfield/numberfield-percentages")),
+      files: ["registry/new-york/example/numberfield/numberfield-percentages.tsx"],
     },
     "numberfield-readonly": {
       name: "numberfield-readonly",
       type: "components:example/numberfield",
       registryDependencies: ["numberfield"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/numberfield/numberfield-readonly")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/numberfield/numberfield-readonly")),
       files: ["registry/new-york/example/numberfield/numberfield-readonly.tsx"],
     },
     "numberfield-step-values": {
       name: "numberfield-step-values",
       type: "components:example/numberfield",
       registryDependencies: ["numberfield"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/numberfield/numberfield-step-values"
-          )
-      ),
-      files: [
-        "registry/new-york/example/numberfield/numberfield-step-values.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/numberfield/numberfield-step-values")),
+      files: ["registry/new-york/example/numberfield/numberfield-step-values.tsx"],
     },
     "numberfield-units": {
       name: "numberfield-units",
       type: "components:example/numberfield",
       registryDependencies: ["numberfield"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/numberfield/numberfield-units")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/numberfield/numberfield-units")),
       files: ["registry/new-york/example/numberfield/numberfield-units.tsx"],
     },
     "numberfield-validation-error": {
       name: "numberfield-validation-error",
       type: "components:example/numberfield",
       registryDependencies: ["numberfield"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/numberfield/numberfield-validation-error"
-          )
-      ),
-      files: [
-        "registry/new-york/example/numberfield/numberfield-validation-error.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/numberfield/numberfield-validation-error")),
+      files: ["registry/new-york/example/numberfield/numberfield-validation-error.tsx"],
     },
     "numberfield-validation": {
       name: "numberfield-validation",
       type: "components:example/numberfield",
       registryDependencies: ["numberfield"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/numberfield/numberfield-validation"
-          )
-      ),
-      files: [
-        "registry/new-york/example/numberfield/numberfield-validation.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/numberfield/numberfield-validation")),
+      files: ["registry/new-york/example/numberfield/numberfield-validation.tsx"],
     },
     "numberfield-reusable": {
       name: "numberfield-reusable",
       type: "components:example/numberfield",
       registryDependencies: ["numberfield"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/numberfield/numberfield-reusable")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/numberfield/numberfield-reusable")),
       files: ["registry/new-york/example/numberfield/numberfield-reusable.tsx"],
     },
     "radio-group-demo": {
       name: "radio-group-demo",
       type: "components:example/radio-group",
       registryDependencies: ["radio-group"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/radio-group/radio-group-demo")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/radio-group/radio-group-demo")),
       files: ["registry/new-york/example/radio-group/radio-group-demo.tsx"],
     },
     "radio-group-description": {
       name: "radio-group-description",
       type: "components:example/radio-group",
       registryDependencies: ["radio-group"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/radio-group/radio-group-description"
-          )
-      ),
-      files: [
-        "registry/new-york/example/radio-group/radio-group-description.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/radio-group/radio-group-description")),
+      files: ["registry/new-york/example/radio-group/radio-group-description.tsx"],
     },
     "radio-group-disabled-individual": {
       name: "radio-group-disabled-individual",
       type: "components:example/radio-group",
       registryDependencies: ["radio-group"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/radio-group/radio-group-disabled-individual"
-          )
-      ),
-      files: [
-        "registry/new-york/example/radio-group/radio-group-disabled-individual.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/radio-group/radio-group-disabled-individual")),
+      files: ["registry/new-york/example/radio-group/radio-group-disabled-individual.tsx"],
     },
     "radio-group-disabled": {
       name: "radio-group-disabled",
       type: "components:example/radio-group",
       registryDependencies: ["radio-group"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/radio-group/radio-group-disabled")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/radio-group/radio-group-disabled")),
       files: ["registry/new-york/example/radio-group/radio-group-disabled.tsx"],
     },
     "radio-group-orientation": {
       name: "radio-group-orientation",
       type: "components:example/radio-group",
       registryDependencies: ["radio-group"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/radio-group/radio-group-orientation"
-          )
-      ),
-      files: [
-        "registry/new-york/example/radio-group/radio-group-orientation.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/radio-group/radio-group-orientation")),
+      files: ["registry/new-york/example/radio-group/radio-group-orientation.tsx"],
     },
     "radio-group-readonly": {
       name: "radio-group-readonly",
       type: "components:example/radio-group",
       registryDependencies: ["radio-group"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/radio-group/radio-group-readonly")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/radio-group/radio-group-readonly")),
       files: ["registry/new-york/example/radio-group/radio-group-readonly.tsx"],
     },
     "radio-group-validation": {
       name: "radio-group-validation",
       type: "components:example/radio-group",
       registryDependencies: ["radio-group"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/radio-group/radio-group-validation"
-          )
-      ),
-      files: [
-        "registry/new-york/example/radio-group/radio-group-validation.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/radio-group/radio-group-validation")),
+      files: ["registry/new-york/example/radio-group/radio-group-validation.tsx"],
     },
     "radio-group-reusable": {
       name: "radio-group-reusable",
       type: "components:example/radio-group",
       registryDependencies: ["radio-group"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/radio-group/radio-group-reusable")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/radio-group/radio-group-reusable")),
       files: ["registry/new-york/example/radio-group/radio-group-reusable.tsx"],
     },
     "searchfield-demo": {
       name: "searchfield-demo",
       type: "components:example/searchfield",
       registryDependencies: ["searchfield"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/searchfield/searchfield-demo")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/searchfield/searchfield-demo")),
       files: ["registry/new-york/example/searchfield/searchfield-demo.tsx"],
     },
     "searchfield-description": {
       name: "searchfield-description",
       type: "components:example/searchfield",
       registryDependencies: ["searchfield"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/searchfield/searchfield-description"
-          )
-      ),
-      files: [
-        "registry/new-york/example/searchfield/searchfield-description.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/searchfield/searchfield-description")),
+      files: ["registry/new-york/example/searchfield/searchfield-description.tsx"],
     },
     "searchfield-disabled": {
       name: "searchfield-disabled",
       type: "components:example/searchfield",
       registryDependencies: ["searchfield"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/searchfield/searchfield-disabled")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/searchfield/searchfield-disabled")),
       files: ["registry/new-york/example/searchfield/searchfield-disabled.tsx"],
     },
     "searchfield-readonly": {
       name: "searchfield-readonly",
       type: "components:example/searchfield",
       registryDependencies: ["searchfield"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/searchfield/searchfield-readonly")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/searchfield/searchfield-readonly")),
       files: ["registry/new-york/example/searchfield/searchfield-readonly.tsx"],
     },
     "searchfield-validation": {
       name: "searchfield-validation",
       type: "components:example/searchfield",
       registryDependencies: ["searchfield"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/searchfield/searchfield-validation"
-          )
-      ),
-      files: [
-        "registry/new-york/example/searchfield/searchfield-validation.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/searchfield/searchfield-validation")),
+      files: ["registry/new-york/example/searchfield/searchfield-validation.tsx"],
     },
     "searchfield-reusable": {
       name: "searchfield-reusable",
       type: "components:example/searchfield",
       registryDependencies: ["searchfield"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/searchfield/searchfield-reusable")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/searchfield/searchfield-reusable")),
       files: ["registry/new-york/example/searchfield/searchfield-reusable.tsx"],
     },
     "slider-demo": {
       name: "slider-demo",
       type: "components:example/slider",
       registryDependencies: ["slider"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/slider/slider-demo")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/slider/slider-demo")),
       files: ["registry/new-york/example/slider/slider-demo.tsx"],
     },
     "slider-disabled": {
       name: "slider-disabled",
       type: "components:example/slider",
       registryDependencies: ["slider"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/slider/slider-disabled")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/slider/slider-disabled")),
       files: ["registry/new-york/example/slider/slider-disabled.tsx"],
     },
     "slider-step-values": {
       name: "slider-step-values",
       type: "components:example/slider",
       registryDependencies: ["slider"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/slider/slider-step-values")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/slider/slider-step-values")),
       files: ["registry/new-york/example/slider/slider-step-values.tsx"],
     },
     "slider-values": {
       name: "slider-values",
       type: "components:example/slider",
       registryDependencies: ["slider"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/slider/slider-values")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/slider/slider-values")),
       files: ["registry/new-york/example/slider/slider-values.tsx"],
     },
     "slider-vertical": {
       name: "slider-vertical",
       type: "components:example/slider",
       registryDependencies: ["slider"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/slider/slider-vertical")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/slider/slider-vertical")),
       files: ["registry/new-york/example/slider/slider-vertical.tsx"],
     },
     "textfield-demo": {
       name: "textfield-demo",
       type: "components:example/textfield",
       registryDependencies: ["textfield"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/textfield/textfield-demo")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/textfield/textfield-demo")),
       files: ["registry/new-york/example/textfield/textfield-demo.tsx"],
     },
     "textfield-description": {
       name: "textfield-description",
       type: "components:example/textfield",
       registryDependencies: ["textfield"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/textfield/textfield-description")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/textfield/textfield-description")),
       files: ["registry/new-york/example/textfield/textfield-description.tsx"],
     },
     "textfield-disabled": {
       name: "textfield-disabled",
       type: "components:example/textfield",
       registryDependencies: ["textfield"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/textfield/textfield-disabled")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/textfield/textfield-disabled")),
       files: ["registry/new-york/example/textfield/textfield-disabled.tsx"],
     },
     "textfield-multiline": {
       name: "textfield-multiline",
       type: "components:example/textfield",
       registryDependencies: ["textfield"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/textfield/textfield-multiline")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/textfield/textfield-multiline")),
       files: ["registry/new-york/example/textfield/textfield-multiline.tsx"],
     },
     "textfield-readonly": {
       name: "textfield-readonly",
       type: "components:example/textfield",
       registryDependencies: ["textfield"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/textfield/textfield-readonly")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/textfield/textfield-readonly")),
       files: ["registry/new-york/example/textfield/textfield-readonly.tsx"],
     },
     "textfield-validation": {
       name: "textfield-validation",
       type: "components:example/textfield",
       registryDependencies: ["textfield"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/textfield/textfield-validation")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/textfield/textfield-validation")),
       files: ["registry/new-york/example/textfield/textfield-validation.tsx"],
     },
     "textfield-reusable": {
       name: "textfield-reusable",
       type: "components:example/textfield",
       registryDependencies: ["textfield"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/textfield/textfield-reusable")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/textfield/textfield-reusable")),
       files: ["registry/new-york/example/textfield/textfield-reusable.tsx"],
     },
     "tabs-demo": {
       name: "tabs-demo",
       type: "components:example/tabs",
       registryDependencies: ["tabs"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/tabs/tabs-demo")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/tabs/tabs-demo")),
       files: ["registry/new-york/example/tabs/tabs-demo.tsx"],
     },
     "tabs-disabled-dynamic": {
       name: "tabs-disabled-dynamic",
       type: "components:example/tabs",
       registryDependencies: ["tabs"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/tabs/tabs-disabled-dynamic")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/tabs/tabs-disabled-dynamic")),
       files: ["registry/new-york/example/tabs/tabs-disabled-dynamic.tsx"],
     },
     "tabs-disabled-items": {
       name: "tabs-disabled-items",
       type: "components:example/tabs",
       registryDependencies: ["tabs"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/tabs/tabs-disabled-items")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/tabs/tabs-disabled-items")),
       files: ["registry/new-york/example/tabs/tabs-disabled-items.tsx"],
     },
     "tabs-disabled": {
       name: "tabs-disabled",
       type: "components:example/tabs",
       registryDependencies: ["tabs"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/tabs/tabs-disabled")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/tabs/tabs-disabled")),
       files: ["registry/new-york/example/tabs/tabs-disabled.tsx"],
     },
     "tabs-dynamic": {
       name: "tabs-dynamic",
       type: "components:example/tabs",
       registryDependencies: ["tabs"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/tabs/tabs-dynamic")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/tabs/tabs-dynamic")),
       files: ["registry/new-york/example/tabs/tabs-dynamic.tsx"],
     },
     "tabs-focus": {
       name: "tabs-focus",
       type: "components:example/tabs",
       registryDependencies: ["tabs"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/tabs/tabs-focus")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/tabs/tabs-focus")),
       files: ["registry/new-york/example/tabs/tabs-focus.tsx"],
     },
     "tabs-vertical": {
       name: "tabs-vertical",
       type: "components:example/tabs",
       registryDependencies: ["tabs"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/tabs/tabs-vertical")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/tabs/tabs-vertical")),
       files: ["registry/new-york/example/tabs/tabs-vertical.tsx"],
     },
     "dialog-alert-demo": {
       name: "dialog-alert-demo",
       type: "components:example/dialog",
       registryDependencies: ["dialog"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/dialog/dialog-alert-demo")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/dialog/dialog-alert-demo")),
       files: ["registry/new-york/example/dialog/dialog-alert-demo.tsx"],
     },
     "dialog-demo": {
       name: "dialog-demo",
       type: "components:example/dialog",
       registryDependencies: ["dialog"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/dialog/dialog-demo")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/dialog/dialog-demo")),
       files: ["registry/new-york/example/dialog/dialog-demo.tsx"],
     },
     "dialog-sheet": {
       name: "dialog-sheet",
       type: "components:example/dialog",
       registryDependencies: ["dialog"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/dialog/dialog-sheet")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/dialog/dialog-sheet")),
       files: ["registry/new-york/example/dialog/dialog-sheet.tsx"],
     },
     "dialog-popover": {
       name: "dialog-popover",
       type: "components:example/dialog",
       registryDependencies: ["dialog"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/dialog/dialog-popover")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/dialog/dialog-popover")),
       files: ["registry/new-york/example/dialog/dialog-popover.tsx"],
     },
     "modal-demo": {
       name: "modal-demo",
       type: "components:example/modal",
       registryDependencies: ["dialog"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/modal/modal-demo")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/modal/modal-demo")),
       files: ["registry/new-york/example/modal/modal-demo.tsx"],
     },
     "modal-sheet": {
       name: "modal-sheet",
       type: "components:example/modal",
       registryDependencies: ["dialog"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/modal/modal-sheet")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/modal/modal-sheet")),
       files: ["registry/new-york/example/modal/modal-sheet.tsx"],
     },
     "modal-dismissable": {
       name: "modal-dismissable",
       type: "components:example/modal",
       registryDependencies: ["dialog"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/modal/modal-dismissable")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/modal/modal-dismissable")),
       files: ["registry/new-york/example/modal/modal-dismissable.tsx"],
     },
     "modal-keyboard-dismissable": {
       name: "modal-keyboard-dismissable",
       type: "components:example/modal",
       registryDependencies: ["dialog"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/modal/modal-keyboard-dismissable")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/modal/modal-keyboard-dismissable")),
       files: ["registry/new-york/example/modal/modal-keyboard-dismissable.tsx"],
     },
     "popover-container-padding": {
       name: "popover-container-padding",
       type: "components:example/popover",
       registryDependencies: ["popover"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/popover/popover-container-padding"
-          )
-      ),
-      files: [
-        "registry/new-york/example/popover/popover-container-padding.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/popover/popover-container-padding")),
+      files: ["registry/new-york/example/popover/popover-container-padding.tsx"],
     },
     "popover-cross-offset": {
       name: "popover-cross-offset",
       type: "components:example/popover",
       registryDependencies: ["popover"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/popover/popover-cross-offset")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/popover/popover-cross-offset")),
       files: ["registry/new-york/example/popover/popover-cross-offset.tsx"],
     },
     "popover-demo": {
       name: "popover-demo",
       type: "components:example/popover",
       registryDependencies: ["popover"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/popover/popover-demo")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/popover/popover-demo")),
       files: ["registry/new-york/example/popover/popover-demo.tsx"],
     },
     "popover-flipping": {
       name: "popover-flipping",
       type: "components:example/popover",
       registryDependencies: ["popover"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/popover/popover-flipping")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/popover/popover-flipping")),
       files: ["registry/new-york/example/popover/popover-flipping.tsx"],
     },
     "popover-offset": {
       name: "popover-offset",
       type: "components:example/popover",
       registryDependencies: ["popover"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/popover/popover-offset")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/popover/popover-offset")),
       files: ["registry/new-york/example/popover/popover-offset.tsx"],
     },
     "popover-position": {
       name: "popover-position",
       type: "components:example/popover",
       registryDependencies: ["popover"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/popover/popover-position")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/popover/popover-position")),
       files: ["registry/new-york/example/popover/popover-position.tsx"],
     },
     "tooltip-demo": {
       name: "tooltip-demo",
       type: "components:example/tooltip",
       registryDependencies: ["tooltip"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/tooltip/tooltip-demo")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/tooltip/tooltip-demo")),
       files: ["registry/new-york/example/tooltip/tooltip-demo.tsx"],
     },
     "tooltip-position": {
       name: "tooltip-position",
       type: "components:example/tooltip",
       registryDependencies: ["tooltip"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/tooltip/tooltip-position")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/tooltip/tooltip-position")),
       files: ["registry/new-york/example/tooltip/tooltip-position.tsx"],
     },
     "tooltip-offset": {
       name: "tooltip-offset",
       type: "components:example/tooltip",
       registryDependencies: ["tooltip"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/tooltip/tooltip-offset")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/tooltip/tooltip-offset")),
       files: ["registry/new-york/example/tooltip/tooltip-offset.tsx"],
     },
     "tooltip-cross-offset": {
       name: "tooltip-cross-offset",
       type: "components:example/tooltip",
       registryDependencies: ["tooltip"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/tooltip/tooltip-cross-offset")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/tooltip/tooltip-cross-offset")),
       files: ["registry/new-york/example/tooltip/tooltip-cross-offset.tsx"],
     },
     "tooltip-disabled": {
       name: "tooltip-disabled",
       type: "components:example/tooltip",
       registryDependencies: ["tooltip"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/tooltip/tooltip-disabled")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/tooltip/tooltip-disabled")),
       files: ["registry/new-york/example/tooltip/tooltip-disabled.tsx"],
     },
     "combobox-content": {
       name: "combobox-content",
       type: "components:example/combobox",
       registryDependencies: ["combobox"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/combobox/combobox-content")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/combobox/combobox-content")),
       files: ["registry/new-york/example/combobox/combobox-content.tsx"],
     },
     "combobox-demo": {
       name: "combobox-demo",
       type: "components:example/combobox",
       registryDependencies: ["combobox"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/combobox/combobox-demo")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/combobox/combobox-demo")),
       files: ["registry/new-york/example/combobox/combobox-demo.tsx"],
     },
     "combobox-description": {
       name: "combobox-description",
       type: "components:example/combobox",
       registryDependencies: ["combobox"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/combobox/combobox-description")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/combobox/combobox-description")),
       files: ["registry/new-york/example/combobox/combobox-description.tsx"],
     },
     "combobox-disabled": {
       name: "combobox-disabled",
       type: "components:example/combobox",
       registryDependencies: ["combobox"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/combobox/combobox-disabled")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/combobox/combobox-disabled")),
       files: ["registry/new-york/example/combobox/combobox-disabled.tsx"],
     },
     "combobox-links": {
       name: "combobox-links",
       type: "components:example/combobox",
       registryDependencies: ["combobox"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/combobox/combobox-links")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/combobox/combobox-links")),
       files: ["registry/new-york/example/combobox/combobox-links.tsx"],
     },
     "combobox-menu-trigger": {
       name: "combobox-menu-trigger",
       type: "components:example/combobox",
       registryDependencies: ["combobox"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/combobox/combobox-menu-trigger")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/combobox/combobox-menu-trigger")),
       files: ["registry/new-york/example/combobox/combobox-menu-trigger.tsx"],
     },
     "combobox-sections-dynamic": {
       name: "combobox-sections-dynamic",
       type: "components:example/combobox",
       registryDependencies: ["combobox"],
-      component: React.lazy(
-        () =>
-          import(
-            "@/registry/new-york/example/combobox/combobox-sections-dynamic"
-          )
-      ),
-      files: [
-        "registry/new-york/example/combobox/combobox-sections-dynamic.tsx",
-      ],
+      component: React.lazy(() => import("@/registry/new-york/example/combobox/combobox-sections-dynamic")),
+      files: ["registry/new-york/example/combobox/combobox-sections-dynamic.tsx"],
     },
     "combobox-sections": {
       name: "combobox-sections",
       type: "components:example/combobox",
       registryDependencies: ["combobox"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/combobox/combobox-sections")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/combobox/combobox-sections")),
       files: ["registry/new-york/example/combobox/combobox-sections.tsx"],
     },
     "combobox-text-slots": {
       name: "combobox-text-slots",
       type: "components:example/combobox",
       registryDependencies: ["combobox"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/combobox/combobox-text-slots")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/combobox/combobox-text-slots")),
       files: ["registry/new-york/example/combobox/combobox-text-slots.tsx"],
     },
     "combobox-validation": {
       name: "combobox-validation",
       type: "components:example/combobox",
       registryDependencies: ["combobox"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/combobox/combobox-validation")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/combobox/combobox-validation")),
       files: ["registry/new-york/example/combobox/combobox-validation.tsx"],
     },
     "combobox-reusable": {
       name: "combobox-reusable",
       type: "components:example/combobox",
       registryDependencies: ["combobox"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/combobox/combobox-reusable")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/combobox/combobox-reusable")),
       files: ["registry/new-york/example/combobox/combobox-reusable.tsx"],
     },
     "select-content": {
       name: "select-content",
       type: "components:example/select",
       registryDependencies: ["select"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/select/select-content")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/select/select-content")),
       files: ["registry/new-york/example/select/select-content.tsx"],
     },
     "select-demo": {
       name: "select-demo",
       type: "components:example/select",
       registryDependencies: ["select"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/select/select-demo")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/select/select-demo")),
       files: ["registry/new-york/example/select/select-demo.tsx"],
     },
     "select-description": {
       name: "select-description",
       type: "components:example/select",
       registryDependencies: ["select"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/select/select-description")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/select/select-description")),
       files: ["registry/new-york/example/select/select-description.tsx"],
     },
     "select-disabled-items": {
       name: "select-disabled-items",
       type: "components:example/select",
       registryDependencies: ["select"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/select/select-disabled-items")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/select/select-disabled-items")),
       files: ["registry/new-york/example/select/select-disabled-items.tsx"],
     },
     "select-disabled": {
       name: "select-disabled",
       type: "components:example/select",
       registryDependencies: ["select"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/select/select-disabled")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/select/select-disabled")),
       files: ["registry/new-york/example/select/select-disabled.tsx"],
     },
     "select-links": {
       name: "select-links",
       type: "components:example/select",
       registryDependencies: ["select"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/select/select-links")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/select/select-links")),
       files: ["registry/new-york/example/select/select-links.tsx"],
     },
     "select-sections-dynamic": {
       name: "select-sections-dynamic",
       type: "components:example/select",
       registryDependencies: ["select"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/select/select-sections-dynamic")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/select/select-sections-dynamic")),
       files: ["registry/new-york/example/select/select-sections-dynamic.tsx"],
     },
     "select-sections": {
       name: "select-sections",
       type: "components:example/select",
       registryDependencies: ["select"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/select/select-sections")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/select/select-sections")),
       files: ["registry/new-york/example/select/select-sections.tsx"],
     },
     "select-text-slots": {
       name: "select-text-slots",
       type: "components:example/select",
       registryDependencies: ["select"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/select/select-text-slots")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/select/select-text-slots")),
       files: ["registry/new-york/example/select/select-text-slots.tsx"],
     },
     "select-validation": {
       name: "select-validation",
       type: "components:example/select",
       registryDependencies: ["select"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/select/select-validation")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/select/select-validation")),
       files: ["registry/new-york/example/select/select-validation.tsx"],
     },
     "select-reusable": {
       name: "select-reusable",
       type: "components:example/select",
       registryDependencies: ["select"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/select/select-reusable")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/select/select-reusable")),
       files: ["registry/new-york/example/select/select-reusable.tsx"],
     },
     "meter-custom-format": {
       name: "meter-custom-format",
       type: "components:example/meter",
       registryDependencies: ["meter"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/meter/meter-custom-format")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/meter/meter-custom-format")),
       files: ["registry/new-york/example/meter/meter-custom-format.tsx"],
     },
     "meter-demo": {
       name: "meter-demo",
       type: "components:example/meter",
       registryDependencies: ["meter"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/meter/meter-demo")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/meter/meter-demo")),
       files: ["registry/new-york/example/meter/meter-demo.tsx"],
     },
     "meter-value-format": {
       name: "meter-value-format",
       type: "components:example/meter",
       registryDependencies: ["meter"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/meter/meter-value-format")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/meter/meter-value-format")),
       files: ["registry/new-york/example/meter/meter-value-format.tsx"],
     },
     "meter-reusable": {
       name: "meter-reusable",
       type: "components:example/meter",
       registryDependencies: ["meter"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/meter/meter-reusable")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/meter/meter-reusable")),
       files: ["registry/new-york/example/meter/meter-reusable.tsx"],
     },
     "progress-custom-format": {
       name: "progress-custom-format",
       type: "components:example/progress",
       registryDependencies: ["progress"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/progress/progress-custom-format")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/progress/progress-custom-format")),
       files: ["registry/new-york/example/progress/progress-custom-format.tsx"],
     },
     "progress-demo": {
       name: "progress-demo",
       type: "components:example/progress",
       registryDependencies: ["progress"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/progress/progress-demo")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/progress/progress-demo")),
       files: ["registry/new-york/example/progress/progress-demo.tsx"],
     },
     "progress-value-format": {
       name: "progress-value-format",
       type: "components:example/progress",
       registryDependencies: ["progress"],
-      component: React.lazy(
-        () =>
-          import("@/registry/new-york/example/progress/progress-value-format")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/progress/progress-value-format")),
       files: ["registry/new-york/example/progress/progress-value-format.tsx"],
     },
     "progress-reusable": {
       name: "progress-reusable",
       type: "components:example/progress",
       registryDependencies: ["progress"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/progress/progress-reusable")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/progress/progress-reusable")),
       files: ["registry/new-york/example/progress/progress-reusable.tsx"],
     },
     "group-demo": {
       name: "group-demo",
       type: "components:example/group",
       registryDependencies: ["group"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/group/group-demo")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/group/group-demo")),
       files: ["registry/new-york/example/group/group-demo.tsx"],
     },
     "group-label": {
       name: "group-label",
       type: "components:example/group",
       registryDependencies: ["group"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/group/group-label")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/group/group-label")),
       files: ["registry/new-york/example/group/group-label.tsx"],
     },
     "toolbar-demo": {
       name: "toolbar-demo",
       type: "components:example/toolbar",
       registryDependencies: ["toolbar"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/toolbar/toolbar-demo")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/toolbar/toolbar-demo")),
       files: ["registry/new-york/example/toolbar/toolbar-demo.tsx"],
     },
     "toolbar-vertical": {
       name: "toolbar-vertical",
       type: "components:example/toolbar",
       registryDependencies: ["toolbar"],
-      component: React.lazy(
-        () => import("@/registry/new-york/example/toolbar/toolbar-vertical")
-      ),
+      component: React.lazy(() => import("@/registry/new-york/example/toolbar/toolbar-vertical")),
       files: ["registry/new-york/example/toolbar/toolbar-vertical.tsx"],
     },
   },
