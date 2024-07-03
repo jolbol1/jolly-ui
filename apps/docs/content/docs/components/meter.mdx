@@ -48,6 +48,19 @@ npx @sly-cli/sly add jolly-ui meter
 
 If you will use a Meter in multiple places in your app, you can wrap all of the pieces into a reusable component. This way, the DOM structure, styling code, and other logic are defined in a single place and reused everywhere to ensure consistency.
 
+The installed file includes a reusable wrapper `JollyMeter`. This wrapper serves as an excellent starting point for use throughout your codebase.
+
+<ComponentPreview name="meter-reusable" />
+
+The `JollyMeter` component extends the props of React Aria Meter and adds:
+
+| Prop        | Type                  | Default     | Description                          |
+| ----------- | --------------------- | ----------- | ------------------------------------ |
+| `label`     | `string \| undefined` | `undefined` | Label for the meter                  |
+| `showValue` | `boolean`             | `true`      | Whether to display the meter's value |
+
+You can copy this wrapper and create variations as needed for different use cases in your application. This approach promotes consistency while still allowing for flexibility in implementation.
+
 <ComponentPreview name="meter-reusable" />
 
 ## Examples

@@ -58,7 +58,19 @@ A RadioGroup uses the following components, which may also be used standalone or
 
 If you will use a RadioGroup in multiple places in your app, you can wrap all of the pieces into a reusable component. This way, the DOM structure, styling code, and other logic are defined in a single place and reused everywhere to ensure consistency.
 
-<ComponentPreview name="radio-group-reusable" />
+The installed file includes a reusable wrapper `JollyRadioGroup`. This wrapper serves as an excellent starting point for use throughout your codebase.
+
+<ComponentPreview name="radiogroup-reusable" />
+
+The `JollyRadioGroup` component extends the props of React Aria RadioGroup and adds:
+
+| Prop           | Type                                                                    | Default     | Description                                         |
+| -------------- | ----------------------------------------------------------------------- | ----------- | --------------------------------------------------- |
+| `label`        | `string \| undefined`                                                   | `undefined` | Label for the radio group                           |
+| `description`  | `string \| undefined`                                                   | `undefined` | Description text for the radio group                |
+| `errorMessage` | `string \| ((validation: AriaValidationResult) => string) \| undefined` | `undefined` | Error message to display or function to generate it |
+
+You can copy this wrapper and create variations as needed for different use cases in your application. This approach promotes consistency while still allowing for flexibility in implementation.
 
 ## Examples
 

@@ -59,7 +59,21 @@ A Select uses the following components, which may also be used standalone or reu
 
 If you will use a Select in multiple places in your app, you can wrap all of the pieces into a reusable component. This way, the DOM structure, styling code, and other logic are defined in a single place and reused everywhere to ensure consistency.
 
+The installed file includes a reusable wrapper `JollySelect`. This wrapper serves as an excellent starting point for use throughout your codebase.
+
 <ComponentPreview name="select-reusable" />
+
+The `JollySelect` component extends the props of React Aria Select and adds:
+
+| Prop           | Type                                                                    | Default     | Description                                         |
+| -------------- | ----------------------------------------------------------------------- | ----------- | --------------------------------------------------- |
+| `label`        | `string \| undefined`                                                   | `undefined` | Label for the select                                |
+| `description`  | `string \| undefined`                                                   | `undefined` | Description text for the select                     |
+| `errorMessage` | `string \| ((validation: AriaValidationResult) => string) \| undefined` | `undefined` | Error message to display or function to generate it |
+| `items`        | `Iterable<T> \| undefined`                                              | `undefined` | Items to display in the select                      |
+| `children`     | `React.ReactNode \| ((item: T) => React.ReactNode)`                     | Required    | Content for the select options                      |
+
+You can copy this wrapper and create variations as needed for different use cases in your application. This approach promotes consistency while still allowing for flexibility in implementation.
 
 ## Examples
 

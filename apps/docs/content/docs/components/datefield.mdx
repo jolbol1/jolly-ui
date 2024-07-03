@@ -56,6 +56,20 @@ A DateField uses the following components, which may also be used standalone or 
 
 If you will use a DateField in multiple places in your app, you can wrap all of the pieces into a reusable component. This way, the DOM structure, styling code, and other logic are defined in a single place and reused everywhere to ensure consistency.
 
+The installed file includes a reusable wrapper `JollyDateField`. This wrapper serves as an excellent starting point for use throughout your codebase.
+
+<ComponentPreview name="datefield-reusable" />
+
+The `JollyDateField` component extends the props of React Aria DateField and adds:
+
+| Prop           | Type                                                                    | Default     | Description                                         |
+| -------------- | ----------------------------------------------------------------------- | ----------- | --------------------------------------------------- |
+| `label`        | `string \| undefined`                                                   | `undefined` | Label for the date field                            |
+| `description`  | `string \| undefined`                                                   | `undefined` | Description text for the date field                 |
+| `errorMessage` | `string \| ((validation: AriaValidationResult) => string) \| undefined` | `undefined` | Error message to display or function to generate it |
+
+You can copy this wrapper and create variations as needed for different use cases in your application. This approach promotes consistency while still allowing for flexibility in implementation.
+
 <ComponentPreview name="datefield-reusable" />
 
 ## Examples

@@ -48,7 +48,18 @@ npx @sly-cli/sly add jolly-ui progress
 
 If you will use a ProgressBar in multiple places in your app, you can wrap all of the pieces into a reusable component. This way, the DOM structure, styling code, and other logic are defined in a single place and reused everywhere to ensure consistency.
 
-<ComponentPreview name="progress-reusable" />
+The installed file includes a reusable wrapper `JollyProgressBar`. This wrapper serves as an excellent starting point for use throughout your codebase.
+
+<ComponentPreview name="progressbar-reusable" />
+
+The `JollyProgressBar` component extends the props of React Aria Progress and adds:
+
+| Prop        | Type                  | Default     | Description                               |
+| ----------- | --------------------- | ----------- | ----------------------------------------- |
+| `label`     | `string \| undefined` | `undefined` | Label for the progress bar                |
+| `showValue` | `boolean`             | `true`      | Whether to display the progress bar value |
+
+You can copy this wrapper and create variations as needed for different use cases in your application. This approach promotes consistency while still allowing for flexibility in implementation.
 
 ## Examples
 

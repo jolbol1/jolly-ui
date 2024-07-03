@@ -58,7 +58,17 @@ A RangeCalendar uses the following components, which may also be used standalone
 
 If you will use a RangeCalendar in multiple places in your app, you can wrap all of the pieces into a reusable component. This way, the DOM structure, styling code, and other logic are defined in a single place and reused everywhere to ensure consistency.
 
-<ComponentPreview name="range-calendar-reusable" />
+The installed file includes a reusable wrapper `JollyRangeCalendar`. This wrapper serves as an excellent starting point for use throughout your codebase.
+
+<ComponentPreview name="rangecalendar-reusable" />
+
+The `JollyRangeCalendar` component extends the props of React Aria RangeCalendar and adds:
+
+| Prop           | Type                  | Default     | Description              |
+| -------------- | --------------------- | ----------- | ------------------------ |
+| `errorMessage` | `string \| undefined` | `undefined` | Error message to display |
+
+You can copy this wrapper and create variations as needed for different use cases in your application. This approach promotes consistency while still allowing for flexibility in implementation.
 
 ## Examples
 

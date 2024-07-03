@@ -56,7 +56,17 @@ A Calendar uses the following components, which may also be used standalone or r
 
 If you will use a Calendar in multiple places in your app, you can wrap all of the pieces into a reusable component. This way, the DOM structure, styling code, and other logic are defined in a single place and reused everywhere to ensure consistency.
 
+The installed file includes a reusable wrapper `JollyCalendar`. This wrapper serves as an excellent starting point for use throughout your codebase.
+
 <ComponentPreview name="calendar-reusable" />
+
+The `JollyCalendar` components extends the props of React Aria Calendar and adds:
+
+| Prop           | Type                    | Default     | Description              |
+| -------------- | ----------------------- | ----------- | ------------------------ |
+| `errorMessage` | `"string" \| undefined` | `undefined` | Error message to display |
+
+You can copy this wrapper and create variations as needed for different use cases in your application. This approach promotes consistency while still allowing for flexibility in implementation.
 
 ## Examples
 

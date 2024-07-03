@@ -60,7 +60,22 @@ A TagGroup uses the following components, which may also be used standalone or r
 
 If you will use a TagGroup in multiple places in your app, you can wrap all of the pieces into a reusable component. This way, the DOM structure, styling code, and other logic are defined in a single place and reused everywhere to ensure consistency.
 
-<ComponentPreview name="tag-group-reusable" />
+The installed file includes a reusable wrapper `JollyTagGroup`. This wrapper serves as an excellent starting point for use throughout your codebase.
+
+<ComponentPreview name="taggroup-reusable" />
+
+The `JollyTagGroup` component extends the props of React Aria TagGroup and TagList, and adds:
+
+| Prop               | Type                                                | Default     | Description                                       |
+| ------------------ | --------------------------------------------------- | ----------- | ------------------------------------------------- |
+| `label`            | `string \| undefined`                               | `undefined` | Label for the tag group                           |
+| `description`      | `string \| undefined`                               | `undefined` | Description text for the tag group                |
+| `errorMessage`     | `string \| undefined`                               | `undefined` | Error message to display                          |
+| `items`            | `Iterable<T> \| undefined`                          | `undefined` | Items to display in the tag group                 |
+| `children`         | `React.ReactNode \| ((item: T) => React.ReactNode)` | Required    | Content for the tags                              |
+| `renderEmptyState` | `(() => React.ReactNode) \| undefined`              | `undefined` | Function to render content when there are no tags |
+
+You can copy this wrapper and create variations as needed for different use cases in your application. This approach promotes consistency while still allowing for flexibility in implementation.
 
 ## Examples
 
