@@ -17,7 +17,7 @@ const ui: Registry = [
   {
     name: "calendar",
     type: "components:ui",
-    dependencies: ["react-aria-components"],
+    dependencies: ["react-aria-components", "@internationalized/date"],
     registryDependencies: ["button"],
     files: ["ui/calendar.tsx"],
   },
@@ -25,7 +25,7 @@ const ui: Registry = [
     name: "checkbox",
     type: "components:ui",
     dependencies: ["react-aria-components"],
-    registryDependencies: ["label"],
+    registryDependencies: ["field"],
     files: ["ui/checkbox.tsx"],
   },
   {
@@ -38,20 +38,21 @@ const ui: Registry = [
     name: "combobox",
     type: "components:ui",
     dependencies: ["react-aria-components"],
+    registryDependencies: ["field", "popover", "button", "list-box"],
     files: ["ui/combobox.tsx"],
   },
   {
     name: "date-picker",
     type: "components:ui",
     dependencies: ["react-aria-components"],
-    registryDependencies: ["button", "popover"],
+    registryDependencies: ["field", "popover", "button", "calendar", "datefield", "field"],
     files: ["ui/date-picker.tsx"],
   },
   {
     name: "datefield",
     type: "components:ui",
-    dependencies: ["react-aria-components"],
-    registryDependencies: ["button"],
+    dependencies: ["react-aria-components", "class-variance-authority"],
+    registryDependencies: ["field"],
     files: ["ui/datefield.tsx"],
   },
   {
@@ -67,17 +68,17 @@ const ui: Registry = [
     files: ["ui/dropzone.tsx"],
   },
   {
+    name: "field",
+    type: "components:ui",
+    dependencies: ["react-aria-components", "class-variance-authority"],
+    files: ["ui/field.tsx"],
+  },
+  {
     name: "grid-list",
     type: "components:ui",
     dependencies: ["react-aria-components"],
     registryDependencies: ["checkbox"],
     files: ["ui/grid-list.tsx"],
-  },
-  {
-    name: "textfield",
-    type: "components:ui",
-    dependencies: ["react-aria-components"],
-    files: ["ui/textfield.tsx"],
   },
   {
     name: "link",
@@ -95,13 +96,15 @@ const ui: Registry = [
   {
     name: "menu",
     type: "components:ui",
-    dependencies: ["react-aria-components"],
+    dependencies: ["react-aria-components", "class-variance-authority"],
+    registryDependencies: ["button", "list-box", "select"],
     files: ["ui/menu.tsx"],
   },
   {
     name: "meter",
     type: "components:ui",
     dependencies: ["react-aria-components"],
+    registryDependencies: ["field"],
     files: ["ui/meter.tsx"],
   },
   {
@@ -114,25 +117,28 @@ const ui: Registry = [
     name: "progress",
     type: "components:ui",
     dependencies: ["react-aria-components"],
+    registryDependencies: ["field"],
     files: ["ui/progress.tsx"],
   },
   {
     name: "radio-group",
     type: "components:ui",
     dependencies: ["react-aria-components"],
-    registryDependencies: ["label"],
+    registryDependencies: ["field"],
     files: ["ui/radio-group.tsx"],
   },
   {
     name: "searchfield",
     type: "components:ui",
     dependencies: ["react-aria-components"],
+    registryDependencies: ["field"],
     files: ["ui/searchfield.tsx"],
   },
   {
     name: "select",
     type: "components:ui",
     dependencies: ["react-aria-components"],
+    registryDependencies: ["field", "popover"],
     files: ["ui/select.tsx"],
   },
   {
@@ -145,6 +151,7 @@ const ui: Registry = [
     name: "slider",
     type: "components:ui",
     dependencies: ["react-aria-components"],
+    registryDependencies: ["field"],
     files: ["ui/slider.tsx"],
   },
   {
@@ -162,8 +169,16 @@ const ui: Registry = [
   {
     name: "tag-group",
     type: "components:ui",
-    dependencies: ["react-aria-components"],
+    dependencies: ["react-aria-components", "class-variance-authority"],
+    registryDependencies: ["field"],
     files: ["ui/tag-group.tsx"],
+  },
+  {
+    name: "textfield",
+    type: "components:ui",
+    dependencies: ["react-aria-components"],
+    registryDependencies: ["field"],
+    files: ["ui/textfield.tsx"],
   },
   {
     name: "toggle",
