@@ -24,7 +24,7 @@ const componentCards = {
   label: {
     name: "Label",
     description: "A label provides context for an element.",
-    href: "/docs/components/label",
+    href: "/docs/components/group",
   },
   datefield: {
     name: "DateField",
@@ -60,7 +60,7 @@ const componentCards = {
     name: "Input",
     description:
       "An input allows a user to enter a plain text value with a keyboard.",
-    href: "/docs/components/input",
+    href: "/docs/components/textfield",
   },
   listbox: {
     name: "ListBox",
