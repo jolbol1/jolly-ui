@@ -207,6 +207,20 @@
     "type": "components:ui"
   },
   {
+    "name": "numberfield",
+    "dependencies": [
+      "react-aria-components"
+    ],
+    "registryDependencies": [
+      "field",
+      "button"
+    ],
+    "files": [
+      "ui/numberfield.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
     "name": "popover",
     "dependencies": [
       "react-aria-components"

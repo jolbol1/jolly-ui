@@ -1,0 +1,17 @@
+{
+  "name": "numberfield",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [
+    "field",
+    "button"
+  ],
+  "files": [
+    {
+      "name": "numberfield.tsx",
+      "content": "import { CaretDownIcon, CaretUpIcon } from \"@radix-ui/react-icons\"\nimport {\n  ButtonProps as AriaButtonProps,\n  Input as AriaInput,\n  InputProps as AriaInputProps,\n  NumberField as AriaNumberField,\n  NumberFieldProps as AriaNumberFieldProps,\n  ValidationResult as AriaValidationResult,\n  composeRenderProps,\n  Text,\n} from \"react-aria-components\"\n\nimport { cn } from \"@/lib/utils\"\n\nimport { Button } from \"./button\"\nimport { FieldError, FieldGroup, Label } from \"./field\"\n\nconst NumberField = AriaNumberField\n\nfunction NumberFieldInput({ className, ...props }: AriaInputProps) {\n  return (\n    <AriaInput\n      className={composeRenderProps(className, (className) =>\n        cn(\n          \"w-fit min-w-0 flex-1 border-r border-transparent bg-background pr-2 outline outline-0 placeholder:text-muted-foreground [&::-webkit-search-cancel-button]:hidden\",\n          className\n        )\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction NumberFieldSteppers({\n  className,\n  ...props\n}: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      className={cn(\n        \"absolute right-0 flex h-full flex-col border-l\",\n        className\n      )}\n      {...props}\n    >\n      <NumberFieldStepper slot=\"increment\">\n        <CaretUpIcon aria-hidden className=\"size-4\" />\n      </NumberFieldStepper>\n      <div className=\"border-b\" />\n      <NumberFieldStepper slot=\"decrement\">\n        <CaretDownIcon aria-hidden className=\"size-4\" />\n      </NumberFieldStepper>\n    </div>\n  )\n}\n\nfunction NumberFieldStepper({ className, ...props }: AriaButtonProps) {\n  return (\n    <Button\n      className={composeRenderProps(className, (className) =>\n        cn(\"w-auto grow rounded-none px-0.5 text-muted-foreground\", className)\n      )}\n      variant={\"ghost\"}\n      size={\"icon\"}\n      {...props}\n    />\n  )\n}\n\ninterface JollyNumberFieldProps extends AriaNumberFieldProps {\n  label?: string\n  description?: string\n  errorMessage?: string | ((validation: AriaValidationResult) => string)\n}\n\nfunction JollyNumberField({\n  label,\n  description,\n  errorMessage,\n  className,\n  ...props\n}: JollyNumberFieldProps) {\n  return (\n    <NumberField\n      className={composeRenderProps(className, (className) =>\n        cn(\"group flex flex-col gap-2\", className)\n      )}\n      {...props}\n    >\n      <Label>{label}</Label>\n      <FieldGroup>\n        <NumberFieldInput />\n        <NumberFieldSteppers />\n      </FieldGroup>\n      {description && (\n        <Text className=\"text-sm text-muted-foreground\" slot=\"description\">\n          {description}\n        </Text>\n      )}\n      <FieldError>{errorMessage}</FieldError>\n    </NumberField>\n  )\n}\n\nexport {\n  NumberField,\n  NumberFieldInput,\n  NumberFieldSteppers,\n  NumberFieldStepper,\n  JollyNumberField,\n}\n\nexport type { JollyNumberFieldProps }\n"
+    }
+  ],
+  "type": "components:ui"
+}

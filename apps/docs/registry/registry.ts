@@ -108,6 +108,13 @@ const ui: Registry = [
     files: ["ui/meter.tsx"],
   },
   {
+    name: "numberfield",
+    type: "components:ui",
+    dependencies: ["react-aria-components"],
+    registryDependencies: ["field", "button"],
+    files: ["ui/numberfield.tsx"],
+  },
+  {
     name: "popover",
     type: "components:ui",
     dependencies: ["react-aria-components"],

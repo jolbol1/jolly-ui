@@ -117,6 +117,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/ui/meter")),
       files: ["registry/default/ui/meter.tsx"],
     },
+    "numberfield": {
+      name: "numberfield",
+      type: "components:ui",
+      registryDependencies: ["field","button"],
+      component: React.lazy(() => import("@/registry/default/ui/numberfield")),
+      files: ["registry/default/ui/numberfield.tsx"],
+    },
     "popover": {
       name: "popover",
       type: "components:ui",
@@ -2175,6 +2182,13 @@ export const Index: Record<string, any> = {
       registryDependencies: ["field"],
       component: React.lazy(() => import("@/registry/new-york/ui/meter")),
       files: ["registry/new-york/ui/meter.tsx"],
+    },
+    "numberfield": {
+      name: "numberfield",
+      type: "components:ui",
+      registryDependencies: ["field","button"],
+      component: React.lazy(() => import("@/registry/new-york/ui/numberfield")),
+      files: ["registry/new-york/ui/numberfield.tsx"],
     },
     "popover": {
       name: "popover",
