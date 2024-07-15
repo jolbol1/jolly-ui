@@ -1,10 +1,13 @@
 ---
 title: Calendar
-description: A date field component that allows users to enter and edit date.
+description: A calendar displays one or more date grids and allows users to select a single date.
+featured: true
 component: true
 links:
   doc: https://react-spectrum.adobe.com/react-aria/Calendar.html
 ---
+
+There is no standalone calendar element in HTML. `<input type="date">`is close, but this is very limited in functionality, lacking in internationalization capabilities, inconsistent between browsers, and difficult to style. Calendar helps achieve accessible and international calendar components that can be styled as needed.
 
 <ComponentPreview name="calendar-demo" />
 
@@ -23,25 +26,20 @@ links:
 npx @sly-cli/sly add jolly-ui calendar
 ```
 
-**Note: Only the default style can be installed via CLI at the moment**
-
 </TabsContent>
 
 <TabsContent value="manual">
 
 <Steps>
 
-<Step>Install the following dependencies:</Step>
+<Step>Install the following dependencies: `@internationalized/date`</Step>
 
-```bash
-npm install @internationalized/date date-fns
-```
+<Step>
+  This components uses the following components, which you also need to install:
+  - [Button](../../../docs/components/button)
+</Step>
 
-<Step>Add the `Button` component to your project.</Step>
-
-The `Calendar` component uses the `Button` component. Make sure you have it installed in your project.
-
-<Step>Copy and paste the following code into your project.</Step>
+<Step>Copy and paste the following code into your project: calendar.tsx</Step>
 
 <ComponentSource name="calendar" />
 
@@ -53,41 +51,56 @@ The `Calendar` component uses the `Button` component. Make sure you have it inst
 
 </Tabs>
 
-## Usage
+### Composed Components
 
-```tsx
-import {
-  Calendar,
-  CalendarCell,
-  CalendarGrid,
-  CalendarGridBody,
-  CalendarGridHeader,
-  CalendarHeaderCell,
-  CalendarHeading,
-} from "@/registry/default/ui/calendar"
-```
+A Calendar uses the following components, which may also be used standalone or reused in other components.
 
-```tsx
+<ComponentCards>
+  <ComponentCard component="button" />
+</ComponentCards>
 
-return (
-  <Calendar>
-    <CalendarHeading />
-    <CalendarGrid>
-      <CalendarGridHeader>
-        {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
-      </CalendarGridHeader>
-      <CalendarGridBody>
-        {(date) => (
-          <>
-            <CalendarCell date={date} />
-          </>
-        )}
-      </CalendarGridBody>
-    </CalendarGrid>
-  </Calendar>
-)
-```
+## Reusable Wrapper - Example
 
-## Date Picker
+If you will use a Calendar in multiple places in your app, you can wrap all of the pieces into a reusable component. This way, the DOM structure, styling code, and other logic are defined in a single place and reused everywhere to ensure consistency.
 
-You can use the `<Calendar>` component to build a date picker. See the [Date Picker](/docs/components/date-picker) page for more information.
+The installed file includes a reusable wrapper `JollyCalendar`. This wrapper serves as an excellent starting point for use throughout your codebase.
+
+<ComponentPreview name="calendar-reusable" />
+
+The `JollyCalendar` components extends the props of React Aria Calendar and adds:
+
+| Prop           | Type                    | Default     | Description              |
+| -------------- | ----------------------- | ----------- | ------------------------ |
+| `errorMessage` | `"string" \| undefined` | `undefined` | Error message to display |
+
+You can copy this wrapper and create variations as needed for different use cases in your application. This approach promotes consistency while still allowing for flexibility in implementation.
+
+## Examples
+
+### Basic
+
+<ComponentPreview name="calendar-demo" />
+
+### Multi-month
+
+<ComponentPreview name="calendar-multi" />
+
+### Validation
+
+<ComponentPreview name="calendar-validation" />
+
+#### Unavailable Dates
+
+<ComponentPreview name="calendar-unavailable" />
+
+#### Error Message
+
+<ComponentPreview name="calendar-error" />
+
+### Disabled
+
+<ComponentPreview name="calendar-disabled" />
+
+#### Read-only
+
+<ComponentPreview name="calendar-readonly" />

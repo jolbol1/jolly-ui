@@ -2,50 +2,84 @@
 
 import * as React from "react"
 import {
-  Tab as _Tab,
-  TabList as _TabList,
-  TabPanel as _TabPanel,
-  Tabs as _Tabs,
+  Tab as AriaTab,
+  TabList as AriaTabList,
+  TabListProps as AriaTabListProps,
+  TabPanel as AriaTabPanel,
+  TabPanelProps as AriaTabPanelProps,
+  TabProps as AriaTabProps,
+  Tabs as AriaTabs,
+  TabsProps as AriaTabsProps,
+  composeRenderProps,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"
 
-const Tabs = _Tabs
+function Tabs({ className, ...props }: AriaTabsProps) {
+  return (
+    <AriaTabs
+      className={composeRenderProps(className, (className) =>
+        cn(
+          "group flex flex-col gap-2",
+          /* Orientation */
+          "data-[orientation=vertical]:flex-row",
+          className
+        )
+      )}
+      {...props}
+    />
+  )
+}
 
-const TabList = ({
+const TabList = <T extends object>({
   className,
   ...props
-}: React.ComponentProps<typeof _TabList>) => (
-  <_TabList
-    className={cn(
-      "inline-flex h-9 items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground",
-      className
+}: AriaTabListProps<T>) => (
+  <AriaTabList
+    className={composeRenderProps(className, (className) =>
+      cn(
+        "inline-flex h-9 items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground",
+        /* Orientation */
+        "data-[orientation=vertical]:h-auto data-[orientation=vertical]:flex-col",
+        className
+      )
     )}
     {...props}
   />
 )
 
-const Tab = ({ className, ...props }: React.ComponentProps<typeof _Tab>) => (
-  <_Tab
-    className={cn(
-      "inline-flex cursor-pointer items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition focus:outline-none data-[disabled]:pointer-events-none data-[selected]:bg-background data-[selected]:text-foreground data-[disabled]:opacity-50 data-[selected]:shadow data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2",
-      className
+const Tab = ({ className, ...props }: AriaTabProps) => (
+  <AriaTab
+    className={composeRenderProps(className, (className) =>
+      cn(
+        "inline-flex cursor-pointer justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium outline-none ring-offset-background transition-all",
+        /* Focus Visible */
+        "data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2",
+        /* Disabled */
+        "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+        /* Selected */
+        "data-[selected]:bg-background data-[selected]:text-foreground data-[selected]:shadow",
+        /* Orientation */
+        "group-data-[orientation=vertical]:w-full",
+        className
+      )
     )}
     {...props}
   />
 )
 
-const TabPanel = ({
-  className,
-  ...props
-}: React.ComponentProps<typeof _TabPanel>) => (
-  <_TabPanel
-    className={cn(
-      "mt-2 ring-offset-background data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2",
-      className
+const TabPanel = ({ className, ...props }: AriaTabPanelProps) => (
+  <AriaTabPanel
+    className={composeRenderProps(className, (className) =>
+      cn(
+        "mt-2 ring-offset-background",
+        /* Focus Visible */
+        "data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2",
+        className
+      )
     )}
     {...props}
   />
 )
 
-export { Tabs, TabList, Tab, TabPanel }
+export { Tabs, TabList, TabPanel, Tab }

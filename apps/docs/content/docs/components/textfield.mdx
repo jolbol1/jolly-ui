@@ -1,35 +1,114 @@
 ---
 title: TextField
 description: A text field allows a user to enter a plain text value with a keyboard.
+featured: true
 component: true
 links:
   doc: https://react-spectrum.adobe.com/react-aria/TextField.html
 ---
 
-Text fields can be built with `<Input>` or `<TextArea>` and `<Label>` elements, but you must manually ensure that they are semantically connected via ids for accessibility.
-`TextField` helps automate this, and handle other accessibility features while allowing for custom styling.
+Text fields can be built with `<input>` or `<textarea>` and `<label>` elements, but you must manually ensure that they are semantically connected via ids for accessibility. TextField helps automate this, and handle other accessibility features while allowing for custom styling.
+
+<ComponentPreview name="textfield-demo" />
 
 ## Installation
 
-You can use the `TextField` import from react-aria-components as it does not need default styling.
-Install the [Input](../../../docs/components/input), [Label](../../../docs/components/label) or [TextArea](../../../docs/components/textarea) component to use within from their respective pages.
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Copy & Paste</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx @sly-cli/sly add jolly-ui textfield
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Steps>
+
+<Step>
+  This components uses the following components, which you also need to install:
+  - [Form (field.tsx)](../../../docs/components/form)
+</Step>
+
+<Step>Copy and paste the following code into your project: calendar.tsx</Step>
+
+<ComponentSource name="calendar" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+<Step>Copy and paste the following code into your project: textfield.tsx</Step>
+
+<ComponentSource name="textfield" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Composed Components
+
+A TextField uses the following components, which may also be used standalone or reused in other components.
+
+<ComponentCards>
+  <ComponentCard component="label" />
+  <ComponentCard component="input" />
+</ComponentCards>
+
+## Reusable Wrapper - Example
+
+If you will use a TextField in multiple places in your app, you can wrap all of the pieces into a reusable component. This way, the DOM structure, styling code, and other logic are defined in a single place and reused everywhere to ensure consistency.
+
+The installed file includes a reusable wrapper `JollyTextField`. This wrapper serves as an excellent starting point for use throughout your codebase.
+
+<ComponentPreview name="textfield-reusable" />
+
+The `JollyTextField` component extends the props of React Aria TextField and adds:
+
+| Prop           | Type                                                                    | Default     | Description                                         |
+| -------------- | ----------------------------------------------------------------------- | ----------- | --------------------------------------------------- |
+| `label`        | `string \| undefined`                                                   | `undefined` | Label for the text field                            |
+| `description`  | `string \| undefined`                                                   | `undefined` | Description text for the text field                 |
+| `errorMessage` | `string \| ((validation: AriaValidationResult) => string) \| undefined` | `undefined` | Error message to display or function to generate it |
+| `textArea`     | `boolean \| undefined`                                                  | `undefined` | If true, renders a textarea instead of an input     |
+
+You can copy this wrapper and create variations as needed for different use cases in your application. This approach promotes consistency while still allowing for flexibility in implementation.
+
+## Examples
+
+### Basic
 
 <ComponentPreview name="textfield-demo" />
 
-## Usage
+### Validation
 
-Basic usages below. View [Input](../../../docs/components/input) and [TextArea](../../../docs/components/textarea) for more examples.
+<ComponentPreview name="textfield-validation" />
 
-### Input
+#### Description
 
-<ComponentPreview name="textfield-demo" />
+<ComponentPreview name="textfield-description" />
 
-### Text Area
+### Disabled
 
-<ComponentPreview name="textfield-textarea" />
+<ComponentPreview name="textfield-disabled" />
 
-### Description
+#### Read-only
 
-TextField also supports optional description and error message elements, which can be used to provide more context about the field, and any validation messages.
+<ComponentPreview name="textfield-readonly" />
 
-<ComponentPreview name="textfield-desc" />
+#### Multi-line
+
+<ComponentPreview name="textfield-multiline" />

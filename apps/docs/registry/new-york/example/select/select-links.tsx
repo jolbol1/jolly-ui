@@ -1,29 +1,30 @@
+import { Label } from "@/registry/new-york/ui/field"
 import {
   Select,
-  SelectContent,
   SelectItem,
+  SelectListBox,
   SelectPopover,
   SelectTrigger,
   SelectValue,
 } from "@/registry/new-york/ui/select"
 
-export function SelectLinks() {
+export default function SelectLinks() {
   return (
-    <Select placeholder="Select an item" aria-label="projects">
-      <SelectTrigger className="w-[180px]">
+    <Select className="w-[200px]" placeholder="Select an item">
+      <Label>Project</Label>
+      <SelectTrigger>
         <SelectValue />
       </SelectTrigger>
       <SelectPopover>
-        <SelectContent aria-label="items">
+        <SelectListBox>
           <SelectItem href="https://example.com/" target="_blank">
             Create new…
           </SelectItem>
-          <SelectItem textValue="Proposal">Proposal</SelectItem>
-          <SelectItem textValue="Budget">Budget</SelectItem>
-          <SelectItem textValue="Onboarding">Onboarding</SelectItem>
-        </SelectContent>
+          <SelectItem>Proposal</SelectItem>
+          <SelectItem>Budget</SelectItem>
+          <SelectItem>Onboarding</SelectItem>
+        </SelectListBox>
       </SelectPopover>
     </Select>
   )
 }
-export default SelectLinks

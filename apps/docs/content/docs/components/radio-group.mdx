@@ -1,10 +1,13 @@
 ---
-title: Radio Group
-description: A radio group allows a user to select a single item from a list of mutually exclusive options.
+title: RadioGroup
+description: A RadioGroup allows users to select a single option from a list of mutually exclusive options.
+featured: true
 component: true
 links:
   doc: https://react-spectrum.adobe.com/react-aria/RadioGroup.html
 ---
+
+Radio groups can be built in HTML with the `<fieldset>` and `<input>` elements, however these can be difficult to style. RadioGroup and Radio help achieve accessible radio groups that can be styled as needed.
 
 <ComponentPreview name="radio-group-demo" />
 
@@ -23,15 +26,19 @@ links:
 npx @sly-cli/sly add jolly-ui radio-group
 ```
 
-**Note: Only the default style can be installed via CLI at the moment**
-
 </TabsContent>
 
 <TabsContent value="manual">
 
 <Steps>
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>
+  This components uses the following components, which you also need to install:
+  - [Form (field.tsx)](../../../docs/components/form)
+</Step>
+<Step>
+  Copy and paste the following code into your project: radio-group.tsx
+</Step>
 
 <ComponentSource name="radio-group" />
 
@@ -43,14 +50,60 @@ npx @sly-cli/sly add jolly-ui radio-group
 
 </Tabs>
 
-## Usage
+## Composed Components
+
+A RadioGroup uses the following components, which may also be used standalone or reused in other components.
+
+<ComponentCards>
+  <ComponentCard component="label" />
+</ComponentCards>
+
+## Reusable Wrapper - Example
+
+If you will use a RadioGroup in multiple places in your app, you can wrap all of the pieces into a reusable component. This way, the DOM structure, styling code, and other logic are defined in a single place and reused everywhere to ensure consistency.
+
+The installed file includes a reusable wrapper `JollyRadioGroup`. This wrapper serves as an excellent starting point for use throughout your codebase.
+
+<ComponentPreview name="radiogroup-reusable" />
+
+The `JollyRadioGroup` component extends the props of React Aria RadioGroup and adds:
+
+| Prop           | Type                                                                    | Default     | Description                                         |
+| -------------- | ----------------------------------------------------------------------- | ----------- | --------------------------------------------------- |
+| `label`        | `string \| undefined`                                                   | `undefined` | Label for the radio group                           |
+| `description`  | `string \| undefined`                                                   | `undefined` | Description text for the radio group                |
+| `errorMessage` | `string \| ((validation: AriaValidationResult) => string) \| undefined` | `undefined` | Error message to display or function to generate it |
+
+You can copy this wrapper and create variations as needed for different use cases in your application. This approach promotes consistency while still allowing for flexibility in implementation.
+
+## Examples
 
 ### Basic
 
 <ComponentPreview name="radio-group-demo" />
 
+### Validation
+
+<ComponentPreview name="radio-group-validation" />
+
+#### Description
+
+<ComponentPreview name="radio-group-description" />
+
 ### Orientation
 
-Radio Groups are vertically oriented by default. The orientation prop can be used to change the orientation to horizontal.
-
 <ComponentPreview name="radio-group-orientation" />
+
+### Disabled
+
+The entire RadioGroup can be disabled with the isDisabled prop.
+
+<ComponentPreview name="radio-group-disabled" />
+
+To disable an individual radio, pass isDisabled to the Radio instead.
+
+<ComponentPreview name="radio-group-disabled-individual" />
+
+#### Read-only
+
+<ComponentPreview name="radio-group-readonly" />

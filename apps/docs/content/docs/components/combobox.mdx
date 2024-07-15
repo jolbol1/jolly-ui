@@ -1,10 +1,13 @@
 ---
-title: Combobox
-description: A combo box combines a text input with a listbox, allowing users to filter a list of options to items matching a query.
+title: ComboBox
+description: A ComboBox combines a text input with a listbox, allowing users to filter a list of options to items matching a query.
+featured: true
 component: true
 links:
   doc: https://react-spectrum.adobe.com/react-aria/ComboBox.html
 ---
+
+A combo box can be built using the `<datalist>` HTML element, but this is very limited in functionality and difficult to style. ComboBox helps achieve accessible combo box and autocomplete components that can be styled as needed.
 
 <ComponentPreview name="combobox-demo" />
 
@@ -23,15 +26,22 @@ links:
 npx @sly-cli/sly add jolly-ui combobox
 ```
 
-**Note: Only the default style can be installed via CLI at the moment**
-
 </TabsContent>
 
 <TabsContent value="manual">
 
 <Steps>
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>
+  This components uses the following components, which you also need to install:
+  - [Popover](../../../docs/components/popover) 
+  
+  - [Button](../../../docs/components/button)
+  - [Listbox](../../../docs/components/list-box) 
+  - [Form (field.tsx)](../../../docs/components/form)
+</Step>
+
+<Step>Copy and paste the following code into your project: combobox.tsx</Step>
 
 <ComponentSource name="combobox" />
 
@@ -43,36 +53,91 @@ npx @sly-cli/sly add jolly-ui combobox
 
 </Tabs>
 
-## Usage
+## Composed Components
+
+A ComboBox uses the following components, which may also be used standalone or reused in other components.
+
+<ComponentCards>
+  <ComponentCard component="label" />
+  <ComponentCard component="input" />
+  <ComponentCard component="button" />
+  <ComponentCard component="popover" />
+  <ComponentCard component="listbox" />
+</ComponentCards>
+
+## Reusable Wrapper - Example
+
+If you will use a ComboBox in multiple places in your app, you can wrap all of the pieces into a reusable component. This way, the DOM structure, styling code, and other logic are defined in a single place and reused everywhere to ensure consistency.
+
+The installed file includes a reusable wrapper `JollyComboBox`. This wrapper serves as an excellent starting point for use throughout your codebase.
+
+<ComponentPreview name="combobox-reusable" />
+
+The `JollyComboBox` component extends the props of React Aria ComboBox and adds:
+
+| Prop           | Type                                                                    | Default     | Description                                         |
+| -------------- | ----------------------------------------------------------------------- | ----------- | --------------------------------------------------- |
+| `label`        | `string \| undefined`                                                   | `undefined` | Label for the combobox                              |
+| `description`  | `string \| null \| undefined`                                           | `undefined` | Description text for the combobox                   |
+| `errorMessage` | `string \| ((validation: AriaValidationResult) => string) \| undefined` | `undefined` | Error message to display or function to generate it |
+| `children`     | `React.ReactNode \| ((item: T) => React.ReactNode)`                     | Required    | Content for the combobox options                    |
+
+You can copy this wrapper and create variations as needed for different use cases in your application. This approach promotes consistency while still allowing for flexibility in implementation.
+
+## Examples
 
 ### Basic
 
-<ComponentPreview name="combobox-basic" />
+<ComponentPreview name="combobox-demo" />
+
+### Content
+
+ComboBox follows the [Collection Components API](https://react-spectrum.adobe.com/react-aria/collections.html), accepting both static and dynamic collections. The examples above show static collections, which can be used when the full list of options is known ahead of time. Dynamic collections, as shown below, can be used when the options come from an external data source such as an API call, or update over time.
+
+<ComponentPreview name="combobox-content" />
 
 ### Links
 
-By default, interacting with an item in a ComboBox selects it and updates the input value.
-Alternatively, items may be links to another page or website. This can be achieved by passing the href prop to the `<ComboboxItem>` component.
-Interacting with link items navigates to the provided URL and does not update the selection or input value.
+<ComponentPreview name="combobox-links" />
+
+#### Client Side Routing
 
 The `<ComboboxItem>` component works with frameworks and client side routers like Next.js, Remix and React Router.
-As with other React Aria components that support links, this works via the RouterProvider component at the root of your app.
+As with other React Aria components that support links, this works via the `RouterProvider` component at the root of your app.
 See the [client side routing guide](https://react-spectrum.adobe.com/react-aria/routing.html) to learn how to set this up.
-
-<ComponentPreview name="combobox-link" />
 
 ### Sections
 
-A `<ComboboxLabel>` element may also be included to label the section. This can be offset and/or include a separator based on the value of the props.
-See examples of this below where the fruit label contains a separator and the Vegetable one an offset.
+#### Static
 
-#### Static Items
+<ComponentPreview name="combobox-sections" />
 
-<ComponentPreview name="combobox-section" />
+#### Dynamic
 
-#### Dynamic Items
+<ComponentPreview name="combobox-sections-dynamic" />
 
-Sections used with dynamic items are populated from a hierarchical data structure. Please note that `ComboboxSection` takes an array of data using the `items` prop only.
-If the section also has a header, the `ComboboxCollection` component can be used to render the child items.
+### Text Slots
 
-<ComponentPreview name="combobox-dynamic" />
+<ComponentPreview name="combobox-text-slots" />
+
+### Menu Trigger Behavior
+
+ComboBox supports three different menuTrigger prop values:
+
+- input (default): ComboBox menu opens when the user edits the input text.
+- focus: ComboBox menu opens when the user focuses the ComboBox input.
+- manual: ComboBox menu only opens when the user presses the trigger button or uses the arrow keys.
+
+<ComponentPreview name="combobox-menu-trigger" />
+
+### Validation
+
+<ComponentPreview name="combobox-validation" />
+
+#### Description
+
+<ComponentPreview name="combobox-description" />
+
+### Disabled
+
+<ComponentPreview name="combobox-disabled" />

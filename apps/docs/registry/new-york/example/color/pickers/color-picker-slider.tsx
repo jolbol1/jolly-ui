@@ -14,12 +14,12 @@ import {
   SliderTrack,
 } from "@/registry/new-york/ui/color"
 import { Dialog, DialogTrigger } from "@/registry/new-york/ui/dialog"
-import { Label } from "@/registry/new-york/ui/label"
+import { Label } from "@/registry/new-york/ui/field"
 import { Popover } from "@/registry/new-york/ui/popover"
 import {
   Select,
-  SelectContent,
   SelectItem,
+  SelectListBox,
   SelectPopover,
   SelectTrigger,
   SelectValue,
@@ -32,12 +32,12 @@ export function PickerSliders() {
   return (
     <ColorPicker value={color} onChange={setColor}>
       <DialogTrigger>
-        <Button variant="ghost" className="h-fit flex gap-2 items-center p-1">
-          <ColorSwatch className="rounded-md size-8 border-2" />
+        <Button variant="ghost" className="flex h-fit items-center gap-2 p-1">
+          <ColorSwatch className="size-8 rounded-md border-2" />
           Fill Color
         </Button>
         <Popover placement="bottom start" className="w-fit">
-          <Dialog className="outline-none flex flex-col gap-4">
+          <Dialog className="flex flex-col gap-4 p-3 outline-none">
             <Select
               selectedKey={space}
               onSelectionChange={(s) => setSpace(s as ColorSpace)}
@@ -47,7 +47,7 @@ export function PickerSliders() {
                 <SelectValue />
               </SelectTrigger>
               <SelectPopover>
-                <SelectContent aria-label="items">
+                <SelectListBox aria-label="items">
                   <SelectItem id="rgb" textValue="rgb">
                     RGB
                   </SelectItem>
@@ -57,7 +57,7 @@ export function PickerSliders() {
                   <SelectItem id="hsb" textValue="hsb">
                     HSB
                   </SelectItem>
-                </SelectContent>
+                </SelectListBox>
               </SelectPopover>
             </Select>
             {getColorChannels(space).map((channel) => (

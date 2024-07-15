@@ -2,6 +2,7 @@ import { notFound } from "next/navigation"
 import { allDocs } from "contentlayer/generated"
 
 import "@/styles/mdx.css"
+
 import type { Metadata } from "next"
 import Link from "next/link"
 import { ExternalLinkIcon } from "@radix-ui/react-icons"
@@ -19,8 +20,8 @@ import { BreadcrumbPage } from "@/registry/default/ui/breadcrumbs"
 import {
   BreadcrumbItem,
   BreadcrumbLink,
-  BreadcrumbSeparator,
   Breadcrumbs,
+  BreadcrumbSeparator,
 } from "@/registry/new-york/ui/breadcrumbs"
 
 interface DocPageProps {
@@ -140,9 +141,9 @@ export default async function DocPage({ params }: DocPageProps) {
                 rel="noreferrer"
                 className={cn(badgeVariants({ variant: "secondary" }), "gap-1")}
               >
-                <Icons.aria className="h-3 w-3" />
+                <Icons.aria className="size-3" />
                 Docs
-                <ExternalLinkIcon className="h-3 w-3" />
+                <ExternalLinkIcon className="size-3" />
               </Link>
             )}
             {doc.links?.api && (
@@ -153,7 +154,7 @@ export default async function DocPage({ params }: DocPageProps) {
                 className={cn(badgeVariants({ variant: "secondary" }), "gap-1")}
               >
                 API Reference
-                <ExternalLinkIcon className="h-3 w-3" />
+                <ExternalLinkIcon className="size-3" />
               </Link>
             )}
           </div>

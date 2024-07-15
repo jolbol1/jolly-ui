@@ -1,0 +1,63 @@
+---
+title: Form
+description: A form is a group of inputs that allows users to submit data to a server, with support for providing field validation errors.
+featured: true
+component: true
+links:
+  doc: https://react-spectrum.adobe.com/react-aria/Form.html
+---
+
+The HTML `<form>` element can be used to build forms. React Aria's Form component extends HTML forms with support for providing server-side validation errors to the fields within it.
+
+<ComponentPreview name="form-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Copy & Paste</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx @sly-cli/sly add jolly-ui form
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project: field.tsx</Step>
+
+<ComponentSource name="field" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Examples
+
+### Basic
+
+<ComponentPreview name="form-demo" />
+
+### Validation
+
+<ComponentPreview name="form-validation" />
+
+#### Validation Behavior
+
+By default, native HTML form validation is used to display errors and block form submission. To instead use ARIA attributes for form validation, set the validationBehavior prop to "aria". This will not block form submission, and will display validation errors to the user in realtime as the value is edited.
+
+The validationBehavior can be set at the form level to apply to all fields, or at the field level to override the form's behavior for a specific field.
+
+<ComponentPreview name="form-validation-behavior" />

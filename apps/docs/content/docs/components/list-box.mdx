@@ -1,0 +1,125 @@
+---
+title: ListBox
+description: A ListBox displays a list of options and allows a user to select one or more of them.
+featured: true
+component: true
+links:
+  doc: https://react-spectrum.adobe.com/react-aria/ListBox.html
+---
+
+A listbox can be built using the `<select>` and `<option>` HTML elements, but this is not possible to style consistently cross browser. ListBox helps you build accessible listbox components that can be styled as needed.
+
+<ComponentPreview name="list-box-demo" />
+
+Note: ListBox only handles the list itself. For a dropdown, see [Select](../../docs/components/select).
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Copy & Paste</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx @sly-cli/sly add jolly-ui list-box
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project: list-box.tsx</Step>
+
+<ComponentSource name="list-box" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx
+import { Item, ListBox } from "@/components/ui/list-box"
+```
+
+```tsx
+<ListBox aria-label="Example list box">
+  <Item>Option 1</Item>
+  <Item>Option 2</Item>
+  <Item>Option 3</Item>
+</ListBox>
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview name="list-box-demo" />
+
+### Dynamic Content
+
+<ComponentPreview name="list-box-content" />
+
+### Selection
+
+When selectionBehavior is set to "replace", clicking a row with the mouse replaces the selection with only that row. Using the arrow keys moves both focus and selection. To select multiple rows, modifier keys such as Ctrl, Cmd, and Shift can be used. On touch screen devices, selection always behaves as toggle since modifier keys may not be available.
+
+<ComponentPreview name="list-box-selection-replace" />
+
+### Links
+
+<ComponentPreview name="list-box-links" />
+
+By default, link items in a ListBox are not selectable, and only perform navigation when the user interacts with them. However, with the "replace" selection behavior, items will be selected when single clicking or pressing the Space key, and navigate to the link when double clicking or pressing the Enter key.
+
+<ComponentPreview name="list-box-links-replace" />
+
+#### Client Side Routing
+
+The `<ListBoxItem>` component works with frameworks and client side routers like Next.js, Remix and React Router.
+As with other React Aria components that support links, this works via the `RouterProvider` component at the root of your app.
+See the [client side routing guide](https://react-spectrum.adobe.com/react-aria/routing.html) to learn how to set this up.
+
+### Sections
+
+#### Static
+
+<ComponentPreview name="list-box-sections" />
+
+#### Dynamic
+
+<ComponentPreview name="list-box-dynamic" />
+
+### Text Slots
+
+<ComponentPreview name="list-box-text-slot" />
+
+### Disabled Items
+
+<ComponentPreview name="list-box-disabled-items" />
+
+In dynamic collections, it may be more convenient to use the disabledKeys prop at the ListBox level instead of isDisabled on individual items. Each key in this list corresponds with the id prop passed to the ListBoxItem component, or automatically derived from the values passed to the items prop (see the [Collections](https://react-spectrum.adobe.com/react-aria/collections.html) for more details). An item is considered disabled if its id exists in disabledKeys or if it has isDisabled.
+
+<ComponentPreview name="list-box-disabled-keys" />
+
+### Empty State
+
+<ComponentPreview name="list-box-empty" />
+
+### Drag and Drop
+
+<ComponentPreview name="list-box-drag-drop" />
+
+#### Drag Between Lists
+
+<ComponentPreview name="list-box-drag-between" />

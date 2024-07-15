@@ -1,34 +1,37 @@
 "use client"
 
 import * as React from "react"
-import { Meter, MeterProps } from "react-aria-components"
+import {
+  Meter as AriaMeter,
+  MeterProps as AriaMeterProps,
+  composeRenderProps,
+} from "react-aria-components"
 
 import { cn } from "@/lib/utils"
 
-interface _MeterProps extends MeterProps {
+import { Label, labelVariants } from "./field"
+
+interface MeterProps extends AriaMeterProps {
   barClassName?: string
   fillClassName?: string
 }
 
-const _Meter = ({
+const Meter = ({
   className,
   barClassName,
   fillClassName,
   children,
   ...props
-}: _MeterProps) => (
-  <Meter
-    className={(values) =>
-      cn(
-        "w-full",
-        typeof className === "function" ? className(values) : className
-      )
-    }
+}: MeterProps) => (
+  <AriaMeter
+    className={composeRenderProps(className, (className) =>
+      cn("w-full", className)
+    )}
     {...props}
   >
-    {(values) => (
+    {composeRenderProps(children, (children, renderProps) => (
       <>
-        {typeof children === "function" ? children(values) : children}
+        {children}
         <div
           className={cn(
             "relative h-4 w-full overflow-hidden rounded-full bg-secondary",
@@ -37,18 +40,46 @@ const _Meter = ({
         >
           <div
             className={cn(
-              "h-full w-full flex-1 bg-primary transition-all",
+              "size-full flex-1 bg-primary transition-all",
               fillClassName
             )}
             style={{
-              transform: `translateX(-${100 - (values.percentage || 0)}%)`,
+              transform: `translateX(-${100 - (renderProps.percentage || 0)}%)`,
             }}
           />
         </div>
       </>
-    )}
-  </Meter>
+    ))}
+  </AriaMeter>
 )
 
-export { _Meter as Meter }
-export type { _MeterProps as MeterProps }
+interface JollyMeterProps extends MeterProps {
+  label?: string
+  showValue?: boolean
+}
+
+function JollyMeter({
+  label,
+  className,
+  showValue = true,
+  ...props
+}: JollyMeterProps) {
+  return (
+    <Meter
+      className={composeRenderProps(className, (className) =>
+        cn("group flex flex-col gap-2", className)
+      )}
+      {...props}
+    >
+      {({ valueText }) => (
+        <div className="flex w-full justify-between">
+          <Label>{label}</Label>
+          {showValue && <span className={labelVariants()}>{valueText}</span>}
+        </div>
+      )}
+    </Meter>
+  )
+}
+
+export { Meter, JollyMeter }
+export type { MeterProps, JollyMeterProps }

@@ -7,6 +7,8 @@ links:
   doc: https://react-spectrum.adobe.com/react-aria/DropZone.html
 ---
 
+There is no native element to implement a drop zone in HTML. DropZone helps achieve accessible dropzone components that can be styled as needed.
+
 <ComponentPreview name="dropzone-demo" />
 
 ## Installation
@@ -23,8 +25,6 @@ links:
 ```bash
 npx @sly-cli/sly add jolly-ui dropzone
 ```
-
-**Note: Only the default style can be installed via CLI at the moment**
 
 </TabsContent>
 
@@ -44,13 +44,19 @@ npx @sly-cli/sly add jolly-ui dropzone
 
 </Tabs>
 
-## Usage
+## Composed Components
+
+A DropZone uses the following components, which may also be used standalone or reused in other components.
+
+<ComponentCards>
+  <ComponentCard component="fileTrigger" />
+</ComponentCards>
 
 ### Basic
 
 <ComponentPreview name="dropzone-demo" />
 
-### File
+### FileTrigger
 
 To allow the selection of files from the user's device, pass [FileTrigger](../../../docs/components/file-trigger) as a child of DropZone.
 

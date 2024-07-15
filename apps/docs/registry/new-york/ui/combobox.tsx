@@ -1,64 +1,60 @@
 "use client"
 
-import * as React from "react"
-import { CaretSortIcon, CheckIcon } from "@radix-ui/react-icons"
+import { CaretSortIcon } from "@radix-ui/react-icons"
 import {
-  Button,
-  Collection,
-  ComboBox,
-  Group,
-  Header,
-  Input,
-  InputProps,
-  ListBox,
-  ListBoxItem,
-  ListBoxItemProps,
-  ListBoxProps,
-  Popover,
-  PopoverProps,
-  Section,
-  Separator,
-  SeparatorProps,
+  ComboBox as AriaComboBox,
+  ComboBoxProps as AriaComboBoxProps,
+  Input as AriaInput,
+  InputProps as AriaInputProps,
+  ListBox as AriaListBox,
+  ListBoxProps as AriaListBoxProps,
+  PopoverProps as AriaPopoverProps,
+  ValidationResult as AriaValidationResult,
+  composeRenderProps,
+  Text,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"
 
-const Combobox = ComboBox
+import { Button } from "./button"
+import { FieldError, FieldGroup, Label } from "./field"
+import {
+  ListBoxCollection,
+  ListBoxHeader,
+  ListBoxItem,
+  ListBoxSection,
+} from "./list-box"
+import { Popover } from "./popover"
 
-const ComboboxSection = Section
+const Combobox = AriaComboBox
 
-const ComboboxCollection = Collection
+const ComboboxItem = ListBoxItem
 
-const ComboboxInput = ({ className, ...props }: InputProps) => (
-  <Group
-    className={cn(
-      "flex h-9 w-full items-center justify-between overflow-hidden rounded-md border border-input bg-transparent  text-sm shadow-sm ring-offset-background placeholder:text-muted-foreground focus-within:outline-none focus-within:ring-1 focus-within:ring-ring data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50"
+const ComboboxHeader = ListBoxHeader
+
+const ComboboxSection = ListBoxSection
+
+const ComboboxCollection = ListBoxCollection
+
+const ComboboxInput = ({ className, ...props }: AriaInputProps) => (
+  <AriaInput
+    className={composeRenderProps(className, (className) =>
+      cn(
+        "flex h-10 w-full bg-background px-3 py-2 outline-none file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground",
+        /* Disabled */
+        "data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
+        className
+      )
     )}
-  >
-    <Input
-      className={(values) =>
-        cn(
-          "flex w-full bg-background px-3 py-2 text-sm placeholder:text-muted-foreground data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 data-[focused]:outline-none",
-          typeof className === "function" ? className(values) : className
-        )
-      }
-      {...props}
-    />
-    <Button className="pr-3">
-      <CaretSortIcon aria-hidden="true" className="h-4 w-4 opacity-50" />
-    </Button>
-  </Group>
+    {...props}
+  />
 )
 
-const ComboboxPopover = ({ className, ...props }: PopoverProps) => (
+const ComboboxPopover = ({ className, ...props }: AriaPopoverProps) => (
   <Popover
-    className={(values) =>
-      cn(
-        "relative z-50 w-[--trigger-width] min-w-[8rem] overflow-y-auto rounded-md border bg-popover text-popover-foreground shadow-md data-[entering]:animate-in data-[exiting]:animate-out data-[entering]:fade-in-0 data-[exiting]:fade-out-0 data-[exiting]:zoom-out-95 data-[placement=bottom]:slide-in-from-top-2 data-[placement=left]:slide-in-from-right-2 data-[placement=right]:slide-in-from-left-2 data-[placement=top]:slide-in-from-bottom-2",
-        "data-[placement=bottom]:translate-y-1 data-[placement=left]:-translate-x-1 data-[placement=right]:translate-x-1 data-[placement=top]:-translate-y-1",
-        typeof className === "function" ? className(values) : className
-      )
-    }
+    className={composeRenderProps(className, (className) =>
+      cn("w-[calc(var(--trigger-width)+4px)]", className)
+    )}
     {...props}
   />
 )
@@ -66,63 +62,70 @@ const ComboboxPopover = ({ className, ...props }: PopoverProps) => (
 const ComboboxListBox = <T extends object>({
   className,
   ...props
-}: ListBoxProps<T>) => <ListBox className={cn("p-1", className)} {...props} />
-
-export interface ComboboxLabelProps
-  extends React.ComponentProps<typeof Header> {
-  separator?: boolean
-}
-
-const ComboboxLabel = ({
-  className,
-  separator = false,
-  ...props
-}: ComboboxLabelProps) => (
-  <Header
-    className={cn(
-      "px-2 py-1.5 text-sm font-semibold",
-      { "-mx-1 mb-1 border-b border-b-border px-3 pb-[0.625rem]": separator },
-      className
+}: AriaListBoxProps<T>) => (
+  <AriaListBox
+    className={composeRenderProps(className, (className) =>
+      cn(
+        "max-h-[inherit] overflow-auto p-1 outline-none [clip-path:inset(0_0_0_0_round_calc(var(--radius)-2px))]",
+        className
+      )
     )}
     {...props}
   />
 )
 
-const ComboboxItem = ({ className, children, ...props }: ListBoxItemProps) => (
-  <ListBoxItem
-    className={(values) =>
-      cn(
-        "relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-2 pr-8 text-sm outline-none data-[disabled]:pointer-events-none data-[focused]:bg-accent data-[focused]:text-accent-foreground data-[disabled]:opacity-50",
-        typeof className === "function" ? className(values) : className
-      )
-    }
-    {...props}
-  >
-    {(values) => (
-      <>
-        {values.isSelected && (
-          <span className="absolute right-2 flex h-4 w-4 items-center justify-center">
-            <CheckIcon className="h-4 w-4" />
-          </span>
-        )}
-        {typeof children === "function" ? children(values) : children}
-      </>
-    )}
-  </ListBoxItem>
-)
+interface JollyComboBoxProps<T extends object>
+  extends Omit<AriaComboBoxProps<T>, "children"> {
+  label?: string
+  description?: string | null
+  errorMessage?: string | ((validation: AriaValidationResult) => string)
+  children: React.ReactNode | ((item: T) => React.ReactNode)
+}
 
-const ComboboxSeparator = ({ className, ...props }: SeparatorProps) => (
-  <Separator className={cn("-mx-1 my-1 h-px bg-muted", className)} {...props} />
-)
+function JollyComboBox<T extends object>({
+  label,
+  description,
+  errorMessage,
+  className,
+  children,
+  ...props
+}: JollyComboBoxProps<T>) {
+  return (
+    <Combobox
+      className={composeRenderProps(className, (className) =>
+        cn("group flex flex-col gap-2", className)
+      )}
+      {...props}
+    >
+      <Label>{label}</Label>
+      <FieldGroup className="p-0">
+        <ComboboxInput />
+        <Button variant="ghost" size="icon" className="mr-1 size-6 p-1">
+          <CaretSortIcon aria-hidden="true" className="size-4 opacity-50" />
+        </Button>
+      </FieldGroup>
+      {description && (
+        <Text className="text-sm text-muted-foreground" slot="description">
+          {description}
+        </Text>
+      )}
+      <FieldError>{errorMessage}</FieldError>
+      <ComboboxPopover>
+        <ComboboxListBox>{children}</ComboboxListBox>
+      </ComboboxPopover>
+    </Combobox>
+  )
+}
 
 export {
   ComboboxSection,
   Combobox,
-  ComboboxInput,
   ComboboxListBox,
-  ComboboxPopover,
+  ComboboxInput,
   ComboboxCollection,
-  ComboboxLabel,
   ComboboxItem,
-  ComboboxSeparator,
+  ComboboxHeader,
+  ComboboxPopover,
+  JollyComboBox,
 }
+export type { JollyComboBoxProps }

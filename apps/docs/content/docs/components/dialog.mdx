@@ -7,6 +7,8 @@ links:
   doc: https://react-spectrum.adobe.com/react-aria/Dialog.html
 ---
 
+The HTML `<dialog>` element can be used to build dialogs. However, it is not yet widely supported across browsers, and building fully accessible custom dialogs from scratch is very difficult and error prone. Dialog helps achieve accessible dialogs that can be styled as needed.
+
 <ComponentPreview name="dialog-demo" />
 
 ## Installation
@@ -23,8 +25,6 @@ links:
 ```bash
 npx @sly-cli/sly add jolly-ui dialog
 ```
-
-**Note: Only the default style can be installed via CLI at the moment**
 
 </TabsContent>
 
@@ -52,14 +52,12 @@ npx @sly-cli/sly add jolly-ui dialog
 
 ### Alert dialog
 
-Set `isDismissable` to false on the DialogOverlay component and set the role on DialogContent to `alertdialog`
-
 <ComponentPreview name="dialog-alert-demo" />
 
 ### Sheet
 
 <ComponentPreview name="dialog-sheet" />
 
-### Custom close button
+### Popover Dialog
 
-<ComponentPreview name="dialog-close-button" />
+<ComponentPreview name="dialog-popover" />

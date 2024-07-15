@@ -1,65 +1,35 @@
-"use client"
+import { CaretSortIcon } from "@radix-ui/react-icons"
 
+import { Button } from "@/registry/new-york/ui/button"
 import {
   Combobox,
-  ComboboxCollection,
   ComboboxInput,
   ComboboxItem,
-  ComboboxLabel,
   ComboboxListBox,
   ComboboxPopover,
-  ComboboxSection,
 } from "@/registry/new-york/ui/combobox"
+import { FieldGroup, Label } from "@/registry/new-york/ui/field"
 
-const frameworks = [
-  {
-    value: "next.js",
-    label: "Next.js",
-  },
-  {
-    value: "sveltekit",
-    label: "SvelteKit",
-  },
-  {
-    value: "nuxt.js",
-    label: "Nuxt.js",
-  },
-  {
-    value: "remix",
-    label: "Remix",
-  },
-  {
-    value: "astro",
-    label: "Astro",
-  },
-]
-
-export function ComboboxDemo() {
+export default function ComboboxDemo() {
   return (
-    <Combobox aria-label="Select Framework">
-      <ComboboxInput
-        className="w-[200px]"
-        placeholder="Select a framework..."
-      />
+    <Combobox>
+      <Label>Favorite Animal</Label>
+      <FieldGroup className="p-0">
+        <ComboboxInput />
+        <Button variant="ghost" size="icon" className="mr-1 size-6 p-1">
+          <CaretSortIcon aria-hidden="true" className="size-4 opacity-50" />
+        </Button>
+      </FieldGroup>
       <ComboboxPopover>
         <ComboboxListBox>
-          <ComboboxSection>
-            <ComboboxLabel separator>Frameworks</ComboboxLabel>
-            <ComboboxCollection items={frameworks}>
-              {(item) => (
-                <ComboboxItem
-                  textValue={item.label}
-                  id={item.value}
-                  key={item.value}
-                >
-                  {item.label}
-                </ComboboxItem>
-              )}
-            </ComboboxCollection>
-          </ComboboxSection>
+          <ComboboxItem textValue="Aardvark">Aardvark</ComboboxItem>
+          <ComboboxItem textValue="Cat">Cat</ComboboxItem>
+          <ComboboxItem textValue="Dog">Dog</ComboboxItem>
+          <ComboboxItem textValue="Kangaroo">Kangaroo</ComboboxItem>
+          <ComboboxItem textValue="Panda">Panda</ComboboxItem>
+          <ComboboxItem textValue="Snake">Snake</ComboboxItem>
         </ComboboxListBox>
       </ComboboxPopover>
     </Combobox>
   )
 }
-export default ComboboxDemo

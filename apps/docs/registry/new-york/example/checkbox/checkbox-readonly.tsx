@@ -1,12 +1,9 @@
-"use client"
-
 import { Checkbox } from "@/registry/new-york/ui/checkbox"
 
-export function CheckboxReadonly() {
+export default function CheckboxReadonly() {
   return (
-    <Checkbox isSelected isReadOnly id="terms">
-      Accept terms and conditions
+    <Checkbox isSelected isReadOnly>
+      Agree
     </Checkbox>
   )
 }
-export default CheckboxReadonly

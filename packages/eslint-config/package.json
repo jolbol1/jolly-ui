@@ -5,8 +5,7 @@
   "files": [
     "library.js",
     "next.js",
-    "react-internal.js",
-    "storybook.js"
+    "react-internal.js"
   ],
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^7.10.0",
@@ -15,7 +14,6 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-config-turbo": "^1.13.3",
     "eslint-plugin-only-warn": "^1.1.0",
-    "eslint-plugin-storybook": "^0.8.0",
     "eslint-plugin-tailwindcss": "^3.17.0",
     "typescript": "^5.4.5"
   }

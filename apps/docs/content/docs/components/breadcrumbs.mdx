@@ -7,6 +7,8 @@ links:
   doc: https://react-spectrum.adobe.com/react-aria/Breadcrumbs.html
 ---
 
+Breadcrumbs provide a list of links to parent pages of the current page in hierarchical order. Breadcrumbs helps implement these in an accessible way.
+
 <ComponentPreview name="breadcrumbs-demo" />
 
 <Tabs defaultValue="cli">
@@ -22,15 +24,15 @@ links:
 npx @sly-cli/sly add jolly-ui breadcrumbs
 ```
 
-**Note: Only the default style can be installed via CLI at the moment**
-
 </TabsContent>
 
 <TabsContent value="manual">
 
 <Steps>
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>
+  Copy and paste the following code into your project: breadcrumbs.tsx
+</Step>
 
 <ComponentSource name="breadcrumbs" />
 
@@ -84,14 +86,6 @@ or popovers most likely should not be landmarks.
 
 <ComponentPreview name="breadcrumbs-demo" />
 
-### Disabled
-
-You can disable all breadcrumb items by using the `isDisabled` prop on the `<Breadcrumbs>` component.
-
-Individual breadcrumbs can also be disabled by passing the isDisabled prop to the `<BreadcrumbLink>`.
-
-<ComponentPreview name="breadcrumbs-disabled" />
-
 ### Custom Separator
 
 To use a custom separator simply place the component as a child of `<BreadcrumbSeparator>`.
@@ -99,6 +93,14 @@ To use a custom separator simply place the component as a child of `<BreadcrumbS
 Make sure the separators are within `<BreadcrumbItem>`.
 
 <ComponentPreview name="breadcrumbs-separator" />
+
+### Disabled
+
+You can disable all breadcrumb items by using the `isDisabled` prop on the `<Breadcrumbs>` component.
+
+Individual breadcrumbs can also be disabled by passing the isDisabled prop to the `<BreadcrumbLink>`.
+
+<ComponentPreview name="breadcrumbs-disabled" />
 
 ### Dropdown
 

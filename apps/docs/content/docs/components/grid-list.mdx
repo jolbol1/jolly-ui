@@ -1,0 +1,121 @@
+---
+title: GridList
+description: A grid list displays a list of interactive items, with support for keyboard navigation, single or multiple selection, and row actions.
+featured: true
+component: true
+links:
+  doc: https://react-spectrum.adobe.com/react-aria/GridList.html
+---
+
+A list can be built using `<ul>` or `<ol>` HTML elements, but does not support any user interactions. HTML lists are meant for static content, rather than lists with rich interactions like focusable elements within rows, keyboard navigation, row selection, etc. GridList helps achieve accessible and interactive list components that can be styled as needed.
+
+<ComponentPreview name="grid-list-demo" />
+
+Note: Use `GridList` when your list items may contain interactive elements such as buttons, checkboxes, menus, etc. within them. If your list items contain only static content such as text and images, then consider using [ListBox](../../docs/components/list-box) instead for a slightly better screen reader experience (especially on mobile).
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Copy & Paste</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx @sly-cli/sly add jolly-ui grid-list
+```
+
+</TabsContent>
+<TabsContent value="manual">
+<Steps>
+<Step>
+  This components uses the following components, which you also need to install:
+  - [Checkbox](../../../docs/components/checkbox)
+</Step>
+<Step>Copy and paste the following code into your project: grid-list.tsx</Step>
+<ComponentSource name="grid-list" />
+<Step>Update the import paths to match your project setup.</Step>
+</Steps>
+</TabsContent>
+</Tabs>
+## Composed Components
+
+A GridList uses the following components, which may also be used standalone or reused in other components.
+
+<ComponentCards>
+  <ComponentCard component="button" />
+  <ComponentCard component="checkbox" />
+</ComponentCards>
+
+## Examples
+
+### Basic
+
+<ComponentPreview name="grid-list-demo" />
+
+### Dynamic Content
+
+<ComponentPreview name="grid-list-content" />
+
+### Selection
+
+#### Single Selection
+
+<ComponentPreview name="grid-list-single-select" />
+
+#### Multiple Selection
+
+<ComponentPreview name="grid-list-multi-select" />
+
+#### Disallow Empty Selection
+
+<ComponentPreview name="grid-list-disallow-empty" />
+
+#### Selection Behavior
+
+<ComponentPreview name="grid-list-replace" />
+
+When selectionBehavior is set to "replace", clicking a row with the mouse replaces the selection with only that row. Using the arrow keys moves both focus and selection. To select multiple rows, modifier keys such as Ctrl, Cmd, and Shift can be used. On touch screen devices, selection always behaves as toggle since modifier keys may not be available.
+
+### Row Actions
+
+<ComponentPreview name="grid-list-row-actions" />
+
+Rows may also have a row action specified by directly applying onAction on the GridListItem itself. This may be especially convenient in static collections. If onAction is also provided to the GridList, both the grid list's and the row's onAction are called.
+
+<ComponentPreview name="grid-list-direct-row-actions" />
+
+### Links
+
+<ComponentPreview name="grid-list-links" />
+
+### Disabled Items
+
+<ComponentPreview name="grid-list-disabled-items" />
+
+### Disabled Behavior
+
+When disabledBehavior is set to selection, interactions such as focus, dragging, or actions can still be performed on disabled rows.
+
+<ComponentPreview name="grid-list-disabled-behavior" />
+
+In dynamic collections, it may be more convenient to use the disabledKeys prop at the GridList level instead of isDisabled on individual items. This accepts a list of item ids that are disabled. An item is considered disabled if its key exists in disabledKeys or if it has isDisabled.
+
+<ComponentPreview name="grid-list-disabled-keys" />
+
+### Empty State
+
+<ComponentPreview name="grid-list-empty" />
+
+### Drag and Drop
+
+This uses useListData from React Stately to manage the item list. Note that useListData is a convenience hook, not a requirement. You can manage your state however you wish.
+
+<ComponentPreview name="grid-list-drag-drop" />
+
+#### Drag Between Lists
+
+<ComponentPreview name="grid-list-drag-between" />

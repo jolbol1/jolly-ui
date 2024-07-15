@@ -1,0 +1,106 @@
+---
+title: DateField
+description: A date field allows users to enter and edit date and time values using a keyboard. Each part of a date value is displayed in an individually editable segment.
+featured: true
+component: true
+links:
+  doc: https://react-spectrum.adobe.com/react-aria/DateField.html
+---
+
+<ComponentPreview name="datefield-demo" />
+
+## Installation
+
+A date field can be built using `<input type="date">`, but this is very limited in functionality, lacking in internationalization capabilities, inconsistent between browsers, and difficult to style. DateField helps achieve accessible and international date and time fields that can be styled as needed.
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Copy & Paste</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx @sly-cli/sly add jolly-ui datefield
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>
+  This components uses the following components, which you also need to install:
+  - [Form (field.tsx)](../../../docs/components/form)
+</Step>
+
+<Step>Copy and paste the following code into your project: datefield.tsx</Step>
+
+<ComponentSource name="datefield" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Composed Components
+
+A DateField uses the following components, which may also be used standalone or reused in other components.
+
+<ComponentCards>
+  <ComponentCard component="label" />
+</ComponentCards>
+
+## Reusable Wrapper - Example
+
+If you will use a DateField in multiple places in your app, you can wrap all of the pieces into a reusable component. This way, the DOM structure, styling code, and other logic are defined in a single place and reused everywhere to ensure consistency.
+
+The installed file includes a reusable wrapper `JollyDateField`. This wrapper serves as an excellent starting point for use throughout your codebase.
+
+<ComponentPreview name="datefield-reusable" />
+
+The `JollyDateField` component extends the props of React Aria DateField and adds:
+
+| Prop           | Type                                                                    | Default     | Description                                         |
+| -------------- | ----------------------------------------------------------------------- | ----------- | --------------------------------------------------- |
+| `label`        | `string \| undefined`                                                   | `undefined` | Label for the date field                            |
+| `description`  | `string \| undefined`                                                   | `undefined` | Description text for the date field                 |
+| `errorMessage` | `string \| ((validation: AriaValidationResult) => string) \| undefined` | `undefined` | Error message to display or function to generate it |
+
+You can copy this wrapper and create variations as needed for different use cases in your application. This approach promotes consistency while still allowing for flexibility in implementation.
+
+<ComponentPreview name="datefield-reusable" />
+
+## Examples
+
+### Basic
+
+<ComponentPreview name="datefield-demo" />
+
+### Values
+
+#### Timezones
+
+<ComponentPreview name="datefield-timezone" />
+
+#### Granularity
+
+<ComponentPreview name="datefield-granularity" />
+
+### Validation
+
+<ComponentPreview name="datefield-validation" />
+
+#### Min/Max Values
+
+<ComponentPreview name="datefield-validation-min-max" />
+
+#### Description
+
+<ComponentPreview name="datefield-description" />

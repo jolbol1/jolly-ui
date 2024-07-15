@@ -14,9 +14,9 @@ import {
   SliderTrack,
 } from "@/registry/default/ui/color"
 import { Dialog, DialogTrigger } from "@/registry/default/ui/dialog"
-import { Input } from "@/registry/default/ui/input"
-import { Label } from "@/registry/default/ui/label"
+import { Label } from "@/registry/default/ui/field"
 import { Popover } from "@/registry/default/ui/popover"
+import { Input } from "@/registry/default/ui/textfield"
 
 export function HexPicker() {
   let [color, setColor] = React.useState(parseColor("#f00"))
@@ -24,18 +24,18 @@ export function HexPicker() {
   return (
     <ColorPicker value={color} onChange={setColor}>
       <DialogTrigger>
-        <Button variant="ghost" className="h-fit flex gap-2 items-center p-1">
-          <ColorSwatch className="rounded-md size-8 border-2" />
+        <Button variant="ghost" className="flex h-fit items-center gap-2 p-1">
+          <ColorSwatch className="size-8 rounded-md border-2" />
           Hex Color
         </Button>
         <Popover placement="bottom start" className="w-fit">
-          <Dialog className="outline-none flex flex-col gap-4">
+          <Dialog className="flex flex-col gap-4 p-3 outline-none">
             <div>
               <ColorArea
                 colorSpace="hsb"
                 xChannel="saturation"
                 yChannel="brightness"
-                className="border-b-0 rounded-b-none h-[164px]"
+                className="h-[164px] rounded-b-none border-b-0"
               >
                 <ColorThumb className="z-50" />
               </ColorArea>

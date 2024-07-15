@@ -2,12 +2,28 @@
 
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
-import { ToggleButton, type ToggleButtonProps } from "react-aria-components"
+import {
+  ToggleButton as AriaToggleButton,
+  composeRenderProps,
+  type ToggleButtonProps as AriaToggleButtonProps,
+} from "react-aria-components"
 
 import { cn } from "@/lib/utils"
 
 const toggleVariants = cva(
-  "inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors data-[disabled]:pointer-events-none data-[hovered]:bg-muted data-[selected]:bg-accent data-[hovered]:text-muted-foreground data-[selected]:text-accent-foreground data-[disabled]:opacity-50 data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2",
+  [
+    "inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors",
+    /* Disabled */
+    "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+    /* Hover */
+    "data-[hovered]:bg-muted data-[hovered]:text-muted-foreground",
+    /* Selected */
+    "data-[selected]:bg-accent data-[selected]:text-accent-foreground",
+    /* Focus Visible */
+    "data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2",
+    /* Resets */
+    "focus-visible:outline-none",
+  ],
   {
     variants: {
       variant: {
@@ -28,24 +44,24 @@ const toggleVariants = cva(
   }
 )
 
-export interface _ToggleProps
-  extends ToggleButtonProps,
+interface ToggleProps
+  extends AriaToggleButtonProps,
     VariantProps<typeof toggleVariants> {}
 
-const Toggle = ({ className, variant, size, ...props }: _ToggleProps) => (
-  <ToggleButton
-    className={(values) =>
+const Toggle = ({ className, variant, size, ...props }: ToggleProps) => (
+  <AriaToggleButton
+    className={composeRenderProps(className, (className) =>
       cn(
         toggleVariants({
           variant,
           size,
-          className:
-            typeof className === "function" ? className(values) : className,
+          className,
         })
       )
-    }
+    )}
     {...props}
   />
 )
 
 export { Toggle, toggleVariants }
+export type { ToggleProps }

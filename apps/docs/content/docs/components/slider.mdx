@@ -1,10 +1,13 @@
 ---
 title: Slider
 description: A slider allows a user to select one or more values within a range.
+featured: true
 component: true
 links:
   doc: https://react-spectrum.adobe.com/react-aria/Slider.html
 ---
+
+The `<input type="range">` HTML element can be used to build a slider, however it is very difficult to style cross browser. Slider helps achieve accessible sliders that can be styled as needed.
 
 <ComponentPreview name="slider-demo" />
 
@@ -23,15 +26,28 @@ links:
 npx @sly-cli/sly add jolly-ui slider
 ```
 
-**Note: Only the default style can be installed via CLI at the moment**
-
 </TabsContent>
 
 <TabsContent value="manual">
 
 <Steps>
 
-<Step>Copy and paste the following code into your project.</Step>
+<Steps>
+
+<Step>
+  This components uses the following components, which you also need to install:
+  - [Form (field.tsx)](../../../docs/components/form)
+</Step>
+
+<Step>Copy and paste the following code into your project: calendar.tsx</Step>
+
+<ComponentSource name="calendar" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+<Step>Copy and paste the following code into your project: slider.tsx</Step>
 
 <ComponentSource name="slider" />
 
@@ -43,22 +59,28 @@ npx @sly-cli/sly add jolly-ui slider
 
 </Tabs>
 
-## Usage
+## Examples
 
 ### Basic
 
 <ComponentPreview name="slider-demo" />
 
-### Value Label
+### Validation
 
-Values are formatted as a percentage by default, but this can be modified by using the formatOptions prop to specify a different format.
-formatOptions is compatible with the option parameter ofs [Intl.NumberFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat) and is applied based on the current locale.
+#### Custom value scale
 
-<ComponentPreview name="slider-value" />
+<ComponentPreview name="slider-values" />
 
-### Vertical
+#### Step values
 
-Sliders are horizontally oriented by default. The orientation prop can be set to "vertical" to create a vertical slider.
+<ComponentPreview name="slider-step-values" />
+
+### Visual Options
+
+#### Vertical orientation
 
 <ComponentPreview name="slider-vertical" />
-```
+
+#### Disabled
+
+<ComponentPreview name="slider-disabled" />

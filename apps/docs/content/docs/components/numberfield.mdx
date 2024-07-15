@@ -1,0 +1,127 @@
+---
+title: NumberField
+description: A NumberField allows users to enter a number, and increment or decrement the value using stepper buttons or the keyboard.
+featured: true
+component: true
+links:
+  doc: https://react-spectrum.adobe.com/react-aria/NumberField.html
+---
+
+Number fields can be built with `<input type="number">`, but the behavior is very inconsistent across browsers and platforms, it supports limited localized formatting options, and it is challenging to style the stepper buttons. NumberField helps achieve accessible number fields that support internationalized formatting options and can be styled as needed.
+
+<ComponentPreview name="numberfield-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Copy & Paste</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx @sly-cli/sly add jolly-ui numberfield
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+<Step>
+  This components uses the following components, which you also need to install:
+  - [Button](../../../docs/components/button)
+  - [Form (field.tsx)](../../../docs/components/form)
+</Step>
+<Step>
+  Copy and paste the following code into your project: numberfield.tsx
+</Step>
+
+<ComponentSource name="numberfield" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Composed Components
+
+A NumberField uses the following components, which may also be used standalone or reused in other components.
+
+<ComponentCards>
+  <ComponentCard component="label" />
+  <ComponentCard component="input" />
+  <ComponentCard component="button" />
+</ComponentCards>
+
+## Reusable Wrapper - Example
+
+If you will use a NumberField in multiple places in your app, you can wrap all of the pieces into a reusable component. This way, the DOM structure, styling code, and other logic are defined in a single place and reused everywhere to ensure consistency.
+
+The installed file includes a reusable wrapper `JollyNumberField`. This wrapper serves as an excellent starting point for use throughout your codebase.
+
+<ComponentPreview name="numberfield-reusable" />
+
+The `JollyNumberField` component extends the props of React Aria NumberField and adds:
+
+| Prop           | Type                                                                    | Default     | Description                                         |
+| -------------- | ----------------------------------------------------------------------- | ----------- | --------------------------------------------------- |
+| `label`        | `string \| undefined`                                                   | `undefined` | Label for the number field                          |
+| `description`  | `string \| undefined`                                                   | `undefined` | Description text for the number field               |
+| `errorMessage` | `string \| ((validation: AriaValidationResult) => string) \| undefined` | `undefined` | Error message to display or function to generate it |
+
+You can copy this wrapper and create variations as needed for different use cases in your application. This approach promotes consistency while still allowing for flexibility in implementation.
+
+## Examples
+
+### Basic
+
+#### Decimals
+
+<ComponentPreview name="numberfield-demo" />
+
+### Number formatting
+
+<ComponentPreview name="numberfield-formatting" />
+
+#### Currency
+
+<ComponentPreview name="numberfield-currency" />
+
+#### Percentages
+
+<ComponentPreview name="numberfield-percentages" />
+
+#### Units
+
+<ComponentPreview name="numberfield-units" />
+
+### Validation
+
+<ComponentPreview name="numberfield-validation" />
+
+#### Step Values
+
+<ComponentPreview name="numberfield-step-values" />
+
+#### Validation errors
+
+<ComponentPreview name="numberfield-validation-error" />
+
+#### Description
+
+<ComponentPreview name="numberfield-description" />
+
+### Disabled
+
+<ComponentPreview name="numberfield-disabled" />
+
+#### Read-only
+
+<ComponentPreview name="numberfield-readonly" />

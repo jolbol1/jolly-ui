@@ -1,11 +1,14 @@
 ---
-title: Searchfield
+title: SearchField
 description: A search field allows a user to enter and clear a search query.
-component: true
+
 featured: true
+component: true
 links:
   doc: https://react-spectrum.adobe.com/react-aria/SearchField.html
 ---
+
+Search fields can be built with `<input type="search">`, but these can be hard to style consistently cross browser. SearchField helps achieve accessible search fields that can be styled as needed.
 
 <ComponentPreview name="searchfield-demo" />
 
@@ -24,15 +27,20 @@ links:
 npx @sly-cli/sly add jolly-ui searchfield
 ```
 
-**Note: Only the default style can be installed via CLI at the moment**
-
 </TabsContent>
 
 <TabsContent value="manual">
 
 <Steps>
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>
+  This components uses the following components, which you also need to install:
+  - [Form (field.tsx)](../../../docs/components/form)
+</Step>
+
+<Step>
+  Copy and paste the following code into your project: searchfield.tsx
+</Step>
 
 <ComponentSource name="searchfield" />
 
@@ -44,18 +52,52 @@ npx @sly-cli/sly add jolly-ui searchfield
 
 </Tabs>
 
-## Usage
+## Composed Components
+
+A SearchField uses the following components, which may also be used standalone or reused in other components.
+
+<ComponentCards>
+  <ComponentCard component="label" />
+  <ComponentCard component="input" />
+  <ComponentCard component="button" />
+</ComponentCards>
+
+## Reusable Wrapper - Example
+
+If you will use a SearchField in multiple places in your app, you can wrap all of the pieces into a reusable component. This way, the DOM structure, styling code, and other logic are defined in a single place and reused everywhere to ensure consistency.
+
+The installed file includes a reusable wrapper `JollySearchField`. This wrapper serves as an excellent starting point for use throughout your codebase.
+
+<ComponentPreview name="searchfield-reusable" />
+
+The `JollySearchField` component extends the props of React Aria SearchField and adds:
+
+| Prop           | Type                                                                    | Default     | Description                                         |
+| -------------- | ----------------------------------------------------------------------- | ----------- | --------------------------------------------------- |
+| `label`        | `string \| undefined`                                                   | `undefined` | Label for the search field                          |
+| `description`  | `string \| undefined`                                                   | `undefined` | Description text for the search field               |
+| `errorMessage` | `string \| ((validation: AriaValidationResult) => string) \| undefined` | `undefined` | Error message to display or function to generate it |
+
+You can copy this wrapper and create variations as needed for different use cases in your application. This approach promotes consistency while still allowing for flexibility in implementation.
+
+## Examples
 
 ### Basic
 
 <ComponentPreview name="searchfield-demo" />
 
+### Validation
+
+<ComponentPreview name="searchfield-validation" />
+
+#### Description
+
+<ComponentPreview name="searchfield-description" />
+
 ### Disabled
 
 <ComponentPreview name="searchfield-disabled" />
 
-### Custom Icons
+#### Read-only
 
-You provide the icons for the magnifying glass and close button. Please ensure you use `aria-hidden` on these.
-
-<ComponentPreview name="searchfield-demo" />
+<ComponentPreview name="searchfield-readonly" />

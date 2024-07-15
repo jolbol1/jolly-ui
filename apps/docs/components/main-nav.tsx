@@ -17,7 +17,7 @@ export function MainNav() {
         href="/"
         className="flex items-center space-x-2 text-primary"
       >
-        <Icons.logo className="h-6 w-6" />
+        <Icons.logo className="size-6" />
         <span className="hidden font-bold sm:inline-block">
           {siteConfig.name}
         </span>

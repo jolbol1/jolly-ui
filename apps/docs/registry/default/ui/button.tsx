@@ -3,32 +3,42 @@
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 import {
-  Button as _Button,
-  type ButtonProps as _ButtonProps,
+  Button as AriaButton,
+  composeRenderProps,
+  type ButtonProps as AriaButtonProps,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50 data-[focused]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2",
+  [
+    "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors",
+    /* Disabled */
+    "data-[disabled]:pointer-events-none data-[disabled]:opacity-50 ",
+    /* Focus Visible */
+    "data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2",
+    /* Resets */
+    "focus-visible:outline-none",
+  ],
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        default:
+          "bg-primary text-primary-foreground data-[hovered]:bg-primary/90",
         destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+          "bg-destructive text-destructive-foreground data-[hovered]:bg-destructive/90",
         outline:
-          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+          "border border-input bg-background data-[hovered]:bg-accent data-[hovered]:text-accent-foreground",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
+          "bg-secondary text-secondary-foreground data-[hovered]:bg-secondary/80",
+        ghost: "data-[hovered]:bg-accent data-[hovered]:text-accent-foreground",
+        link: "text-primary underline-offset-4 data-[hovered]:underline",
       },
       size: {
         default: "h-10 px-4 py-2",
         sm: "h-9 rounded-md px-3",
         lg: "h-11 rounded-md px-8",
-        icon: "h-10 w-10",
+        icon: "size-10",
       },
     },
     defaultVariants: {
@@ -38,26 +48,26 @@ const buttonVariants = cva(
   }
 )
 
-export interface ButtonProps
-  extends _ButtonProps,
+interface ButtonProps
+  extends AriaButtonProps,
     VariantProps<typeof buttonVariants> {}
 
 const Button = ({ className, variant, size, ...props }: ButtonProps) => {
   return (
-    <_Button
-      className={(values) =>
+    <AriaButton
+      className={composeRenderProps(className, (className) =>
         cn(
           buttonVariants({
             variant,
             size,
-            className:
-              typeof className === "function" ? className(values) : className,
+            className,
           })
         )
-      }
+      )}
       {...props}
     />
   )
 }
 
 export { Button, buttonVariants }
+export type { ButtonProps }

@@ -5,15 +5,14 @@ import {
   SliderTrack,
 } from "@/registry/new-york/ui/slider"
 
-export function SliderVertical() {
+export default function SliderVertical() {
   return (
     <Slider
-      aria-label="slider demo"
-      defaultValue={[50]}
-      maxValue={100}
-      step={1}
-      className="h-[150px]"
       orientation="vertical"
+      aria-label="Opacity"
+      maxValue={1}
+      step={0.01}
+      className="flex h-[150px] flex-col items-start gap-2"
     >
       <SliderTrack>
         <SliderFillTrack />
@@ -22,4 +21,3 @@ export function SliderVertical() {
     </Slider>
   )
 }
-export default SliderVertical

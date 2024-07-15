@@ -82,8 +82,30 @@ export const docsConfig: DocsConfig = {
       title: "Collections",
       items: [
         {
+          title: "GridList",
+          href: "/docs/components/grid-list",
+          items: [],
+        },
+        {
+          title: "ListBox",
+          href: "/docs/components/list-box",
+          items: [],
+        },
+        {
           title: "Menu",
           href: "/docs/components/menu",
+          items: [],
+        },
+        {
+          title: "Table",
+          href: "/docs/components/",
+          items: [],
+          disabled: true,
+          label: "Coming Soon",
+        },
+        {
+          title: "TagGroup",
+          href: "/docs/components/tag-group",
           items: [],
         },
       ],
@@ -95,13 +117,13 @@ export const docsConfig: DocsConfig = {
           title: "Color Pickers",
           href: "/docs/components/color",
           items: [],
-          label: "Beta"
+          label: "Beta",
         },
         {
           title: "Primitives",
           href: "/docs/components/color-primitives",
           items: [],
-          label: "Beta"
+          label: "Beta",
         },
       ],
     },
@@ -114,8 +136,28 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "DateField",
+          href: "/docs/components/datefield",
+          items: [],
+        },
+        {
           title: "Date Picker",
           href: "/docs/components/date-picker",
+          items: [],
+        },
+        {
+          title: "Date Range Picker",
+          href: "/docs/components/date-range-picker",
+          items: [],
+        },
+        {
+          title: "Range Calendar",
+          href: "/docs/components/range-calendar",
+          items: [],
+        },
+        {
+          title: "TimeField",
+          href: "/docs/components/timefield",
           items: [],
         },
       ],
@@ -141,6 +183,16 @@ export const docsConfig: DocsConfig = {
         {
           title: "Checkbox Group",
           href: "/docs/components/checkbox-group",
+          items: [],
+        },
+        {
+          title: "Form",
+          href: "/docs/components/form",
+          items: [],
+        },
+        {
+          title: "NumberField",
+          href: "/docs/components/numberfield",
           items: [],
         },
         {
@@ -199,6 +251,11 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Modal",
+          href: "/docs/components/modal",
+          items: [],
+        },
+        {
           title: "Popover",
           href: "/docs/components/popover",
           items: [],
@@ -241,26 +298,16 @@ export const docsConfig: DocsConfig = {
       ],
     },
     {
-      title: "Primitive",
+      title: "Content",
       items: [
         {
-          title: "Label",
-          href: "/docs/components/label",
+          title: "Group",
+          href: "/docs/components/group",
           items: [],
         },
         {
-          title: "Input",
-          href: "/docs/components/input",
-          items: [],
-        },
-        {
-          title: "Separator",
-          href: "/docs/components/separator",
-          items: [],
-        },
-        {
-          title: "TextArea",
-          href: "/docs/components/textarea",
+          title: "Toolbar",
+          href: "/docs/components/toolbar",
           items: [],
         },
       ],

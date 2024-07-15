@@ -1,6 +1,7 @@
 ---
 title: Tabs
 description: Tabs organize content into multiple sections and allow users to navigate between them.
+featured: true
 component: true
 links:
   doc: https://react-spectrum.adobe.com/react-aria/Tabs.html
@@ -23,15 +24,13 @@ links:
 npx @sly-cli/sly add jolly-ui tabs
 ```
 
-**Note: Only the default style can be installed via CLI at the moment**
-
 </TabsContent>
 
 <TabsContent value="manual">
 
 <Steps>
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>Copy and paste the following code into your project: tabs.tsx</Step>
 
 <ComponentSource name="tabs" />
 
@@ -43,8 +42,34 @@ npx @sly-cli/sly add jolly-ui tabs
 
 </Tabs>
 
-## Usage
+## Examples
 
 ### Basic
 
 <ComponentPreview name="tabs-demo" />
+
+### Content
+
+#### Focus
+
+<ComponentPreview name="tabs-focus" />
+
+#### Dynamic items
+
+<ComponentPreview name="tabs-dynamic" />
+
+### Orientation
+
+<ComponentPreview name="tabs-vertical" />
+
+#### Disabled
+
+<ComponentPreview name="tabs-disabled" />
+
+#### Disabled Items
+
+<ComponentPreview name="tabs-disabled-items" />
+
+In dynamic collections, it may be more convenient to use the disabledKeys prop at the Tabs level instead of isDisabled on individual tabs. Each key in this list corresponds with the id prop passed to the Tab component, or automatically derived from the values passed to the items prop (see the [Collections](https://react-spectrum.adobe.com/react-aria/collections.html) for more details). A tab is considered disabled if its id exists in disabledKeys or if it has isDisabled.
+
+<ComponentPreview name="tabs-disabled-dynamic" />

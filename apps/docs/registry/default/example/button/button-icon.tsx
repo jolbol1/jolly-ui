@@ -2,12 +2,10 @@ import { ChevronRight } from "lucide-react"
 
 import { Button } from "@/registry/default/ui/button"
 
-export function ButtonIcon() {
+export default function ButtonIcon() {
   return (
     <Button variant="outline" size="icon" aria-label="Next">
-      <ChevronRight className="h-4 w-4" />
+      <ChevronRight className="size-4" />
     </Button>
   )
 }
-
-export default ButtonIcon

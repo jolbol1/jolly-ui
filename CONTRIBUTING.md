@@ -2,6 +2,10 @@
 
 Thanks for your interest in contributing to Jolly-UI
 
+## Code Style Guidelines
+
+Please ensure you follow the [code style guidelines](./CODE-STYLE.md) when contributing.
+
 ## About this repository
 
 This repository is a monorepo.
@@ -36,7 +40,6 @@ packages
 | `apps/docs/components` | The React components for the website.    |
 | `apps/docs/content`    | The content for the website.             |
 | `apps/docs/registry`   | The registry for the components.         |
-| `apps/storybook`       | Storbook for components                  |
 
 ## Development
 
@@ -74,12 +77,6 @@ pnpm install
 
 ```bash
 pnpm --filter=docs dev
-```
-
-2. To run the storybook:
-
-```bash
-pnpm --filter=storybook dev
 ```
 
 ## Documentation

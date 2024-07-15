@@ -1,0 +1,136 @@
+---
+title: TagGroup
+description: A tag group is a focusable list of labels, categories, keywords, filters, or other items, with support for keyboard navigation, selection, and removal.
+featured: true
+component: true
+links:
+  doc: https://react-spectrum.adobe.com/react-aria/TagGroup.html
+---
+
+A static tag list can be built using `<ul>` or `<ol>` HTML elements, but does not support any user interactions. HTML lists are meant for static content, rather than lists with rich interactions such as keyboard navigation, item selection, removal, etc. TagGroup helps achieve accessible and interactive tag list components that can be styled as needed.
+
+<ComponentPreview name="tag-group-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Copy & Paste</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx @sly-cli/sly add jolly-ui tag-group
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Steps>
+
+<Step>
+  This components uses the following components, which you also need to install:
+  - [Form (field.tsx)](../../../docs/components/form)
+</Step>
+
+<Step>Copy and paste the following code into your project: calendar.tsx</Step>
+
+<ComponentSource name="calendar" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+<Step>Copy and paste the following code into your project: tag-group.tsx</Step>
+
+<ComponentSource name="tag-group" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Composed Components
+
+A TagGroup uses the following components, which may also be used standalone or reused in other components.
+
+<ComponentCards>
+  <ComponentCard component="button" />
+  <ComponentCard component="label" />
+</ComponentCards>
+
+## Reusable Wrapper - Example
+
+If you will use a TagGroup in multiple places in your app, you can wrap all of the pieces into a reusable component. This way, the DOM structure, styling code, and other logic are defined in a single place and reused everywhere to ensure consistency.
+
+The installed file includes a reusable wrapper `JollyTagGroup`. This wrapper serves as an excellent starting point for use throughout your codebase.
+
+<ComponentPreview name="taggroup-reusable" />
+
+The `JollyTagGroup` component extends the props of React Aria TagGroup and TagList, and adds:
+
+| Prop               | Type                                                | Default     | Description                                       |
+| ------------------ | --------------------------------------------------- | ----------- | ------------------------------------------------- |
+| `label`            | `string \| undefined`                               | `undefined` | Label for the tag group                           |
+| `description`      | `string \| undefined`                               | `undefined` | Description text for the tag group                |
+| `errorMessage`     | `string \| undefined`                               | `undefined` | Error message to display                          |
+| `items`            | `Iterable<T> \| undefined`                          | `undefined` | Items to display in the tag group                 |
+| `children`         | `React.ReactNode \| ((item: T) => React.ReactNode)` | Required    | Content for the tags                              |
+| `renderEmptyState` | `(() => React.ReactNode) \| undefined`              | `undefined` | Function to render content when there are no tags |
+
+You can copy this wrapper and create variations as needed for different use cases in your application. This approach promotes consistency while still allowing for flexibility in implementation.
+
+## Examples
+
+### Basic
+
+<ComponentPreview name="tag-group-demo" />
+
+### Removing Tags
+
+<ComponentPreview name="tag-group-remove" />
+
+### Selection
+
+<ComponentPreview name="tag-group-selection" />
+
+### Links
+
+<ComponentPreview name="tag-group-links" />
+
+#### Client Side Routing
+
+The `<Tag>` component works with frameworks and client side routers like Next.js, Remix and React Router.
+As with other React Aria components that support links, this works via the `RouterProvider` component at the root of your app.
+See the [client side routing guide](https://react-spectrum.adobe.com/react-aria/routing.html) to learn how to set this up.
+
+### Disabled Tags
+
+<ComponentPreview name="tag-group-disabled-items" />
+
+In dynamic collections, it may be more convenient to use the disabledKeys prop at the TagGroup level instead of isDisabled on individual tags. Each key in this list corresponds with the id prop passed to the Tag component, or automatically derived from the values passed to the items prop (see the [Collections](https://react-spectrum.adobe.com/react-aria/collections.html) for more details). A tag is considered disabled if its id exists in disabledKeys or if it has isDisabled.
+
+<ComponentPreview name="tag-group-disabled-keys" />
+
+### Empty State
+
+<ComponentPreview name="tag-group-empty" />
+
+### Help Text
+
+#### Description
+
+<ComponentPreview name="tag-group-helper" />
+
+#### Error Message
+
+<ComponentPreview name="tag-error-text" />

@@ -1,35 +1,40 @@
 import {
-  ColorArea as _ColorArea,
-  ColorField as _ColorField,
-  ColorPicker as _ColorPicker,
-  ColorSlider as _ColorSlider,
-  ColorSwatch as _ColorSwatch,
-  ColorSwatchPicker as _ColorSwatchPicker,
-  ColorSwatchPickerItem as _ColorSwatchPickerItem,
-  ColorThumb as _ColorThumb,
-  ColorWheel as _ColorWheel,
-  ColorWheelTrack as _ColorWheelTrack,
-  SliderOutput as _SliderOutput,
-  SliderTrack as _SliderTrack,
+  ColorArea as AriaColorArea,
+  ColorAreaProps as AriaColorAreaProps,
+  ColorField as AriaColorField,
+  ColorPicker as AriaColorPicker,
+  ColorSlider as AriaColorSlider,
+  ColorSwatch as AriaColorSwatch,
+  ColorSwatchPicker as AriaColorSwatchPicker,
+  ColorSwatchPickerItem as AriaColorSwatchPickerItem,
+  ColorSwatchPickerItemProps as AriaColorSwatchPickerItemProps,
+  ColorSwatchPickerProps as AriaColorSwatchPickerProps,
+  ColorSwatchProps as AriaColorSwatchProps,
+  ColorThumb as AriaColorThumb,
+  ColorThumbProps as AriaColorThumbProps,
+  ColorWheel as AriaColorWheel,
+  ColorWheelProps as AriaColorWheelProps,
+  ColorWheelTrack as AriaColorWheelTrack,
+  SliderOutput as AriaSliderOutput,
+  SliderTrack as AriaSliderTrack,
+  SliderTrackProps as AriaSliderTrackProps,
+  composeRenderProps,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"
 
-const ColorSlider = _ColorSlider
+const ColorSlider = AriaColorSlider
 
-const ColorField = _ColorField
+const ColorField = AriaColorField
 
-const ColorWheelTrack = _ColorWheelTrack
+const ColorWheelTrack = AriaColorWheelTrack
 
-const ColorPicker = _ColorPicker
+const ColorPicker = AriaColorPicker
 
-const SliderOutput = _SliderOutput
+const SliderOutput = AriaSliderOutput
 
 interface ColorWheelProps
-  extends Omit<
-    React.ComponentProps<typeof _ColorWheel>,
-    "outerRadius" | "innerRadius"
-  > {
+  extends Omit<AriaColorWheelProps, "outerRadius" | "innerRadius"> {
   outerRadius?: number
   innerRadius?: number
 }
@@ -41,54 +46,50 @@ function ColorWheel({
   ...props
 }: ColorWheelProps) {
   return (
-    <_ColorWheel
+    <AriaColorWheel
       innerRadius={innerRadius}
       outerRadius={outerRadius}
-      className={cn(className)}
+      className={composeRenderProps(className, (className) => cn(className))}
       {...props}
     />
   )
 }
 
-function ColorArea({
-  className,
-  ...props
-}: React.ComponentProps<typeof _ColorArea>) {
+function ColorArea({ className, ...props }: AriaColorAreaProps) {
   return (
-    <_ColorArea
-      className={cn(
-        "h-[192px] w-[192px] shrink-0 rounded-md border border-border shadow-md",
-        className
+    <AriaColorArea
+      className={composeRenderProps(className, (className) =>
+        cn(
+          "size-[192px] shrink-0 rounded-md border border-border shadow-md",
+          className
+        )
       )}
       {...props}
     />
   )
 }
 
-function SliderTrack({
-  className,
-  ...props
-}: React.ComponentProps<typeof _SliderTrack>) {
+function SliderTrack({ className, ...props }: AriaSliderTrackProps) {
   return (
-    <_SliderTrack
-      className={cn(
-        "h-7 w-[192px] rounded-md border border-border ",
-        className
+    <AriaSliderTrack
+      className={composeRenderProps(className, (className) =>
+        cn("h-7 w-[192px] rounded-md border border-border ", className)
       )}
       {...props}
     />
   )
 }
 
-function ColorThumb({
-  className,
-  ...props
-}: React.ComponentProps<typeof _ColorThumb>) {
+function ColorThumb({ className, ...props }: AriaColorThumbProps) {
   return (
-    <_ColorThumb
-      className={cn(
-        "z-10 box-border size-5 rounded-[50%] border-2 border-white shadow-md data-[focus-visible]:size-6",
-        className
+    <AriaColorThumb
+      className={composeRenderProps(className, (className) =>
+        cn(
+          "z-10 box-border size-5 rounded-[50%] border-2 border-white shadow-md",
+          /* Focus Visible */
+          "data-[focus-visible]:size-6",
+          className
+        )
       )}
       {...props}
     />
@@ -98,10 +99,12 @@ function ColorThumb({
 function ColorSwatchPicker({
   className,
   ...props
-}: React.ComponentProps<typeof _ColorSwatchPicker>) {
+}: AriaColorSwatchPickerProps) {
   return (
-    <_ColorSwatchPicker
-      className={cn("flex flex-wrap gap-2", className)}
+    <AriaColorSwatchPicker
+      className={composeRenderProps(className, (className) =>
+        cn("flex flex-wrap gap-2", className)
+      )}
       {...props}
     />
   )
@@ -110,23 +113,35 @@ function ColorSwatchPicker({
 function ColorSwatchPickerItem({
   className,
   ...props
-}: React.ComponentProps<typeof _ColorSwatchPickerItem>) {
+}: AriaColorSwatchPickerItemProps) {
   return (
-    <_ColorSwatchPickerItem
-      className={cn(
-        "size-8 overflow-hidden rounded-md border-2 ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring  data-[disabled]:pointer-events-none data-[selected]:border-white data-[disabled]:opacity-50",
-        className
+    <AriaColorSwatchPickerItem
+      className={composeRenderProps(className, (className) =>
+        cn(
+          "size-8 overflow-hidden rounded-md border-2 ring-offset-background transition-colors",
+          /* Selected */
+          "data-[selected]:border-white",
+          /* Disabled */
+          "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+          /* Focus Visible */
+          "data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring",
+          className
+        )
       )}
       {...props}
     />
   )
 }
 
-function ColorSwatch({
-  className,
-  ...props
-}: React.ComponentProps<typeof _ColorSwatch>) {
-  return <_ColorSwatch className={cn("size-8", className)} {...props} />
+function ColorSwatch({ className, ...props }: AriaColorSwatchProps) {
+  return (
+    <AriaColorSwatch
+      className={composeRenderProps(className, (className) =>
+        cn("size-8", className)
+      )}
+      {...props}
+    />
+  )
 }
 
 export type { ColorWheelProps }

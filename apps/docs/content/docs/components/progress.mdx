@@ -1,10 +1,13 @@
 ---
 title: Progress
 description: Progress bars show either determinate or indeterminate progress of an operation over time.
+featured: true
 component: true
 links:
   doc: https://react-spectrum.adobe.com/react-aria/ProgressBar.html
 ---
+
+The `<progress>` HTML element can be used to build a progress bar, however it is very difficult to style cross browser. ProgressBar helps achieve accessible progress bars and spinners that can be styled as needed.
 
 <ComponentPreview name="progress-demo" />
 
@@ -23,15 +26,17 @@ links:
 npx @sly-cli/sly add jolly-ui progress
 ```
 
-**Note: Only the default style can be installed via CLI at the moment**
-
 </TabsContent>
 
 <TabsContent value="manual">
 
 <Steps>
+<Step>
+  This components uses the following components, which you also need to install:
+  - [Form (field.tsx)](../../../docs/components/form)
+</Step>
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>Copy and paste the following code into your project: progress.tsx</Step>
 
 <ComponentSource name="progress" />
 
@@ -43,17 +48,35 @@ npx @sly-cli/sly add jolly-ui progress
 
 </Tabs>
 
-## Usage
+## Reusable Wrapper - Example
+
+If you will use a ProgressBar in multiple places in your app, you can wrap all of the pieces into a reusable component. This way, the DOM structure, styling code, and other logic are defined in a single place and reused everywhere to ensure consistency.
+
+The installed file includes a reusable wrapper `JollyProgressBar`. This wrapper serves as an excellent starting point for use throughout your codebase.
+
+<ComponentPreview name="progressbar-reusable" />
+
+The `JollyProgressBar` component extends the props of React Aria Progress and adds:
+
+| Prop        | Type                  | Default     | Description                               |
+| ----------- | --------------------- | ----------- | ----------------------------------------- |
+| `label`     | `string \| undefined` | `undefined` | Label for the progress bar                |
+| `showValue` | `boolean`             | `true`      | Whether to display the progress bar value |
+
+You can copy this wrapper and create variations as needed for different use cases in your application. This approach promotes consistency while still allowing for flexibility in implementation.
+
+## Examples
 
 ### Basic
 
 <ComponentPreview name="progress-demo" />
 
-### Value Label
+### Labeling
 
-Values are formatted as a percentage by default, but this can be modified by using the formatOptions prop to specify a different format.
-`formatOptions` is compatible with the option parameter of [Intl.NumberFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat) and is applied based on the current locale.
+#### Value Formatting
 
-For more options see [react aria components](https://react-spectrum.adobe.com/react-aria/ProgressBar.html#labeling) docs.
+<ComponentPreview name="progress-value-format" />
 
-<ComponentPreview name="progress-value" />
+#### Custom value label
+
+<ComponentPreview name="progress-custom-format" />

@@ -1,45 +1,27 @@
+import { Label } from "@/registry/new-york/ui/field"
 import {
   Select,
-  SelectContent,
   SelectItem,
+  SelectListBox,
   SelectPopover,
   SelectTrigger,
   SelectValue,
 } from "@/registry/new-york/ui/select"
 
-export function SelectDisabled() {
+export default function SelectDisabled() {
   return (
-    <Select
-      placeholder="Select an item"
-      aria-label="item selection"
-      disabledKeys={["cat", "kangaroo"]}
-    >
-      <SelectTrigger className="w-[180px]">
+    <Select className="w-[200px]" placeholder="Select an item">
+      <Label>Choose frequency</Label>
+      <SelectTrigger>
         <SelectValue />
       </SelectTrigger>
       <SelectPopover>
-        <SelectContent aria-label="items">
-          <SelectItem textValue="Red Panda" id="red panda">
-            Red Panda
-          </SelectItem>
-          <SelectItem textValue="Cat" id="cat">
-            Cat
-          </SelectItem>
-          <SelectItem textValue="Dog" id="dog">
-            Dog
-          </SelectItem>
-          <SelectItem textValue="Aardvark" id="aardvark">
-            Aardvark
-          </SelectItem>
-          <SelectItem textValue="Kangaroo" id="kangaroo">
-            Kangaroo
-          </SelectItem>
-          <SelectItem textValue="Snake" id="snake">
-            Snake
-          </SelectItem>
-        </SelectContent>
+        <SelectListBox>
+          <SelectItem id="rarely">Rarely</SelectItem>
+          <SelectItem id="sometimes">Sometimes</SelectItem>
+          <SelectItem id="always">Always</SelectItem>
+        </SelectListBox>
       </SelectPopover>
     </Select>
   )
 }
-export default SelectDisabled

@@ -1,29 +1,30 @@
+import { Label } from "@/registry/new-york/ui/field"
 import {
   Select,
-  SelectContent,
   SelectItem,
+  SelectListBox,
   SelectPopover,
   SelectTrigger,
   SelectValue,
 } from "@/registry/new-york/ui/select"
 
-export function SelectDemo() {
+export default function SelectDemo() {
   return (
-    <Select placeholder="Select an item" aria-label="item selection">
-      <SelectTrigger className="w-[180px]">
+    <Select className="w-[200px]" placeholder="Select an animal">
+      <Label>Favorite Animal</Label>
+      <SelectTrigger>
         <SelectValue />
       </SelectTrigger>
       <SelectPopover>
-        <SelectContent aria-label="items">
-          <SelectItem textValue="Aardvark">Aardvark</SelectItem>
-          <SelectItem textValue="Cat">Cat</SelectItem>
-          <SelectItem textValue="Dog">Dog</SelectItem>
-          <SelectItem textValue="Kangaroo">Kangaroo</SelectItem>
-          <SelectItem textValue="Panda">Panda</SelectItem>
-          <SelectItem textValue="Snake">Snake</SelectItem>
-        </SelectContent>
+        <SelectListBox>
+          <SelectItem>Aardvark</SelectItem>
+          <SelectItem>Cat</SelectItem>
+          <SelectItem>Dog</SelectItem>
+          <SelectItem>Kangaroo</SelectItem>
+          <SelectItem>Panda</SelectItem>
+          <SelectItem>Snake</SelectItem>
+        </SelectListBox>
       </SelectPopover>
     </Select>
   )
 }
-export default SelectDemo

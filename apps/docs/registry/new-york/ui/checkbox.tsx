@@ -1,41 +1,101 @@
 "use client"
 
+import * as React from "react"
 import { CheckIcon, MinusIcon } from "@radix-ui/react-icons"
 import {
-  Checkbox,
-  CheckboxGroup,
-  type CheckboxProps,
+  Checkbox as AriaCheckbox,
+  CheckboxGroup as AriaCheckboxGroup,
+  CheckboxGroupProps as AriaCheckboxGroupProps,
+  ValidationResult as AriaValidationResult,
+  composeRenderProps,
+  Text,
+  type CheckboxProps as AriaCheckboxProps,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"
-import { labelVariants } from "@/registry/new-york/ui/label"
 
-const _CheckboxGroup = CheckboxGroup
+import { FieldError, Label, labelVariants } from "./field"
 
-const _Checkbox = ({ className, children, ...props }: CheckboxProps) => (
-  <Checkbox
-    className={(values) =>
+const CheckboxGroup = AriaCheckboxGroup
+
+const Checkbox = ({ className, children, ...props }: AriaCheckboxProps) => (
+  <AriaCheckbox
+    className={composeRenderProps(className, (className) =>
       cn(
-        "group flex items-center gap-x-2 data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 ",
+        "group flex items-center gap-x-2",
+        /* Disabled */
+        "data-[disabled]:cursor-not-allowed data-[disabled]:opacity-70",
         labelVariants,
-        typeof className === "function" ? className(values) : className
+        className
       )
-    }
+    )}
     {...props}
   >
-    {(values) => (
+    {composeRenderProps(children, (children, renderProps) => (
       <>
-        <div className="flex h-4 w-4 shrink-0 rounded-sm border border-primary shadow group-data-[indeterminate]:bg-primary group-data-[selected]:bg-primary group-data-[indeterminate]:text-primary-foreground group-data-[selected]:text-primary-foreground group-data-[focus-visible]:outline-none group-data-[focus-visible]:ring-1 group-data-[focus-visible]:ring-ring">
-          {values.isIndeterminate ? (
-            <MinusIcon className="h-[0.875rem] w-[0.875rem]" />
-          ) : values.isSelected ? (
-            <CheckIcon className="h-4 w-4" />
+        <div
+          className={cn(
+            "flex size-4 shrink-0 items-center justify-center rounded-sm border border-primary text-current shadow",
+            /* Focus Visible */
+            "group-data-[focus-visible]:outline-none group-data-[focus-visible]:ring-1 group-data-[focus-visible]:ring-ring",
+            /* Selected */
+            "group-data-[indeterminate]:bg-primary group-data-[selected]:bg-primary group-data-[indeterminate]:text-primary-foreground  group-data-[selected]:text-primary-foreground",
+            /* Disabled */
+            "group-data-[disabled]:cursor-not-allowed group-data-[disabled]:opacity-50",
+            /* Invalid */
+            "group-data-[invalid]:border-destructive group-data-[invalid]:group-data-[selected]:bg-destructive group-data-[invalid]:group-data-[selected]:text-destructive-foreground",
+            /* Resets */
+            "focus-visible:outline-none"
+          )}
+        >
+          {renderProps.isIndeterminate ? (
+            <MinusIcon className="size-4" />
+          ) : renderProps.isSelected ? (
+            <CheckIcon className="size-4" />
           ) : null}
         </div>
-        {typeof children === "function" ? children(values) : children}
+        {children}
       </>
-    )}
-  </Checkbox>
+    ))}
+  </AriaCheckbox>
 )
 
-export { _Checkbox as Checkbox, _CheckboxGroup as CheckboxGroup }
+interface JollyCheckboxGroupProps extends AriaCheckboxGroupProps {
+  label?: string
+  description?: string
+  errorMessage?: string | ((validation: AriaValidationResult) => string)
+}
+
+function JollyCheckboxGroup({
+  label,
+  description,
+  errorMessage,
+  className,
+  children,
+  ...props
+}: JollyCheckboxGroupProps) {
+  return (
+    <CheckboxGroup
+      className={composeRenderProps(className, (className) =>
+        cn("group flex flex-col gap-2", className)
+      )}
+      {...props}
+    >
+      {composeRenderProps(children, (children) => (
+        <>
+          <Label>{label}</Label>
+          {children}
+          {description && (
+            <Text className="text-sm text-muted-foreground" slot="description">
+              {description}
+            </Text>
+          )}
+          <FieldError>{errorMessage}</FieldError>
+        </>
+      ))}
+    </CheckboxGroup>
+  )
+}
+
+export { Checkbox, CheckboxGroup, JollyCheckboxGroup }
+export type { JollyCheckboxGroupProps }

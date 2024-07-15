@@ -10,17 +10,17 @@ import {
 } from "@/components/card"
 import { Icons } from "@/components/icons"
 import { Button } from "@/registry/default/ui/button"
-import { Input } from "@/registry/default/ui/input"
-import { Label } from "@/registry/default/ui/label"
+import { Label } from "@/registry/default/ui/field"
 import { Radio, RadioGroup } from "@/registry/default/ui/radio-group"
 import {
   Select,
-  SelectContent,
   SelectItem,
+  SelectListBox,
   SelectPopover,
   SelectTrigger,
   SelectValue,
 } from "@/registry/default/ui/select"
+import { Input } from "@/registry/default/ui/textfield"
 
 // TODO: Use form best practices
 // TODO: Look into select items and textValue needed issue
@@ -44,8 +44,7 @@ export function CardsPaymentMethod() {
             <Radio
               value="card"
               id="card"
-              showRadio={false}
-              className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground data-[selected]:border-primary"
+              className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground data-[selected]:border-primary [&>.jolly-Radio]:hidden"
               aria-label="Card"
             >
               <svg
@@ -57,7 +56,7 @@ export function CardsPaymentMethod() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
-                className="mb-3 h-6 w-6"
+                className="mb-3 size-6"
               >
                 <rect width="20" height="14" x="2" y="5" rx="2" />
                 <path d="M2 10h20" />
@@ -70,11 +69,10 @@ export function CardsPaymentMethod() {
             <Radio
               value="paypal"
               id="paypal"
-              showRadio={false}
-              className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground data-[selected]:border-primary"
+              className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground data-[selected]:border-primary [&>.jolly-Radio]:hidden"
               aria-label="Paypal"
             >
-              <Icons.paypal aria-hidden className="mb-3 h-6 w-6" />
+              <Icons.paypal aria-hidden className="mb-3 size-6" />
               Paypal
             </Radio>
           </div>
@@ -83,11 +81,10 @@ export function CardsPaymentMethod() {
             <Radio
               value="apple"
               id="apple"
-              showRadio={false}
-              className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground data-[selected]:border-primary "
+              className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground data-[selected]:border-primary [&>.jolly-Radio]:hidden"
               aria-label="Apple"
             >
-              <Icons.apple aria-hidden className="mb-3 h-6 w-6" />
+              <Icons.apple aria-hidden className="mb-3 size-6" />
               Apple
             </Radio>
           </div>
@@ -112,7 +109,7 @@ export function CardsPaymentMethod() {
                 <SelectValue />
               </SelectTrigger>
               <SelectPopover>
-                <SelectContent>
+                <SelectListBox>
                   <SelectItem textValue="January" id="1">
                     January
                   </SelectItem>
@@ -149,7 +146,7 @@ export function CardsPaymentMethod() {
                   <SelectItem textValue="December" id="12">
                     December
                   </SelectItem>
-                </SelectContent>
+                </SelectListBox>
               </SelectPopover>
             </Select>
           </div>
@@ -160,7 +157,7 @@ export function CardsPaymentMethod() {
                 <SelectValue />
               </SelectTrigger>
               <SelectPopover>
-                <SelectContent>
+                <SelectListBox>
                   {Array.from({ length: 10 }, (_, i) => (
                     <SelectItem
                       textValue={`${new Date().getFullYear() + i}`}
@@ -170,7 +167,7 @@ export function CardsPaymentMethod() {
                       {new Date().getFullYear() + i}
                     </SelectItem>
                   ))}
-                </SelectContent>
+                </SelectListBox>
               </SelectPopover>
             </Select>
           </div>

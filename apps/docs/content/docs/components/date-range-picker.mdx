@@ -1,0 +1,127 @@
+---
+title: DateRangePicker
+description: A DateRangePicker combines two DateFields and a RangeCalendar popover to allow users to enter or select a date range.
+featured: true
+component: true
+links:
+  doc: https://react-spectrum.adobe.com/react-aria/DateRangePicker.html
+---
+
+A date range picker can be built using two separate `<input type="date">` elements, but this is very limited in functionality, lacking in internationalization capabilities, inconsistent between browsers, and difficult to style. DateRangePicker helps achieve accessible and international date and time range pickers that can be styled as needed.
+
+<ComponentPreview name="date-range-picker-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Copy & Paste</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx @sly-cli/sly add jolly-ui date-range-picker
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>
+  This components uses the following components, which you also need to install:
+  - [Button](../../../docs/components/button)
+  - [Calendar](../../../docs/components/calendar)
+  - [DateField](../../../docs/components/datefield)
+  - [Form (field.tsx)](../../../docs/components/form)
+  - [Popover](../../../docs/components/popover)
+</Step>
+
+<Step>Copy and paste the following code into your project: datepicker.tsx</Step>
+
+<ComponentSource name="date-picker" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Composed Components
+
+A DateRangePicker uses the following components, which may also be used standalone or reused in other components.
+
+<ComponentCards>
+  <ComponentCard component="label" />
+  <ComponentCard component="datefield" />
+  <ComponentCard component="button" />
+  <ComponentCard component="popover" />
+  <ComponentCard component="dialog" />
+  <ComponentCard component="rangeCalendar" />
+</ComponentCards>
+
+## Reusable Wrapper - Example
+
+If you will use a DateRangePicker in multiple places in your app, you can wrap all of the pieces into a reusable component. This way, the DOM structure, styling code, and other logic are defined in a single place and reused everywhere to ensure consistency.
+
+The installed file includes a reusable wrapper `JollyDateRangePicker`. This wrapper serves as an excellent starting point for use throughout your codebase.
+
+<ComponentPreview name="daterangepicker-reusable" />
+
+The `JollyDateRangePicker` component extends the props of React Aria DateRangePicker and adds:
+
+| Prop           | Type                                                                    | Default     | Description                                         |
+| -------------- | ----------------------------------------------------------------------- | ----------- | --------------------------------------------------- |
+| `label`        | `string \| undefined`                                                   | `undefined` | Label for the date range picker                     |
+| `description`  | `string \| undefined`                                                   | `undefined` | Description text for the date range picker          |
+| `errorMessage` | `string \| ((validation: AriaValidationResult) => string) \| undefined` | `undefined` | Error message to display or function to generate it |
+
+You can copy this wrapper and create variations as needed for different use cases in your application. This approach promotes consistency while still allowing for flexibility in implementation.
+
+<ComponentPreview name="date-range-picker-reusable" />
+
+## Examples
+
+### Basic
+
+<ComponentPreview name="date-range-picker-demo" />
+
+### Values
+
+#### Timezones
+
+<ComponentPreview name="date-range-picker-timezone" />
+
+#### Granularity
+
+<ComponentPreview name="date-range-picker-granularity" />
+
+### Validation
+
+<ComponentPreview name="date-range-picker-validation" />
+
+#### Min/Max Dates
+
+<ComponentPreview name="date-range-picker-min-max" />
+
+#### Custom Validation
+
+<ComponentPreview name="date-range-picker-custom-validation" />
+
+#### Unavailable Dates
+
+<ComponentPreview name="date-range-unavailable" />
+
+#### Non-Continuous Ranges
+
+<ComponentPreview name="date-range-non-continuous" />
+
+#### Description
+
+<ComponentPreview name="date-range-picker-description" />

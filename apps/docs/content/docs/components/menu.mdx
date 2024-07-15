@@ -1,13 +1,15 @@
 ---
 title: Menu
-description: A menu displays a list of actions or options that a user can choose.
+description: A Menu displays a list of actions or options that a user can choose.
 featured: true
 component: true
 links:
-  doc: https://react-spectrum.adobe.com/react-aria/Menu.htm
+  doc: https://react-spectrum.adobe.com/react-aria/Menu.html
 ---
 
-<ComponentPreview name="dropdown-menu-demo" />
+There is no native element to implement a menu in HTML that is widely supported. MenuTrigger and Menu help achieve accessible menu components that can be styled as needed.
+
+<ComponentPreview name="menu-demo" />
 
 ## Installation
 
@@ -24,15 +26,20 @@ links:
 npx @sly-cli/sly add jolly-ui menu
 ```
 
-**Note: Only the default style can be installed via CLI at the moment**
-
 </TabsContent>
 
 <TabsContent value="manual">
 
 <Steps>
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>
+  This components uses the following components, which you also need to install:
+  - [Button](../../../docs/components/button)
+  - [ListBox](../../../docs/components/list-box)
+  - [Select](../../../docs/components/select)
+</Step>
+
+<Step>Copy and paste the following code into your project: menu.tsx</Step>
 
 <ComponentSource name="menu" />
 
@@ -44,57 +51,99 @@ npx @sly-cli/sly add jolly-ui menu
 
 </Tabs>
 
-## Usage
+## Composed Components
+
+A Menu uses the following components, which may also be used standalone or reused in other components.
+
+<ComponentCards>
+  <ComponentCard component="button" />
+  <ComponentCard component="popover" />
+</ComponentCards>
+
+## Reusable Wrapper - Example
+
+If you will use a Menu in multiple places in your app, you can wrap all of the pieces into a reusable component. This way, the DOM structure, styling code, and other logic are defined in a single place and reused everywhere to ensure consistency.
+
+The installed file includes a reusable wrapper `JollyMenu`. This wrapper serves as an excellent starting point for use throughout your codebase.
+
+<ComponentPreview name="menu-reusable" />
+
+The `JollyMenu` component extends the props of React Aria Menu and MenuTrigger, and includes button styling props:
+
+| Prop      | Type                                  | Default     | Description                       |
+| --------- | ------------------------------------- | ----------- | --------------------------------- |
+| `label`   | `string \| undefined`                 | `undefined` | Label for the menu trigger button |
+| `variant` | `VariantProps<typeof buttonVariants>` | -           | Variant of the trigger button     |
+| `size`    | `VariantProps<typeof buttonVariants>` | -           | Size of the trigger button        |
+
+You can copy this wrapper and create variations as needed for different use cases in your application. This approach promotes consistency while still allowing for flexibility in implementation.
+
+## Examples
 
 ### Basic
 
-<ComponentPreview name="dropdown-menu-basic" />
+<ComponentPreview name="menu-demo" />
 
-### Full
+### Dynamic Content
 
-<ComponentPreview name="dropdown-menu-demo" />
-
-#### Submenu
-
-As in the example above, You can create a submenu by wrapping a `MenuItem` in a `SubmenuTrigger`. Then inside the SubmenuTrigger you can place a `MenuPopover` and `Menu` to create a submenu, using that the same as a menu.
-
-#### Separator
-
-In the example above, you can place a `MenuSeparator` between sections. Alternatively, you can use the `separator` prop on a `MenuHeader` to create a border as well.
+<ComponentPreview name="menu-content" />
 
 ### Selection
 
-#### Multiple
+#### Single Selection
 
-<ComponentPreview name="dropdown-menu-checkboxes" />
+<ComponentPreview name="menu-selection-single" />
 
-#### Single
+#### Multiple Selection
 
-<ComponentPreview name="dropdown-menu-radio-group" />
+<ComponentPreview name="menu-selection-multiple" />
 
 ### Links
 
-By default, interacting with an item in a Menu triggers onAction and optionally onSelectionChange depending on the selectionMode.
-Alternatively, items may be links to another page or website. This can be achieved by passing the href prop to the `<MenuItem>` component. Link items in a menu are not selectable.
+<ComponentPreview name="menu-links" />
 
-#### Client side routing
+#### Client Side Routing
 
 The `<MenuItem>` component works with frameworks and client side routers like Next.js, Remix and React Router.
-As with other React Aria components that support links, this works via the RouterProvider component at the root of your app.
+As with other React Aria components that support links, this works via the `RouterProvider` component at the root of your app.
 See the [client side routing guide](https://react-spectrum.adobe.com/react-aria/routing.html) to learn how to set this up.
 
-<ComponentPreview name="dropdown-menu-link" />
+### Sections
 
-## Sections
+#### Static
 
-### Static
+<ComponentPreview name="menu-sections" />
 
-<ComponentPreview name="dropdown-menu-section" />
+#### Dynamic
 
-### Dynamic
+<ComponentPreview name="menu-sections-dynamic" />
 
-<ComponentPreview name="dropdown-menu-dynamic" />
+#### Separators
 
-## Dynamic (+Submenu)
+<ComponentPreview name="menu-separators" />
 
-<ComponentPreview name="dropdown-menu-sub-dynamic" />
+### Text Slots
+
+<ComponentPreview name="menu-text-slots" />
+
+### Long Press
+
+<ComponentPreview name="menu-long-press" />
+
+### Disabled Items
+
+<ComponentPreview name="menu-disabled-items" />
+
+In dynamic collections, it may be more convenient to use the disabledKeys prop at the Menu level instead of isDisabled on individual items. Each key in this list corresponds with the id prop passed to the MenuItem component, or automatically derived from the values passed to the items prop (see the [Collections](https://react-spectrum.adobe.com/react-aria/collections.html) for more details). An item is considered disabled if its id exists in disabledKeys or if it has isDisabled.
+
+<ComponentPreview name="menu-disabled-keys" />
+
+### Submenus
+
+#### Static
+
+<ComponentPreview name="menu-sub-menu" />
+
+#### Dynamic
+
+<ComponentPreview name="menu-sub-menu-dynamic" />

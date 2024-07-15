@@ -1,7 +1,7 @@
-import { Button } from "@/registry/default/ui/button"
+import { Link } from "react-aria-components"
 
-export function ButtonLink() {
-  return <Button variant="link">Link</Button>
+import { buttonVariants } from "@/registry/default/ui/button"
+
+export default function ButtonLink() {
+  return <Link className={buttonVariants({ variant: "link" })}>Link</Link>
 }
-
-export default ButtonLink

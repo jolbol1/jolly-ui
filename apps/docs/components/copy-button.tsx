@@ -46,7 +46,7 @@ export function CopyButton({
       size="icon"
       variant="ghost"
       className={cn(
-        "relative z-10 h-6 w-6 text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50",
+        "relative z-10 size-6 text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50",
         className
       )}
       onPress={() => {
@@ -67,9 +67,9 @@ export function CopyButton({
     >
       <span className="sr-only">Copy</span>
       {hasCopied ? (
-        <CheckIcon className="h-3 w-3" />
+        <CheckIcon className="size-3" />
       ) : (
-        <CopyIcon className="h-3 w-3" />
+        <CopyIcon className="size-3" />
       )}
     </Button>
   )
@@ -105,14 +105,14 @@ export function CopyWithClassNames({
         size="icon"
         variant="ghost"
         className={cn(
-          "relative z-10 h-6 w-6 text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50",
+          "relative z-10 size-6 text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50",
           className
         )}
       >
         {hasCopied ? (
-          <CheckIcon className="h-3 w-3" />
+          <CheckIcon className="size-3" />
         ) : (
-          <CopyIcon className="h-3 w-3" />
+          <CopyIcon className="size-3" />
         )}
         <span className="sr-only">Copy</span>
       </Button>
@@ -179,14 +179,14 @@ export function CopyNpmCommandButton({
         size="icon"
         variant="ghost"
         className={cn(
-          "relative z-10 h-6 w-6 text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50",
+          "relative z-10 size-6 text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50",
           className
         )}
       >
         {hasCopied ? (
-          <CheckIcon className="h-3 w-3" />
+          <CheckIcon className="size-3" />
         ) : (
-          <CopyIcon className="h-3 w-3" />
+          <CopyIcon className="size-3" />
         )}
         <span className="sr-only">Copy</span>
       </Button>

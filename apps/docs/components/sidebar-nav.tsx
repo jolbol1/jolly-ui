@@ -34,16 +34,13 @@ interface DocsSidebarNavItemsProps {
   pathname: string | null
 }
 
-const sorter = (a: SidebarNavItem, b: SidebarNavItem) =>
-  (b.disabled ? 0 : 1) - (a.disabled ? 0 : 1)
-
 export function DocsSidebarNavItems({
   items,
   pathname,
 }: DocsSidebarNavItemsProps) {
   return items?.length ? (
     <div className="grid grid-flow-row auto-rows-max text-sm">
-      {items.sort(sorter).map((item, index) =>
+      {items.sort().map((item, index) =>
         item.href && !item.disabled ? (
           <Link
             key={index}

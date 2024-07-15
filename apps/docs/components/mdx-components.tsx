@@ -21,6 +21,8 @@ import { StyleWrapper } from "@/components/style-wrapper"
 import { Tab, TabList, TabPanel, Tabs } from "@/registry/default/ui/tabs"
 import { Style } from "@/registry/styles"
 
+import { ComponentCard, ComponentCards } from "./component-cards"
+
 const components = {
   YouTubeEmbed,
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
@@ -211,6 +213,8 @@ const components = {
   ComponentPreview,
   ComponentExample,
   ComponentSource,
+  ComponentCard,
+  ComponentCards,
   CodeBlockWrapper: ({ ...props }) => (
     <CodeBlockWrapper className="rounded-md border" {...props} />
   ),

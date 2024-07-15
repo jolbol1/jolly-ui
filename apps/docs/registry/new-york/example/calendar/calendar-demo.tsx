@@ -1,7 +1,3 @@
-"use client"
-
-import * as React from "react"
-
 import {
   Calendar,
   CalendarCell,
@@ -12,24 +8,18 @@ import {
   CalendarHeading,
 } from "@/registry/new-york/ui/calendar"
 
-export function CalendarDemo() {
+export default function CalendarDemo() {
   return (
-    <Calendar className="rounded-md border p-3">
+    <Calendar aria-label="Appointment date">
       <CalendarHeading />
       <CalendarGrid>
         <CalendarGridHeader>
           {(day) => <CalendarHeaderCell>{day}</CalendarHeaderCell>}
         </CalendarGridHeader>
         <CalendarGridBody>
-          {(date) => (
-            <>
-              <CalendarCell date={date} />
-            </>
-          )}
+          {(date) => <CalendarCell date={date} />}
         </CalendarGridBody>
       </CalendarGrid>
     </Calendar>
   )
 }
-
-export default CalendarDemo

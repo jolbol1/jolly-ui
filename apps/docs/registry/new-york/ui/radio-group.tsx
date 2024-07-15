@@ -2,71 +2,116 @@
 
 import { CheckIcon } from "@radix-ui/react-icons"
 import {
-  Radio,
-  RadioGroup,
-  RadioGroupProps,
-  RadioProps,
+  Radio as AriaRadio,
+  RadioGroup as AriaRadioGroup,
+  RadioGroupProps as AriaRadioGroupProps,
+  RadioProps as AriaRadioProps,
+  ValidationResult as AriaValidationResult,
+  composeRenderProps,
+  Text,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"
-import { labelVariants } from "@/registry/new-york/ui/label"
 
-const _RadioGroup = ({
+import { FieldError, Label, labelVariants } from "./field"
+
+const RadioGroup = ({
   className,
   orientation = "vertical",
   ...props
-}: RadioGroupProps) => {
+}: AriaRadioGroupProps) => {
   return (
-    <RadioGroup
-      className={(values) =>
+    <AriaRadioGroup
+      className={composeRenderProps(className, (className) =>
         cn(
           {
             "grid gap-2": orientation === "vertical",
             "flex items-center gap-2": orientation === "horizontal",
           },
-          typeof className === "function" ? className(values) : className
+          className
         )
-      }
+      )}
       {...props}
     />
   )
 }
 
-export interface _RadioProps extends RadioProps {
-  showRadio?: boolean
-}
-
-const _Radio = ({
-  className,
-  showRadio = true,
-  children,
-  ...props
-}: _RadioProps) => {
+const Radio = ({ className, children, ...props }: AriaRadioProps) => {
   return (
-    <Radio
-      className={(values) =>
+    <AriaRadio
+      className={composeRenderProps(className, (className) =>
         cn(
-          "group flex items-center gap-x-2 data-[focused]:outline-none ",
+          "group flex items-center gap-x-2",
+          /* Disabled */
+          "data-[disabled]:cursor-not-allowed data-[disabled]:opacity-70",
           labelVariants,
-          typeof className === "function" ? className(values) : className
+          className
         )
-      }
+      )}
       {...props}
     >
-      {(values) => (
+      {composeRenderProps(children, (children, renderProps) => (
         <>
-          {showRadio && (
-            <span className="flex aspect-square h-4 w-4 items-center justify-center rounded-full border  border-primary text-primary shadow data-[disabled]:opacity-50 group-data-[focus-visible]:ring-1 group-data-[focus-visible]:ring-ring">
-              {values.isSelected && (
-                <CheckIcon className="h-3.5 w-3.5 fill-primary" />
-              )}
-            </span>
-          )}
-          {typeof children === "function" ? children(values) : children}
+          <span
+            className={cn(
+              "flex aspect-square size-4 items-center justify-center rounded-full border border-primary text-primary shadow",
+              /* Focus */
+              "group-data-[focused]:outline-none",
+              /* Focus Visible */
+              "group-data-[focus-visible]:ring-1 group-data-[focus-visible]:ring-ring",
+              /* Disabled */
+              "group-data-[disabled]:cursor-not-allowed group-data-[disabled]:opacity-50",
+              /* Invalid */
+              "group-data-[invalid]:border-destructive"
+            )}
+          >
+            {renderProps.isSelected && (
+              <CheckIcon className="size-3.5 fill-primary" />
+            )}
+          </span>
+          {children}
         </>
-      )}
-    </Radio>
+      ))}
+    </AriaRadio>
   )
 }
 
-export { _RadioGroup as RadioGroup, _Radio as Radio }
+interface JollyRadioGroupProps extends AriaRadioGroupProps {
+  label?: string
+  description?: string
+  errorMessage?: string | ((validation: AriaValidationResult) => string)
+}
+
+function JollyRadioGroup({
+  label,
+  description,
+  className,
+  errorMessage,
+  children,
+  ...props
+}: JollyRadioGroupProps) {
+  return (
+    <RadioGroup
+      className={composeRenderProps(className, (className) =>
+        cn("group flex flex-col gap-2", className)
+      )}
+      {...props}
+    >
+      {composeRenderProps(children, (children) => (
+        <>
+          <Label>{label}</Label>
+          {children}
+          {description && (
+            <Text slot="description" className="text-sm text-muted-foreground">
+              {description}
+            </Text>
+          )}
+          <FieldError>{errorMessage}</FieldError>
+        </>
+      ))}
+    </RadioGroup>
+  )
+}
+
+export { RadioGroup, Radio, JollyRadioGroup }
+export type { JollyRadioGroupProps }

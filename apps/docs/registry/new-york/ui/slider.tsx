@@ -2,62 +2,70 @@
 
 import * as React from "react"
 import {
-  Slider,
-  SliderOutput,
-  SliderProps,
-  SliderStateContext,
-  SliderThumb,
-  SliderThumbProps,
-  SliderTrack,
-  SliderTrackProps,
+  Slider as AriaSlider,
+  SliderOutput as AriaSliderOutput,
+  SliderOutputProps as AriaSliderOutputProps,
+  SliderProps as AriaSliderProps,
+  SliderStateContext as AriaSliderStateContext,
+  SliderThumb as AriaSliderThumb,
+  SliderThumbProps as AriaSliderThumbProps,
+  SliderTrack as AriaSliderTrack,
+  SliderTrackProps as AriaSliderTrackProps,
+  composeRenderProps,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"
 
-const _SliderOutput = SliderOutput
+import { labelVariants } from "./field"
 
-const _Slider = ({
+const SliderOutput = ({ className, ...props }: AriaSliderOutputProps) => (
+  <AriaSliderOutput className={cn(labelVariants(), className)} {...props} />
+)
+
+const Slider = ({
   className,
   orientation = "horizontal",
   ...props
-}: SliderProps) => (
-  <Slider
-    className={(values) =>
+}: AriaSliderProps) => (
+  <AriaSlider
+    className={composeRenderProps(className, (className) =>
       cn(
         "relative flex touch-none select-none items-center",
         {
           "h-full": orientation === "vertical",
           "w-full": orientation === "horizontal",
         },
-        typeof className === "function" ? className(values) : className
+        className
       )
-    }
+    )}
     orientation={orientation}
     {...props}
   />
 )
 
-const _SliderTrack = ({ className, ...props }: SliderTrackProps) => (
-  <SliderTrack
-    className={(values) =>
+const SliderTrack = ({ className, ...props }: AriaSliderTrackProps) => (
+  <AriaSliderTrack
+    className={composeRenderProps(className, (className, renderProps) =>
       cn(
         {
-          "h-1.5 w-full": values.orientation === "horizontal",
-          "h-full w-1.5": values.orientation === "vertical",
+          "h-1.5 w-full": renderProps.orientation === "horizontal",
+          "h-full w-1.5": renderProps.orientation === "vertical",
         },
         "relative grow rounded-full bg-primary/20",
-        typeof className === "function" ? className(values) : className
+        /* Disabled */
+        "data-[disabled]:opacity-50",
+        className
       )
-    }
+    )}
     {...props}
   />
 )
 
-const _SliderFillTrack = ({
+const SliderFillTrack = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) => {
-  let state = React.useContext(SliderStateContext)!
+  let state = React.useContext(AriaSliderStateContext)!
   const orientation = state.orientation === "vertical" ? "height" : "width"
   return (
     <div
@@ -75,21 +83,19 @@ const _SliderFillTrack = ({
   )
 }
 
-const _SliderThumb = ({ className }: SliderThumbProps) => (
-  <SliderThumb
-    className={(values) =>
+const SliderThumb = ({ className }: AriaSliderThumbProps) => (
+  <AriaSliderThumb
+    className={composeRenderProps(className, (className) =>
       cn(
-        "left-[50%] top-[50%] block h-4 w-4 rounded-full border border-primary/50 bg-background shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
-        typeof className === "function" ? className(values) : className
+        "left-1/2 top-1/2 block size-4 rounded-full border border-primary/50 bg-background shadow transition-colors",
+        /* Disabled */
+        "data-[disabled]:pointer-events-none",
+        /* Focus Visible */
+        "data-[focus-visible]:outline-none data-[focus-visible]:ring-1 data-[focus-visible]:ring-ring",
+        className
       )
-    }
+    )}
   />
 )
 
-export {
-  _Slider as Slider,
-  _SliderTrack as SliderTrack,
-  _SliderFillTrack as SliderFillTrack,
-  _SliderThumb as SliderThumb,
-  _SliderOutput as SliderOutput,
-}
+export { Slider, SliderTrack, SliderFillTrack, SliderThumb, SliderOutput }

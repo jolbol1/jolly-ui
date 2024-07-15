@@ -5,8 +5,8 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbPage,
-  BreadcrumbSeparator,
   Breadcrumbs,
+  BreadcrumbSeparator,
 } from "@/registry/new-york/ui/breadcrumbs"
 import {
   Menu,
@@ -26,7 +26,7 @@ export function BreadcrumbsDropdown() {
         <MenuTrigger>
           <Button className="flex items-center gap-1">
             Components
-            <ChevronDownIcon />
+            <ChevronDownIcon className="size-4" />
           </Button>
           <MenuPopover>
             <Menu>

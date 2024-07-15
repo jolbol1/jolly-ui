@@ -6,6 +6,8 @@ links:
   doc: https://react-spectrum.adobe.com/react-aria/ToggleButton.html
 ---
 
+Toggle buttons are similar to action buttons, but support an additional selection state that is toggled when a user presses the button. There is no built-in HTML element that represents a toggle button, so React Aria implements it using ARIA attributes.
+
 <ComponentPreview name="toggle-demo" />
 
 ## Installation
@@ -22,8 +24,6 @@ links:
 ```bash
 npx @sly-cli/sly add jolly-ui toggle
 ```
-
-**Note: Only the default style can be installed via CLI at the moment**
 
 </TabsContent>
 
@@ -44,16 +44,6 @@ npx @sly-cli/sly add jolly-ui toggle
 </TabsContent>
 
 </Tabs>
-
-## Usage
-
-```tsx
-import { Toggle } from "@/components/ui/toggle"
-```
-
-```tsx
-<Toggle>Toggle</Toggle>
-```
 
 ## Examples
 

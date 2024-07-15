@@ -1,6 +1,7 @@
 import { Button } from "@/registry/new-york/ui/button"
 import {
   DialogContent,
+  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogOverlay,
@@ -8,32 +9,24 @@ import {
   DialogTrigger,
 } from "@/registry/new-york/ui/dialog"
 
-export function DialogAlertDemo() {
+export default function AlertDialogDemo() {
   return (
     <DialogTrigger>
-      <Button variant="outline">Edit Profile</Button>
+      <Button variant="outline">Delete...</Button>
       <DialogOverlay isDismissable={false}>
-        <DialogContent role="alertdialog" closeButton={false}>
+        <DialogContent role="alertdialog" className="sm:max-w-[425px]">
           {({ close }) => (
             <>
               <DialogHeader>
-                <DialogTitle>Are you absolutely sure?</DialogTitle>
+                <DialogTitle>Delete file</DialogTitle>
               </DialogHeader>
-              <p className="text-sm text-muted-foreground">
-                This action cannot be undone. This will permanently delete your
-                account and remove your data from our servers.
-              </p>
+              <DialogDescription>
+                This will permanently delete the selected file. Continue?
+              </DialogDescription>
               <DialogFooter>
-                <Button
-                  variant="outline"
-                  autoFocus
-                  onPress={close}
-                  className="mt-2 sm:mt-0"
-                >
-                  Cancel
-                </Button>
+                <Button onPress={close}>Cancel</Button>
                 <Button variant="destructive" onPress={close}>
-                  Continue
+                  Delete
                 </Button>
               </DialogFooter>
             </>
@@ -43,4 +36,3 @@ export function DialogAlertDemo() {
     </DialogTrigger>
   )
 }
-export default DialogAlertDemo

@@ -1,6 +1,5 @@
 import { Button } from "@/registry/new-york/ui/button"
 
-export function ButtonGhost() {
+export default function ButtonGhost() {
   return <Button variant="ghost">Ghost</Button>
 }
-export default ButtonGhost

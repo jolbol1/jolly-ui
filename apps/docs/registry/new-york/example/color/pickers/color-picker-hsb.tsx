@@ -14,9 +14,9 @@ import {
   SliderTrack,
 } from "@/registry/new-york/ui/color"
 import { Dialog, DialogTrigger } from "@/registry/new-york/ui/dialog"
-import { Input } from "@/registry/new-york/ui/input"
-import { Label } from "@/registry/new-york/ui/label"
+import { Label } from "@/registry/new-york/ui/field"
 import { Popover } from "@/registry/new-york/ui/popover"
+import { Input } from "@/registry/new-york/ui/textfield"
 
 export function HsbPicker() {
   let [color, setColor] = React.useState(parseColor("hsb(120, 100%, 100%)"))
@@ -24,18 +24,18 @@ export function HsbPicker() {
   return (
     <ColorPicker value={color} onChange={setColor}>
       <DialogTrigger>
-        <Button variant="ghost" className="h-fit flex gap-2 items-center p-1">
-          <ColorSwatch className="rounded-md size-8 border-2" />
+        <Button variant="ghost" className="flex h-fit items-center gap-2 p-1">
+          <ColorSwatch className="size-8 rounded-md border-2" />
           HSB Color
         </Button>
         <Popover placement="bottom start" className="w-fit">
-          <Dialog className="outline-none flex flex-col gap-4">
+          <Dialog className="flex flex-col gap-4 p-3 outline-none">
             <div>
               <ColorArea
                 colorSpace="hsb"
                 xChannel="saturation"
                 yChannel="brightness"
-                className="border-b-0 rounded-b-none h-[164px]"
+                className="h-[164px] rounded-b-none border-b-0"
               >
                 <ColorThumb className="z-50" />
               </ColorArea>
@@ -45,8 +45,8 @@ export function HsbPicker() {
                 </SliderTrack>
               </ColorSlider>
             </div>
-            <div className="grid grid-cols-3 gap-1 w-[192px]">
-              <Label className="capitalize col-span-3">HSB</Label>
+            <div className="grid w-[192px] grid-cols-3 gap-1">
+              <Label className="col-span-3 capitalize">HSB</Label>
               {getColorChannels("hsb").map((channel) => (
                 <ColorField colorSpace="hsb" channel={channel} key={channel}>
                   <Input aria-label={channel.toString()} />

@@ -1,4 +1,4 @@
-import { GrayColor, ThemeColor, grayColors, themes } from "@/registry/themes"
+import { GrayColor, grayColors, ThemeColor, themes } from "@/registry/themes"
 
 import { useThemeStore } from "./use-theme-store"
 

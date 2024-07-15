@@ -80,7 +80,10 @@ export function ComponentPreview({
             </Tab>
           </TabList>
         </div>
-        <TabPanel id="preview" className="relative rounded-md border">
+        <TabPanel
+          id="preview"
+          className="relative overflow-auto rounded-md border"
+        >
           <div className="flex items-center justify-between p-4">
             <StyleSwitcher />
             {extractedClassNames ? (
@@ -105,7 +108,7 @@ export function ComponentPreview({
             <React.Suspense
               fallback={
                 <div className="flex items-center text-sm text-muted-foreground">
-                  <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+                  <Icons.spinner className="mr-2 size-4 animate-spin" />
                   Loading...
                 </div>
               }

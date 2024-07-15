@@ -4,9 +4,9 @@ import { useEffect, useState } from "react"
 
 import { useThemeStore } from "@/lib/use-theme-store"
 import { cn } from "@/lib/utils"
+import { SelectListBox } from "@/registry/default/ui/select"
 import {
   Select,
-  SelectContent,
   SelectItem,
   SelectPopover,
   SelectTrigger,
@@ -31,16 +31,13 @@ export function StyleSwitcher({ className }: { className?: string }) {
       onSelectionChange={(key) => updateStyle(key as Style["name"])}
     >
       <SelectTrigger
-        className={cn(
-          "h-7 w-[145px] text-xs [&_svg]:h-4 [&_svg]:w-4",
-          className
-        )}
+        className={cn("h-7 w-[145px] text-xs [&_svg]:size-4", className)}
       >
         <span className="text-muted-foreground">Style: </span>
         <SelectValue />
       </SelectTrigger>
       <SelectPopover>
-        <SelectContent>
+        <SelectListBox>
           {styles.map((style) => (
             <SelectItem
               textValue={style.name}
@@ -51,7 +48,7 @@ export function StyleSwitcher({ className }: { className?: string }) {
               {style.label}
             </SelectItem>
           ))}
-        </SelectContent>
+        </SelectListBox>
       </SelectPopover>
     </Select>
   )

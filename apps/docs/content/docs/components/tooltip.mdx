@@ -6,6 +6,8 @@ links:
   doc: https://react-spectrum.adobe.com/react-aria/Tooltip.html
 ---
 
+The HTML title attribute can be used to create a tooltip, but it cannot be styled. Custom styled tooltips can be hard to build in an accessible way. TooltipTrigger and Tooltip help build fully accessible tooltips that can be styled as needed.
+
 <ComponentPreview name="tooltip-demo" />
 
 ## Installation
@@ -22,8 +24,6 @@ links:
 ```bash
 npx @sly-cli/sly add jolly-ui tooltip
 ```
-
-**Note: Only the default style can be installed via CLI at the moment**
 
 </TabsContent>
 
@@ -47,19 +47,18 @@ npx @sly-cli/sly add jolly-ui tooltip
 
 ## Usage
 
-```tsx
-import { Tooltip, TooltipTrigger } from "@/components/ui/tooltip"
-```
+### Positioning
 
-```tsx
-<TooltipTrigger>
-  <Button>Hover</Button>
-  <Tooltip>
-    <p>Add to library</p>
-  </Tooltip>
-</TooltipTrigger>
-```
-
-### Position
+#### Placement
 
 <ComponentPreview name="tooltip-position" />
+
+#### Offset and cross offset
+
+<ComponentPreview name="tooltip-offset" />
+
+<ComponentPreview name="tooltip-cross-offset" />
+
+### Disabled
+
+<ComponentPreview name="tooltip-disabled" />

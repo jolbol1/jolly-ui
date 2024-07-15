@@ -1,72 +1,102 @@
 "use client"
 
 import * as React from "react"
-import { Check, Circle } from "lucide-react"
+import { VariantProps } from "class-variance-authority"
+import { Check, ChevronRight, Circle } from "lucide-react"
 import {
-  Header,
-  Keyboard,
-  Menu,
-  MenuItem,
-  MenuItemProps,
-  MenuProps,
-  MenuTrigger,
-  Popover,
+  Header as AriaHeader,
+  Keyboard as AriaKeyboard,
+  Menu as AriaMenu,
+  MenuItem as AriaMenuItem,
+  MenuItemProps as AriaMenuItemProps,
+  MenuProps as AriaMenuProps,
+  MenuTrigger as AriaMenuTrigger,
+  MenuTriggerProps as AriaMenuTriggerProps,
+  Separator as AriaSeparator,
+  SeparatorProps as AriaSeparatorProps,
+  SubmenuTrigger as AriaSubmenuTrigger,
+  composeRenderProps,
   PopoverProps,
-  Section,
-  Separator,
-  SeparatorProps,
-  SubmenuTrigger,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"
 
-const _MenuTrigger = MenuTrigger
+import { Button, buttonVariants } from "./button"
+import { ListBoxCollection, ListBoxSection } from "./list-box"
+import { SelectPopover } from "./select"
 
-const _SubMenuTrigger = SubmenuTrigger
+const MenuTrigger = AriaMenuTrigger
 
-const MenuSection = Section
+const MenuSubTrigger = AriaSubmenuTrigger
 
-const MenuPopover = ({ className, offset = 4, ...props }: PopoverProps) => (
-  <Popover
-    offset={offset}
-    className={(values) =>
-      cn(
-        "z-50 rounded-md bg-popover text-popover-foreground shadow-md data-[entering]:animate-in data-[exiting]:animate-out data-[entering]:fade-in-0 data-[exiting]:fade-out-0 data-[exiting]:zoom-out-95 data-[placement=bottom]:slide-in-from-top-2 data-[placement=left]:slide-in-from-right-2 data-[placement=right]:slide-in-from-left-2 data-[placement=top]:slide-in-from-bottom-2",
-        typeof className === "function" ? className(values) : className
-      )
-    }
-    {...props}
-  />
-)
+const MenuSection = ListBoxSection
 
-const _Menu = <T extends object>({ className, ...props }: MenuProps<T>) => (
-  <Menu
+const MenuCollection = ListBoxCollection
+
+function MenuPopover({ className, ...props }: PopoverProps) {
+  return (
+    <SelectPopover
+      className={composeRenderProps(className, (className) =>
+        cn("w-auto", className)
+      )}
+      {...props}
+    />
+  )
+}
+
+const Menu = <T extends object>({ className, ...props }: AriaMenuProps<T>) => (
+  <AriaMenu
     className={cn(
-      "max-h-[inherit] overflow-auto rounded-md border p-1 outline outline-0 [clip-path:inset(0_0_0_0_round_calc(var(--radius)-2px))]",
+      "max-h-[inherit] overflow-auto rounded-md p-1 outline outline-0 [clip-path:inset(0_0_0_0_round_calc(var(--radius)-2px))]",
       className
     )}
     {...props}
   />
 )
 
-interface _MenuItemProps extends MenuItemProps {
-  inset?: boolean
-}
-
-const _MenuItem = ({ className, inset, ...props }: _MenuItemProps) => (
-  <MenuItem
-    className={(values) =>
-      cn(
-        "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[focused]:bg-accent data-[focused]:text-accent-foreground data-[disabled]:opacity-50",
-        inset && "pl-8",
-        typeof className === "function" ? className(values) : className
-      )
+const MenuItem = ({ children, className, ...props }: AriaMenuItemProps) => (
+  <AriaMenuItem
+    textValue={
+      props.textValue || (typeof children === "string" ? children : undefined)
     }
+    className={composeRenderProps(className, (className) =>
+      cn(
+        "relative flex cursor-default select-none items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-none transition-colors",
+        /* Disabled */
+        "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+        /* Focused */
+        "data-[focused]:bg-accent data-[focused]:text-accent-foreground ",
+        /* Selection Mode */
+        "data-[selection-mode]:pl-8",
+        className
+      )
+    )}
     {...props}
-  />
+  >
+    {composeRenderProps(children, (children, renderProps) => (
+      <>
+        <span className="absolute left-2 flex size-4 items-center justify-center">
+          {renderProps.isSelected && (
+            <>
+              {renderProps.selectionMode == "single" && (
+                <Circle className="size-2 fill-current" />
+              )}
+              {renderProps.selectionMode == "multiple" && (
+                <Check className="size-4" />
+              )}
+            </>
+          )}
+        </span>
+
+        {children}
+
+        {renderProps.hasSubmenu && <ChevronRight className="ml-auto size-4" />}
+      </>
+    ))}
+  </AriaMenuItem>
 )
 
-export interface MenuHeaderProps extends React.ComponentProps<typeof Header> {
+interface MenuHeaderProps extends React.ComponentProps<typeof AriaHeader> {
   inset?: boolean
   separator?: boolean
 }
@@ -74,90 +104,74 @@ export interface MenuHeaderProps extends React.ComponentProps<typeof Header> {
 const MenuHeader = ({
   className,
   inset,
-  separator = false,
+  separator = true,
   ...props
 }: MenuHeaderProps) => (
-  <Header
+  <AriaHeader
     className={cn(
-      "px-2 py-1.5 text-sm font-semibold",
+      "px-3 py-1.5 text-sm font-semibold",
       inset && "pl-8",
-      separator && "-mx-1 mb-1 border-b border-b-border px-3 pb-[0.625rem]",
+      separator && "-mx-1 mb-1 border-b border-b-border pb-2.5",
       className
     )}
     {...props}
   />
 )
 
-const MenuSeparator = ({ className, ...props }: SeparatorProps) => (
-  <Separator className={cn("-mx-1 my-1 h-px bg-muted", className)} {...props} />
+const MenuSeparator = ({ className, ...props }: AriaSeparatorProps) => (
+  <AriaSeparator
+    className={cn("-mx-1 my-1 h-px bg-muted", className)}
+    {...props}
+  />
 )
 
 const MenuKeyboard = ({
   className,
   ...props
-}: React.HTMLAttributes<HTMLSpanElement>) => {
+}: React.ComponentProps<typeof AriaKeyboard>) => {
   return (
-    <Keyboard
+    <AriaKeyboard
       className={cn("ml-auto text-xs tracking-widest opacity-60", className)}
       {...props}
     />
   )
 }
-
-const MenuCheckboxItem = ({ className, children, ...props }: MenuItemProps) => (
-  <MenuItem
-    className={(values) =>
-      cn(
-        "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[focused]:bg-accent data-[focused]:text-accent-foreground data-[disabled]:opacity-50",
-        typeof className === "function" ? className(values) : className
-      )
-    }
-    {...props}
-  >
-    {(values) => (
-      <>
-        <span className="absolute left-2 flex h-4 w-4 items-center justify-center">
-          {values.isSelected && <Check className="h-4 w-4" />}
-        </span>
-
-        {typeof children === "function" ? children(values) : children}
-      </>
-    )}
-  </MenuItem>
-)
-
-const MenuRadioItem = ({ className, children, ...props }: MenuItemProps) => (
-  <MenuItem
-    className={(values) =>
-      cn(
-        "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[focused]:bg-accent data-[focused]:text-accent-foreground data-[disabled]:opacity-50",
-        typeof className === "function" ? className(values) : className
-      )
-    }
-    {...props}
-  >
-    {(values) => (
-      <>
-        <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
-          {values.isSelected && <Circle className="h-2 w-2 fill-current" />}
-        </span>
-        {typeof children === "function" ? children(values) : children}
-      </>
-    )}
-  </MenuItem>
-)
+interface JollyMenuProps<T>
+  extends AriaMenuProps<T>,
+    VariantProps<typeof buttonVariants>,
+    Omit<AriaMenuTriggerProps, "children"> {
+  label?: string
+}
+function JollyMenu<T extends object>({
+  label,
+  children,
+  variant,
+  size,
+  ...props
+}: JollyMenuProps<T>) {
+  return (
+    <MenuTrigger {...props}>
+      <Button variant={variant} size={size}>
+        {label}
+      </Button>
+      <MenuPopover className="min-w-[--trigger-width]">
+        <Menu {...props}>{children}</Menu>
+      </MenuPopover>
+    </MenuTrigger>
+  )
+}
 
 export {
-  _MenuTrigger as MenuTrigger,
-  _Menu as Menu,
+  MenuTrigger,
+  Menu,
   MenuPopover,
-  _MenuItem as MenuItem,
+  MenuItem,
   MenuHeader,
   MenuSeparator,
   MenuKeyboard,
-  MenuCheckboxItem,
-  MenuRadioItem,
   MenuSection,
-  _SubMenuTrigger as SubmenuTrigger,
+  MenuSubTrigger,
+  MenuCollection,
+  JollyMenu,
 }
-export type { _MenuItemProps as MenuItemProps }
+export type { MenuHeaderProps, JollyMenuProps }

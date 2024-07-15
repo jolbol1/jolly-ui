@@ -1,38 +1,108 @@
 ---
-title: Checkbox Group
-description: A checkbox group allows a user to select multiple items from a list of options.
+title: CheckboxGroup
+description: A CheckboxGroup allows users to select multiple items from a list of options.
+featured: true
 component: true
 links:
   doc: https://react-spectrum.adobe.com/react-aria/CheckboxGroup.html
 ---
 
+Checkbox groups can be built in HTML with the `<fieldset>` and `<input>` elements, however these can be difficult to style. CheckboxGroup helps achieve accessible checkbox groups that can be styled as needed.
+
 <ComponentPreview name="checkbox-group-demo" />
 
 ## Installation
 
-<Tabs defaultValue="manual">
+<Tabs defaultValue="cli">
 
 <TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
   <TabsTrigger value="manual">Copy & Paste</TabsTrigger>
 </TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx @sly-cli/sly add jolly-ui checkbox-group
+```
+
+</TabsContent>
 
 <TabsContent value="manual">
 
 <Steps>
 
 <Step>
-  CheckboxGroup is installed as part of
-  [Checkbox](../../../docs/components/checkbox).
+  This components uses the following components, which you also need to install:
+  - [Form (field.tsx)](../../../docs/components/form)
 </Step>
+
+<Step>Copy and paste the following code into your project: checkbox.tsx</Step>
+
+<ComponentSource name="checkbox" />
+
+<Step>Update the import paths to match your project setup.</Step>
 
 </Steps>
 
 </TabsContent>
 
 </Tabs>
+## Composed Components
 
-## Usage
+A CheckboxGroup uses the following components, which may also be used standalone or reused in other components.
+
+<ComponentCards>
+  <ComponentCard component="label" />
+  <ComponentCard component="checkbox" />
+</ComponentCards>
+
+## Reusable Wrapper - Example
+
+If you will use a CheckboxGroup in multiple places in your app, you can wrap all of the pieces into a reusable component. This way, the DOM structure, styling code, and other logic are defined in a single place and reused everywhere to ensure consistency.
+
+The installed file includes a reusable wrapper `JollyCheckboxGroup`. This wrapper serves as an excellent starting point for use throughout your codebase.
+
+<ComponentPreview name="checkbox-group-reusable" />
+
+The `JollyCheckboxGroup` component extends the props of React Aria CheckboxGroup and adds:
+
+| Prop           | Type                                                                    | Default     | Description                                         |
+| -------------- | ----------------------------------------------------------------------- | ----------- | --------------------------------------------------- |
+| `label`        | `string \| undefined`                                                   | `undefined` | Label for the checkbox group                        |
+| `description`  | `string \| undefined`                                                   | `undefined` | Description text for the checkbox group             |
+| `errorMessage` | `string \| ((validation: AriaValidationResult) => string) \| undefined` | `undefined` | Error message to display or function to generate it |
+
+You can copy this wrapper and create variations as needed for different use cases in your application. This approach promotes consistency while still allowing for flexibility in implementation.
+
+## Examples
 
 ### Basic
 
 <ComponentPreview name="checkbox-group-demo" />
+
+### Validation
+
+<ComponentPreview name="checkbox-group-validation" />
+
+#### Individual Checkbox Validation
+
+<ComponentPreview name="checkbox-group-individual-validation" />
+
+#### Description
+
+<ComponentPreview name="checkbox-group-description" />
+
+### Disabled
+
+The entire CheckboxGroup can be disabled with the isDisabled prop.
+
+<ComponentPreview name="checkbox-group-disabled" />
+
+To disable an individual checkbox, pass isDisabled to the Checkbox instead.
+
+<ComponentPreview name="checkbox-group-disabled-individual" />
+
+#### Read-only
+
+<ComponentPreview name="checkbox-group-readonly" />

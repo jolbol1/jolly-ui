@@ -1,10 +1,13 @@
 ---
 title: Checkbox
-description: A checkbox allows a user to select multiple items from a list of individual items, or to mark one individual item as selected.
+description: A Checkbox allows users to select multiple items from a list of individual items, or to mark one individual item as selected.
+featured: true
 component: true
 links:
   doc: https://react-spectrum.adobe.com/react-aria/Checkbox.html
 ---
+
+Checkboxes can be built with the `<input>` HTML element, but this can be difficult to style. Checkbox helps achieve accessible checkboxes that can be styled as needed.
 
 <ComponentPreview name="checkbox-demo" />
 
@@ -16,13 +19,12 @@ links:
   <TabsTrigger value="cli">CLI</TabsTrigger>
   <TabsTrigger value="manual">Copy & Paste</TabsTrigger>
 </TabsList>
+
 <TabsContent value="cli">
 
 ```bash
 npx @sly-cli/sly add jolly-ui checkbox
 ```
-
-**Note: Only the default style can be installed via CLI at the moment**
 
 </TabsContent>
 
@@ -30,7 +32,12 @@ npx @sly-cli/sly add jolly-ui checkbox
 
 <Steps>
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>
+  This components uses the following components, which you also need to install:
+  - [Form (field.tsx)](../../../docs/components/form)
+</Step>
+
+<Step>Copy and paste the following code into your project: checkbox.tsx</Step>
 
 <ComponentSource name="checkbox" />
 
@@ -42,34 +49,26 @@ npx @sly-cli/sly add jolly-ui checkbox
 
 </Tabs>
 
-## Usage
-
-```tsx
-import { Checkbox } from "@/components/ui/checkbox"
-```
-
-```tsx
-<Checkbox />
-```
-
 ## Examples
 
-### With text
+### Basic
 
-<ComponentPreview name="checkbox-with-text" />
+<ComponentPreview name="checkbox-demo" />
+
+### Value
+
+#### Indeterminate
+
+<ComponentPreview name="checkbox-indeterminate" />
+
+### Validation
+
+<ComponentPreview name="checkbox-validation" />
 
 ### Disabled
 
 <ComponentPreview name="checkbox-disabled" />
 
-### Readonly
+#### Read-only
 
 <ComponentPreview name="checkbox-readonly" />
-
-### Indeterminate
-
-<ComponentPreview name="checkbox-indeterminate" />
-
-### Group
-
-View [Checkbox Group](../../../docs/components/checkbox-group) for examples.
