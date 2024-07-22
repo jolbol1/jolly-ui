@@ -101,7 +101,7 @@ export const Index: Record<string, any> = {
       type: "components:ui",
       registryDependencies: undefined,
       component: React.lazy(() => import("@/registry/default/ui/list-box")),
-      files: ["registry/default/ui/grid-list.tsx"],
+      files: ["registry/default/ui/list-box.tsx"],
     },
     "menu": {
       name: "menu",
@@ -2167,7 +2167,7 @@ export const Index: Record<string, any> = {
       type: "components:ui",
       registryDependencies: undefined,
       component: React.lazy(() => import("@/registry/new-york/ui/list-box")),
-      files: ["registry/new-york/ui/grid-list.tsx"],
+      files: ["registry/new-york/ui/list-box.tsx"],
     },
     "menu": {
       name: "menu",
