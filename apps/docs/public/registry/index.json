@@ -173,7 +173,7 @@
       "react-aria-components"
     ],
     "files": [
-      "ui/grid-list.tsx"
+      "ui/list-box.tsx"
     ],
     "type": "components:ui"
   },

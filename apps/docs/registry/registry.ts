@@ -91,7 +91,7 @@ const ui: Registry = [
     name: "list-box",
     type: "components:ui",
     dependencies: ["react-aria-components"],
-    files: ["ui/grid-list.tsx"],
+    files: ["ui/list-box.tsx"],
   },
   {
     name: "menu",
