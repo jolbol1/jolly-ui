@@ -29,6 +29,7 @@ Licensed under the [MIT license](https://github.com/shadcn/ui/blob/main/LICENSE.
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Lorde4Avalon"><img src="https://avatars.githubusercontent.com/u/74342663?v=4?s=100" width="100px;" alt="Lorde"/><br /><sub><b>Lorde</b></sub></a><br /><a href="#doc-Lorde4Avalon" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/nxsdev"><img src="https://avatars.githubusercontent.com/u/81478127?v=4?s=100" width="100px;" alt="noxis"/><br /><sub><b>noxis</b></sub></a><br /><a href="#design-nxsdev" title="Design">🎨</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/saeidex"><img src="https://avatars.githubusercontent.com/u/112776380?v=4?s=100" width="100px;" alt="EK Nayeem"/><br /><sub><b>EK Nayeem</b></sub></a><br /><a href="#doc-saeidex" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/alecmev"><img src="https://avatars.githubusercontent.com/u/2584727?v=4?s=100" width="100px;" alt="Alec Mev"/><br /><sub><b>Alec Mev</b></sub></a><br /><a href="#design-alecmev" title="Design">🎨</a></td>
     </tr>
   </tbody>
 </table>
