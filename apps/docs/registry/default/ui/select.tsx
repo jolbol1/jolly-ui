@@ -62,7 +62,9 @@ const SelectTrigger = ({ className, children, ...props }: AriaButtonProps) => (
         /* Disabled */
         "data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
         /* Focused */
-        "data-[focused]:outline-none data-[focused]:ring-2 data-[focused]:ring-ring data-[focused]:ring-offset-2",
+        "data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2",
+        /* Resets */
+        "focus-visible:outline-none",
         className
       )
     )}
