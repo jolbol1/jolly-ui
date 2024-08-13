@@ -373,5 +373,15 @@
       "ui/tooltip.tsx"
     ],
     "type": "components:ui"
+  },
+  {
+    "name": "toolbar",
+    "dependencies": [
+      "react-aria-components"
+    ],
+    "files": [
+      "ui/toolbar.tsx"
+    ],
+    "type": "components:ui"
   }
 ]

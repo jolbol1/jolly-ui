@@ -45,7 +45,14 @@ const ui: Registry = [
     name: "date-picker",
     type: "components:ui",
     dependencies: ["react-aria-components"],
-    registryDependencies: ["field", "popover", "button", "calendar", "datefield", "field"],
+    registryDependencies: [
+      "field",
+      "popover",
+      "button",
+      "calendar",
+      "datefield",
+      "field",
+    ],
     files: ["ui/date-picker.tsx"],
   },
   {
@@ -198,6 +205,12 @@ const ui: Registry = [
     type: "components:ui",
     dependencies: ["react-aria-components"],
     files: ["ui/tooltip.tsx"],
+  },
+  {
+    name: "toolbar",
+    type: "components:ui",
+    dependencies: ["react-aria-components"],
+    files: ["ui/toolbar.tsx"],
   },
 ]
 
@@ -1167,7 +1180,6 @@ const example: Registry = [
     registryDependencies: ["checkbox"],
     files: ["example/checkbox/checkbox-validation.tsx"],
   },
-
 
   // CheckboxGroup
 

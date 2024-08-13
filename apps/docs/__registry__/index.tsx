@@ -215,6 +215,13 @@ export const Index: Record<string, any> = {
       component: React.lazy(() => import("@/registry/default/ui/tooltip")),
       files: ["registry/default/ui/tooltip.tsx"],
     },
+    "toolbar": {
+      name: "toolbar",
+      type: "components:ui",
+      registryDependencies: undefined,
+      component: React.lazy(() => import("@/registry/default/ui/toolbar")),
+      files: ["registry/default/ui/toolbar.tsx"],
+    },
     "breadcrumbs-demo": {
       name: "breadcrumbs-demo",
       type: "components:example/breadcrumbs",
@@ -2280,6 +2287,13 @@ export const Index: Record<string, any> = {
       registryDependencies: undefined,
       component: React.lazy(() => import("@/registry/new-york/ui/tooltip")),
       files: ["registry/new-york/ui/tooltip.tsx"],
+    },
+    "toolbar": {
+      name: "toolbar",
+      type: "components:ui",
+      registryDependencies: undefined,
+      component: React.lazy(() => import("@/registry/new-york/ui/toolbar")),
+      files: ["registry/new-york/ui/toolbar.tsx"],
     },
     "breadcrumbs-demo": {
       name: "breadcrumbs-demo",

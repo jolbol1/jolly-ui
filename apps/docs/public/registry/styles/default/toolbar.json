@@ -1,0 +1,13 @@
+{
+  "name": "toolbar",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "files": [
+    {
+      "name": "toolbar.tsx",
+      "content": "import React from \"react\"\nimport {\n  Toolbar as AriaToolbar,\n  composeRenderProps,\n  ToolbarProps,\n} from \"react-aria-components\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport function Toolbar(props: ToolbarProps) {\n  return (\n    <AriaToolbar\n      {...props}\n      className={composeRenderProps(props.className, (className) =>\n        cn(\n          \"flex gap-2\",\n          /* Orientation */\n          \"data-[orientation=vertical]:flex-col\",\n          className\n        )\n      )}\n    />\n  )\n}\n"
+    }
+  ],
+  "type": "components:ui"
+}
