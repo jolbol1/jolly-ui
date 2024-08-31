@@ -62,6 +62,24 @@ export function rehypeNpmCommand() {
           "bunx --bun"
         )
       }
+
+      // REGISTRY_URL
+      if (
+        node.properties?.["__rawString__"]?.startsWith("REGISTRY_URL") &&
+        !node.properties?.["__rawString__"]?.startsWith("npx create-")
+      ) {
+        const npmCommand = node.properties?.["__rawString__"]
+        node.properties["__npmCommand__"] = npmCommand
+        node.properties["__yarnCommand__"] = npmCommand
+        node.properties["__pnpmCommand__"] = npmCommand.replace(
+          "npx",
+          "pnpm dlx"
+        )
+        node.properties["__bunCommand__"] = npmCommand.replace(
+          "npx",
+          "bunx --bun"
+        )
+      }
     })
   }
 }
