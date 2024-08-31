@@ -20,7 +20,7 @@ export function DropZoneFile() {
       <FileTrigger
         allowsMultiple
         onSelect={(e) => {
-          // @ts-ignore
+          //@ts-expect-error
           let files = Array.from(e)
           let filenames = files.map((file) => file.name)
           setFiles(filenames.join(", "))

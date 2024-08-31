@@ -35,7 +35,7 @@ function EyeDropperButton() {
   let state = React.useContext(ColorPickerStateContext)!
 
   // Check browser support.
-  // @ts-ignore
+  // @ts-expect-error
   if (typeof EyeDropper === "undefined") {
     return null
   }
@@ -46,7 +46,7 @@ function EyeDropperButton() {
       size="icon"
       variant="outline"
       onPress={() => {
-        // @ts-ignore
+        //@ts-expect-error
         new EyeDropper()
           .open()
           .then((result: { sRGBHex: string }) =>
