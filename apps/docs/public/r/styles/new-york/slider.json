@@ -1,0 +1,18 @@
+{
+  "name": "slider",
+  "type": "registry:ui",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [
+    "field"
+  ],
+  "files": [
+    {
+      "path": "ui/slider.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport {\n  Slider as AriaSlider,\n  SliderOutput as AriaSliderOutput,\n  SliderOutputProps as AriaSliderOutputProps,\n  SliderProps as AriaSliderProps,\n  SliderStateContext as AriaSliderStateContext,\n  SliderThumb as AriaSliderThumb,\n  SliderThumbProps as AriaSliderThumbProps,\n  SliderTrack as AriaSliderTrack,\n  SliderTrackProps as AriaSliderTrackProps,\n  composeRenderProps,\n} from \"react-aria-components\"\n\nimport { cn } from \"@/lib/utils\"\n\nimport { labelVariants } from \"./field\"\n\nconst SliderOutput = ({ className, ...props }: AriaSliderOutputProps) => (\n  <AriaSliderOutput className={cn(labelVariants(), className)} {...props} />\n)\n\nconst Slider = ({\n  className,\n  orientation = \"horizontal\",\n  ...props\n}: AriaSliderProps) => (\n  <AriaSlider\n    className={composeRenderProps(className, (className) =>\n      cn(\n        \"relative flex touch-none select-none items-center\",\n        {\n          \"h-full\": orientation === \"vertical\",\n          \"w-full\": orientation === \"horizontal\",\n        },\n        className\n      )\n    )}\n    orientation={orientation}\n    {...props}\n  />\n)\n\nconst SliderTrack = ({ className, ...props }: AriaSliderTrackProps) => (\n  <AriaSliderTrack\n    className={composeRenderProps(className, (className, renderProps) =>\n      cn(\n        {\n          \"h-1.5 w-full\": renderProps.orientation === \"horizontal\",\n          \"h-full w-1.5\": renderProps.orientation === \"vertical\",\n        },\n        \"relative grow rounded-full bg-primary/20\",\n        /* Disabled */\n        \"data-[disabled]:opacity-50\",\n        className\n      )\n    )}\n    {...props}\n  />\n)\n\nconst SliderFillTrack = ({\n  className,\n  ...props\n}: React.HTMLAttributes<HTMLDivElement>) => {\n  let state = React.useContext(AriaSliderStateContext)!\n  const orientation = state.orientation === \"vertical\" ? \"height\" : \"width\"\n  return (\n    <div\n      style={{ [orientation]: state.getThumbPercent(0) * 100 + \"%\" }}\n      className={cn(\n        \"absolute rounded-full bg-primary\",\n        {\n          \"h-full\": state.orientation === \"horizontal\",\n          \"w-full bottom-0\": state.orientation === \"vertical\",\n        },\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nconst SliderThumb = ({ className }: AriaSliderThumbProps) => (\n  <AriaSliderThumb\n    className={composeRenderProps(className, (className) =>\n      cn(\n        \"left-1/2 top-1/2 block size-4 rounded-full border border-primary/50 bg-background shadow transition-colors\",\n        /* Disabled */\n        \"data-[disabled]:pointer-events-none\",\n        /* Focus Visible */\n        \"data-[focus-visible]:outline-none data-[focus-visible]:ring-1 data-[focus-visible]:ring-ring\",\n        className\n      )\n    )}\n  />\n)\n\nexport { Slider, SliderTrack, SliderFillTrack, SliderThumb, SliderOutput }\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ]
+}

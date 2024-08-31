@@ -1,0 +1,15 @@
+{
+  "name": "separator",
+  "type": "registry:ui",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "files": [
+    {
+      "path": "ui/separator.tsx",
+      "content": "\"use client\"\n\nimport {\n  Separator as AriaSeparator,\n  SeparatorProps as AriaSeparatorProps,\n} from \"react-aria-components\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst Separator = ({\n  className,\n  orientation = \"horizontal\",\n  ...props\n}: AriaSeparatorProps) => (\n  <AriaSeparator\n    orientation={orientation}\n    className={cn(\n      \"bg-border\",\n      /* Orientation */\n      orientation === \"horizontal\" ? \"h-px w-full\" : \"w-px\",\n      className\n    )}\n    {...props}\n  />\n)\n\nexport { Separator }\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ]
+}

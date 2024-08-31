@@ -22,6 +22,7 @@ function DndListBox(props: DndListBoxProps) {
   let { dragAndDropHooks } = useDragAndDrop({
     // Provide drag data in a custom format as well as plain text.
     getItems(keys) {
+      // @ts-ignore
       return [...keys].map((key) => {
         let item = list.getItem(key)
         return {

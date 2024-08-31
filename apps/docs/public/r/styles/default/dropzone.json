@@ -1,0 +1,15 @@
+{
+  "name": "dropzone",
+  "type": "registry:ui",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "files": [
+    {
+      "path": "ui/dropzone.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport {\n  DropZone as AriaDropZone,\n  DropZoneProps as AriaDropZoneProps,\n  composeRenderProps,\n} from \"react-aria-components\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst DropZone = ({ className, ...props }: AriaDropZoneProps) => (\n  <AriaDropZone\n    className={composeRenderProps(className, (className) =>\n      cn(\n        \"flex h-[150px] w-[300px] flex-col items-center justify-center gap-2 rounded-md border border-dashed text-sm ring-offset-background\",\n        /* Drop Target */\n        \"data-[drop-target]:border-solid data-[drop-target]:border-primary data-[drop-target]:bg-accent\",\n        /* Focus Visible */\n        \"data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2\",\n        className\n      )\n    )}\n    {...props}\n  />\n)\n\nexport { DropZone }\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ]
+}

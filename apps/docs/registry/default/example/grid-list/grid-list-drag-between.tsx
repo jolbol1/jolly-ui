@@ -22,6 +22,7 @@ function DndGridList(props: DndGridListProps) {
   let { dragAndDropHooks } = useDragAndDrop({
     // Provide drag data in a custom format as well as plain text.
     getItems(keys) {
+      // @ts-ignore
       return [...keys].map((key) => {
         let item = list.getItem(key)
         return {
@@ -78,6 +79,7 @@ function DndGridList(props: DndGridListProps) {
     // if they were moved to a different list.
     onDragEnd(e) {
       if (e.dropOperation === "move" && !e.isInternal) {
+        // @ts-ignore
         list.remove(...e.keys)
       }
     },

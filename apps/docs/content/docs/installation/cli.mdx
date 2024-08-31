@@ -3,28 +3,22 @@ title: CLI
 description: Use the command line to add Jolly-UI components to your application.
 ---
 
-<Callout type="default">
-  At this time the command line can only install default styled components, not
-  new-york. For new york, please copy and paste. The addition of variants is
-  being tracked in this
-  [issue](https://github.com/jacobparis-insiders/sly/issues/35)
-</Callout>
-
 ## Add components from CLI
 
-Once you have completed the install steps for the tailwind config and css, you can choose to add components
-via CLI instead.
+There are two ways to add components to your project using the CLI.
 
-Run the following:
+1. Using the `REGISTRY_URL` environment variable. (**Reccommended** as it will follow the shadcn components.json config)
+
+2. Using the components URL. (Note you will need to specify the style, e.g `https://jollyui.dev/new-york/button`)
+
+### Using the `REGISTRY_URL` environment variable
 
 ```bash /jolly/
-npx @sly-cli/sly add jolly-ui
+REGISTRY_URL=https://jollyui.dev/r npx shadcn@latest add button
 ```
 
-This will list the components available to you to install, and will copy the code over for you.
+### Using the components URL
 
-For a specific component you can also Run
-
-```bash
-npx @sly-cli/sly add jolly-ui [component_name]
+```bash /jolly/
+npx shadcn@latest add https://jollyui.dev/default/button
 ```
