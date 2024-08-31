@@ -1,35 +1,35 @@
-import { isTextDropItem, useDragAndDrop } from "react-aria-components";
-import { useListData } from "react-stately";
+import { isTextDropItem, useDragAndDrop } from "react-aria-components"
+import { useListData } from "react-stately"
 
-import { GridList, GridListItem } from "@/registry/new-york/ui/grid-list";
+import { GridList, GridListItem } from "@/registry/new-york/ui/grid-list"
 
 interface FileItem {
-  id: string;
-  name: string;
-  type: string;
+  id: string
+  name: string
+  type: string
 }
 
 interface DndGridListProps {
-  initialItems: FileItem[];
-  "aria-label": string;
+  initialItems: FileItem[]
+  "aria-label": string
 }
 
 function DndGridList(props: DndGridListProps) {
   let list = useListData({
     initialItems: props.initialItems,
-  });
+  })
 
   let { dragAndDropHooks } = useDragAndDrop({
     // Provide drag data in a custom format as well as plain text.
     getItems(keys) {
       // @ts-ignore
       return [...keys].map((key) => {
-        let item = list.getItem(key);
+        let item = list.getItem(key)
         return {
           "custom-app-type": JSON.stringify(item),
           "text/plain": item.name,
-        };
-      });
+        }
+      })
     },
 
     // Accept drops with the custom format.
@@ -46,11 +46,11 @@ function DndGridList(props: DndGridListProps) {
           .map(async (item) =>
             JSON.parse(await item.getText("custom-app-type"))
           )
-      );
+      )
       if (e.target.dropPosition === "before") {
-        list.insertBefore(e.target.key, ...processedItems);
+        list.insertBefore(e.target.key, ...processedItems)
       } else if (e.target.dropPosition === "after") {
-        list.insertAfter(e.target.key, ...processedItems);
+        list.insertAfter(e.target.key, ...processedItems)
       }
     },
 
@@ -62,16 +62,16 @@ function DndGridList(props: DndGridListProps) {
           .map(async (item) =>
             JSON.parse(await item.getText("custom-app-type"))
           )
-      );
-      list.append(...processedItems);
+      )
+      list.append(...processedItems)
     },
 
     // Handle reordering items within the same list.
     onReorder(e) {
       if (e.target.dropPosition === "before") {
-        list.moveBefore(e.target.key, e.keys);
+        list.moveBefore(e.target.key, e.keys)
       } else if (e.target.dropPosition === "after") {
-        list.moveAfter(e.target.key, e.keys);
+        list.moveAfter(e.target.key, e.keys)
       }
     },
 
@@ -79,10 +79,11 @@ function DndGridList(props: DndGridListProps) {
     // if they were moved to a different list.
     onDragEnd(e) {
       if (e.dropOperation === "move" && !e.isInternal) {
-        list.remove(...e.keys);
+        // @ts-ignore
+        list.remove(...e.keys)
       }
     },
-  });
+  })
 
   return (
     <GridList
@@ -97,7 +98,7 @@ function DndGridList(props: DndGridListProps) {
     >
       {(item) => <GridListItem>{item.name}</GridListItem>}
     </GridList>
-  );
+  )
 }
 
 export default function GridListDragBetween() {
@@ -126,5 +127,5 @@ export default function GridListDragBetween() {
         aria-label="Second GridList"
       />
     </div>
-  );
+  )
 }
