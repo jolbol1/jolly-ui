@@ -1,0 +1,15 @@
+{
+  "name": "tabs",
+  "type": "registry:ui",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "files": [
+    {
+      "path": "ui/tabs.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport {\n  Tab as AriaTab,\n  TabList as AriaTabList,\n  TabListProps as AriaTabListProps,\n  TabPanel as AriaTabPanel,\n  TabPanelProps as AriaTabPanelProps,\n  TabProps as AriaTabProps,\n  Tabs as AriaTabs,\n  TabsProps as AriaTabsProps,\n  composeRenderProps,\n} from \"react-aria-components\"\n\nimport { cn } from \"@/lib/utils\"\n\nfunction Tabs({ className, ...props }: AriaTabsProps) {\n  return (\n    <AriaTabs\n      className={composeRenderProps(className, (className) =>\n        cn(\n          \"group flex flex-col gap-2\",\n          /* Orientation */\n          \"data-[orientation=vertical]:flex-row\",\n          className\n        )\n      )}\n      {...props}\n    />\n  )\n}\n\nconst TabList = <T extends object>({\n  className,\n  ...props\n}: AriaTabListProps<T>) => (\n  <AriaTabList\n    className={composeRenderProps(className, (className) =>\n      cn(\n        \"inline-flex h-9 items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground\",\n        /* Orientation */\n        \"data-[orientation=vertical]:h-auto data-[orientation=vertical]:flex-col\",\n        className\n      )\n    )}\n    {...props}\n  />\n)\n\nconst Tab = ({ className, ...props }: AriaTabProps) => (\n  <AriaTab\n    className={composeRenderProps(className, (className) =>\n      cn(\n        \"inline-flex cursor-pointer justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium outline-none ring-offset-background transition-all\",\n        /* Focus Visible */\n        \"data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2\",\n        /* Disabled */\n        \"data-[disabled]:pointer-events-none data-[disabled]:opacity-50\",\n        /* Selected */\n        \"data-[selected]:bg-background data-[selected]:text-foreground data-[selected]:shadow\",\n        /* Orientation */\n        \"group-data-[orientation=vertical]:w-full\",\n        className\n      )\n    )}\n    {...props}\n  />\n)\n\nconst TabPanel = ({ className, ...props }: AriaTabPanelProps) => (\n  <AriaTabPanel\n    className={composeRenderProps(className, (className) =>\n      cn(\n        \"mt-2 ring-offset-background\",\n        /* Focus Visible */\n        \"data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2\",\n        className\n      )\n    )}\n    {...props}\n  />\n)\n\nexport { Tabs, TabList, TabPanel, Tab }\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ]
+}

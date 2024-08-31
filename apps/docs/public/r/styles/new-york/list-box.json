@@ -1,0 +1,15 @@
+{
+  "name": "list-box",
+  "type": "registry:ui",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "files": [
+    {
+      "path": "ui/list-box.tsx",
+      "content": "import { CheckIcon } from \"@radix-ui/react-icons\"\nimport {\n  Collection as AriaCollection,\n  Header as AriaHeader,\n  ListBox as AriaListBox,\n  ListBoxItem as AriaListBoxItem,\n  ListBoxItemProps as AriaListBoxItemProps,\n  ListBoxProps as AriaListBoxProps,\n  Section as AriaSection,\n  composeRenderProps,\n} from \"react-aria-components\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst ListBoxSection = AriaSection\n\nconst ListBoxCollection = AriaCollection\n\nfunction ListBox<T extends object>({\n  className,\n  ...props\n}: AriaListBoxProps<T>) {\n  return (\n    <AriaListBox\n      className={composeRenderProps(className, (className) =>\n        cn(\n          className,\n          \"group overflow-auto rounded-md border bg-popover p-1 text-popover-foreground shadow-md outline-none\",\n          /* Empty */\n          \"data-[empty]:p-6 data-[empty]:text-center data-[empty]:text-sm\"\n        )\n      )}\n      {...props}\n    />\n  )\n}\n\nconst ListBoxItem = <T extends object>({\n  className,\n  children,\n  ...props\n}: AriaListBoxItemProps<T>) => {\n  return (\n    <AriaListBoxItem\n      textValue={\n        props.textValue || (typeof children === \"string\" ? children : undefined)\n      }\n      className={composeRenderProps(className, (className) =>\n        cn(\n          \"relative flex w-full cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none\",\n          /* Disabled */\n          \"data-[disabled]:pointer-events-none data-[disabled]:opacity-50\",\n          /* Focused */\n          \"data-[focused]:bg-accent data-[focused]:text-accent-foreground\",\n          /* Hovered */\n          \"data-[hovered]:bg-accent data-[hovered]:text-accent-foreground\",\n          /* Selection */\n          \"data-[selection-mode]:pr-8\",\n          className\n        )\n      )}\n      {...props}\n    >\n      {composeRenderProps(children, (children, renderProps) => (\n        <>\n          {renderProps.isSelected && (\n            <span className=\"absolute right-2 flex size-4 items-center justify-center\">\n              <CheckIcon className=\"size-4\" />\n            </span>\n          )}\n          {children}\n        </>\n      ))}\n    </AriaListBoxItem>\n  )\n}\n\nfunction ListBoxHeader({\n  className,\n  ...props\n}: React.ComponentProps<typeof AriaHeader>) {\n  return (\n    <AriaHeader\n      className={cn(\"px-2 py-1.5 text-sm font-semibold\", className)}\n      {...props}\n    />\n  )\n}\n\nexport {\n  ListBox,\n  ListBoxItem,\n  ListBoxHeader,\n  ListBoxSection,\n  ListBoxCollection,\n}\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ]
+}

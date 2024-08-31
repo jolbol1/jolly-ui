@@ -17,6 +17,7 @@ export default function GridListDragAndDrop() {
 
   let { dragAndDropHooks } = useDragAndDrop({
     getItems: (keys) =>
+      // @ts-ignore
       [...keys].map((key) => ({ "text/plain": list.getItem(key).name })),
     onReorder(e) {
       if (e.target.dropPosition === "before") {

@@ -1,0 +1,16 @@
+{
+  "name": "field",
+  "type": "registry:ui",
+  "dependencies": [
+    "react-aria-components",
+    "class-variance-authority"
+  ],
+  "files": [
+    {
+      "path": "ui/field.tsx",
+      "content": "\"use client\"\n\nimport { cva, type VariantProps } from \"class-variance-authority\"\nimport {\n  FieldError as AriaFieldError,\n  FieldErrorProps as AriaFieldErrorProps,\n  Group as AriaGroup,\n  GroupProps as AriaGroupProps,\n  Label as AriaLabel,\n  LabelProps as AriaLabelProps,\n  Text as AriaText,\n  TextProps as AriaTextProps,\n  composeRenderProps,\n} from \"react-aria-components\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst labelVariants = cva([\n  \"text-sm font-medium leading-none\",\n  /* Disabled */\n  \"data-[disabled]:cursor-not-allowed data-[disabled]:opacity-70\",\n  /* Invalid */\n  \"group-data-[invalid]:text-destructive\",\n])\n\nconst Label = ({ className, ...props }: AriaLabelProps) => (\n  <AriaLabel className={cn(labelVariants(), className)} {...props} />\n)\n\nfunction FormDescription({ className, ...props }: AriaTextProps) {\n  return (\n    <AriaText\n      className={cn(\"text-[0.8rem] text-muted-foreground\", className)}\n      {...props}\n      slot=\"description\"\n    />\n  )\n}\n\nfunction FieldError({ className, ...props }: AriaFieldErrorProps) {\n  return (\n    <AriaFieldError\n      className={cn(\"text-[0.8rem] font-medium text-destructive\", className)}\n      {...props}\n    />\n  )\n}\n\nconst fieldGroupVariants = cva(\"\", {\n  variants: {\n    variant: {\n      default: [\n        \"relative flex h-9 w-full items-center overflow-hidden rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors\",\n        /* Focus Within */\n        \"data-[focus-within]:outline-none data-[focus-within]:ring-1 data-[focus-within]:ring-ring\",\n        /* Disabled */\n        \"data-[disabled]:opacity-50\",\n      ],\n      ghost: \"\",\n    },\n  },\n  defaultVariants: {\n    variant: \"default\",\n  },\n})\n\ninterface GroupProps\n  extends AriaGroupProps,\n    VariantProps<typeof fieldGroupVariants> {}\n\nfunction FieldGroup({ className, variant, ...props }: GroupProps) {\n  return (\n    <AriaGroup\n      className={composeRenderProps(className, (className) =>\n        cn(fieldGroupVariants({ variant }), className)\n      )}\n      {...props}\n    />\n  )\n}\n\nexport {\n  Label,\n  labelVariants,\n  FieldGroup,\n  fieldGroupVariants,\n  FieldError,\n  FormDescription,\n}\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ]
+}
