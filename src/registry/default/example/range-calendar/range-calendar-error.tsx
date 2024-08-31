@@ -23,7 +23,7 @@ export default function RangeCalendarError() {
     <RangeCalendar
       aria-label="Trip dates"
       value={range}
-      onChange={setRange}
+      onChange={(val) => val && setRange(val)}
       isInvalid={isInvalid}
     >
       <CalendarHeading />

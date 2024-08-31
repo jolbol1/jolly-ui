@@ -11,7 +11,7 @@
     "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
     "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache",
     "build:registry": "tsx --tsconfig ./src/tsconfig.scripts.json ./src/scripts/build-registry.mts && prettier --loglevel silent --write \"src/registry/**/*.{ts,tsx,mdx}\" --cache",
-    "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap --config next-sitemap.config.cjs"
   },
   "dependencies": {
     "@docsearch/react": "^3.6.0",
@@ -51,6 +51,7 @@
     "eslint": "8.57.0",
     "eslint-config-next": "14.2.7",
     "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-tailwindcss": "^3.17.4",
     "mdast-util-toc": "^7.0.1",
     "postcss": "^8.4.38",
     "prettier": "^3.3.3",
