@@ -6,7 +6,7 @@
     "class-variance-authority"
   ],
   "registryDependencies": [
-    "https://jollyui.dev/new-york/field"
+    "https://jollyui.dev/r/styles/new-york/field.json"
   ],
   "files": [
     {

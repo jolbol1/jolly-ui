@@ -6,7 +6,7 @@
     "class-variance-authority"
   ],
   "registryDependencies": [
-    "https://jollyui.dev/default/field"
+    "https://jollyui.dev/r/styles/default/field.json"
   ],
   "files": [
     {

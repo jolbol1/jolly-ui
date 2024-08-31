@@ -397,7 +397,7 @@ async function buildStyles(registry: Registry) {
         .safeParse({
           ...item,
           registryDependencies: item.registryDependencies?.map(
-            (r) => `https://jollyui.dev/${style.name}/${r}`
+            (r) => `https://jollyui.dev/r/styles/${style.name}/${r}.json`
           ),
           files,
         })
