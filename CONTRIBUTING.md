@@ -19,7 +19,7 @@ This repository is structured as follows:
 
 ```
 apps
-└── docs
+└── src
     ├── app
     ├── components
     ├── content
@@ -34,12 +34,12 @@ packages
 └── (config files)
 ```
 
-| Path                   | Description                              |
-| ---------------------- | ---------------------------------------- |
-| `apps/docs/app`        | The Next.js application for the website. |
-| `apps/docs/components` | The React components for the website.    |
-| `apps/docs/content`    | The content for the website.             |
-| `apps/docs/registry`   | The registry for the components.         |
+| Path             | Description                              |
+| ---------------- | ---------------------------------------- |
+| `src/app`        | The Next.js application for the website. |
+| `src/components` | The React components for the website.    |
+| `src/content`    | The content for the website.             |
+| `src/registry`   | The registry for the components.         |
 
 ## Development
 
@@ -76,33 +76,32 @@ pnpm install
 1. To run the `jollyui.dev` website:
 
 ```bash
-pnpm --filter=docs dev
+pnpm dev
 ```
 
 ## Documentation
 
-The documentation for this project is located in the `docs` workspace. You can run the documentation locally by running the following command:
+You can run the documentation locally by running the following command:
 
 ```bash
-pnpm --filter=docs dev
+pnpm dev
 ```
 
-Documentation is written using [MDX](https://mdxjs.com). You can find the documentation files in the `apps/docs/content/docs` directory.
+Documentation is written using [MDX](https://mdxjs.com). You can find the documentation files in the `src/content/docs` directory.
 
 ## Components
 
-We use a registry system for developing components. You can find the source code for the components under `apps/docs/registry`. The components are organized by styles.
+We use a registry system for developing components. You can find the source code for the components under `src/registry`. The components are organized by styles.
 
 ```bash
-apps
-└── docs
-    └── registry
-        ├── default
-        │   ├── example
-        │   └── ui
-        └── new-york
-            ├── example
-            └── ui
+src
+  └── registry
+      ├── default
+      │   ├── example
+      │   └── ui
+      └── new-york
+          ├── example
+          └── ui
 ```
 
 When adding or modifying components, please ensure that:
