@@ -3,73 +3,172 @@ title: Installation
 description: How to install dependencies and structure your app.
 ---
 
-There are two ways to install this application. You can skip the first steps if you have shadcn/ui set-up.
+<Callout>
+  If you have configured **shadcn/ui** using the shadcn cli, jump to [step
+  4](#thats-it). You can skip the installation steps below.
+</Callout>
 
-1. Use shadcn/ui cli to install required files (easiest way)
+There are two ways to install this application.
+
+1. Use shadcn cli to install required files (easiest way)
 2. Manually set up config files
 
 After using these methods, if you intend to use components with links please see the [Router Provider](#router-provider) instructions at the bottom.
 
-## Method 1: Using shadcn/ui cli
+## Method 1: Using shadcn cli
 
 <Steps>
 
-<Step>Run the init command</Step>
+### Create project
+
+<Callout type="danger">
+  Make sure to use the registry for jolly-ui. You do this by ensuring you have
+  the `REGISTRY_URL=https://jollyui.dev/r` environment variable set where you
+  are running the command.
+</Callout>
+
+Run the `init` command to create a new Next.js project or to setup an existing one:
 
 ```bash
-npx shadcn-ui@latest init
+REGISTRY_URL=https://jollyui.dev/r npx shadcn@latest init
 ```
 
-<Step>Install React Aria Components</Step>
+### Configure components.json
 
-```bash
-npm install react-aria-components
+You will be asked a few questions to configure `components.json`:
+
+```txt showLineNumbers
+Which style would you like to use? › New York
+Which color would you like to use as base color? › Zinc
+Do you want to use CSS variables for colors? › no / yes
 ```
 
-<Step>Add an icon library</Step>
+### App structure
 
-If you're using the default style, install lucide-react:
+Here's how I structure my Next.js apps. You can use this as a reference:
 
-```bash
-npm install lucide-react
+```txt {6-10,14-15}
+.
+├── app
+│   ├── layout.tsx
+│   └── page.tsx
+├── components
+│   ├── ui
+│   │   ├── alert-dialog.tsx
+│   │   ├── button.tsx
+│   │   ├── dropdown-menu.tsx
+│   │   └── ...
+│   ├── main-nav.tsx
+│   ├── page-header.tsx
+│   └── ...
+├── lib
+│   └── utils.ts
+├── styles
+│   └── globals.css
+├── next.config.js
+├── package.json
+├── postcss.config.js
+├── tailwind.config.ts
+└── tsconfig.json
 ```
 
-If you're using the new-york style, install @radix-ui/react-icons:
+- I place the UI components in the `components/ui` folder.
+- The rest of the components such as `<PageHeader />` and `<MainNav />` are placed in the `components` folder.
+- The `lib` folder contains all the utility functions. I have a `utils.ts` where I define the `cn` helper.
+- The `styles` folder contains the global CSS.
+
+### That's it
+
+You can now start adding components to your project. This can be done two ways using the CLI.
+
+- Using the `REGISTRY_URL` environment variable. (Recommended)
+- Using the components URL. (Note you will need to specify the style, e.g `https://jollyui.dev/new-york/button`)
 
 ```bash
-npm install @radix-ui/react-icons
+REGISTRY_URL=https://jollyui.dev/r npx shadcn@latest add button
+
+# or
+
+npx shadcn@latest add https://jollyui.dev/default/button
+# this method you must specify the style, e.g new-york would be https://jollyui.dev/new-york/button
+```
+
+The command above will add the `Button` component to your project. You can then import it like this:
+
+```tsx {1,6} showLineNumbers
+import { Button } from "@/components/ui/button"
+
+export default function Home() {
+  return (
+    <div>
+      <Button>Click me</Button>
+    </div>
+  )
+}
 ```
 
 </Steps>
 
-## Method 2: Manually set up config files
+## Method 2: Manual setup
+
+<Callout>
+  These instructions should be the same as the
+  [shadcn/ui](https://ui.shadcn.com/docs/installation/manual) manual
+  installation instructions.
+</Callout>
 
 <Steps>
 
-<Step>Install dependencies</Step>
+### Add Tailwind CSS
+
+Components are styled using Tailwind CSS. You need to install Tailwind CSS in your project.
+
+[Follow the Tailwind CSS installation instructions to get started.](https://tailwindcss.com/docs/installation)
+
+### Add dependencies
+
+Add the following dependencies to your project:
 
 ```bash
-npm install tailwindcss-animate class-variance-authority clsx tailwind-merge react-aria-components
+npm install tailwindcss-animate class-variance-authority clsx tailwind-merge
 ```
 
-<Step>Add an icon library</Step>
+### Add icon library
 
-If you're using the default style, install lucide-react:
+If you're using the `default` style, install `lucide-react`:
 
 ```bash
 npm install lucide-react
 ```
 
-If you're using the new-york style, install @radix-ui/react-icons:
+If you're using the `new-york` style, install `@radix-ui/react-icons`:
 
 ```bash
 npm install @radix-ui/react-icons
-
 ```
 
-<Step>Configure tailwind</Step>
+### Configure path aliases
 
-Here is an example tailwind config. The important parts here are the extended colors and tailwindcss-animate (tailwind.config.js/ts),
+I use the `@` alias. This is how I configure it in tsconfig.json:
+
+```json {3-6} title="tsconfig.json"
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    }
+  }
+}
+```
+
+The `@` alias is a preference. You can use other aliases if you want.
+
+**If you use a different alias such as ~, you'll need to update import statements when adding components.**
+
+### Configure tailwind.config.js
+
+Here's what my `tailwind.config.js` file looks like:
 
 ```js title="tailwind.config.js"
 const { fontFamily } = require("tailwindcss/defaultTheme")
@@ -150,14 +249,9 @@ module.exports = {
 }
 ```
 
-<Step>Configure css styles</Step>
+### Configure styles
 
-Add the following to your styles/globals.css file. These are the colors used in your theme. You can use the theme customizer on this site to generate different ones
-or bring your own styles.
-
-Its recommended to use HSL colors for theming but you can also use other color formats if you prefer.
-
-See the Tailwind CSS documentation for more information on using rgb, rgba or hsl colors.
+Add the following to your styles/globals.css file. You can learn more about using CSS variables for theming in the [theming section](/docs/theming).
 
 ```css title="globals.css"
 @tailwind base;
@@ -245,9 +339,9 @@ See the Tailwind CSS documentation for more information on using rgb, rgba or hs
 }
 ```
 
-<Step>Add the cn helper</Step>
+### Add a cn helper
 
-We use a `cn` helper to make it easier to conditionally add Tailwind CSS classes. Here's how I define it in `lib/utils.ts`:
+I use a `cn` helper to make it easier to conditionally add Tailwind CSS classes. Here's how I define it in `lib/utils.ts`:
 
 ```ts title="lib/utils.ts"
 import { clsx, type ClassValue } from "clsx"
@@ -258,15 +352,8 @@ export function cn(...inputs: ClassValue[]) {
 }
 ```
 
+### That's it
+
+You can now start adding components to your project.
+
 </Steps>
-
-## Router Provider
-
-react-aria-components has its own Link component and API. This is used on various components in the library with href on them. To set this up for your projects
-follow the instructions [here](https://react-spectrum.adobe.com/react-aria/routing.html#introduction).
-
-This works on NextJS, React Router and Remix!
-
-If you have to, you could switch out the link for your preferred one, but the above should handle most use cases.
-
-Thats all!
