@@ -1,17 +1,17 @@
-"use client";
+"use client"
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { SidebarNavItem } from "@/types/nav";
+import Link from "next/link"
+import { usePathname } from "next/navigation"
 
-import { cn } from "@/lib/utils";
+import { SidebarNavItem } from "@/types/nav"
+import { cn } from "@/lib/utils"
 
 export interface DocsSidebarNavProps {
-  items: SidebarNavItem[];
+  items: SidebarNavItem[]
 }
 
 export function DocsSidebarNav({ items }: DocsSidebarNavProps) {
-  const pathname = usePathname();
+  const pathname = usePathname()
 
   return items.length ? (
     <div className="w-full py-8">
@@ -26,12 +26,12 @@ export function DocsSidebarNav({ items }: DocsSidebarNavProps) {
         </div>
       ))}
     </div>
-  ) : null;
+  ) : null
 }
 
 interface DocsSidebarNavItemsProps {
-  items: SidebarNavItem[];
-  pathname: string | null;
+  items: SidebarNavItem[]
+  pathname: string | null
 }
 
 export function DocsSidebarNavItems({
@@ -80,5 +80,5 @@ export function DocsSidebarNavItems({
         )
       )}
     </div>
-  ) : null;
+  ) : null
 }

@@ -15,8 +15,8 @@ import {
   Separator as AriaSeparator,
   SeparatorProps as AriaSeparatorProps,
   SubmenuTrigger as AriaSubmenuTrigger,
-  composeRenderProps,
   PopoverProps,
+  composeRenderProps,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"

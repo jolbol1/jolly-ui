@@ -9,8 +9,8 @@ import {
   SearchField as AriaSearchField,
   SearchFieldProps as AriaSearchFieldProps,
   ValidationResult as AriaValidationResult,
-  composeRenderProps,
   Text,
+  composeRenderProps,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"

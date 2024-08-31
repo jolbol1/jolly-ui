@@ -1,8 +1,11 @@
 "use client"
 
 import React from "react"
-import { getColorChannels, parseColor } from "react-aria-components"
-import type { ColorSpace } from "react-aria-components"
+import {
+  getColorChannels,
+  parseColor,
+  type ColorSpace,
+} from "react-aria-components"
 
 import { Button } from "@/registry/new-york/ui/button"
 import {

@@ -7,8 +7,8 @@ import {
   RadioGroupProps as AriaRadioGroupProps,
   RadioProps as AriaRadioProps,
   ValidationResult as AriaValidationResult,
-  composeRenderProps,
   Text,
+  composeRenderProps,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"

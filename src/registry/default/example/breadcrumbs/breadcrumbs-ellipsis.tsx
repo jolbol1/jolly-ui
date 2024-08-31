@@ -3,8 +3,8 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbPage,
-  Breadcrumbs,
   BreadcrumbSeparator,
+  Breadcrumbs,
 } from "@/registry/default/ui/breadcrumbs"
 
 export function BreadcrumbsEllipsis() {

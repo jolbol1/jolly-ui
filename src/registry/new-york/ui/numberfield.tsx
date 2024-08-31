@@ -6,8 +6,8 @@ import {
   NumberField as AriaNumberField,
   NumberFieldProps as AriaNumberFieldProps,
   ValidationResult as AriaValidationResult,
-  composeRenderProps,
   Text,
+  composeRenderProps,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"

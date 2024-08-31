@@ -2,7 +2,6 @@ import { siteConfig } from "@/config/site"
 
 import "./globals.css"
 import "../styles/mdx.css"
-
 import type { Metadata } from "next"
 
 import {

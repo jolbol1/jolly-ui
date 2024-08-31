@@ -4,3 +4,5 @@ node_modules
 build
 .contentlayer
 **/fixtures
+src/__registry__/index.tsx
+

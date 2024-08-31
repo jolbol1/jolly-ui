@@ -10,8 +10,8 @@ import {
   ListBoxProps as AriaListBoxProps,
   PopoverProps as AriaPopoverProps,
   ValidationResult as AriaValidationResult,
-  composeRenderProps,
   Text,
+  composeRenderProps,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"

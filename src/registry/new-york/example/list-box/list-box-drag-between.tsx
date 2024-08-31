@@ -1,35 +1,35 @@
-import { isTextDropItem, useDragAndDrop } from "react-aria-components";
-import { useListData } from "react-stately";
+import { isTextDropItem, useDragAndDrop } from "react-aria-components"
+import { useListData } from "react-stately"
 
-import { ListBox, ListBoxItem } from "@/registry/new-york/ui/list-box";
+import { ListBox, ListBoxItem } from "@/registry/new-york/ui/list-box"
 
 interface FileItem {
-  id: string;
-  name: string;
-  type: string;
+  id: string
+  name: string
+  type: string
 }
 
 interface DndListBoxProps {
-  initialItems: FileItem[];
-  "aria-label": string;
+  initialItems: FileItem[]
+  "aria-label": string
 }
 
 function DndListBox(props: DndListBoxProps) {
   let list = useListData({
     initialItems: props.initialItems,
-  });
+  })
 
   let { dragAndDropHooks } = useDragAndDrop({
     // Provide drag data in a custom format as well as plain text.
     getItems(keys) {
       // @ts-ignore
       return [...keys].map((key) => {
-        let item = list.getItem(key);
+        let item = list.getItem(key)
         return {
           "custom-app-type": JSON.stringify(item),
           "text/plain": item.name,
-        };
-      });
+        }
+      })
     },
 
     // Accept drops with the custom format.
@@ -46,11 +46,11 @@ function DndListBox(props: DndListBoxProps) {
           .map(async (item) =>
             JSON.parse(await item.getText("custom-app-type"))
           )
-      );
+      )
       if (e.target.dropPosition === "before") {
-        list.insertBefore(e.target.key, ...processedItems);
+        list.insertBefore(e.target.key, ...processedItems)
       } else if (e.target.dropPosition === "after") {
-        list.insertAfter(e.target.key, ...processedItems);
+        list.insertAfter(e.target.key, ...processedItems)
       }
     },
 
@@ -62,16 +62,16 @@ function DndListBox(props: DndListBoxProps) {
           .map(async (item) =>
             JSON.parse(await item.getText("custom-app-type"))
           )
-      );
-      list.append(...processedItems);
+      )
+      list.append(...processedItems)
     },
 
     // Handle reordering items within the same list.
     onReorder(e) {
       if (e.target.dropPosition === "before") {
-        list.moveBefore(e.target.key, e.keys);
+        list.moveBefore(e.target.key, e.keys)
       } else if (e.target.dropPosition === "after") {
-        list.moveAfter(e.target.key, e.keys);
+        list.moveAfter(e.target.key, e.keys)
       }
     },
 
@@ -80,10 +80,10 @@ function DndListBox(props: DndListBoxProps) {
     onDragEnd(e) {
       if (e.dropOperation === "move" && !e.isInternal) {
         // @ts-ignore
-        list.remove(...e.keys);
+        list.remove(...e.keys)
       }
     },
-  });
+  })
 
   return (
     <ListBox
@@ -97,7 +97,7 @@ function DndListBox(props: DndListBoxProps) {
     >
       {(item) => <ListBoxItem>{item.name}</ListBoxItem>}
     </ListBox>
-  );
+  )
 }
 
 export default function ListBoxDragBetween() {
@@ -126,5 +126,5 @@ export default function ListBoxDragBetween() {
         aria-label="Second ListBox"
       />
     </div>
-  );
+  )
 }

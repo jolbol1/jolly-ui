@@ -8,8 +8,8 @@ import {
   TagList as AriaTagList,
   TagListProps as AriaTagListProps,
   TagProps as AriaTagProps,
-  composeRenderProps,
   Text,
+  composeRenderProps,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"

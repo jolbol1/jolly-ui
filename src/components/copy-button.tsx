@@ -1,29 +1,29 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { CheckIcon, CopyIcon } from "@radix-ui/react-icons";
-import { NpmCommands } from "@/types/unist";
+import * as React from "react"
+import { CheckIcon, CopyIcon } from "@radix-ui/react-icons"
 
-import { Event, trackEvent } from "@/lib/events";
-import { cn } from "@/lib/utils";
-import { Button, ButtonProps } from "@/registry/new-york/ui/button";
+import { NpmCommands } from "@/types/unist"
+import { Event, trackEvent } from "@/lib/events"
+import { cn } from "@/lib/utils"
+import { Button, ButtonProps } from "@/registry/new-york/ui/button"
 import {
   Menu,
   MenuItem,
   MenuPopover,
   MenuTrigger,
-} from "@/registry/new-york/ui/menu";
+} from "@/registry/new-york/ui/menu"
 
 interface CopyButtonProps extends ButtonProps {
-  value: string;
-  src?: string;
-  event?: Event["name"];
+  value: string
+  src?: string
+  event?: Event["name"]
 }
 
 export async function copyToClipboardWithMeta(value: string, event?: Event) {
-  navigator.clipboard.writeText(value);
+  navigator.clipboard.writeText(value)
   if (event) {
-    trackEvent(event);
+    trackEvent(event)
   }
 }
 
@@ -33,13 +33,13 @@ export function CopyButton({
   event,
   ...props
 }: CopyButtonProps) {
-  const [hasCopied, setHasCopied] = React.useState(false);
+  const [hasCopied, setHasCopied] = React.useState(false)
 
   React.useEffect(() => {
     setTimeout(() => {
-      setHasCopied(false);
-    }, 2000);
-  }, [hasCopied]);
+      setHasCopied(false)
+    }, 2000)
+  }, [hasCopied])
 
   return (
     <Button
@@ -60,8 +60,8 @@ export function CopyButton({
                 },
               }
             : undefined
-        );
-        setHasCopied(true);
+        )
+        setHasCopied(true)
       }}
       {...props}
     >
@@ -72,13 +72,13 @@ export function CopyButton({
         <CopyIcon className="size-3" />
       )}
     </Button>
-  );
+  )
 }
 
 interface CopyWithClassNamesProps {
-  value: string;
-  classNames: string;
-  className?: string;
+  value: string
+  classNames: string
+  className?: string
 }
 
 export function CopyWithClassNames({
@@ -86,18 +86,18 @@ export function CopyWithClassNames({
   classNames,
   className,
 }: CopyWithClassNamesProps) {
-  const [hasCopied, setHasCopied] = React.useState(false);
+  const [hasCopied, setHasCopied] = React.useState(false)
 
   React.useEffect(() => {
     setTimeout(() => {
-      setHasCopied(false);
-    }, 2000);
-  }, [hasCopied]);
+      setHasCopied(false)
+    }, 2000)
+  }, [hasCopied])
 
   const copyToClipboard = React.useCallback((value: string) => {
-    copyToClipboardWithMeta(value);
-    setHasCopied(true);
-  }, []);
+    copyToClipboardWithMeta(value)
+    setHasCopied(true)
+  }, [])
 
   return (
     <MenuTrigger>
@@ -120,10 +120,10 @@ export function CopyWithClassNames({
         <Menu
           onAction={(key) => {
             if (key == "component") {
-              copyToClipboard(value);
+              copyToClipboard(value)
             }
             if (key == "classname") {
-              copyToClipboard(classNames);
+              copyToClipboard(classNames)
             }
           }}
         >
@@ -132,32 +132,32 @@ export function CopyWithClassNames({
         </Menu>
       </MenuPopover>
     </MenuTrigger>
-  );
+  )
 }
 
 interface CopyNpmCommandButtonProps {
-  commands: Required<NpmCommands>;
-  className?: string;
+  commands: Required<NpmCommands>
+  className?: string
 }
 
 export function CopyNpmCommandButton({
   commands,
   className,
 }: CopyNpmCommandButtonProps) {
-  const [hasCopied, setHasCopied] = React.useState(false);
+  const [hasCopied, setHasCopied] = React.useState(false)
 
   React.useEffect(() => {
     setTimeout(() => {
-      setHasCopied(false);
-    }, 2000);
-  }, [hasCopied]);
+      setHasCopied(false)
+    }, 2000)
+  }, [hasCopied])
 
   const commandMap: { [key: string]: string } = {
     pnpm: commands.__pnpmCommand__,
     npm: commands.__npmCommand__,
     yarn: commands.__yarnCommand__,
     bun: commands.__bunCommand__,
-  };
+  }
 
   const copyCommand = React.useCallback(
     (value: string, pm: "npm" | "pnpm" | "yarn" | "bun") => {
@@ -167,11 +167,11 @@ export function CopyNpmCommandButton({
           command: value,
           pm,
         },
-      });
-      setHasCopied(true);
+      })
+      setHasCopied(true)
     },
     []
-  );
+  )
 
   return (
     <MenuTrigger>
@@ -193,7 +193,7 @@ export function CopyNpmCommandButton({
       <MenuPopover placement="bottom end">
         <Menu
           onAction={(key) => {
-            copyCommand(commandMap[key as string]!, key as any);
+            copyCommand(commandMap[key as string]!, key as any)
           }}
         >
           <MenuItem id="npm">npm</MenuItem>
@@ -203,5 +203,5 @@ export function CopyNpmCommandButton({
         </Menu>
       </MenuPopover>
     </MenuTrigger>
-  );
+  )
 }

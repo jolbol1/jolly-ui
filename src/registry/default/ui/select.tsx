@@ -12,8 +12,8 @@ import {
   SelectValue as AriaSelectValue,
   SelectValueProps as AriaSelectValueProps,
   ValidationResult as AriaValidationResult,
-  composeRenderProps,
   Text,
+  composeRenderProps,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"

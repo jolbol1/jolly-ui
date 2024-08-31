@@ -22,8 +22,8 @@ import {
   RangeCalendar as AriaRangeCalendar,
   RangeCalendarProps as AriaRangeCalendarProps,
   RangeCalendarStateContext as AriaRangeCalendarStateContext,
-  composeRenderProps,
   Text,
+  composeRenderProps,
   useLocale,
 } from "react-aria-components"
 

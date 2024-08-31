@@ -4,8 +4,8 @@ import { Key } from "react-aria-components"
 import {
   BreadcrumbItem,
   BreadcrumbLink,
-  Breadcrumbs,
   BreadcrumbSeparator,
+  Breadcrumbs,
 } from "@/registry/new-york/ui/breadcrumbs"
 
 export function BreadcrumbsItems() {

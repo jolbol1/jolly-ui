@@ -4,8 +4,8 @@ import {
   ColorPickerStateContext,
   getColorChannels,
   parseColor,
+  type ColorSpace,
 } from "react-aria-components"
-import type { ColorSpace } from "react-aria-components"
 
 import { Button } from "@/registry/default/ui/button"
 import {

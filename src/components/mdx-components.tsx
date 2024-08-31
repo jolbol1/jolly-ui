@@ -1,27 +1,27 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { YouTubeEmbed } from "@next/third-parties/google";
-import { useMDXComponent } from "next-contentlayer2/hooks";
-import { NpmCommands } from "@/types/unist";
+import * as React from "react"
+import Image from "next/image"
+import Link from "next/link"
+import { YouTubeEmbed } from "@next/third-parties/google"
+import { useMDXComponent } from "next-contentlayer2/hooks"
 
-import { Event } from "@/lib/events";
-import { useThemeStore } from "@/lib/use-theme-store";
-import { cn } from "@/lib/utils";
-import { Callout } from "@/components/callout";
-import { CodeBlockWrapper } from "@/components/code-block-wrapper";
-import { ComponentExample } from "@/components/component-example";
-import { ComponentPreview } from "@/components/component-preview";
-import { ComponentSource } from "@/components/component-source";
-import { CopyButton, CopyNpmCommandButton } from "@/components/copy-button";
-import { FrameworkDocs } from "@/components/framework-docs";
-import { StyleWrapper } from "@/components/style-wrapper";
-import { Tab, TabList, TabPanel, Tabs } from "@/registry/default/ui/tabs";
-import { Style } from "@/registry/styles";
+import { NpmCommands } from "@/types/unist"
+import { Event } from "@/lib/events"
+import { useThemeStore } from "@/lib/use-theme-store"
+import { cn } from "@/lib/utils"
+import { Callout } from "@/components/callout"
+import { CodeBlockWrapper } from "@/components/code-block-wrapper"
+import { ComponentExample } from "@/components/component-example"
+import { ComponentPreview } from "@/components/component-preview"
+import { ComponentSource } from "@/components/component-source"
+import { CopyButton, CopyNpmCommandButton } from "@/components/copy-button"
+import { FrameworkDocs } from "@/components/framework-docs"
+import { StyleWrapper } from "@/components/style-wrapper"
+import { Tab, TabList, TabPanel, Tabs } from "@/registry/default/ui/tabs"
+import { Style } from "@/registry/styles"
 
-import { ComponentCard, ComponentCards } from "./component-cards";
+import { ComponentCard, ComponentCards } from "./component-cards"
 
 const components = {
   YouTubeEmbed,
@@ -159,11 +159,11 @@ const components = {
     __style__,
     ...props
   }: React.HTMLAttributes<HTMLPreElement> & {
-    __style__?: Style["name"];
-    __rawString__?: string;
-    __withMeta__?: boolean;
-    __src__?: string;
-    __event__?: Event["name"];
+    __style__?: Style["name"]
+    __rawString__?: string
+    __withMeta__?: boolean
+    __src__?: string
+    __event__?: Event["name"]
   } & NpmCommands) => {
     return (
       <StyleWrapper styleName={__style__}>
@@ -197,7 +197,7 @@ const components = {
             />
           )}
       </StyleWrapper>
-    );
+    )
   },
   code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
     <code
@@ -302,21 +302,21 @@ const components = {
       {...props}
     />
   ),
-};
+}
 
 interface MdxProps {
-  code: string;
+  code: string
 }
 
 export function Mdx({ code }: MdxProps) {
-  const currentStyle = useThemeStore((state) => state.style);
+  const currentStyle = useThemeStore((state) => state.style)
   const Component = useMDXComponent(code, {
     style: currentStyle,
-  });
+  })
 
   return (
     <div className="mdx">
       <Component components={components} />
     </div>
-  );
+  )
 }
