@@ -10,6 +10,16 @@ const nextConfig = {
   redirects() {
     return [
       {
+        source: "/default/:path*",
+        destination: "/r/styles/default/:path*.json",
+        permanent: true,
+      },
+      {
+        source: "/new-york/:path*",
+        destination: "/r/styles/new-york/:path*.json",
+        permanent: true,
+      },
+      {
         source: "/components",
         destination: "/docs/components/breadcrumbs",
         permanent: true,
