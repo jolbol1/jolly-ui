@@ -5,8 +5,8 @@
     "react-aria-components"
   ],
   "registryDependencies": [
-    "field",
-    "popover"
+    "https://jollyui.dev/default/field",
+    "https://jollyui.dev/default/popover"
   ],
   "files": [
     {

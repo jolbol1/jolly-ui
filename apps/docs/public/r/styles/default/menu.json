@@ -6,9 +6,9 @@
     "class-variance-authority"
   ],
   "registryDependencies": [
-    "button",
-    "list-box",
-    "select"
+    "https://jollyui.dev/default/button",
+    "https://jollyui.dev/default/list-box",
+    "https://jollyui.dev/default/select"
   ],
   "files": [
     {

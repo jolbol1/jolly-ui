@@ -5,12 +5,12 @@
     "react-aria-components"
   ],
   "registryDependencies": [
-    "field",
-    "popover",
-    "button",
-    "calendar",
-    "datefield",
-    "field"
+    "https://jollyui.dev/default/field",
+    "https://jollyui.dev/default/popover",
+    "https://jollyui.dev/default/button",
+    "https://jollyui.dev/default/calendar",
+    "https://jollyui.dev/default/datefield",
+    "https://jollyui.dev/default/field"
   ],
   "files": [
     {

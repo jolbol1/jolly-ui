@@ -386,6 +386,7 @@ async function buildStyles(registry: Registry) {
         )
       }
 
+      // Modified to use URLs for shadcn add.
       const payload = registryEntrySchema
         .omit({
           source: true,
@@ -395,6 +396,9 @@ async function buildStyles(registry: Registry) {
         })
         .safeParse({
           ...item,
+          registryDependencies: item.registryDependencies?.map(
+            (r) => `https://jollyui.dev/${style.name}/${r}`
+          ),
           files,
         })
 

@@ -5,7 +5,7 @@
     "react-aria-components"
   ],
   "registryDependencies": [
-    "checkbox"
+    "https://jollyui.dev/default/checkbox"
   ],
   "files": [
     {

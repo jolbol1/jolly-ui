@@ -5,8 +5,8 @@
     "react-aria-components"
   ],
   "registryDependencies": [
-    "field",
-    "button"
+    "https://jollyui.dev/default/field",
+    "https://jollyui.dev/default/button"
   ],
   "files": [
     {

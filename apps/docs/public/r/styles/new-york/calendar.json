@@ -6,7 +6,7 @@
     "@internationalized/date"
   ],
   "registryDependencies": [
-    "button"
+    "https://jollyui.dev/new-york/button"
   ],
   "files": [
     {

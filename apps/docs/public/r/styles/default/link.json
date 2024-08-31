@@ -6,7 +6,7 @@
     "class-variance-authority"
   ],
   "registryDependencies": [
-    "button"
+    "https://jollyui.dev/default/button"
   ],
   "files": [
     {

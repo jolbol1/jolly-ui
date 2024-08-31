@@ -5,7 +5,7 @@
     "react-aria-components"
   ],
   "registryDependencies": [
-    "button"
+    "https://jollyui.dev/new-york/button"
   ],
   "files": [
     {
