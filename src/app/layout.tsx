@@ -7,6 +7,7 @@ import type { Metadata } from "next"
 import {
   fontInter,
   fontJakarta,
+  fontMono,
   fontOutfit,
   fontRaleway,
   fontSans,
@@ -86,7 +87,8 @@ export default function RootLayout({
         fontInter.variable,
         fontJakarta.variable,
         fontRaleway.variable,
-        fontOutfit.variable
+        fontOutfit.variable,
+        fontMono.variable
       )}
       style={
         {
