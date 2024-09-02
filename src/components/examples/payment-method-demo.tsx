@@ -108,7 +108,7 @@ export function CardsPaymentMethod() {
               <SelectTrigger id="month" aria-label="Month">
                 <SelectValue />
               </SelectTrigger>
-              <SelectPopover>
+              <SelectPopover className="w-auto">
                 <SelectListBox>
                   <SelectItem textValue="January" id="1">
                     January
