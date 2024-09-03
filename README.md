@@ -32,6 +32,9 @@ Licensed under the [MIT license](https://github.com/shadcn/ui/blob/main/LICENSE.
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/alecmev"><img src="https://avatars.githubusercontent.com/u/2584727?v=4?s=100" width="100px;" alt="Alec Mev"/><br /><sub><b>Alec Mev</b></sub></a><br /><a href="#design-alecmev" title="Design">🎨</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/jvliwanag"><img src="https://avatars.githubusercontent.com/u/211068?v=4?s=100" width="100px;" alt="Jan Vincent Liwanag"/><br /><sub><b>Jan Vincent Liwanag</b></sub></a><br /><a href="#doc-jvliwanag" title="Documentation">📖</a></td>
     </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://xuann.wang"><img src="https://avatars.githubusercontent.com/u/44045911?v=4?s=100" width="100px;" alt="Kid"/><br /><sub><b>Kid</b></sub></a><br /><a href="#doc-kidonng" title="Documentation">📖</a></td>
+    </tr>
   </tbody>
 </table>
 
