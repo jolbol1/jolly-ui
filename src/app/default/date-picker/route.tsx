@@ -1,7 +1,8 @@
 import { redirect } from "next/navigation"
 import { NextRequest, NextResponse } from "next/server"
 
-export const detectBot = (req: NextRequest) => {
+// From dub.co
+const detectBot = (req: NextRequest) => {
   const url = req.nextUrl
   if (url.searchParams.get("bot")) return true
   const ua = req.headers.get("User-Agent")
@@ -24,16 +25,21 @@ export const detectBot = (req: NextRequest) => {
 
 export async function GET(request: NextRequest): Promise<Response> {
   const userAgent = request.headers.get("user-agent") || ""
-  const isBrowser = /Mozilla|Chrome|Safari|Firefox/i.test(userAgent)
-
+  const isNode = /node-fetch/i.test(userAgent)
+  console.log(userAgent)
   const isBot = detectBot(request)
 
   if (isBot) {
-    return NextResponse.rewrite(new URL(`/og/date-picker`))
+    console.log(isBot)
+    return NextResponse.rewrite(
+      new URL(
+        `https://jolly-ui-git-og-jolbol1-s-team.vercel.app/og/date-picker`
+      )
+    )
   }
 
-  if (isBrowser) {
-    return NextResponse.redirect("/docs/components/date-picker")
+  if (!isNode) {
+    return redirect("/docs/components/date-picker")
   }
-  return NextResponse.redirect("/r/styles/default/date-picker.json")
+  return redirect("/r/styles/default/date-picker.json")
 }

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
       "install with npx shadcn add https://jollyui.dev/default/button",
     images: [
       {
-        url: "http://localhost:3000/date-picker.png",
+        url: "https://jolly-ui-git-og-jolbol1-s-team.vercel.app/date-picker.png",
         width: 1200,
         height: 630,
       },
