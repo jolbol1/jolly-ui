@@ -1,4 +1,4 @@
-import { createContentlayerPlugin } from "next-contentlayer2";
+import { createContentlayerPlugin } from "next-contentlayer2"
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -13,6 +13,13 @@ const nextConfig = {
         source: "/default/:path*",
         destination: "/r/styles/default/:path*.json",
         permanent: true,
+        has: [
+          {
+            type: "query",
+            key: "path",
+            value: "(?!date-picker).*",
+          },
+        ],
       },
       {
         source: "/new-york/:path*",
@@ -29,12 +36,12 @@ const nextConfig = {
         destination: "/docs/components/breadcrumbs",
         permanent: true,
       },
-    ];
+    ]
   },
-};
+}
 
 const withContentlayer = createContentlayerPlugin({
   // Additional Contentlayer config options
-});
+})
 
-export default withContentlayer(nextConfig);
+export default withContentlayer(nextConfig)
