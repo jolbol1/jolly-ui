@@ -10,16 +10,9 @@ const nextConfig = {
   redirects() {
     return [
       {
-        source: "/default/:path*",
+        source: "/default/:path((?!date-picker$).*)",
         destination: "/r/styles/default/:path*.json",
         permanent: true,
-        has: [
-          {
-            type: "query",
-            key: "path",
-            value: "(?!date-picker).*",
-          },
-        ],
       },
       {
         source: "/new-york/:path*",
