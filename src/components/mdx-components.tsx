@@ -310,6 +310,7 @@ interface MdxProps {
 
 export function Mdx({ code }: MdxProps) {
   const currentStyle = useThemeStore((state) => state.style)
+  code = code.replaceAll("[[STYLE]]", currentStyle)
   const Component = useMDXComponent(code, {
     style: currentStyle,
   })

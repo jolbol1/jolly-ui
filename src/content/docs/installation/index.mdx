@@ -21,16 +21,10 @@ After using these methods, if you intend to use components with links please see
 
 ### Create project
 
-<Callout type="danger">
-  Make sure to use the registry for jolly-ui. You do this by ensuring you have
-  the `REGISTRY_URL=https://jollyui.dev/r` environment variable set where you
-  are running the command.
-</Callout>
-
 Run the `init` command to create a new Next.js project or to setup an existing one:
 
 ```bash
-REGISTRY_URL=https://jollyui.dev/r npx shadcn@latest init
+npx shadcn@latest init
 ```
 
 ### Configure components.json
@@ -81,16 +75,16 @@ Here's how I structure my Next.js apps. You can use this as a reference:
 
 You can now start adding components to your project. This can be done two ways using the CLI.
 
-- Using the `REGISTRY_URL` environment variable. (Recommended)
-- Using the components URL. (Note you will need to specify the style, e.g `https://jollyui.dev/new-york/button`)
+- Using the components URL (Recommended). _Note you will need to specify the style, e.g `https://jollyui.dev/new-york/button`_
+- Using the `REGISTRY_URL` environment variable
 
 ```bash
-REGISTRY_URL=https://jollyui.dev/r npx shadcn@latest add button
+npx shadcn@latest add https://jollyui.dev/default/button
+# this method you must specify the style, e.g new-york would be https://jollyui.dev/new-york/button
 
 # or
 
-npx shadcn@latest add https://jollyui.dev/default/button
-# this method you must specify the style, e.g new-york would be https://jollyui.dev/new-york/button
+REGISTRY_URL=https://jollyui.dev/r npx shadcn@latest add button
 ```
 
 The command above will add the `Button` component to your project. You can then import it like this:
