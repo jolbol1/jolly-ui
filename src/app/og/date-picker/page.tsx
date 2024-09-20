@@ -5,11 +5,12 @@ export const runtime = "edge"
 
 export const metadata: Metadata = {
   title: "JollyUI DatePicker",
-  description: "install with npx shadcn add https://jollyui.dev/default/button",
+  description:
+    "install with npx shadcn add https://jollyui.dev/default/date-picker",
   openGraph: {
     title: "JollyUI DatePicker",
     description:
-      "install with npx shadcn add https://jollyui.dev/default/button",
+      "install with npx shadcn add https://jollyui.dev/default/date-picker",
     images: [
       {
         url: "https://jolly-ui-git-og-jolbol1-s-team.vercel.app/date-picker.png",
@@ -17,6 +18,16 @@ export const metadata: Metadata = {
         height: 630,
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "JollyUI - DatePicker",
+    description:
+      "install with npx shadcn add https://jollyui.dev/default/date-picker",
+    images: [
+      "https://jolly-ui-git-og-jolbol1-s-team.vercel.app/date-picker.png",
+    ],
+    creator: "@jollyshopland",
   },
 }
 
