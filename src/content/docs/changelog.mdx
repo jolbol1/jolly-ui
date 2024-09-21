@@ -12,14 +12,29 @@ Thanks to [shadcn](https://twitter.com/shadcn) for recently releasing the [shadc
 
 To get started with JollyUI using the shadcn CLI, you can now run:
 
-```bash
-npx shadcn@latest add https://jollyui.dev/default/button
-# this method you must specify the style, e.g new-york would be https://jollyui.dev/new-york/button
+<PackageManagerTabs>
+  <PackageManagerContent value="npm">
+    ```bash
+    npx shadcn@latest add https://jollyui.dev/[[STYLE]]/button
+    ```
+  </PackageManagerContent>
+  <PackageManagerContent value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add https://jollyui.dev/[[STYLE]]/button
+    ```
 
-# or
-
-REGISTRY_URL=https://jollyui.dev/r npx shadcn@latest add button
-```
+  </PackageManagerContent>
+  <PackageManagerContent value="bun">
+    ```bash
+    bunx --bun shadcn@latest add https://jollyui.dev/[[STYLE]]/button
+    ```
+  </PackageManagerContent>
+  <PackageManagerContent value="yarn">
+    ```bash 
+    npx shadcn@latest add https://jollyui.dev/[[STYLE]]/button 
+    ```
+  </PackageManagerContent>
+</PackageManagerTabs>
 
 ## July 2024
 
