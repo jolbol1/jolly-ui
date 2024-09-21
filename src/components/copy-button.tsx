@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import { CheckIcon, CopyIcon } from "@radix-ui/react-icons"
+import { ClipboardIcon } from "lucide-react"
 
 import { Event, trackEvent } from "@/lib/events"
 import { cn } from "@/lib/utils"
@@ -68,7 +69,7 @@ export function CopyButton({
       {hasCopied ? (
         <CheckIcon className="size-3" />
       ) : (
-        <CopyIcon className="size-3" />
+        <ClipboardIcon className="size-3" />
       )}
     </Button>
   )
