@@ -272,7 +272,7 @@
 .install-selected[data-selected="true"]:after {
   position: absolute;
   right: 8px;
-  bottom: -1.5px;
+  bottom: 0px;
   left: 8px;
   z-index: 1;
   height: 2px;
