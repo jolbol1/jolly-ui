@@ -268,3 +268,16 @@
     margin-bottom: -2px;
   }
 }
+
+.install-selected[data-selected="true"]:after {
+  position: absolute;
+  right: 8px;
+  bottom: -1.5px;
+  left: 8px;
+  z-index: 1;
+  height: 2px;
+  border-radius: 2px;
+  content: "";
+  background-color: hsl(var(--primary));
+  transition: background-color 0.25s;
+}

@@ -6,7 +6,6 @@ import Link from "next/link"
 import { YouTubeEmbed } from "@next/third-parties/google"
 import { useMDXComponent } from "next-contentlayer2/hooks"
 
-import { NpmCommands } from "@/types/unist"
 import { Event } from "@/lib/events"
 import { useThemeStore } from "@/lib/use-theme-store"
 import { cn } from "@/lib/utils"
@@ -15,13 +14,14 @@ import { CodeBlockWrapper } from "@/components/code-block-wrapper"
 import { ComponentExample } from "@/components/component-example"
 import { ComponentPreview } from "@/components/component-preview"
 import { ComponentSource } from "@/components/component-source"
-import { CopyButton, CopyNpmCommandButton } from "@/components/copy-button"
+import { CopyButton } from "@/components/copy-button"
 import { FrameworkDocs } from "@/components/framework-docs"
 import { StyleWrapper } from "@/components/style-wrapper"
 import { Tab, TabList, TabPanel, Tabs } from "@/registry/default/ui/tabs"
 import { Style } from "@/registry/styles"
 
 import { ComponentCard, ComponentCards } from "./component-cards"
+import { PackageManagerContent, PackageManagerTabs } from "./install-tabs"
 
 const components = {
   YouTubeEmbed,
@@ -149,10 +149,6 @@ const components = {
   pre: ({
     className,
     __rawString__,
-    __npmCommand__,
-    __yarnCommand__,
-    __pnpmCommand__,
-    __bunCommand__,
     __withMeta__,
     __src__,
     __event__,
@@ -164,7 +160,7 @@ const components = {
     __withMeta__?: boolean
     __src__?: string
     __event__?: Event["name"]
-  } & NpmCommands) => {
+  }) => {
     return (
       <StyleWrapper styleName={__style__}>
         <pre
@@ -174,7 +170,7 @@ const components = {
           )}
           {...props}
         />
-        {__rawString__ && !__npmCommand__ && (
+        {__rawString__ && (
           <CopyButton
             value={__rawString__}
             src={__src__}
@@ -182,20 +178,6 @@ const components = {
             className={cn("absolute right-4 top-4", __withMeta__ && "top-16")}
           />
         )}
-        {__npmCommand__ &&
-          __yarnCommand__ &&
-          __pnpmCommand__ &&
-          __bunCommand__ && (
-            <CopyNpmCommandButton
-              commands={{
-                __npmCommand__,
-                __yarnCommand__,
-                __pnpmCommand__,
-                __bunCommand__,
-              }}
-              className={cn("absolute right-4 top-4", __withMeta__ && "top-16")}
-            />
-          )}
       </StyleWrapper>
     )
   },
@@ -215,6 +197,8 @@ const components = {
   ComponentSource,
   ComponentCard,
   ComponentCards,
+  PackageManagerTabs,
+  PackageManagerContent,
   CodeBlockWrapper: ({ ...props }) => (
     <CodeBlockWrapper className="rounded-md border" {...props} />
   ),

@@ -12,6 +12,7 @@ type State = {
   fontFamily: FontFamily
   grayColor: GrayColor
   style: "default" | "new-york"
+  packageManager: "npm" | "pnpm" | "bun" | "yarn"
 }
 
 type Actions = {
@@ -20,6 +21,7 @@ type Actions = {
   setFontFamily: (font: FontFamily) => void
   setBorderRadius: (radius: BorderRadius) => void
   setStyle: (style: "default" | "new-york") => void
+  setPackageManager: (pm: "npm" | "pnpm" | "bun" | "yarn") => void
   reset: () => void
 }
 
@@ -33,6 +35,7 @@ const initialState: State = {
     link: "https://vercel.com/font",
   },
   grayColor: "zinc",
+  packageManager: "npm",
 }
 
 export const useThemeStore = create<State & Actions>()(
@@ -45,6 +48,7 @@ export const useThemeStore = create<State & Actions>()(
         setBorderRadius: (borderRadius) => set(() => ({ borderRadius })),
         setFontFamily: (fontFamily) => set(() => ({ fontFamily })),
         setGrayColor: (grayColor) => set(() => ({ grayColor })),
+        setPackageManager: (packageManager) => set(() => ({ packageManager })),
         reset: () => {
           set(initialState)
         },
