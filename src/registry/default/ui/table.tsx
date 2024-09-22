@@ -69,9 +69,9 @@ const Column = ({ className, children, ...props }: ColumnProps) => (
           role="presentation"
           tabIndex={-1}
           className={cn(
-            "flex h-10 flex-1 items-center gap-1 overflow-hidden ",
+            "flex h-10 flex-1 items-center gap-1 overflow-hidden rounded-md",
             allowsSorting &&
-              "rounded-md p-2 px-4 data-[hovered]:bg-accent data-[hovered]:text-accent-foreground",
+              "p-2 px-4 data-[hovered]:bg-accent data-[hovered]:text-accent-foreground",
             "focus-visible:outline-none  data-[focus-visible]:-outline-offset-2 data-[focus-visible]:outline-ring"
           )}
         >
