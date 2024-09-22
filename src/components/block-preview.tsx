@@ -1,8 +1,15 @@
 "use client"
 
 import * as React from "react"
+import { useTheme } from "next-themes"
 import { ImperativePanelHandle } from "react-resizable-panels"
 
+import {
+  syncIframeBorderRadius,
+  syncIframeFontFamily,
+  syncIframeGrayColor,
+  syncIframeThemeColor,
+} from "@/lib/use-theme-generator"
 import { useThemeStore } from "@/lib/use-theme-store"
 import { cn } from "@/lib/utils"
 import { useLiftMode } from "@/hooks/use-lift-mode"
@@ -25,6 +32,11 @@ export function BlockPreview({
   const { isLiftMode } = useLiftMode(block.name)
   const [isLoading, setIsLoading] = React.useState(true)
   const ref = React.useRef<ImperativePanelHandle>(null)
+  const { setTheme, resolvedTheme } = useTheme()
+  const currentGrayColor = useThemeStore((state) => state.grayColor)
+  const currentAccentColor = useThemeStore((state) => state.accentColor)
+  const currentFontFamily = useThemeStore((state) => state.fontFamily)
+  const currentBorderRadius = useThemeStore((state) => state.borderRadius)
 
   if (style !== block.style) {
     return null
@@ -63,11 +75,17 @@ export function BlockPreview({
               </div>
             ) : null}
             <iframe
+              id={`block-${block.style}-${block.name}`}
               src={`/blocks/${block.style}/${block.name}`}
               height={block.container?.height ?? 450}
               className="chunk-mode relative z-20 w-full bg-background"
               onLoad={() => {
                 setIsLoading(false)
+                const id = `block-${block.style}-${block.name}`
+                syncIframeGrayColor(id, currentGrayColor, resolvedTheme)
+                syncIframeThemeColor(id, currentAccentColor, resolvedTheme)
+                syncIframeBorderRadius(id, currentBorderRadius)
+                syncIframeFontFamily(id, currentFontFamily)
               }}
               allowTransparency
             />

@@ -143,6 +143,84 @@ export const syncFontFamily = (fontFamily: FontFamily) => {
   })
 }
 
+export const syncIframeGrayColor = (
+  id: string,
+  color: GrayColor,
+  resolvedTheme: string | undefined
+) => {
+  const iframe = document.getElementById(id) as HTMLIFrameElement
+  if (!iframe) return
+
+  const grayColor = grayColors.find((c) => c.name === color)
+
+  const vars = (
+    resolvedTheme === "light"
+      ? { ...grayColor?.cssVars.light! }
+      : { ...grayColor?.cssVars.dark! }
+  ) as { [key: string]: string }
+
+  Object.keys(vars)?.forEach((variable) => {
+    iframe.contentWindow?.document.documentElement?.style.setProperty(
+      `--${variable}`,
+      `${vars[variable]}`
+    )
+  })
+
+  iframe.contentWindow?.document.documentElement?.style.setProperty(
+    "--background",
+    resolvedTheme === "light"
+      ? `${grayColor?.cssVars.light.background}`
+      : `${grayColor?.cssVars.dark.background}`
+  )
+}
+
+export const syncIframeThemeColor = (
+  id: string,
+  color: ThemeColor,
+  resolvedTheme: string | undefined
+) => {
+  const iframe = document.getElementById(id) as HTMLIFrameElement
+  if (!iframe) return
+
+  const grayColor = themes.find((c) => c.name === color)
+
+  const vars = (
+    resolvedTheme === "light"
+      ? { ...grayColor?.cssVars.light! }
+      : { ...grayColor?.cssVars.dark! }
+  ) as { [key: string]: string }
+
+  Object.keys(vars)?.forEach((variable) => {
+    iframe.contentWindow?.document.documentElement?.style.setProperty(
+      `--${variable}`,
+      `${vars[variable]}`
+    )
+  })
+}
+
+export const syncIframeBorderRadius = (
+  id: string,
+  borderRadius: BorderRadius
+) => {
+  const iframe = document.getElementById(id) as HTMLIFrameElement
+  if (!iframe) return
+
+  iframe.contentWindow?.document.documentElement?.style.setProperty(
+    "--radius",
+    `${borderRadius}rem`
+  )
+}
+
+export const syncIframeFontFamily = (id: string, fontFamily: FontFamily) => {
+  const iframe = document.getElementById(id) as HTMLIFrameElement
+  if (!iframe) return
+
+  iframe.contentWindow?.document.documentElement?.style.setProperty(
+    "--font-sans",
+    `var(${fontFamily.value})`
+  )
+}
+
 export type FontFamily = (typeof fontFamilies)[number]
 export const fontFamilies = [
   {
