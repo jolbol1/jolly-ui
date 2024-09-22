@@ -26,7 +26,10 @@ const ResizableTableContainer = AriaResizableTableContainer
 const Table = ({ className, ...props }: TableProps) => (
   <AriaTable
     className={composeRenderProps(className, (className) =>
-      cn("w-full caption-bottom text-sm", className)
+      cn(
+        "w-full caption-bottom text-sm -outline-offset-2   data-[focus-visible]:outline-ring",
+        className
+      )
     )}
     {...props}
   />
@@ -52,7 +55,7 @@ const Column = ({ className, children, ...props }: ColumnProps) => (
   <AriaColumn
     className={composeRenderProps(className, (className) =>
       cn(
-        "h-10 px-2 text-left align-middle font-medium text-muted-foreground [&:has([slot=selection])]:pr-0 [&>[slot=selection]]:translate-y-[2px]",
+        "h-10 px-2 text-left align-middle font-medium text-muted-foreground -outline-offset-2 data-[focus-visible]:outline-ring [&:has([slot=selection])]:pr-0 [&>[slot=selection]]:translate-y-[2px]",
         className
       )
     )}
@@ -64,9 +67,10 @@ const Column = ({ className, children, ...props }: ColumnProps) => (
           role="presentation"
           tabIndex={-1}
           className={cn(
-            "flex h-9 flex-1 items-center gap-1 overflow-hidden ",
+            "flex h-9 flex-1 items-center gap-1 overflow-hidden rounded-md",
             allowsSorting &&
-              "rounded-md p-2 px-4 data-[hovered]:bg-accent data-[hovered]:text-accent-foreground"
+              "p-2 px-4 data-[hovered]:bg-accent data-[hovered]:text-accent-foreground",
+            "focus-visible:outline-none  data-[focus-visible]:-outline-offset-2 data-[focus-visible]:outline-ring"
           )}
         >
           <span className="truncate">{children}</span>
@@ -96,7 +100,7 @@ const Row = <T extends object>({ className, ...props }: RowProps<T>) => (
   <AriaRow
     className={composeRenderProps(className, (className) =>
       cn(
-        "border-b transition-colors data-[hovered]:bg-muted/50 data-[selected]:bg-muted",
+        "border-b -outline-offset-2 transition-colors data-[hovered]:bg-muted/50 data-[selected]:bg-muted  data-[focus-visible]:outline-ring",
         className
       )
     )}
@@ -108,7 +112,7 @@ const Cell = ({ className, ...props }: CellProps) => (
   <AriaCell
     className={composeRenderProps(className, (className) =>
       cn(
-        "p-2 align-middle [&:has([slot=selection])]:pr-0 [&>[slot=selection]]:translate-y-[2px]",
+        "p-2 align-middle -outline-offset-2   data-[focus-visible]:outline-ring [&:has([slot=selection])]:pr-0 [&>[slot=selection]]:translate-y-[2px]",
         className
       )
     )}

@@ -28,7 +28,10 @@ const ResizableTableContainer = AriaResizableTableContainer
 const Table = ({ className, ...props }: TableProps) => (
   <AriaTable
     className={composeRenderProps(className, (className) =>
-      cn("w-full caption-bottom text-sm", className)
+      cn(
+        "w-full caption-bottom text-sm -outline-offset-2 data-[focus-visible]:outline-ring",
+        className
+      )
     )}
     {...props}
   />
@@ -54,7 +57,7 @@ const Column = ({ className, children, ...props }: ColumnProps) => (
   <AriaColumn
     className={composeRenderProps(className, (className) =>
       cn(
-        "h-12 px-4 text-left align-middle font-medium text-muted-foreground [&:has([slot=selection])]:pr-0",
+        "h-12 px-4 text-left align-middle font-medium text-muted-foreground -outline-offset-2 data-[focus-visible]:outline-ring [&:has([slot=selection])]:pr-0",
         className
       )
     )}
@@ -68,7 +71,8 @@ const Column = ({ className, children, ...props }: ColumnProps) => (
           className={cn(
             "flex h-10 flex-1 items-center gap-1 overflow-hidden ",
             allowsSorting &&
-              "rounded-md p-2 px-4 data-[hovered]:bg-accent data-[hovered]:text-accent-foreground"
+              "rounded-md p-2 px-4 data-[hovered]:bg-accent data-[hovered]:text-accent-foreground",
+            "focus-visible:outline-none  data-[focus-visible]:-outline-offset-2 data-[focus-visible]:outline-ring"
           )}
         >
           <span className="truncate">{children}</span>
@@ -89,7 +93,7 @@ const TableBody = <T extends object>({
   <AriaTableBody
     className={composeRenderProps(className, (className) =>
       cn(
-        "data-[empty]:h-24 data-[empty]:text-center [&_tr:last-child]:border-0",
+        "-outline-offset-2 data-[empty]:h-24 data-[empty]:text-center data-[focus-visible]:outline-ring [&_tr:last-child]:border-0",
         className
       )
     )}
@@ -101,7 +105,7 @@ const Row = <T extends object>({ className, ...props }: RowProps<T>) => (
   <AriaRow
     className={composeRenderProps(className, (className) =>
       cn(
-        "border-b transition-colors data-[hovered]:bg-muted/50 data-[selected]:bg-muted",
+        "border-b -outline-offset-2 transition-colors data-[hovered]:bg-muted/50 data-[selected]:bg-muted data-[focus-visible]:outline-ring",
         className
       )
     )}
@@ -112,7 +116,10 @@ const Row = <T extends object>({ className, ...props }: RowProps<T>) => (
 const Cell = ({ className, ...props }: CellProps) => (
   <AriaCell
     className={composeRenderProps(className, (className) =>
-      cn("p-4 align-middle [&:has([role=checkbox])]:pr-0", className)
+      cn(
+        "p-4 align-middle -outline-offset-2 data-[focus-visible]:outline-ring [&:has([role=checkbox])]:pr-0",
+        className
+      )
     )}
     {...props}
   />
