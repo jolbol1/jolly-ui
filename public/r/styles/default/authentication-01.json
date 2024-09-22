@@ -1,6 +1,9 @@
 {
   "name": "authentication-01",
   "type": "registry:block",
+  "dependencies": [
+    "react-aria-components"
+  ],
   "registryDependencies": [
     "https://jollyui.dev/r/styles/default/button.json",
     "https://jollyui.dev/r/styles/default/textfield.json",
