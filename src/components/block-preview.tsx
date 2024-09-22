@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import { useTheme } from "next-themes"
+import { Link } from "react-aria-components"
 import { ImperativePanelHandle } from "react-resizable-panels"
 
 import {
@@ -22,6 +23,8 @@ import {
 } from "@/components/resizable"
 import { TabPanel, Tabs } from "@/registry/new-york/ui/tabs"
 import { Block } from "@/registry/schema"
+
+import { Callout } from "./callout"
 
 export function BlockPreview({
   block,
@@ -100,6 +103,40 @@ export function BlockPreview({
         </ResizablePanelGroup>
       </TabPanel>
       <TabPanel id="code">
+        {block.registryDependencies?.some((entry) =>
+          entry.startsWith("shadcn")
+        ) ? (
+          <Callout>
+            Note the following must be installed from{" "}
+            <Link
+              className="font-bold data-[hovered]:text-primary/80"
+              href="https://ui.shadcn.com"
+            >
+              shadcn/ui
+            </Link>
+            :
+            <p className="text-sm italic text-muted-foreground">
+              The shadcn add command will install these for you
+            </p>
+            <ul className="list-disc pl-4">
+              {block.registryDependencies
+                .filter((entry) => entry.startsWith("shadcn"))
+                .map((entry) => (
+                  <li key={entry}>
+                    <Link
+                      className="capitalize text-secondary-foreground underline data-[hovered]:text-secondary-foreground/80"
+                      href={`https://ui.shadcn.com/docs/components/${entry.replace(
+                        "shadcn/",
+                        ""
+                      )}`}
+                    >
+                      {entry.replace("shadcn/", "")}
+                    </Link>
+                  </li>
+                ))}
+            </ul>
+          </Callout>
+        ) : null}
         <div
           data-rehype-pretty-code-fragment
           dangerouslySetInnerHTML={{ __html: block.highlightedCode }}

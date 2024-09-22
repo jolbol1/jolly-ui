@@ -400,8 +400,10 @@ async function buildStyles(registry: Registry) {
         })
         .safeParse({
           ...item,
-          registryDependencies: item.registryDependencies?.map(
-            (r) => `https://jollyui.dev/r/styles/${style.name}/${r}.json`
+          registryDependencies: item.registryDependencies?.map((r) =>
+            r.startsWith("shadcn/")
+              ? `https://ui.shadcn.com/r/styles/${style.name}/${r.substring(7)}.json`
+              : `https://jollyui.dev/r/styles/${style.name}/${r}.json`
           ),
           files,
         })

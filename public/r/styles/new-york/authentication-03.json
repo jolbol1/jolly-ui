@@ -1,0 +1,21 @@
+{
+  "name": "authentication-03",
+  "type": "registry:block",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [
+    "https://jollyui.dev/r/styles/new-york/button.json",
+    "https://ui.shadcn.com/r/styles/new-york/card.json",
+    "https://jollyui.dev/r/styles/new-york/textfield.json",
+    "https://jollyui.dev/r/styles/new-york/field.json"
+  ],
+  "files": [
+    {
+      "path": "block/authentication-03.tsx",
+      "content": "\"use client\"\n\nimport { Link } from \"react-aria-components\"\n\nimport {\n  Card,\n  CardContent,\n  CardDescription,\n  CardHeader,\n  CardTitle,\n} from \"@/registry/new-york/shadcn/ui/card\"\nimport { Button } from \"@/registry/new-york/ui/button\"\nimport { Label } from \"@/registry/new-york/ui/field\"\nimport { Input, TextField } from \"@/registry/new-york/ui/textfield\"\n\nexport default function LoginForm() {\n  return (\n    <Card className=\"mx-auto max-w-sm\">\n      <CardHeader>\n        <CardTitle className=\"text-xl\">Sign Up</CardTitle>\n        <CardDescription>\n          Enter your information to create an account\n        </CardDescription>\n      </CardHeader>\n      <CardContent>\n        <div className=\"grid gap-4\">\n          <div className=\"grid grid-cols-2 gap-4\">\n            <TextField className=\"grid gap-2\">\n              <Label>First name</Label>\n              <Input id=\"first-name\" placeholder=\"Max\" required />\n            </TextField>\n            <TextField className=\"grid gap-2\">\n              <Label>Last name</Label>\n              <Input id=\"last-name\" placeholder=\"Robinson\" required />\n            </TextField>\n          </div>\n          <div className=\"grid gap-2\">\n            <Label htmlFor=\"email\">Email</Label>\n            <Input\n              id=\"email\"\n              type=\"email\"\n              placeholder=\"m@example.com\"\n              required\n            />\n          </div>\n          <div className=\"grid gap-2\">\n            <Label htmlFor=\"password\">Password</Label>\n            <Input id=\"password\" type=\"password\" />\n          </div>\n          <Button type=\"submit\" className=\"w-full\">\n            Create an account\n          </Button>\n          <Button variant=\"outline\" className=\"w-full\">\n            Sign up with GitHub\n          </Button>\n        </div>\n        <div className=\"mt-4 text-center text-sm\">\n          Already have an account?{\" \"}\n          <Link href=\"#\" className=\"underline\">\n            Sign in\n          </Link>\n        </div>\n      </CardContent>\n    </Card>\n  )\n}\n",
+      "type": "registry:block",
+      "target": ""
+    }
+  ]
+}

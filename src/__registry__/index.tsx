@@ -3308,10 +3308,43 @@ export const Index: Record<string, any> = {
     "authentication-01": {
       name: "authentication-01",
       type: "registry:block",
-      registryDependencies: ["button","textfield","field"],
+      registryDependencies: ["button","shadcn/card","textfield","field"],
       files: ["src/registry/new-york/block/authentication-01.tsx"],
       component: React.lazy(() => import("@/registry/new-york/block/authentication-01.tsx")),
       source: "src/__registry__/new-york/block/authentication-01.tsx",
+      category: "Authentication",
+      subcategory: "Login",
+      chunks: []
+    },
+    "authentication-02": {
+      name: "authentication-02",
+      type: "registry:block",
+      registryDependencies: ["button","shadcn/card","textfield","field"],
+      files: ["src/registry/new-york/block/authentication-02.tsx"],
+      component: React.lazy(() => import("@/registry/new-york/block/authentication-02.tsx")),
+      source: "src/__registry__/new-york/block/authentication-02.tsx",
+      category: "Authentication",
+      subcategory: "Login",
+      chunks: []
+    },
+    "authentication-03": {
+      name: "authentication-03",
+      type: "registry:block",
+      registryDependencies: ["button","shadcn/card","textfield","field"],
+      files: ["src/registry/new-york/block/authentication-03.tsx"],
+      component: React.lazy(() => import("@/registry/new-york/block/authentication-03.tsx")),
+      source: "src/__registry__/new-york/block/authentication-03.tsx",
+      category: "Authentication",
+      subcategory: "Login",
+      chunks: []
+    },
+    "authentication-04": {
+      name: "authentication-04",
+      type: "registry:block",
+      registryDependencies: ["button","shadcn/card","textfield","field"],
+      files: ["src/registry/new-york/block/authentication-04.tsx"],
+      component: React.lazy(() => import("@/registry/new-york/block/authentication-04.tsx")),
+      source: "src/__registry__/new-york/block/authentication-04.tsx",
       category: "Authentication",
       subcategory: "Login",
       chunks: []
@@ -6631,10 +6664,43 @@ export const Index: Record<string, any> = {
     "authentication-01": {
       name: "authentication-01",
       type: "registry:block",
-      registryDependencies: ["button","textfield","field"],
+      registryDependencies: ["button","shadcn/card","textfield","field"],
       files: ["src/registry/default/block/authentication-01.tsx"],
       component: React.lazy(() => import("@/registry/default/block/authentication-01.tsx")),
       source: "src/__registry__/default/block/authentication-01.tsx",
+      category: "Authentication",
+      subcategory: "Login",
+      chunks: []
+    },
+    "authentication-02": {
+      name: "authentication-02",
+      type: "registry:block",
+      registryDependencies: ["button","shadcn/card","textfield","field"],
+      files: ["src/registry/default/block/authentication-02.tsx"],
+      component: React.lazy(() => import("@/registry/default/block/authentication-02.tsx")),
+      source: "src/__registry__/default/block/authentication-02.tsx",
+      category: "Authentication",
+      subcategory: "Login",
+      chunks: []
+    },
+    "authentication-03": {
+      name: "authentication-03",
+      type: "registry:block",
+      registryDependencies: ["button","shadcn/card","textfield","field"],
+      files: ["src/registry/default/block/authentication-03.tsx"],
+      component: React.lazy(() => import("@/registry/default/block/authentication-03.tsx")),
+      source: "src/__registry__/default/block/authentication-03.tsx",
+      category: "Authentication",
+      subcategory: "Login",
+      chunks: []
+    },
+    "authentication-04": {
+      name: "authentication-04",
+      type: "registry:block",
+      registryDependencies: ["button","shadcn/card","textfield","field"],
+      files: ["src/registry/default/block/authentication-04.tsx"],
+      component: React.lazy(() => import("@/registry/default/block/authentication-04.tsx")),
+      source: "src/__registry__/default/block/authentication-04.tsx",
       category: "Authentication",
       subcategory: "Login",
       chunks: []
