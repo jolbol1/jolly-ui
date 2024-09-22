@@ -14,6 +14,7 @@ import {
   MenuPopover,
   MenuTrigger,
 } from "@/registry/new-york/ui/menu"
+import { Tooltip, TooltipTrigger } from "@/registry/new-york/ui/tooltip"
 
 interface CopyButtonProps extends ButtonProps {
   value: string
@@ -176,34 +177,37 @@ export function CommandAddBlockButton({
   )
 
   return (
-    <MenuTrigger>
-      <Button
-        size="icon"
-        variant="outline"
-        className={cn(
-          "[&_svg]-h-3.5 size-7 rounded-[6px] [&_svg]:w-3.5",
-          className
-        )}
-      >
-        {hasCopied ? (
-          <CheckIcon className="size-3" />
-        ) : (
-          <TerminalIcon className="size-3" />
-        )}
-        <span className="sr-only">Copy</span>
-      </Button>
-      <MenuPopover placement="bottom end">
-        <Menu
-          onAction={(key) => {
-            copyCommand(commandMap[key as string]!, key as any)
-          }}
+    <TooltipTrigger>
+      <MenuTrigger>
+        <Button
+          size="icon"
+          variant="outline"
+          className={cn(
+            "[&_svg]-h-3.5 size-7 rounded-[6px] [&_svg]:w-3.5",
+            className
+          )}
         >
-          <MenuItem id="npm">npm</MenuItem>
-          <MenuItem id="yarn">yarn</MenuItem>
-          <MenuItem id="pnpm">pnpm</MenuItem>
-          <MenuItem id="bun">bun</MenuItem>
-        </Menu>
-      </MenuPopover>
-    </MenuTrigger>
+          {hasCopied ? (
+            <CheckIcon className="size-3" />
+          ) : (
+            <TerminalIcon className="size-3" />
+          )}
+          <span className="sr-only">Copy</span>
+        </Button>
+        <MenuPopover placement="bottom end">
+          <Menu
+            onAction={(key) => {
+              copyCommand(commandMap[key as string]!, key as any)
+            }}
+          >
+            <MenuItem id="npm">npm</MenuItem>
+            <MenuItem id="yarn">yarn</MenuItem>
+            <MenuItem id="pnpm">pnpm</MenuItem>
+            <MenuItem id="bun">bun</MenuItem>
+          </Menu>
+        </MenuPopover>
+      </MenuTrigger>
+      <Tooltip>Copy install command</Tooltip>
+    </TooltipTrigger>
   )
 }
