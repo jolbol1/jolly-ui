@@ -4,7 +4,7 @@ import { codeToHtml } from "shiki"
 
 export async function highlightCode(code: string) {
   const html = codeToHtml(code, {
-    lang: "typescript",
+    lang: "tsx",
     theme: "github-dark-default",
     transformers: [
       {
