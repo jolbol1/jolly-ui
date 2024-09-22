@@ -47,7 +47,7 @@ export function MainNav() {
         </Link>
         <Link
           variant="link"
-          href="/docs"
+          href="/blocks"
           className={cn(
             "px-2",
             pathname === "/blocks" ? "text-foreground" : "text-foreground/60"
