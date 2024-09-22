@@ -1,3 +1,5 @@
+"use client"
+
 import { Collection } from "react-aria-components"
 
 import { Tab, TabList, TabPanel, Tabs } from "@/registry/new-york/ui/tabs"

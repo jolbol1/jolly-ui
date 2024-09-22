@@ -1,3 +1,5 @@
+"use client"
+
 import {
   ColorArea as AriaColorArea,
   ColorAreaProps as AriaColorAreaProps,

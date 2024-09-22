@@ -1,3 +1,5 @@
+"use client"
+
 import { Text } from "react-aria-components"
 
 import { Checkbox, CheckboxGroup } from "@/registry/new-york/ui/checkbox"

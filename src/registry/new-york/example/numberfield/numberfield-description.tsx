@@ -1,3 +1,5 @@
+"use client"
+
 import { Text } from "react-aria-components"
 
 import { FieldGroup, Label } from "@/registry/new-york/ui/field"

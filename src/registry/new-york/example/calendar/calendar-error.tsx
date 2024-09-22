@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react"
 import { getLocalTimeZone, isWeekend, today } from "@internationalized/date"
 import { Text, useLocale } from "react-aria-components"

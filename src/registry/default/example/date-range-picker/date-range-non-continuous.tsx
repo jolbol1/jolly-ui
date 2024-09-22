@@ -1,3 +1,5 @@
+"use client"
+
 import { isWeekend } from "@internationalized/date"
 import { CalendarIcon } from "lucide-react"
 import { Form, useLocale } from "react-aria-components"

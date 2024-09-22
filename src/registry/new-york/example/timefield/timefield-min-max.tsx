@@ -1,3 +1,5 @@
+"use client"
+
 import { Time } from "@internationalized/date"
 import { Form } from "react-aria-components"
 

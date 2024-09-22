@@ -1,3 +1,5 @@
+"use client"
+
 import { Link } from "react-aria-components"
 
 import { buttonVariants } from "@/registry/default/ui/button"

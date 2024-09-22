@@ -1,3 +1,5 @@
+"use client"
+
 import { CaretDownIcon, CaretUpIcon } from "@radix-ui/react-icons"
 import {
   ButtonProps as AriaButtonProps,

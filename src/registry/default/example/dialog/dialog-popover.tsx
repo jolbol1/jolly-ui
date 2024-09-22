@@ -1,3 +1,5 @@
+"use client"
+
 import { Heading } from "react-aria-components"
 
 import { Button } from "@/registry/default/ui/button"

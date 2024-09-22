@@ -1,3 +1,5 @@
+"use client"
+
 import { ChevronsUpDown } from "lucide-react"
 import { Text } from "react-aria-components"
 

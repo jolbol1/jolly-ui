@@ -50,6 +50,9 @@ export const syncGrayColor = (
   resolvedTheme: string | undefined
 ) => {
   const root = document.querySelector<HTMLHtmlElement>(":root")
+  const iframes =
+    document.querySelectorAll<HTMLIFrameElement>("iframe.chunk-mode")
+  console.log(iframes)
   if (!root) return
 
   const grayColor = grayColors.find((c) => c.name === color)
@@ -64,6 +67,14 @@ export const syncGrayColor = (
     root.style.setProperty(`--${variable}`, `${vars[variable]}`)
   })
 
+  iframes.forEach((iframe) => {
+    iframe.contentWindow?.document.documentElement.style.setProperty(
+      "--background",
+      resolvedTheme === "light"
+        ? `${grayColor?.cssVars.light.background}`
+        : `${grayColor?.cssVars.dark.background}`
+    )
+  })
   root.style.setProperty(
     "--background",
     resolvedTheme === "light"
@@ -77,6 +88,8 @@ export const syncThemeColor = (
   resolvedTheme: string | undefined
 ) => {
   const root = document.querySelector<HTMLHtmlElement>(":root")
+  const iframes =
+    document.querySelectorAll<HTMLIFrameElement>("iframe.chunk-mode")
   if (!root) return
 
   const grayColor = themes.find((c) => c.name === color)
@@ -89,20 +102,42 @@ export const syncThemeColor = (
 
   Object.keys(vars)?.forEach((variable) => {
     root.style.setProperty(`--${variable}`, `${vars[variable]}`)
+    iframes.forEach((iframe) => {
+      iframe.contentWindow?.document.documentElement.style.setProperty(
+        `--${variable}`,
+        `${vars[variable]}`
+      )
+    })
   })
 }
 
 export const syncBorderRadius = (borderRadius: BorderRadius) => {
   const root = document.querySelector<HTMLHtmlElement>(":root")
+  const iframes =
+    document.querySelectorAll<HTMLIFrameElement>("iframe.chunk-mode")
   if (!root) return
   root.style.setProperty("--radius", `${borderRadius}rem`)
+  iframes.forEach((iframe) => {
+    iframe.contentWindow?.document.documentElement.style.setProperty(
+      "--radius",
+      `${borderRadius}rem`
+    )
+  })
 }
 
 export const syncFontFamily = (fontFamily: FontFamily) => {
   const root = document.querySelector<HTMLHtmlElement>(":root")
+  const iframes =
+    document.querySelectorAll<HTMLIFrameElement>("iframe.chunk-mode")
   if (root) {
     root.style.setProperty("--font-sans", `var(${fontFamily.value})`)
   }
+  iframes.forEach((iframe) => {
+    iframe.contentWindow?.document.documentElement.style.setProperty(
+      "--font-sans",
+      `var(${fontFamily.value})`
+    )
+  })
 }
 
 export type FontFamily = (typeof fontFamilies)[number]

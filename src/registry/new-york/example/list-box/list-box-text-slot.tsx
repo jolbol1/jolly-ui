@@ -1,3 +1,5 @@
+"use client"
+
 import { Text } from "react-aria-components"
 
 import { ListBox, ListBoxItem } from "@/registry/new-york/ui/list-box"

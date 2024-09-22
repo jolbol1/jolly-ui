@@ -1,3 +1,5 @@
+"use client"
+
 import { isWeekend } from "@internationalized/date"
 import { useLocale } from "react-aria-components"
 

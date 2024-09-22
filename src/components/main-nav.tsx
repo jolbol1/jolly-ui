@@ -47,6 +47,16 @@ export function MainNav() {
         </Link>
         <Link
           variant="link"
+          href="/blocks"
+          className={cn(
+            "px-2",
+            pathname === "/blocks" ? "text-foreground" : "text-foreground/60"
+          )}
+        >
+          Blocks
+        </Link>
+        <Link
+          variant="link"
           href={siteConfig.links.github}
           className="px-2 text-foreground/60"
         >

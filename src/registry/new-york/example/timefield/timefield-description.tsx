@@ -1,3 +1,5 @@
+"use client"
+
 import { Text } from "react-aria-components"
 
 import { DateInput, TimeField } from "@/registry/new-york/ui/datefield"

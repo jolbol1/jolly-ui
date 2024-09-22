@@ -1,3 +1,5 @@
+"use client"
+
 import { Cross2Icon, MagnifyingGlassIcon } from "@radix-ui/react-icons"
 import { Form } from "react-aria-components"
 

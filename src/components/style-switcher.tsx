@@ -4,17 +4,23 @@ import { useEffect, useState } from "react"
 
 import { useThemeStore } from "@/lib/use-theme-store"
 import { cn } from "@/lib/utils"
-import { SelectListBox } from "@/registry/default/ui/select"
 import {
   Select,
   SelectItem,
+  SelectListBox,
   SelectPopover,
   SelectTrigger,
   SelectValue,
 } from "@/registry/new-york/ui/select"
 import { Style, styles } from "@/registry/styles"
 
-export function StyleSwitcher({ className }: { className?: string }) {
+export function StyleSwitcher({
+  className,
+  isDisabled,
+}: {
+  className?: string
+  isDisabled?: boolean
+}) {
   const currentStyle = useThemeStore((state) => state.style)
   const updateStyle = useThemeStore((state) => state.setStyle)
   const [mounted, setMounted] = useState(false)
@@ -26,6 +32,7 @@ export function StyleSwitcher({ className }: { className?: string }) {
   return !mounted ? null : (
     <Select
       aria-label="Select Style"
+      isDisabled={isDisabled}
       placeholder="Select style"
       defaultSelectedKey={currentStyle}
       onSelectionChange={(key) => updateStyle(key as Style["name"])}
