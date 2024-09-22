@@ -9,8 +9,6 @@ export default async function BlocksPage() {
       !name.startsWith("login-01")
   )
 
-  console.log(blocks)
-
   return (
     <div className="gap-3 md:flex md:flex-row-reverse md:items-start">
       <div className="grid flex-1 gap-24 lg:gap-48">

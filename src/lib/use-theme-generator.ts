@@ -52,7 +52,6 @@ export const syncGrayColor = (
   const root = document.querySelector<HTMLHtmlElement>(":root")
   const iframes =
     document.querySelectorAll<HTMLIFrameElement>("iframe.chunk-mode")
-  console.log(iframes)
   if (!root) return
 
   const grayColor = grayColors.find((c) => c.name === color)

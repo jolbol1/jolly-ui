@@ -80,7 +80,6 @@ export default async function BlockPage({
   }
 
   const Component = block.component
-  console.log("COMP", Component)
 
   const chunks = block.chunks?.map((chunk) => ({ ...chunk }))
   delete block.component
