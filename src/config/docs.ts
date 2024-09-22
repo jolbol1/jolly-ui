@@ -98,10 +98,9 @@ export const docsConfig: DocsConfig = {
         },
         {
           title: "Table",
-          href: "/docs/components/",
+          href: "/docs/components/table",
           items: [],
-          disabled: true,
-          label: "Coming Soon",
+          label: "Beta",
         },
         {
           title: "TagGroup",

@@ -1,0 +1,91 @@
+---
+title: Table
+description: A table displays data in rows and columns and enables a user to navigate its contents via directional navigation keys, and optionally supports row selection and sorting.
+featured: true
+component: true
+links:
+  doc: https://react-spectrum.adobe.com/react-aria/Table.html
+---
+
+<Callout>
+  🚧 This component is in beta so documentation and examples are limited. Please
+  refer to the [React Aria Table
+  docs](https://react-spectrum.adobe.com/react-aria/Table.html) for more usage
+  examples.
+</Callout>
+
+<ComponentPreview name="table-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Copy & Paste</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+<PackageManagerTabs>
+  <PackageManagerContent value="npm">
+    ```bash
+    npx shadcn@latest add https://jollyui.dev/[[STYLE]]/table
+    ```
+  </PackageManagerContent>
+  <PackageManagerContent value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add https://jollyui.dev/[[STYLE]]/table
+    ```
+
+  </PackageManagerContent>
+  <PackageManagerContent value="bun">
+    ```bash
+    bunx --bun shadcn@latest add https://jollyui.dev/[[STYLE]]/table
+    ```
+  </PackageManagerContent>
+  <PackageManagerContent value="yarn">
+    ```bash 
+    npx shadcn@latest add https://jollyui.dev/[[STYLE]]/table
+    ```
+  </PackageManagerContent>
+</PackageManagerTabs>
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="table" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Composed Components
+
+A Table uses the following components, which may also be used standalone or reused in other components.
+
+<ComponentCards>
+  <ComponentCard component="checkbox" />
+  <ComponentCard component="button" />
+</ComponentCards>
+
+### Basic
+
+<ComponentPreview name="table-demo" />
+
+### Sortable
+
+<ComponentPreview name="table-sortable" />
+
+### Resizable
+
+<ComponentPreview name="table-resizable" />

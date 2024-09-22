@@ -20,7 +20,7 @@ export function PackageManagerTabs({ children, ...props }: PackageManagerTabs) {
       className={cn("mt-2 gap-0", props.className)}
       {...props}
     >
-      <TabList className="justify-start overflow-y-hidden overflow-x-scroll rounded-none rounded-t-md border bg-[rgb(13,_17,_23)] p-0">
+      <TabList className="justify-start overflow-y-hidden overflow-x-scroll rounded-none rounded-t-md border bg-secondary p-0">
         <Tab
           id="npm"
           className="install-selected relative flex h-full items-center rounded-none p-0 px-4 first:rounded-tl-md"

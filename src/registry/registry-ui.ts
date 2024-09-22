@@ -181,6 +181,12 @@ export const ui: Registry = [
     files: ["ui/tabs.tsx"],
   },
   {
+    name: "table",
+    type: "registry:ui",
+    dependencies: ["react-aria-components"],
+    files: ["ui/table.tsx"],
+  },
+  {
     name: "tag-group",
     type: "registry:ui",
     dependencies: ["react-aria-components", "class-variance-authority"],
