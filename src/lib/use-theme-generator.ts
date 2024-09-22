@@ -68,7 +68,7 @@ export const syncGrayColor = (
   })
 
   iframes.forEach((iframe) => {
-    iframe.contentWindow?.document.documentElement.style.setProperty(
+    iframe.contentWindow?.document.documentElement.style?.setProperty(
       "--background",
       resolvedTheme === "light"
         ? `${grayColor?.cssVars.light.background}`
@@ -103,7 +103,7 @@ export const syncThemeColor = (
   Object.keys(vars)?.forEach((variable) => {
     root.style.setProperty(`--${variable}`, `${vars[variable]}`)
     iframes.forEach((iframe) => {
-      iframe.contentWindow?.document.documentElement.style.setProperty(
+      iframe.contentWindow?.document.documentElement.style?.setProperty(
         `--${variable}`,
         `${vars[variable]}`
       )
@@ -118,7 +118,7 @@ export const syncBorderRadius = (borderRadius: BorderRadius) => {
   if (!root) return
   root.style.setProperty("--radius", `${borderRadius}rem`)
   iframes.forEach((iframe) => {
-    iframe.contentWindow?.document.documentElement.style.setProperty(
+    iframe.contentWindow?.document.documentElement.style?.setProperty(
       "--radius",
       `${borderRadius}rem`
     )
@@ -133,7 +133,7 @@ export const syncFontFamily = (fontFamily: FontFamily) => {
     root.style.setProperty("--font-sans", `var(${fontFamily.value})`)
   }
   iframes.forEach((iframe) => {
-    iframe.contentWindow?.document.documentElement.style.setProperty(
+    iframe.contentWindow?.document.documentElement.style?.setProperty(
       "--font-sans",
       `var(${fontFamily.value})`
     )
