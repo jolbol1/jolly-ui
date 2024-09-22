@@ -291,6 +291,17 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
+    "table": {
+      name: "table",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: ["src/registry/new-york/ui/table.tsx"],
+      component: React.lazy(() => import("@/registry/new-york/ui/table.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
     "tag-group": {
       name: "tag-group",
       type: "registry:ui",
@@ -3261,6 +3272,39 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
+    "table-demo": {
+      name: "table-demo",
+      type: "registry:example",
+      registryDependencies: ["table"],
+      files: ["src/registry/new-york/example/table/table-demo.tsx"],
+      component: React.lazy(() => import("@/registry/new-york/example/table/table-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "table-resizable": {
+      name: "table-resizable",
+      type: "registry:example",
+      registryDependencies: ["table"],
+      files: ["src/registry/new-york/example/table/table-resizable.tsx"],
+      component: React.lazy(() => import("@/registry/new-york/example/table/table-resizable.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "table-sortable": {
+      name: "table-sortable",
+      type: "registry:example",
+      registryDependencies: ["table"],
+      files: ["src/registry/new-york/example/table/table-sortable.tsx"],
+      component: React.lazy(() => import("@/registry/new-york/example/table/table-sortable.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
     "utils": {
       name: "utils",
       type: "registry:lib",
@@ -3554,6 +3598,17 @@ export const Index: Record<string, any> = {
       registryDependencies: undefined,
       files: ["src/registry/default/ui/tabs.tsx"],
       component: React.lazy(() => import("@/registry/default/ui/tabs.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "table": {
+      name: "table",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: ["src/registry/default/ui/table.tsx"],
+      component: React.lazy(() => import("@/registry/default/ui/table.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",
@@ -6524,6 +6579,39 @@ export const Index: Record<string, any> = {
       registryDependencies: ["toolbar"],
       files: ["src/registry/default/example/toolbar/toolbar-vertical.tsx"],
       component: React.lazy(() => import("@/registry/default/example/toolbar/toolbar-vertical.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "table-demo": {
+      name: "table-demo",
+      type: "registry:example",
+      registryDependencies: ["table"],
+      files: ["src/registry/default/example/table/table-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/table/table-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "table-resizable": {
+      name: "table-resizable",
+      type: "registry:example",
+      registryDependencies: ["table"],
+      files: ["src/registry/default/example/table/table-resizable.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/table/table-resizable.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "table-sortable": {
+      name: "table-sortable",
+      type: "registry:example",
+      registryDependencies: ["table"],
+      files: ["src/registry/default/example/table/table-sortable.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/table/table-sortable.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",

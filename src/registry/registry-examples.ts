@@ -1662,5 +1662,25 @@ export const examples: Registry = [
     files: ["example/toolbar/toolbar-vertical.tsx"],
   },
 
+  //Table
+  {
+    name: "table-demo",
+    type: "registry:example",
+    registryDependencies: ["table"],
+    files: ["example/table/table-demo.tsx"],
+  },
+  {
+    name: "table-resizable",
+    type: "registry:example",
+    registryDependencies: ["table"],
+    files: ["example/table/table-resizable.tsx"],
+  },
+  {
+    name: "table-sortable",
+    type: "registry:example",
+    registryDependencies: ["table"],
+    files: ["example/table/table-sortable.tsx"],
+  },
+
   //Reusable
 ]

@@ -405,6 +405,19 @@
     ]
   },
   {
+    "name": "table",
+    "type": "registry:ui",
+    "dependencies": [
+      "react-aria-components"
+    ],
+    "files": [
+      {
+        "path": "ui/table.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
     "name": "tag-group",
     "type": "registry:ui",
     "dependencies": [
