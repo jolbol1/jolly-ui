@@ -16,6 +16,10 @@ export const docsConfig: DocsConfig = {
       href: "/docs/components/breadcrumbs",
     },
     {
+      title: "Blocks",
+      href: "/blocks",
+    },
+    {
       title: "GitHub",
       href: "https://github.com/jolbol1/jolly-ui",
       external: true,

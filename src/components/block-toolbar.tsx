@@ -24,7 +24,10 @@ import { Tab, TabList } from "@/registry/new-york/ui/tabs"
 import { toggleVariants } from "@/registry/new-york/ui/toggle"
 import { Block } from "@/registry/schema"
 
+import { CommandAddBlockButton } from "./copy-button"
+
 const StyleSwitchers = createHideableComponent(StyleSwitcher)
+const CommandAddBlockButtons = createHideableComponent(CommandAddBlockButton)
 
 export function BlockToolbar({
   block,
@@ -180,6 +183,7 @@ export function BlockToolbar({
             orientation="vertical"
             className="mx-2 hidden h-4 md:flex"
           />
+          <CommandAddBlockButtons block={block.name} />
           <BlockCopyButton
             name={block.name}
             code={block.code}
