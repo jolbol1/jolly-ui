@@ -1,3 +1,5 @@
+"use client"
+
 import { isTextDropItem, useDragAndDrop } from "react-aria-components"
 import { useListData } from "react-stately"
 

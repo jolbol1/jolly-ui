@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react"
 import { MagicWandIcon } from "@radix-ui/react-icons"
 import {

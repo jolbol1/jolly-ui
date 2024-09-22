@@ -1,3 +1,5 @@
+"use client"
+
 import { cva } from "class-variance-authority"
 import { XIcon } from "lucide-react"
 import {

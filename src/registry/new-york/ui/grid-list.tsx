@@ -1,3 +1,5 @@
+"use client"
+
 import { DragHandleHorizontalIcon } from "@radix-ui/react-icons"
 import {
   Button as AriaButton,

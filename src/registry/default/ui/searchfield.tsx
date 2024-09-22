@@ -1,3 +1,5 @@
+"use client"
+
 import { SearchIcon, XIcon } from "lucide-react"
 import {
   Button as AriaButton,

@@ -1,3 +1,5 @@
+"use client"
+
 import { PlusIcon } from "@radix-ui/react-icons"
 import { Input as AriaInput } from "react-aria-components"
 

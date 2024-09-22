@@ -1,3 +1,5 @@
+"use client"
+
 import { Form } from "react-aria-components"
 
 import { Button } from "@/registry/new-york/ui/button"

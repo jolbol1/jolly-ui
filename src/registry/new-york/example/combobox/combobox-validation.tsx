@@ -1,3 +1,5 @@
+"use client"
+
 import { CaretSortIcon } from "@radix-ui/react-icons"
 import { Form } from "react-aria-components"
 

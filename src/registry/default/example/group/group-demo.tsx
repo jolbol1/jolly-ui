@@ -1,3 +1,5 @@
+"use client"
+
 import { PlusIcon } from "lucide-react"
 import { Input as AriaInput } from "react-aria-components"
 

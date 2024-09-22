@@ -1,3 +1,5 @@
+"use client"
+
 import { CalendarIcon } from "@radix-ui/react-icons"
 import { Text } from "react-aria-components"
 
