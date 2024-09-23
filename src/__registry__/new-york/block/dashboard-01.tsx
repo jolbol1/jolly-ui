@@ -9,7 +9,9 @@ import {
   MenuIcon,
   Package2,
   Search,
+  SearchIcon,
   Users,
+  XIcon,
 } from "lucide-react"
 import { Link } from "react-aria-components"
 
@@ -32,6 +34,7 @@ import {
   DialogOverlay,
   DialogTrigger,
 } from "@/registry/new-york/ui/dialog"
+import { FieldGroup } from "@/registry/new-york/ui/field"
 import { Link as ButtonLink } from "@/registry/new-york/ui/link"
 import {
   Menu,
@@ -42,6 +45,11 @@ import {
   MenuSeparator,
   MenuTrigger,
 } from "@/registry/new-york/ui/menu"
+import {
+  SearchField,
+  SearchFieldClear,
+  SearchFieldInput,
+} from "@/registry/new-york/ui/searchfield"
 import {
   Cell,
   Column,
@@ -149,14 +157,18 @@ export default function Dashboard() {
         </DialogTrigger>
         <div className="flex w-full items-center gap-4 md:ml-auto md:gap-2 lg:gap-4">
           <form className="ml-auto flex-1 sm:flex-initial">
-            <div className="relative">
-              <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-              <Input
-                type="search"
-                placeholder="Search products..."
-                className="pl-8 sm:w-[300px] md:w-[200px] lg:w-[300px]"
-              />
-            </div>
+            <SearchField className="max-w-[200px]">
+              <FieldGroup>
+                <SearchIcon
+                  aria-hidden
+                  className="size-4 text-muted-foreground"
+                />
+                <SearchFieldInput placeholder="Search..." />
+                <SearchFieldClear>
+                  <XIcon aria-hidden className="size-4" />
+                </SearchFieldClear>
+              </FieldGroup>
+            </SearchField>
           </form>
           <MenuTrigger>
             <Button variant="secondary" size="icon" className="rounded-full">

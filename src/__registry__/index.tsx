@@ -3308,7 +3308,7 @@ export const Index: Record<string, any> = {
     "dashboard-01": {
       name: "dashboard-01",
       type: "registry:block",
-      registryDependencies: ["button","dialog","link","menu","table","textfield","list-box","select","shadcn/avatar","shadcn/badge","shadcn/card"],
+      registryDependencies: ["button","dialog","link","menu","table","searchfield","list-box","select","shadcn/avatar","shadcn/badge","shadcn/card"],
       files: ["src/registry/new-york/block/dashboard-01.tsx"],
       component: React.lazy(() => import("@/registry/new-york/block/dashboard-01.tsx")),
       source: "src/__registry__/new-york/block/dashboard-01.tsx",
@@ -6723,7 +6723,7 @@ export const Index: Record<string, any> = {
     "dashboard-01": {
       name: "dashboard-01",
       type: "registry:block",
-      registryDependencies: ["button","dialog","link","menu","table","textfield","list-box","select","shadcn/avatar","shadcn/badge","shadcn/card"],
+      registryDependencies: ["button","dialog","link","menu","table","searchfield","list-box","select","shadcn/avatar","shadcn/badge","shadcn/card"],
       files: ["src/registry/default/block/dashboard-01.tsx"],
       component: React.lazy(() => import("@/registry/default/block/dashboard-01.tsx")),
       source: "src/__registry__/default/block/dashboard-01.tsx",

@@ -10,7 +10,7 @@ export const blocks: Registry = [
       "link",
       "menu",
       "table",
-      "textfield",
+      "searchfield",
       "list-box",
       "select",
       "shadcn/avatar",
