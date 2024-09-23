@@ -173,7 +173,12 @@ export const Index: Record<string, any> = {
               string | string[] | Set<string>
             >()
             children.forEach((child) => {
+              // Probably a better way to do this, but temp fix.
+              if (child.includes("ButtonLink")) {
+                child = "Link as ButtonLink"
+              }
               const importLine = imports.get(child)
+
               if (importLine) {
                 const imports = componentImports.get(importLine.module) || []
 

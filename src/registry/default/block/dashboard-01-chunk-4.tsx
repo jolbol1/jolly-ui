@@ -10,6 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/registry/default/shadcn/ui/card"
+import { Link as ButtonLink } from "@/registry/default/ui/link"
 import {
   Cell,
   Column,

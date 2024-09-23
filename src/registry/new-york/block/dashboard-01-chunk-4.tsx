@@ -10,6 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/registry/new-york/shadcn/ui/card"
+import { Link as ButtonLink } from "@/registry/new-york/ui/link"
 import {
   Cell,
   Column,
