@@ -13,7 +13,6 @@ import {
 } from "@/lib/use-theme-generator"
 import { useThemeStore } from "@/lib/use-theme-store"
 import { cn } from "@/lib/utils"
-import { useLiftMode } from "@/hooks/use-lift-mode"
 import { BlockToolbar } from "@/components/block-toolbar"
 import { Icons } from "@/components/icons"
 import {
@@ -26,13 +25,8 @@ import { Block } from "@/registry/schema"
 
 import { Callout } from "./callout"
 
-export function BlockPreview({
-  block,
-}: {
-  block: Block & { hasLiftMode: boolean }
-}) {
+export function BlockPreview({ block }: { block: Block }) {
   const style = useThemeStore((state) => state.style)
-  const { isLiftMode } = useLiftMode(block.name)
   const [isLoading, setIsLoading] = React.useState(true)
   const ref = React.useRef<ImperativePanelHandle>(null)
   const { setTheme, resolvedTheme } = useTheme()
@@ -66,7 +60,7 @@ export function BlockPreview({
             ref={ref}
             className={cn(
               "relative rounded-lg border bg-background",
-              isLiftMode ? "border-border/50" : "border-border"
+              "border-border"
             )}
             defaultSize={100}
             minSize={30}
@@ -95,8 +89,7 @@ export function BlockPreview({
           </ResizablePanel>
           <ResizableHandle
             className={cn(
-              "relative hidden w-3 bg-transparent p-0 after:absolute after:right-0 after:top-1/2 after:h-8 after:w-[6px] after:-translate-y-1/2 after:translate-x-[-1px] after:rounded-full after:bg-border after:transition-all after:hover:h-10 sm:block",
-              isLiftMode && "invisible"
+              "relative hidden w-3 bg-transparent p-0 after:absolute after:right-0 after:top-1/2 after:h-8 after:w-[6px] after:-translate-y-1/2 after:translate-x-[-1px] after:rounded-full after:bg-border after:transition-all after:hover:h-10 sm:block"
             )}
           />
           <ResizablePanel defaultSize={0} minSize={0} />

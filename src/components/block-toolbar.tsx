@@ -6,7 +6,6 @@ import { CircleHelp, Monitor, Smartphone, Tablet } from "lucide-react"
 import { ImperativePanelHandle } from "react-resizable-panels"
 
 import { cn } from "@/lib/utils"
-import { useLiftMode } from "@/hooks/use-lift-mode"
 import { Badge } from "@/components/badge"
 import { BlockCopyButton } from "@/components/block-copy-button"
 import { StyleSwitcher } from "@/components/style-switcher"
@@ -33,27 +32,18 @@ export function BlockToolbar({
   block,
   resizablePanelRef,
 }: {
-  block: Block & { hasLiftMode: boolean }
+  block: Block
   resizablePanelRef: React.RefObject<ImperativePanelHandle>
 }) {
-  const { isLiftMode, toggleLiftMode } = useLiftMode(block.name)
   const [selectedSize, setSelectedSize] = React.useState("100")
   return (
     <div className="flex items-center gap-4">
       <div className="flex items-center gap-2">
         <TabList className="hidden h-7 rounded-md p-0 px-[calc(theme(spacing.1)_-_2px)] py-[theme(spacing.1)] sm:flex">
-          <Tab
-            id="preview"
-            className="h-[1.45rem] rounded-sm px-2 text-xs"
-            isDisabled={isLiftMode}
-          >
+          <Tab id="preview" className="h-[1.45rem] rounded-sm px-2 text-xs">
             Preview
           </Tab>
-          <Tab
-            id="code"
-            className="h-[1.45rem] rounded-sm px-2 text-xs"
-            isDisabled={isLiftMode}
-          >
+          <Tab id="code" className="h-[1.45rem] rounded-sm px-2 text-xs">
             Code
           </Tab>
         </TabList>
@@ -61,7 +51,6 @@ export function BlockToolbar({
         <StyleSwitchers />
         <PopoverTrigger>
           <Button
-            isDisabled={isLiftMode}
             variant="ghost"
             size="icon"
             className="hidden size-3.5 text-muted-foreground hover:text-foreground disabled:opacity-50 sm:flex"
@@ -102,10 +91,7 @@ export function BlockToolbar({
           />
           <div className="flex items-center gap-2">
             <a href={`#${block.name}`}>
-              <Badge
-                variant="secondary"
-                className={cn("bg-transparent", isLiftMode && "opacity-50")}
-              >
+              <Badge variant="secondary" className={cn("bg-transparent")}>
                 {block.name}
               </Badge>
             </a>
@@ -114,27 +100,6 @@ export function BlockToolbar({
       </div>
       {block.code && (
         <div className="ml-auto flex items-center gap-2 md:pr-[14px]">
-          {block.hasLiftMode && (
-            <>
-              <div className="hidden h-7 items-center justify-between gap-2 md:flex">
-                <Label htmlFor={`lift-mode-${block.name}`} className="text-xs">
-                  Lift Mode
-                </Label>
-                <Switch
-                  id={`lift-mode-${block.name}`}
-                  isSelected={isLiftMode}
-                  onChange={(value) => {
-                    resizablePanelRef.current?.resize(100)
-                    toggleLiftMode(block.name)
-                  }}
-                />
-              </div>
-              <Separator
-                orientation="vertical"
-                className="mx-2 hidden h-4 lg:inline-flex"
-              />
-            </>
-          )}
           <div className="hidden h-[28px] items-center gap-1.5 rounded-md border p-[2px] shadow-sm md:flex">
             <RadioGroup
               value={selectedSize}
@@ -184,11 +149,7 @@ export function BlockToolbar({
             className="mx-2 hidden h-4 md:flex"
           />
           <CommandAddBlockButtons block={block.name} />
-          <BlockCopyButton
-            name={block.name}
-            code={block.code}
-            isDisabled={isLiftMode}
-          />
+          <BlockCopyButton name={block.name} code={block.code} />
         </div>
       )}
     </div>

@@ -3305,6 +3305,65 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
+    "dashboard-01": {
+      name: "dashboard-01",
+      type: "registry:block",
+      registryDependencies: ["button","dialog","link","menu","table","textfield","list-box","select","shadcn/avatar","shadcn/badge","shadcn/card"],
+      files: ["src/registry/new-york/block/dashboard-01.tsx"],
+      component: React.lazy(() => import("@/registry/new-york/block/dashboard-01.tsx")),
+      source: "src/__registry__/new-york/block/dashboard-01.tsx",
+      category: "Application",
+      subcategory: "Dashboard",
+      chunks: [{
+        name: "dashboard-01-chunk-0",
+        description: "A card showing the total revenue in USD and the percentage difference from last month.",
+        component: React.lazy(() => import("@/registry/new-york/block/dashboard-01-chunk-0")),
+        file: "src/registry/new-york/block/dashboard-01-chunk-0.tsx",
+        container: {
+          className: "undefined"
+        }
+      },{
+        name: "dashboard-01-chunk-1",
+        description: "A card showing the total subscriptions and the percentage difference from last month.",
+        component: React.lazy(() => import("@/registry/new-york/block/dashboard-01-chunk-1")),
+        file: "src/registry/new-york/block/dashboard-01-chunk-1.tsx",
+        container: {
+          className: "undefined"
+        }
+      },{
+        name: "dashboard-01-chunk-2",
+        description: "A card showing the total sales and the percentage difference from last month.",
+        component: React.lazy(() => import("@/registry/new-york/block/dashboard-01-chunk-2")),
+        file: "src/registry/new-york/block/dashboard-01-chunk-2.tsx",
+        container: {
+          className: "undefined"
+        }
+      },{
+        name: "dashboard-01-chunk-3",
+        description: "A card showing the total active users and the percentage difference from last hour.",
+        component: React.lazy(() => import("@/registry/new-york/block/dashboard-01-chunk-3")),
+        file: "src/registry/new-york/block/dashboard-01-chunk-3.tsx",
+        container: {
+          className: "undefined"
+        }
+      },{
+        name: "dashboard-01-chunk-4",
+        description: "A card showing a table of recent transactions with a link to view all transactions.",
+        component: React.lazy(() => import("@/registry/new-york/block/dashboard-01-chunk-4")),
+        file: "src/registry/new-york/block/dashboard-01-chunk-4.tsx",
+        container: {
+          className: "undefined"
+        }
+      },{
+        name: "dashboard-01-chunk-5",
+        description: "A card showing a list of recent sales with customer names and email addresses.",
+        component: React.lazy(() => import("@/registry/new-york/block/dashboard-01-chunk-5")),
+        file: "src/registry/new-york/block/dashboard-01-chunk-5.tsx",
+        container: {
+          className: "undefined"
+        }
+      }]
+    },
     "authentication-01": {
       name: "authentication-01",
       type: "registry:block",
@@ -6660,6 +6719,65 @@ export const Index: Record<string, any> = {
       category: "undefined",
       subcategory: "undefined",
       chunks: []
+    },
+    "dashboard-01": {
+      name: "dashboard-01",
+      type: "registry:block",
+      registryDependencies: ["button","dialog","link","menu","table","textfield","list-box","select","shadcn/avatar","shadcn/badge","shadcn/card"],
+      files: ["src/registry/default/block/dashboard-01.tsx"],
+      component: React.lazy(() => import("@/registry/default/block/dashboard-01.tsx")),
+      source: "src/__registry__/default/block/dashboard-01.tsx",
+      category: "Application",
+      subcategory: "Dashboard",
+      chunks: [{
+        name: "dashboard-01-chunk-0",
+        description: "A card showing the total revenue in USD and the percentage difference from last month.",
+        component: React.lazy(() => import("@/registry/default/block/dashboard-01-chunk-0")),
+        file: "src/registry/default/block/dashboard-01-chunk-0.tsx",
+        container: {
+          className: "undefined"
+        }
+      },{
+        name: "dashboard-01-chunk-1",
+        description: "A card showing the total subscriptions and the percentage difference from last month.",
+        component: React.lazy(() => import("@/registry/default/block/dashboard-01-chunk-1")),
+        file: "src/registry/default/block/dashboard-01-chunk-1.tsx",
+        container: {
+          className: "undefined"
+        }
+      },{
+        name: "dashboard-01-chunk-2",
+        description: "A card showing the total sales and the percentage difference from last month.",
+        component: React.lazy(() => import("@/registry/default/block/dashboard-01-chunk-2")),
+        file: "src/registry/default/block/dashboard-01-chunk-2.tsx",
+        container: {
+          className: "undefined"
+        }
+      },{
+        name: "dashboard-01-chunk-3",
+        description: "A card showing the total active users and the percentage difference from last hour.",
+        component: React.lazy(() => import("@/registry/default/block/dashboard-01-chunk-3")),
+        file: "src/registry/default/block/dashboard-01-chunk-3.tsx",
+        container: {
+          className: "undefined"
+        }
+      },{
+        name: "dashboard-01-chunk-4",
+        description: "A card showing a table of recent transactions with a link to view all transactions.",
+        component: React.lazy(() => import("@/registry/default/block/dashboard-01-chunk-4")),
+        file: "src/registry/default/block/dashboard-01-chunk-4.tsx",
+        container: {
+          className: "undefined"
+        }
+      },{
+        name: "dashboard-01-chunk-5",
+        description: "A card showing a list of recent sales with customer names and email addresses.",
+        component: React.lazy(() => import("@/registry/default/block/dashboard-01-chunk-5")),
+        file: "src/registry/default/block/dashboard-01-chunk-5.tsx",
+        container: {
+          className: "undefined"
+        }
+      }]
     },
     "authentication-01": {
       name: "authentication-01",

@@ -29,10 +29,7 @@ import {
 import { Button } from "@/registry/default/ui/button"
 import {
   DialogContent,
-  DialogFooter,
-  DialogHeader,
   DialogOverlay,
-  DialogTitle,
   DialogTrigger,
 } from "@/registry/default/ui/dialog"
 import { Link as ButtonLink } from "@/registry/default/ui/link"
@@ -53,7 +50,7 @@ import {
   TableBody,
   TableHeader,
 } from "@/registry/default/ui/table"
-import { Input, TextField } from "@/registry/default/ui/textfield"
+import { Input } from "@/registry/default/ui/textfield"
 
 export const description =
   "An application shell with a header and main content area. The header has a navbar, a search input and and a user nav dropdown. The user nav is toggled by a button with an avatar image."
@@ -62,7 +59,7 @@ export const iframeHeight = "825px"
 
 export const containerClassName = "w-full h-full"
 
-function Dashboard() {
+export default function Dashboard() {
   return (
     <div className="flex min-h-screen w-full flex-col">
       <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
@@ -444,8 +441,4 @@ function Dashboard() {
       </main>
     </div>
   )
-}
-
-export default function Page() {
-  return <Dashboard />
 }

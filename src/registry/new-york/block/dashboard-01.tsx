@@ -17,25 +17,22 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/registry/default/shadcn/ui/avatar"
-import { Badge } from "@/registry/default/shadcn/ui/badge"
+} from "@/registry/new-york/shadcn/ui/avatar"
+import { Badge } from "@/registry/new-york/shadcn/ui/badge"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/registry/default/shadcn/ui/card"
-import { Button } from "@/registry/default/ui/button"
+} from "@/registry/new-york/shadcn/ui/card"
+import { Button } from "@/registry/new-york/ui/button"
 import {
   DialogContent,
-  DialogFooter,
-  DialogHeader,
   DialogOverlay,
-  DialogTitle,
   DialogTrigger,
-} from "@/registry/default/ui/dialog"
-import { Link as ButtonLink } from "@/registry/default/ui/link"
+} from "@/registry/new-york/ui/dialog"
+import { Link as ButtonLink } from "@/registry/new-york/ui/link"
 import {
   Menu,
   MenuHeader,
@@ -44,7 +41,7 @@ import {
   MenuSection,
   MenuSeparator,
   MenuTrigger,
-} from "@/registry/default/ui/menu"
+} from "@/registry/new-york/ui/menu"
 import {
   Cell,
   Column,
@@ -52,8 +49,8 @@ import {
   Table,
   TableBody,
   TableHeader,
-} from "@/registry/default/ui/table"
-import { Input, TextField } from "@/registry/default/ui/textfield"
+} from "@/registry/new-york/ui/table"
+import { Input } from "@/registry/new-york/ui/textfield"
 
 export const description =
   "An application shell with a header and main content area. The header has a navbar, a search input and and a user nav dropdown. The user nav is toggled by a button with an avatar image."
@@ -62,7 +59,7 @@ export const iframeHeight = "825px"
 
 export const containerClassName = "w-full h-full"
 
-function Dashboard() {
+export default function Dashboard() {
   return (
     <div className="flex min-h-screen w-full flex-col">
       <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
@@ -444,8 +441,4 @@ function Dashboard() {
       </main>
     </div>
   )
-}
-
-export default function Page() {
-  return <Dashboard />
 }

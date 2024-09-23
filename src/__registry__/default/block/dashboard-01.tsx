@@ -29,10 +29,7 @@ import {
 import { Button } from "@/registry/default/ui/button"
 import {
   DialogContent,
-  DialogFooter,
-  DialogHeader,
   DialogOverlay,
-  DialogTitle,
   DialogTrigger,
 } from "@/registry/default/ui/dialog"
 import { Link as ButtonLink } from "@/registry/default/ui/link"
@@ -53,7 +50,7 @@ import {
   TableBody,
   TableHeader,
 } from "@/registry/default/ui/table"
-import { Input, TextField } from "@/registry/default/ui/textfield"
+import { Input } from "@/registry/default/ui/textfield"
 
 export const description =
   "An application shell with a header and main content area. The header has a navbar, a search input and and a user nav dropdown. The user nav is toggled by a button with an avatar image."
@@ -62,7 +59,7 @@ export const iframeHeight = "825px"
 
 export const containerClassName = "w-full h-full"
 
-function Dashboard() {
+export default function Dashboard() {
   return (
     <div className="flex min-h-screen w-full flex-col">
       <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
@@ -182,7 +179,7 @@ function Dashboard() {
       </header>
       <main className="flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-8">
         <div className="grid gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-4">
-          <Card x-chunk="A card showing the total revenue in USD and the percentage difference from last month.">
+          <Card x-chunk="dashboard-01-chunk-0">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">
                 Total Revenue
@@ -196,7 +193,7 @@ function Dashboard() {
               </p>
             </CardContent>
           </Card>
-          <Card x-chunk="A card showing the total subscriptions and the percentage difference from last month.">
+          <Card x-chunk="dashboard-01-chunk-1">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">
                 Subscriptions
@@ -210,7 +207,7 @@ function Dashboard() {
               </p>
             </CardContent>
           </Card>
-          <Card x-chunk="A card showing the total sales and the percentage difference from last month.">
+          <Card x-chunk="dashboard-01-chunk-2">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">Sales</CardTitle>
               <CreditCard className="h-4 w-4 text-muted-foreground" />
@@ -222,7 +219,7 @@ function Dashboard() {
               </p>
             </CardContent>
           </Card>
-          <Card x-chunk="A card showing the total active users and the percentage difference from last hour.">
+          <Card x-chunk="dashboard-01-chunk-3">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">Active Now</CardTitle>
               <Activity className="h-4 w-4 text-muted-foreground" />
@@ -237,8 +234,7 @@ function Dashboard() {
         </div>
         <div className="grid gap-4 md:gap-8 lg:grid-cols-2 xl:grid-cols-3">
           <Card
-            className="xl:col-span-2"
-            x-chunk="A card showing a table of recent transactions with a link to view all transactions."
+            className="xl:col-span-2" x-chunk="dashboard-01-chunk-4"
           >
             <CardHeader className="flex flex-row items-center">
               <div className="grid gap-2">
@@ -358,7 +354,7 @@ function Dashboard() {
               </Table>
             </CardContent>
           </Card>
-          <Card x-chunk="A card showing a list of recent sales with customer names and email addresses.">
+          <Card x-chunk="dashboard-01-chunk-5">
             <CardHeader>
               <CardTitle>Recent Sales</CardTitle>
             </CardHeader>
@@ -444,8 +440,4 @@ function Dashboard() {
       </main>
     </div>
   )
-}
-
-export default function Page() {
-  return <Dashboard />
 }

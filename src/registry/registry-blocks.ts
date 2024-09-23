@@ -2,6 +2,26 @@ import { Registry } from "@/registry/schema"
 
 export const blocks: Registry = [
   {
+    name: "dashboard-01",
+    type: "registry:block",
+    registryDependencies: [
+      "button",
+      "dialog",
+      "link",
+      "menu",
+      "table",
+      "textfield",
+      "list-box",
+      "select",
+      "shadcn/avatar",
+      "shadcn/badge",
+      "shadcn/card",
+    ],
+    files: ["block/dashboard-01.tsx"],
+    category: "Application",
+    subcategory: "Dashboard",
+  },
+  {
     name: "authentication-01",
     type: "registry:block",
     dependencies: ["react-aria-components"],

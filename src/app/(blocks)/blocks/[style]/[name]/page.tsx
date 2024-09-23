@@ -4,8 +4,6 @@ import { notFound } from "next/navigation"
 import { siteConfig } from "@/config/site"
 import { getAllBlockIds, getBlock } from "@/lib/blocks"
 import { absoluteUrl, cn } from "@/lib/utils"
-import { BlockChunk } from "@/components/block-chunk"
-import { BlockWrapper } from "@/components/block-wrapper"
 import { Style, styles } from "@/registry/registry-styles"
 
 import "@/styles/mdx.css"
@@ -87,25 +85,13 @@ export default async function BlockPage({
 
   return (
     <>
-      {/* <ThemesStyle /> */}
       <div
         className={cn(
           "themes-wrapper bg-background",
           block.container?.className
         )}
       >
-        <BlockWrapper block={block}>
-          <Component />
-          {chunks?.map((chunk, index) => (
-            <BlockChunk
-              key={chunk.name}
-              block={block}
-              chunk={block.chunks?.[index]}
-            >
-              <chunk.component />
-            </BlockChunk>
-          ))}
-        </BlockWrapper>
+        <Component />
       </div>
     </>
   )
