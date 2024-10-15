@@ -108,6 +108,22 @@
     ]
   },
   {
+    "name": "tree",
+    "type": "registry:ui",
+    "dependencies": [
+      "react-aria-components"
+    ],
+    "registryDependencies": [
+      "checkbox"
+    ],
+    "files": [
+      {
+        "path": "ui/tree.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
     "name": "date-picker",
     "type": "registry:ui",
     "dependencies": [

@@ -1694,5 +1694,13 @@ export const examples: Registry = [
     files: ["example/table/table-sortable.tsx"],
   },
 
+  //Tree
+  {
+    name: "tree-demo",
+    type: "registry:example",
+    registryDependencies: ["tree"],
+    files: ["example/tree/tree-demo.tsx"],
+  },
+
   //Reusable
 ]

@@ -111,6 +111,12 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/tag-group",
           items: [],
         },
+        {
+          title: "Tree",
+          href: "/docs/components/tree",
+          items: [],
+          label: "Beta",
+        },
       ],
     },
     {

@@ -82,6 +82,17 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
+    "tree": {
+      name: "tree",
+      type: "registry:ui",
+      registryDependencies: ["checkbox"],
+      files: ["src/registry/new-york/ui/tree.tsx"],
+      component: React.lazy(() => import("@/registry/new-york/ui/tree.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
     "date-picker": {
       name: "date-picker",
       type: "registry:ui",
@@ -3338,6 +3349,17 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
+    "tree-demo": {
+      name: "tree-demo",
+      type: "registry:example",
+      registryDependencies: ["tree"],
+      files: ["src/registry/new-york/example/tree/tree-demo.tsx"],
+      component: React.lazy(() => import("@/registry/new-york/example/tree/tree-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
     "dashboard-01": {
       name: "dashboard-01",
       type: "registry:block",
@@ -3525,6 +3547,17 @@ export const Index: Record<string, any> = {
       registryDependencies: undefined,
       files: ["src/registry/default/ui/disclosure.tsx"],
       component: React.lazy(() => import("@/registry/default/ui/disclosure.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "tree": {
+      name: "tree",
+      type: "registry:ui",
+      registryDependencies: ["checkbox"],
+      files: ["src/registry/default/ui/tree.tsx"],
+      component: React.lazy(() => import("@/registry/default/ui/tree.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",
@@ -6781,6 +6814,17 @@ export const Index: Record<string, any> = {
       registryDependencies: ["table"],
       files: ["src/registry/default/example/table/table-sortable.tsx"],
       component: React.lazy(() => import("@/registry/default/example/table/table-sortable.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "tree-demo": {
+      name: "tree-demo",
+      type: "registry:example",
+      registryDependencies: ["tree"],
+      files: ["src/registry/default/example/tree/tree-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/tree/tree-demo.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",
