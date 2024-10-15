@@ -95,6 +95,19 @@
     ]
   },
   {
+    "name": "disclosure",
+    "type": "registry:ui",
+    "dependencies": [
+      "react-aria-components"
+    ],
+    "files": [
+      {
+        "path": "ui/disclosure.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
     "name": "date-picker",
     "type": "registry:ui",
     "dependencies": [

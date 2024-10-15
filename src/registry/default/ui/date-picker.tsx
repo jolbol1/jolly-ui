@@ -11,8 +11,8 @@ import {
   DialogProps as AriaDialogProps,
   PopoverProps as AriaPopoverProps,
   ValidationResult as AriaValidationResult,
-  Text,
   composeRenderProps,
+  Text,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"

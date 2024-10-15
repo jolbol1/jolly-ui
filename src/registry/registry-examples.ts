@@ -129,6 +129,18 @@ export const examples: Registry = [
     files: ["example/color/color-wheel.tsx"],
   },
   {
+    name: "disclosure-demo",
+    type: "registry:example",
+    registryDependencies: ["disclosure"],
+    files: ["example/disclosure/disclosure-demo.tsx"],
+  },
+  {
+    name: "disclosure-group",
+    type: "registry:example",
+    registryDependencies: ["disclosure"],
+    files: ["example/disclosure/disclosure-group.tsx"],
+  },
+  {
     name: "file-trigger-button-demo",
     type: "registry:example",
     registryDependencies: ["button"],

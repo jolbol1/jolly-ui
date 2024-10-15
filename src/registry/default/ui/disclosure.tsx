@@ -11,9 +11,9 @@ import {
   DisclosureProps as AriaDisclosureProps,
   Button,
   ButtonProps,
+  composeRenderProps,
   DisclosureGroupStateContext,
   Heading,
-  composeRenderProps,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"
@@ -22,7 +22,7 @@ export interface DisclosureProps extends AriaDisclosureProps {
   children: React.ReactNode
 }
 
-export function Disclosure({ children, className, ...props }: DisclosureProps) {
+function Disclosure({ children, className, ...props }: DisclosureProps) {
   let isInGroup = useContext(DisclosureGroupStateContext) !== null
   return (
     <AriaDisclosure
@@ -45,10 +45,7 @@ export interface DisclosureHeaderProps {
   className?: ButtonProps["className"]
 }
 
-export function DisclosureHeader({
-  children,
-  className,
-}: DisclosureHeaderProps) {
+function DisclosureHeader({ children, className }: DisclosureHeaderProps) {
   return (
     <Heading className="flex">
       <Button
@@ -81,7 +78,7 @@ export interface DisclosurePanelProps extends AriaDisclosurePanelProps {
   children: React.ReactNode
 }
 
-export function DisclosurePanel({
+function DisclosurePanel({
   children,
   className,
   ...props
@@ -89,9 +86,7 @@ export function DisclosurePanel({
   return (
     <AriaDisclosurePanel
       {...props}
-      className={composeRenderProps(className, (className, renderProps) =>
-        cn("overflow-hidden text-sm transition-all")
-      )}
+      className={"overflow-hidden text-sm transition-all"}
     >
       <div className={cn("pb-4 pt-0", className)}>{children}</div>
     </AriaDisclosurePanel>
@@ -102,7 +97,7 @@ export interface DisclosureGroupProps extends AriaDisclosureGroupProps {
   children: React.ReactNode
 }
 
-export function DisclosureGroup({
+function DisclosureGroup({
   children,
   className,
   ...props
@@ -119,28 +114,4 @@ export function DisclosureGroup({
   )
 }
 
-export default function Page() {
-  return (
-    <div className="preview mx-auto flex min-h-[350px] w-[350px] justify-center p-10 items-center gap-8">
-      <Disclosure>
-        <DisclosureHeader>Files</DisclosureHeader>
-        <DisclosurePanel>Files content</DisclosurePanel>
-      </Disclosure>
-
-      <DisclosureGroup>
-        <Disclosure>
-          <DisclosureHeader>Files</DisclosureHeader>
-          <DisclosurePanel>Files content</DisclosurePanel>
-        </Disclosure>
-        <Disclosure>
-          <DisclosureHeader>Images</DisclosureHeader>
-          <DisclosurePanel>Images content</DisclosurePanel>
-        </Disclosure>
-        <Disclosure>
-          <DisclosureHeader>Documents</DisclosureHeader>
-          <DisclosurePanel>Documents content</DisclosurePanel>
-        </Disclosure>
-      </DisclosureGroup>
-    </div>
-  )
-}
+export { Disclosure, DisclosureHeader, DisclosurePanel, DisclosureGroup }

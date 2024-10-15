@@ -11,8 +11,8 @@ import {
   SearchField as AriaSearchField,
   SearchFieldProps as AriaSearchFieldProps,
   ValidationResult as AriaValidationResult,
-  Text,
   composeRenderProps,
+  Text,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"

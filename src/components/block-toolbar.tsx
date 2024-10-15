@@ -10,7 +10,6 @@ import { Badge } from "@/components/badge"
 import { BlockCopyButton } from "@/components/block-copy-button"
 import { StyleSwitcher } from "@/components/style-switcher"
 import { Button } from "@/registry/new-york/ui/button"
-import { Label } from "@/registry/new-york/ui/field"
 import {
   Popover,
   PopoverDialog,
@@ -18,7 +17,6 @@ import {
 } from "@/registry/new-york/ui/popover"
 import { Radio, RadioGroup } from "@/registry/new-york/ui/radio-group"
 import { Separator } from "@/registry/new-york/ui/separator"
-import { Switch } from "@/registry/new-york/ui/switch"
 import { Tab, TabList } from "@/registry/new-york/ui/tabs"
 import { toggleVariants } from "@/registry/new-york/ui/toggle"
 import { Block } from "@/registry/schema"

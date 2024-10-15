@@ -71,6 +71,17 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
+    "disclosure": {
+      name: "disclosure",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: ["src/registry/new-york/ui/disclosure.tsx"],
+      component: React.lazy(() => import("@/registry/new-york/ui/disclosure.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
     "date-picker": {
       name: "date-picker",
       type: "registry:ui",
@@ -583,6 +594,28 @@ export const Index: Record<string, any> = {
       registryDependencies: ["color"],
       files: ["src/registry/new-york/example/color/color-wheel.tsx"],
       component: React.lazy(() => import("@/registry/new-york/example/color/color-wheel.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "disclosure-demo": {
+      name: "disclosure-demo",
+      type: "registry:example",
+      registryDependencies: ["disclosure"],
+      files: ["src/registry/new-york/example/disclosure/disclosure-demo.tsx"],
+      component: React.lazy(() => import("@/registry/new-york/example/disclosure/disclosure-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "disclosure-group": {
+      name: "disclosure-group",
+      type: "registry:example",
+      registryDependencies: ["disclosure"],
+      files: ["src/registry/new-york/example/disclosure/disclosure-group.tsx"],
+      component: React.lazy(() => import("@/registry/new-york/example/disclosure/disclosure-group.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",
@@ -3486,6 +3519,17 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
+    "disclosure": {
+      name: "disclosure",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: ["src/registry/default/ui/disclosure.tsx"],
+      component: React.lazy(() => import("@/registry/default/ui/disclosure.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
     "date-picker": {
       name: "date-picker",
       type: "registry:ui",
@@ -3998,6 +4042,28 @@ export const Index: Record<string, any> = {
       registryDependencies: ["color"],
       files: ["src/registry/default/example/color/color-wheel.tsx"],
       component: React.lazy(() => import("@/registry/default/example/color/color-wheel.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "disclosure-demo": {
+      name: "disclosure-demo",
+      type: "registry:example",
+      registryDependencies: ["disclosure"],
+      files: ["src/registry/default/example/disclosure/disclosure-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/disclosure/disclosure-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "disclosure-group": {
+      name: "disclosure-group",
+      type: "registry:example",
+      registryDependencies: ["disclosure"],
+      files: ["src/registry/default/example/disclosure/disclosure-group.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/disclosure/disclosure-group.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",
