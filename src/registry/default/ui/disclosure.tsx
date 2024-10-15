@@ -11,9 +11,9 @@ import {
   DisclosureProps as AriaDisclosureProps,
   Button,
   ButtonProps,
+  composeRenderProps,
   DisclosureGroupStateContext,
   Heading,
-  composeRenderProps,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"
