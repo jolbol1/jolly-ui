@@ -76,7 +76,7 @@ export default function Dashboard() {
             href="#"
             className="flex items-center gap-2 text-lg font-semibold md:text-base"
           >
-            <Package2 className="h-6 w-6" />
+            <Package2 className="size-6" />
             <span className="sr-only">Acme Inc</span>
           </Link>
           <Link
@@ -112,7 +112,7 @@ export default function Dashboard() {
         </nav>
         <DialogTrigger>
           <Button variant="outline" size="icon" className="shrink-0 md:hidden">
-            <MenuIcon className="h-5 w-5" />
+            <MenuIcon className="size-5" />
             <span className="sr-only">Toggle navigation menu</span>
           </Button>
           <DialogOverlay />
@@ -122,7 +122,7 @@ export default function Dashboard() {
                 href="#"
                 className="flex items-center gap-2 text-lg font-semibold"
               >
-                <Package2 className="h-6 w-6" />
+                <Package2 className="size-6" />
                 <span className="sr-only">Acme Inc</span>
               </Link>
               <Link href="#" className="hover:text-foreground">
@@ -172,7 +172,7 @@ export default function Dashboard() {
           </form>
           <MenuTrigger>
             <Button variant="secondary" size="icon" className="rounded-full">
-              <CircleUser className="h-5 w-5" />
+              <CircleUser className="size-5" />
               <span className="sr-only">Toggle user menu</span>
             </Button>
             <MenuPopover placement="bottom">
@@ -196,7 +196,7 @@ export default function Dashboard() {
               <CardTitle className="text-sm font-medium">
                 Total Revenue
               </CardTitle>
-              <DollarSign className="h-4 w-4 text-muted-foreground" />
+              <DollarSign className="size-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">$45,231.89</div>
@@ -210,7 +210,7 @@ export default function Dashboard() {
               <CardTitle className="text-sm font-medium">
                 Subscriptions
               </CardTitle>
-              <Users className="h-4 w-4 text-muted-foreground" />
+              <Users className="size-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">+2350</div>
@@ -222,7 +222,7 @@ export default function Dashboard() {
           <Card x-chunk="A card showing the total sales and the percentage difference from last month.">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">Sales</CardTitle>
-              <CreditCard className="h-4 w-4 text-muted-foreground" />
+              <CreditCard className="size-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">+12,234</div>
@@ -234,7 +234,7 @@ export default function Dashboard() {
           <Card x-chunk="A card showing the total active users and the percentage difference from last hour.">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">Active Now</CardTitle>
-              <Activity className="h-4 w-4 text-muted-foreground" />
+              <Activity className="size-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">+573</div>
@@ -258,7 +258,7 @@ export default function Dashboard() {
               </div>
               <ButtonLink size="sm" className="ml-auto gap-1" href="#">
                 View All
-                <ArrowUpRight className="h-4 w-4" />
+                <ArrowUpRight className="size-4" />
               </ButtonLink>
             </CardHeader>
             <CardContent>
@@ -373,7 +373,7 @@ export default function Dashboard() {
             </CardHeader>
             <CardContent className="grid gap-8">
               <div className="flex items-center gap-4">
-                <Avatar className="hidden h-9 w-9 sm:flex">
+                <Avatar className="hidden size-9 sm:flex">
                   <AvatarImage src="/avatars/01.png" alt="Avatar" />
                   <AvatarFallback>OM</AvatarFallback>
                 </Avatar>
@@ -388,7 +388,7 @@ export default function Dashboard() {
                 <div className="ml-auto font-medium">+$1,999.00</div>
               </div>
               <div className="flex items-center gap-4">
-                <Avatar className="hidden h-9 w-9 sm:flex">
+                <Avatar className="hidden size-9 sm:flex">
                   <AvatarImage src="/avatars/02.png" alt="Avatar" />
                   <AvatarFallback>JL</AvatarFallback>
                 </Avatar>
@@ -403,7 +403,7 @@ export default function Dashboard() {
                 <div className="ml-auto font-medium">+$39.00</div>
               </div>
               <div className="flex items-center gap-4">
-                <Avatar className="hidden h-9 w-9 sm:flex">
+                <Avatar className="hidden size-9 sm:flex">
                   <AvatarImage src="/avatars/03.png" alt="Avatar" />
                   <AvatarFallback>IN</AvatarFallback>
                 </Avatar>
@@ -418,7 +418,7 @@ export default function Dashboard() {
                 <div className="ml-auto font-medium">+$299.00</div>
               </div>
               <div className="flex items-center gap-4">
-                <Avatar className="hidden h-9 w-9 sm:flex">
+                <Avatar className="hidden size-9 sm:flex">
                   <AvatarImage src="/avatars/04.png" alt="Avatar" />
                   <AvatarFallback>WK</AvatarFallback>
                 </Avatar>
@@ -433,7 +433,7 @@ export default function Dashboard() {
                 <div className="ml-auto font-medium">+$99.00</div>
               </div>
               <div className="flex items-center gap-4">
-                <Avatar className="hidden h-9 w-9 sm:flex">
+                <Avatar className="hidden size-9 sm:flex">
                   <AvatarImage src="/avatars/05.png" alt="Avatar" />
                   <AvatarFallback>SD</AvatarFallback>
                 </Avatar>

@@ -53,7 +53,7 @@ export function BlockToolbar({
             size="icon"
             className="hidden size-3.5 text-muted-foreground hover:text-foreground disabled:opacity-50 sm:flex"
           >
-            <CircleHelp className="h-3.5 w-3.5" />
+            <CircleHelp className="size-3.5" />
             <span className="sr-only">Block description</span>
           </Button>
           <Popover
@@ -128,7 +128,7 @@ export function BlockToolbar({
                 })}
                 value="60"
               >
-                <Tablet className="h-3.5 w-3.5" />
+                <Tablet className="size-3.5" />
               </Radio>
               <Radio
                 className={toggleVariants({
@@ -138,7 +138,7 @@ export function BlockToolbar({
                 })}
                 value="30"
               >
-                <Smartphone className="h-3.5 w-3.5" />
+                <Smartphone className="size-3.5" />
               </Radio>
             </RadioGroup>
           </div>

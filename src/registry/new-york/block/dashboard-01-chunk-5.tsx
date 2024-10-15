@@ -20,7 +20,7 @@ export default function Component() {
       </CardHeader>
       <CardContent className="grid gap-8">
         <div className="flex items-center gap-4">
-          <Avatar className="hidden h-9 w-9 sm:flex">
+          <Avatar className="hidden size-9 sm:flex">
             <AvatarImage src="/avatars/01.png" alt="Avatar" />
             <AvatarFallback>OM</AvatarFallback>
           </Avatar>
@@ -33,7 +33,7 @@ export default function Component() {
           <div className="ml-auto font-medium">+$1,999.00</div>
         </div>
         <div className="flex items-center gap-4">
-          <Avatar className="hidden h-9 w-9 sm:flex">
+          <Avatar className="hidden size-9 sm:flex">
             <AvatarImage src="/avatars/02.png" alt="Avatar" />
             <AvatarFallback>JL</AvatarFallback>
           </Avatar>
@@ -46,7 +46,7 @@ export default function Component() {
           <div className="ml-auto font-medium">+$39.00</div>
         </div>
         <div className="flex items-center gap-4">
-          <Avatar className="hidden h-9 w-9 sm:flex">
+          <Avatar className="hidden size-9 sm:flex">
             <AvatarImage src="/avatars/03.png" alt="Avatar" />
             <AvatarFallback>IN</AvatarFallback>
           </Avatar>
@@ -59,7 +59,7 @@ export default function Component() {
           <div className="ml-auto font-medium">+$299.00</div>
         </div>
         <div className="flex items-center gap-4">
-          <Avatar className="hidden h-9 w-9 sm:flex">
+          <Avatar className="hidden size-9 sm:flex">
             <AvatarImage src="/avatars/04.png" alt="Avatar" />
             <AvatarFallback>WK</AvatarFallback>
           </Avatar>
@@ -70,7 +70,7 @@ export default function Component() {
           <div className="ml-auto font-medium">+$99.00</div>
         </div>
         <div className="flex items-center gap-4">
-          <Avatar className="hidden h-9 w-9 sm:flex">
+          <Avatar className="hidden size-9 sm:flex">
             <AvatarImage src="/avatars/05.png" alt="Avatar" />
             <AvatarFallback>SD</AvatarFallback>
           </Avatar>
