@@ -3,8 +3,8 @@
 import React from "react"
 import {
   Toolbar as AriaToolbar,
-  ToolbarProps,
   composeRenderProps,
+  ToolbarProps,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"

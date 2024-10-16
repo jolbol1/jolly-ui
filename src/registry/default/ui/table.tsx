@@ -12,13 +12,13 @@ import {
   TableHeader as AriaTableHeader,
   CellProps,
   ColumnResizer,
+  composeRenderProps,
   Group,
   ResizableTableContainerProps,
   RowProps,
   TableBodyProps,
   TableHeaderProps,
   TableProps,
-  composeRenderProps,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"

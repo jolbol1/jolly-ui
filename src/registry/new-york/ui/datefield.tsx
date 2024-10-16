@@ -13,13 +13,13 @@ import {
   TimeFieldProps as AriaTimeFieldProps,
   TimeValue as AriaTimeValue,
   ValidationResult as AriaValidationResult,
-  Text,
   composeRenderProps,
+  Text,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"
 
-import { FieldError, Label, fieldGroupVariants } from "./field"
+import { FieldError, fieldGroupVariants, Label } from "./field"
 
 const DateField = AriaDateField
 

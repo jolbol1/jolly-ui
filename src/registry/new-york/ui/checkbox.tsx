@@ -7,8 +7,8 @@ import {
   CheckboxGroup as AriaCheckboxGroup,
   CheckboxGroupProps as AriaCheckboxGroupProps,
   ValidationResult as AriaValidationResult,
-  Text,
   composeRenderProps,
+  Text,
   type CheckboxProps as AriaCheckboxProps,
 } from "react-aria-components"
 

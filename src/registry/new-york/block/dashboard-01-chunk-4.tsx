@@ -32,7 +32,7 @@ export default function Component() {
         </div>
         <ButtonLink size="sm" className="ml-auto gap-1" href="#">
           View All
-          <ArrowUpRight className="h-4 w-4" />
+          <ArrowUpRight className="size-4" />
         </ButtonLink>
       </CardHeader>
       <CardContent>

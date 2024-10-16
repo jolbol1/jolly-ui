@@ -8,8 +8,8 @@ import {
   NumberField as AriaNumberField,
   NumberFieldProps as AriaNumberFieldProps,
   ValidationResult as AriaValidationResult,
-  Text,
   composeRenderProps,
+  Text,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"

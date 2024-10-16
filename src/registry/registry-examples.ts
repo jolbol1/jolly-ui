@@ -129,6 +129,18 @@ export const examples: Registry = [
     files: ["example/color/color-wheel.tsx"],
   },
   {
+    name: "disclosure-demo",
+    type: "registry:example",
+    registryDependencies: ["disclosure"],
+    files: ["example/disclosure/disclosure-demo.tsx"],
+  },
+  {
+    name: "disclosure-group",
+    type: "registry:example",
+    registryDependencies: ["disclosure"],
+    files: ["example/disclosure/disclosure-group.tsx"],
+  },
+  {
     name: "file-trigger-button-demo",
     type: "registry:example",
     registryDependencies: ["button"],
@@ -1680,6 +1692,14 @@ export const examples: Registry = [
     type: "registry:example",
     registryDependencies: ["table"],
     files: ["example/table/table-sortable.tsx"],
+  },
+
+  //Tree
+  {
+    name: "tree-demo",
+    type: "registry:example",
+    registryDependencies: ["tree"],
+    files: ["example/tree/tree-demo.tsx"],
   },
 
   //Reusable

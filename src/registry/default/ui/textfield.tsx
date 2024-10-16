@@ -9,8 +9,8 @@ import {
   TextField as AriaTextField,
   TextFieldProps as AriaTextFieldProps,
   ValidationResult as AriaValidationResult,
-  Text,
   composeRenderProps,
+  Text,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"

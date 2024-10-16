@@ -42,6 +42,19 @@ export const ui: Registry = [
     files: ["ui/combobox.tsx"],
   },
   {
+    name: "disclosure",
+    type: "registry:ui",
+    dependencies: ["react-aria-components"],
+    files: ["ui/disclosure.tsx"],
+  },
+  {
+    name: "tree",
+    type: "registry:ui",
+    dependencies: ["react-aria-components"],
+    registryDependencies: ["checkbox"],
+    files: ["ui/tree.tsx"],
+  },
+  {
     name: "date-picker",
     type: "registry:ui",
     dependencies: ["react-aria-components"],

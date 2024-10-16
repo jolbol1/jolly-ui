@@ -111,6 +111,12 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/tag-group",
           items: [],
         },
+        {
+          title: "Tree",
+          href: "/docs/components/tree",
+          items: [],
+          label: "Beta",
+        },
       ],
     },
     {
@@ -232,6 +238,18 @@ export const docsConfig: DocsConfig = {
           title: "Breadcrumbs",
           href: "/docs/components/breadcrumbs",
           items: [],
+        },
+        {
+          title: "Disclosure",
+          href: "/docs/components/disclosure",
+          items: [],
+          label: "Alpha",
+        },
+        {
+          title: "DisclosureGroup",
+          href: "/docs/components/disclosure-group",
+          items: [],
+          label: "Alpha",
         },
         {
           title: "Link",

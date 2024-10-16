@@ -71,6 +71,28 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
+    "disclosure": {
+      name: "disclosure",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: ["src/registry/new-york/ui/disclosure.tsx"],
+      component: React.lazy(() => import("@/registry/new-york/ui/disclosure.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "tree": {
+      name: "tree",
+      type: "registry:ui",
+      registryDependencies: ["checkbox"],
+      files: ["src/registry/new-york/ui/tree.tsx"],
+      component: React.lazy(() => import("@/registry/new-york/ui/tree.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
     "date-picker": {
       name: "date-picker",
       type: "registry:ui",
@@ -583,6 +605,28 @@ export const Index: Record<string, any> = {
       registryDependencies: ["color"],
       files: ["src/registry/new-york/example/color/color-wheel.tsx"],
       component: React.lazy(() => import("@/registry/new-york/example/color/color-wheel.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "disclosure-demo": {
+      name: "disclosure-demo",
+      type: "registry:example",
+      registryDependencies: ["disclosure"],
+      files: ["src/registry/new-york/example/disclosure/disclosure-demo.tsx"],
+      component: React.lazy(() => import("@/registry/new-york/example/disclosure/disclosure-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "disclosure-group": {
+      name: "disclosure-group",
+      type: "registry:example",
+      registryDependencies: ["disclosure"],
+      files: ["src/registry/new-york/example/disclosure/disclosure-group.tsx"],
+      component: React.lazy(() => import("@/registry/new-york/example/disclosure/disclosure-group.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",
@@ -3305,6 +3349,17 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
+    "tree-demo": {
+      name: "tree-demo",
+      type: "registry:example",
+      registryDependencies: ["tree"],
+      files: ["src/registry/new-york/example/tree/tree-demo.tsx"],
+      component: React.lazy(() => import("@/registry/new-york/example/tree/tree-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
     "dashboard-01": {
       name: "dashboard-01",
       type: "registry:block",
@@ -3481,6 +3536,28 @@ export const Index: Record<string, any> = {
       registryDependencies: ["field","popover","button","list-box"],
       files: ["src/registry/default/ui/combobox.tsx"],
       component: React.lazy(() => import("@/registry/default/ui/combobox.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "disclosure": {
+      name: "disclosure",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: ["src/registry/default/ui/disclosure.tsx"],
+      component: React.lazy(() => import("@/registry/default/ui/disclosure.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "tree": {
+      name: "tree",
+      type: "registry:ui",
+      registryDependencies: ["checkbox"],
+      files: ["src/registry/default/ui/tree.tsx"],
+      component: React.lazy(() => import("@/registry/default/ui/tree.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",
@@ -3998,6 +4075,28 @@ export const Index: Record<string, any> = {
       registryDependencies: ["color"],
       files: ["src/registry/default/example/color/color-wheel.tsx"],
       component: React.lazy(() => import("@/registry/default/example/color/color-wheel.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "disclosure-demo": {
+      name: "disclosure-demo",
+      type: "registry:example",
+      registryDependencies: ["disclosure"],
+      files: ["src/registry/default/example/disclosure/disclosure-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/disclosure/disclosure-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "disclosure-group": {
+      name: "disclosure-group",
+      type: "registry:example",
+      registryDependencies: ["disclosure"],
+      files: ["src/registry/default/example/disclosure/disclosure-group.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/disclosure/disclosure-group.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",
@@ -6715,6 +6814,17 @@ export const Index: Record<string, any> = {
       registryDependencies: ["table"],
       files: ["src/registry/default/example/table/table-sortable.tsx"],
       component: React.lazy(() => import("@/registry/default/example/table/table-sortable.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "tree-demo": {
+      name: "tree-demo",
+      type: "registry:example",
+      registryDependencies: ["tree"],
+      files: ["src/registry/default/example/tree/tree-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/tree/tree-demo.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",

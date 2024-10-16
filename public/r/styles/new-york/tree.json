@@ -1,0 +1,18 @@
+{
+  "name": "tree",
+  "type": "registry:ui",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [
+    "https://jollyui.dev/r/styles/new-york/checkbox.json"
+  ],
+  "files": [
+    {
+      "path": "ui/tree.tsx",
+      "content": "\"use client\"\n\nimport { ChevronRightIcon, InfoCircledIcon } from \"@radix-ui/react-icons\"\nimport {\n  UNSTABLE_Tree as AriaTree,\n  UNSTABLE_TreeItem as AriaTreeItem,\n  UNSTABLE_TreeItemContent as AriaTreeItemContent,\n  TreeItemProps as AriaTreeItemProps,\n  TreeProps as AriaTreeProps,\n  Button,\n  ButtonProps,\n} from \"react-aria-components\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst TreeItemContent = AriaTreeItemContent\n\nfunction Tree<T extends object>({ className, ...props }: AriaTreeProps<T>) {\n  return (\n    <AriaTree\n      className={cn(\n        \"flex flex-col gap-1 overflow-auto p-1 text-sm outline-none\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction TreeItemExpandButton({ className, children, ...props }: ButtonProps) {\n  return (\n    <Button slot=\"chevron\" className={cn(\"outline-none\", className)} {...props}>\n      <>\n        <ChevronRightIcon className=\"size-4 shrink-0 text-muted-foreground transition-transform duration-200 group-data-[expanded]:rotate-90\" />\n        {children}\n      </>\n    </Button>\n  )\n}\n\nfunction TreeItemInfoButton({ className, children, ...props }: ButtonProps) {\n  return (\n    <Button\n      aria-label=\"Info\"\n      className={cn(\n        \"ml-auto flex items-center justify-center rounded-md ring-offset-background\",\n        /* Disabled */\n        \"data-[disabled]:pointer-events-none data-[disabled]:opacity-50 \",\n        /* Focus Visible */\n        \"data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2\",\n        /* Resets */\n        \"focus-visible:outline-none\",\n        className\n      )}\n    >\n      <>\n        {children}\n        <InfoCircledIcon className=\"size-4 shrink-0 text-muted-foreground\" />\n      </>\n    </Button>\n  )\n}\n\nfunction TreeItem<T extends object>({\n  className,\n  ...props\n}: AriaTreeItemProps<T>) {\n  return (\n    <AriaTreeItem\n      className={cn(\n        \"group relative flex items-center gap-2 rounded-md p-1 pl-[calc((var(--tree-item-level)_-_1)_*_2.25rem)] font-medium outline-none ring-offset-background data-[has-child-rows]:pl-[calc((var(--tree-item-level)_-_1)_*_1.5rem)]\",\n        /* Disabled */\n        \"data-[disabled]:pointer-events-none data-[disabled]:opacity-50 \",\n        /* Focus Visible */\n        \"data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2\",\n        /* Resets */\n        \"focus-visible:outline-none\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport {\n  Tree,\n  TreeItem,\n  TreeItemContent,\n  TreeItemExpandButton,\n  TreeItemInfoButton,\n}\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ]
+}
