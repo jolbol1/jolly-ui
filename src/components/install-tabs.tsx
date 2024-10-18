@@ -1,5 +1,5 @@
 import { ReactNode } from "react"
-import { TabsProps, composeRenderProps } from "react-aria-components"
+import { composeRenderProps, TabsProps } from "react-aria-components"
 
 import { useThemeStore } from "@/lib/use-theme-store"
 import { cn } from "@/lib/utils"
@@ -20,28 +20,28 @@ export function PackageManagerTabs({ children, ...props }: PackageManagerTabs) {
       className={cn("mt-2 gap-0", props.className)}
       {...props}
     >
-      <TabList className="justify-start overflow-y-hidden overflow-x-scroll rounded-none rounded-t-md border bg-secondary p-0">
+      <TabList className="h-fit flex-wrap justify-start rounded-none rounded-t-md border bg-secondary p-0">
         <Tab
           id="npm"
-          className="install-selected relative flex h-full items-center rounded-none p-0 px-4 first:rounded-tl-md data-[focus-visible]:outline-2 data-[focus-visible]:-outline-offset-2 data-[focus-visible]:outline-ring data-[focus-visible]:ring-0 data-[focus-visible]:ring-offset-0"
+          className="install-selected relative flex h-10 items-center rounded-none p-0 px-4 first:rounded-tl-md data-[focus-visible]:outline-2 data-[focus-visible]:-outline-offset-2 data-[focus-visible]:outline-ring data-[focus-visible]:ring-0 data-[focus-visible]:ring-offset-0"
         >
           NPM
         </Tab>
         <Tab
           id="pnpm"
-          className="install-selected relative flex h-full items-center rounded-none p-0 px-4 first:rounded-tl-md data-[focus-visible]:outline-2 data-[focus-visible]:-outline-offset-2 data-[focus-visible]:outline-ring data-[focus-visible]:ring-0 data-[focus-visible]:ring-offset-0"
+          className="install-selected relative flex h-10 items-center rounded-none p-0 px-4 first:rounded-tl-md data-[focus-visible]:outline-2 data-[focus-visible]:-outline-offset-2 data-[focus-visible]:outline-ring data-[focus-visible]:ring-0 data-[focus-visible]:ring-offset-0"
         >
           PNPM
         </Tab>
         <Tab
           id="bun"
-          className="install-selected relative flex h-full items-center rounded-none p-0 px-4 first:rounded-tl-md data-[focus-visible]:outline-2 data-[focus-visible]:-outline-offset-2 data-[focus-visible]:outline-ring data-[focus-visible]:ring-0 data-[focus-visible]:ring-offset-0"
+          className="install-selected relative flex h-10 items-center rounded-none p-0 px-4 first:rounded-tl-md data-[focus-visible]:outline-2 data-[focus-visible]:-outline-offset-2 data-[focus-visible]:outline-ring data-[focus-visible]:ring-0 data-[focus-visible]:ring-offset-0"
         >
           Bun
         </Tab>
         <Tab
           id="yarn"
-          className="install-selected relative flex h-full items-center rounded-none p-0 px-4 first:rounded-tl-md data-[focus-visible]:outline-2 data-[focus-visible]:-outline-offset-2 data-[focus-visible]:outline-ring data-[focus-visible]:ring-0 data-[focus-visible]:ring-offset-0"
+          className="install-selected relative flex h-10 items-center rounded-none p-0 px-4 first:rounded-tl-md data-[focus-visible]:outline-2 data-[focus-visible]:-outline-offset-2 data-[focus-visible]:outline-ring data-[focus-visible]:ring-0 data-[focus-visible]:ring-offset-0"
         >
           Yarn
         </Tab>
