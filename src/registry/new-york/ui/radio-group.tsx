@@ -93,7 +93,7 @@ function JollyRadioGroup({
   return (
     <RadioGroup
       className={composeRenderProps(className, (className) =>
-        cn("group flex flex-col gap-2", className)
+        cn("group", className)
       )}
       {...props}
     >
