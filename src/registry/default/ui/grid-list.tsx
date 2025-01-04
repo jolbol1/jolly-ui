@@ -16,7 +16,7 @@ import { Checkbox } from "@/registry/default/ui/checkbox"
 export function GridList<T extends object>({
   children,
   ...props
-}: AriaGridListProps<T>) {
+}: AriaGridListProps<T> & React.RefAttributes<HTMLDivElement>) {
   return (
     <AriaGridList
       {...props}
@@ -34,11 +34,11 @@ export function GridList<T extends object>({
   )
 }
 
-export function GridListItem({
+export function GridListItem<T extends object>({
   children,
   className,
   ...props
-}: AriaGridListItemProps) {
+}: AriaGridListItemProps<T> & React.RefAttributes<T>) {
   let textValue = typeof children === "string" ? children : undefined
   return (
     <AriaGridListItem

@@ -21,7 +21,7 @@ const ListBoxCollection = AriaCollection
 function ListBox<T extends object>({
   className,
   ...props
-}: AriaListBoxProps<T>) {
+}: AriaListBoxProps<T> & React.RefAttributes<HTMLDivElement>) {
   return (
     <AriaListBox
       className={composeRenderProps(className, (className) =>
@@ -41,7 +41,7 @@ const ListBoxItem = <T extends object>({
   className,
   children,
   ...props
-}: AriaListBoxItemProps<T>) => {
+}: AriaListBoxItemProps<T> & React.RefAttributes<T>) => {
   return (
     <AriaListBoxItem
       textValue={

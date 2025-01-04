@@ -15,7 +15,10 @@ import { cn } from "@/lib/utils"
 
 const TreeItemContent = AriaTreeItemContent
 
-function Tree<T extends object>({ className, ...props }: AriaTreeProps<T>) {
+function Tree<T extends object>({
+  className,
+  ...props
+}: AriaTreeProps<T> & React.RefAttributes<HTMLDivElement>) {
   return (
     <AriaTree
       className={cn(
@@ -27,7 +30,11 @@ function Tree<T extends object>({ className, ...props }: AriaTreeProps<T>) {
   )
 }
 
-function TreeItemExpandButton({ className, children, ...props }: ButtonProps) {
+function TreeItemExpandButton({
+  className,
+  children,
+  ...props
+}: ButtonProps & React.RefAttributes<HTMLButtonElement>) {
   return (
     <Button slot="chevron" className={cn("outline-none", className)} {...props}>
       <>
@@ -38,7 +45,11 @@ function TreeItemExpandButton({ className, children, ...props }: ButtonProps) {
   )
 }
 
-function TreeItemInfoButton({ className, children, ...props }: ButtonProps) {
+function TreeItemInfoButton({
+  className,
+  children,
+  ...props
+}: ButtonProps & React.RefAttributes<HTMLButtonElement>) {
   return (
     <Button
       aria-label="Info"
@@ -64,7 +75,7 @@ function TreeItemInfoButton({ className, children, ...props }: ButtonProps) {
 function TreeItem<T extends object>({
   className,
   ...props
-}: AriaTreeItemProps<T>) {
+}: AriaTreeItemProps<T> & React.RefAttributes<HTMLDivElement>) {
   return (
     <AriaTreeItem
       className={cn(

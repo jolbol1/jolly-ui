@@ -19,7 +19,7 @@ const RadioGroup = ({
   className,
   orientation = "vertical",
   ...props
-}: AriaRadioGroupProps) => {
+}: AriaRadioGroupProps & React.RefAttributes<HTMLDivElement>) => {
   return (
     <AriaRadioGroup
       className={composeRenderProps(className, (className) =>
@@ -36,7 +36,11 @@ const RadioGroup = ({
   )
 }
 
-const Radio = ({ className, children, ...props }: AriaRadioProps) => {
+const Radio = ({
+  className,
+  children,
+  ...props
+}: AriaRadioProps & React.RefAttributes<HTMLLabelElement>) => {
   return (
     <AriaRadio
       className={composeRenderProps(className, (className) =>
@@ -89,7 +93,7 @@ function JollyRadioGroup({
   errorMessage,
   children,
   ...props
-}: JollyRadioGroupProps) {
+}: JollyRadioGroupProps & React.RefAttributes<HTMLDivElement>) {
   return (
     <RadioGroup
       className={composeRenderProps(className, (className) =>

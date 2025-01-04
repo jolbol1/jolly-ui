@@ -23,11 +23,17 @@ const labelVariants = cva([
   "group-data-[invalid]:text-destructive",
 ])
 
-const Label = ({ className, ...props }: AriaLabelProps) => (
+const Label = ({
+  className,
+  ...props
+}: AriaLabelProps & React.RefAttributes<HTMLLabelElement>) => (
   <AriaLabel className={cn(labelVariants(), className)} {...props} />
 )
 
-function FormDescription({ className, ...props }: AriaTextProps) {
+function FormDescription({
+  className,
+  ...props
+}: AriaTextProps & React.RefAttributes<HTMLElement>) {
   return (
     <AriaText
       className={cn("text-[0.8rem] text-muted-foreground", className)}
@@ -37,7 +43,10 @@ function FormDescription({ className, ...props }: AriaTextProps) {
   )
 }
 
-function FieldError({ className, ...props }: AriaFieldErrorProps) {
+function FieldError({
+  className,
+  ...props
+}: AriaFieldErrorProps & React.RefAttributes<HTMLElement>) {
   return (
     <AriaFieldError
       className={cn("text-[0.8rem] font-medium text-destructive", className)}
@@ -68,7 +77,11 @@ interface GroupProps
   extends AriaGroupProps,
     VariantProps<typeof fieldGroupVariants> {}
 
-function FieldGroup({ className, variant, ...props }: GroupProps) {
+function FieldGroup({
+  className,
+  variant,
+  ...props
+}: GroupProps & React.RefAttributes<HTMLDivElement>) {
   return (
     <AriaGroup
       className={composeRenderProps(className, (className) =>

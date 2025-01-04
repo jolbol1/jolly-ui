@@ -22,7 +22,7 @@ const Progress = ({
   fillClassName,
   children,
   ...props
-}: ProgressProps) => (
+}: ProgressProps & React.RefAttributes<HTMLDivElement>) => (
   <AriaProgressBar
     className={composeRenderProps(className, (className) =>
       cn("w-full", className)
@@ -63,7 +63,7 @@ function JollyProgressBar({
   className,
   showValue = true,
   ...props
-}: JollyProgressBarProps) {
+}: JollyProgressBarProps & React.RefAttributes<HTMLDivElement>) {
   return (
     <Progress
       className={composeRenderProps(className, (className) =>

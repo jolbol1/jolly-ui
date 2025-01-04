@@ -25,7 +25,10 @@ import { cn } from "@/lib/utils"
 
 const ResizableTableContainer = AriaResizableTableContainer
 
-const Table = ({ className, ...props }: TableProps) => (
+const Table = ({
+  className,
+  ...props
+}: TableProps & React.RefAttributes<HTMLTableElement>) => (
   <AriaTable
     className={composeRenderProps(className, (className) =>
       cn(
@@ -40,7 +43,7 @@ const Table = ({ className, ...props }: TableProps) => (
 const TableHeader = <T extends object>({
   className,
   ...props
-}: TableHeaderProps<T>) => (
+}: TableHeaderProps<T> & React.RefAttributes<HTMLTableSectionElement>) => (
   <AriaTableHeader
     className={composeRenderProps(className, (className) =>
       cn("[&_tr]:border-b", className)
@@ -53,7 +56,11 @@ export interface ColumnProps extends AriaColumnProps {
   isResizable?: boolean
 }
 
-const Column = ({ className, children, ...props }: ColumnProps) => (
+const Column = ({
+  className,
+  children,
+  ...props
+}: ColumnProps & React.RefAttributes<object>) => (
   <AriaColumn
     className={composeRenderProps(className, (className) =>
       cn(
@@ -89,7 +96,7 @@ const Column = ({ className, children, ...props }: ColumnProps) => (
 const TableBody = <T extends object>({
   className,
   ...props
-}: TableBodyProps<T>) => (
+}: TableBodyProps<T> & React.RefAttributes<HTMLTableSectionElement>) => (
   <AriaTableBody
     className={composeRenderProps(className, (className) =>
       cn("[&_tr:last-child]:border-0", className)
@@ -98,7 +105,10 @@ const TableBody = <T extends object>({
   />
 )
 
-const Row = <T extends object>({ className, ...props }: RowProps<T>) => (
+const Row = <T extends object>({
+  className,
+  ...props
+}: RowProps<T> & React.RefAttributes<HTMLTableRowElement>) => (
   <AriaRow
     className={composeRenderProps(className, (className) =>
       cn(
@@ -110,7 +120,10 @@ const Row = <T extends object>({ className, ...props }: RowProps<T>) => (
   />
 )
 
-const Cell = ({ className, ...props }: CellProps) => (
+const Cell = ({
+  className,
+  ...props
+}: CellProps & React.RefAttributes<object>) => (
   <AriaCell
     className={composeRenderProps(className, (className) =>
       cn(

@@ -15,7 +15,10 @@ import {
 
 import { cn } from "@/lib/utils"
 
-function Tabs({ className, ...props }: AriaTabsProps) {
+function Tabs({
+  className,
+  ...props
+}: AriaTabsProps & React.RefAttributes<HTMLDivElement>) {
   return (
     <AriaTabs
       className={composeRenderProps(className, (className) =>
@@ -34,7 +37,7 @@ function Tabs({ className, ...props }: AriaTabsProps) {
 const TabList = <T extends object>({
   className,
   ...props
-}: AriaTabListProps<T>) => (
+}: AriaTabListProps<T> & React.RefAttributes<HTMLDivElement>) => (
   <AriaTabList
     className={composeRenderProps(className, (className) =>
       cn(
@@ -48,7 +51,10 @@ const TabList = <T extends object>({
   />
 )
 
-const Tab = ({ className, ...props }: AriaTabProps) => (
+const Tab = ({
+  className,
+  ...props
+}: AriaTabProps & React.RefAttributes<object>) => (
   <AriaTab
     className={composeRenderProps(className, (className) =>
       cn(
@@ -68,7 +74,10 @@ const Tab = ({ className, ...props }: AriaTabProps) => (
   />
 )
 
-const TabPanel = ({ className, ...props }: AriaTabPanelProps) => (
+const TabPanel = ({
+  className,
+  ...props
+}: AriaTabPanelProps & React.RefAttributes<HTMLDivElement>) => (
   <AriaTabPanel
     className={composeRenderProps(className, (className) =>
       cn(

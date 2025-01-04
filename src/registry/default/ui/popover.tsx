@@ -14,7 +14,11 @@ import { cn } from "@/lib/utils"
 
 const PopoverTrigger = AriaDialogTrigger
 
-const Popover = ({ className, offset = 4, ...props }: AriaPopoverProps) => (
+const Popover = ({
+  className,
+  offset = 4,
+  ...props
+}: AriaPopoverProps & React.RefAttributes<HTMLElement>) => (
   <AriaPopover
     offset={offset}
     className={composeRenderProps(className, (className) =>
@@ -33,7 +37,10 @@ const Popover = ({ className, offset = 4, ...props }: AriaPopoverProps) => (
   />
 )
 
-function PopoverDialog({ className, ...props }: AriaDialogProps) {
+function PopoverDialog({
+  className,
+  ...props
+}: AriaDialogProps & React.RefAttributes<HTMLElement>) {
   return (
     <AriaDialog className={cn("p-4 outline outline-0", className)} {...props} />
   )

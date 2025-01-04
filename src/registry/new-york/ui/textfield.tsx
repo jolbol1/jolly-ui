@@ -19,7 +19,10 @@ import { FieldError, Label } from "./field"
 
 const TextField = AriaTextField
 
-const Input = ({ className, ...props }: AriaInputProps) => {
+const Input = ({
+  className,
+  ...props
+}: AriaInputProps & React.RefAttributes<HTMLInputElement>) => {
   return (
     <AriaInput
       className={composeRenderProps(className, (className) =>
@@ -39,7 +42,10 @@ const Input = ({ className, ...props }: AriaInputProps) => {
   )
 }
 
-const TextArea = ({ className, ...props }: AriaTextAreaProps) => {
+const TextArea = ({
+  className,
+  ...props
+}: AriaTextAreaProps & React.RefAttributes<HTMLTextAreaElement>) => {
   return (
     <AriaTextArea
       className={composeRenderProps(className, (className) =>
@@ -73,7 +79,7 @@ function JollyTextField({
   textArea,
   className,
   ...props
-}: JollyTextFieldProps) {
+}: JollyTextFieldProps & React.RefAttributes<HTMLDivElement>) {
   return (
     <TextField
       className={composeRenderProps(className, (className) =>

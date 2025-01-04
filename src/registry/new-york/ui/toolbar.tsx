@@ -9,7 +9,9 @@ import {
 
 import { cn } from "@/lib/utils"
 
-export function Toolbar(props: ToolbarProps) {
+export function Toolbar(
+  props: ToolbarProps & React.RefAttributes<HTMLDivElement>
+) {
   return (
     <AriaToolbar
       {...props}

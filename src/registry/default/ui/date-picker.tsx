@@ -40,7 +40,9 @@ const DatePickerContent = ({
   className,
   popoverClassName,
   ...props
-}: AriaDialogProps & { popoverClassName?: AriaPopoverProps["className"] }) => (
+}: AriaDialogProps & {
+  popoverClassName?: AriaPopoverProps["className"]
+} & React.RefAttributes<HTMLElement>) => (
   <Popover
     className={composeRenderProps(popoverClassName, (className) =>
       cn("w-auto p-3", className)
@@ -69,7 +71,7 @@ function JollyDatePicker<T extends AriaDateValue>({
   errorMessage,
   className,
   ...props
-}: JollyDatePickerProps<T>) {
+}: JollyDatePickerProps<T> & React.RefAttributes<HTMLDivElement>) {
   return (
     <DatePicker
       className={composeRenderProps(className, (className) =>
@@ -124,7 +126,7 @@ function JollyDateRangePicker<T extends AriaDateValue>({
   errorMessage,
   className,
   ...props
-}: JollyDateRangePickerProps<T>) {
+}: JollyDateRangePickerProps<T> & React.RefAttributes<HTMLDivElement>) {
   return (
     <DateRangePicker
       className={composeRenderProps(className, (className) =>

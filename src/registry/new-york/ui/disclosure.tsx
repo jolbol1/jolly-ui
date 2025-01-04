@@ -22,7 +22,11 @@ export interface DisclosureProps extends AriaDisclosureProps {
   children: React.ReactNode
 }
 
-function Disclosure({ children, className, ...props }: DisclosureProps) {
+function Disclosure({
+  children,
+  className,
+  ...props
+}: DisclosureProps & React.RefAttributes<HTMLDivElement>) {
   let isInGroup = useContext(DisclosureGroupStateContext) !== null
   return (
     <AriaDisclosure
@@ -45,7 +49,10 @@ export interface DisclosureHeaderProps {
   className?: ButtonProps["className"]
 }
 
-function DisclosureHeader({ children, className }: DisclosureHeaderProps) {
+function DisclosureHeader({
+  children,
+  className,
+}: DisclosureHeaderProps & React.RefAttributes<HTMLHeadingElement>) {
   return (
     <Heading className="flex">
       <Button
@@ -82,7 +89,7 @@ function DisclosurePanel({
   children,
   className,
   ...props
-}: DisclosurePanelProps) {
+}: DisclosurePanelProps & React.RefAttributes<HTMLDivElement>) {
   return (
     <AriaDisclosurePanel
       {...props}
@@ -101,7 +108,7 @@ function DisclosureGroup({
   children,
   className,
   ...props
-}: DisclosureGroupProps) {
+}: DisclosureGroupProps & React.RefAttributes<HTMLDivElement>) {
   return (
     <AriaDisclosureGroup
       {...props}

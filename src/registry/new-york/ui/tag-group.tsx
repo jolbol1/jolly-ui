@@ -23,7 +23,7 @@ const TagGroup = AriaTagGroup
 function TagList<T extends object>({
   className,
   ...props
-}: AriaTagListProps<T>) {
+}: AriaTagListProps<T> & React.RefAttributes<HTMLDivElement>) {
   return (
     <AriaTagList
       className={composeRenderProps(className, (className) =>
@@ -74,7 +74,11 @@ const badgeVariants = cva(
   }
 )
 
-function Tag({ children, className, ...props }: AriaTagProps) {
+function Tag({
+  children,
+  className,
+  ...props
+}: AriaTagProps & React.RefAttributes<object>) {
   let textValue = typeof children === "string" ? children : undefined
   return (
     <AriaTag
@@ -134,7 +138,7 @@ function JollyTagGroup<T extends object>({
   children,
   renderEmptyState,
   ...props
-}: JollyTagGroupProps<T>) {
+}: JollyTagGroupProps<T> & React.RefAttributes<HTMLDivElement>) {
   return (
     <TagGroup className={cn("group flex flex-col gap-2", className)} {...props}>
       <Label>{label}</Label>

@@ -74,7 +74,10 @@ const CalendarHeading = (props: React.HTMLAttributes<HTMLElement>) => {
   )
 }
 
-const CalendarGrid = ({ className, ...props }: AriaCalendarGridProps) => (
+const CalendarGrid = ({
+  className,
+  ...props
+}: AriaCalendarGridProps & React.RefAttributes<HTMLTableElement>) => (
   <AriaCalendarGrid
     className={cn(
       " border-separate border-spacing-x-0 border-spacing-y-1 ",
@@ -84,14 +87,17 @@ const CalendarGrid = ({ className, ...props }: AriaCalendarGridProps) => (
   />
 )
 
-const CalendarGridHeader = ({ ...props }: AriaCalendarGridHeaderProps) => (
+const CalendarGridHeader = ({
+  ...props
+}: AriaCalendarGridHeaderProps &
+  React.RefAttributes<HTMLTableSectionElement>) => (
   <AriaCalendarGridHeader {...props} />
 )
 
 const CalendarHeaderCell = ({
   className,
   ...props
-}: AriaCalendarHeaderCellProps) => (
+}: AriaCalendarHeaderCellProps & React.RefAttributes<HTMLTableCellElement>) => (
   <AriaCalendarHeaderCell
     className={cn(
       "w-8 rounded-md text-[0.8rem] font-normal text-muted-foreground",
@@ -104,11 +110,15 @@ const CalendarHeaderCell = ({
 const CalendarGridBody = ({
   className,
   ...props
-}: AriaCalendarGridBodyProps) => (
+}: AriaCalendarGridBodyProps &
+  React.RefAttributes<HTMLTableSectionElement>) => (
   <AriaCalendarGridBody className={cn("[&>tr>td]:p-0", className)} {...props} />
 )
 
-const CalendarCell = ({ className, ...props }: AriaCalendarCellProps) => {
+const CalendarCell = ({
+  className,
+  ...props
+}: AriaCalendarCellProps & React.RefAttributes<HTMLTableCellElement>) => {
   const isRange = Boolean(React.useContext(AriaRangeCalendarStateContext))
   return (
     <AriaCalendarCell
@@ -162,7 +172,7 @@ function JollyCalendar<T extends AriaDateValue>({
   errorMessage,
   className,
   ...props
-}: JollyCalendarProps<T>) {
+}: JollyCalendarProps<T> & React.RefAttributes<HTMLDivElement>) {
   return (
     <Calendar
       className={composeRenderProps(className, (className) =>
@@ -197,7 +207,7 @@ function JollyRangeCalendar<T extends AriaDateValue>({
   errorMessage,
   className,
   ...props
-}: JollyRangeCalendarProps<T>) {
+}: JollyRangeCalendarProps<T> & React.RefAttributes<HTMLDivElement>) {
   return (
     <RangeCalendar
       className={composeRenderProps(className, (className) =>

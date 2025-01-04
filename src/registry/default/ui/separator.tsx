@@ -11,7 +11,7 @@ const Separator = ({
   className,
   orientation = "horizontal",
   ...props
-}: AriaSeparatorProps) => (
+}: AriaSeparatorProps & React.RefAttributes<object>) => (
   <AriaSeparator
     orientation={orientation}
     className={cn(

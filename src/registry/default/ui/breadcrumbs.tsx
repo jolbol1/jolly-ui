@@ -16,7 +16,7 @@ import { cn } from "@/lib/utils"
 const Breadcrumbs = <T extends object>({
   className,
   ...props
-}: AriaBreadcrumbsProps<T>) => (
+}: AriaBreadcrumbsProps<T> & React.RefAttributes<HTMLOListElement>) => (
   <AriaBreadcrumbs
     className={cn(
       "flex flex-wrap items-center gap-1.5 break-words text-sm text-muted-foreground sm:gap-2.5",
@@ -26,14 +26,20 @@ const Breadcrumbs = <T extends object>({
   />
 )
 
-const BreadcrumbItem = ({ className, ...props }: AriaBreadcrumbProps) => (
+const BreadcrumbItem = ({
+  className,
+  ...props
+}: AriaBreadcrumbProps & React.RefAttributes<object>) => (
   <AriaBreadcrumb
     className={cn("inline-flex items-center gap-1.5 sm:gap-2.5", className)}
     {...props}
   />
 )
 
-const BreadcrumbLink = ({ className, ...props }: AriaLinkProps) => (
+const BreadcrumbLink = ({
+  className,
+  ...props
+}: AriaLinkProps & React.RefAttributes<HTMLAnchorElement>) => (
   <AriaLink
     className={composeRenderProps(className, (className) =>
       cn(
@@ -83,7 +89,10 @@ const BreadcrumbEllipsis = ({
 
 interface BreadcrumbPageProps extends Omit<AriaLinkProps, "href"> {}
 
-const BreadcrumbPage = ({ className, ...props }: BreadcrumbPageProps) => (
+const BreadcrumbPage = ({
+  className,
+  ...props
+}: BreadcrumbPageProps & React.RefAttributes<HTMLAnchorElement>) => (
   <AriaLink
     className={composeRenderProps(className, (className) =>
       cn("font-normal text-foreground", className)

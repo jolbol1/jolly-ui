@@ -18,7 +18,11 @@ import { FieldError, Label, labelVariants } from "./field"
 
 const CheckboxGroup = AriaCheckboxGroup
 
-const Checkbox = ({ className, children, ...props }: AriaCheckboxProps) => (
+const Checkbox = ({
+  className,
+  children,
+  ...props
+}: AriaCheckboxProps & React.RefAttributes<HTMLLabelElement>) => (
   <AriaCheckbox
     className={composeRenderProps(className, (className) =>
       cn(
@@ -73,7 +77,7 @@ function JollyCheckboxGroup({
   className,
   children,
   ...props
-}: JollyCheckboxGroupProps) {
+}: JollyCheckboxGroupProps & React.RefAttributes<HTMLDivElement>) {
   return (
     <CheckboxGroup
       className={composeRenderProps(className, (className) =>

@@ -19,7 +19,10 @@ import { cn } from "@/lib/utils"
 
 import { FieldError, FieldGroup, Label } from "./field"
 
-function SearchField({ className, ...props }: AriaSearchFieldProps) {
+function SearchField({
+  className,
+  ...props
+}: AriaSearchFieldProps & React.RefAttributes<HTMLDivElement>) {
   return (
     <AriaSearchField
       className={composeRenderProps(className, (className) =>
@@ -30,7 +33,10 @@ function SearchField({ className, ...props }: AriaSearchFieldProps) {
   )
 }
 
-function SearchFieldInput({ className, ...props }: AriaInputProps) {
+function SearchFieldInput({
+  className,
+  ...props
+}: AriaInputProps & React.RefAttributes<HTMLInputElement>) {
   return (
     <AriaInput
       className={composeRenderProps(className, (className) =>
@@ -44,7 +50,10 @@ function SearchFieldInput({ className, ...props }: AriaInputProps) {
   )
 }
 
-function SearchFieldGroup({ className, ...props }: AriaGroupProps) {
+function SearchFieldGroup({
+  className,
+  ...props
+}: AriaGroupProps & React.RefAttributes<HTMLDivElement>) {
   return (
     <AriaGroup
       className={composeRenderProps(className, (className) =>
@@ -62,7 +71,10 @@ function SearchFieldGroup({ className, ...props }: AriaGroupProps) {
   )
 }
 
-function SearchFieldClear({ className, ...props }: AriaButtonProps) {
+function SearchFieldClear({
+  className,
+  ...props
+}: AriaButtonProps & React.RefAttributes<HTMLButtonElement>) {
   return (
     <AriaButton
       className={composeRenderProps(className, (className) =>
@@ -94,7 +106,7 @@ function JollySearchField({
   className,
   errorMessage,
   ...props
-}: JollySearchFieldProps) {
+}: JollySearchFieldProps & React.RefAttributes<HTMLDivElement>) {
   return (
     <SearchField
       className={composeRenderProps(className, (className) =>

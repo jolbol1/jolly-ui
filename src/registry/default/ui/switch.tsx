@@ -9,7 +9,11 @@ import {
 
 import { cn } from "@/lib/utils"
 
-const Switch = ({ children, className, ...props }: AriaSwitchProps) => (
+const Switch = ({
+  children,
+  className,
+  ...props
+}: AriaSwitchProps & React.RefAttributes<HTMLLabelElement>) => (
   <AriaSwitch
     className={composeRenderProps(className, (className) =>
       cn(

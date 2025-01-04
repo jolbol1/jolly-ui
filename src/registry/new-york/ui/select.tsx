@@ -40,7 +40,7 @@ const SelectCollection = ListBoxCollection
 const SelectValue = <T extends object>({
   className,
   ...props
-}: AriaSelectValueProps<T>) => (
+}: AriaSelectValueProps<T> & React.RefAttributes<HTMLSpanElement>) => (
   <AriaSelectValue
     className={composeRenderProps(className, (className) =>
       cn(
@@ -54,7 +54,11 @@ const SelectValue = <T extends object>({
   />
 )
 
-const SelectTrigger = ({ className, children, ...props }: AriaButtonProps) => (
+const SelectTrigger = ({
+  className,
+  children,
+  ...props
+}: AriaButtonProps & React.RefAttributes<HTMLButtonElement>) => (
   <AriaButton
     className={composeRenderProps(className, (className) =>
       cn(
@@ -79,7 +83,10 @@ const SelectTrigger = ({ className, children, ...props }: AriaButtonProps) => (
   </AriaButton>
 )
 
-const SelectPopover = ({ className, ...props }: AriaPopoverProps) => (
+const SelectPopover = ({
+  className,
+  ...props
+}: AriaPopoverProps & React.RefAttributes<HTMLElement>) => (
   <Popover
     className={composeRenderProps(className, (className) =>
       cn("w-[--trigger-width]", className)
@@ -91,7 +98,7 @@ const SelectPopover = ({ className, ...props }: AriaPopoverProps) => (
 const SelectListBox = <T extends object>({
   className,
   ...props
-}: AriaListBoxProps<T>) => (
+}: AriaListBoxProps<T> & React.RefAttributes<HTMLDivElement>) => (
   <AriaListBox
     className={composeRenderProps(className, (className) =>
       cn(
@@ -120,7 +127,7 @@ function JollySelect<T extends object>({
   className,
   items,
   ...props
-}: JollySelectProps<T>) {
+}: JollySelectProps<T> & React.RefAttributes<HTMLDivElement>) {
   return (
     <Select
       className={composeRenderProps(className, (className) =>

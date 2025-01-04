@@ -46,7 +46,7 @@ function ColorWheel({
   outerRadius = 100,
   innerRadius = 74,
   ...props
-}: ColorWheelProps) {
+}: ColorWheelProps & React.RefAttributes<HTMLDivElement>) {
   return (
     <AriaColorWheel
       innerRadius={innerRadius}
@@ -57,7 +57,10 @@ function ColorWheel({
   )
 }
 
-function ColorArea({ className, ...props }: AriaColorAreaProps) {
+function ColorArea({
+  className,
+  ...props
+}: AriaColorAreaProps & React.RefAttributes<HTMLDivElement>) {
   return (
     <AriaColorArea
       className={composeRenderProps(className, (className) =>
@@ -71,7 +74,10 @@ function ColorArea({ className, ...props }: AriaColorAreaProps) {
   )
 }
 
-function SliderTrack({ className, ...props }: AriaSliderTrackProps) {
+function SliderTrack({
+  className,
+  ...props
+}: AriaSliderTrackProps & React.RefAttributes<HTMLDivElement>) {
   return (
     <AriaSliderTrack
       className={composeRenderProps(className, (className) =>
@@ -82,7 +88,10 @@ function SliderTrack({ className, ...props }: AriaSliderTrackProps) {
   )
 }
 
-function ColorThumb({ className, ...props }: AriaColorThumbProps) {
+function ColorThumb({
+  className,
+  ...props
+}: AriaColorThumbProps & React.RefAttributes<HTMLDivElement>) {
   return (
     <AriaColorThumb
       className={composeRenderProps(className, (className) =>
@@ -101,7 +110,7 @@ function ColorThumb({ className, ...props }: AriaColorThumbProps) {
 function ColorSwatchPicker({
   className,
   ...props
-}: AriaColorSwatchPickerProps) {
+}: AriaColorSwatchPickerProps & React.RefAttributes<HTMLDivElement>) {
   return (
     <AriaColorSwatchPicker
       className={composeRenderProps(className, (className) =>
@@ -115,7 +124,7 @@ function ColorSwatchPicker({
 function ColorSwatchPickerItem({
   className,
   ...props
-}: AriaColorSwatchPickerItemProps) {
+}: AriaColorSwatchPickerItemProps & React.RefAttributes<HTMLDivElement>) {
   return (
     <AriaColorSwatchPickerItem
       className={composeRenderProps(className, (className) =>
@@ -135,7 +144,10 @@ function ColorSwatchPickerItem({
   )
 }
 
-function ColorSwatch({ className, ...props }: AriaColorSwatchProps) {
+function ColorSwatch({
+  className,
+  ...props
+}: AriaColorSwatchProps & React.RefAttributes<HTMLDivElement>) {
   return (
     <AriaColorSwatch
       className={composeRenderProps(className, (className) =>

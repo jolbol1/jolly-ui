@@ -16,7 +16,12 @@ interface LinkProps
   extends AriaLinkProps,
     VariantProps<typeof buttonVariants> {}
 
-const Link = ({ className, variant, size, ...props }: LinkProps) => {
+const Link = ({
+  className,
+  variant,
+  size,
+  ...props
+}: LinkProps & React.RefAttributes<HTMLAnchorElement>) => {
   return (
     <AriaLink
       className={composeRenderProps(className, (className) =>

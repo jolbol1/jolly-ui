@@ -36,7 +36,10 @@ const ComboboxSection = ListBoxSection
 
 const ComboboxCollection = ListBoxCollection
 
-const ComboboxInput = ({ className, ...props }: AriaInputProps) => (
+const ComboboxInput = ({
+  className,
+  ...props
+}: AriaInputProps & React.RefAttributes<HTMLInputElement>) => (
   <AriaInput
     className={composeRenderProps(className, (className) =>
       cn(
@@ -50,7 +53,10 @@ const ComboboxInput = ({ className, ...props }: AriaInputProps) => (
   />
 )
 
-const ComboboxPopover = ({ className, ...props }: AriaPopoverProps) => (
+const ComboboxPopover = ({
+  className,
+  ...props
+}: AriaPopoverProps & React.RefAttributes<HTMLElement>) => (
   <Popover
     className={composeRenderProps(className, (className) =>
       cn("w-[calc(var(--trigger-width)+4px)]", className)
@@ -62,7 +68,7 @@ const ComboboxPopover = ({ className, ...props }: AriaPopoverProps) => (
 const ComboboxListBox = <T extends object>({
   className,
   ...props
-}: AriaListBoxProps<T>) => (
+}: AriaListBoxProps<T> & React.RefAttributes<HTMLDivElement>) => (
   <AriaListBox
     className={composeRenderProps(className, (className) =>
       cn(
@@ -89,7 +95,7 @@ function JollyComboBox<T extends object>({
   className,
   children,
   ...props
-}: JollyComboBoxProps<T>) {
+}: JollyComboBoxProps<T> & React.RefAttributes<HTMLDivElement>) {
   return (
     <Combobox
       className={composeRenderProps(className, (className) =>

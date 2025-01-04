@@ -12,7 +12,11 @@ import { cn } from "@/lib/utils"
 
 const TooltipTrigger = AriaTooltipTrigger
 
-const Tooltip = ({ className, offset = 4, ...props }: AriaTooltipProps) => (
+const Tooltip = ({
+  className,
+  offset = 4,
+  ...props
+}: AriaTooltipProps & React.RefAttributes<HTMLDivElement>) => (
   <AriaTooltip
     offset={offset}
     className={composeRenderProps(className, (className) =>

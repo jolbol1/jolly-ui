@@ -19,7 +19,10 @@ import { FieldError, FieldGroup, Label } from "./field"
 
 const NumberField = AriaNumberField
 
-function NumberFieldInput({ className, ...props }: AriaInputProps) {
+function NumberFieldInput({
+  className,
+  ...props
+}: AriaInputProps & React.RefAttributes<HTMLInputElement>) {
   return (
     <AriaInput
       className={composeRenderProps(className, (className) =>
@@ -56,7 +59,10 @@ function NumberFieldSteppers({
   )
 }
 
-function NumberFieldStepper({ className, ...props }: AriaButtonProps) {
+function NumberFieldStepper({
+  className,
+  ...props
+}: AriaButtonProps & React.RefAttributes<HTMLButtonElement>) {
   return (
     <Button
       className={composeRenderProps(className, (className) =>
@@ -81,7 +87,7 @@ function JollyNumberField({
   errorMessage,
   className,
   ...props
-}: JollyNumberFieldProps) {
+}: JollyNumberFieldProps & React.RefAttributes<HTMLDivElement>) {
   return (
     <NumberField
       className={composeRenderProps(className, (className) =>

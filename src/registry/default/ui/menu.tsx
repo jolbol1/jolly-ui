@@ -33,7 +33,10 @@ const MenuSection = ListBoxSection
 
 const MenuCollection = ListBoxCollection
 
-function MenuPopover({ className, ...props }: PopoverProps) {
+function MenuPopover({
+  className,
+  ...props
+}: PopoverProps & React.RefAttributes<HTMLElement>) {
   return (
     <SelectPopover
       className={composeRenderProps(className, (className) =>
@@ -44,7 +47,10 @@ function MenuPopover({ className, ...props }: PopoverProps) {
   )
 }
 
-const Menu = <T extends object>({ className, ...props }: AriaMenuProps<T>) => (
+const Menu = <T extends object>({
+  className,
+  ...props
+}: AriaMenuProps<T> & React.RefAttributes<HTMLDivElement>) => (
   <AriaMenu
     className={cn(
       "max-h-[inherit] overflow-auto rounded-md p-1 outline outline-0 [clip-path:inset(0_0_0_0_round_calc(var(--radius)-2px))]",
@@ -54,7 +60,11 @@ const Menu = <T extends object>({ className, ...props }: AriaMenuProps<T>) => (
   />
 )
 
-const MenuItem = ({ children, className, ...props }: AriaMenuItemProps) => (
+const MenuItem = <T extends object>({
+  children,
+  className,
+  ...props
+}: AriaMenuItemProps<T> & React.RefAttributes<T>) => (
   <AriaMenuItem
     textValue={
       props.textValue || (typeof children === "string" ? children : undefined)
@@ -118,7 +128,10 @@ const MenuHeader = ({
   />
 )
 
-const MenuSeparator = ({ className, ...props }: AriaSeparatorProps) => (
+const MenuSeparator = ({
+  className,
+  ...props
+}: AriaSeparatorProps & React.RefAttributes<object>) => (
   <AriaSeparator
     className={cn("-mx-1 my-1 h-px bg-muted", className)}
     {...props}

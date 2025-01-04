@@ -25,7 +25,10 @@ const DateField = AriaDateField
 
 const TimeField = AriaTimeField
 
-function DateSegment({ className, ...props }: AriaDateSegmentProps) {
+function DateSegment({
+  className,
+  ...props
+}: AriaDateSegmentProps & React.RefAttributes<HTMLDivElement>) {
   return (
     <AriaDateSegment
       className={composeRenderProps(className, (className) =>
@@ -55,7 +58,7 @@ function DateInput({
   className,
   variant,
   ...props
-}: Omit<DateInputProps, "children">) {
+}: Omit<DateInputProps, "children"> & React.RefAttributes<HTMLDivElement>) {
   return (
     <AriaDateInput
       className={composeRenderProps(className, (className) =>
@@ -81,7 +84,7 @@ function JollyDateField<T extends AriaDateValue>({
   className,
   errorMessage,
   ...props
-}: JollyDateFieldProps<T>) {
+}: JollyDateFieldProps<T> & React.RefAttributes<HTMLDivElement>) {
   return (
     <DateField
       className={composeRenderProps(className, (className) =>
@@ -114,7 +117,7 @@ function JollyTimeField<T extends AriaTimeValue>({
   errorMessage,
   className,
   ...props
-}: JollyTimeFieldProps<T>) {
+}: JollyTimeFieldProps<T> & React.RefAttributes<HTMLDivElement>) {
   return (
     <TimeField
       className={composeRenderProps(className, (className) =>

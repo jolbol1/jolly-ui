@@ -22,7 +22,7 @@ const Meter = ({
   fillClassName,
   children,
   ...props
-}: MeterProps) => (
+}: MeterProps & React.RefAttributes<HTMLDivElement>) => (
   <AriaMeter
     className={composeRenderProps(className, (className) =>
       cn("w-full", className)
@@ -63,7 +63,7 @@ function JollyMeter({
   className,
   showValue = true,
   ...props
-}: JollyMeterProps) {
+}: JollyMeterProps & React.RefAttributes<HTMLDivElement>) {
   return (
     <Meter
       className={composeRenderProps(className, (className) =>

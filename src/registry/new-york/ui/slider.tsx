@@ -18,7 +18,10 @@ import { cn } from "@/lib/utils"
 
 import { labelVariants } from "./field"
 
-const SliderOutput = ({ className, ...props }: AriaSliderOutputProps) => (
+const SliderOutput = ({
+  className,
+  ...props
+}: AriaSliderOutputProps & React.RefAttributes<HTMLOutputElement>) => (
   <AriaSliderOutput className={cn(labelVariants(), className)} {...props} />
 )
 
@@ -26,7 +29,7 @@ const Slider = ({
   className,
   orientation = "horizontal",
   ...props
-}: AriaSliderProps) => (
+}: AriaSliderProps & React.RefAttributes<HTMLDivElement>) => (
   <AriaSlider
     className={composeRenderProps(className, (className) =>
       cn(
@@ -43,7 +46,10 @@ const Slider = ({
   />
 )
 
-const SliderTrack = ({ className, ...props }: AriaSliderTrackProps) => (
+const SliderTrack = ({
+  className,
+  ...props
+}: AriaSliderTrackProps & React.RefAttributes<HTMLDivElement>) => (
   <AriaSliderTrack
     className={composeRenderProps(className, (className, renderProps) =>
       cn(
@@ -83,7 +89,9 @@ const SliderFillTrack = ({
   )
 }
 
-const SliderThumb = ({ className }: AriaSliderThumbProps) => (
+const SliderThumb = ({
+  className,
+}: AriaSliderThumbProps & React.RefAttributes<HTMLDivElement>) => (
   <AriaSliderThumb
     className={composeRenderProps(className, (className) =>
       cn(

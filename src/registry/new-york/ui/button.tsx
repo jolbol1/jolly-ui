@@ -52,7 +52,12 @@ interface ButtonProps
   extends AriaButtonProps,
     VariantProps<typeof buttonVariants> {}
 
-const Button = ({ className, variant, size, ...props }: ButtonProps) => {
+const Button = ({
+  className,
+  variant,
+  size,
+  ...props
+}: ButtonProps & React.RefAttributes<HTMLButtonElement>) => {
   return (
     <AriaButton
       className={composeRenderProps(className, (className) =>

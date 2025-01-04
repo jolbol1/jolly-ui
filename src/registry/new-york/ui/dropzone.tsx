@@ -9,7 +9,10 @@ import {
 
 import { cn } from "@/lib/utils"
 
-const DropZone = ({ className, ...props }: AriaDropZoneProps) => (
+const DropZone = ({
+  className,
+  ...props
+}: AriaDropZoneProps & React.RefAttributes<HTMLDivElement>) => (
   <AriaDropZone
     className={composeRenderProps(className, (className) =>
       cn(

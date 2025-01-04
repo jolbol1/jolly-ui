@@ -48,7 +48,7 @@ const DialogOverlay = ({
   className,
   isDismissable = true,
   ...props
-}: AriaModalOverlayProps) => (
+}: AriaModalOverlayProps & React.RefAttributes<HTMLDivElement>) => (
   <AriaModalOverlay
     isDismissable={isDismissable}
     className={composeRenderProps(className, (className) =>
@@ -80,7 +80,7 @@ const DialogContent = ({
   role,
   closeButton = true,
   ...props
-}: DialogContentProps) => (
+}: DialogContentProps & React.RefAttributes<HTMLDivElement>) => (
   <AriaModal
     className={composeRenderProps(className, (className) =>
       cn(
@@ -140,7 +140,10 @@ const DialogFooter = ({
   />
 )
 
-const DialogTitle = ({ className, ...props }: AriaHeadingProps) => (
+const DialogTitle = ({
+  className,
+  ...props
+}: AriaHeadingProps & React.RefAttributes<HTMLHeadingElement>) => (
   <AriaHeading
     slot="title"
     className={cn(

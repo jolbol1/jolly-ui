@@ -48,7 +48,12 @@ interface ToggleProps
   extends AriaToggleButtonProps,
     VariantProps<typeof toggleVariants> {}
 
-const Toggle = ({ className, variant, size, ...props }: ToggleProps) => (
+const Toggle = ({
+  className,
+  variant,
+  size,
+  ...props
+}: ToggleProps & React.RefAttributes<HTMLButtonElement>) => (
   <AriaToggleButton
     className={composeRenderProps(className, (className) =>
       cn(
