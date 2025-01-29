@@ -6,13 +6,6 @@ Thanks for your interest in contributing to Jolly-UI
 
 Please ensure you follow the [code style guidelines](./CODE-STYLE.md) when contributing.
 
-## About this repository
-
-This repository is a monorepo.
-
-- We use [pnpm](https://pnpm.io) and [`workspaces`](https://pnpm.io/workspaces) for development.
-- We use [Turborepo](https://turbo.build/repo) as our build system.
-
 ## Structure
 
 This repository is structured as follows:
@@ -68,7 +61,7 @@ git checkout -b my-new-branch
 ### Install dependencies
 
 ```bash
-pnpm install
+bun install
 ```
 
 #### Examples
@@ -76,7 +69,7 @@ pnpm install
 1. To run the `jollyui.dev` website:
 
 ```bash
-pnpm dev
+bun dev
 ```
 
 ## Documentation
@@ -84,7 +77,7 @@ pnpm dev
 You can run the documentation locally by running the following command:
 
 ```bash
-pnpm dev
+bun dev
 ```
 
 Documentation is written using [MDX](https://mdxjs.com). You can find the documentation files in the `src/content/docs` directory.
@@ -108,7 +101,7 @@ When adding or modifying components, please ensure that:
 
 1. You make the changes for every style.
 2. You update the documentation.
-3. You run `pnpm build:registry` to update the registry.
+3. You run `bun build:registry` to update the registry.
 
 ## Commit Convention
 
