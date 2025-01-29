@@ -15,19 +15,13 @@ import { cn } from "@/lib/utils"
 
 import { FieldError, Label, labelVariants } from "./field"
 
-const RadioGroup = ({
-  className,
-  orientation = "vertical",
-  ...props
-}: AriaRadioGroupProps) => {
+const RadioGroup = ({ className, ...props }: AriaRadioGroupProps) => {
   return (
     <AriaRadioGroup
-      className={composeRenderProps(className, (className) =>
+      className={composeRenderProps(className, (className, renderProps) =>
         cn(
-          {
-            "grid gap-2": orientation === "vertical",
-            "flex items-center gap-2": orientation === "horizontal",
-          },
+          "flex flex-col flex-wrap gap-2",
+          renderProps.orientation === "horizontal" && "flex-row items-center",
           className
         )
       )}
@@ -93,14 +87,16 @@ function JollyRadioGroup({
   return (
     <RadioGroup
       className={composeRenderProps(className, (className) =>
-        cn("group flex flex-col gap-2", className)
+        cn("group flex-col items-start", className)
       )}
       {...props}
     >
       {composeRenderProps(children, (children) => (
         <>
           <Label>{label}</Label>
-          {children}
+          <div className="flex flex-col flex-wrap gap-2 group-data-[orientation=horizontal]:flex-row">
+            {children}
+          </div>
           {description && (
             <Text slot="description" className="text-sm text-muted-foreground">
               {description}
