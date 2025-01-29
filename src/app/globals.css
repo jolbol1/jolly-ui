@@ -257,6 +257,7 @@
   }
 }
 
+/* For React Aria Drag and Drop Functionality */
 .react-aria-DropIndicator {
   &[data-drop-target] {
     outline: 1px solid hsl(var(--primary));
