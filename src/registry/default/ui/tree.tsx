@@ -9,6 +9,7 @@ import {
   TreeProps as AriaTreeProps,
   Button,
   ButtonProps,
+  composeRenderProps,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"
@@ -30,10 +31,12 @@ function Tree<T extends object>({ className, ...props }: AriaTreeProps<T>) {
 function TreeItemExpandButton({ className, children, ...props }: ButtonProps) {
   return (
     <Button slot="chevron" className={cn("outline-none", className)} {...props}>
-      <>
-        <ChevronRightIcon className="size-4 shrink-0 transition-transform duration-200 group-data-[expanded]:rotate-90" />
-        {children}
-      </>
+      {composeRenderProps(children, (children) => (
+        <>
+          <ChevronRightIcon className="size-4 shrink-0 transition-transform duration-200 group-data-[expanded]:rotate-90" />
+          {children}
+        </>
+      ))}
     </Button>
   )
 }
@@ -53,10 +56,12 @@ function TreeItemInfoButton({ className, children, ...props }: ButtonProps) {
         className
       )}
     >
-      <>
-        {children}
-        <InfoIcon className="size-4 shrink-0" />
-      </>
+      {composeRenderProps(children, (children) => (
+        <>
+          {children}
+          <InfoIcon className="size-4 shrink-0" />
+        </>
+      ))}
     </Button>
   )
 }

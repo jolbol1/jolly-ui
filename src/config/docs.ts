@@ -104,7 +104,6 @@ export const docsConfig: DocsConfig = {
           title: "Table",
           href: "/docs/components/table",
           items: [],
-          label: "Beta",
         },
         {
           title: "TagGroup",
@@ -126,13 +125,11 @@ export const docsConfig: DocsConfig = {
           title: "Color Pickers",
           href: "/docs/components/color",
           items: [],
-          label: "Beta",
         },
         {
           title: "Primitives",
           href: "/docs/components/color-primitives",
           items: [],
-          label: "Beta",
         },
       ],
     },
