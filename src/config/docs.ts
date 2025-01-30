@@ -80,6 +80,11 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/toggle",
           items: [],
         },
+        {
+          title: "Toggle Button Group",
+          href: "/docs/components/toggle-group",
+          items: [],
+        },
       ],
     },
     {

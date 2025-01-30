@@ -1,0 +1,80 @@
+---
+title: Toggle Button Group
+description: A toggle button group allows a user to toggle multiple options, with single or multiple selection.
+component: true
+links:
+  doc: https://react-spectrum.adobe.com/react-aria/ToggleButtonGroup.html
+---
+
+A toggle button group consists of a set of toggle buttons, and coordinates the selection state between them. Users can navigate between buttons with the arrow keys in either horizontal or vertical orientations.
+
+<ComponentPreview name="toggle-group-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Copy & Paste</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+<PackageManagerTabs>
+  <PackageManagerContent value="npm">
+    ```bash
+    npx shadcn@latest add https://jollyui.dev/[[STYLE]]/toggle-group
+    ```
+  </PackageManagerContent>
+  <PackageManagerContent value="pnpm">
+    ```bash
+    pnpm dlx shadcn@latest add https://jollyui.dev/[[STYLE]]/toggle-group
+    ```
+
+  </PackageManagerContent>
+  <PackageManagerContent value="bun">
+    ```bash
+    bunx --bun shadcn@latest add https://jollyui.dev/[[STYLE]]/toggle-group
+    ```
+  </PackageManagerContent>
+  <PackageManagerContent value="yarn">
+    ```bash 
+    npx shadcn@latest add https://jollyui.dev/[[STYLE]]/toggle-group
+    ```
+  </PackageManagerContent>
+</PackageManagerTabs>
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+<Step>Copy and paste the following code into your project: toggle.tsx</Step>
+
+<ComponentSource name="toggle-group" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Examples
+
+### Default
+
+<ComponentPreview name="toggle-group-demo" />
+
+### Multiple Selection
+
+<ComponentPreview name="toggle-group-multiple" />
+
+### Orientation
+
+<ComponentPreview name="toggle-group-orientation" />

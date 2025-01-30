@@ -285,6 +285,24 @@ export const examples: Registry = [
     registryDependencies: ["toggle"],
     files: ["example/toggle/toggle-with-text.tsx"],
   },
+  {
+    name: "toggle-group-demo",
+    type: "registry:example",
+    registryDependencies: ["toggle-group"],
+    files: ["example/toggle-group/toggle-group-demo.tsx"],
+  },
+  {
+    name: "toggle-group-multiple",
+    type: "registry:example",
+    registryDependencies: ["toggle-group"],
+    files: ["example/toggle-group/toggle-group-multiple.tsx"],
+  },
+  {
+    name: "toggle-group-orientation",
+    type: "registry:example",
+    registryDependencies: ["toggle-group"],
+    files: ["example/toggle-group/toggle-group-orientation.tsx"],
+  },
 
   // GridList
   {

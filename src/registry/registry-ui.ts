@@ -220,6 +220,12 @@ export const ui: Registry = [
     files: ["ui/toggle.tsx"],
   },
   {
+    name: "toggle-group",
+    type: "registry:ui",
+    dependencies: ["react-aria-components", "class-variance-authority"],
+    files: ["ui/toggle.tsx"],
+  },
+  {
     name: "tooltip",
     type: "registry:ui",
     dependencies: ["react-aria-components"],
