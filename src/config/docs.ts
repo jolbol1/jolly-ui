@@ -243,13 +243,11 @@ export const docsConfig: DocsConfig = {
           title: "Disclosure",
           href: "/docs/components/disclosure",
           items: [],
-          label: "Alpha",
         },
         {
           title: "DisclosureGroup",
           href: "/docs/components/disclosure-group",
           items: [],
-          label: "Alpha",
         },
         {
           title: "Link",
