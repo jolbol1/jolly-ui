@@ -28,6 +28,7 @@ export default function DatepickerGranularity() {
     <div className="flex flex-col gap-2">
       <DatePicker
         value={date}
+        // @ts-expect-error RAC bug
         onChange={setDate}
         granularity="second"
         className="min-w-[208px] space-y-1"
@@ -60,6 +61,7 @@ export default function DatepickerGranularity() {
 
       <DatePicker
         value={date}
+        // @ts-expect-error RAC bug
         onChange={setDate}
         granularity="day"
         className="min-w-[208px] space-y-1"
