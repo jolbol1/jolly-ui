@@ -15,6 +15,7 @@ export default function DateFieldGranularity() {
     <div className="flex flex-col gap-2">
       <DateField
         value={date}
+        // @ts-expect-error RAC bug
         onChange={setDate}
         granularity="second"
         defaultValue={parseZonedDateTime(
@@ -27,6 +28,7 @@ export default function DateFieldGranularity() {
       </DateField>
       <DateField
         value={date}
+        // @ts-expect-error RAC bug
         onChange={setDate}
         granularity="day"
         defaultValue={parseZonedDateTime(

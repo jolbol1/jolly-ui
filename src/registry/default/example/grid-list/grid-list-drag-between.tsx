@@ -29,6 +29,7 @@ function DndGridList(props: DndGridListProps) {
         let item = list.getItem(key)
         return {
           "custom-app-type": JSON.stringify(item),
+          // @ts-expect-error RAC bug
           "text/plain": item.name,
         }
       })

@@ -8,13 +8,13 @@ import {
   ListBoxItem as AriaListBoxItem,
   ListBoxItemProps as AriaListBoxItemProps,
   ListBoxProps as AriaListBoxProps,
-  Section as AriaSection,
+  ListBoxSection as AriaListBoxSection,
   composeRenderProps,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"
 
-const ListBoxSection = AriaSection
+const ListBoxSection = AriaListBoxSection
 
 const ListBoxCollection = AriaCollection
 
