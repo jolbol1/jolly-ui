@@ -3,10 +3,10 @@
 import React, { useContext } from "react"
 import { ChevronDownIcon } from "@radix-ui/react-icons"
 import {
-  UNSTABLE_Disclosure as AriaDisclosure,
-  UNSTABLE_DisclosureGroup as AriaDisclosureGroup,
+  Disclosure as AriaDisclosure,
+  DisclosureGroup as AriaDisclosureGroup,
   DisclosureGroupProps as AriaDisclosureGroupProps,
-  UNSTABLE_DisclosurePanel as AriaDisclosurePanel,
+  DisclosurePanel as AriaDisclosurePanel,
   DisclosurePanelProps as AriaDisclosurePanelProps,
   DisclosureProps as AriaDisclosureProps,
   Button,
