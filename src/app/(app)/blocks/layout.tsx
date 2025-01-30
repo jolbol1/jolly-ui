@@ -7,7 +7,6 @@ import {
   PageHeaderDescription,
   PageHeaderHeading,
 } from "@/components/page-header"
-import { Button } from "@/registry/new-york/ui/button"
 import { Link } from "@/registry/new-york/ui/link"
 
 export const metadata: Metadata = {
@@ -30,7 +29,7 @@ export default function BlocksLayout({
           Beautifully designed. Copy and paste into your apps. Open Source.
         </PageHeaderDescription>
         <PageActions>
-          <Link size="sm" href="#blocks">
+          <Link variant="default" size="sm" href="#blocks">
             Browse Blocks
           </Link>
         </PageActions>
