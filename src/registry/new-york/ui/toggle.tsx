@@ -4,7 +4,9 @@ import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 import {
   ToggleButton as AriaToggleButton,
+  ToggleButtonGroup as AriaToggleButtonGroup,
   composeRenderProps,
+  type ToggleButtonGroupProps as AriaToggleButtonGroupProps,
   type ToggleButtonProps as AriaToggleButtonProps,
 } from "react-aria-components"
 
@@ -52,6 +54,7 @@ const Toggle = ({ className, variant, size, ...props }: ToggleProps) => (
   <AriaToggleButton
     className={composeRenderProps(className, (className) =>
       cn(
+        "group-data-[orientation=vertical]/togglegroup:w-full",
         toggleVariants({
           variant,
           size,
@@ -63,5 +66,23 @@ const Toggle = ({ className, variant, size, ...props }: ToggleProps) => (
   />
 )
 
-export { Toggle, toggleVariants }
+const ToggleButtonGroup = ({
+  children,
+  className,
+  ...props
+}: AriaToggleButtonGroupProps) => (
+  <AriaToggleButtonGroup
+    className={composeRenderProps(className, (className) =>
+      cn(
+        "group/togglegroup flex items-center justify-center gap-1 data-[orientation=vertical]:flex-col",
+        className
+      )
+    )}
+    {...props}
+  >
+    {children}
+  </AriaToggleButtonGroup>
+)
+
+export { Toggle, toggleVariants, ToggleButtonGroup }
 export type { ToggleProps }

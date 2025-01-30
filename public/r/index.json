@@ -494,6 +494,20 @@
     ]
   },
   {
+    "name": "toggle-group",
+    "type": "registry:ui",
+    "dependencies": [
+      "react-aria-components",
+      "class-variance-authority"
+    ],
+    "files": [
+      {
+        "path": "ui/toggle.tsx",
+        "type": "registry:ui"
+      }
+    ]
+  },
+  {
     "name": "tooltip",
     "type": "registry:ui",
     "dependencies": [

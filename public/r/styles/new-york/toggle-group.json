@@ -1,5 +1,5 @@
 {
-  "name": "toggle",
+  "name": "toggle-group",
   "type": "registry:ui",
   "dependencies": [
     "react-aria-components",

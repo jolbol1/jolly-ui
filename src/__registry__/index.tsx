@@ -357,6 +357,17 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
+    "toggle-group": {
+      name: "toggle-group",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: ["src/registry/new-york/ui/toggle.tsx"],
+      component: React.lazy(() => import("@/registry/new-york/ui/toggle.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
     "tooltip": {
       name: "tooltip",
       type: "registry:ui",
@@ -891,6 +902,39 @@ export const Index: Record<string, any> = {
       registryDependencies: ["toggle"],
       files: ["src/registry/new-york/example/toggle/toggle-with-text.tsx"],
       component: React.lazy(() => import("@/registry/new-york/example/toggle/toggle-with-text.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "toggle-group-demo": {
+      name: "toggle-group-demo",
+      type: "registry:example",
+      registryDependencies: ["toggle-group"],
+      files: ["src/registry/new-york/example/toggle-group/toggle-group-demo.tsx"],
+      component: React.lazy(() => import("@/registry/new-york/example/toggle-group/toggle-group-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "toggle-group-multiple": {
+      name: "toggle-group-multiple",
+      type: "registry:example",
+      registryDependencies: ["toggle-group"],
+      files: ["src/registry/new-york/example/toggle-group/toggle-group-multiple.tsx"],
+      component: React.lazy(() => import("@/registry/new-york/example/toggle-group/toggle-group-multiple.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "toggle-group-orientation": {
+      name: "toggle-group-orientation",
+      type: "registry:example",
+      registryDependencies: ["toggle-group"],
+      files: ["src/registry/new-york/example/toggle-group/toggle-group-orientation.tsx"],
+      component: React.lazy(() => import("@/registry/new-york/example/toggle-group/toggle-group-orientation.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",
@@ -3827,6 +3871,17 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
+    "toggle-group": {
+      name: "toggle-group",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: ["src/registry/default/ui/toggle.tsx"],
+      component: React.lazy(() => import("@/registry/default/ui/toggle.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
     "tooltip": {
       name: "tooltip",
       type: "registry:ui",
@@ -4361,6 +4416,39 @@ export const Index: Record<string, any> = {
       registryDependencies: ["toggle"],
       files: ["src/registry/default/example/toggle/toggle-with-text.tsx"],
       component: React.lazy(() => import("@/registry/default/example/toggle/toggle-with-text.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "toggle-group-demo": {
+      name: "toggle-group-demo",
+      type: "registry:example",
+      registryDependencies: ["toggle-group"],
+      files: ["src/registry/default/example/toggle-group/toggle-group-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/toggle-group/toggle-group-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "toggle-group-multiple": {
+      name: "toggle-group-multiple",
+      type: "registry:example",
+      registryDependencies: ["toggle-group"],
+      files: ["src/registry/default/example/toggle-group/toggle-group-multiple.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/toggle-group/toggle-group-multiple.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "toggle-group-orientation": {
+      name: "toggle-group-orientation",
+      type: "registry:example",
+      registryDependencies: ["toggle-group"],
+      files: ["src/registry/default/example/toggle-group/toggle-group-orientation.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/toggle-group/toggle-group-orientation.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",
