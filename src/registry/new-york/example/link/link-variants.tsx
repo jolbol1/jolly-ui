@@ -3,8 +3,11 @@ import { Link } from "@/registry/new-york/ui/link"
 export function LinkVariants() {
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex flex-wrap justify-center gap-4">
-        <Link href="/docs/components/link">Link</Link>
+      <div className="flex flex-wrap items-center justify-center gap-4">
+        <Link href="/docs/components/link">Unstyled</Link>
+        <Link href="/docs/components/link" variant="default">
+          Default
+        </Link>
         <Link variant="destructive" href="/docs/components/link">
           Destructive
         </Link>
@@ -22,9 +25,12 @@ export function LinkVariants() {
         </Link>
       </div>
       Disabled
-      <div className="flex flex-wrap justify-center gap-4">
+      <div className="flex flex-wrap items-center justify-center gap-4">
         <Link isDisabled href="/docs/components/link">
-          Link
+          Unstyled
+        </Link>
+        <Link isDisabled href="/docs/components/link" variant="default">
+          Default
         </Link>
         <Link isDisabled variant="destructive" href="/docs/components/link">
           Destructive

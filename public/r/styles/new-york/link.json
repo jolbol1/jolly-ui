@@ -11,7 +11,7 @@
   "files": [
     {
       "path": "ui/link.tsx",
-      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { type VariantProps } from \"class-variance-authority\"\nimport {\n  Link as AriaLink,\n  LinkProps as AriaLinkProps,\n  composeRenderProps,\n} from \"react-aria-components\"\n\nimport { cn } from \"@/lib/utils\"\n\nimport { buttonVariants } from \"./button\"\n\ninterface LinkProps\n  extends AriaLinkProps,\n    VariantProps<typeof buttonVariants> {}\n\nconst Link = ({ className, variant, size, ...props }: LinkProps) => {\n  return (\n    <AriaLink\n      className={composeRenderProps(className, (className) =>\n        cn(\n          buttonVariants({\n            variant,\n            size,\n            className,\n          })\n        )\n      )}\n      {...props}\n    />\n  )\n}\n\nexport { Link }\nexport type { LinkProps }\n",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { type VariantProps } from \"class-variance-authority\"\nimport {\n  Link as AriaLink,\n  LinkProps as AriaLinkProps,\n  composeRenderProps,\n} from \"react-aria-components\"\n\nimport { cn } from \"@/lib/utils\"\n\nimport { buttonVariants } from \"./button\"\n\ninterface LinkProps\n  extends AriaLinkProps,\n    VariantProps<typeof buttonVariants> {}\n\nconst Link = ({ className, variant, size, ...props }: LinkProps) => {\n  return (\n    <AriaLink\n      className={composeRenderProps(className, (className) =>\n        cn(\n          variant &&\n            buttonVariants({\n              variant,\n              size,\n              className,\n            })\n        )\n      )}\n      {...props}\n    />\n  )\n}\n\nexport { Link }\nexport type { LinkProps }\n",
       "type": "registry:ui",
       "target": ""
     }
