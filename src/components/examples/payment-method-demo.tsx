@@ -44,7 +44,7 @@ export function CardsPaymentMethod() {
             <Radio
               value="card"
               id="card"
-              className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 ring-offset-background focus-visible:outline-none data-[selected]:border-primary data-[hover]:bg-accent data-[hover]:text-accent-foreground data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2 [&>.jolly-Radio]:hidden"
+              className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 ring-offset-background focus-visible:outline-none data-[selected]:border-primary data-[hovered]:bg-accent data-[hovered]:text-accent-foreground data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2 [&>.jolly-Radio]:hidden"
               aria-label="Card"
             >
               <svg
@@ -69,7 +69,7 @@ export function CardsPaymentMethod() {
             <Radio
               value="paypal"
               id="paypal"
-              className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground data-[selected]:border-primary [&>.jolly-Radio]:hidden"
+              className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 ring-offset-background focus-visible:outline-none data-[selected]:border-primary data-[hovered]:bg-accent data-[hovered]:text-accent-foreground data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2 [&>.jolly-Radio]:hidden"
               aria-label="Paypal"
             >
               <Icons.paypal aria-hidden className="mb-3 size-6" />
@@ -81,7 +81,7 @@ export function CardsPaymentMethod() {
             <Radio
               value="apple"
               id="apple"
-              className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground data-[selected]:border-primary [&>.jolly-Radio]:hidden"
+              className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 ring-offset-background focus-visible:outline-none data-[selected]:border-primary data-[hovered]:bg-accent data-[hovered]:text-accent-foreground data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2 [&>.jolly-Radio]:hidden"
               aria-label="Apple"
             >
               <Icons.apple aria-hidden className="mb-3 size-6" />
