@@ -20,7 +20,7 @@ const RadioGroup = ({ className, ...props }: AriaRadioGroupProps) => {
     <AriaRadioGroup
       className={composeRenderProps(className, (className, renderProps) =>
         cn(
-          "flex flex-col flex-wrap gap-2",
+          "group/radiogroup flex flex-col flex-wrap gap-2",
           renderProps.orientation === "horizontal" && "flex-row items-center",
           className
         )
@@ -35,7 +35,7 @@ const Radio = ({ className, children, ...props }: AriaRadioProps) => {
     <AriaRadio
       className={composeRenderProps(className, (className) =>
         cn(
-          "group flex items-center gap-x-2",
+          "group/radio flex items-center gap-x-2",
           /* Disabled */
           "data-[disabled]:cursor-not-allowed data-[disabled]:opacity-70",
           labelVariants,
@@ -50,13 +50,13 @@ const Radio = ({ className, children, ...props }: AriaRadioProps) => {
             className={cn(
               "jolly-Radio flex aspect-square size-4 items-center justify-center rounded-full border border-primary text-primary ring-offset-background",
               /* Focus */
-              "group-data-[focused]:outline-none",
+              "group-data-[focused]/radio:outline-none",
               /* Focus Visible */
-              "group-data-[focus-visible]:ring-2 group-data-[focus-visible]:ring-ring group-data-[focus-visible]:ring-offset-2",
+              "group-data-[focus-visible]/radio:ring-2 group-data-[focus-visible]/radio:ring-ring group-data-[focus-visible]/radio:ring-offset-2",
               /* Disabled */
-              "group-data-[disabled]:cursor-not-allowed group-data-[disabled]:opacity-50",
+              "group-data-[disabled]/radio:cursor-not-allowed group-data-[disabled]/radio:opacity-50",
               /* Invalid */
-              "group-data-[invalid]:border-destructive"
+              "group-data-[invalid]/radio:border-destructive"
             )}
           >
             {renderProps.isSelected && (
@@ -87,14 +87,14 @@ function JollyRadioGroup({
   return (
     <RadioGroup
       className={composeRenderProps(className, (className) =>
-        cn("group flex-col items-start", className)
+        cn("group/radiogroup flex-col items-start", className)
       )}
       {...props}
     >
       {composeRenderProps(children, (children) => (
         <>
           <Label>{label}</Label>
-          <div className="flex flex-col flex-wrap gap-2 group-data-[orientation=horizontal]:flex-row">
+          <div className="flex flex-col flex-wrap gap-2 group-data-[orientation=horizontal]/radiogroup:flex-row">
             {children}
           </div>
           {description && (
