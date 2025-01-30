@@ -21,11 +21,12 @@ const Link = ({ className, variant, size, ...props }: LinkProps) => {
     <AriaLink
       className={composeRenderProps(className, (className) =>
         cn(
-          buttonVariants({
-            variant,
-            size,
-            className,
-          })
+          variant &&
+            buttonVariants({
+              variant,
+              size,
+              className,
+            })
         )
       )}
       {...props}
