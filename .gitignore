@@ -18,14 +18,14 @@ coverage
 # Turbo
 .turbo
 
-# Vercel
-.vercel
+# Cloudflare
+.wrangler
+.dev.vars*
 
 # Build Outputs
-.next/
-out/
-build
 dist
+src/routeTree.gen.ts
+.tanstack
 
 
 # Debug
@@ -41,5 +41,4 @@ yarn-error.log*
 # turbo
 .turbo
 
-.contentlayer
 tsconfig.tsbuildinfo

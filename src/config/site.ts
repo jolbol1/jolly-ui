@@ -7,6 +7,7 @@ export const siteConfig = {
   links: {
     twitter: "https://twitter.com/jollyshopland",
     github: "https://github.com/jolbol1/jolly-ui",
+    shadcnReactAria: "https://ui.shadcn.com/docs/changelog/2026-07-react-aria",
   },
 }
 

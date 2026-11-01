@@ -1,7 +1,4 @@
-"use client"
-
-import { ArrowRightIcon } from "@radix-ui/react-icons"
-import { TerminalIcon } from "lucide-react"
+import { ArrowRightIcon, TerminalIcon } from "lucide-react"
 import { Link } from "react-aria-components"
 
 import { Separator } from "@/registry/new-york/ui/separator"

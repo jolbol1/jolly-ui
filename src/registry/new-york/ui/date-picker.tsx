@@ -49,7 +49,7 @@ const DatePickerContent = ({
   >
     <AriaDialog
       className={cn(
-        "flex w-full flex-col space-y-4 outline-none sm:flex-row sm:space-x-4 sm:space-y-0",
+        "flex w-full flex-col space-y-4 outline-hidden sm:flex-row sm:space-x-4 sm:space-y-0",
         className
       )}
       {...props}
@@ -57,8 +57,9 @@ const DatePickerContent = ({
   </Popover>
 )
 
-interface JollyDatePickerProps<T extends AriaDateValue>
-  extends AriaDatePickerProps<T> {
+interface JollyDatePickerProps<
+  T extends AriaDateValue,
+> extends AriaDatePickerProps<T> {
   label?: string
   description?: string
   errorMessage?: string | ((validation: AriaValidationResult) => string)
@@ -84,7 +85,7 @@ function JollyDatePicker<T extends AriaDateValue>({
         <Button
           variant="ghost"
           size="icon"
-          className="mr-1 size-6 data-[focus-visible]:ring-offset-0"
+          className="mr-1 size-6 data-focus-visible:ring-offset-0"
         >
           <CalendarIcon aria-hidden className="size-4" />
         </Button>
@@ -112,8 +113,9 @@ function JollyDatePicker<T extends AriaDateValue>({
   )
 }
 
-interface JollyDateRangePickerProps<T extends AriaDateValue>
-  extends AriaDateRangePickerProps<T> {
+interface JollyDateRangePickerProps<
+  T extends AriaDateValue,
+> extends AriaDateRangePickerProps<T> {
   label?: string
   description?: string
   errorMessage?: string | ((validation: AriaValidationResult) => string)
@@ -144,7 +146,7 @@ function JollyDateRangePicker<T extends AriaDateValue>({
         <Button
           variant="ghost"
           size="icon"
-          className="mr-1 size-6 data-[focus-visible]:ring-offset-0"
+          className="mr-1 size-6 data-focus-visible:ring-offset-0"
         >
           <CalendarIcon aria-hidden className="size-4" />
         </Button>

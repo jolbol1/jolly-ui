@@ -1,6 +1,4 @@
-"use client"
-
-import { usePathname } from "next/navigation"
+import { useLocation } from "@tanstack/react-router"
 
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
@@ -8,7 +6,7 @@ import { Icons } from "@/components/icons"
 import { Link } from "@/registry/new-york/ui/link"
 
 export function MainNav() {
-  const pathname = usePathname()
+  const pathname = useLocation({ select: (location) => location.pathname })
 
   return (
     <div className="mr-4 hidden md:flex">
@@ -34,7 +32,7 @@ export function MainNav() {
           Documentation
         </Link>
         <Link
-          href="/docs/components"
+          href="/docs/components/breadcrumbs"
           variant="link"
           className={cn(
             "px-2",

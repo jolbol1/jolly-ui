@@ -1,7 +1,5 @@
-"use client"
-
-import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { useLocation } from "@tanstack/react-router"
+import { Link } from "react-aria-components"
 
 import { SidebarNavItem } from "@/types/nav"
 import { cn } from "@/lib/utils"
@@ -11,7 +9,7 @@ export interface DocsSidebarNavProps {
 }
 
 export function DocsSidebarNav({ items }: DocsSidebarNavProps) {
-  const pathname = usePathname()
+  const pathname = useLocation({ select: (location) => location.pathname })
 
   return items.length ? (
     <div className="w-full py-8">
@@ -52,8 +50,8 @@ export function DocsSidebarNavItems({
                 ? "font-medium text-foreground"
                 : "text-muted-foreground"
             )}
-            target={item.external ? "_blank" : ""}
-            rel={item.external ? "noreferrer" : ""}
+            target={item.external ? "_blank" : undefined}
+            rel={item.external ? "noreferrer" : undefined}
           >
             {item.title}
             {item.label && (

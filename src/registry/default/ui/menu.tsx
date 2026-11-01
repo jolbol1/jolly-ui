@@ -47,7 +47,7 @@ function MenuPopover({ className, ...props }: PopoverProps) {
 const Menu = <T extends object>({ className, ...props }: AriaMenuProps<T>) => (
   <AriaMenu
     className={cn(
-      "max-h-[inherit] overflow-auto rounded-md p-1 outline outline-0 [clip-path:inset(0_0_0_0_round_calc(var(--radius)-2px))]",
+      "max-h-[inherit] overflow-auto rounded-md p-1 outline-solid outline-0 [clip-path:inset(0_0_0_0_round_calc(var(--radius)-2px))]",
       className
     )}
     {...props}
@@ -61,13 +61,13 @@ const MenuItem = ({ children, className, ...props }: AriaMenuItemProps) => (
     }
     className={composeRenderProps(className, (className) =>
       cn(
-        "relative flex cursor-default select-none items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-none transition-colors",
+        "relative flex cursor-default select-none items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden transition-colors",
         /* Disabled */
-        "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+        "data-disabled:pointer-events-none data-disabled:opacity-50",
         /* Focused */
-        "data-[focused]:bg-accent data-[focused]:text-accent-foreground ",
+        "data-focused:bg-accent data-focused:text-accent-foreground ",
         /* Selection Mode */
-        "data-[selection-mode]:pl-8",
+        "data-selection-mode:pl-8",
         className
       )
     )}
@@ -137,7 +137,8 @@ const MenuKeyboard = ({
   )
 }
 interface JollyMenuProps<T>
-  extends AriaMenuProps<T>,
+  extends
+    AriaMenuProps<T>,
     VariantProps<typeof buttonVariants>,
     Omit<AriaMenuTriggerProps, "children"> {
   label?: string
@@ -154,7 +155,7 @@ function JollyMenu<T extends object>({
       <Button variant={variant} size={size}>
         {label}
       </Button>
-      <MenuPopover className="min-w-[--trigger-width]">
+      <MenuPopover className="min-w-(--trigger-width)">
         <Menu {...props}>{children}</Menu>
       </MenuPopover>
     </MenuTrigger>

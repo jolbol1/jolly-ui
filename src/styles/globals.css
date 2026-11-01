@@ -1,0 +1,344 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@import "@fontsource-variable/geist";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/jetbrains-mono";
+@import "@fontsource-variable/outfit";
+@import "@fontsource-variable/plus-jakarta-sans";
+@import "@fontsource-variable/raleway";
+
+@import "./mdx.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+  @media (width >= --theme(--breakpoint-sm)) {
+    max-width: none;
+  }
+  @media (width >= 1400px) {
+    max-width: 1400px;
+  }
+}
+
+@theme {
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --font-sans:
+    var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono:
+    "JetBrains Mono Variable", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-caret-blink: caret-blink 1.25s ease-out infinite;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+  @keyframes caret-blink {
+    0%,
+    70%,
+    100% {
+      opacity: 1;
+    }
+    20%,
+    50% {
+      opacity: 0;
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility step {
+  counter-increment: step;
+
+  &:before {
+    @apply absolute w-9 h-9 bg-muted rounded-full font-mono font-medium text-center text-base inline-flex items-center justify-center -indent-px border-4 border-background;
+    @apply ml-[-50px] mt-[-4px];
+    content: counter(step);
+  }
+}
+
+@layer base {
+  :root {
+    --font-geist-sans: "Geist Variable";
+    --font-inter: "Inter Variable";
+    --font-jakarta: "Plus Jakarta Sans Variable";
+    --font-outfit: "Outfit Variable";
+    --font-raleway: "Raleway Variable";
+
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 72.22% 50.59%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5% 64.9%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* font-feature-settings: "rlig" 1, "calt" 1; */
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    @apply px-4;
+  }
+}
+
+.tomato {
+  background-color: #e54d2e;
+}
+.red {
+  background-color: #e5484d;
+}
+.ruby {
+  background-color: #e54666;
+}
+.crimson {
+  background-color: #e93d82;
+}
+.pink {
+  background-color: #d6409f;
+}
+.plum {
+  background-color: #ab4aba;
+}
+.purple {
+  background-color: #8e4ec6;
+}
+.violet {
+  background-color: #6e56cf;
+}
+.iris {
+  background-color: #5b5bd6;
+}
+.indigo {
+  background-color: #3e63dd;
+}
+.blue {
+  background-color: #0090ff;
+}
+.cyan {
+  background-color: #00a2c7;
+}
+.teal {
+  background-color: #12a594;
+}
+.jade {
+  background-color: #29a383;
+}
+.green {
+  background-color: #30a46c;
+}
+.grass {
+  background-color: #46a758;
+}
+.bronze {
+  background-color: #a18072;
+}
+.gold {
+  background-color: #978365;
+}
+.brown {
+  background-color: #ad7f58;
+}
+.orange {
+  background-color: #f76b15;
+}
+.amber {
+  background-color: #ffc53d;
+}
+.yellow {
+  background-color: #ffe629;
+}
+.lime {
+  background-color: #bdee63;
+}
+.mint {
+  background-color: #86ead4;
+}
+.sky {
+  background-color: #7ce2fe;
+}
+
+.zinc {
+  background-color: #fafafa;
+}
+
+.olive {
+  background-color: #898e87;
+}
+.gray {
+  background-color: #8d8d8d;
+}
+.mauve {
+  background-color: #8e8c99;
+}
+.sage {
+  background-color: #868e8b;
+}
+.sand {
+  background-color: #8d8d86;
+}
+.slate {
+  background-color: #8b8d98;
+}
+
+.jolly-GridList {
+  /* join selected items if :has selector is supported */
+  @supports selector(:has(.foo)) {
+    gap: 0;
+
+    .jolly-GridListItem[data-selected]:has(+ [data-selected]),
+    .jolly-GridListItem[data-selected]:has(
+        + .react-aria-DropIndicator + [data-selected]
+      ) {
+      border-end-start-radius: 0;
+      border-end-end-radius: 0;
+    }
+
+    .jolly-GridListItem[data-selected] + [data-selected],
+    .jolly-GridListItem[data-selected]
+      + .react-aria-DropIndicator
+      + [data-selected] {
+      border-start-start-radius: 0;
+      border-start-end-radius: 0;
+    }
+  }
+}
+
+/* For React Aria Drag and Drop Functionality */
+.react-aria-DropIndicator {
+  &[data-drop-target] {
+    outline: 1px solid hsl(var(--primary));
+    z-index: 20;
+  }
+
+  @supports not selector(:has(.foo)) {
+    /* Undo gap in browsers that don't support :has */
+    margin-bottom: -2px;
+  }
+}
+
+.install-selected[data-selected="true"]:after {
+  position: absolute;
+  right: 8px;
+  bottom: 0px;
+  left: 8px;
+  z-index: 1;
+  height: 2px;
+  border-radius: 2px;
+  content: "";
+  background-color: hsl(var(--primary));
+  transition: background-color 0.25s;
+}

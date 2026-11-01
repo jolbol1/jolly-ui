@@ -30,15 +30,15 @@ function DateSegment({ className, ...props }: AriaDateSegmentProps) {
     <AriaDateSegment
       className={composeRenderProps(className, (className) =>
         cn(
-          "type-literal:px-0 inline rounded p-0.5 caret-transparent outline outline-0",
+          "type-literal:px-0 inline rounded p-0.5 caret-transparent outline-solid outline-0",
           /* Placeholder */
-          "data-[placeholder]:text-muted-foreground",
+          "data-placeholder:text-muted-foreground",
           /* Disabled */
-          "data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
+          "data-disabled:cursor-not-allowed data-disabled:opacity-50",
           /* Focused */
-          "data-[focused]:bg-accent data-[focused]:text-accent-foreground",
+          "data-focused:bg-accent data-focused:text-accent-foreground",
           /* Invalid */
-          "data-[invalid]:data-[focused]:bg-destructive data-[invalid]:data-[focused]:data-[placeholder]:text-destructive-foreground data-[invalid]:data-[focused]:text-destructive-foreground data-[invalid]:data-[placeholder]:text-destructive data-[invalid]:text-destructive",
+          "data-invalid:data-focused:bg-destructive data-invalid:data-focused:data-placeholder:text-destructive-foreground data-invalid:data-focused:text-destructive-foreground data-invalid:data-placeholder:text-destructive data-invalid:text-destructive",
           className
         )
       )}
@@ -48,8 +48,7 @@ function DateSegment({ className, ...props }: AriaDateSegmentProps) {
 }
 
 interface DateInputProps
-  extends AriaDateInputProps,
-    VariantProps<typeof fieldGroupVariants> {}
+  extends AriaDateInputProps, VariantProps<typeof fieldGroupVariants> {}
 
 function DateInput({
   className,
@@ -68,8 +67,9 @@ function DateInput({
   )
 }
 
-interface JollyDateFieldProps<T extends AriaDateValue>
-  extends AriaDateFieldProps<T> {
+interface JollyDateFieldProps<
+  T extends AriaDateValue,
+> extends AriaDateFieldProps<T> {
   label?: string
   description?: string
   errorMessage?: string | ((validation: AriaValidationResult) => string)
@@ -101,8 +101,9 @@ function JollyDateField<T extends AriaDateValue>({
   )
 }
 
-interface JollyTimeFieldProps<T extends AriaTimeValue>
-  extends AriaTimeFieldProps<T> {
+interface JollyTimeFieldProps<
+  T extends AriaTimeValue,
+> extends AriaTimeFieldProps<T> {
   label?: string
   description?: string
   errorMessage?: string | ((validation: AriaValidationResult) => string)

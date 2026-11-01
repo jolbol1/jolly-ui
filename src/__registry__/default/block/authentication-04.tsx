@@ -1,6 +1,5 @@
 "use client"
 
-import Image from "next/image"
 import { Link } from "react-aria-components"
 
 import { Button } from "@/registry/default/ui/button"
@@ -63,7 +62,7 @@ export default function Dashboard() {
         </div>
       </div>
       <div className="hidden bg-muted lg:block">
-        <Image
+        <img
           src="/placeholder.svg"
           alt="Image"
           width="1920"

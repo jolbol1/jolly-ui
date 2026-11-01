@@ -52,13 +52,13 @@ const Tab = ({ className, ...props }: AriaTabProps) => (
   <AriaTab
     className={composeRenderProps(className, (className) =>
       cn(
-        "inline-flex cursor-pointer justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium outline-none ring-offset-background transition-all",
+        "inline-flex cursor-pointer justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium outline-hidden ring-offset-background transition-all",
         /* Focus Visible */
-        "data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2",
+        "data-focus-visible:ring-2 data-focus-visible:ring-ring data-focus-visible:ring-offset-2",
         /* Disabled */
-        "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+        "data-disabled:pointer-events-none data-disabled:opacity-50",
         /* Selected */
-        "data-[selected]:bg-background data-[selected]:text-foreground data-[selected]:shadow-sm ",
+        "data-selected:bg-background data-selected:text-foreground data-selected:shadow-xs ",
         /* Orientation */
         "group-data-[orientation=vertical]:w-full",
         className
@@ -74,7 +74,7 @@ const TabPanel = ({ className, ...props }: AriaTabPanelProps) => (
       cn(
         "mt-2 ring-offset-background",
         /* Focus Visible */
-        "data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2",
+        "data-focus-visible:outline-hidden data-focus-visible:ring-2 data-focus-visible:ring-ring data-focus-visible:ring-offset-2",
         className
       )
     )}

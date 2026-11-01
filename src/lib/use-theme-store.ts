@@ -56,6 +56,8 @@ export const useThemeStore = create<State & Actions>()(
       {
         name: "jolly-ui-theme-store",
         version: 2,
+        // Rehydrated in the root route after mount, so prerendered HTML matches.
+        skipHydration: true,
       }
     )
   )

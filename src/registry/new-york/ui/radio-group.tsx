@@ -37,7 +37,7 @@ const Radio = ({ className, children, ...props }: AriaRadioProps) => {
         cn(
           "group/radio flex items-center gap-x-2",
           /* Disabled */
-          "data-[disabled]:cursor-not-allowed data-[disabled]:opacity-70",
+          "data-disabled:cursor-not-allowed data-disabled:opacity-70",
           labelVariants,
           className
         )
@@ -48,15 +48,15 @@ const Radio = ({ className, children, ...props }: AriaRadioProps) => {
         <>
           <span
             className={cn(
-              "jolly-Radio flex aspect-square size-4 items-center justify-center rounded-full border border-primary text-primary shadow",
+              "jolly-Radio flex aspect-square size-4 items-center justify-center rounded-full border border-primary text-primary shadow-sm",
               /* Focus */
-              "group-data-[focused]/radio:outline-none",
+              "group-data-focused/radio:outline-hidden",
               /* Focus Visible */
-              "group-data-[focus-visible]/radio:ring-1 group-data-[focus-visible]/radio:ring-ring",
+              "group-data-focus-visible/radio:ring-1 group-data-focus-visible/radio:ring-ring",
               /* Disabled */
-              "group-data-[disabled]/radio:cursor-not-allowed group-data-[disabled]/radio:opacity-50",
+              "group-data-disabled/radio:cursor-not-allowed group-data-disabled/radio:opacity-50",
               /* Invalid */
-              "group-data-[invalid]/radio:border-destructive"
+              "group-data-invalid/radio:border-destructive"
             )}
           >
             {renderProps.isSelected && (

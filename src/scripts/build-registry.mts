@@ -3,7 +3,6 @@ import { existsSync, promises as fs, readFileSync } from "fs"
 import { tmpdir } from "os"
 import path from "path"
 import { cwd } from "process"
-import template from "lodash.template"
 import { rimraf } from "rimraf"
 import { Project, ScriptKind, SyntaxKind } from "ts-morph"
 import { z } from "zod"
@@ -29,6 +28,19 @@ const REGISTRY_INDEX_WHITELIST: z.infer<typeof registryItemTypeSchema>[] = [
   "registry:theme",
   "registry:block",
 ]
+
+// Minimal stand-in for lodash.template: fills `<%- path["key"] %>` slots.
+function template(source: string) {
+  return (data: Record<string, any>) =>
+    source.replace(/<%-\s*(.+?)\s*%>/g, (_, expr: string) => {
+      const parts = expr.match(/[A-Za-z_$][\w$]*|\["[^"]*"\]/g) ?? []
+      const value = parts.reduce<any>(
+        (acc, part) => acc?.[part.startsWith("[") ? part.slice(2, -2) : part],
+        data
+      )
+      return value ?? ""
+    })
+}
 
 const project = new Project({
   compilerOptions: {},
@@ -445,17 +457,15 @@ async function buildStylesIndex() {
       name: style.name,
       type: "registry:style",
       dependencies: [
-        "tailwindcss-animate",
+        "tw-animate-css",
         "class-variance-authority",
         "lucide-react",
         // TODO: Remove this when we migrate to lucide-react.
         style.name === "new-york" ? "@radix-ui/react-icons" : "",
-      ],
+      ].filter(Boolean),
       registryDependencies: ["utils"],
-      tailwind: {
-        config: {
-          plugins: [`require("tailwindcss-animate")`],
-        },
+      css: {
+        '@import "tw-animate-css"': {},
       },
       cssVars: {},
       files: [],
@@ -710,7 +720,6 @@ async function buildThemes() {
     const themeCSS = []
     for (const theme of baseColors) {
       themeCSS.push(
-        // @ts-expect-error
         template(THEME_STYLES_WITH_VARIABLES)({
           colors: theme.cssVars,
           theme: theme.name,

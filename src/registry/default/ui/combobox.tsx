@@ -40,9 +40,9 @@ const ComboboxInput = ({ className, ...props }: AriaInputProps) => (
   <AriaInput
     className={composeRenderProps(className, (className) =>
       cn(
-        "flex h-10 w-full bg-background px-3 py-2 outline-none file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground",
+        "flex h-10 w-full bg-background px-3 py-2 outline-hidden file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground",
         /* Disabled */
-        "data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
+        "data-disabled:cursor-not-allowed data-disabled:opacity-50",
         className
       )
     )}
@@ -66,7 +66,7 @@ const ComboboxListBox = <T extends object>({
   <AriaListBox
     className={composeRenderProps(className, (className) =>
       cn(
-        "max-h-[inherit] overflow-auto p-1 outline-none [clip-path:inset(0_0_0_0_round_calc(var(--radius)-2px))]",
+        "max-h-[inherit] overflow-auto p-1 outline-hidden [clip-path:inset(0_0_0_0_round_calc(var(--radius)-2px))]",
         className
       )
     )}
@@ -74,8 +74,10 @@ const ComboboxListBox = <T extends object>({
   />
 )
 
-interface JollyComboBoxProps<T extends object>
-  extends Omit<AriaComboBoxProps<T>, "children"> {
+interface JollyComboBoxProps<T extends object> extends Omit<
+  AriaComboBoxProps<T>,
+  "children"
+> {
   label?: string
   description?: string | null
   errorMessage?: string | ((validation: AriaValidationResult) => string)

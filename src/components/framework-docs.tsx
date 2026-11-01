@@ -1,7 +1,6 @@
-"use client"
-
 import * as React from "react"
-import { allDocs } from "contentlayer/generated"
+
+import { getDoc, getDocComponent } from "@/lib/docs"
 
 import { Mdx } from "./mdx-components"
 
@@ -9,14 +8,16 @@ interface FrameworkDocsProps extends React.HTMLAttributes<HTMLDivElement> {
   data: string
 }
 
-export function FrameworkDocs({ ...props }: FrameworkDocsProps) {
-  const frameworkDoc = allDocs.find(
-    (doc) => doc.slug === `/docs/installation/${props.data}`
-  )
+export function FrameworkDocs({ data }: FrameworkDocsProps) {
+  const slug = `installation/${data}`
 
-  if (!frameworkDoc) {
+  if (!getDoc(slug)) {
     return null
   }
 
-  return <Mdx code={frameworkDoc.body.code} />
+  return (
+    <React.Suspense>
+      <Mdx content={getDocComponent(slug)} />
+    </React.Suspense>
+  )
 }

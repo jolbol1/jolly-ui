@@ -29,7 +29,7 @@ packages
 
 | Path             | Description                              |
 | ---------------- | ---------------------------------------- |
-| `src/app`        | The Next.js application for the website. |
+| `src/routes`     | The TanStack Start routes for the website. |
 | `src/components` | The React components for the website.    |
 | `src/content`    | The content for the website.             |
 | `src/registry`   | The registry for the components.         |

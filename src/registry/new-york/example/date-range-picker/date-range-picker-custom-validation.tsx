@@ -47,7 +47,7 @@ export default function DateRangeCustomValidation() {
           <Button
             variant="ghost"
             size="icon"
-            className="mr-1 size-6 data-[focus-visible]:ring-offset-0"
+            className="mr-1 size-6 data-focus-visible:ring-offset-0"
           >
             <CalendarIcon aria-hidden className="size-4" />
           </Button>

@@ -22,9 +22,9 @@ export function GridList<T extends object>({
       {...props}
       className={composeRenderProps(props.className, (className) =>
         cn(
-          "jolly-GridList group flex flex-col gap-2 overflow-auto rounded-md border bg-popover p-1 text-popover-foreground shadow-md outline-none",
+          "jolly-GridList group flex flex-col gap-2 overflow-auto rounded-md border bg-popover p-1 text-popover-foreground shadow-md outline-hidden",
           /* Empty */
-          "data-[empty]:p-6 data-[empty]:text-center data-[empty]:text-sm",
+          "data-empty:p-6 data-empty:text-center data-empty:text-sm",
           className
         )
       )}
@@ -45,17 +45,17 @@ export function GridListItem({
       textValue={textValue}
       className={composeRenderProps(className, (className) =>
         cn(
-          "jolly-GridListItem relative flex w-full cursor-default select-none items-center gap-3 rounded-sm px-2 py-1.5 text-sm outline-none",
+          "jolly-GridListItem relative flex w-full cursor-default select-none items-center gap-3 rounded-sm px-2 py-1.5 text-sm outline-hidden",
           /* Disabled */
-          "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+          "data-disabled:pointer-events-none data-disabled:opacity-50",
           /* Focus Visible */
-          "data-[focus-visible]:z-10 data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2 data-[focus-visible]:ring-offset-background",
+          "data-focus-visible:z-10 data-focus-visible:outline-hidden data-focus-visible:ring-2 data-focus-visible:ring-ring data-focus-visible:ring-offset-2 data-focus-visible:ring-offset-background",
           /* Hovered */
-          "data-[hovered]:bg-accent data-[hovered]:text-accent-foreground",
+          "data-hovered:bg-accent data-hovered:text-accent-foreground",
           /* Selected */
-          "data-[selected]:bg-accent data-[selected]:text-accent-foreground",
+          "data-selected:bg-accent data-selected:text-accent-foreground",
           /* Dragging */
-          "data-[dragging]:opacity-60",
+          "data-dragging:opacity-60",
           className
         )
       )}

@@ -13,7 +13,7 @@ const Switch = ({ children, className, ...props }: AriaSwitchProps) => (
   <AriaSwitch
     className={composeRenderProps(className, (className) =>
       cn(
-        "group inline-flex items-center gap-2 text-sm font-medium leading-none data-[disabled]:cursor-not-allowed data-[disabled]:opacity-70",
+        "group inline-flex items-center gap-2 text-sm font-medium leading-none data-disabled:cursor-not-allowed data-disabled:opacity-70",
         className
       )
     )}
@@ -23,24 +23,24 @@ const Switch = ({ children, className, ...props }: AriaSwitchProps) => (
       <>
         <div
           className={cn(
-            "peer inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent shadow-sm transition-colors",
+            "peer inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent shadow-xs transition-colors",
             /* Focus Visible */
-            "group-data-[focus-visible]:outline-none group-data-[focus-visible]:ring-2 group-data-[focus-visible]:ring-ring group-data-[focus-visible]:ring-offset-2 group-data-[focus-visible]:ring-offset-background",
+            "group-data-focus-visible:outline-hidden group-data-focus-visible:ring-2 group-data-focus-visible:ring-ring group-data-focus-visible:ring-offset-2 group-data-focus-visible:ring-offset-background",
             /* Disabled */
-            "group-data-[disabled]:cursor-not-allowed group-data-[disabled]:opacity-50",
+            "group-data-disabled:cursor-not-allowed group-data-disabled:opacity-50",
             /* Selected */
-            "bg-input group-data-[selected]:bg-primary",
+            "bg-input group-data-selected:bg-primary",
             /* Readonly */
-            "group-data-[readonly]:cursor-default",
+            "group-data-readonly:cursor-default",
             /* Resets */
-            "focus-visible:outline-none"
+            "focus-visible:outline-hidden"
           )}
         >
           <div
             className={cn(
               "pointer-events-none block size-4 rounded-full bg-background shadow-lg ring-0 transition-transform",
               /* Selected */
-              "translate-x-0 group-data-[selected]:translate-x-4"
+              "translate-x-0 group-data-selected:translate-x-4"
             )}
           />
         </div>
