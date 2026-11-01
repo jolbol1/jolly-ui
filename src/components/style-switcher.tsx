@@ -1,5 +1,3 @@
-"use client"
-
 import { useEffect, useState } from "react"
 
 import { useThemeStore } from "@/lib/use-theme-store"

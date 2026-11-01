@@ -44,9 +44,9 @@ const SelectValue = <T extends object>({
   <AriaSelectValue
     className={composeRenderProps(className, (className) =>
       cn(
-        "line-clamp-1 data-[placeholder]:text-muted-foreground",
+        "line-clamp-1 data-placeholder:text-muted-foreground",
         /* Description */
-        "[&>[slot=description]]:hidden",
+        "*:[[slot=description]]:hidden",
         className
       )
     )}
@@ -58,13 +58,13 @@ const SelectTrigger = ({ className, children, ...props }: AriaButtonProps) => (
   <AriaButton
     className={composeRenderProps(className, (className) =>
       cn(
-        "flex h-9 w-full items-center justify-between whitespace-nowrap rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm",
+        "flex h-9 w-full items-center justify-between whitespace-nowrap rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-xs",
         /* Disabled */
-        "data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
+        "data-disabled:cursor-not-allowed data-disabled:opacity-50",
         /* Focused */
-        "data-[focus-visible]:outline-none data-[focus-visible]:ring-1 data-[focus-visible]:ring-ring",
+        "data-focus-visible:outline-hidden data-focus-visible:ring-1 data-focus-visible:ring-ring",
         /* Resets */
-        "focus-visible:outline-none",
+        "focus-visible:outline-hidden",
         className
       )
     )}
@@ -82,7 +82,7 @@ const SelectTrigger = ({ className, children, ...props }: AriaButtonProps) => (
 const SelectPopover = ({ className, ...props }: AriaPopoverProps) => (
   <Popover
     className={composeRenderProps(className, (className) =>
-      cn("w-[--trigger-width]", className)
+      cn("w-(--trigger-width)", className)
     )}
     {...props}
   />
@@ -95,7 +95,7 @@ const SelectListBox = <T extends object>({
   <AriaListBox
     className={composeRenderProps(className, (className) =>
       cn(
-        "max-h-[inherit] overflow-auto p-1 outline-none [clip-path:inset(0_0_0_0_round_calc(var(--radius)-2px))]",
+        "max-h-[inherit] overflow-auto p-1 outline-hidden [clip-path:inset(0_0_0_0_round_calc(var(--radius)-2px))]",
         className
       )
     )}
@@ -103,8 +103,10 @@ const SelectListBox = <T extends object>({
   />
 )
 
-interface JollySelectProps<T extends object>
-  extends Omit<AriaSelectProps<T>, "children"> {
+interface JollySelectProps<T extends object> extends Omit<
+  AriaSelectProps<T>,
+  "children"
+> {
   label?: string
   description?: string
   errorMessage?: string | ((validation: AriaValidationResult) => string)

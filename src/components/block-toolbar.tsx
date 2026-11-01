@@ -1,9 +1,7 @@
-"use client"
-
 import * as React from "react"
 import { createHideableComponent } from "@react-aria/collections"
 import { CircleHelp, Monitor, Smartphone, Tablet } from "lucide-react"
-import { ImperativePanelHandle } from "react-resizable-panels"
+import { PanelImperativeHandle } from "react-resizable-panels"
 
 import { cn } from "@/lib/utils"
 import { Badge } from "@/components/badge"
@@ -30,14 +28,14 @@ export function BlockToolbar({
   block,
   resizablePanelRef,
 }: {
-  block: Block
-  resizablePanelRef: React.RefObject<ImperativePanelHandle>
+  block: Pick<Block, "name" | "code">
+  resizablePanelRef: React.RefObject<PanelImperativeHandle | null>
 }) {
   const [selectedSize, setSelectedSize] = React.useState("100")
   return (
     <div className="flex items-center gap-4">
       <div className="flex items-center gap-2">
-        <TabList className="hidden h-7 rounded-md p-0 px-[calc(theme(spacing.1)_-_2px)] py-[theme(spacing.1)] sm:flex">
+        <TabList className="hidden h-7 rounded-md p-0 px-[calc(--spacing(1)-2px)] py-1 sm:flex">
           <Tab id="preview" className="h-[1.45rem] rounded-sm px-2 text-xs">
             Preview
           </Tab>
@@ -98,12 +96,12 @@ export function BlockToolbar({
       </div>
       {block.code && (
         <div className="ml-auto flex items-center gap-2 md:pr-[14px]">
-          <div className="hidden h-[28px] items-center gap-1.5 rounded-md border p-[2px] shadow-sm md:flex">
+          <div className="hidden h-[28px] items-center gap-1.5 rounded-md border p-[2px] shadow-xs md:flex">
             <RadioGroup
               value={selectedSize}
               onChange={(value) => {
                 if (resizablePanelRef.current) {
-                  resizablePanelRef.current.resize(parseInt(value))
+                  resizablePanelRef.current.resize(value)
                 }
                 setSelectedSize(value)
               }}

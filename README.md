@@ -1,5 +1,8 @@
 # JollyUI
 
+> [!IMPORTANT]
+> **This project is archived.** shadcn/ui now [officially supports React Aria Components](https://ui.shadcn.com/docs/changelog/2026-07-react-aria) (`npx shadcn@latest init --base aria`). Use that instead. The docs and registry stay online, but JollyUI is no longer maintained.
+
 [shadcn/ui](https://ui.shadcn.com/) compatible [react aria components](https://react-spectrum.adobe.com/react-aria/index.html) that you can copy and paste into your apps. Accessible. Customizable. Open Source.
 
 ![hero](public/og.jpg)
@@ -7,6 +10,18 @@
 ## Documentation
 
 Visit https://jollyui.dev/docs to view the documentation.
+
+## Development
+
+The site is a [TanStack Start](https://tanstack.com/start) app that's fully prerendered to static HTML at build time (docs are MDX compiled by Vite, and search is a static index) and deployed to Cloudflare Workers as static assets only.
+
+```bash
+bun install
+bun dev             # http://localhost:3000
+bun run build       # prerender everything to dist/client
+bun run preview     # build, then serve dist/client with wrangler
+bun run deploy      # build, then deploy to Cloudflare
+```
 
 ## Contributing
 

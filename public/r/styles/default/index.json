@@ -2,20 +2,15 @@
   "name": "default",
   "type": "registry:style",
   "dependencies": [
-    "tailwindcss-animate",
+    "tw-animate-css",
     "class-variance-authority",
-    "lucide-react",
-    ""
+    "lucide-react"
   ],
   "registryDependencies": [
     "utils"
   ],
-  "tailwind": {
-    "config": {
-      "plugins": [
-        "require(\"tailwindcss-animate\")"
-      ]
-    }
+  "css": {
+    "@import \"tw-animate-css\"": {}
   },
   "cssVars": {},
   "files": []

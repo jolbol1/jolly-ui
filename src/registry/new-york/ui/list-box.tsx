@@ -27,9 +27,9 @@ function ListBox<T extends object>({
       className={composeRenderProps(className, (className) =>
         cn(
           className,
-          "group overflow-auto rounded-md border bg-popover p-1 text-popover-foreground shadow-md outline-none",
+          "group overflow-auto rounded-md border bg-popover p-1 text-popover-foreground shadow-md outline-hidden",
           /* Empty */
-          "data-[empty]:p-6 data-[empty]:text-center data-[empty]:text-sm"
+          "data-empty:p-6 data-empty:text-center data-empty:text-sm"
         )
       )}
       {...props}
@@ -49,15 +49,15 @@ const ListBoxItem = <T extends object>({
       }
       className={composeRenderProps(className, (className) =>
         cn(
-          "relative flex w-full cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none",
+          "relative flex w-full cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-hidden",
           /* Disabled */
-          "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+          "data-disabled:pointer-events-none data-disabled:opacity-50",
           /* Focused */
-          "data-[focused]:bg-accent data-[focused]:text-accent-foreground",
+          "data-focused:bg-accent data-focused:text-accent-foreground",
           /* Hovered */
-          "data-[hovered]:bg-accent data-[hovered]:text-accent-foreground",
+          "data-hovered:bg-accent data-hovered:text-accent-foreground",
           /* Selection */
-          "data-[selection-mode]:pr-8",
+          "data-selection-mode:pr-8",
           className
         )
       )}

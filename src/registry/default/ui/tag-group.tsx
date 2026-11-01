@@ -30,7 +30,7 @@ function TagList<T extends object>({
         cn(
           "flex flex-wrap gap-2",
           /* Empty */
-          "data-[empty]:text-sm data-[empty]:text-muted-foreground",
+          "data-empty:text-sm data-empty:text-muted-foreground",
           className
         )
       )}
@@ -43,9 +43,9 @@ const badgeVariants = cva(
   [
     "inline-flex items-center gap-2 rounded-full border px-2.5 py-0.5 text-xs font-semibold ring-offset-background transition-colors",
     /* Focus */
-    "data-[focused]:outline-none data-[focused]:ring-2 data-[focused]:ring-ring data-[focused]:ring-offset-2",
+    "data-focused:outline-hidden data-focused:ring-2 data-focused:ring-ring data-focused:ring-offset-2",
     /* Disabled */
-    "data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
+    "data-disabled:cursor-not-allowed data-disabled:opacity-50",
   ],
   {
     variants: {
@@ -53,17 +53,17 @@ const badgeVariants = cva(
         default: [
           "border-transparent bg-primary text-primary-foreground",
           /* Hover */
-          "data-[hovered]:bg-primary/80",
+          "data-hovered:bg-primary/80",
         ],
         secondary: [
           "border-transparent bg-secondary text-secondary-foreground",
           /* Hover */
-          "data-[hovered]:bg-secondary/80",
+          "data-hovered:bg-secondary/80",
         ],
         destructive: [
           "border-transparent bg-destructive text-destructive-foreground",
           /* Hover */
-          "data-[hovered]:bg-destructive/80",
+          "data-hovered:bg-destructive/80",
         ],
         outline: "text-foreground",
       },
@@ -102,9 +102,9 @@ function Tag({ children, className, ...props }: AriaTagProps) {
               className={cn(
                 "rounded-sm opacity-70 ring-offset-background transition-opacity",
                 /* Hover */
-                "data-[hovered]:opacity-100",
+                "data-hovered:opacity-100",
                 /* Resets */
-                "focus-visible:outline-none",
+                "focus-visible:outline-hidden",
                 className
               )}
             >
@@ -118,7 +118,8 @@ function Tag({ children, className, ...props }: AriaTagProps) {
 }
 
 interface JollyTagGroupProps<T>
-  extends Omit<AriaTagGroupProps, "children">,
+  extends
+    Omit<AriaTagGroupProps, "children">,
     Pick<AriaTagListProps<T>, "items" | "children" | "renderEmptyState"> {
   label?: string
   description?: string

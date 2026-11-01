@@ -1,10 +1,7 @@
-"use client"
-
 import * as React from "react"
-import { CheckIcon, CopyIcon } from "@radix-ui/react-icons"
-import { ClipboardIcon, TerminalIcon } from "lucide-react"
+import { CheckIcon, ClipboardIcon, CopyIcon, TerminalIcon } from "lucide-react"
 
-import { Event, trackEvent } from "@/lib/events"
+import { Event } from "@/lib/events"
 import { useThemeStore } from "@/lib/use-theme-store"
 import { cn } from "@/lib/utils"
 import { Button, ButtonProps } from "@/registry/new-york/ui/button"
@@ -22,11 +19,8 @@ interface CopyButtonProps extends ButtonProps {
   event?: Event["name"]
 }
 
-export async function copyToClipboardWithMeta(value: string, event?: Event) {
+export async function copyToClipboardWithMeta(value: string, _event?: Event) {
   navigator.clipboard.writeText(value)
-  if (event) {
-    trackEvent(event)
-  }
 }
 
 export function CopyButton({

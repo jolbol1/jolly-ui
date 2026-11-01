@@ -18,9 +18,9 @@ import { cn } from "@/lib/utils"
 const labelVariants = cva([
   "text-sm font-medium leading-none",
   /* Disabled */
-  "data-[disabled]:cursor-not-allowed data-[disabled]:opacity-70",
+  "data-disabled:cursor-not-allowed data-disabled:opacity-70",
   /* Invalid */
-  "group-data-[invalid]:text-destructive",
+  "group-data-invalid:text-destructive",
 ])
 
 const Label = ({ className, ...props }: AriaLabelProps) => (
@@ -50,11 +50,11 @@ const fieldGroupVariants = cva("", {
   variants: {
     variant: {
       default: [
-        "relative flex h-9 w-full items-center overflow-hidden rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors",
+        "relative flex h-9 w-full items-center overflow-hidden rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs transition-colors",
         /* Focus Within */
-        "data-[focus-within]:outline-none data-[focus-within]:ring-1 data-[focus-within]:ring-ring",
+        "data-focus-within:outline-hidden data-focus-within:ring-1 data-focus-within:ring-ring",
         /* Disabled */
-        "data-[disabled]:opacity-50",
+        "data-disabled:opacity-50",
       ],
       ghost: "",
     },
@@ -65,8 +65,7 @@ const fieldGroupVariants = cva("", {
 })
 
 interface GroupProps
-  extends AriaGroupProps,
-    VariantProps<typeof fieldGroupVariants> {}
+  extends AriaGroupProps, VariantProps<typeof fieldGroupVariants> {}
 
 function FieldGroup({ className, variant, ...props }: GroupProps) {
   return (

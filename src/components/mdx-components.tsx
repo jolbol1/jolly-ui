@@ -1,10 +1,4 @@
-"use client"
-
 import * as React from "react"
-import Image from "next/image"
-import Link from "next/link"
-import { YouTubeEmbed } from "@next/third-parties/google"
-import { useMDXComponent } from "next-contentlayer2/hooks"
 
 import { Event } from "@/lib/events"
 import { useThemeStore } from "@/lib/use-theme-store"
@@ -22,6 +16,90 @@ import { Style } from "@/registry/styles"
 
 import { ComponentCard, ComponentCards } from "./component-cards"
 import { PackageManagerContent, PackageManagerTabs } from "./install-tabs"
+
+function YouTubeEmbed({
+  videoid,
+  height = 400,
+  params,
+}: {
+  videoid: string
+  height?: number
+  params?: string
+}) {
+  return (
+    <iframe
+      className="my-6 w-full rounded-md border"
+      height={height}
+      src={`https://www.youtube-nocookie.com/embed/${videoid}${params ? `?${params}` : ""}`}
+      title="YouTube video player"
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerPolicy="strict-origin-when-cross-origin"
+      allowFullScreen
+    />
+  )
+}
+
+/** Swap the `[[STYLE]]` placeholder in code blocks for the selected style. */
+function replaceStyle(node: React.ReactNode, style: string): React.ReactNode {
+  if (typeof node === "string") {
+    return node.replaceAll("[[STYLE]]", style)
+  }
+  if (Array.isArray(node)) {
+    return React.Children.map(node, (child) => replaceStyle(child, style))
+  }
+  if (React.isValidElement<{ children?: React.ReactNode }>(node)) {
+    if (node.props.children === undefined) return node
+    return React.cloneElement(
+      node,
+      undefined,
+      replaceStyle(node.props.children, style)
+    )
+  }
+  return node
+}
+
+function Pre({
+  className,
+  __rawString__,
+  __withMeta__,
+  __src__,
+  __event__,
+  __style__,
+  children,
+  ...props
+}: React.HTMLAttributes<HTMLPreElement> & {
+  __style__?: Style["name"]
+  __rawString__?: string
+  __withMeta__?: boolean
+  __src__?: string
+  __event__?: Event["name"]
+}) {
+  const currentStyle = useThemeStore((state) => state.style)
+  const rawString = __rawString__?.replaceAll("[[STYLE]]", currentStyle)
+
+  return (
+    <StyleWrapper styleName={__style__}>
+      <pre
+        className={cn(
+          "mb-4 mt-6 max-h-[650px] overflow-x-auto rounded-lg border py-4",
+          className
+        )}
+        {...props}
+      >
+        {replaceStyle(children, currentStyle)}
+      </pre>
+      {rawString && (
+        <CopyButton
+          value={rawString}
+          src={__src__}
+          event={__event__}
+          className={cn("absolute right-4 top-4", __withMeta__ && "top-16")}
+        />
+      )}
+    </StyleWrapper>
+  )
+}
 
 const components = {
   YouTubeEmbed,
@@ -86,10 +164,7 @@ const components = {
     />
   ),
   p: ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
-    <p
-      className={cn("leading-7 [&:not(:first-child)]:mt-6", className)}
-      {...props}
-    />
+    <p className={cn("leading-7 not-first:mt-6", className)} {...props} />
   ),
   ul: ({ className, ...props }: React.HTMLAttributes<HTMLUListElement>) => (
     <ul className={cn("my-6 ml-6 list-disc", className)} {...props} />
@@ -111,7 +186,6 @@ const components = {
     alt,
     ...props
   }: React.ImgHTMLAttributes<HTMLImageElement>) => (
-    // eslint-disable-next-line @next/next/no-img-element
     <img className={cn("rounded-md", className)} alt={alt} {...props} />
   ),
   hr: ({ ...props }: React.HTMLAttributes<HTMLHRElement>) => (
@@ -131,7 +205,7 @@ const components = {
   th: ({ className, ...props }: React.HTMLAttributes<HTMLTableCellElement>) => (
     <th
       className={cn(
-        "border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right",
+        "border px-4 py-2 text-left font-bold [[align=center]]:text-center [[align=right]]:text-right",
         className
       )}
       {...props}
@@ -140,47 +214,13 @@ const components = {
   td: ({ className, ...props }: React.HTMLAttributes<HTMLTableCellElement>) => (
     <td
       className={cn(
-        "border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right",
+        "border px-4 py-2 text-left [[align=center]]:text-center [[align=right]]:text-right",
         className
       )}
       {...props}
     />
   ),
-  pre: ({
-    className,
-    __rawString__,
-    __withMeta__,
-    __src__,
-    __event__,
-    __style__,
-    ...props
-  }: React.HTMLAttributes<HTMLPreElement> & {
-    __style__?: Style["name"]
-    __rawString__?: string
-    __withMeta__?: boolean
-    __src__?: string
-    __event__?: Event["name"]
-  }) => {
-    return (
-      <StyleWrapper styleName={__style__}>
-        <pre
-          className={cn(
-            "mb-4 mt-6 max-h-[650px] overflow-x-auto rounded-lg border py-4",
-            className
-          )}
-          {...props}
-        />
-        {__rawString__ && (
-          <CopyButton
-            value={__rawString__}
-            src={__src__}
-            event={__event__}
-            className={cn("absolute right-4 top-4", __withMeta__ && "top-16")}
-          />
-        )}
-      </StyleWrapper>
-    )
-  },
+  pre: Pre,
   code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
     <code
       className={cn(
@@ -190,7 +230,6 @@ const components = {
       {...props}
     />
   ),
-  Image,
   Callout,
   ComponentPreview,
   ComponentExample,
@@ -271,16 +310,16 @@ const components = {
   }: React.ComponentProps<typeof FrameworkDocs>) => (
     <FrameworkDocs className={cn(className)} {...props} />
   ),
-  Link: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
-    <Link
+  Link: ({ className, ...props }: React.ComponentProps<"a">) => (
+    <a
       className={cn("font-medium underline underline-offset-4", className)}
       {...props}
     />
   ),
-  LinkedCard: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
-    <Link
+  LinkedCard: ({ className, ...props }: React.ComponentProps<"a">) => (
+    <a
       className={cn(
-        "flex w-full flex-col items-center rounded-xl border bg-card p-6 text-card-foreground shadow transition-colors hover:bg-muted/50 sm:p-10",
+        "flex w-full flex-col items-center rounded-xl border bg-card p-6 text-card-foreground shadow-sm transition-colors hover:bg-muted/50 sm:p-10",
         className
       )}
       {...props}
@@ -289,19 +328,13 @@ const components = {
 }
 
 interface MdxProps {
-  code: string
+  content: React.ComponentType<{ components?: Record<string, unknown> }>
 }
 
-export function Mdx({ code }: MdxProps) {
-  const currentStyle = useThemeStore((state) => state.style)
-  code = code.replaceAll("[[STYLE]]", currentStyle)
-  const Component = useMDXComponent(code, {
-    style: currentStyle,
-  })
-
+export function Mdx({ content: Content }: MdxProps) {
   return (
     <div className="mdx">
-      <Component components={components} />
+      <Content components={components} />
     </div>
   )
 }

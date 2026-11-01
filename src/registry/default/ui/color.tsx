@@ -35,8 +35,10 @@ const ColorPicker = AriaColorPicker
 
 const SliderOutput = AriaSliderOutput
 
-interface ColorWheelProps
-  extends Omit<AriaColorWheelProps, "outerRadius" | "innerRadius"> {
+interface ColorWheelProps extends Omit<
+  AriaColorWheelProps,
+  "outerRadius" | "innerRadius"
+> {
   outerRadius?: number
   innerRadius?: number
 }
@@ -89,7 +91,7 @@ function ColorThumb({ className, ...props }: AriaColorThumbProps) {
         cn(
           "z-10 box-border size-5 rounded-[50%] border-2 border-white shadow-md",
           /* Focus Visible */
-          "data-[focus-visible]:size-6",
+          "data-focus-visible:size-6",
           className
         )
       )}
@@ -122,11 +124,11 @@ function ColorSwatchPickerItem({
         cn(
           "size-8 overflow-hidden rounded-md border-2 ring-offset-background transition-colors",
           /* Selected */
-          "data-[selected]:border-white",
+          "data-selected:border-white",
           /* Disabled */
-          "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+          "data-disabled:pointer-events-none data-disabled:opacity-50",
           /* Focus Visible */
-          "data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring",
+          "data-focus-visible:outline-hidden data-focus-visible:ring-2 data-focus-visible:ring-ring",
           className
         )
       )}

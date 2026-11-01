@@ -2,9 +2,9 @@
 
 import { ChevronRightIcon, InfoIcon } from "lucide-react"
 import {
-  UNSTABLE_Tree as AriaTree,
-  UNSTABLE_TreeItem as AriaTreeItem,
-  UNSTABLE_TreeItemContent as AriaTreeItemContent,
+  Tree as AriaTree,
+  TreeItem as AriaTreeItem,
+  TreeItemContent as AriaTreeItemContent,
   TreeItemProps as AriaTreeItemProps,
   TreeProps as AriaTreeProps,
   Button,
@@ -20,7 +20,7 @@ function Tree<T extends object>({ className, ...props }: AriaTreeProps<T>) {
   return (
     <AriaTree
       className={cn(
-        "flex flex-col gap-1 overflow-auto p-1 outline-none",
+        "flex flex-col gap-1 overflow-auto p-1 outline-hidden",
         className
       )}
       {...props}
@@ -30,10 +30,14 @@ function Tree<T extends object>({ className, ...props }: AriaTreeProps<T>) {
 
 function TreeItemExpandButton({ className, children, ...props }: ButtonProps) {
   return (
-    <Button slot="chevron" className={cn("outline-none", className)} {...props}>
+    <Button
+      slot="chevron"
+      className={cn("outline-hidden", className)}
+      {...props}
+    >
       {composeRenderProps(children, (children) => (
         <>
-          <ChevronRightIcon className="size-4 shrink-0 transition-transform duration-200 group-data-[expanded]:rotate-90" />
+          <ChevronRightIcon className="size-4 shrink-0 transition-transform duration-200 group-data-expanded:rotate-90" />
           {children}
         </>
       ))}
@@ -48,11 +52,11 @@ function TreeItemInfoButton({ className, children, ...props }: ButtonProps) {
       className={cn(
         "ml-auto flex items-center justify-center rounded-md ring-offset-background",
         /* Disabled */
-        "data-[disabled]:pointer-events-none data-[disabled]:opacity-50 ",
+        "data-disabled:pointer-events-none data-disabled:opacity-50 ",
         /* Focus Visible */
-        "data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2",
+        "data-focus-visible:outline-hidden data-focus-visible:ring-2 data-focus-visible:ring-ring data-focus-visible:ring-offset-2",
         /* Resets */
-        "focus-visible:outline-none",
+        "focus-visible:outline-hidden",
         className
       )}
     >
@@ -73,13 +77,13 @@ function TreeItem<T extends object>({
   return (
     <AriaTreeItem
       className={cn(
-        "group relative flex items-center gap-2 rounded-md p-1 pl-[calc((var(--tree-item-level)_-_1)_*_2.25rem)] font-medium outline-none ring-offset-background data-[has-child-rows]:pl-[calc((var(--tree-item-level)_-_1)_*_1.5rem)]",
+        "group relative flex items-center gap-2 rounded-md p-1 pl-[calc((var(--tree-item-level)-1)*2.25rem)] font-medium outline-hidden ring-offset-background data-has-child-rows:pl-[calc((var(--tree-item-level)-1)*1.5rem)]",
         /* Disabled */
-        "data-[disabled]:pointer-events-none data-[disabled]:opacity-50 ",
+        "data-disabled:pointer-events-none data-disabled:opacity-50 ",
         /* Focus Visible */
-        "data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2",
+        "data-focus-visible:outline-hidden data-focus-visible:ring-2 data-focus-visible:ring-ring data-focus-visible:ring-offset-2",
         /* Resets */
-        "focus-visible:outline-none",
+        "focus-visible:outline-hidden",
         className
       )}
       {...props}

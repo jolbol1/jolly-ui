@@ -1,0 +1,6 @@
+/components /docs/components/breadcrumbs 301
+/docs/components /docs/components/breadcrumbs 301
+
+# shadcn CLI registry shortcuts, e.g. `npx shadcn add https://jollyui.dev/default/button`
+/default/* /r/styles/default/:splat.json 301
+/new-york/* /r/styles/new-york/:splat.json 301

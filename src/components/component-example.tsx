@@ -1,5 +1,3 @@
-"use client"
-
 import * as React from "react"
 
 import { cn } from "@/lib/utils"
@@ -20,13 +18,13 @@ export function ComponentExample({
 }: ComponentExampleProps) {
   const [Example, Code, ...Children] = React.Children.toArray(
     children
-  ) as React.ReactElement[]
+  ) as React.ReactElement<any>[]
 
   const codeString = React.useMemo(() => {
     if (typeof Code?.props["data-rehype-pretty-code-figure"] !== "undefined") {
       const [, Button] = React.Children.toArray(
         Code.props.children
-      ) as React.ReactElement[]
+      ) as React.ReactElement<any>[]
       return Button?.props?.value || Button?.props?.__rawString__ || null
     }
   }, [Code])
@@ -41,13 +39,13 @@ export function ComponentExample({
           <TabList className="w-full justify-start rounded-none border-b bg-transparent p-0">
             <Tab
               id="preview"
-              className="relative rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[selected]:border-b-primary data-[selected]:text-foreground data-[selected]:shadow-none"
+              className="relative rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-selected:border-b-primary data-selected:text-foreground data-selected:shadow-none"
             >
               Preview
             </Tab>
             <Tab
               id="code"
-              className="relative rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[selected]:border-b-primary data-[selected]:text-foreground data-[selected]:shadow-none"
+              className="relative rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-selected:border-b-primary data-selected:text-foreground data-selected:shadow-none"
             >
               Code
             </Tab>

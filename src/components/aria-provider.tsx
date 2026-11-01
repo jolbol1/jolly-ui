@@ -1,10 +1,13 @@
-"use client"
-
 import { ReactNode } from "react"
-import { useRouter } from "next/navigation"
+import { useRouter } from "@tanstack/react-router"
 import { RouterProvider } from "react-aria-components"
 
+/** Lets React Aria links (and the registry `Link`) navigate client-side. */
 export function AriaProvider({ children }: { children: ReactNode }) {
-  let router = useRouter()
-  return <RouterProvider navigate={router.push}>{children}</RouterProvider>
+  const router = useRouter()
+  return (
+    <RouterProvider navigate={(href) => router.navigate({ href })}>
+      {children}
+    </RouterProvider>
+  )
 }

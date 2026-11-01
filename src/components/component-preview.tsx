@@ -1,5 +1,3 @@
-"use client"
-
 import * as React from "react"
 import { Index } from "@/__registry__"
 
@@ -28,7 +26,7 @@ export function ComponentPreview({
   const currentStyle = useThemeStore((state) => state.style)
   const index = styles.findIndex((style) => style.name === currentStyle)
 
-  const Codes = React.Children.toArray(children) as React.ReactElement[]
+  const Codes = React.Children.toArray(children) as React.ReactElement<any>[]
   const Code = Codes[index]
 
   const Preview = React.useMemo(() => {
@@ -53,7 +51,7 @@ export function ComponentPreview({
     if (typeof Code?.props["data-rehype-pretty-code-figure"] !== "undefined") {
       const [, Button] = React.Children.toArray(
         Code.props.children
-      ) as React.ReactElement[]
+      ) as React.ReactElement<any>[]
       return Button?.props?.value || Button?.props?.__rawString__ || null
     }
   }, [Code])
@@ -68,13 +66,13 @@ export function ComponentPreview({
           <TabList className="w-full justify-start rounded-none border-b bg-transparent p-0">
             <Tab
               id="preview"
-              className="relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[selected]:border-b-primary data-[selected]:text-foreground data-[selected]:shadow-none"
+              className="relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-selected:border-b-primary data-selected:text-foreground data-selected:shadow-none"
             >
               Preview
             </Tab>
             <Tab
               id="code"
-              className="relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[selected]:border-b-primary data-[selected]:text-foreground data-[selected]:shadow-none"
+              className="relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-selected:border-b-primary data-selected:text-foreground data-selected:shadow-none"
             >
               Code
             </Tab>

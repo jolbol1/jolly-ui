@@ -1,8 +1,8 @@
-import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons"
-import { Doc } from "contentlayer/generated"
+import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react"
 
 import { NavItem, NavItemWithChildren } from "@/types/nav"
 import { docsConfig } from "@/config/docs"
+import type { Doc } from "@/lib/docs"
 import { Link } from "@/registry/new-york/ui/link"
 
 interface DocsPagerProps {

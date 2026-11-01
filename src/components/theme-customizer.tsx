@@ -1,10 +1,13 @@
-"use client"
-
 import { useEffect, useState } from "react"
-import { usePathname } from "next/navigation"
-import { ResetIcon } from "@radix-ui/react-icons"
-import template from "lodash.template"
-import { CheckIcon, CopyIcon, MoonIcon, Settings2, SunIcon } from "lucide-react"
+import { useLocation } from "@tanstack/react-router"
+import {
+  CheckIcon,
+  CopyIcon,
+  MoonIcon,
+  RotateCcwIcon,
+  Settings2,
+  SunIcon,
+} from "lucide-react"
 import { useTheme } from "next-themes"
 import { ListBox, ListBoxItem } from "react-aria-components"
 
@@ -44,7 +47,7 @@ export function ThemeCustomizer({
   hide?: boolean
 }) {
   const { setTheme: setMode, resolvedTheme: mode } = useTheme()
-  const pathname = usePathname()
+  const pathname = useLocation({ select: (location) => location.pathname })
   const {
     currentBorderRadius,
     borderRadius,
@@ -301,7 +304,7 @@ export function ThemeCustomizer({
                   reset()
                 }}
               >
-                <ResetIcon className="mr-2" /> Reset
+                <RotateCcwIcon className="mr-2 size-4" /> Reset
                 <span className="sr-only">Reset</span>
               </Button>
             </div>
@@ -342,7 +345,7 @@ function CustomizerCode() {
             )
             setHasCopied(true)
           }}
-          className="absolute right-6 top-4 z-[100] bg-muted text-muted-foreground hover:bg-muted hover:text-muted-foreground"
+          className="absolute right-6 top-4 z-100 bg-muted text-muted-foreground hover:bg-muted hover:text-muted-foreground"
         >
           {hasCopied ? (
             <CheckIcon className="mr-2 size-4" />
@@ -503,7 +506,7 @@ function CopyCodeButton() {
     <>
       <DialogTrigger>
         <Button>Copy code</Button>
-        <DialogOverlay className="z-[80]">
+        <DialogOverlay className="z-80">
           <DialogContent className="max-w-2xl">
             <DialogHeader className="text-left">
               <DialogTitle>Theme</DialogTitle>
@@ -560,9 +563,15 @@ function getThemeCode(theme: Theme, grays: Gray | undefined, radius: string) {
     dark: { ...theme.cssVars.dark, ...grays.cssVars.dark },
   }
 
-  return template(BASE_STYLES_WITH_VARIABLES)({
-    colors: colors,
-    radius,
+  // Fills the `<%- ... %>` slots (formerly rendered with lodash.template).
+  return BASE_STYLES_WITH_VARIABLES.replace(/<%- (.+?) %>/g, (_, expr) => {
+    if (expr === "radius") return radius
+    const match = expr.match(/^colors\.(light|dark)\["(.+)"\]$/)
+    return match
+      ? ((colors[match[1] as "light" | "dark"] as Record<string, string>)[
+          match[2]
+        ] ?? "")
+      : ""
   })
 }
 

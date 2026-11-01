@@ -1,11 +1,10 @@
-// @ts-nocheck
-"use client"
-
 import * as React from "react"
 
-import { TableOfContents } from "@/lib/toc"
+import type { Doc } from "@/lib/docs"
 import { cn } from "@/lib/utils"
 import { useMounted } from "@/hooks/use-mounted"
+
+type TableOfContents = Doc["tableOfContents"]
 
 interface TocProps {
   toc: TableOfContents
@@ -15,11 +14,11 @@ export function DashboardTableOfContents({ toc }: TocProps) {
   const itemIds = React.useMemo(
     () =>
       toc.items
-        ? toc.items
+        ? (toc.items
             .flatMap((item) => [item.url, item?.items?.map((item) => item.url)])
             .flat()
             .filter(Boolean)
-            .map((id) => id?.split("#")[1])
+            .map((id) => id?.split("#")[1]) as string[])
         : [],
     [toc]
   )
@@ -39,7 +38,7 @@ export function DashboardTableOfContents({ toc }: TocProps) {
 }
 
 function useActiveItem(itemIds: string[]) {
-  const [activeId, setActiveId] = React.useState(null)
+  const [activeId, setActiveId] = React.useState<string | null>(null)
 
   React.useEffect(() => {
     const observer = new IntersectionObserver(
@@ -76,7 +75,7 @@ function useActiveItem(itemIds: string[]) {
 interface TreeProps {
   tree: TableOfContents
   level?: number
-  activeItem?: string
+  activeItem?: string | null
 }
 
 function Tree({ tree, level = 1, activeItem }: TreeProps) {

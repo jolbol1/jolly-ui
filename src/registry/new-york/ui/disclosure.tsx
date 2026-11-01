@@ -53,9 +53,9 @@ function DisclosureHeader({ children, className }: DisclosureHeaderProps) {
         className={composeRenderProps(className, (className) => {
           return cn(
             "group flex flex-1 items-center justify-between rounded-md py-4 text-sm font-medium ring-offset-background transition-all hover:underline",
-            "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
-            "data-[focus-visible]:outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-ring data-[focus-visible]:ring-offset-2",
-            "outline-none",
+            "data-disabled:pointer-events-none data-disabled:opacity-50",
+            "data-focus-visible:outline-hidden data-focus-visible:ring-2 data-focus-visible:ring-ring data-focus-visible:ring-offset-2",
+            "outline-hidden",
             className
           )
         })}
@@ -65,8 +65,8 @@ function DisclosureHeader({ children, className }: DisclosureHeaderProps) {
           aria-hidden
           className={cn(
             "size-4 shrink-0 text-muted-foreground transition-transform duration-200",
-            "group-data-[expanded]:rotate-180",
-            "group-data-[disabled]:opacity-50"
+            "group-data-expanded:rotate-180",
+            "group-data-disabled:opacity-50"
           )}
         />
       </Button>

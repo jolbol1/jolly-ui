@@ -31,7 +31,7 @@ export function HslPicker() {
           HSL Color
         </Button>
         <Popover placement="bottom start" className="w-fit">
-          <Dialog className="flex flex-col gap-4 p-3 outline-none">
+          <Dialog className="flex flex-col gap-4 p-3 outline-hidden">
             <div>
               <ColorArea
                 colorSpace="hsb"

@@ -1,9 +1,7 @@
-"use client"
-
 import * as React from "react"
 import { useTheme } from "next-themes"
 import { Link } from "react-aria-components"
-import { ImperativePanelHandle } from "react-resizable-panels"
+import { PanelImperativeHandle } from "react-resizable-panels"
 
 import {
   syncIframeBorderRadius,
@@ -25,10 +23,22 @@ import { Block } from "@/registry/schema"
 
 import { Callout } from "./callout"
 
-export function BlockPreview({ block }: { block: Block }) {
+export function BlockPreview({
+  block,
+}: {
+  block: Pick<
+    Block,
+    | "name"
+    | "style"
+    | "registryDependencies"
+    | "container"
+    | "code"
+    | "highlightedCode"
+  >
+}) {
   const style = useThemeStore((state) => state.style)
   const [isLoading, setIsLoading] = React.useState(true)
-  const ref = React.useRef<ImperativePanelHandle>(null)
+  const ref = React.useRef<PanelImperativeHandle>(null)
   const { setTheme, resolvedTheme } = useTheme()
   const currentGrayColor = useThemeStore((state) => state.grayColor)
   const currentAccentColor = useThemeStore((state) => state.accentColor)
@@ -55,18 +65,18 @@ export function BlockPreview({ block }: { block: Block }) {
         id="preview"
         className="relative after:absolute after:inset-0 after:right-3 after:z-0 after:rounded-lg after:bg-muted"
       >
-        <ResizablePanelGroup direction="horizontal" className="relative z-10">
+        <ResizablePanelGroup orientation="horizontal" className="relative z-10">
           <ResizablePanel
-            ref={ref}
+            panelRef={ref}
             className={cn(
               "relative rounded-lg border bg-background",
               "border-border"
             )}
-            defaultSize={100}
-            minSize={30}
+            defaultSize="100"
+            minSize="30"
           >
             {isLoading ? (
-              <div className="absolute inset-0 z-10 flex h-[--container-height] w-full items-center justify-center gap-2 bg-background text-sm text-muted-foreground">
+              <div className="absolute inset-0 z-10 flex h-(--container-height) w-full items-center justify-center gap-2 bg-background text-sm text-muted-foreground">
                 <Icons.spinner className="size-4 animate-spin" />
                 Loading...
               </div>
@@ -89,10 +99,10 @@ export function BlockPreview({ block }: { block: Block }) {
           </ResizablePanel>
           <ResizableHandle
             className={cn(
-              "relative hidden w-3 bg-transparent p-0 after:absolute after:right-0 after:top-1/2 after:h-8 after:w-[6px] after:-translate-x-px after:-translate-y-1/2 after:rounded-full after:bg-border after:transition-all after:hover:h-10 sm:block"
+              "relative hidden w-3 bg-transparent p-0 after:absolute after:right-0 after:top-1/2 after:h-8 after:w-[6px] after:-translate-x-px after:-translate-y-1/2 after:rounded-full after:bg-border after:transition-all hover:after:h-10 sm:block"
             )}
           />
-          <ResizablePanel defaultSize={0} minSize={0} />
+          <ResizablePanel defaultSize="0" minSize="0" />
         </ResizablePanelGroup>
       </TabPanel>
       <TabPanel id="code">
@@ -102,7 +112,7 @@ export function BlockPreview({ block }: { block: Block }) {
           <Callout>
             Note the following must be installed from{" "}
             <Link
-              className="font-bold data-[hovered]:text-primary/80"
+              className="font-bold data-hovered:text-primary/80"
               href="https://ui.shadcn.com"
             >
               shadcn/ui
@@ -117,7 +127,7 @@ export function BlockPreview({ block }: { block: Block }) {
                 .map((entry) => (
                   <li key={entry}>
                     <Link
-                      className="capitalize text-secondary-foreground underline data-[hovered]:text-secondary-foreground/80"
+                      className="capitalize text-secondary-foreground underline data-hovered:text-secondary-foreground/80"
                       href={`https://ui.shadcn.com/docs/components/${entry.replace(
                         "shadcn/",
                         ""
@@ -133,7 +143,7 @@ export function BlockPreview({ block }: { block: Block }) {
         <div
           data-rehype-pretty-code-fragment
           dangerouslySetInnerHTML={{ __html: block.highlightedCode }}
-          className="w-full overflow-hidden rounded-md [&_pre]:my-0 [&_pre]:h-[--container-height] [&_pre]:overflow-auto [&_pre]:whitespace-break-spaces [&_pre]:p-6 [&_pre]:font-mono [&_pre]:text-sm [&_pre]:leading-relaxed"
+          className="w-full overflow-hidden rounded-md [&_pre]:my-0 [&_pre]:h-(--container-height) [&_pre]:overflow-auto [&_pre]:whitespace-break-spaces [&_pre]:p-6 [&_pre]:font-mono [&_pre]:text-sm [&_pre]:leading-relaxed"
         />
       </TabPanel>
     </Tabs>

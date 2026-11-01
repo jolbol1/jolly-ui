@@ -35,7 +35,7 @@ function SearchFieldInput({ className, ...props }: AriaInputProps) {
     <AriaInput
       className={composeRenderProps(className, (className) =>
         cn(
-          "min-w-0 flex-1 bg-background px-2 py-1.5 outline outline-0 placeholder:text-muted-foreground [&::-webkit-search-cancel-button]:hidden",
+          "min-w-0 flex-1 bg-background px-2 py-1.5 outline-solid outline-0 placeholder:text-muted-foreground [&::-webkit-search-cancel-button]:hidden",
           className
         )
       )}
@@ -51,9 +51,9 @@ function SearchFieldGroup({ className, ...props }: AriaGroupProps) {
         cn(
           "flex h-10 w-full items-center overflow-hidden rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background",
           /* Focus Within */
-          "data-[focus-within]:outline-none data-[focus-within]:ring-2 data-[focus-within]:ring-ring data-[focus-within]:ring-offset-2",
+          "data-focus-within:outline-hidden data-focus-within:ring-2 data-focus-within:ring-ring data-focus-within:ring-offset-2",
           /* Disabled */
-          "data-[disabled]:opacity-50",
+          "data-disabled:opacity-50",
           className
         )
       )}
@@ -69,11 +69,11 @@ function SearchFieldClear({ className, ...props }: AriaButtonProps) {
         cn(
           "mr-1 rounded-sm opacity-70 ring-offset-background transition-opacity",
           /* Hover */
-          "data-[hovered]:opacity-100",
+          "data-hovered:opacity-100",
           /* Disabled */
-          "data-[disabled]:pointer-events-none",
+          "data-disabled:pointer-events-none",
           /* Empty */
-          "group-data-[empty]:invisible",
+          "group-data-empty:invisible",
           className
         )
       )}

@@ -17,7 +17,6 @@ export default function TagGroupRemove() {
     <TagGroup
       className="space-y-1"
       selectionMode="multiple"
-      // @ts-expect-error
       onRemove={(keys) => list.remove(...keys)}
     >
       <Label>Categories</Label>

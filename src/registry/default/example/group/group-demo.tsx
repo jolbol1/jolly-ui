@@ -12,7 +12,7 @@ export default function GroupDemo() {
     <TextField>
       <Label>Email</Label>
       <FieldGroup className="p-0">
-        <AriaInput className="min-w-0 flex-1 bg-background px-2 py-1.5 outline outline-0 placeholder:text-muted-foreground" />
+        <AriaInput className="min-w-0 flex-1 bg-background px-2 py-1.5 outline-solid outline-0 placeholder:text-muted-foreground" />
         <Button variant="ghost" size="icon" aria-label="Add email">
           <PlusIcon className="size-4" />
         </Button>
